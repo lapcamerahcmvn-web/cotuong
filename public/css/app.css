@@ -45,11 +45,14 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
+h1, h2, h3, p, .title { overflow-wrap: anywhere; }
+.board-holder svg { width: 100%; max-width: 100%; height: auto; display: block; }
 h1, h2, h3, .display { font-family: "Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif; letter-spacing: -.01em; text-wrap: balance; }
 a { color: var(--red); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -192,9 +195,10 @@ footer.foot { border-top: 1px solid var(--line); padding: 34px 0; margin-top: 40
 .xqboard-root.xqboard-split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 22px; align-items: start; }
 .xqboard-root .board-col { position: sticky; top: 78px; }
 @media (max-width: 900px) {
-  .xqboard-root.xqboard-split { grid-template-columns: 1fr; }
+  .xqboard-root.xqboard-split { grid-template-columns: minmax(0, 1fr); }
   .xqboard-root .board-col { position: static; }
 }
+.xqboard-root .board-col, .xqboard-root .side-card { min-width: 0; }
 
 /* Panel diễn giải đầy đủ (đọc trực tiếp) */
 .move-list--full { max-height: none; }
@@ -209,11 +213,17 @@ footer.foot { border-top: 1px solid var(--line); padding: 34px 0; margin-top: 40
 .side-dot.do { background: var(--red); }
 .side-dot.den { background: var(--black-pc); }
 
-/* Nút phóng to + fullscreen */
+/* Nút phóng to + chế độ toàn màn hình (overlay CSS) */
 [data-xq-fs] { font-size: 18px; line-height: 1; }
-[data-xq-boardcard].xq-fs-on { display: flex; flex-direction: column; justify-content: center; background: var(--bg); }
-[data-xq-boardcard].xq-fs-on .board-holder { max-width: min(88vh, 96vw); margin: 0 auto; }
-[data-xq-boardcard].xq-fs-fallback { position: fixed; inset: 0; z-index: 9999; margin: 0; border-radius: 0; overflow: auto; display: flex; flex-direction: column; justify-content: center; }
-[data-xq-boardcard].xq-fs-fallback .board-holder { max-width: min(86vh, 94vw); margin: 0 auto; }
+body.xq-fs-lock { overflow: hidden; }
+[data-xq-boardcard].xq-fs {
+  position: fixed; inset: 0; z-index: 9999; margin: 0; border-radius: 0;
+  background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 12px; overflow: auto;
+}
+/* bàn cờ to hết cỡ theo chiều nhỏ hơn của màn hình, chừa chỗ cho thanh điều khiển + caption */
+[data-xq-boardcard].xq-fs .board-holder { width: auto; max-width: min(94vw, calc(100vh - 170px)); margin: 0 auto; }
+[data-xq-boardcard].xq-fs .controls { margin-top: 14px; }
+[data-xq-boardcard].xq-fs .caption-box { max-width: min(94vw, 640px); width: 100%; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }

@@ -42,7 +42,7 @@
     function X(f) { return M + f * CW; }
     function Y(r) { return M + r * CH; }
     var board = fenToBoard(fen);
-    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Bàn cờ tướng">';
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-label="Bàn cờ tướng">';
     s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" rx="10" fill="var(--board-bg)"/>';
     for (var r = 0; r < 10; r++) s += line(X(0), Y(r), X(8), Y(r));
     for (var f = 0; f < 9; f++) {
@@ -109,7 +109,13 @@
       if (list) Array.prototype.forEach.call(list.children, function (el, i) {
         var on = i === idx;
         el.classList.toggle('active', on);
-        if (on && el.scrollIntoView) el.scrollIntoView({ block: 'nearest' });
+        // Cuộn active vào tầm nhìn CHỈ TRONG danh sách (không cuộn cả trang — tránh mobile nhảy
+        // xuống khi bấm Tiến, vì trên mobile danh sách nằm dưới bàn cờ).
+        if (on && list.scrollHeight > list.clientHeight + 4) {
+          var lb = list.getBoundingClientRect(), eb = el.getBoundingClientRect();
+          if (eb.top < lb.top) list.scrollTop += eb.top - lb.top - 8;
+          else if (eb.bottom > lb.bottom) list.scrollTop += eb.bottom - lb.bottom + 8;
+        }
       });
     }
     function setDisabled(name, v) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.disabled = v; }
@@ -146,22 +152,20 @@
     bind('last', function () { go(steps.length - 1); });
     function bind(name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
 
-    // Phóng to bàn cờ toàn màn hình.
+    // Phóng to bàn cờ chiếm hết màn hình — dùng overlay CSS (tin cậy trên mọi trình duyệt,
+    // không phụ thuộc Fullscreen API vốn hay lỗi/khác nhau). Bấm ⛶ hoặc Esc để đóng.
     var boardCard = root.querySelector('[data-xq-boardcard]');
     var fsBtn = root.querySelector('[data-xq-fs]');
+    function setFs(on) {
+      if (!boardCard) return;
+      boardCard.classList.toggle('xq-fs', on);
+      document.body.classList.toggle('xq-fs-lock', on);
+      if (fsBtn) fsBtn.textContent = on ? '✕' : '⛶';
+    }
     if (fsBtn && boardCard) {
-      fsBtn.addEventListener('click', function () {
-        var el = boardCard;
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else if (el.requestFullscreen) {
-          el.requestFullscreen().catch(function () { boardCard.classList.toggle('xq-fs-fallback'); });
-        } else {
-          boardCard.classList.toggle('xq-fs-fallback'); // trình duyệt cũ: giả lập bằng CSS
-        }
-      });
-      document.addEventListener('fullscreenchange', function () {
-        boardCard.classList.toggle('xq-fs-on', !!document.fullscreenElement);
+      fsBtn.addEventListener('click', function () { setFs(!boardCard.classList.contains('xq-fs')); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && boardCard.classList.contains('xq-fs')) setFs(false);
       });
     }
 

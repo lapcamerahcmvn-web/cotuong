@@ -5,6 +5,48 @@
 
 ---
 
+## 2026-08-24 — Phase 2: tài khoản + UI bài học + tìm kiếm + admin + DEPLOY GitHub
+
+Loạt việc lớn (user yêu cầu), làm trực tiếp session chính (subagent bị chặn bởi **monthly
+spend limit** — không spawn được nữa). Đã đẩy lên GitHub: `lapcamerahcmvn-web/cotuong` (main).
+
+**Nội dung**: hoàn tất 14/14 bài publish có content + caption (6 bài agent viết trước khi hết
+spend, 6 bài agent đợt 2, 2 bài 53/60 tự viết tay). Command `cotuong:export-content` +
+`ContentSeeder` → nội dung ship qua `database/seeders/data/content.json` (KHÔNG cần .xqf trên
+hosting; .xqf vẫn gitignore vì bản quyền).
+
+**Thứ tự/tiêu đề**: command `cotuong:organize-series` — bỏ tiền tố "Bài N:" + đánh lại 1..14
+theo thứ tự giảng (chạy lại khi mở rộng tới 48).
+
+**UI bài học**: layout đọc — desktop bàn cờ trái (sticky) + diễn giải ĐẦY ĐỦ từng nước bên phải
+(có chấm Đỏ/Đen + ký hiệu chuẩn + caption full), mobile xếp dọc; nút ⛶ phóng to toàn màn hình
+(Fullscreen API + fallback CSS). board.js dispatch `xq:viewed-all-moves` khi tới nước cuối.
+
+**Tài khoản** (thay CTA "Bắt đầu học" bằng nút "Tài khoản" + ô tìm kiếm trên nav):
+- Đăng nhập THỐNG NHẤT tại `/dang-nhap` (route name `login`): Google (Socialite, cần
+  GOOGLE_CLIENT_ID/SECRET) + email/mật khẩu (admin). `AuthController` (mới, thay admin/AuthController).
+- Theo dõi tiến độ: `lesson_progress` (đọc ≥300s + xem hết nước → status=completed); JS trong
+  lessons/show.blade.php POST `/tien-do/{lesson}`; badge "✓ Đã học".
+- Guest-gate: modal sau 120s cho khách (sessionStorage dismiss).
+- Trang `/tai-khoan`: bài đã học/đang học/gợi ý. Middleware `LogAccess` ghi `access_logs`.
+- User model: cột google_id/avatar/last_login_at + role `hoc_vien`.
+
+**Admin**: thêm Quản lý người dùng (`admin/users` — info + bài đã học + lịch sử truy cập);
+sửa pagination (view tùy biến `vendor/pagination/cotuong` + Paginator::defaultView, vì không có
+Tailwind); trang sửa bài giờ có bàn cờ + danh sách nước đầy đủ để đối chiếu biên soạn.
+
+**Tìm kiếm**: `/tim-kiem` (SearchController) tìm lesson (title/summary/content) + series.
+
+**Deploy**: `.claude/04-deploy.md` (SSH hosting `hocotuong`, domain hoccotuong.top). gh authed
+org `lapcamerahcmvn-web`. Assets tĩnh (public/css,js,tinymce) commit sẵn, không cần npm build.
+CẦN user: (1) Google OAuth creds vào .env hosting; (2) SSH pull + migrate + db:seed. ĐỔI mật
+khẩu admin mặc định (admin@cotuong.test / cotuong@2026).
+
+**Gotcha**: model Lesson getRouteKeyName='slug' → route admin/progress phải bind `{lesson:id}`.
+curl Git Bash mã hoá sai tiếng Việt khi POST (test qua trình duyệt/JSON file, không phải bug).
+
+---
+
 ## 2026-08-23 (khuya) — FIX ký hiệu nước đi cờ tướng (user báo lỗi trang chủ)
 
 User phát hiện caption trang chủ sai: "Mã hai tiến ba" cho 1 con Mã thực ra ở cột 8 (đúng phải

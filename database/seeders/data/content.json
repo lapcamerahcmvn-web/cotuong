@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-08-23T10:47:22+00:00",
+    "exported_at": "2026-08-23T11:08:13+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -40,7 +40,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Pháo Đầu chiếm trung lộ, khởi đầu hệ thống Trung Pháo chủ công.",
+                    "caption": "Pháo 2 bình 5 — Khởi đầu hệ thống Trung Pháo chủ công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -51,7 +51,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã phải lên g7, bắt đầu dựng thế Bình Phong Mã.",
+                    "caption": "Mã 8 tiến 7 — Bắt đầu dựng thế Bình Phong Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -62,7 +62,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, phát triển quân bảo vệ Pháo Đầu.",
+                    "caption": "Mã 2 tiến 3 — Phát triển quân bảo vệ Pháo Đầu.",
                     "is_flip_reveal": false
                 },
                 {
@@ -73,7 +73,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen nhấc Xe phải cho thẳng lên h9 (Bàn Đầu Xe), chuẩn bị xuất Xe nhanh.",
+                    "caption": "Xe 9 bình 8 — Chuẩn bị xuất Xe nhanh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -84,7 +84,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ cũng nhấc Xe phải lên h0, đối lại thế Bàn Đầu Xe của Đen.",
+                    "caption": "Xe 1 bình 2 — Đối lại thế Bàn Đầu Xe của Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -95,7 +95,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy nốt Mã trái lên c7, hoàn tất đội hình Bình Phong Mã.",
+                    "caption": "Mã 2 tiến 3 — Hoàn tất đội hình Bình Phong Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -106,7 +106,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 3 lên c4, dọn đường cho quân cánh trái và hệ thống Ngũ Cửu Pháo.",
+                    "caption": "Tốt 7 tiến 1 — Đỏ đẩy Tốt giành không gian và mở đường cho quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -117,7 +117,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt lộ 7 lên g5, giành không gian và mở đường cho Mã.",
+                    "caption": "Tốt 7 tiến 1 — Giành không gian và mở đường cho Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -128,7 +128,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe vượt sông (Quá Hà Xe). Trong khai cuộc chủ công, thường phải sớm đẩy Xe qua hà để kìm quân đối phương rồi mới thừa cơ tấn công nhanh; thiếu chiếc Xe hoạt động thì đòn công chắc chắn hụt hơi.",
+                    "caption": "Xe 2 tiến 6 — trong thế công, thường tiến Xe quá hà trước để hạn chế đối phương phát triển, rồi chờ thời phát động tấn công nhanh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -139,7 +139,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo sang biên (i7) để né và chuẩn bị các đòn phản công.",
+                    "caption": "Pháo 8 bình 9 — Đen điều Pháo vào vị trí phối hợp công thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -150,7 +150,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe qua hà sang g6, tiếp tục ghì chặt quân Đen.",
+                    "caption": "Xe 2 bình 3 — Tiếp tục ghì chặt quân Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -161,7 +161,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen nâng Pháo biên lên i8, sắp xếp cho đòn đánh ngang.",
+                    "caption": "Pháo 9 thoái 1 — Sắp xếp cho đòn đánh ngang.",
                     "is_flip_reveal": false
                 },
                 {
@@ -172,7 +172,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, phát triển nốt quân chủ lực.",
+                    "caption": "Mã 8 tiến 7 — Phát triển nốt quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -183,7 +183,7 @@
                     "move_side": "den",
                     "moved_piece": "a",
                     "captured_piece": null,
-                    "caption": "Đen lên Sĩ giữ cung, củng cố phòng thủ.",
+                    "caption": "Sĩ 4 tiến 5 — Củng cố phòng thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -194,7 +194,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo trái ra lộ 9 — nét đặc trưng của Ngũ Cửu Pháo, đặt Pháo ở biên để phối hợp tấn công.",
+                    "caption": "Pháo 8 bình 9 — Đặt Pháo ở biên để phối hợp tấn công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -205,7 +205,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe trái sang b9, chuẩn bị điều động Xe ra trận.",
+                    "caption": "Xe 1 bình 2 — Chuẩn bị điều động Xe ra trận.",
                     "is_flip_reveal": false
                 },
                 {
@@ -216,7 +216,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe trái sang b0, dựng thế Song Xe.",
+                    "caption": "Xe 9 bình 8 — Dựng thế Song Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -227,7 +227,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen chuyển Pháo về g8, nhắm các đòn ngang phản công.",
+                    "caption": "Pháo 9 bình 7 — Nhắm các đòn ngang phản công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -238,7 +238,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe qua hà sang f6, ép sát và hạn chế quân Đen.",
+                    "caption": "Xe 3 bình 4 — Ép sát và hạn chế quân Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -249,7 +249,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã lên h5 xông ra phản công. Đến đây thế trận tới một ngã rẽ then chốt: Đỏ có nhiều lựa chọn — đánh Tốt đầu, đoạt Tốt biên, hay đưa nốt Xe qua sông — mỗi cách dẫn tới cục diện rất khác nhau.",
+                    "caption": "Mã 7 tiến 8 — định thức tới đây hai bên đều đi hợp lý; các lựa chọn kế tiếp mở ra những cục diện khác hẳn nhau.",
                     "is_flip_reveal": false
                 },
                 {
@@ -260,7 +260,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa nốt Xe qua sông, dựng thế Song Xe. Đây là quyết định dứt khoát bỏ qua đòn phản kích cánh trái của Đen để chuyển sang áp chế cánh phải; Song Xe dễ phát huy sức kìm kẹp và phối hợp công nhanh. Khai cuộc vốn không thể vẹn cả đôi đường, được mặt này thường phải chịu thiệt mặt kia.",
+                    "caption": "Xe 8 tiến 6 — trực Xe hay gặp nhất trong thế công, nhưng Song Xe cũng rất thường thấy vì dễ tạo sức ép áp chế phối hợp chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -271,7 +271,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt xuống g4 phản kích. Đen không cam chịu yếu thế: nếu để Đỏ hóa giải được nguy cơ ngầm này thì Đỏ lợi quá nhiều mà chẳng mất gì.",
+                    "caption": "Tốt 7 tiến 1 — Đen không cam chịu yếu thế, phản kích ngay để không bị Đỏ hoá giải hết nguy cơ ngầm.",
                     "is_flip_reveal": false
                 },
                 {
@@ -282,7 +282,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe trở lại g6, điều chỉnh lại thế công.",
+                    "caption": "Xe 4 bình 3 — Điều chỉnh lại thế công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -293,7 +293,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen lùi Mã về g7 giữ nhịp và củng cố phòng tuyến.",
+                    "caption": "Mã 8 thoái 7 — Đen phát triển Mã, khống chế các điểm quan trọng ở trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -304,7 +304,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ lại bình Xe sang f6, tiếp tục gây sức ép.",
+                    "caption": "Xe 3 bình 4 — Tiếp tục gây sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -315,7 +315,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Tốt ăn Tốt Đỏ ở g3, giành được thực lợi ở đường này.",
+                    "caption": "Tốt 7 tiến 1 — Giành được thực lợi ở đường này.",
                     "is_flip_reveal": false
                 },
                 {
@@ -326,7 +326,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ lùi Mã về e1 (oa tâm mã) tạm né, giữ liên kết đội hình.",
+                    "caption": "Mã 3 thoái 5 — Giữ liên kết đội hình.",
                     "is_flip_reveal": false
                 },
                 {
@@ -337,7 +337,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng giữ nhà. Đen đã giành lợi ở đường 7, ép Mã Đỏ phải hồi về oa tâm; lúc này Đỏ phải chọn: bình Xe sát Tốt để đoạt thực lợi, hay tạm gác lại mà đưa Mã ra phát triển chủ lực.",
+                    "caption": "Tượng 7 tiến 5 — Đen lên Tượng giành thực lợi lộ 7, ép Đỏ phải hồi Mã về oa tâm.",
                     "is_flip_reveal": false
                 },
                 {
@@ -348,7 +348,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "p",
-                    "caption": "Đỏ bình Xe ăn Tốt ở c6, chọn hướng đoạt thực lợi.",
+                    "caption": "Xe 8 bình 7 — Chọn hướng đoạt thực lợi.",
                     "is_flip_reveal": false
                 },
                 {
@@ -359,7 +359,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen dồn Pháo xuống b3 mở đòn phản công cánh.",
+                    "caption": "Pháo 2 tiến 4 — Đen điều Pháo vào vị trí phối hợp công thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -370,7 +370,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 3 qua sông lên c5, lấn thêm đất.",
+                    "caption": "Tốt 7 tiến 1 — Lấn thêm đất.",
                     "is_flip_reveal": false
                 },
                 {
@@ -381,7 +381,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo sang c3, tiếp tục quấy rối hàng quân Đỏ.",
+                    "caption": "Pháo 2 bình 3 — Tiếp tục quấy rối hàng quân Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -392,7 +392,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Tốt sang d5, củng cố mũi nhọn ở trung tâm.",
+                    "caption": "Tốt 7 bình 6 — Củng cố mũi nhọn ở trung tâm.",
                     "is_flip_reveal": false
                 },
                 {
@@ -403,7 +403,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng sang c5 chặn Tốt — một thủ đoạn vô cùng tinh xảo, tận dụng việc Đỏ trước đó đặt Pháo hơi kém tối ưu.",
+                    "caption": "Tượng 5 tiến 3 — Đen phi Tượng là thủ đoạn tinh xảo; ở nước trước Đỏ đi Pháo lộ 6 là biến kém, chính xác phải là Pháo lộ 8.",
                     "is_flip_reveal": false
                 },
                 {
@@ -414,7 +414,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "b",
-                    "caption": "Đỏ dùng Xe ăn Tượng ở c5, phá lá chắn của Đen.",
+                    "caption": "Xe 7 thoái 1 — Phá lá chắn của Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -425,7 +425,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã lên h5 — một nước làm nhiều việc cùng lúc, triển khai phản kích.",
+                    "caption": "Mã 7 tiến 8 — Đen cùng lúc làm nhiều việc, triển khai phản kích.",
                     "is_flip_reveal": false
                 },
                 {
@@ -436,7 +436,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe sang g6, đối phó với Mã và Pháo của Đen.",
+                    "caption": "Xe 4 bình 3 — Đối phó với Mã và Pháo của Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -447,7 +447,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã vào f4 — nước xảo diệu. Nếu Đỏ tiến Xe thì Đen có đòn Pháo phản kích: dùng hai Pháo đổi một Xe rồi ăn cả Song Tượng, lời lớn nên Đỏ không thể chấp nhận; Đỏ buộc phải dời Xe, và con Mã Đen còn đòn tiếp theo rất hiểm.",
+                    "caption": "Mã 8 tiến 6 — Đen dùng thủ đoạn hai Pháo đổi một Xe, tuy chưa đắc quân nhưng ăn thêm Song Tượng Đỏ, lời một khoản.",
                     "is_flip_reveal": false
                 },
                 {
@@ -458,7 +458,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Xe ăn Pháo Đen ở g8.",
+                    "caption": "Xe 3 tiến 2 — Đỏ ăn Pháo, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -469,7 +469,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã vào d3 thọc sâu, uy hiếp quân Đỏ.",
+                    "caption": "Mã 6 tiến 4 — Uy hiếp quân Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -480,7 +480,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo giữa sang d2 để đỡ đòn và bảo vệ.",
+                    "caption": "Pháo 5 bình 6 — Đỏ điều Pháo vào vị trí phối hợp công thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -491,7 +491,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": "R",
-                    "caption": "Đen dùng Mã ăn Xe ở c5. Đen thuận thế bắt được Xe; tuy quân không hơn nhưng cánh trái Đỏ bị áp chế, trận hình sinh vấn đề nên Đỏ rơi vào thế hạ phong. Nhìn lại, biến đưa Xe sát Tốt đoạt lợi hơi liều vì Đen sẵn nhiều đòn phản kích; nước khống chế cục diện tốt hơn lẽ ra là đưa Mã ra phát triển ngay.",
+                    "caption": "Mã 4 thoái 3 — Đen thuận thế ăn Xe; tuy không đắc quân nhưng cánh trái Đỏ bị áp chế, rơi vào thế hạ phong.",
                     "is_flip_reveal": false
                 }
             ]
@@ -1107,7 +1107,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Pháo giữa lập thế Pháo Đầu (Trung Pháo), mở màn hệ thống công nhắm thẳng vào Tốt đầu và trung lộ đối phương.",
+                    "caption": "Pháo 2 bình 5 — Mở màn hệ thống công nhắm thẳng vào Tốt đầu và trung lộ đối phương.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1118,7 +1118,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái lên c7, bắt đầu triển khai phòng tuyến Phản Cung Mã.",
+                    "caption": "Mã 2 tiến 3 — Bắt đầu triển khai phòng tuyến Phản Cung Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1129,7 +1129,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, chuẩn bị liên hoàn hai Mã để đỡ đòn cho Pháo Đầu.",
+                    "caption": "Mã 2 tiến 3 — Chuẩn bị liên hoàn hai Mã để đỡ đòn cho Pháo Đầu.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1140,7 +1140,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo về góc Sĩ — nét đặc trưng của Phản Cung Mã: Pháo nằm sau Mã che chắn cửa cung.",
+                    "caption": "Pháo 8 bình 6 — Bình Pháo về góc Sĩ — nét đặc trưng của Phản Cung Mã: Pháo nằm sau Mã che chắn cửa cung.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1151,7 +1151,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ nhấc Xe biên lên một bước để chuẩn bị đi ngang (Hoành Xe). Đây là cách khai triển cứng rắn, rất hay dùng khi công Phản Cung Mã, bên cạnh phương án Trực Xe.",
+                    "caption": "Xe 1 tiến 1 — hoành Xe là đòn tấn công cứng rắn trước Phản Cung Mã, rất thường gặp trong thế công này.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1162,7 +1162,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy nốt Mã phải lên g7, hoàn tất đội hình hai Mã của Phản Cung Mã.",
+                    "caption": "Mã 8 tiến 7 — Hoàn tất đội hình hai Mã của Phản Cung Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1173,7 +1173,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đẩy Xe đi ngang sang lộ 4, chiếm lấy đường dọc thoáng để ép cánh Mã đối phương.",
+                    "caption": "Xe 1 bình 4 — Chiếm lấy đường dọc thoáng để ép cánh Mã đối phương.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1184,7 +1184,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen nhấc Xe cánh phải sang h9, tạm bảo lưu chờ xem hướng công của Đỏ. Chính vì Phản Cung Mã hay có đòn đưa Pháo vào giữa phá nhịp nên Đỏ mới phải sớm định vị Hoành Xe ở lộ 4 để kịp liên hoàn hai Mã.",
+                    "caption": "Xe 9 bình 8 — Đen tạm khoan xuất Xe theo tinh thần linh hoạt, chờ xem Đỏ ứng phó rồi mới định — nét đặc trưng Phản Cung Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1195,7 +1195,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, liên hoàn hai Mã, tăng sức khống chế trung lộ.",
+                    "caption": "Mã 8 tiến 7 — Liên hoàn hai Mã, tăng sức khống chế trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1206,7 +1206,7 @@
                     "move_side": "den",
                     "moved_piece": "a",
                     "captured_piece": null,
-                    "caption": "Đen lên Sĩ giữ cung, củng cố phòng thủ trước khi Đỏ dồn quân.",
+                    "caption": "Sĩ 4 tiến 5 — Củng cố phòng thủ trước khi Đỏ dồn quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1217,7 +1217,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ đẩy Tốt giữa, kết hợp Hoành Xe tạo thành thế công tiêu chuẩn khi đối Phản Cung Mã. Trước nước này Đen có nhiều cách chống như hạ Xe thủ, phá liên hoàn Mã hoặc lập Trung Pháo phản kích.",
+                    "caption": "Tốt 5 tiến 1 — Đỏ đẩy Tốt giữa phối hợp hoành Xe, hình thái tấn công tiêu chuẩn, ép Đen chọn cách hoá giải trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1228,7 +1228,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo vào giữa lập Trung Pháo, lấy mạnh chọi mạnh — cách ứng phó chuẩn xác khi đối phương dồn quân vào trung lộ.",
+                    "caption": "Pháo 6 bình 5 — đối lại đòn dồn trung lộ, Đen lập Trung Pháo lấy cương chế cương — cách ứng phó chính xác.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1239,7 +1239,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã vào e3 áp sát trung lộ, tăng áp lực lên Tốt đầu và Pháo giữa của Đen.",
+                    "caption": "Mã 7 tiến 5 — Tăng áp lực lên Tốt đầu và Pháo giữa của Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1250,7 +1250,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen dồn Pháo trái xuống sát trận Đỏ, quấy rối hàng Tốt và Mã ở cánh.",
+                    "caption": "Pháo 2 tiến 4 — Quấy rối hàng Tốt và Mã ở cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1261,7 +1261,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiếp tục tiến Tốt giữa vượt sông. Là bên chủ công, Đỏ phải giữ thế tiến, dù đối mặt Trung Pháo của Đen thì Tốt giữa vẫn kiên quyết đi lên.",
+                    "caption": "Tốt 5 tiến 1 — đã chủ trương tấn công thì Đỏ vẫn giữ phong thái tiến quân, kể cả khi đối mặt Trung Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1272,7 +1272,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "N",
-                    "caption": "Đen bình Pháo ăn Mã ở e3. Nước bắt Mã này về sau bị đánh giá hơi nhu nhược; phương án được chuộng hơn là bảo lưu biến hóa để ngăn Đỏ điều Mã, tránh làm mỏng cánh phòng thủ.",
+                    "caption": "Pháo 2 bình 5 — Đen ăn Mã nhưng là nước hơi mềm; giữ lại biến hoá mới là thượng sách.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1283,7 +1283,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Mã còn lại ăn trả Pháo ở e3, gỡ hòa cuộc đổi quân và giữ Mã trấn giữa.",
+                    "caption": "Mã 3 tiến 5 — Gỡ hòa cuộc đổi quân và giữ Mã trấn giữa.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1294,7 +1294,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe trái sang b9, khai thông để chuẩn bị điều Xe ra cánh.",
+                    "caption": "Xe 1 bình 2 — Khai thông để chuẩn bị điều Xe ra cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1305,7 +1305,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ nhấc Xe cánh trái lên thành Hoành Xe thứ hai. Vì chiếc Xe kia đã ở lộ 4, đi theo lối thông thường sẽ phí nhịp; cách này giữ thế linh hoạt, mai sau có thể chuyển Pháo vào giữa mà không lãng phí nước đi.",
+                    "caption": "Xe 9 tiến 2 — Đỏ tiến Xe biên theo hướng khác ván trước để khỏi lãng phí nước, tận dụng việc Xe lộ 4 đã ra.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1316,7 +1316,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen dồn Xe phải xuống sâu trong đất Đỏ, tạo áp lực và dọa bắt quân.",
+                    "caption": "Xe 8 tiến 6 — Tạo áp lực và dọa bắt quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1327,7 +1327,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ thuận thế lùi Pháo một bước để né và chuẩn bị chuyển hướng. Đây là vấn đề thứ tự nước đi — nếu đi sớm quá thì đối phương chưa chắc đã lộ ý định đưa Xe xuống.",
+                    "caption": "Pháo 8 thoái 1 — thuận thế thoái Pháo, rất chú trọng thứ tự — vội đi trước sẽ mất tiên cơ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1338,7 +1338,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Trung Pháo ăn Tốt đầu của Đỏ đã qua sông, gỡ lại quân và bẻ gãy mũi nhọn trung lộ.",
+                    "caption": "Pháo 5 tiến 2 — Gỡ lại quân và bẻ gãy mũi nhọn trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1349,7 +1349,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ thuận thế đưa Xe vào lộ giữa. Đến đây hai Hoành Xe của Đỏ đã chiếm trọn hai đường sườn hai bên cung Đen, sẵn sàng chuyển Pháo vào giữa; hai Xe cắm thẳng cửu cung tạo thế nhị quỷ gõ cửa, cộng thêm Pháo Mã ép trung lộ — khí thế rất mạnh.",
+                    "caption": "Xe 9 bình 6 — Đỏ thuận thế xuất Xe: hai hoành Xe chiếm cả hai lộ sườn, luôn sẵn đòn dồn Pháo trung lộ khống chế Tướng Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1360,7 +1360,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo giữa sang c5 để né và tìm cách đổi quân giảm áp lực.",
+                    "caption": "Pháo 5 bình 3 — Đen điều Pháo vào vị trí phối hợp công thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1371,7 +1371,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Pháo sang c1 đối mặt Pháo Đen trên cùng lộ, gài thế đổi Pháo.",
+                    "caption": "Pháo 8 bình 7 — Gài thế đổi Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1382,7 +1382,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "C",
-                    "caption": "Đen bình Pháo xuống ăn Pháo Đỏ, chủ động đổi quân để ép một Xe Đỏ phải rời đường sườn. Nước này gỡ bớt sức ép nhưng chưa giải quyết tận gốc, phải xem đòn tiếp theo của Đỏ.",
+                    "caption": "Pháo 3 tiến 4 — Đen lo ngại thế công nên đổi quân ép Xe Đỏ rời lộ sườn, song vẫn chưa gỡ được sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1393,7 +1393,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trung tâm lên d5 qua sông, lấn sâu vào trận Đen.",
+                    "caption": "Mã 5 tiến 6 — Lấn sâu vào trận Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1404,7 +1404,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen thoái Mã về d9 giữ nhà, đề phòng Mã Đỏ và Xe thọc sâu.",
+                    "caption": "Mã 3 thoái 4 — Đề phòng Mã Đỏ và Xe thọc sâu.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1415,7 +1415,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Xe ăn lại Pháo ở c1, hoàn tất cuộc đổi và giành lại quyền kiểm soát lộ c.",
+                    "caption": "Xe 4 bình 7 — Hoàn tất cuộc đổi và giành lại quyền kiểm soát lộ c.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1426,7 +1426,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen đưa Mã ra e7 phối hợp phòng ngự trung lộ.",
+                    "caption": "Mã 4 tiến 5 — Đen phát triển Mã, khống chế các điểm quan trọng ở trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1437,7 +1437,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ kéo Xe trở về f1 trấn giữ đường dọc thoáng, chuẩn bị đợt công tiếp theo.",
+                    "caption": "Xe 7 bình 4 — Chuẩn bị đợt công tiếp theo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1448,7 +1448,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Xe ăn Tốt Đỏ ở g3, vừa kiếm lại quân vừa quấy rối.",
+                    "caption": "Xe 8 bình 7 — Vừa kiếm lại quân vừa quấy rối.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1459,7 +1459,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã từ d5 sang f6 thọc sâu, uy hiếp trực tiếp cung Đen.",
+                    "caption": "Mã 6 tiến 4 — Uy hiếp trực tiếp cung Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1470,7 +1470,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen kéo Xe về e3 phòng thủ trung lộ, cản đường Pháo Mã của Đỏ.",
+                    "caption": "Xe 7 bình 5 — Cản đường Pháo Mã của Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1481,7 +1481,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe lên d5 qua sông, tăng cường lực lượng cho mũi công phía trên.",
+                    "caption": "Xe 6 tiến 3 — Tăng cường lực lượng cho mũi công phía trên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1492,7 +1492,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen lùi Xe về b7 điều chỉnh lại phòng tuyến cánh trái.",
+                    "caption": "Xe 2 tiến 2 — Đen triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1503,7 +1503,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe sang lộ 2 nhắm bắt Mã cánh của Đen. Đỏ tuy hơn hai Tốt nhưng binh chủng kém nhịp nhàng, điểm yếu là hai Mã thiếu linh hoạt; bù lại cả Xe, Pháo, Mã đều ở tư thế tấn công nên thế cờ Đen đã khá nguy.",
+                    "caption": "Xe 6 bình 2 — Đỏ hơn hai Tốt nhưng Song Mã kém linh hoạt; bình Xe qua lộ 2 chuẩn bị uy hiếp Mã Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1514,7 +1514,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt giữa lên e5, giành thêm không gian và cản bước quân Đỏ.",
+                    "caption": "Tốt 5 tiến 1 — Giành thêm không gian và cản bước quân Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1525,7 +1525,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ dồn Xe xuống h7 thọc sâu, uy hiếp trực tiếp quân và cung Đen.",
+                    "caption": "Xe 2 tiến 2 — Uy hiếp trực tiếp quân và cung Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1536,7 +1536,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen đưa Mã về e6 co cụm giữ nhà. Lúc này lựa chọn của Đỏ rất quan trọng: nếu để Đen ổn định trận thì Đỏ sẽ khó vì Đen hơn hai Tốt, còn nếu chỉ nhẹ nhàng hóa giải thì đòn công cạn dần; do đó Đỏ chuyển sang khai thác đòn khuyết Sĩ sợ Song Xe và uy lực của Xe ở đường sườn.",
+                    "caption": "Mã 7 tiến 5 — Đen tranh thủ ổn định thế trận — để yên thì ưu thế quân số của Đen sẽ dần lên tiếng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1547,7 +1547,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe xuống tận đáy, áp sát hàng cuối, chuẩn bị hợp lực chiếu bí.",
+                    "caption": "Xe 2 tiến 2 — Áp sát hàng cuối, chuẩn bị hợp lực chiếu bí.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1558,7 +1558,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiếp tục đẩy Tốt giữa xuống e4, cố tạo phản công và cản đường.",
+                    "caption": "Tốt 5 tiến 1 — Cố tạo phản công và cản đường.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1569,7 +1569,7 @@
                     "move_side": "do",
                     "moved_piece": "A",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Sĩ củng cố cung, phòng đòn phản kích trước khi dồn tổng lực.",
+                    "caption": "Sĩ 4 tiến 5 — Phòng đòn phản kích trước khi dồn tổng lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1580,7 +1580,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen bình Tốt sang f4, quấy nhiễu và tìm đường phản công.",
+                    "caption": "Tốt 5 bình 6 — Quấy nhiễu và tìm đường phản công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1591,7 +1591,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "b",
-                    "caption": "Đỏ dùng Xe đáy ăn Tượng Đen, phá lá chắn phòng ngự của cung.",
+                    "caption": "Xe 2 bình 3 — Phá lá chắn phòng ngự của cung.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1602,7 +1602,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe sang b5 tìm đường cứu viện và phản công.",
+                    "caption": "Xe 2 tiến 2 — Đen triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1613,7 +1613,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": "a",
-                    "caption": "Đỏ thí Mã ăn Sĩ, khoét thẳng vào cung Đen để mở đường cho Song Xe.",
+                    "caption": "Mã 4 tiến 5 — Khoét thẳng vào cung Đen để mở đường cho Song Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1624,7 +1624,7 @@
                     "move_side": "den",
                     "moved_piece": "k",
                     "captured_piece": "N",
-                    "caption": "Đen buộc phải dùng Tướng ăn lại Mã ở e8 — trúng kế thí Mã đổi Sĩ của Đỏ.",
+                    "caption": "Tướng 5 tiến 1 — Đen ăn Mã, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1635,7 +1635,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "a",
-                    "caption": "Đỏ dùng Xe quét nốt chiếc Sĩ còn lại. Sau khi Mã đổi được Song Sĩ, Đen rơi vào thế khuyết Sĩ sợ Song Xe; Đỏ còn đòn Pháo bắt Mã và dồn quân, trong khi Đen không sao phong tỏa nổi chiếc Xe còn lại nên rất khó chống đỡ.",
+                    "caption": "Xe 3 bình 4 — sau khi đổi Song Sĩ, Đen khuyết Sĩ sợ Song Xe, khó lòng chống đỡ thế công Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1646,7 +1646,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe sang g5 cố kéo về cứu cung, nhưng đã muộn.",
+                    "caption": "Xe 2 bình 7 — Nhưng đã muộn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1657,7 +1657,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Xe còn lại sang lộ h, dồn Song Xe về một cánh để tổng công.",
+                    "caption": "Xe sau bình 2 — Dồn Song Xe về một cánh để tổng công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1668,7 +1668,7 @@
                     "move_side": "den",
                     "moved_piece": "k",
                     "captured_piece": null,
-                    "caption": "Đen đưa Tướng chạy sang d8 tránh đòn, nhưng cung đã trống Sĩ.",
+                    "caption": "Tướng 5 bình 4 — Nhưng cung đã trống Sĩ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1679,7 +1679,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe lên h8 áp sát hàng cận đáy, siết chặt lưới chiếu.",
+                    "caption": "Xe 2 tiến 7 — Siết chặt lưới chiếu.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1690,7 +1690,7 @@
                     "move_side": "den",
                     "moved_piece": "k",
                     "captured_piece": null,
-                    "caption": "Đen chạy Tướng lên d7 tìm đường thoát thân.",
+                    "caption": "Tướng 4 tiến 1 — Đen động Tướng để hoá giải sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1701,7 +1701,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe vào e8 khống chế lộ giữa, chặn đường về của Tướng Đen.",
+                    "caption": "Xe 2 bình 5 — Chặn đường về của Tướng Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1712,7 +1712,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã về c7 cố che chắn, nhưng không đủ quân để cứu giá.",
+                    "caption": "Mã trước thoái 3 — Nhưng không đủ quân để cứu giá.",
                     "is_flip_reveal": false
                 },
                 {
@@ -1723,7 +1723,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Nước chiếu bí quyết định — Đỏ thắng. Ván cờ cho thấy sức mạnh của hai Hoành Xe chiếm hai đường sườn từ trung cuộc, cộng thêm Mã và Song Pháo dồn về trung lộ, kết thúc bằng đòn sát ngay đường sườn — một mẫu mực về ra quân chủ lực, cân đối hai cánh và tránh tự bít đường.",
+                    "caption": "Xe 4 thoái 1 — tuyệt sát, Đỏ thắng — điển hình sức mạnh hai hoành Xe chiếm hai lộ sườn phối hợp Mã Song Pháo dồn trung lộ.",
                     "is_flip_reveal": false
                 }
             ]
@@ -2306,7 +2306,7 @@
                     "move_side": "do",
                     "moved_piece": "B",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Tượng vào giữa (Phi Tượng Cuộc), mở đầu lối chơi ổn chắc, giữ vững trung lộ trước khi tính chuyện tấn công.",
+                    "caption": "Tượng 3 tiến 5 — Mở đầu lối chơi ổn chắc, giữ vững trung lộ trước khi tính chuyện tấn công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2317,7 +2317,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo về góc Sĩ, chọn thế Sĩ Giác Pháo linh hoạt để chờ thời phản công.",
+                    "caption": "Pháo 2 bình 4 — Chọn thế Sĩ Giác Pháo linh hoạt để chờ thời phản công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2328,7 +2328,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, phát triển quân đều đặn.",
+                    "caption": "Mã 8 tiến 7 — Phát triển quân đều đặn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2339,7 +2339,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt lộ 3, mở đường cho Mã cánh và giành thêm không gian.",
+                    "caption": "Tốt 3 tiến 1 — Mở đường cho Mã cánh và giành thêm không gian.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2350,7 +2350,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ bình Xe sang b, chuẩn bị xuất Xe theo đường thoáng.",
+                    "caption": "Xe 9 bình 8 — Chuẩn bị xuất Xe theo đường thoáng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2361,7 +2361,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái lên c7, tiếp tục hoàn thiện đội hình.",
+                    "caption": "Mã 2 tiến 3 — Tiếp tục hoàn thiện đội hình.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2372,7 +2372,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 7, mở đường cho Mã biên nhảy lên đầu hà.",
+                    "caption": "Tốt 3 tiến 1 — Mở đường cho Mã biên nhảy lên đầu hà.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2383,7 +2383,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe sang b9, sắp xếp lại vị trí để chuẩn bị điều động Xe.",
+                    "caption": "Xe 1 bình 2 — Sắp xếp lại vị trí để chuẩn bị điều động Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2394,7 +2394,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, hoàn thiện thế hai Mã.",
+                    "caption": "Mã 2 tiến 3 — Hoàn thiện thế hai Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2405,7 +2405,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy nốt Mã phải lên g7, khai cuộc đã định hình. Đến đây thế trận Phi Tượng đối Sĩ Giác Pháo hiện ra rõ nét — một biến rất được ưa chuộng ngày nay, tiêu biểu cho lối chơi lấy chữ ổn làm gốc: chắc chắn, ít sơ hở.",
+                    "caption": "Mã 8 tiến 7 — Phi Tượng đối Sĩ Giác Pháo là dòng biến chủ lưu; gói trong một chữ thì là \"ổn\" — mẫu mực lối chơi chắc chắn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2416,7 +2416,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã lên điểm đầu hà. Đây là định thức: vừa chiếm được ô đầu hà, vừa dọn sẵn các đòn bình Pháo cướp tiên và xuất Xe thuận thế về sau.",
+                    "caption": "Mã 3 tiến 4 — Vừa dọn sẵn các đòn bình Pháo cướp tiên và xuất Xe thuận thế về sau.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2427,7 +2427,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen dồn Xe xuống sâu để phong tỏa. Trước nước Mã đầu hà của Đỏ, nếu buông lỏng thì Đỏ sẽ kịp bình Pháo rồi xuất Xe thuận thế chiếm tiên, nên Đen khóa cánh ngay không chút do dự.",
+                    "caption": "Xe 2 tiến 6 — Đen đưa Xe lên tranh vị trí, tránh bị phong toả và giành đường phản công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2438,7 +2438,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo trái xuống b1, dọn thế điều Pháo sang cánh phối hợp.",
+                    "caption": "Pháo 8 thoái 1 — Dọn thế điều Pháo sang cánh phối hợp.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2449,7 +2449,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng giữ nhà, củng cố phòng tuyến trung lộ.",
+                    "caption": "Tượng 7 tiến 5 — Củng cố phòng tuyến trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2460,7 +2460,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo phải về f2 — một nước điều Pháo tinh tế: vừa gài cạm bẫy nhỏ (Đen vô ý xuất Xe là dính đòn Pháo), vừa chuẩn bị đưa Pháo sang phối hợp cho hai Pháo cùng phản công, trận hình rất hài hòa.",
+                    "caption": "Pháo 2 bình 4 — Đỏ thoái Pháo rất thú vị: nếu Đen sơ ý xuất Xe sẽ dính đòn thiểm kích, một nước chiếu thắng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2471,7 +2471,7 @@
                     "move_side": "den",
                     "moved_piece": "a",
                     "captured_piece": null,
-                    "caption": "Đen lên Sĩ giữ cung, gia cố phòng thủ.",
+                    "caption": "Sĩ 6 tiến 5 — Gia cố phòng thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2482,7 +2482,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ xuất Xe phải sang h, đưa Xe vào tư thế sẵn sàng tham chiến.",
+                    "caption": "Xe 1 bình 2 — Đưa Xe vào tư thế sẵn sàng tham chiến.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2493,7 +2493,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen nhấc Xe phải lên h9. Thông thường Đen sẽ mở lộ Xe bằng cách bình Pháo, nhưng ở đây việc triển khai hơi gượng: do Pháo Mã của Đỏ án ngữ bên sườn nên Đen khó xuất Xe theo lối tự nhiên, con Xe trở nên khó xử.",
+                    "caption": "Xe 9 bình 8 — định thức thường đi Pháo về biên, nhưng ở đây Đen xuất trực Xe để tranh đoạt lộ Xe theo đúng kỳ lý.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2504,7 +2504,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo sang lộ g theo đường ngang, tăng cường phối hợp hai Pháo và nhắm các đòn đánh ngang.",
+                    "caption": "Pháo 8 bình 3 — Tăng cường phối hợp hai Pháo và nhắm các đòn đánh ngang.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2515,7 +2515,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "R",
-                    "caption": "Đen dùng Xe ăn Xe Đỏ ở đáy. Đen không thể dời Xe sang lộ 3 vì Đỏ sẽ bình Pháo bắt chết Xe, nên đành đổi Xe ngay tại chỗ.",
+                    "caption": "Xe 2 tiến 3 — Đen buộc phải ăn Xe kiểu này, nếu đi khác sẽ bị Đỏ đánh chết Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2526,7 +2526,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": "r",
-                    "caption": "Đỏ dùng Mã ăn lại Xe, hoàn tất cuộc đổi Xe; con Mã dạt ra biên.",
+                    "caption": "Mã 7 thoái 8 — Hoàn tất cuộc đổi Xe; con Mã dạt ra biên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2537,7 +2537,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen tiến Pháo xuống sâu ở h2. Cân nhắc kỹ thì đây là ô lý tưởng nhất cho Đen, các vị trí khác đều bất lợi; nhưng vì Đỏ đã kịp chuyển Pháo sang cánh phải nên đang có một thủ đoạn ngầm chờ sẵn.",
+                    "caption": "Pháo 8 tiến 5 — Đen cân nhắc kỹ chỉ có thể tiến Pháo tới đây; các lựa chọn khác đều thiệt tiên hoặc mất quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2548,7 +2548,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Mã đạp Tốt. Nước ăn Tốt trông rất tự nhiên nên Đen dễ xem nhẹ, trong khi mục đích thật của Đỏ được giấu kín phía sau.",
+                    "caption": "Mã 4 tiến 3 — Mã Đỏ thuận thế đạp Tốt tưởng hiển nhiên, nhưng che giấu mục đích thật khiến Đen dễ xem nhẹ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2559,7 +2559,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã vào d5 chiếm trung tâm, tìm cơ hội phản công.",
+                    "caption": "Mã 3 tiến 4 — Tìm cơ hội phản công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2570,7 +2570,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Mã sang i7 thọc vào cánh, quấy rối hậu phương Đen.",
+                    "caption": "Mã 3 tiến 1 — Quấy rối hậu phương Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2581,7 +2581,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe sang h7 để đối phó với Mã Đỏ và củng cố phòng thủ.",
+                    "caption": "Xe 8 tiến 2 — Đen triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2592,7 +2592,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Xe chém Pháo — đòn phá phong tỏa kiên quyết. Đen không dám ăn lại Xe, vì nếu ăn thì Đỏ có đòn Mã ngọa tào rồi bình Pháo tổ sát; chỉ trong chớp mắt, thế khóa của Đen bị phá vỡ.",
+                    "caption": "Xe 2 tiến 2 — trong cuộc giằng co phong toả, Đỏ kiên quyết chém Pháo — Đen không thể ăn Xe vì dính đòn ngoạ tào.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2603,7 +2603,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "N",
-                    "caption": "Đen dùng Xe ăn Mã Đỏ ở i7 (không dám ăn Xe vì dính đòn chiếu sát), gỡ lại quân.",
+                    "caption": "Xe 8 bình 9 — Gỡ lại quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2614,7 +2614,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Mã biên trở về c2. Tuy phải mất khá nhiều nước mới đổi được Pháo Đen, Đỏ vẫn nắm ưu thế lớn: Xe Đen bị chôn ở góc chưa ra được, Đỏ hơn Tốt lộ 3 rất giá trị (chực vượt sông), lại thêm tuyến đáy sơ hở khiến Mã Đen không dám nhảy lên.",
+                    "caption": "Mã 8 tiến 7 — Đỏ dùng thủ đoạn chiến thuật cứng rắn, giải quyết được thế phong toả của Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2625,7 +2625,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Mã ăn Tốt ở c3, kiếm lại quân nhưng con Mã lún sâu vào đất Đỏ.",
+                    "caption": "Mã 4 tiến 3 — Kiếm lại quân nhưng con Mã lún sâu vào đất Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2636,7 +2636,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe sang h3. Nước đi trông bình thường nhưng ẩn mưu sâu: quân Đen đang đứng xấu, con Mã thọc sâu sắp thành gánh nặng vì bị vây.",
+                    "caption": "Xe 2 tiến 1 — nước tưởng bình thường nhưng có mưu sâu: vị trí quân Đen đang xấu, dễ mắc lỗi quân thâm nhập.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2647,7 +2647,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt biên xuống i5, xoay xở tìm chút nhịp thở.",
+                    "caption": "Tốt 9 tiến 1 — Xoay xở tìm chút nhịp thở.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2658,7 +2658,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 7 vượt sông, lấn thêm đất và dọa đổi quân.",
+                    "caption": "Tốt 3 tiến 1 — Lấn thêm đất và dọa đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2669,7 +2669,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Tượng ăn Tốt Đỏ vừa qua sông.",
+                    "caption": "Tượng 5 tiến 7 — Dùng Tượng ăn Tốt Đỏ vừa qua sông.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2680,7 +2680,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo sang c1. Trông như Đỏ tặng không một Tốt, nhưng ngay sau đó Đỏ bình Pháo đánh Mã, đẩy Đen vào thế tiến thoái lưỡng nan — con Mã Đen gặp rắc rối lớn.",
+                    "caption": "Pháo 3 bình 7 — Đỏ đẩy Pháo biên tưởng thí Tốt, thực ra giá trị Tốt biên trong thế này rất lớn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2691,7 +2691,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen bình Pháo về c7 cứu Mã. Nếu Đen thoái Mã thì Đỏ có đòn Mã đạp Mã kèm tiến Pháo hãm cung rất ác; vậy nên nước phế Tốt lộ 3 trước đó của Đỏ là mưu tính sâu xa, buộc Đen phải bình Pháo giữ Mã.",
+                    "caption": "Pháo 4 bình 3 — Đen bình Pháo phòng các đòn truy sát Mã của Đỏ; các phương án khác đều bất lợi.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2702,7 +2702,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "n",
-                    "caption": "Đỏ dùng Pháo ăn Mã ở c3, thu quân đúng theo toan tính.",
+                    "caption": "Pháo 7 tiến 2 — Thu quân đúng theo toan tính.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2713,7 +2713,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "C",
-                    "caption": "Đen dùng Pháo ăn lại Pháo Đỏ ở c3, gỡ hòa cuộc đổi.",
+                    "caption": "Pháo 3 tiến 4 — Gỡ hòa cuộc đổi.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2724,7 +2724,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt giữa lên e4, mở thêm thế và không gian.",
+                    "caption": "Tốt 5 tiến 1 — Mở thêm thế và không gian.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2735,7 +2735,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt xuống c4, cố giành lại chút chủ động.",
+                    "caption": "Tốt 3 tiến 1 — Cố giành lại chút chủ động.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2746,7 +2746,7 @@
                     "move_side": "do",
                     "moved_piece": "B",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Tượng biên. Đến đây mới thấy rõ vì sao cần một chiếc Xe thông thoáng: Xe Đỏ linh hoạt còn Xe Đen bị tối, cả đạo quân Đỏ xúm lại vây con Pháo Đen đã lún vào đường cùng.",
+                    "caption": "Tượng 7 tiến 9 — đến lúc này mới thấy vì sao cần giữ Xe thông thoáng — dưới sự dẫn dắt của Xe sáng, toàn quân Đỏ vây diệt Pháo Đen.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2757,7 +2757,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen xông Tốt biên trong bất lực. Đen vẫn không dám động Mã, nếu không Đỏ ăn Chốt rồi dùng Xe chiếu bắt liên hoàn, coi như chỉ còn nước nhận thua.",
+                    "caption": "Tốt 9 tiến 1 — Đen đẩy Tốt trong bất lực — các nước khác đều dẫn tới mất quân nhanh hơn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2768,7 +2768,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Tốt biên ăn Tốt Đen ở i4.",
+                    "caption": "Tốt 1 tiến 1 — Đỏ ăn Tốt, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2779,7 +2779,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Xe ăn lại Tốt ở i4.",
+                    "caption": "Xe 9 tiến 3 — Đen ăn Tốt, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2790,7 +2790,7 @@
                     "move_side": "do",
                     "moved_piece": "B",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Tượng ăn Tốt, khép lưới bắt chết Pháo Đen — Đỏ thắng. Ván cờ đúc kết bài học của khai cuộc ổn chắc: Xe phải sáng đường, Mã phải linh hoạt, trận hình phải gọn; nghe tưởng đơn giản nhưng sơ sẩy là dính đòn, còn cao thủ luôn nhìn xu thế cuộc cờ từ sớm để chọn nước hợp lý thay vì ham cạm bẫy nhỏ.",
+                    "caption": "Tượng 9 tiến 7 — tróc chết Pháo Đen, Đỏ thắng — bài học: Xe phải sáng đường, Mã phải linh hoạt, hình trận phải tốt.",
                     "is_flip_reveal": false
                 }
             ]
@@ -2823,7 +2823,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, mở đầu bằng Khởi Mã Cuộc — lối khai cuộc thong thả, linh hoạt, chưa vội lộ ý đồ.",
+                    "caption": "Mã 8 tiến 7 — Mở đầu bằng Khởi Mã Cuộc — lối khai cuộc thong thả, linh hoạt, chưa vội lộ ý đồ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2834,7 +2834,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt lộ 3 lên c5, giành không gian và mở đường cho Mã.",
+                    "caption": "Tốt 3 tiến 1 — Giành không gian và mở đường cho Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2845,7 +2845,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 7 lên g4, dọn đường cho Mã cánh phải.",
+                    "caption": "Tốt 3 tiến 1 — Đỏ đẩy Tốt giành không gian và mở đường cho quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2856,7 +2856,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái lên c7, phát triển cân đối hai cánh.",
+                    "caption": "Mã 2 tiến 3 — Phát triển cân đối hai cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2867,7 +2867,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, hoàn thiện thế hai Mã.",
+                    "caption": "Mã 2 tiến 3 — Hoàn thiện thế hai Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2878,7 +2878,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen nhấc Xe trái lên a8, chuẩn bị chuyển Xe đi ngang (hoành Xe).",
+                    "caption": "Xe 1 tiến 1 — Chuẩn bị chuyển Xe đi ngang (hoành Xe).",
                     "is_flip_reveal": false
                 },
                 {
@@ -2889,7 +2889,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ nhấc Xe trái lên a1, cũng theo hướng hoành Xe.",
+                    "caption": "Xe 9 tiến 1 — Cũng theo hướng hoành Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2900,7 +2900,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng giữ nhà, củng cố trung lộ.",
+                    "caption": "Tượng 7 tiến 5 — Củng cố trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2911,7 +2911,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ nhấc nốt Xe phải lên, tạo thế Song Hoành Xe. Đây là cách bố trí ít gặp: cả hai Xe đều chờ đi ngang, giữ tối đa sự linh hoạt để tùy động thái của Đen mà chọn hướng. Song Hoành Xe đẩy phần khó nghĩ sang phía đối phương — Đen giờ có rất nhiều lối triển khai và phải cân não lựa chọn.",
+                    "caption": "Xe 1 tiến 1 — Song hoành Xe không phải cách đi thường thấy; hoành Xe ở đây mang ý đồ nhắm thẳng Quái Giác Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2922,7 +2922,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã phải về f8, chọn biến quai giác Mã (Mã nằm ở góc). Đây là một đội hình phòng thủ đặc trưng, nhưng con Mã góc này về sau dễ thành mục tiêu.",
+                    "caption": "Mã 8 tiến 6 — biến Đen đi Quái Giác Mã (theo ván Bích Quế Viên bôi 2012, Hồng Trí thắng Vũ Âu Hoa).",
                     "is_flip_reveal": false
                 },
                 {
@@ -2933,7 +2933,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa hoành Xe sang lộ 4, nhòm thẳng vào quai giác Mã. Hoành Xe là khắc tinh của Mã góc; tuy chưa phải đòn ăn ngay nhưng thế nào cũng có cơ hội về sau, chưa kể hoành Xe luôn chiếm được đường sườn.",
+                    "caption": "Xe 1 bình 4 — hoành Xe là lợi khí hàng đầu công Quái Giác Mã — chưa phải nước tiên nhưng luôn rình cơ hội chiếm lộ sườn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2944,7 +2944,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái ra biên (b5), tìm cách phản công cánh.",
+                    "caption": "Mã 3 tiến 2 — Tìm cách phản công cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2955,7 +2955,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Pháo ăn Pháo Đen ở b7, chủ động đổi Pháo.",
+                    "caption": "Pháo 8 tiến 5 — Chủ động đổi Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2966,7 +2966,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "C",
-                    "caption": "Đen dùng Pháo ăn lại Pháo Đỏ, hoàn tất cuộc đổi Pháo.",
+                    "caption": "Pháo 8 bình 2 — Hoàn tất cuộc đổi Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2977,7 +2977,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã ra ngoài (h4) để tránh và giữ thế phòng Xe.",
+                    "caption": "Mã 3 tiến 2 — Đỏ phát triển Mã, khống chế các điểm quan trọng ở trung lộ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2988,7 +2988,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt biên lên i5, chuẩn bị đột phá ở cánh biên.",
+                    "caption": "Tốt 9 tiến 1 — Chuẩn bị đột phá ở cánh biên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -2999,7 +2999,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe tiến sâu lên f6. Trông như để chờ Đen mở thông đường biên rồi Mã đạp Chốt, nhưng hàm ý đằng sau nước này rất sâu xa — thực chất là dẫn dụ cho Pháo Đen rời khỏi vị trí.",
+                    "caption": "Xe 4 tiến 5 — sau khi đổi Pháo, Đỏ nhảy Mã ngoại phong Xe là nước cần đi; Đen xông Tốt biên đột phá cũng hợp tình hình.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3010,7 +3010,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen chuyển Pháo về b6, sắp xếp lại lực lượng.",
+                    "caption": "Pháo 2 tiến 1 — Sắp xếp lại lực lượng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3021,7 +3021,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ lùi Xe về f4, giữ liên kết và tiếp tục nhắm quai giác Mã.",
+                    "caption": "Xe 4 thoái 2 — Giữ liên kết và tiếp tục nhắm quai giác Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3032,7 +3032,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt biên xuống i4, đẩy mạnh mũi đột phá.",
+                    "caption": "Tốt 9 tiến 1 — Đẩy mạnh mũi đột phá.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3043,7 +3043,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Tốt biên ăn Tốt Đen ở i4.",
+                    "caption": "Tốt 1 tiến 1 — Đỏ ăn Tốt, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3054,7 +3054,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Xe ăn lại Tốt ở i4, mở thông đường Xe.",
+                    "caption": "Xe 9 tiến 5 — Mở thông đường Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3065,7 +3065,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ lùi Mã về g2. Bề ngoài Đen đang thuận lợi — ép Xe Đỏ thoái, đổi Tốt biên, tiến Xe gây sức ép — nhưng kết cấu ẩn chứa vấn đề lớn: quai giác Mã. Với Song Hoành Xe uy lực gấp đôi, một khi Xe Đen rời tuyến đáy, Đỏ có đòn Xe quá cung khiến Mã góc khó chạy.",
+                    "caption": "Mã 2 thoái 3 — Đen thuận lợi ép Xe Đỏ phải thoái rồi đổi Tốt biên; nét thú vị của cờ tàn thủ nằm ở kết cấu hình trận này.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3076,7 +3076,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen buộc phải hồi Mã góc về h9 — một sự nhượng bộ lớn, chịu thiệt về thế và nhịp, dù sau này còn hy vọng nhảy Mã ra khi có dịp.",
+                    "caption": "Mã 6 thoái 8 — Đen hồi Mã — để Đỏ tiến Pháo ăn Tốt thì còn nước nhảy lên, nhưng hồi Mã về chỗ cũ dù sao cũng thiệt lớn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3087,7 +3087,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa nốt Xe kia về lộ f, tập trung Song Xe cho mũi công.",
+                    "caption": "Xe 9 bình 4 — Tập trung Song Xe cho mũi công.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3098,7 +3098,7 @@
                     "move_side": "den",
                     "moved_piece": "a",
                     "captured_piece": null,
-                    "caption": "Đen lên Sĩ giữ cung, cố gia cố phòng thủ.",
+                    "caption": "Sĩ 4 tiến 5 — Cố gia cố phòng thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3109,7 +3109,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 7 qua sông lên g5, lấn đất và mở thế.",
+                    "caption": "Tốt 3 tiến 1 — Lấn đất và mở thế.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3120,7 +3120,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "R",
-                    "caption": "Đen dùng Xe ăn Xe Đỏ ở f4, chủ động đổi Xe.",
+                    "caption": "Xe 9 bình 6 — Chủ động đổi Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3131,7 +3131,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": "r",
-                    "caption": "Đỏ dùng Mã ăn lại Xe ở f4 — phế một Tốt để đổi Xe, đòn cực lợi hại. Nếu Đen ăn Tốt thì Đỏ có Mã bắt Mã, Mã Đen hết đường chạy. Đến đây mới lộ ra: nước tiến Xe từ đầu chính là để dụ Pháo Đen rời vị trí, làm kết cấu Đen rệu rã — cao thủ luôn tính hình cờ tốt xấu chứ không câu nệ từng nước.",
+                    "caption": "Mã 3 tiến 4 — Đỏ phế Tốt đổi Xe tưởng vô cớ, nhưng Đen phản ứng thì đã muộn — nước cờ lợi hại!",
                     "is_flip_reveal": false
                 },
                 {
@@ -3142,7 +3142,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": "P",
-                    "caption": "Đen buộc phải phi Tượng ăn Tốt ở g5, khiến trận hình càng thêm lộn xộn.",
+                    "caption": "Tượng 5 tiến 7 — Khiến trận hình càng thêm lộn xộn.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3153,7 +3153,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đưa Xe về lộ giữa siết thế. Bị ép phi Tượng ăn Chốt, hình trận Đen vô cùng lộn xộn, cánh trái trống rỗng và tan tác chỉ sau vài nước. Bài học: khai cuộc hoãn công tuy bình ổn nhưng chỉ cần nắm hình cờ sai, để lộ sơ hở là có thể sụp đổ trong nháy mắt — ngay cả với kỳ thủ chuyên nghiệp.",
+                    "caption": "Xe 4 bình 6 — Đen bị ép phi Tượng ăn Tốt, hình trận rối loạn; cánh trái trống rỗng sau đòn công kích của Đỏ.",
                     "is_flip_reveal": false
                 }
             ]
@@ -3505,7 +3505,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, mở đầu bằng Khởi Mã Cuộc.",
+                    "caption": "Mã 8 tiến 7 — Mở đầu bằng Khởi Mã Cuộc.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3516,7 +3516,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt lộ 3 lên c5, giành không gian cho quân cánh.",
+                    "caption": "Tốt 3 tiến 1 — Giành không gian cho quân cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3527,7 +3527,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo trái ra biên (a2), dọn chỗ cho Xe ra nhanh.",
+                    "caption": "Pháo 8 bình 9 — Dọn chỗ cho Xe ra nhanh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3538,7 +3538,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái lên c7, phát triển quân.",
+                    "caption": "Mã 2 tiến 3 — Phát triển quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3549,7 +3549,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ xuất Xe trái sang b0, chuẩn bị đưa Xe ra sớm.",
+                    "caption": "Xe 9 bình 8 — Chuẩn bị đưa Xe ra sớm.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3560,7 +3560,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen xuất Xe trái sang b9, đi đối lại.",
+                    "caption": "Xe 1 bình 2 — Đen triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3571,7 +3571,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ đẩy Xe tiến sâu lên b4 — kiểu Đại Xuất Xe, đưa Xe ra xa để tranh chủ động trên cột b.",
+                    "caption": "Xe 8 tiến 4 — Đưa Xe ra xa để tranh chủ động trên cột b.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3582,7 +3582,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen chuyển Pháo ra a7, tránh Xe và giữ cột.",
+                    "caption": "Pháo 2 bình 1 — Tránh Xe và giữ cột.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3593,7 +3593,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "r",
-                    "caption": "Đỏ dùng Xe thọc xuống ăn Xe Đen ở b9.",
+                    "caption": "Xe 8 tiến 5 — Đỏ ăn Xe, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3604,7 +3604,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": "R",
-                    "caption": "Đen dùng Mã ăn lại Xe Đỏ ở b9, hoàn tất cuộc đổi Xe.",
+                    "caption": "Mã 3 thoái 2 — Hoàn tất cuộc đổi Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3615,7 +3615,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 7 lên g4, mở đường cho Mã cánh phải.",
+                    "caption": "Tốt 3 tiến 1 — Đỏ đẩy Tốt giành không gian và mở đường cho quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3626,7 +3626,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen đưa Mã trở lại c7, tái bố trí lực lượng.",
+                    "caption": "Mã 2 tiến 3 — Tái bố trí lực lượng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3637,7 +3637,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, hoàn thiện thế hai Mã.",
+                    "caption": "Mã 2 tiến 3 — Hoàn thiện thế hai Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3648,7 +3648,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã phải ra biên (i7), tìm hướng phát triển.",
+                    "caption": "Mã 8 tiến 9 — Tìm hướng phát triển.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3659,7 +3659,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt biên lên i4, chuẩn bị mở đường cho Xe biên.",
+                    "caption": "Tốt 1 tiến 1 — Chuẩn bị mở đường cho Xe biên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3670,7 +3670,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen nhấc Xe phải lên i8, sắp xếp lực lượng.",
+                    "caption": "Xe 9 tiến 1 — Sắp xếp lực lượng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3681,7 +3681,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiếp tục đẩy Tốt biên qua sông lên i5, lấn đất.",
+                    "caption": "Tốt 1 tiến 1 — Đỏ đẩy Tốt giành không gian và mở đường cho quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3692,7 +3692,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Tốt biên ăn Tốt Đỏ ở i5.",
+                    "caption": "Tốt 9 tiến 1 — Đen ăn Tốt, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3703,7 +3703,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Xe biên ăn lại Tốt ở i5, mở thông cột biên.",
+                    "caption": "Xe 1 tiến 5 — Mở thông cột biên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3714,7 +3714,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng giữ nhà. Trong khai cuộc hoãn công, lối Đại Xuất Xe rất thực dụng: nhịp công hai bên ôn hòa, hình trận chắc, ăn được một Tốt cũng khó nên giá trị mỗi con Tốt tăng cao — không lo Xe ra xa mà đối phương chẳng đếm xỉa.",
+                    "caption": "Tượng 3 tiến 5 — trong cờ tàn thủ, lối Đại Xuất Xe này rất thực dụng vì nhịp tấn công hai bên ôn hoà, ít chú trọng hiệu suất.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3725,7 +3725,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo phải ra biên (i2), đi vào biến Pháo lộ 1.",
+                    "caption": "Pháo 2 bình 1 — biến Đỏ đi Pháo lộ 1.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3736,7 +3736,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen bình Xe sang d8, chuyển về trung lộ để phối hợp.",
+                    "caption": "Xe 9 bình 4 — Chuyển về trung lộ để phối hợp.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3747,7 +3747,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "n",
-                    "caption": "Đỏ dùng Pháo biên ăn Mã Đen ở i7.",
+                    "caption": "Pháo 1 tiến 5 — Đỏ ăn Mã, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3758,7 +3758,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": "C",
-                    "caption": "Đen dùng Tượng ăn lại Pháo Đỏ ở i7.",
+                    "caption": "Tượng 7 tiến 9 — Đen ăn Pháo, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3769,7 +3769,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "b",
-                    "caption": "Đỏ dùng Xe ăn Tượng Đen ở i7, giành lại một Tượng.",
+                    "caption": "Xe 1 tiến 2 — Giành lại một Tượng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3780,7 +3780,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã vào d5 chiếm trung tâm. Đỏ vừa ăn được một Tượng, tưởng đã lợi nhưng chưa hẳn: chiếc Xe Đỏ đang lúng túng, nếu không chạy thì Đen có đòn Pháo đánh Xe bắt Mã, buộc Đỏ phải tốn nước cứu Xe.",
+                    "caption": "Mã 3 tiến 4 — Đỏ mưu được một Tượng tưởng đã chiếm lợi, thực ra chưa hẳn — Xe Đỏ bối rối, phải tốn nước tránh đòn Pháo đánh Xe.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3791,7 +3791,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ thoái Xe về i5 để né đòn, giữ quân.",
+                    "caption": "Xe 1 thoái 2 — Đỏ triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -3802,7 +3802,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": "P",
-                    "caption": "Đen thuận thế nhảy Mã đạp Tốt ở c3, ăn lại một Tốt. Song Mã Đỏ ở hậu phương lúng túng; nếu Đen đổi Mã lấy Pháo thì Đỏ dính thế khuyết Tượng sợ Pháo mà lại mất luôn Pháo, còn Pháo Đỏ thì khó chạy an toàn. Tóm lại Đỏ không hề có lợi thế và không thể chấp nhận cục diện này.",
+                    "caption": "Mã 4 tiến 3 — Đen thuận thế nhảy Mã đạp Tốt, ăn một Tốt; Song Mã hậu phương Đỏ lúng túng, sợ bị đổi Mã lấy Pháo dẫn tới khuyết Tượng.",
                     "is_flip_reveal": false
                 }
             ]
@@ -4407,7 +4407,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Pháo Đầu chiếm trung lộ, mở màn hệ Thuận Pháo.",
+                    "caption": "Pháo 2 bình 5 — Mở màn hệ Thuận Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4418,7 +4418,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen cũng lên Pháo giữa cùng hướng, tạo thế Thuận Pháo — hai Pháo đối nhau ngay lộ giữa.",
+                    "caption": "Pháo 8 bình 5 — Tạo thế Thuận Pháo — hai Pháo đối nhau ngay lộ giữa.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4429,7 +4429,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã phải lên g2, phát triển và bảo vệ Pháo.",
+                    "caption": "Mã 2 tiến 3 — Phát triển và bảo vệ Pháo.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4440,7 +4440,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã phải lên g7, đi đối xứng.",
+                    "caption": "Mã 8 tiến 7 — Đi đối xứng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4451,7 +4451,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ xuất Xe phải theo lối thẳng (Trực Xe) — nét chính của Thuận Pháo Trực Xe.",
+                    "caption": "Xe 1 bình 2 — Đỏ triển khai Xe, chiếm đường dọc thoáng để tăng sức ép.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4462,7 +4462,7 @@
                     "move_side": "den",
                     "moved_piece": "p",
                     "captured_piece": null,
-                    "caption": "Đen tiến Tốt lộ 7 lên g5, đi theo sách lược Chậm Ra Xe: thay vì lập tức phát triển Xe như thông lệ, Đen tạm giữ Xe lại chờ thời cơ.",
+                    "caption": "Tốt 7 tiến 1 — nước thứ ba Đen đẩy Tốt 7 chính là \"chậm ra Xe\" — thay vì nước thường gặp là nhấc Xe biên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4473,7 +4473,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã trái lên c2, hoàn thiện thế hai Mã.",
+                    "caption": "Mã 8 tiến 7 — Hoàn thiện thế hai Mã.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4484,7 +4484,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": null,
-                    "caption": "Đen nhảy Mã trái lên c7, phát triển cân đối.",
+                    "caption": "Mã 2 tiến 3 — Phát triển cân đối.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4495,7 +4495,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 3 lên c4, mở đường cho quân cánh trái.",
+                    "caption": "Tốt 7 tiến 1 — Đỏ đẩy Tốt giành không gian và mở đường cho quân chủ lực.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4506,7 +4506,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen dồn Pháo trái xuống b3, hoàn tất định thức Thuận Pháo Chậm Ra Xe kinh điển. Ý đồ là giữ Xe chưa xuất để chờ dùng Pháo đánh qua sông rồi ép đổi Xe mạnh, tranh chút tiên thủ; trước thế này Đỏ có hai cách đối phó kinh điển.",
+                    "caption": "Pháo 2 tiến 4 — đến đây hình thành định thức Thuận Pháo chậm ra Xe kinh điển; ý Đen là mượn trợ lực Pháo rồi đổi Xe mạnh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4517,7 +4517,7 @@
                     "move_side": "do",
                     "moved_piece": "N",
                     "captured_piece": null,
-                    "caption": "Đỏ nhảy Mã vào d4 — chọn một trong hai phương án đối phó kinh điển (biến Mã lộ 6).",
+                    "caption": "Mã 7 tiến 6 — biến Đỏ tiến Mã lộ 6.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4528,7 +4528,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "P",
-                    "caption": "Đen dùng Pháo quét ngang ăn Tốt Đỏ ở g3, mở đòn tấn công trên cánh.",
+                    "caption": "Pháo 2 bình 7 — Mở đòn tấn công trên cánh.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4539,7 +4539,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": null,
-                    "caption": "Đỏ chuyển Pháo trái sang c2, nhắm đưa Pháo qua sông đe dọa đường 7. Nhìn thì hùng hổ nhưng đây là hiện tượng giả: Đen có sẵn một thủ đoạn phản kích kinh điển, nên về sau các kỳ thủ thường tránh cách này.",
+                    "caption": "Pháo 8 bình 7 — biến kinh điển nhất là ván 1979 Phó Quang Minh thua Hồ Vinh Hoa — chỉ cần hoà là đoạt quán quân, tiếc là bị thế Chậm Ra Xe đánh bại.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4550,7 +4550,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen xuất Xe trái sang b9 — nước xuất Xe hay nhất, vì vừa ra quân đã hóa giải luôn thế công trên đường 7 của Đỏ.",
+                    "caption": "Xe 1 bình 2 — cảm giác xuất Xe tốt nhất là vừa ra đã giải quyết một vấn đề lớn — ở đây xuất Xe khắc chế thế công lộ 7 của Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4561,7 +4561,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": null,
-                    "caption": "Đỏ tiến Tốt lộ 3 qua sông lên c5, lấn thêm đất.",
+                    "caption": "Tốt 7 tiến 1 — Lấn thêm đất.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4572,7 +4572,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen đưa Xe ngang xuống b4 bắt quân — chỉ một nước đã cơ bản hóa giải thế công đường 7 của Đỏ.",
+                    "caption": "Xe 2 tiến 5 — chỉ một nước tróc quân, cơ bản đã hoá giải thế công lộ 7 của Đỏ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4583,7 +4583,7 @@
                     "move_side": "do",
                     "moved_piece": "P",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Tốt ăn Tốt Đen ở c6. Đỏ không thể nhảy Mã vì Đen sẽ ép đổi rất lợi về hiệu suất nước đi, nên chọn ăn Tốt.",
+                    "caption": "Tốt 7 tiến 1 — Đỏ ăn Tốt, nhưng loạt biến sau khiến Đen thuận lợi giải quyết Mã lộ 3, ép Đỏ tốn nhiều nước.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4594,7 +4594,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": "N",
-                    "caption": "Đen dùng Xe ăn Mã Đỏ ở d4, thu quân.",
+                    "caption": "Xe 2 bình 4 — Đen ăn Mã, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4605,7 +4605,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "n",
-                    "caption": "Đỏ dùng Pháo ăn Mã Đen ở c7, gỡ lại quân.",
+                    "caption": "Pháo 7 tiến 5 — Gỡ lại quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4616,7 +4616,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": null,
-                    "caption": "Đen thoái Pháo giữa về e8. Phải lùi Pháo trước để tránh một vấn đề nan giải: nếu vội theo kế cũ thì bị Đỏ phản đòn ngay ở cung, rất khó gỡ.",
+                    "caption": "Pháo 5 thoái 1 — Đen thoái Pháo một nước trước — nếu theo sách cũ đổi Xe ngay thì Đỏ ứng phó rất nhẹ nhàng.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4627,7 +4627,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": null,
-                    "caption": "Đỏ xuất Xe trái sang b0, đưa nốt Xe vào cuộc.",
+                    "caption": "Xe 9 bình 8 — Đưa nốt Xe vào cuộc.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4638,7 +4638,7 @@
                     "move_side": "den",
                     "moved_piece": "r",
                     "captured_piece": null,
-                    "caption": "Đen mới xuất nốt Xe phải sang h9. Chậm Ra Xe không phải là không ra Xe, mà là chọn đúng thời cơ tốt nhất: lúc này gạ đổi Xe đặt Đỏ vào thế khó — ăn Xe thì mất Tượng, không ăn thì bị ăn và thiệt nước tiên.",
+                    "caption": "Xe 9 bình 8 — chậm ra Xe không phải không xuất Xe mà tìm thời cơ tốt nhất; đổi Xe đặt Đỏ vào thế khó: ăn thì mất Tượng, không ăn thì thiệt tiên.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4649,7 +4649,7 @@
                     "move_side": "do",
                     "moved_piece": "R",
                     "captured_piece": "r",
-                    "caption": "Đỏ dùng Xe ăn Xe Đen ở h9, chấp nhận đổi.",
+                    "caption": "Xe 2 tiến 9 — Chấp nhận đổi.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4660,7 +4660,7 @@
                     "move_side": "den",
                     "moved_piece": "c",
                     "captured_piece": "B",
-                    "caption": "Đen dùng Pháo thọc xuống đáy ăn Tượng Đỏ (Pháo chìm đáy), tạo uy hiếp lớn vào cung.",
+                    "caption": "Pháo 7 tiến 3 — Tạo uy hiếp lớn vào cung.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4671,7 +4671,7 @@
                     "move_side": "do",
                     "moved_piece": "A",
                     "captured_piece": null,
-                    "caption": "Đỏ lên Sĩ đỡ, chống đòn Pháo chìm đáy.",
+                    "caption": "Sĩ 4 tiến 5 — Chống đòn Pháo chìm đáy.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4682,7 +4682,7 @@
                     "move_side": "den",
                     "moved_piece": "n",
                     "captured_piece": "R",
-                    "caption": "Đen dùng Mã ăn lại Xe Đỏ ở h9, gỡ hòa cuộc đổi.",
+                    "caption": "Mã 7 thoái 8 — Gỡ hòa cuộc đổi.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4693,7 +4693,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "p",
-                    "caption": "Đỏ dùng Pháo giữa ăn Tốt Đen ở lộ giữa, kiếm lại quân.",
+                    "caption": "Pháo 5 tiến 4 — Kiếm lại quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4704,7 +4704,7 @@
                     "move_side": "den",
                     "moved_piece": "b",
                     "captured_piece": null,
-                    "caption": "Đen lên Tượng giữ nhà, củng cố phòng thủ.",
+                    "caption": "Tượng 7 tiến 5 — Củng cố phòng thủ.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4715,7 +4715,7 @@
                     "move_side": "do",
                     "moved_piece": "C",
                     "captured_piece": "c",
-                    "caption": "Đỏ dùng Pháo ăn Pháo Đen ở e8.",
+                    "caption": "Pháo 5 tiến 2 — Đỏ ăn Pháo, giành lợi trong loạt đổi quân.",
                     "is_flip_reveal": false
                 },
                 {
@@ -4726,7 +4726,7 @@
                     "move_side": "den",
                     "moved_piece": "a",
                     "captured_piece": "C",
-                    "caption": "Đen dùng Sĩ ăn lại Pháo Đỏ ở e8. Sau khi đơn giản hóa, Đỏ tuy hơn một Tốt nhưng lại kém một Tượng, còn Đen vừa có Pháo chìm đáy uy hiếp vừa chiếm được tuyến tuần hà — thế Đỏ ảm đạm. Chính vì vậy, trong ván thực chiến kinh điển, Đỏ đã tránh biến này mà chọn nhảy Mã lộ 6 từ sớm.",
+                    "caption": "Sĩ 6 tiến 5 — sau khi đơn giản hoá, Đỏ hơn Tốt nhưng kém một Tượng; Đen có Pháo chìm đáy và chiếm tuần hà, hình thế Đỏ ảm đạm.",
                     "is_flip_reveal": false
                 }
             ]
