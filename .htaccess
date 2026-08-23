@@ -39,6 +39,10 @@
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    # Trang chủ "/" — document root là thư mục nên luật !-d ở cuối BỎ QUA "/" (gây 403).
+    # Phải route riêng trang chủ vào Laravel.
+    RewriteRule ^$ public/index.php [L]
+
     # Serve file tĩnh từ public/ nếu tồn tại (css/js/tinymce/storage...).
     RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
     RewriteRule ^(.*)$ public/$1 [L]
