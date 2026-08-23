@@ -10,13 +10,18 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::updateOrCreate(
-            ['email' => 'admin@cotuong.test'],
-            [
-                'name'     => 'Quản trị viên',
-                'password' => Hash::make('cotuong@2026'),
-                'role'     => 'admin',
-            ]
+        $email = env('ADMIN_EMAIL', 'admin@cotuong.test');
+        // Ưu tiên ADMIN_PASSWORD trong .env (đặt mật khẩu riêng lúc deploy). Nếu không có mới
+        // dùng mặc định — nhưng repo là PUBLIC nên PHẢI đổi ngay bằng: php artisan cotuong:admin-password
+        $password = env('ADMIN_PASSWORD', 'cotuong@2026');
+
+        // firstOrCreate: KHÔNG ghi đè mật khẩu nếu tài khoản đã tồn tại (giữ mật khẩu đã đổi).
+        $user = User::firstOrCreate(
+            ['email' => $email],
+            ['name' => 'Quản trị viên', 'password' => Hash::make($password), 'role' => 'admin']
         );
+        if ($user->role !== 'admin') {
+            $user->update(['role' => 'admin']);
+        }
     }
 }
