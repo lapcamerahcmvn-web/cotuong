@@ -1,0 +1,55 @@
+# Root .htaccess — hosting trỏ document root vào GỐC dự án (không phải public/).
+# Chặn file nhạy cảm + rewrite mọi request động vào public/index.php. (Tương tự laravel13-shop.)
+
+# Chặn truy cập trực tiếp file cấu hình/nhạy cảm ở gốc.
+<FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|artisan|README\.md|phpunit\.xml(\.dist)?|vite\.config\.js|\.env.*)$">
+    Require all denied
+</FilesMatch>
+
+# Chặn file sao lưu/tạm/log bị bỏ quên ở thư mục công khai.
+<FilesMatch "(?i)\.(bak|bk|backup|old|orig|save|swp|swo|tmp|temp|log|sql|sh|dist|inc)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(?i)^(error_log|access_log|\.gitignore|\.gitattributes|\.editorconfig|.*~)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Chặn thư mục nhạy cảm.
+    RewriteRule ^(vendor|storage/logs|storage/framework|bootstrap/cache|database|tests|node_modules|tools|\.claude)/ - [F,L]
+
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # 301 /public/... → /...
+    RewriteRule ^public/(.*)$ /$1 [R=301,L]
+    RewriteRule ^public$ / [R=301,L]
+
+    # www → non-www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+    # HTTP → HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Serve file tĩnh từ public/ nếu tồn tại (css/js/tinymce/storage...).
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Asset không tồn tại → trả 404 tại web server, không khởi động Laravel.
+    RewriteCond %{REQUEST_URI} \.(css|js|map|jpe?g|png|gif|webp|avif|svg|ico|woff2?|ttf|eot)$ [NC]
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} !-f
+    RewriteRule ^ - [R=404,L]
+
+    # Mọi request động → public/index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ public/index.php [L]
+</IfModule>

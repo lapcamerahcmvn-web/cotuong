@@ -11,10 +11,16 @@
 - Khi biên soạn thêm bài ở local → chạy `cotuong:export-content` lại → commit `content.json`.
 
 ## Lần đầu deploy (SSH vào hosting)
+> Hosting trỏ document root của subdomain vào CHÍNH thư mục web (VD `hoccotuong`), không
+> phải `/public`. Root `.htaccess` (đã có trong repo) lo việc rewrite vào `public/`. Vì thư
+> mục web đã tồn tại (không rỗng), KHÔNG dùng `git clone` — dùng git init + fetch + reset:
 ```bash
-cd ~/   # tới thư mục chứa web
-git clone https://github.com/lapcamerahcmvn-web/cotuong.git hocotuong
-cd hocotuong
+cd ~/hoccotuong           # thư mục web của subdomain (đang đứng sẵn ở đây)
+git init
+git remote add origin https://github.com/lapcamerahcmvn-web/cotuong.git
+git fetch origin
+git reset --hard origin/main      # kéo toàn bộ code về (ghi đè, cẩn thận nếu có file cũ)
+
 composer install --no-dev --optimize-autoloader
 cp .env.example .env
 php artisan key:generate
@@ -25,8 +31,11 @@ php artisan migrate --force
 php artisan db:seed --force            # tạo admin + nạp 14 bài (AdminUserSeeder + ContentSeeder)
 php artisan storage:link
 php artisan config:cache && php artisan route:cache && php artisan view:cache
-# Document root của subdomain phải trỏ vào .../hocotuong/public
+# PHP version của subdomain đặt 8.3+ (Laravel 13). Không cần trỏ docroot vào /public —
+# root .htaccess đã tự rewrite.
 ```
+> ⚠️ Nếu `git reset --hard` báo lỗi vì có file trùng (VD index.html mặc định), xóa file đó
+> rồi chạy lại, hoặc `git clean -fd` sau khi fetch.
 
 ## Cập nhật các lần sau
 ```bash
