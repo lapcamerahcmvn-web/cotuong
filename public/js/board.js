@@ -1,0 +1,188 @@
+/* Học Cờ Tướng — bàn cờ tương tác (vanilla JS, không phụ thuộc jQuery/Alpine).
+   Render FEN từng bước đã tính sẵn server-side. Auto-init mọi [data-xqboard] chứa 1
+   <script type="application/json"> cấu hình: { initialFen, steps: [{fen,caption,side,iccs}] }. */
+(function () {
+  'use strict';
+
+  // Ký tự quân theo lối truyền thống: Đỏ và Đen dùng chữ khác nhau cho cùng loại quân.
+  var PIECES = {
+    K: { c: '帥', red: true }, A: { c: '仕', red: true }, B: { c: '相', red: true },
+    N: { c: '傌', red: true }, R: { c: '俥', red: true }, C: { c: '炮', red: true }, P: { c: '兵', red: true },
+    k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' }
+  };
+
+  function fenToBoard(fen) {
+    var board = new Array(90).fill(null);
+    var rows = (fen || '').split(' ')[0].split('/');
+    for (var rank = 0; rank < rows.length && rank < 10; rank++) {
+      var file = 0, row = rows[rank];
+      for (var i = 0; i < row.length; i++) {
+        var ch = row[i];
+        if (ch >= '1' && ch <= '9') file += +ch;
+        else { board[rank * 9 + file] = ch; file++; }
+      }
+    }
+    return board;
+  }
+
+  // iccs "h2e2" -> {from:[file,rank], to:[file,rank]} theo hệ toạ độ hiển thị (rank 0 = trên).
+  function iccsToSquares(iccs) {
+    if (!iccs || iccs.length < 4) return null;
+    function sq(a, b) {
+      var f = a.charCodeAt(0) - 97;        // a-i -> 0-8
+      var r = 9 - (b.charCodeAt(0) - 48);  // '9'->0 (top) ... '0'->9 (bottom)
+      return [f, r];
+    }
+    return { from: sq(iccs[0], iccs[1]), to: sq(iccs[2], iccs[3]) };
+  }
+
+  function renderBoard(fen, lastMove) {
+    var M = 26, CW = 52, CH = 52;
+    var W = M * 2 + CW * 8, H = M * 2 + CH * 9;
+    function X(f) { return M + f * CW; }
+    function Y(r) { return M + r * CH; }
+    var board = fenToBoard(fen);
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Bàn cờ tướng">';
+    s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" rx="10" fill="var(--board-bg)"/>';
+    for (var r = 0; r < 10; r++) s += line(X(0), Y(r), X(8), Y(r));
+    for (var f = 0; f < 9; f++) {
+      if (f === 0 || f === 8) s += line(X(f), Y(0), X(f), Y(9));
+      else { s += line(X(f), Y(0), X(f), Y(4)); s += line(X(f), Y(5), X(f), Y(9)); }
+    }
+    s += line(X(3), Y(0), X(5), Y(2)) + line(X(5), Y(0), X(3), Y(2));
+    s += line(X(3), Y(7), X(5), Y(9)) + line(X(5), Y(7), X(3), Y(9));
+    s += '<text x="' + ((X(1) + X(3)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--board-line)" opacity=".5" font-family="serif" letter-spacing="6">楚河</text>';
+    s += '<text x="' + ((X(5) + X(7)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--board-line)" opacity=".5" font-family="serif" letter-spacing="6">漢界</text>';
+    if (lastMove) {
+      [lastMove.from, lastMove.to].forEach(function (sq) {
+        if (sq) s += '<circle cx="' + X(sq[0]) + '" cy="' + Y(sq[1]) + '" r="22" fill="var(--highlight)"/>';
+      });
+    }
+    for (var i = 0; i < 90; i++) {
+      var chr = board[i]; if (!chr) continue;
+      var p = PIECES[chr]; if (!p) continue;
+      var ff = i % 9, rr = Math.floor(i / 9);
+      var col = p.red ? 'var(--red)' : 'var(--black-pc)';
+      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="21" fill="var(--surface)" stroke="' + col + '" stroke-width="2"/>';
+      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
+      s += '<text x="' + X(ff) + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
+    }
+    s += '</svg>';
+    return s;
+  }
+  function line(x1, y1, x2, y2) {
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--board-line)" stroke-width="1.4"/>';
+  }
+
+  function initBoard(root) {
+    var cfgEl = root.querySelector('script[type="application/json"]');
+    if (!cfgEl) return;
+    var cfg;
+    try { cfg = JSON.parse(cfgEl.textContent); } catch (e) { return; }
+    var steps = cfg.steps || [];
+    var startFen = cfg.initialFen || 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+
+    var holder = root.querySelector('[data-xq-holder]');
+    var capStep = root.querySelector('[data-xq-capstep]');
+    var capText = root.querySelector('[data-xq-captext]');
+    var pill = root.querySelector('[data-xq-pill]');
+    var list = root.querySelector('[data-xq-list]');
+    var idx = -1;
+
+    function draw() {
+      var cur = idx < 0 ? { fen: startFen } : steps[idx];
+      var lm = idx < 0 ? null : iccsToSquares(cur.iccs);
+      holder.innerHTML = renderBoard(cur.fen, lm);
+      if (idx < 0) {
+        if (capStep) capStep.textContent = 'Thế cờ mở đầu';
+        if (capText) capText.textContent = steps.length ? 'Bấm “Tiến” để đi từng nước và đọc diễn giải.' : 'Bài học này chưa có nước đi minh hoạ.';
+        if (pill) pill.textContent = 'Thế mở';
+      } else {
+        var sideLabel = cur.side === 'den' ? 'Đen' : (cur.side === 'do' ? 'Đỏ' : '');
+        var mv = cur.wxf ? (' · ' + cur.wxf) : '';
+        if (capStep) capStep.textContent = 'Nước ' + (idx + 1) + (sideLabel ? ' — ' + sideLabel : '') + mv;
+        if (capText) capText.textContent = cur.caption || (cur.wxf ? ('Nước đi: ' + cur.wxf + '.') : '(chưa có lời giảng cho nước này)');
+        if (pill) pill.textContent = 'Nước ' + (idx + 1) + '/' + steps.length;
+      }
+      setDisabled('first', idx < 0); setDisabled('prev', idx < 0);
+      setDisabled('next', idx >= steps.length - 1); setDisabled('last', idx >= steps.length - 1);
+      if (list) Array.prototype.forEach.call(list.children, function (el, i) {
+        var on = i === idx;
+        el.classList.toggle('active', on);
+        if (on && el.scrollIntoView) el.scrollIntoView({ block: 'nearest' });
+      });
+    }
+    function setDisabled(name, v) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.disabled = v; }
+    function go(i) {
+        idx = Math.max(-1, Math.min(steps.length - 1, i));
+        draw();
+        // Báo đã xem hết các nước (dùng cho theo dõi tiến độ học).
+        if (steps.length > 0 && idx === steps.length - 1) {
+            document.dispatchEvent(new CustomEvent('xq:viewed-all-moves'));
+        }
+    }
+
+    if (list) {
+      var fullMode = list.classList.contains('move-list--full');
+      steps.forEach(function (st, i) {
+        var row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'move-row';
+        var sideLabel = st.side === 'den' ? 'Đen' : (st.side === 'do' ? 'Đỏ' : '');
+        var dot = st.side === 'den' ? '<span class="side-dot den"></span>' : '<span class="side-dot do"></span>';
+        var label = st.wxf ? escapeHtml(st.wxf) : sideLabel;
+        var cap = st.caption || '';
+        if (!fullMode && cap.length > 40) cap = cap.slice(0, 40) + '…';
+        row.innerHTML = '<span class="num">' + (i + 1) + '.</span><span class="mv">' + dot + '<span class="mv-label">' + label + '</span>' +
+          (cap ? '<span class="cap-inline">' + escapeHtml(cap) + '</span>' : '') + '</span>';
+        row.title = sideLabel + (st.wxf ? ' — ' + st.wxf : '');
+        row.addEventListener('click', function () { go(i); });
+        list.appendChild(row);
+      });
+    }
+    bind('first', function () { go(-1); });
+    bind('prev', function () { go(idx - 1); });
+    bind('next', function () { go(idx + 1); });
+    bind('last', function () { go(steps.length - 1); });
+    function bind(name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
+
+    // Phóng to bàn cờ toàn màn hình.
+    var boardCard = root.querySelector('[data-xq-boardcard]');
+    var fsBtn = root.querySelector('[data-xq-fs]');
+    if (fsBtn && boardCard) {
+      fsBtn.addEventListener('click', function () {
+        var el = boardCard;
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else if (el.requestFullscreen) {
+          el.requestFullscreen().catch(function () { boardCard.classList.toggle('xq-fs-fallback'); });
+        } else {
+          boardCard.classList.toggle('xq-fs-fallback'); // trình duyệt cũ: giả lập bằng CSS
+        }
+      });
+      document.addEventListener('fullscreenchange', function () {
+        boardCard.classList.toggle('xq-fs-on', !!document.fullscreenElement);
+      });
+    }
+
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
+    });
+    draw();
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function initAll() {
+    document.querySelectorAll('[data-xqboard]').forEach(initBoard);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
+  else initAll();
+
+  window.XiangqiBoard = { render: renderBoard };
+})();

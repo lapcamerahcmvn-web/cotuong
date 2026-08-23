@@ -1,0 +1,23 @@
+# Node (tools/xqf-decoder và các tool script khác)
+node_modules/
+
+# Nội dung có bản quyền — KHÔNG BAO GIỜ commit (xem CLAUDE.md mục Bản Quyền & Bảo Mật)
+tools/xqf-decoder/fixtures/
+storage/app/private/cotuong-sources/
+
+# Laravel mặc định (áp dụng khi composer create-project chạy — Phase 1)
+/vendor
+/node_modules
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
+/storage/*.key
+/public/build

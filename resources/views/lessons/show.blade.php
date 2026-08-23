@@ -1,0 +1,103 @@
+@extends('layouts.app')
+
+@section('title', \Illuminate\Support\Str::limit($lesson->seo_title_formatted, 60, ''))
+@section('description', \Illuminate\Support\Str::limit(strip_tags($lesson->seo_description ?: $lesson->summary ?: ($lesson->title . ' — học cờ tướng qua bàn cờ tương tác, diễn giải từng nước đi.')), 155))
+
+@push('head')
+@php
+    $ldArticle = array_filter([
+        '@context' => 'https://schema.org',
+        '@type' => 'Article',
+        'headline' => $lesson->title,
+        'inLanguage' => 'vi-VN',
+        'author' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
+        'publisher' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
+        'datePublished' => $lesson->published_at?->toIso8601String(),
+        'dateModified' => $lesson->updated_at?->toIso8601String(),
+    ]);
+
+    $crumbs = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Trang chủ', 'item' => route('home')]];
+    if ($lesson->phase) {
+        $crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => $lesson->phase_label, 'item' => route('phase', $lesson->phase)];
+    }
+    $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $lesson->title];
+    $ldCrumb = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $crumbs];
+@endphp
+<script type="application/ld+json">{!! json_encode($ldArticle, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+<script type="application/ld+json">{!! json_encode($ldCrumb, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@endpush
+
+@section('content')
+<nav class="crumbs" aria-label="breadcrumb">
+    <a href="{{ route('home') }}">Trang chủ</a> ›
+    @if($lesson->phase)<a href="{{ route('phase', $lesson->phase) }}">{{ $lesson->phase_label }}</a> ›@endif
+    @if($lesson->series)<a href="{{ route('series', $lesson->series->slug) }}">{{ \Illuminate\Support\Str::limit($lesson->series->name, 30) }}</a> ›@endif
+    <span>{{ \Illuminate\Support\Str::limit($lesson->title, 40) }}</span>
+</nav>
+
+<div style="padding:8px 0 60px;">
+    <h1 class="title">{{ $lesson->title }}</h1>
+    <div class="meta-row">
+        <span class="tag level">{{ $lesson->level_label }}</span>
+        @if($lesson->series)<span class="tag series">{{ \Illuminate\Support\Str::limit($lesson->series->name, 34) }}</span>@endif
+        <span class="tag count">{{ $lesson->move_count }} nước đi</span>
+        <span id="lesson-done-badge" class="tag" style="background:var(--jade-soft);color:var(--jade);{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
+    </div>
+
+    <x-chess-board
+        :initial-fen="$lesson->initial_fen"
+        :steps="$lesson->steps"
+        :show-list="$lesson->steps->isNotEmpty()" />
+
+    @if($lesson->content)
+        <article class="prose">{!! $lesson->content !!}</article>
+    @elseif($lesson->summary)
+        <article class="prose"><p>{{ $lesson->summary }}</p></article>
+    @else
+        <div class="notice" style="margin-top:28px;max-width:720px;">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
+    @endif
+
+    <nav style="display:flex;justify-content:space-between;gap:12px;margin-top:36px;flex-wrap:wrap;max-width:720px;">
+        @if($prev)<a href="{{ route('lessons.show', $prev->slug) }}" class="btn">‹ {{ \Illuminate\Support\Str::limit($prev->title, 26) }}</a>@else<span></span>@endif
+        @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
+    </nav>
+</div>
+
+@auth
+@push('scripts')
+<script>
+// Theo dõi tiến độ học (chỉ user đăng nhập): đọc ≥5 phút + xem hết nước → đánh dấu đã học.
+(function(){
+    var lessonId = {{ $lesson->id }};
+    var url = "{{ route('progress.store', $lesson->id) }}";
+    var token = document.querySelector('meta[name=csrf-token]').content;
+    var seconds = 0, viewedAll = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }}, done = false, dirty = true;
+
+    document.addEventListener('xq:viewed-all-moves', function(){ if(!viewedAll){ viewedAll = true; dirty = true; } });
+
+    setInterval(function(){ if(!document.hidden){ seconds += 15; dirty = true; } }, 15000);
+
+    function send(){
+        if (done || !dirty) return;
+        dirty = false;
+        fetch(url, {
+            method:'POST',
+            headers:{'Content-Type':'application/json','X-CSRF-TOKEN':token,'Accept':'application/json'},
+            body: JSON.stringify({ read_seconds: seconds, viewed_all_moves: viewedAll })
+        }).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+            if (d && d.completed) { done = true; showBadge(); }
+        }).catch(function(){});
+    }
+    setInterval(send, 30000);
+    window.addEventListener('beforeunload', send);
+    document.addEventListener('visibilitychange', function(){ if(document.hidden) send(); });
+
+    function showBadge(){
+        var el = document.getElementById('lesson-done-badge');
+        if (el) el.style.display = 'inline-flex';
+    }
+})();
+</script>
+@endpush
+@endauth
+@endsection
