@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Admin\SourceAssetController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProgressController;
@@ -28,6 +29,8 @@ Route::post('/dang-xuat', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan', [AccountController::class, 'index'])->name('account.index');
     Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store');
+    Route::post('/bai-hoc/{lesson:slug}/binh-luan', [CommentController::class, 'store'])->name('comment.store')->middleware('throttle:15,1');
+    Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1');
 });
 
 // ---- Admin ----

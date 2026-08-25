@@ -59,10 +59,16 @@
         <div class="notice" style="margin-top:28px;max-width:720px;">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
     @endif
 
-    <nav style="display:flex;justify-content:space-between;gap:12px;margin-top:36px;flex-wrap:wrap;max-width:720px;">
+    <div style="margin-top:28px;max-width:720px;">
+        <x-share-buttons :url="url()->current()" :title="$lesson->title" />
+    </div>
+
+    <nav style="display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;max-width:720px;">
         @if($prev)<a href="{{ route('lessons.show', $prev->slug) }}" class="btn">‹ {{ \Illuminate\Support\Str::limit($prev->title, 26) }}</a>@else<span></span>@endif
         @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
     </nav>
+
+    @include('lessons._comments')
 </div>
 
 @auth

@@ -281,3 +281,39 @@ body.xq-fs-lock { overflow: hidden; }
 [data-xq-boardcard].xq-fs .caption-box { max-width: min(94vw, 640px); width: 100%; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ---- Chia sẻ (Facebook/Zalo/Copy) ---- */
+.share-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.share-label { font-size:13px; font-weight:600; color:var(--ink-faint); }
+.share-btn { display:inline-flex; align-items:center; gap:6px; border:none; cursor:pointer; font-size:13px; font-weight:700; padding:7px 12px; border-radius:10px; color:#fff; font-family:inherit; line-height:1; }
+.share-fb { background:#1877f2; } .share-fb:hover { background:#1568d8; }
+.share-zalo { background:#0068ff; } .share-zalo:hover { background:#0057d6; }
+.share-copy { background:var(--surface-2); color:var(--ink-soft); border:1px solid var(--line); }
+.share-copy:hover { background:var(--line); }
+.share-copy.is-copied { background:var(--jade-soft); color:var(--jade); border-color:var(--jade); }
+
+/* ---- Bình luận ---- */
+.comments { margin-top:44px; max-width:720px; }
+.comments-title { font-size:20px; font-weight:800; margin:0 0 18px; }
+.comment-form { display:flex; gap:10px; align-items:flex-start; margin-bottom:26px; }
+.comment-input { width:100%; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:12px; padding:10px 12px; font-family:inherit; font-size:15px; line-height:1.55; resize:vertical; }
+.comment-input:focus { outline:none; border-color:var(--red); }
+.comment-ava { width:38px; height:38px; border-radius:999px; flex-shrink:0; overflow:hidden; display:grid; place-items:center; background:var(--red); color:#fff; font-weight:800; font-size:16px; }
+.comment-ava img { width:100%; height:100%; object-fit:cover; }
+.comment-list { display:flex; flex-direction:column; gap:22px; }
+.comment-item { display:flex; gap:10px; }
+.comment-item.is-reply .comment-ava { width:30px; height:30px; font-size:13px; }
+.comment-main { flex:1; min-width:0; }
+.comment-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.comment-name { font-weight:700; font-size:14.5px; color:var(--ink); }
+.comment-time { font-size:12.5px; color:var(--ink-faint); }
+.comment-text { font-size:15px; color:var(--ink); margin:3px 0 7px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.comment-actions { display:flex; align-items:center; gap:18px; }
+.cm-btn { display:inline-flex; align-items:center; gap:5px; background:none; border:none; cursor:pointer; font-family:inherit; font-size:13px; font-weight:600; color:var(--ink-soft); padding:0; }
+.cm-btn:hover { color:var(--ink); text-decoration:none; }
+.cm-like.is-liked { color:var(--red); }
+.cm-like.is-liked svg { fill:var(--red); stroke:var(--red); }
+.cm-count { font-variant-numeric:tabular-nums; }
+.comment-replies { margin:16px 0 0 24px; padding-left:14px; border-left:2px solid var(--line); display:flex; flex-direction:column; gap:16px; }
+.reply-form { margin:14px 0 0 48px; }
+@media (max-width:640px){ .reply-form { margin-left:0; } .comment-replies { margin-left:12px; } }

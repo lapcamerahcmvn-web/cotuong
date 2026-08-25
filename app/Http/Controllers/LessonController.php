@@ -73,6 +73,15 @@ class LessonController extends Controller
                 ->where('lesson_id', $lesson->id)->where('status', 'completed')->exists();
         }
 
-        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed'));
+        // Bình luận (gốc + trả lời 1 cấp), sắp theo "quan tâm nhất" (nhiều like → mới).
+        $comments = \App\Models\LessonComment::with(['user', 'replies.user'])
+            ->where('lesson_id', $lesson->id)->whereNull('parent_id')
+            ->orderByDesc('likes_count')->orderByDesc('created_at')->get();
+        $commentCount = \App\Models\LessonComment::where('lesson_id', $lesson->id)->count();
+        $likedCommentIds = auth()->check()
+            ? \Illuminate\Support\Facades\DB::table('comment_likes')->where('user_id', auth()->id())->pluck('comment_id')->all()
+            : [];
+
+        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds'));
     }
 }
