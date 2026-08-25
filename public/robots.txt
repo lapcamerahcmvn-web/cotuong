@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+Disallow: /tai-khoan
+Disallow: /dang-nhap
+Disallow: /tim-kiem
+
+Sitemap: https://hoccotuong.top/sitemap.xml

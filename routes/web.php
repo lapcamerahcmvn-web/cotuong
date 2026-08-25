@@ -10,9 +10,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 
 // ---- Đăng nhập thống nhất (Google cho người học + email/mật khẩu cho admin) ----
