@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-08-25T11:49:39+00:00",
+    "exported_at": "2026-08-25T12:31:06+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -26,6 +26,15 @@
             "phase": "trung-cuoc",
             "description": "13 đội hình sát chiêu thực dụng — từ hai Xe mạnh mẽ đến các đòn quân nhẹ Mã, Pháo, Chốt. Mỗi bài một thế sát điển hình có biến, kèm bàn cờ tương tác đi từng nước tới chiếu hết.",
             "planned_total": 13,
+            "sort_order": 0
+        },
+        {
+            "name": "Nhập Môn Cờ Úp",
+            "slug": "nhap-mon-co-up",
+            "game_mode": "co-up",
+            "phase": "nhap-mon",
+            "description": "Học cờ úp từ số 0: luật chơi, cách đi quân úp, lật quân, khác biệt với cờ tướng và những mẹo nền tảng cho người mới.",
+            "planned_total": 6,
             "sort_order": 0
         }
     ],
@@ -14923,6 +14932,27 @@
                     "is_flip_reveal": false
                 }
             ]
+        },
+        {
+            "series_slug": "nhap-mon-co-up",
+            "order_in_series": 1,
+            "game_mode": "co-up",
+            "phase": "nhap-mon",
+            "title": "Cờ Úp Là Gì? Luật Chơi Cờ Úp Đầy Đủ Cho Người Mới",
+            "slug": "co-up-la-gi-luat-choi-co-up",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": null,
+            "move_count": 0,
+            "summary": "Cờ úp là gì, luật chơi cờ úp từ A–Z: cách bày quân úp, cách đi quân úp theo ô xuất phát, luật lật quân lộ mặt thật và cách phân thắng bại. Hướng dẫn dễ hiểu cho người mới.",
+            "content": "<p><strong>Cờ úp<\/strong> (còn gọi là cờ úp bí) là một biến thể của cờ tướng: chơi trên cùng bàn cờ và cùng bộ 32 quân, nhưng phần lớn quân được <strong>úp sấp mặt và tráo ngẫu nhiên<\/strong> — bạn không biết quân của mình và của đối thủ thật sự là gì cho đến khi chúng được lật. Chính yếu tố bất ngờ này khiến cờ úp hấp dẫn, giàu tính toán xác suất và cân bằng hơn giữa người chơi mạnh và yếu.<\/p><h2>Cờ úp là gì?<\/h2><p>Cờ úp giữ nguyên luật đi quân, luật chiếu tướng và mục tiêu của cờ tướng, chỉ thêm một lớp \"che giấu\": danh tính các quân bị úp. Người chơi phải vừa tính nước đi, vừa suy đoán quân úp của mình mạnh hay yếu, và khai thác thời điểm lật quân sao cho có lợi nhất. Vì thế cờ úp thường được xem là môn cờ của <strong>bản lĩnh và may rủi có kiểm soát<\/strong>.<\/p><h2>Cách bày quân cờ úp<\/h2><ul><li>Hai <strong>Tướng<\/strong> (Soái\/Tướng) để <strong>ngửa<\/strong> ngay từ đầu, đặt đúng vị trí gốc trong cung như cờ tướng — Tướng không bao giờ bị úp.<\/li><li>30 quân còn lại của hai bên (mỗi bên 15 quân: 2 Xe, 2 Pháo, 2 Mã, 2 Tượng, 2 Sĩ và 5 Tốt) được <strong>tráo ngẫu nhiên rồi đặt úp<\/strong> lên đúng 15 ô xuất phát còn lại của cờ tướng.<\/li><li>Kết quả: bàn cờ nhìn y hệt thế khai cuộc cờ tướng, nhưng mỗi ô (trừ hai Tướng) là một quân úp bí ẩn.<\/li><\/ul><h2>Cách đi quân úp (khi chưa lật)<\/h2><p>Đây là quy tắc cốt lõi, khác biệt lớn nhất của cờ úp: <strong>quân úp đi theo binh chủng của Ô XUẤT PHÁT mà nó đang đứng<\/strong>, chứ không theo mặt thật (vì mặt thật còn giấu).<\/p><ul><li>Quân úp ở ô góc (vị trí Xe gốc) → đi như <strong>Xe<\/strong>.<\/li><li>Quân úp ở ô cạnh góc (vị trí Mã gốc) → đi như <strong>Mã<\/strong>.<\/li><li>Tương tự cho các ô Tượng, Sĩ, Pháo gốc → đi như Tượng \/ Sĩ \/ Pháo.<\/li><li>Năm quân úp ở hàng Tốt → đi như <strong>Tốt<\/strong> (tiến thẳng, qua sông mới đi ngang).<\/li><\/ul><h2>Lật quân — lộ mặt thật<\/h2><p>Khi một quân úp <strong>đi nước đầu tiên<\/strong>, nó được <strong>lật ngửa để lộ binh chủng thật<\/strong>. Từ nước đi sau trở đi, nó di chuyển theo đúng quân thật của mình.<\/p><p>Ví dụ: một quân đứng ở ô Mã gốc — nước đầu nó đi như Mã; khi lật ra hoá là <strong>Pháo<\/strong>, thì từ đó nó đi và ăn như Pháo. Nghệ thuật của cờ úp nằm ở chỗ chọn <strong>đúng quân, đúng thời điểm để lật<\/strong>: lật trúng Xe, Pháo, Mã mạnh và triển khai được ngay thì chiếm ưu thế lớn.<\/p><h2>Cách phân thắng bại<\/h2><ul><li>Mục tiêu như cờ tướng: <strong>chiếu bí<\/strong> Tướng đối phương (Tướng bị chiếu mà không còn nước gỡ) là thắng.<\/li><li>Vẫn áp dụng luật cấm <strong>lộ mặt Tướng<\/strong> (hai Tướng không được đối mặt trực tiếp trên cùng một cột trống).<\/li><li>Hết nước đi hợp lệ mà không bị chiếu thì xử hoà theo thông lệ; các luật cấm chiếu\/đuổi lặp vô hạn cũng được áp dụng (xem bài riêng về luật đuổi trong cờ úp).<\/li><\/ul><h2>Vì sao cờ úp ngày càng được ưa chuộng<\/h2><p>Cờ úp giữ được chiều sâu chiến thuật của cờ tướng nhưng thêm yếu tố ẩn thông tin, nên mỗi ván là một trải nghiệm mới. Người mới không bị \"chấp\" quá nặng vì ai cũng phải dò quân, còn cao thủ vẫn thắng nhờ tính toán xác suất và khai thác thế cờ tốt hơn. Đây cũng là lý do cờ úp là mảng nội dung còn rất ít nơi hướng dẫn bài bản — và là chỗ để bạn học nhanh, vượt lên.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cờ Úp Là Gì? Luật Chơi Cờ Úp Cho Người Mới",
+            "seo_description": "Luật chơi cờ úp đầy đủ cho người mới: cách bày quân úp, đi quân theo ô xuất phát, lật quân lộ mặt thật, cách thắng thua. Giải thích rõ ràng, dễ hiểu.",
+            "is_featured": false,
+            "steps": []
         }
     ]
 }
