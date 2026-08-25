@@ -8,7 +8,9 @@
   var PIECES = {
     K: { c: '帥', red: true }, A: { c: '仕', red: true }, B: { c: '相', red: true },
     N: { c: '傌', red: true }, R: { c: '俥', red: true }, C: { c: '炮', red: true }, P: { c: '兵', red: true },
-    k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' }
+    k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' },
+    // Quân ÚP (cờ úp): mặt sấp, chưa lộ binh chủng. X = Đỏ úp, x = Đen úp.
+    X: { up: true, red: true }, x: { up: true }
   };
 
   function fenToBoard(fen) {
@@ -63,9 +65,18 @@
       var p = PIECES[chr]; if (!p) continue;
       var ff = i % 9, rr = Math.floor(i / 9);
       var col = p.red ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)';
-      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="21" fill="var(--xq-disc,#f6ecd6)" stroke="' + col + '" stroke-width="2"/>';
-      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
-      s += '<text x="' + X(ff) + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
+      var cx = X(ff), cy = Y(rr);
+      if (p.up) {
+        // Quân úp: chip mặt sấp — đĩa đặc màu bên, vành kem + hoa văn tròn đồng tâm, không lộ chữ.
+        s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="' + col + '"/>';
+        s += '<circle cx="' + cx + '" cy="' + cy + '" r="16.5" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".85"/>';
+        s += '<circle cx="' + cx + '" cy="' + cy + '" r="9" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".6"/>';
+        s += '<circle cx="' + cx + '" cy="' + cy + '" r="2.6" fill="var(--xq-disc,#f6ecd6)" opacity=".9"/>';
+        continue;
+      }
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="var(--xq-disc,#f6ecd6)" stroke="' + col + '" stroke-width="2"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
+      s += '<text x="' + cx + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
     }
     s += '</svg>';
     return s;

@@ -317,3 +317,6 @@ body.xq-fs-lock { overflow: hidden; }
 .comment-replies { margin:16px 0 0 24px; padding-left:14px; border-left:2px solid var(--line); display:flex; flex-direction:column; gap:16px; }
 .reply-form { margin:14px 0 0 48px; }
 @media (max-width:640px){ .reply-form { margin-left:0; } .comment-replies { margin-left:12px; } }
+
+/* Ghi chú dưới bàn cờ minh hoạ tĩnh (bài không có nước đi, VD cờ úp) */
+.board-note { margin:14px 0 0; font-size:13.5px; color:var(--ink-soft); text-align:center; line-height:1.5; }
