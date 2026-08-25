@@ -270,3 +270,31 @@ Lesson ID 272-284. Nội dung bài giảng đội hình viết tay trong scratch
 **Còn có thể mở rộng**: mỗi đội hình sát pháp còn 30-200 file PGN chưa import (mới lấy 1 bài/đội
 hình làm MVP); `TTTK VUOT QUAN AI` (359 file) và `TRUNG CUC SAT CHIEU` (104 file, dài 13-33 nước,
 nâng cao) chưa dùng. Parser đã sẵn sàng import hàng loạt nếu cần.
+
+---
+
+## Cập nhật 2026-08-25 (2) — Chuyên đề Cờ Úp + SEO sitemap
+
+**Kéo phụ đề video khóa học thầy Hà Văn Tiến** (breakthrough): 4 playlist "Lớp Cờ Úp" là
+PRIVATE nhưng VIDEO LẺ là unlisted → `yt-dlp --write-auto-sub --sub-lang vi --sub-format json3
+"https://www.youtube.com/watch?v=<ID>"` lấy được phụ đề Việt KHÔNG cần cookie (cookie Chrome/Edge
+bị App-Bound Encryption khóa, không đọc được khi trình duyệt đang mở). User dán URL video từng khóa.
+
+**Đã xong + PUSH (aa94010)**:
+- **Nhập Môn Cờ Úp** (series #4): bài "Cờ Úp Là Gì? Luật Chơi Cờ Úp" (luật chuẩn, tự soạn).
+- **Cờ Úp Sơ Cấp 1** (series #5): 10 bài soạn LẠI bằng lời riêng từ phụ đề thầy (mở Xe/Pháo sớm,
+  định hình chiến thuật/điểm yếu, tuyệt đối hóa lợi thế, phòng thủ thế yếu, chuyển hóa ưu thế,
+  cờ tàn thực dụng). game_mode=co-up, phase=null (tránh đếm nhầm giai đoạn cờ tướng + breadcrumb sạch).
+- **SEO sitemap.xml động** + robots.txt (SitemapController) — gap lớn nhất của SEO plan.
+- show.blade: chỉ render bàn cờ khi có FEN/nước đi (bài prose cờ úp hiển thị sạch).
+
+**CÒN DANG DỞ**:
+- **Sơ Cấp 2** (10 bài): phụ đề ĐÃ tải + trích text ở `scratchpad/subs2/bai1-10.txt`, nhưng agent
+  chắt lọc DỪNG vì **chạm giới hạn chi tiêu tháng** (monthly spend limit). Chờ nâng hạn mức/chu kỳ mới.
+- Chưa có URL: **Nâng Cao Đặc Biệt 2024**, **Đặc Biệt 02/2024**, **Cờ Úp Tàn Cuộc Tổng Hợp**.
+- Cụm Nhập Môn Cờ Úp mới có 1 bài (cần thêm: khác cờ tướng, luật đuổi dài, giá trị quân úp, mẹo).
+
+**Quy trình soạn bài cờ úp**: tải phụ đề → trích text json3 → (agent) chắt lọc ghi chú →
+viết lại bằng lời riêng (bản quyền) → JSON vào scratchpad/coup-sc*/ → tinker glob upsert vào series.
+
+**Deploy**: `git reset --hard origin/main` → `php artisan db:seed --class=Database\Seeders\ContentSeeder --force` → clear+cache. content.json: 5 chuỗi / 100 bài.
