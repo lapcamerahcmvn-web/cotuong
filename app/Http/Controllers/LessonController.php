@@ -36,7 +36,16 @@ class LessonController extends Controller
         $lessons = $series->publishedLessons()->orderBy('order_in_series')->get();
         abort_if($lessons->isEmpty(), 404);
 
-        return view('lessons.series', compact('series', 'lessons'));
+        // Bài đã học của người dùng đang đăng nhập → hiện dấu tích ✓ trong danh sách.
+        $completedIds = [];
+        if (auth()->check()) {
+            $completedIds = \App\Models\LessonProgress::where('user_id', auth()->id())
+                ->where('status', 'completed')
+                ->whereIn('lesson_id', $lessons->pluck('id'))
+                ->pluck('lesson_id')->all();
+        }
+
+        return view('lessons.series', compact('series', 'lessons', 'completedIds'));
     }
 
     // Trang bài học có bàn cờ tương tác: /bai-hoc/{lesson}

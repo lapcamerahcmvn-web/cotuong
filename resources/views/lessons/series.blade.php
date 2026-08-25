@@ -31,11 +31,16 @@
 
     <div class="lesson-list" style="margin-top:20px;">
         @foreach($lessons as $lesson)
-            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card">
-                <span class="li-num">{{ str_pad($lesson->order_in_series ?? $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+            @php $isDone = in_array($lesson->id, $completedIds ?? []); @endphp
+            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card{{ $isDone ? ' is-done' : '' }}">
+                @if($isDone)
+                    <span class="li-num" style="color:var(--jade);" title="Đã học">✓</span>
+                @else
+                    <span class="li-num">{{ str_pad($lesson->order_in_series ?? $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                @endif
                 <span>
                     <span class="li-title">{{ $lesson->title }}</span>
-                    <span class="li-sub">{{ $lesson->move_count }} nước đi · {{ $lesson->level_label }}</span>
+                    <span class="li-sub">{{ $lesson->move_count }} nước đi · {{ $lesson->level_label }}@if($isDone) · <span style="color:var(--jade);">đã học</span>@endif</span>
                 </span>
                 <span class="li-meta">→</span>
             </a>

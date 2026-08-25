@@ -24,17 +24,25 @@
     </div>
 
     @if($completed->isNotEmpty())
+        @php $completedList = $completed->values(); @endphp
         <h2 style="font-size:20px;font-weight:800;margin:0 0 12px;">✓ Bài đã học</h2>
         <div class="lesson-list" style="margin-bottom:30px;">
-            @foreach($completed as $p)
+            @foreach($completedList as $i => $p)
                 @if($p->lesson)
-                <a href="{{ route('lessons.show', $p->lesson->slug) }}" class="lesson-item card">
+                <a href="{{ route('lessons.show', $p->lesson->slug) }}" class="lesson-item card"
+                   @if($i >= 5) data-more-completed style="display:none;" @endif>
                     <span class="li-num" style="color:var(--jade);">✓</span>
                     <span><span class="li-title">{{ $p->lesson->title }}</span><span class="li-sub">Hoàn thành {{ optional($p->completed_at)->format('d/m/Y') }}</span></span>
                     <span class="li-meta">→</span>
                 </a>
                 @endif
             @endforeach
+            @if($completedList->count() > 5)
+                <button type="button" class="btn" id="more-completed-btn" style="width:100%;margin-top:4px;"
+                        onclick="document.querySelectorAll('[data-more-completed]').forEach(function(e){e.style.display='';});this.remove();">
+                    Hiện thêm {{ $completedList->count() - 5 }} bài đã học
+                </button>
+            @endif
         </div>
     @endif
 

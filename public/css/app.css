@@ -37,7 +37,7 @@
   :root:not([data-theme="light"]) {
     --bg: #141210; --surface: #1e1a15; --surface-2: #232019; --ink: #f3ede1;
     --ink-soft: #c1b8a6; --ink-faint: #8a8070; --line: #322c22;
-    --board-bg: #cbb079; --board-line: #6a4e24;
+    /* --board-bg/--board-line KHÔNG đổi theo theme: bàn cờ luôn dùng nền gỗ sáng cho dễ xem (đồng bộ desktop/mobile). */
     --red: #e56a42; --red-soft: #3a231a; --black-pc: #7fb3ad; --black-soft: #1c2b2c;
     --jade: #66b09e; --jade-soft: #16261f; --accent: #e56a42; --highlight: rgba(229,106,66,.26);
     --shadow-sm: 0 1px 2px rgba(0,0,0,.35); --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.5);
@@ -46,7 +46,7 @@
 :root[data-theme="dark"] {
   --bg: #141210; --surface: #1e1a15; --surface-2: #232019; --ink: #f3ede1;
   --ink-soft: #c1b8a6; --ink-faint: #8a8070; --line: #322c22;
-  --board-bg: #cbb079; --board-line: #6a4e24;
+  /* --board-bg/--board-line KHÔNG đổi theo theme (xem ghi chú ở block trên). */
   --red: #e56a42; --red-soft: #3a231a; --black-pc: #7fb3ad; --black-soft: #1c2b2c;
   --jade: #66b09e; --jade-soft: #16261f; --accent: #e56a42; --highlight: rgba(229,106,66,.26);
   --shadow-sm: 0 1px 2px rgba(0,0,0,.35); --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.5);
