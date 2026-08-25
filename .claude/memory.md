@@ -298,3 +298,23 @@ bị App-Bound Encryption khóa, không đọc được khi trình duyệt đang
 viết lại bằng lời riêng (bản quyền) → JSON vào scratchpad/coup-sc*/ → tinker glob upsert vào series.
 
 **Deploy**: `git reset --hard origin/main` → `php artisan db:seed --class=Database\Seeders\ContentSeeder --force` → clear+cache. content.json: 5 chuỗi / 100 bài.
+
+---
+
+## Cập nhật 2026-08-25 (3) — Nhập môn cờ tướng + tính năng cộng đồng + GEO
+
+**Xem `.claude/tien-do-va-ke-hoach.md`** — bảng điều khiển tiến độ + roadmap (6 chuỗi/108 bài).
+
+Đã push (tới commit 0f8d7ca):
+- **Nhập Môn Cờ Tướng (8 bài)** — luật chơi + 7 quân, bài quân có bàn cờ demo động (generator
+  `scratchpad/gen-nhapmon.js` sinh steps từ nước đi coord). ⚠️ Slug bỏ dấu TRÙNG: Tượng vs Tướng →
+  "cach-di-quan-tuong" → đã đổi Tướng thành "cach-di-quan-tuong-soai".
+- **Bàn cờ quân úp**: board.js vẽ X/x (chip sấp mặt); component có chế độ tĩnh (ẩn Tiến/Lùi khi 0 nước);
+  11 bài cờ úp có thế mở úp minh hoạ.
+- **Đăng ký tài khoản** email/mật khẩu (role hoc_vien) — /dang-ky.
+- **Bình luận + trả lời + Thích** (bảng lesson_comments/comment_likes, AJAX like/reply) + **chia sẻ FB/Zalo/copy**.
+- **Tài khoản**: 5 bài đã học + "Hiện thêm"; trang chuyên đề tích ✓; bàn cờ luôn nền sáng (bỏ override --board-bg theme tối).
+- **GEO (AI search)** như lapcamerahcm: `public/llms.txt`, robots mời AI bots + trỏ llms, `speakable` schema bài học.
+
+**Còn treo**: Cờ Úp Sơ Cấp 2 (phụ đề đã tải `scratchpad/subs2/`, CHỜ nâng hạn mức chi tiêu — agent chắt lọc
+dừng vì monthly spend limit) + 3 khóa cờ úp còn lại (chờ user dán URL). Xem roadmap để biết việc tiếp theo.

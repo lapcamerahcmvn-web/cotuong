@@ -41,8 +41,11 @@
 
 ### SEO kỹ thuật (theo mục 2B + 3 kế hoạch)
 - ✅ **sitemap.xml động** (trang chủ + giai đoạn + chuỗi Course + toàn bộ bài) + **robots.txt** (trỏ sitemap, chặn trang riêng tư).
-- ✅ **Structured data** đã có: `Article` (bài), `BreadcrumbList` (breadcrumb thật), `Course` (chuỗi), `Organization`, `WebSite`.
+- ✅ **Structured data** đã có: `Article` (+ `description`, `mainEntityOfPage`, `speakable`), `BreadcrumbList`, `Course`, `Organization`, `WebSite`.
 - ✅ Breadcrumb UI + prev/next trong chuỗi. Meta title/description/canonical/OG. Trang tài khoản/đăng nhập `noindex`.
+- ✅ **Tối ưu AI search (GEO)** — như lapcamerahcm: `public/llms.txt` (tổng quan site + hỏi đáp + gợi ý cho AI),
+  robots.txt mời AI crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, Google-Extended, PerplexityBot, ClaudeBot,
+  Claude-Web, anthropic-ai) + trỏ llms.txt, `speakable` schema trên bài học.
 
 ## Việc tiếp theo (ưu tiên theo kế hoạch SEO)
 
@@ -62,8 +65,9 @@
    (104, nâng cao) chưa dùng — nhân thêm khi cần.
 
 ### SEO nâng cao (mục 2A–2C kế hoạch, chưa làm)
-7. **FAQPage schema** cho các bài dạng hỏi-đáp ("cờ úp là gì", "luật chơi cờ úp", "luật đuổi dài") — cần
-   thêm khối Q&A trong bài rồi gắn schema.
+7. **FAQPage schema on-page** cho các bài dạng hỏi-đáp ("cờ úp là gì", "luật chơi cờ úp", "luật đuổi dài") —
+   thêm khối Q&A hiển thị trong bài rồi gắn schema (llms.txt đã có FAQ cho AI, nhưng on-page FAQPage cho Google
+   featured-snippet thì chưa). Cân nhắc thêm `HowTo` schema cho bài hướng dẫn cách đi quân.
 8. **Đoạn giới thiệu USP trang chủ** (200–300 từ) nhấn "bàn cờ tương tác, đi từng nước, có diễn giải" —
    Google đọc ngữ nghĩa. Hiện trang chủ thiên UI.
 9. **Internal linking**: bài khai cuộc/tàn cuộc link chéo tới bài Nhập môn liên quan (VD "pháo đầu" → "cách đi
