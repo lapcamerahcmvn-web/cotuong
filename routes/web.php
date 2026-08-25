@@ -21,6 +21,8 @@ Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 // ---- Đăng nhập thống nhất (Google cho người học + email/mật khẩu cho admin) ----
 Route::get('/dang-nhap', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/dang-nhap', [AuthController::class, 'loginPassword'])->middleware('throttle:10,1');
+Route::get('/dang-ky', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/dang-ky', [AuthController::class, 'register'])->middleware('throttle:5,1');
 Route::get('/dang-nhap/google', [AuthController::class, 'googleRedirect'])->name('login.google');
 Route::get('/dang-nhap/google/callback', [AuthController::class, 'googleCallback']);
 Route::post('/dang-xuat', [AuthController::class, 'logout'])->name('logout');

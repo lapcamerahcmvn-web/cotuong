@@ -38,6 +38,43 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Email hoặc mật khẩu không đúng.'])->onlyInput('email');
     }
 
+    // Trang đăng ký tài khoản email/mật khẩu.
+    public function showRegister()
+    {
+        if (Auth::check()) {
+            return redirect()->intended(route('account.index'));
+        }
+        return view('auth.register', [
+            'googleEnabled' => (bool) config('services.google.client_id'),
+        ]);
+    }
+
+    public function register(Request $request)
+    {
+        $data = $request->validate([
+            'name'     => ['required', 'string', 'max:100'],
+            'email'    => ['required', 'email', 'max:191', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ], [], [
+            'name'     => 'họ tên',
+            'email'    => 'email',
+            'password' => 'mật khẩu',
+        ]);
+
+        $user = User::create([
+            'name'          => $data['name'],
+            'email'         => $data['email'],
+            'password'      => bcrypt($data['password']),
+            'role'          => 'hoc_vien',
+            'last_login_at' => now(),
+        ]);
+
+        Auth::login($user, true);
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('account.index'));
+    }
+
     public function googleRedirect()
     {
         abort_unless(config('services.google.client_id'), 404, 'Chưa cấu hình đăng nhập Google.');

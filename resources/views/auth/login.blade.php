@@ -35,6 +35,10 @@
             </div>
             <button type="submit" class="btn primary" style="width:100%;">Đăng nhập</button>
         </form>
+
+        <p class="muted" style="text-align:center;margin:18px 0 0;font-size:14px;">
+            Chưa có tài khoản? <a href="{{ route('register') }}" style="font-weight:700;color:var(--red);">Đăng ký miễn phí</a>
+        </p>
     </div>
 </section>
 @endsection
