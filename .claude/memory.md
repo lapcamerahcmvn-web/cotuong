@@ -237,3 +237,36 @@ chi tiết từng bước ở `.claude/03-ke-hoach-trien-khai.md` mục 4 Phase 
 - Xác minh nguồn gốc `.cbl/.ccw/.cbr/.cbs` (~4.254 file) — chưa mở thử bằng phần mềm gốc.
 - Điều tra sâu lỗi comment-length ở dải version 11-15 (ảnh hưởng nhỏ, không chặn).
 - 16 PDF trong `E:\sach-co-tuong\` chưa test xem text-based hay scan ảnh (để dành Phase 4).
+
+---
+
+## Cập nhật 2026-08-25 — Pipeline PGN + Sát Pháp + Tàn Cuộc
+
+**Đã xong & PUSH origin/main (commit 9ecbecf). Production CHƯA seed** — chạy:
+`git fetch origin && git reset --hard origin/main` → `php artisan db:seed --class=Database\Seeders\ContentSeeder --force` → `php artisan optimize:clear && ... view:cache`.
+
+**Parser PGN Hán tự** — `tools/pgn-decoder/decode-pgn.js` (dep iconv-lite, node_modules gitignore):
+- Giải mã PGN biến thể TQ (GBK) → FEN + nước đi ký hiệu VN + biến trong ngoặc.
+- Bài học rút ra khi viết parser (dễ sai lại): (1) tiền tố **前/后/中 đứng TRƯỚC quân** (`后车平五`
+  = rear-Xe-bình-5), KHÔNG phải sau; (2) phải strip `\r` lẫn trong file GBK; (3) chú thích `{…}`
+  thường **đặt tên thế sát** (`马后炮`=mã hậu pháo, `双车错`=song xe thác) — tách riêng, đừng nuốt
+  vào token nước; (4) `step.fen` lưu là thế **SAU** nước (initial_fen = thế đầu); ICCS: cột a-i =
+  0-8, digit = 9 - rank_nội_bộ (rank0=trên). Có `givesCheck()` phát hiện chiếu để caption đúng.
+- Đã test: 38/40 TCSC sạch, 13/13 SCTD đội hình sạch (kết "chiếu hết", có biến).
+
+**Lệnh `cotuong:import-pgn`** — mirror import-xqf; tự sinh caption từ dữ kiện ván cờ
+(chiếu/ăn quân/chiếu hết/Tướng tránh đòn), KHÔNG suy diễn chiến thuật. Lưu JSON giải mã vào
+source_assets. 1420 file PGN nằm ở `E:\Co Tuong Mr Thanh\LOP SAT CHIEU THUC DUNG\` (13 đội hình).
+
+**Series #3 "Sát Pháp Thực Dụng — 13 Đội Hình"** (phase **trung-cuoc**, trước đó trống) — 13 bài
+cơ bản→nâng cao xếp theo sức tấn công: 2 Xe (co-ban) → 1 Xe (trung-cap) → quân nhẹ Mã/Pháo/Chốt
+(nang-cao). Mỗi bài 1 thế sát ngắn (5-9 nước) có mục "Biến cần lưu ý" (sinh tự động từ decoder).
+Lesson ID 272-284. Nội dung bài giảng đội hình viết tay trong scratchpad `build-satphap.js`.
+
+**Series #2 Tàn Cuộc** — thêm 4 bài (ID 88,101,163,191), tổng **10 bài**, order 1-10 theo cấp độ.
+
+**Tổng content.json: 3 chuỗi / 37 bài published** (14 khai-cuoc + 10 tan-cuoc + 13 trung-cuoc).
+
+**Còn có thể mở rộng**: mỗi đội hình sát pháp còn 30-200 file PGN chưa import (mới lấy 1 bài/đội
+hình làm MVP); `TTTK VUOT QUAN AI` (359 file) và `TRUNG CUC SAT CHIEU` (104 file, dài 13-33 nước,
+nâng cao) chưa dùng. Parser đã sẵn sàng import hàng loạt nếu cần.
