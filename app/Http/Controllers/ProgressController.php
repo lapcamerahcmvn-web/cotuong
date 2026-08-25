@@ -28,11 +28,14 @@ class ProgressController extends Controller
             $p->viewed_all_moves = true;
         }
 
-        // Điều kiện "đã học": đọc ≥ 5 phút (300s) VÀ đã xem hết các nước.
-        // (Bài không có nước đi: chỉ cần đọc đủ lâu.)
-        $enoughRead = $p->read_seconds >= 300;
-        $movesOk = $lesson->move_count === 0 ? true : $p->viewed_all_moves;
-        if ($enoughRead && $movesOk && $p->status !== 'completed') {
+        // Điều kiện "đã học" — đơn giản, thân thiện:
+        // - Bài CÓ nước đi: đã xem hết các nước (dù tua nhanh) + ở lại ≥ 20 giây.
+        // - Bài KHÔNG có nước đi (dạng lý thuyết): đọc ≥ 90 giây.
+        $completed = $lesson->move_count > 0
+            ? ($p->viewed_all_moves && $p->read_seconds >= 20)
+            : ($p->read_seconds >= 90);
+
+        if ($completed && $p->status !== 'completed') {
             $p->status = 'completed';
             $p->completed_at = now();
         }

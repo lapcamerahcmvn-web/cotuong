@@ -41,7 +41,7 @@ class LessonFill extends Command
         DB::transaction(function () use ($lesson, $data, $validStepIds, &$capCount) {
             // Trường văn bản của bài — whitelist.
             $fields = [];
-            foreach (['content', 'summary', 'seo_title', 'seo_description'] as $f) {
+            foreach (['title', 'content', 'summary', 'seo_title', 'seo_description'] as $f) {
                 if (array_key_exists($f, $data) && $data[$f] !== null && $data[$f] !== '') {
                     $fields[$f] = $data[$f];
                 }

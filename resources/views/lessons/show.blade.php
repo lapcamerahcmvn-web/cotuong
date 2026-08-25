@@ -71,25 +71,25 @@
     var lessonId = {{ $lesson->id }};
     var url = "{{ route('progress.store', $lesson->id) }}";
     var token = document.querySelector('meta[name=csrf-token]').content;
-    var seconds = 0, viewedAll = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }}, done = false, dirty = true;
+    var seconds = 0, viewedAll = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }}, done = {{ $completed ? 'true' : 'false' }}, dirty = true;
 
-    document.addEventListener('xq:viewed-all-moves', function(){ if(!viewedAll){ viewedAll = true; dirty = true; } });
+    // Xem hết các nước → gửi NGAY (không đợi tick) để đánh dấu đã học liền, khỏi phải reload.
+    document.addEventListener('xq:viewed-all-moves', function(){ viewedAll = true; dirty = true; send(); });
 
-    setInterval(function(){ if(!document.hidden){ seconds += 15; dirty = true; } }, 15000);
+    setInterval(function(){ if(!document.hidden){ seconds += 10; dirty = true; send(); } }, 10000);
 
     function send(){
         if (done || !dirty) return;
         dirty = false;
         fetch(url, {
-            method:'POST',
+            method:'POST', keepalive: true,
             headers:{'Content-Type':'application/json','X-CSRF-TOKEN':token,'Accept':'application/json'},
             body: JSON.stringify({ read_seconds: seconds, viewed_all_moves: viewedAll })
         }).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
             if (d && d.completed) { done = true; showBadge(); }
         }).catch(function(){});
     }
-    setInterval(send, 30000);
-    window.addEventListener('beforeunload', send);
+    window.addEventListener('pagehide', send);
     document.addEventListener('visibilitychange', function(){ if(document.hidden) send(); });
 
     function showBadge(){
