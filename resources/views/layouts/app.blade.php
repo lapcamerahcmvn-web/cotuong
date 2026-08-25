@@ -24,21 +24,50 @@
     @stack('head')
 </head>
 <body data-auth="{{ auth()->check() ? '1' : '0' }}">
+    @php
+        $navLinks = [
+            'khai-cuoc' => 'Khai cuộc', 'trung-cuoc' => 'Trung cuộc',
+            'tan-cuoc' => 'Tàn cuộc', 'co-up' => 'Cờ úp',
+        ];
+        $magnifier = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+        $userIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+    @endphp
     <header class="nav">
+        <input type="checkbox" id="navcb" class="navcb" hidden>
         <div class="wrap nav-inner">
             <a href="{{ route('home') }}" class="brand"><span class="logo">車</span> Học Cờ Tướng</a>
+
             <nav class="nav-links" aria-label="Điều hướng chính">
-                <a href="{{ route('phase', 'khai-cuoc') }}">Khai cuộc</a>
-                <a href="{{ route('phase', 'trung-cuoc') }}">Trung cuộc</a>
-                <a href="{{ route('phase', 'tan-cuoc') }}">Tàn cuộc</a>
-                <a href="{{ route('phase', 'co-up') }}">Cờ úp</a>
+                @foreach($navLinks as $slug => $label)
+                    <a href="{{ route('phase', $slug) }}" @class(['on' => request()->routeIs('phase') && request()->route('phase')===$slug])>{{ $label }}</a>
+                @endforeach
+            </nav>
+
+            <div class="nav-right">
                 <form method="GET" action="{{ route('search') }}" class="nav-search" role="search">
+                    <span class="ns-icon">{!! $magnifier !!}</span>
                     <input type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học…" aria-label="Tìm kiếm">
                 </form>
-                <a href="{{ route('account.index') }}" class="cta account-btn" title="Tài khoản">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Tài khoản
+                <a href="{{ route('account.index') }}" class="account-btn" title="Tài khoản">
+                    {!! $userIcon !!}<span class="ab-text">{{ auth()->check() ? \Illuminate\Support\Str::limit(auth()->user()->name, 10) : 'Tài khoản' }}</span>
                 </a>
+                <label for="navcb" class="nav-toggle" role="button" aria-label="Mở menu" tabindex="0">
+                    <span class="nt-bars"></span>
+                </label>
+            </div>
+        </div>
+
+        {{-- Menu mobile (drawer) — hiện khi bấm ☰ (checkbox-hack, không cần JS) --}}
+        <div class="nav-drawer">
+            <form method="GET" action="{{ route('search') }}" class="drawer-search" role="search">
+                <span class="ns-icon">{!! $magnifier !!}</span>
+                <input type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học…" aria-label="Tìm kiếm">
+            </form>
+            <nav class="drawer-links" aria-label="Menu">
+                @foreach($navLinks as $slug => $label)
+                    <a href="{{ route('phase', $slug) }}">{{ $label }}</a>
+                @endforeach
+                <a href="{{ route('account.index') }}" class="drawer-account">{!! $userIcon !!} {{ auth()->check() ? 'Tài khoản của tôi' : 'Đăng nhập' }}</a>
             </nav>
         </div>
     </header>

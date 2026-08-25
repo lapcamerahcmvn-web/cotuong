@@ -43,7 +43,7 @@
     function Y(r) { return M + r * CH; }
     var board = fenToBoard(fen);
     var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-label="Bàn cờ tướng">';
-    s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" rx="10" fill="var(--board-bg)"/>';
+    s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" rx="10" fill="var(--xq-wood)"/>';
     for (var r = 0; r < 10; r++) s += line(X(0), Y(r), X(8), Y(r));
     for (var f = 0; f < 9; f++) {
       if (f === 0 || f === 8) s += line(X(f), Y(0), X(f), Y(9));
@@ -51,19 +51,19 @@
     }
     s += line(X(3), Y(0), X(5), Y(2)) + line(X(5), Y(0), X(3), Y(2));
     s += line(X(3), Y(7), X(5), Y(9)) + line(X(5), Y(7), X(3), Y(9));
-    s += '<text x="' + ((X(1) + X(3)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--board-line)" opacity=".5" font-family="serif" letter-spacing="6">楚河</text>';
-    s += '<text x="' + ((X(5) + X(7)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--board-line)" opacity=".5" font-family="serif" letter-spacing="6">漢界</text>';
+    s += '<text x="' + ((X(1) + X(3)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--xq-line)" opacity=".5" font-family="serif" letter-spacing="6">楚河</text>';
+    s += '<text x="' + ((X(5) + X(7)) / 2) + '" y="' + ((Y(4) + Y(5)) / 2 + 6) + '" font-size="20" fill="var(--xq-line)" opacity=".5" font-family="serif" letter-spacing="6">漢界</text>';
     if (lastMove) {
       [lastMove.from, lastMove.to].forEach(function (sq) {
-        if (sq) s += '<circle cx="' + X(sq[0]) + '" cy="' + Y(sq[1]) + '" r="22" fill="var(--highlight)"/>';
+        if (sq) s += '<circle cx="' + X(sq[0]) + '" cy="' + Y(sq[1]) + '" r="22" fill="var(--xq-hl)"/>';
       });
     }
     for (var i = 0; i < 90; i++) {
       var chr = board[i]; if (!chr) continue;
       var p = PIECES[chr]; if (!p) continue;
       var ff = i % 9, rr = Math.floor(i / 9);
-      var col = p.red ? 'var(--red)' : 'var(--black-pc)';
-      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="21" fill="var(--surface)" stroke="' + col + '" stroke-width="2"/>';
+      var col = p.red ? 'var(--xq-red)' : 'var(--xq-black)';
+      s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="21" fill="var(--xq-disc)" stroke="' + col + '" stroke-width="2"/>';
       s += '<circle cx="' + X(ff) + '" cy="' + Y(rr) + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
       s += '<text x="' + X(ff) + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
     }
@@ -71,7 +71,7 @@
     return s;
   }
   function line(x1, y1, x2, y2) {
-    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--board-line)" stroke-width="1.4"/>';
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--xq-line)" stroke-width="1.4"/>';
   }
 
   function initBoard(root) {
