@@ -44,10 +44,12 @@
         <span id="lesson-done-badge" class="tag" style="background:var(--jade-soft);color:var(--jade);{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
     </div>
 
-    <x-chess-board
-        :initial-fen="$lesson->initial_fen"
-        :steps="$lesson->steps"
-        :show-list="$lesson->steps->isNotEmpty()" />
+    @if($lesson->initial_fen || $lesson->steps->isNotEmpty())
+        <x-chess-board
+            :initial-fen="$lesson->initial_fen"
+            :steps="$lesson->steps"
+            :show-list="$lesson->steps->isNotEmpty()" />
+    @endif
 
     @if($lesson->content)
         <article class="prose">{!! $lesson->content !!}</article>
