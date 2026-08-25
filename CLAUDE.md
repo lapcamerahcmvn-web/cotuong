@@ -54,6 +54,10 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 
 ## Tài Liệu Chi Tiết
 
+- **[.claude/tien-do-va-ke-hoach.md](.claude/tien-do-va-ke-hoach.md)** — Bảng điều khiển chính:
+  đã làm gì (6 chuỗi/108 bài + tính năng) & làm tiếp gì, đối chiếu cụm từ khóa SEO ← **ĐỌC ĐÂY TRƯỚC**
+- **[.claude/ke-hoach-seo-tong-the-hoccotuong.md](.claude/ke-hoach-seo-tong-the-hoccotuong.md)** —
+  Nghiên cứu từ khóa chi tiết + chiến lược SEO on-page/technical/content/backlink
 - **[ke-hoach-xay-dung-web-hoc-co-tuong.md](ke-hoach-xay-dung-web-hoc-co-tuong.md)** — Ý tưởng
   gốc của user: schema DB, thiết kế bàn cờ Cờ Tướng/Cờ Úp, ràng buộc bảo mật/bản quyền ←
   **vẫn là nguồn ràng buộc gốc**, không thay đổi phần bàn cờ/bảo mật

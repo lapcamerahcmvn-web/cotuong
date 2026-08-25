@@ -9,11 +9,15 @@
         '@context' => 'https://schema.org',
         '@type' => 'Article',
         'headline' => $lesson->title,
+        'description' => \Illuminate\Support\Str::limit(strip_tags($lesson->summary ?: ''), 300),
         'inLanguage' => 'vi-VN',
         'author' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
         'publisher' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
         'datePublished' => $lesson->published_at?->toIso8601String(),
         'dateModified' => $lesson->updated_at?->toIso8601String(),
+        'mainEntityOfPage' => url()->current(),
+        // GEO: gợi ý phần nội dung nên đọc cho trợ lý AI / tìm kiếm bằng giọng nói.
+        'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['.title', '.prose']],
     ]);
 
     $crumbs = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Trang chủ', 'item' => route('home')]];

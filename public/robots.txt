@@ -3,6 +3,33 @@ Allow: /
 Disallow: /admin
 Disallow: /tai-khoan
 Disallow: /dang-nhap
+Disallow: /dang-ky
 Disallow: /tim-kiem
 
+# AI / LLM crawlers — cho phép để nội dung học cờ xuất hiện trong AI search (ChatGPT, Gemini, Perplexity, Claude…)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://hoccotuong.top/sitemap.xml
+# AI-readable site overview: https://hoccotuong.top/llms.txt
