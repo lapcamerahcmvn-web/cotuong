@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-08-25T15:39:47+00:00",
+    "exported_at": "2026-08-25T15:46:17+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -45,6 +45,15 @@
             "description": "Khóa cờ úp sơ cấp: cách khai thác lợi thế khi mở Xe\/Pháo sớm, định hình chiến thuật, xác định điểm yếu, chuyển hóa cơ hội thành chiến thắng và cờ tàn thực dụng cờ úp.",
             "planned_total": 10,
             "sort_order": 2
+        },
+        {
+            "name": "Nhập Môn Cờ Tướng",
+            "slug": "nhap-mon-co-tuong",
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "description": "Học cờ tướng từ số 0: luật chơi cơ bản và cách đi từng quân (Xe, Pháo, Mã, Tượng, Sĩ, Tướng, Tốt) — mỗi bài có bàn cờ tương tác minh hoạ từng nước.",
+            "planned_total": 8,
+            "sort_order": 0
         }
     ],
     "lessons": [
@@ -15172,6 +15181,335 @@
             "seo_description": "Cờ tàn thực dụng cờ úp khác cờ tướng: Xe thắng\/hòa mấy sĩ, tốt qua sông thắng mã, hai sĩ chéo, và vì sao Pháo phòng thủ tốt hơn Mã. Tổng hợp kết quả thực dụng.",
             "is_featured": false,
             "steps": []
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 1,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Luật Chơi Cờ Tướng — Hướng Dẫn Đầy Đủ Cho Người Mới",
+            "slug": "luat-choi-co-tuong",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 0,
+            "summary": "Luật chơi cờ tướng từ A–Z cho người mới: bàn cờ, 7 loại quân và cách đi, luật chiếu tướng, đối mặt tướng và cách phân thắng bại.",
+            "content": "<p>Cờ tướng là trò chơi đối kháng hai người trên bàn cờ có <strong>sông<\/strong> và <strong>cung<\/strong>. Mục tiêu: chiếu bí Tướng đối phương. Bài này tóm gọn toàn bộ luật cơ bản để bạn chơi được ngay; mỗi loại quân có một bài riêng minh hoạ cách đi trên bàn cờ tương tác.<\/p><h2>Bàn cờ và quân<\/h2><ul><li>Bàn 9 đường dọc × 10 đường ngang; quân đặt ở <strong>giao điểm<\/strong>. Giữa bàn là <strong>sông<\/strong> (Sở Hà – Hán Giới).<\/li><li>Mỗi bên 16 quân: 1 Tướng, 2 Sĩ, 2 Tượng, 2 Mã, 2 Xe, 2 Pháo, 5 Tốt. Bên Đỏ đi trước.<\/li><li>Mỗi bên có <strong>cung<\/strong> (ô vuông 3×3 có gạch chéo) — nơi Tướng và Sĩ hoạt động.<\/li><\/ul><h2>Bảy loại quân đi thế nào<\/h2><ul><li><strong>Tướng (Soái)<\/strong>: đi 1 ô dọc\/ngang, chỉ trong cung.<\/li><li><strong>Sĩ<\/strong>: đi 1 ô chéo, chỉ trong cung.<\/li><li><strong>Tượng<\/strong>: đi chéo 2 ô, không qua sông, bị cản nếu \"mắt tượng\" có quân.<\/li><li><strong>Mã<\/strong>: đi hình chữ nhật (1 thẳng + 1 chéo), bị cản \"chân mã\".<\/li><li><strong>Xe<\/strong>: đi thẳng dọc\/ngang bao xa tuỳ ý.<\/li><li><strong>Pháo<\/strong>: đi thẳng như Xe; khi ăn phải nhảy qua đúng một quân làm ngòi.<\/li><li><strong>Tốt<\/strong>: chưa qua sông chỉ đi thẳng 1 ô; qua sông được đi ngang, không bao giờ lùi.<\/li><\/ul><h2>Chiếu tướng và thắng thua<\/h2><ul><li><strong>Chiếu<\/strong>: khi quân của bạn đe doạ ăn Tướng đối phương ở nước sau — đối phương buộc phải đỡ.<\/li><li><strong>Chiếu bí (chiếu hết)<\/strong>: Tướng bị chiếu mà không còn cách gỡ → thắng.<\/li><li><strong>Cấm đối mặt Tướng<\/strong>: hai Tướng không được đứng cùng một cột dọc mà giữa không có quân nào.<\/li><li>Hết nước đi hợp lệ (bị vây) cũng xử thua; cấm chiếu\/đuổi lặp vô hạn.<\/li><\/ul>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Luật Chơi Cờ Tướng — Hướng Dẫn Cho Người Mới",
+            "seo_description": "Học luật chơi cờ tướng đầy đủ cho người mới: bàn cờ, cách đi 7 loại quân, luật chiếu tướng, cấm đối mặt tướng, cách thắng thua. Có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": []
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 2,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Xe Trong Cờ Tướng",
+            "slug": "cach-di-quan-xe",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/4R4\/9\/4K4",
+            "move_count": 2,
+            "summary": "Quân Xe đi thẳng theo hàng ngang và cột dọc, bao xa tuỳ ý miễn không bị chặn — quân mạnh nhất cờ tướng. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Xe<\/strong> là quân mạnh nhất cờ tướng. Nó đi <strong>thẳng theo cột dọc hoặc hàng ngang<\/strong>, xa bao nhiêu tuỳ ý, miễn là đường đi không bị quân khác chặn. Xe ăn quân đối phương nằm trên đường đi của nó.<\/p><h2>Cách đi<\/h2><ul><li>Đi dọc: tiến hoặc lùi theo cột, qua bao nhiêu ô cũng được.<\/li><li>Đi ngang: sang trái\/phải theo hàng.<\/li><li>Không đi chéo; không nhảy qua quân.<\/li><\/ul><p>Bấm <strong>Tiến<\/strong> để xem Xe đi hết cột rồi bình cả hàng.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Xe Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Xe trong cờ tướng: đi thẳng dọc và ngang bao xa tuỳ ý, ăn quân trên đường đi. Quân mạnh nhất, có bàn cờ minh hoạ từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/4R4\/9\/9\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Xe 5 tiến 5",
+                    "move_notation_iccs": "e2e7",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 5 tiến 5 — Xe đi thẳng lên hết cột, xa tuỳ ý.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/8R\/9\/9\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Xe 5 bình 1",
+                    "move_notation_iccs": "e7i7",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 5 bình 1 — rồi bình ngang cả hàng — đó là sức mạnh của Xe.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 3,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Pháo Trong Cờ Tướng",
+            "slug": "cach-di-quan-phao",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/4p4\/9\/4P4\/9\/9\/4C4\/9\/4K4",
+            "move_count": 2,
+            "summary": "Quân Pháo đi thẳng như Xe khi không ăn, nhưng khi ăn phải nhảy qua đúng một quân làm ngòi. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Pháo<\/strong> có cách đi độc đáo: khi <strong>không ăn quân<\/strong>, nó đi thẳng dọc\/ngang y như Xe. Nhưng khi <strong>ăn quân<\/strong>, Pháo phải <strong>nhảy qua đúng một quân<\/strong> (bất kể quân mình hay đối phương) làm \"ngòi\", rồi ăn quân đầu tiên phía sau ngòi.<\/p><h2>Cách đi<\/h2><ul><li>Di chuyển (không ăn): thẳng như Xe, không có quân chắn đường.<\/li><li>Ăn quân: cần đúng một quân làm ngòi giữa Pháo và mục tiêu.<\/li><\/ul><p>Trong ví dụ, một quân đứng giữa làm ngòi để Pháo nhảy qua ăn quân đối phương.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Pháo Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Pháo trong cờ tướng: đi thẳng như Xe khi không ăn; khi ăn phải nhảy qua đúng một quân làm ngòi. Có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/4p4\/9\/4P4\/9\/4C4\/9\/9\/4K4",
+                    "move_notation_wxf": "Pháo 5 tiến 1",
+                    "move_notation_iccs": "e2e3",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 5 tiến 1 — Khi không ăn, Pháo đi thẳng như Xe.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/4C4\/9\/4P4\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Pháo 5 tiến 4",
+                    "move_notation_iccs": "e3e7",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 5 tiến 4 — Ăn quân: nhảy qua đúng một quân (ngòi) để ăn Tốt đối phương.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 4,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Mã Trong Cờ Tướng",
+            "slug": "cach-di-quan-ma",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/4N4\/9\/9\/9\/9\/4K4",
+            "move_count": 2,
+            "summary": "Quân Mã đi hình chữ nhật (một ô thẳng rồi một ô chéo), và bị cản nếu có quân đứng ngay chân mã. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Mã<\/strong> đi theo <strong>hình chữ nhật<\/strong>: một ô thẳng (ngang hoặc dọc) rồi một ô chéo ra — giống chữ 日 hoặc chữ L. Mã có tám hướng nhảy khi ở giữa bàn.<\/p><h2>Lưu ý quan trọng: cản chân mã<\/h2><p>Nếu có quân đứng ngay ô thẳng đầu tiên (\"chân mã\") thì Mã <strong>không nhảy<\/strong> theo hướng đó được — gọi là <strong>cản chân mã (mã đè chân)<\/strong>. Đây là điểm khác biệt lớn so với mã cờ vua.<\/p><p>Bấm Tiến để xem Mã nhảy hai nước hình chữ nhật.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Mã Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Mã trong cờ tướng: đi hình chữ nhật (1 ô thẳng + 1 ô chéo), bị cản chân mã. Có bàn cờ minh hoạ từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/3N5\/9\/9\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Mã 5 tiến 6",
+                    "move_notation_iccs": "e5d7",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 5 tiến 6 — Mã nhảy hình chữ nhật: 2 ô lên, 1 ô sang.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/9\/9\/2N6\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Mã 6 thoái 7",
+                    "move_notation_iccs": "d7c5",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 6 thoái 7 — lại nhảy tiếp một chữ nhật khác — luôn là 1 thẳng + 1 chéo.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 5,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Tượng Trong Cờ Tướng",
+            "slug": "cach-di-quan-tuong",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/2B1K4",
+            "move_count": 2,
+            "summary": "Quân Tượng đi chéo đúng 2 ô, không được qua sông và bị cản nếu mắt tượng có quân. Quân phòng thủ. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Tượng<\/strong> là quân phòng thủ. Nó đi <strong>chéo đúng hai ô<\/strong> mỗi nước (theo hình chữ 田). Tượng <strong>không được qua sông<\/strong> — luôn ở lại nửa sân nhà để giữ cửa.<\/p><h2>Cản mắt tượng<\/h2><p>Nếu ô nằm giữa đường chéo (\"mắt tượng\") đã có quân thì Tượng không đi qua được. Vì bị bó trong nửa sân, Tượng chỉ có bảy vị trí cố định.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Tượng Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Tượng trong cờ tướng: đi chéo 2 ô, không qua sông, bị cản mắt tượng. Quân phòng thủ, có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/9\/9\/9\/9\/9\/4B4\/9\/4K4",
+                    "move_notation_wxf": "Tượng 7 tiến 5",
+                    "move_notation_iccs": "c0e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 7 tiến 5 — Tượng đi chéo 2 ô.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/9\/9\/9\/2B6\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Tượng 5 tiến 7",
+                    "move_notation_iccs": "e2c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 5 tiến 7 — đi tiếp chéo 2 ô, vẫn ở bên sông nhà (không qua sông).",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 6,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Sĩ Trong Cờ Tướng",
+            "slug": "cach-di-quan-si",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/3AK4",
+            "move_count": 2,
+            "summary": "Quân Sĩ đi chéo 1 ô và chỉ ở trong cung, là cận vệ bảo vệ Tướng. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Sĩ<\/strong> là cận vệ của Tướng. Nó đi <strong>chéo một ô<\/strong> mỗi nước và <strong>chỉ được ở trong cung<\/strong> (ô vuông 3×3). Vì thế Sĩ chỉ có năm vị trí: bốn góc và tâm cung.<\/p><h2>Vai trò<\/h2><p>Sĩ giữ cửa cung, che các nước chiếu chéo và phối hợp với Tượng thành bộ khung phòng thủ. Mất Sĩ khiến Tướng dễ bị tấn công.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Sĩ Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Sĩ trong cờ tướng: đi chéo 1 ô, chỉ trong cung, bảo vệ Tướng. Có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/4A4\/4K4",
+                    "move_notation_wxf": "Sĩ 6 tiến 5",
+                    "move_notation_iccs": "d0e1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Sĩ 6 tiến 5 — Sĩ đi chéo 1 ô vào tâm cung.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/9\/9\/9\/9\/9\/5A3\/9\/4K4",
+                    "move_notation_wxf": "Sĩ 5 tiến 4",
+                    "move_notation_iccs": "e1f2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Sĩ 5 tiến 4 — đi chéo tiếp — luôn trong cung.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 7,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Tướng (Soái) Trong Cờ Tướng",
+            "slug": "cach-di-quan-tuong-soai",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/4K4",
+            "move_count": 2,
+            "summary": "Quân Tướng đi 1 ô dọc\/ngang trong cung, không được đối mặt Tướng đối phương. Quân quan trọng nhất. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Tướng (Soái)<\/strong> là quân quan trọng nhất — mất Tướng là thua. Tướng đi <strong>một ô theo chiều dọc hoặc ngang<\/strong> (không đi chéo) và <strong>chỉ ở trong cung<\/strong>.<\/p><h2>Luật đối mặt Tướng<\/h2><p>Hai Tướng <strong>không được đứng trên cùng một cột dọc mà giữa không có quân nào<\/strong>. Nhờ luật này, đôi khi Tướng có thể \"nhìn\" nhau để chiếu — một đòn kết thúc lợi hại (\"Tướng đối mặt\").<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Tướng Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Tướng (Soái) trong cờ tướng: 1 ô dọc\/ngang trong cung, cấm đối mặt tướng. Quân quan trọng nhất, có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/4K4\/9",
+                    "move_notation_wxf": "Tướng 5 tiến 1",
+                    "move_notation_iccs": "e0e1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tướng 5 tiến 1 — Tướng đi 1 ô thẳng trong cung.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/3K5\/9",
+                    "move_notation_wxf": "Tướng 5 bình 6",
+                    "move_notation_iccs": "e1d1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tướng 5 bình 6 — đi 1 ô ngang — không đi chéo, không ra khỏi cung.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nhap-mon-co-tuong",
+            "order_in_series": 8,
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "title": "Cách Đi Quân Tốt Trong Cờ Tướng",
+            "slug": "cach-di-quan-tot",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4k4\/9\/9\/9\/4P4\/9\/9\/9\/9\/4K4",
+            "move_count": 2,
+            "summary": "Quân Tốt chưa qua sông chỉ đi thẳng 1 ô; qua sông được đi ngang, không bao giờ lùi. Minh hoạ bằng bàn cờ tương tác.",
+            "content": "<p>Con <strong>Tốt (Binh)<\/strong> nhỏ nhưng quan trọng. Khi <strong>chưa qua sông<\/strong>, Tốt chỉ đi <strong>thẳng một ô về phía trước<\/strong>. Sau khi <strong>qua sông<\/strong>, Tốt được đi thêm <strong>ngang một ô<\/strong> (trái hoặc phải) — nhưng <strong>không bao giờ được lùi<\/strong>.<\/p><h2>Tốt qua sông rất mạnh<\/h2><p>Tốt qua sông áp sát cung đối phương có thể trở thành mũi nhọn tấn công, thậm chí góp phần chiếu bí. Vì thế người ta hay nói \"tốt qua sông bằng nửa con Xe\".<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Cách Đi Quân Tốt Trong Cờ Tướng",
+            "seo_description": "Cách đi quân Tốt (Binh) trong cờ tướng: chưa qua sông đi thẳng 1 ô; qua sông được đi ngang, không lùi. Có bàn cờ minh hoạ.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4k4\/9\/9\/4P4\/9\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Tốt 5 tiến 1",
+                    "move_notation_iccs": "e5e6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 5 tiến 1 — Tốt tiến thẳng 1 ô (đây đã là bên kia sông).",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4k4\/9\/9\/3P5\/9\/9\/9\/9\/9\/4K4",
+                    "move_notation_wxf": "Tốt 5 bình 6",
+                    "move_notation_iccs": "e6d6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 5 bình 6 — đã qua sông nên được đi ngang 1 ô — nhưng không bao giờ lùi.",
+                    "is_flip_reveal": false
+                }
+            ]
         }
     ]
 }
