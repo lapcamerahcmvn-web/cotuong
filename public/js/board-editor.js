@@ -15,6 +15,31 @@
     normal: 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR',
     up: 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX'
   };
+  // Giới hạn số lượng mỗi loại quân/bên (theo luật cờ tướng); X/x = quân úp (cờ úp) tối đa 15.
+  var LIMITS = { K: 1, A: 2, B: 2, N: 2, R: 2, C: 2, P: 5, X: 15, k: 1, a: 2, b: 2, n: 2, r: 2, c: 2, p: 5, x: 15 };
+  var VI_FULL = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt', X: 'quân úp', x: 'quân úp' };
+  function pieceName(ch) { var up = (ch === 'X' || ch === 'x'); return (up ? '' : ((ch === ch.toUpperCase()) ? 'Đỏ ' : 'Đen ')) + (VI_FULL[ch.toUpperCase()] || VI_FULL[ch] || ch); }
+  function countPiece(ch) { var n = 0; for (var i = 0; i < 90; i++) if (board[i] === ch) n++; return n; }
+  // Vùng đặt hợp lệ: Tướng/Sĩ trong cung; Tượng đúng điểm & không qua sông; Tốt trong phạm vi tiến.
+  function zoneOk(ch, r, c) {
+    if (ch === 'X' || ch === 'x') return true; // quân úp: đặt đâu cũng được
+    var red = (ch === ch.toUpperCase());
+    var t = ch.toUpperCase();
+    if (t === 'K' || t === 'A') { if (c < 3 || c > 5) return false; return red ? (r >= 7 && r <= 9) : (r >= 0 && r <= 2); }
+    if (t === 'B') {
+      var pts = red ? [[9, 2], [9, 6], [7, 0], [7, 4], [7, 8], [5, 2], [5, 6]] : [[0, 2], [0, 6], [2, 0], [2, 4], [2, 8], [4, 2], [4, 6]];
+      for (var k = 0; k < pts.length; k++) if (pts[k][0] === r && pts[k][1] === c) return true;
+      return false;
+    }
+    if (t === 'P') { return red ? (r >= 0 && r <= 6) : (r >= 3 && r <= 9); }
+    return true; // Mã/Xe/Pháo: đặt đâu cũng được
+  }
+  function beMsg(text, ok) {
+    var el = root.querySelector('[data-be-msg]');
+    if (!el) { if (text) alert(text); return; }
+    el.textContent = text || '';
+    el.style.color = ok ? 'var(--jade)' : 'var(--red)';
+  }
 
   var board = new Array(90).fill(null);
   var startBoard = null;      // ảnh chụp thế mở (để tính lại khi xoá nước)
@@ -113,9 +138,15 @@
   // ---- xử lý bấm ô ----
   function onSquare(i) {
     if (mode === 'setup') {
-      if (palettePiece === 'erase') board[i] = null;
-      else if (palettePiece) board[i] = palettePiece;
-      render();
+      if (palettePiece === 'erase') { board[i] = null; render(); beMsg('Đã xoá quân.', true); return; }
+      if (!palettePiece) { beMsg('Hãy chọn một quân ở bảng quân trước.'); return; }
+      var r = (i / 9) | 0, c = i % 9;
+      if (!zoneOk(palettePiece, r, c)) { beMsg('Không hợp lệ: ' + pieceName(palettePiece) + ' không được đặt ở ô này.'); return; }
+      var existing = board[i];
+      if (existing !== palettePiece && countPiece(palettePiece) >= LIMITS[palettePiece]) {
+        beMsg('Vượt số lượng: tối đa ' + LIMITS[palettePiece] + ' ' + pieceName(palettePiece) + ' mỗi bên.'); return;
+      }
+      board[i] = palettePiece; render(); beMsg('Đã đặt ' + pieceName(palettePiece) + '.', true);
       return;
     }
     // move mode

@@ -63,6 +63,7 @@
             <button type="button" class="be-mode on" data-be-mode="setup">1 · Xếp quân (tạo thế)</button>
             <button type="button" class="be-mode" data-be-mode="move">2 · Soạn nước đi</button>
         </div>
+        <div data-be-msg style="min-height:20px;font-size:13px;font-weight:600;margin-bottom:8px;"></div>
 
         <div class="be-tools" data-be-setup-tools>
             <div class="be-palette" data-be-palette></div>
