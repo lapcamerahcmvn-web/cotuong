@@ -30,25 +30,28 @@ class BoardEditorController extends Controller
             'initial_fen' => ['required', 'string', 'max:120'],
             'summary'     => ['nullable', 'string'],
             'content'     => ['nullable', 'string'],
-            'steps_json'  => ['nullable', 'string'],
+            'steps_json'  => ['nullable', 'string'],       // mạch chính (tuyến tính) → lesson_steps
+            'variation_tree' => ['nullable', 'string'],    // cây biến đầy đủ (JSON lồng nhau)
         ]);
 
         $steps = json_decode($data['steps_json'] ?? '[]', true) ?: [];
+        $tree  = json_decode($data['variation_tree'] ?? '[]', true) ?: [];
 
-        $lesson = DB::transaction(function () use ($data, $steps, $request) {
+        $lesson = DB::transaction(function () use ($data, $steps, $tree) {
             $lesson = Lesson::create([
-                'series_id'    => $data['series_id'] ?? null,
-                'game_mode'    => $data['game_mode'],
-                'phase'        => $data['game_mode'] === 'co-up' ? null : ($data['phase'] ?? null),
-                'title'        => $data['title'],
-                'slug'         => $this->uniqueSlug($data['title']),
-                'level'        => $data['level'],
-                'source_type'  => 'manual',
-                'initial_fen'  => $data['initial_fen'],
-                'move_count'   => count($steps),
-                'summary'      => $data['summary'] ?? null,
-                'content'      => $data['content'] ?? null,
-                'status'       => 'draft',
+                'series_id'      => $data['series_id'] ?? null,
+                'game_mode'      => $data['game_mode'],
+                'phase'          => $data['game_mode'] === 'co-up' ? null : ($data['phase'] ?? null),
+                'title'          => $data['title'],
+                'slug'           => $this->uniqueSlug($data['title']),
+                'level'          => $data['level'],
+                'source_type'    => 'manual',
+                'initial_fen'    => $data['initial_fen'],
+                'variation_tree' => $tree ?: null,
+                'move_count'     => count($steps),
+                'summary'        => $data['summary'] ?? null,
+                'content'        => $data['content'] ?? null,
+                'status'         => 'draft',
             ]);
 
             foreach ($steps as $i => $s) {
