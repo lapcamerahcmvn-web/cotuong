@@ -17,10 +17,25 @@ use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
-Route::get('/sitemap-{section}.xml', [SitemapController::class, 'section'])
-    ->where('section', 'pages|nhap-mon|khai-cuoc|trung-cuoc|tan-cuoc|co-up')->name('sitemap.section');
-Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
+// SEO files — bỏ session/cookie/CSRF: đây là tài nguyên công khai cho bot, không cần state.
+// Giữ nguyên sẽ khiến StartSession gắn Set-Cookie + Cache-Control: private → GSC báo "không thể tìm nạp".
+Route::withoutMiddleware([
+    \Illuminate\Cookie\Middleware\EncryptCookies::class,
+    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+    \Illuminate\Session\Middleware\StartSession::class,
+    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+    \Illuminate\Foundation\Http\Middleware\PreventRequestForgery::class,
+    \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+    \App\Http\Middleware\LogAccess::class,
+    \App\Http\Middleware\TrackVisit::class,
+])->group(function () {
+    Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+    Route::get('/sitemap-{section}.xml', [SitemapController::class, 'section'])
+        ->where('section', 'pages|nhap-mon|khai-cuoc|trung-cuoc|tan-cuoc|co-up')->name('sitemap.section');
+    Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
+});
+
 Route::get('/so-do-trang', [SitemapController::class, 'page'])->name('sitemap.page');
 Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 

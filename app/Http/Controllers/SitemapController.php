@@ -36,7 +36,9 @@ class SitemapController extends Controller
         }
         $xml .= '</sitemapindex>';
 
-        return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+        return response($xml, 200)
+            ->header('Content-Type', 'application/xml; charset=UTF-8')
+            ->header('Cache-Control', 'public, max-age=3600');
     }
 
     // /sitemap-{section}.xml — sitemap con của một mục.
@@ -90,7 +92,9 @@ class SitemapController extends Controller
         }
         $xml .= '</urlset>';
 
-        return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+        return response($xml, 200)
+            ->header('Content-Type', 'application/xml; charset=UTF-8')
+            ->header('Cache-Control', 'public, max-age=3600');
     }
 
     private function sectionLastmod(string $section): string
@@ -127,7 +131,9 @@ class SitemapController extends Controller
         $lines[] = 'Sitemap: ' . url('/sitemap.xml');
         $lines[] = '# AI-readable site overview: ' . url('/llms.txt');
 
-        return response(implode("\n", $lines) . "\n", 200)->header('Content-Type', 'text/plain; charset=UTF-8');
+        return response(implode("\n", $lines) . "\n", 200)
+            ->header('Content-Type', 'text/plain; charset=UTF-8')
+            ->header('Cache-Control', 'public, max-age=3600');
     }
 
     // /so-do-trang — sơ đồ trang cho người dùng (HTML sitemap).
