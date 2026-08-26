@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LessonController as AdminLessonController;
+use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\SourceAssetController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
@@ -16,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap-{section}.xml', [SitemapController::class, 'section'])
+    ->where('section', 'pages|nhap-mon|khai-cuoc|trung-cuoc|tan-cuoc|co-up')->name('sitemap.section');
+Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
 Route::get('/so-do-trang', [SitemapController::class, 'page'])->name('sitemap.page');
 Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 
@@ -47,8 +52,15 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('lessons/{lesson:id}/generate', [AdminLessonController::class, 'generate'])->name('lessons.generate');
     Route::delete('lessons/{lesson:id}', [AdminLessonController::class, 'destroy'])->name('lessons.destroy');
 
-    // Quản lý người dùng + nguồn tài liệu bản quyền — CHỈ admin.
+    // Duyệt bình luận + thống kê + quản lý người dùng/nguồn — CHỈ admin.
     Route::middleware('admin')->group(function () {
+        Route::get('binh-luan', [AdminCommentController::class, 'index'])->name('comments.index');
+        Route::post('binh-luan/duyet-tat-ca', [AdminCommentController::class, 'approveAll'])->name('comments.approve-all');
+        Route::post('binh-luan/{comment}/duyet', [AdminCommentController::class, 'approve'])->name('comments.approve');
+        Route::delete('binh-luan/{comment}', [AdminCommentController::class, 'destroy'])->name('comments.destroy');
+
+        Route::get('thong-ke', [AdminStatsController::class, 'index'])->name('stats.index');
+
         Route::get('users', [AdminUserController::class, 'index'])->name('users.index');
         Route::get('users/{user}', [AdminUserController::class, 'show'])->name('users.show');
         Route::get('nguon', [SourceAssetController::class, 'index'])->name('source-assets.index');

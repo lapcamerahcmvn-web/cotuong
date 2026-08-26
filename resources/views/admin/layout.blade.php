@@ -14,20 +14,38 @@
     @stack('head')
 </head>
 <body>
+@php
+    $isAdmin = auth()->user()?->isAdmin();
+    $navPending = $isAdmin ? \App\Models\LessonComment::where('approved', false)->count() : 0;
+@endphp
 <div class="admin-body">
+    <input type="checkbox" id="admincb" class="admincb" hidden>
+
+    {{-- Thanh trên (chỉ mobile) --}}
+    <header class="admin-mobilebar">
+        <label for="admincb" class="admin-burger" aria-label="Mở menu">☰</label>
+        <span class="amb-brand"><span class="logo">車</span> Cờ Tướng Admin</span>
+    </header>
+
+    <label for="admincb" class="admin-scrim" aria-hidden="true"></label>
+
     <aside class="admin-side">
         <div class="side-brand"><span class="logo">車</span> Cờ Tướng Admin</div>
         <nav class="admin-nav">
             <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">Bảng điều khiển</a>
             <a href="{{ route('admin.lessons.index') }}" class="{{ request()->routeIs('admin.lessons.*') ? 'active' : '' }}">Bài học</a>
-            @if(auth()->user()?->isAdmin())
+            @if($isAdmin)
+                <a href="{{ route('admin.comments.index') }}" class="{{ request()->routeIs('admin.comments.*') ? 'active' : '' }}">
+                    Bình luận @if($navPending)<span class="nav-badge">{{ $navPending }}</span>@endif
+                </a>
+                <a href="{{ route('admin.stats.index') }}" class="{{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">Thống kê truy cập</a>
                 <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">Người dùng</a>
                 <a href="{{ route('admin.source-assets.index') }}" class="{{ request()->routeIs('admin.source-assets.*') ? 'active' : '' }}">Nguồn tài liệu</a>
             @endif
             <a href="{{ route('home') }}" target="_blank">Xem site ↗</a>
         </nav>
         <div class="side-foot">
-            <div class="who">{{ auth()->user()?->name }} · {{ auth()->user()?->isAdmin() ? 'Admin' : 'Biên tập' }}</div>
+            <div class="who">{{ auth()->user()?->name }} · {{ $isAdmin ? 'Admin' : 'Biên tập' }}</div>
             <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="btn" style="width:100%;">Đăng xuất</button></form>
         </div>
     </aside>

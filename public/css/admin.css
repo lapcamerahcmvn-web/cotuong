@@ -83,3 +83,59 @@ textarea.input { resize: vertical; min-height: 80px; }
 .login-card { width: 100%; max-width: 380px; padding: 28px; }
 .login-card .lc-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; margin-bottom: 6px; }
 .login-card .lc-brand .logo { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg, var(--red), #e08a2e); color: #fff; display: grid; place-items: center; font-family: serif; font-size: 20px; }
+
+/* ===== Stat cards (dashboard/thống kê) ===== */
+.stat-card { padding: 16px 18px; }
+.sc-num { font-family: "Bricolage Grotesque", sans-serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
+.sc-label { font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
+.sc-sub { font-size: 12px; color: var(--ink-faint); margin-top: 6px; }
+.sc-sub a { color: var(--red); font-weight: 600; }
+
+.nav-badge { background: var(--red); color: #fff; font-size: 11px; font-weight: 700; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
+
+/* ===== Tabs + bình luận admin ===== */
+.admin-tabs { display: flex; gap: 6px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
+.admin-tab { padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); text-decoration: none; }
+.admin-tab:hover { color: var(--ink); }
+.admin-tab.on { background: var(--red); color: #fff; border-color: var(--red); }
+.cmt-admin-list { display: flex; flex-direction: column; gap: 12px; }
+.cmt-admin { padding: 14px 16px; }
+.cmt-admin.is-pending { border-left: 3px solid var(--red); }
+.cmt-admin-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; }
+.cmt-admin-body { margin: 8px 0; font-size: 14.5px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.cmt-admin-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge-ok { background: var(--jade-soft); color: var(--jade); }
+.badge-wait { background: #fef3c7; color: #92400e; }
+
+/* ===== Biểu đồ + bảng xếp hạng (thống kê) ===== */
+.chart-14 { display: flex; align-items: flex-end; gap: 4px; height: 160px; }
+.chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+.chart-bar { width: 72%; max-width: 30px; background: linear-gradient(var(--red), #e08a2e); border-radius: 4px 4px 0 0; position: relative; min-height: 2px; }
+.chart-val { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--ink-soft); font-weight: 600; }
+.chart-x { font-size: 10px; color: var(--ink-faint); margin-top: 5px; white-space: nowrap; }
+.stats-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.rank-row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.rank-row:last-child { border-bottom: none; }
+.rank-row a { color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-row a:hover { color: var(--red); }
+.rank-num { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.btn.danger { background: var(--red-soft); color: var(--red); border: 1px solid transparent; }
+.btn.danger:hover { background: var(--red); color: #fff; }
+
+/* ===== Mobile responsive admin ===== */
+.admin-mobilebar, .admin-scrim, .admin-burger { display: none; }
+@media (max-width: 900px) {
+    .admin-body { flex-direction: column; }
+    .admin-mobilebar { display: flex; align-items: center; gap: 12px; background: #1a1712; color: #fff; padding: 11px 14px; position: sticky; top: 0; z-index: 60; }
+    .amb-brand { font-weight: 800; display: flex; align-items: center; gap: 8px; font-size: 15px; }
+    .amb-brand .logo { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, var(--red), #e08a2e); display: grid; place-items: center; font-family: serif; font-size: 15px; }
+    .admin-burger { display: inline-flex; width: 42px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,.22); align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 20px; line-height: 1; }
+    .admin-side { position: fixed; top: 0; left: 0; height: 100vh; width: 250px; z-index: 80; transform: translateX(-100%); transition: transform .22s ease; }
+    .admincb:checked ~ .admin-side { transform: none; box-shadow: 0 0 40px rgba(0,0,0,.5); }
+    .admin-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 70; border: none; padding: 0; }
+    .admincb:not(:checked) ~ .admin-scrim { display: none; }
+    .admincb:checked ~ .admin-scrim { display: block; }
+    .admin-content { padding: 18px 15px; }
+    .admin-top { padding: 14px 16px; }
+    .chart-val { display: none; }
+}

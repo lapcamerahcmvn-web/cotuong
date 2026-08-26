@@ -32,9 +32,10 @@ class CommentController extends Controller
             'user_id'   => $request->user()->id,
             'parent_id' => $data['parent_id'] ?? null,
             'body'      => trim($data['body']),
+            'approved'  => false, // chờ admin duyệt mới hiện
         ]);
 
-        return back()->with('comment_ok', 'Đã gửi bình luận!')->withFragment('binh-luan');
+        return back()->with('comment_ok', 'Đã gửi bình luận! Bình luận sẽ hiển thị sau khi được duyệt.')->withFragment('binh-luan');
     }
 
     // Thích / bỏ thích (toggle) — trả JSON cho JS cập nhật không tải lại trang.

@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->web(append: [
             \App\Http\Middleware\LogAccess::class,
+            \App\Http\Middleware\TrackVisit::class,
         ]);
         $middleware->redirectGuestsTo(fn () => route('login'));
     })
