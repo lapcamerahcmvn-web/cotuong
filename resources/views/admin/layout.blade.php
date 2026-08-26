@@ -63,6 +63,7 @@
         </div>
     </main>
 </div>
+<script src="{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}" defer></script>
 @stack('scripts')
 </body>
 </html>
