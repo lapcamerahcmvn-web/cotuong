@@ -22,6 +22,12 @@ class User extends Authenticatable
         return $this->role === 'admin';
     }
 
+    // Nhân sự được vào khu quản trị (admin đầy đủ + biên tập viên). Học viên (hoc_vien) KHÔNG.
+    public function isStaff(): bool
+    {
+        return in_array($this->role, ['admin', 'bien_tap'], true);
+    }
+
     public function progress(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(LessonProgress::class);

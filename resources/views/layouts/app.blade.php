@@ -18,7 +18,11 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+    {{-- Font tải BẤT ĐỒNG BỘ (không chặn render) — trang hiện ngay bằng font hệ thống rồi swap.
+         Bricolage rút về 2 weight cố định (bỏ trục opsz variable) để giảm số file tải. --}}
+    @php $_fontHref = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap'; @endphp
+    <link rel="stylesheet" href="{{ $_fontHref }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ $_fontHref }}"></noscript>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ @filemtime(public_path('css/app.css')) }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @stack('head')
@@ -51,7 +55,7 @@
                 <a href="{{ route('account.index') }}" class="account-btn" title="Tài khoản">
                     {!! $userIcon !!}<span class="ab-text">{{ auth()->check() ? \Illuminate\Support\Str::limit(auth()->user()->name, 10) : 'Tài khoản' }}</span>
                 </a>
-                <label for="navcb" class="nav-toggle" role="button" aria-label="Mở menu" tabindex="0">
+                <label for="navcb" class="nav-toggle" aria-label="Mở menu">
                     <span class="nt-bars"></span>
                 </label>
             </div>

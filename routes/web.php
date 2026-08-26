@@ -56,8 +56,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1');
 });
 
-// ---- Admin ----
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+// ---- Admin ---- (chỉ nhân sự: admin/biên tập — học viên bị chặn 403)
+Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('lessons', [AdminLessonController::class, 'index'])->name('lessons.index');
