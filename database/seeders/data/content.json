@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-08-26T06:43:30+00:00",
+    "exported_at": "2026-08-26T06:54:51+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -65,20 +65,20 @@
             "sort_order": 3
         },
         {
-            "name": "Cờ Úp Nâng Cao Đặc Biệt",
-            "slug": "co-up-nang-cao-dac-biet",
+            "name": "Cờ Úp Nâng Cao 1",
+            "slug": "co-up-nang-cao-1",
             "game_mode": "co-up",
             "phase": null,
-            "description": "Khóa cờ úp nâng cao đặc biệt: phân tích chuyên sâu úp kết hợp ngửa trong hình phức tạp, chiến lược theo quân đã ăn, xử lý khi ưu\/kém thế và cái giá của sai lầm chiến lược.",
+            "description": "Khóa cờ úp nâng cao 1: phân tích chuyên sâu úp kết hợp ngửa trong hình phức tạp, chiến lược theo quân đã ăn, xử lý khi ưu\/kém thế và cái giá của sai lầm chiến lược.",
             "planned_total": 10,
             "sort_order": 4
         },
         {
-            "name": "Cờ Úp Đặc Biệt 2",
-            "slug": "co-up-dac-biet-2",
+            "name": "Cờ Úp Nâng Cao 2",
+            "slug": "co-up-nang-cao-2",
             "game_mode": "co-up",
             "phase": null,
-            "description": "Khóa cờ úp đặc biệt 2: khái niệm cờ chấp (ba trên\/hai trên một dưới\/ba dưới...), đánh giá và chấm điểm hình mở quân, kỹ năng đánh giá trung cuộc và giá trị con Pháo.",
+            "description": "Khóa cờ úp nâng cao 2: khái niệm cờ chấp (ba trên\/hai trên một dưới\/ba dưới...), đánh giá và chấm điểm hình mở quân, kỹ năng đánh giá trung cuộc và giá trị con Pháo.",
             "planned_total": 10,
             "sort_order": 5
         }
@@ -31402,7 +31402,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 1,
             "game_mode": "co-up",
             "phase": null,
@@ -31423,7 +31423,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 2,
             "game_mode": "co-up",
             "phase": null,
@@ -31444,7 +31444,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 3,
             "game_mode": "co-up",
             "phase": null,
@@ -31465,7 +31465,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 4,
             "game_mode": "co-up",
             "phase": null,
@@ -31486,7 +31486,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 5,
             "game_mode": "co-up",
             "phase": null,
@@ -31507,7 +31507,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 6,
             "game_mode": "co-up",
             "phase": null,
@@ -31528,7 +31528,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 7,
             "game_mode": "co-up",
             "phase": null,
@@ -31549,7 +31549,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 8,
             "game_mode": "co-up",
             "phase": null,
@@ -31570,7 +31570,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 9,
             "game_mode": "co-up",
             "phase": null,
@@ -31591,7 +31591,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-nang-cao-dac-biet",
+            "series_slug": "co-up-nang-cao-1",
             "order_in_series": 10,
             "game_mode": "co-up",
             "phase": null,
@@ -31612,7 +31612,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 1,
             "game_mode": "co-up",
             "phase": null,
@@ -31633,7 +31633,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 2,
             "game_mode": "co-up",
             "phase": null,
@@ -31654,7 +31654,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 3,
             "game_mode": "co-up",
             "phase": null,
@@ -31675,7 +31675,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 4,
             "game_mode": "co-up",
             "phase": null,
@@ -31696,7 +31696,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 5,
             "game_mode": "co-up",
             "phase": null,
@@ -31717,7 +31717,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 6,
             "game_mode": "co-up",
             "phase": null,
@@ -31738,7 +31738,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 7,
             "game_mode": "co-up",
             "phase": null,
@@ -31759,7 +31759,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 8,
             "game_mode": "co-up",
             "phase": null,
@@ -31780,7 +31780,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 9,
             "game_mode": "co-up",
             "phase": null,
@@ -31801,7 +31801,7 @@
             "steps": []
         },
         {
-            "series_slug": "co-up-dac-biet-2",
+            "series_slug": "co-up-nang-cao-2",
             "order_in_series": 10,
             "game_mode": "co-up",
             "phase": null,
