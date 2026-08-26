@@ -6,7 +6,7 @@
 
 ## Trạng thái tổng quan
 
-- **6 chương trình học / 161 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
+- **9 chương trình học / 191 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
 - Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to + quân úp), đăng nhập Google + email/mật khẩu,
   đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap XML + HTML.
 
@@ -16,7 +16,7 @@
 | **B – Khai cuộc** | 48 Bài Nguyên Lý Khai Cuộc | 29 | ✅ Đã xuất bản hết ván mẫu XQF có nước đi (14→29); phần còn lại là bài "nói" 0 nước |
 | **C – Trung cuộc** (kế hoạch ghi "chưa có") | Sát Pháp Thực Dụng 13 Đội Hình | 65 | ✅ Lấp xong bằng sát pháp (5 bài/đội hình) |
 | **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 48 | ✅ Đạt đủ 48 (10→48) từ thế tàn cuộc XQF |
-| **E – Cờ Úp** (ưu tiên #2) | Nhập Môn Cờ Úp + Cờ Úp Sơ Cấp 1 | 1 + 10 | 🔄 Sơ Cấp 1 xong; còn Sơ Cấp 2 + 3 khóa |
+| **E – Cờ Úp** (ưu tiên #2) | Nhập Môn + Sơ Cấp 1/2 + Nâng Cao Đặc Biệt + Đặc Biệt 2 | 41 | ✅ Xong cả 4 khóa của thầy (soạn từ phụ đề) + Nhập môn |
 | **F – So sánh/công cụ** | — | 0 | ⬜ Chưa làm (web/app học cờ, bàn cờ tương tác online) |
 
 > Khai cuộc dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14 bài cũ; các "bài" còn lại

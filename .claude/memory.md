@@ -318,3 +318,24 @@ viết lại bằng lời riêng (bản quyền) → JSON vào scratchpad/coup-s
 
 **Còn treo**: Cờ Úp Sơ Cấp 2 (phụ đề đã tải `scratchpad/subs2/`, CHỜ nâng hạn mức chi tiêu — agent chắt lọc
 dừng vì monthly spend limit) + 3 khóa cờ úp còn lại (chờ user dán URL). Xem roadmap để biết việc tiếp theo.
+
+---
+
+## Cập nhật 2026-08-26 — Hoàn tất Cờ Úp 4 khóa + admin + bảo mật + PageSpeed + sitemap index
+
+- **Cờ Úp XONG cả 4 khóa của thầy** (soạn từ phụ đề, 3 agent chắt lọc song song): Sơ Cấp 1 (10) +
+  Sơ Cấp 2 (10) + Nâng Cao Đặc Biệt (10) + Đặc Biệt 2 (10) + Nhập Môn (1) = **41 bài cờ úp**.
+  Phụ đề gốc ở scratchpad/subs2, subs-nc, subs-db2. Build scripts: build-coup-sc2/nc/db2.js.
+- **Bảo mật**: đã vá lỗi user thường vào /admin (thêm middleware `staff` = EnsureStaff/User::isStaff cho
+  cả nhóm /admin; học viên hoc_vien → 403).
+- **Admin**: duyệt bình luận (cột approved, mặc định chờ duyệt) + thống kê truy cập (page_visits +
+  TrackVisit middleware) + dashboard nâng cấp + mobile responsive (sidebar off-canvas checkbox-hack).
+- **PageSpeed**: font Google tải async (media=print/onload) + rút Bricolage 2 weight; sửa tương phản
+  (--accent-ink); bỏ role=button sai trên nav-toggle.
+- **Sitemap**: sitemap.xml thành CHỈ MỤC (sitemapindex) + 6 sitemap con động; robots.txt động.
+  ⚠️ Bài học lớn (GSC "Không thể tìm nạp"): sitemap/robots PHẢI bọc withoutMiddleware(StartSession +
+  cookie + CSRF) + Cache-Control public, nếu không StartSession gắn Set-Cookie + Cache-Control:private →
+  Google từ chối. Và submit GSC KHÔNG có dấu / đầu (double-slash → 404).
+
+**Tổng: 9 chuỗi / 191 bài.** Cụm SEO còn lại: Nhập môn cờ úp mở rộng, cụm F (landing thương hiệu), FAQPage
+on-page từng bài. Xem `.claude/tien-do-va-ke-hoach.md`.
