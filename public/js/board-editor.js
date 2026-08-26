@@ -41,6 +41,51 @@
     el.style.color = ok ? 'var(--jade)' : 'var(--red)';
   }
 
+  // ---- luật đi quân (kiểm tra nước hợp lệ) ----
+  function isRed(ch) { return (ch === 'X') || (ch !== 'x' && ch === ch.toUpperCase()); }
+  function sameSide(a, b) { return isRed(a) === isRed(b); }
+  // Binh chủng theo ô xuất phát (cho quân úp đi theo vai trò của ô).
+  function posRole(idx) {
+    var r = (idx / 9) | 0, c = idx % 9, back = ['R', 'N', 'B', 'A', 'K', 'A', 'B', 'N', 'R'];
+    if (r === 0 || r === 9) return back[c];
+    if (r === 2 || r === 7) return (c === 1 || c === 7) ? 'C' : null;
+    if (r === 3 || r === 6) return (c % 2 === 0) ? 'P' : null;
+    return null;
+  }
+  function moveByType(t, red, b, from, to) {
+    var fr = (from / 9) | 0, fc = from % 9, tr = (to / 9) | 0, tc = to % 9, dr = tr - fr, dc = tc - fc;
+    var adr = Math.abs(dr), adc = Math.abs(dc);
+    function between() { // số quân nằm GIỮA (chỉ khi đi thẳng); -1 nếu không thẳng
+      var n = 0, s;
+      if (dr === 0) { s = fc < tc ? 1 : -1; for (var c = fc + s; c !== tc; c += s) if (b[fr * 9 + c]) n++; return n; }
+      if (dc === 0) { s = fr < tr ? 1 : -1; for (var r = fr + s; r !== tr; r += s) if (b[r * 9 + fc]) n++; return n; }
+      return -1;
+    }
+    if (t === 'R') { if (dr !== 0 && dc !== 0) return false; return between() === 0; }
+    if (t === 'C') { if (dr !== 0 && dc !== 0) return false; var n = between(); return b[to] ? n === 1 : n === 0; }
+    if (t === 'N') { if (!((adr === 1 && adc === 2) || (adr === 2 && adc === 1))) return false; var lr = fr + (adr === 2 ? dr / 2 : 0), lc = fc + (adc === 2 ? dc / 2 : 0); return !b[lr * 9 + lc]; }
+    if (t === 'B') { if (adr !== 2 || adc !== 2) return false; if (b[(fr + dr / 2) * 9 + (fc + dc / 2)]) return false; return red ? (tr >= 5) : (tr <= 4); }
+    if (t === 'A') { if (adr !== 1 || adc !== 1) return false; if (tc < 3 || tc > 5) return false; return red ? (tr >= 7 && tr <= 9) : (tr >= 0 && tr <= 2); }
+    if (t === 'K') {
+      var tgt = b[to];
+      if (tgt && tgt.toUpperCase() === 'K' && dc === 0) return between() === 0; // đối mặt tướng (ăn)
+      if (adr + adc !== 1) return false; if (tc < 3 || tc > 5) return false; return red ? (tr >= 7 && tr <= 9) : (tr >= 0 && tr <= 2);
+    }
+    if (t === 'P') {
+      if (red) { if (dr === -1 && dc === 0) return true; if (fr <= 4 && dr === 0 && adc === 1) return true; return false; }
+      if (dr === 1 && dc === 0) return true; if (fr >= 5 && dr === 0 && adc === 1) return true; return false;
+    }
+    return true;
+  }
+  function legalMove(b, from, to) {
+    var p = b[from]; if (!p || from === to) return false;
+    var tgt = b[to]; if (tgt && sameSide(tgt, p)) return false; // không ăn quân mình
+    var red = isRed(p), type;
+    if (p === 'X' || p === 'x') { var role = posRole(from); if (!role) return true; type = role; }
+    else type = p.toUpperCase();
+    return moveByType(type, red, b, from, to);
+  }
+
   var board = new Array(90).fill(null);
   var startBoard = null;      // ảnh chụp thế mở (để tính lại khi xoá nước)
   var mode = 'setup';         // 'setup' | 'move'
@@ -155,9 +200,15 @@
       return;
     }
     if (i === selected) { selected = -1; render(); return; }
-    // thực hiện nước: selected -> i
     var piece = board[selected];
     if (!piece) { selected = i; render(); return; }
+    // bấm sang quân cùng bên → đổi chọn quân đó
+    if (board[i] && sameSide(board[i], piece)) { selected = i; render(); return; }
+    // kiểm tra nước đi đúng luật cờ tướng
+    if (!legalMove(board, selected, i)) {
+      beMsg('Nước đi không hợp lệ với luật của ' + pieceName(piece) + '. Chọn ô đích khác.');
+      return;
+    }
     var reveal = null;
     if (piece === 'X' || piece === 'x') {
       var rv = prompt('Quân úp lật ra binh chủng gì? Nhập: X(Xe) P(Pháo) M(Mã) T(Tượng) S(Sĩ) B(Tốt) — bỏ trống nếu giữ úp:', '');
