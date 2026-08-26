@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-08-26T06:54:51+00:00",
+    "exported_at": "2026-08-26T11:12:46+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -30641,16 +30641,83 @@
             "level": "co-ban",
             "source_type": "manual",
             "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-            "move_count": 0,
+            "move_count": 6,
             "summary": "Cờ úp là gì, luật chơi cờ úp từ A–Z: cách bày quân úp, cách đi quân úp theo ô xuất phát, luật lật quân lộ mặt thật và cách phân thắng bại. Hướng dẫn dễ hiểu cho người mới.",
-            "content": "<p><strong>Cờ úp<\/strong> (còn gọi là cờ úp bí) là một biến thể của cờ tướng: chơi trên cùng bàn cờ và cùng bộ 32 quân, nhưng phần lớn quân được <strong>úp sấp mặt và tráo ngẫu nhiên<\/strong> — bạn không biết quân của mình và của đối thủ thật sự là gì cho đến khi chúng được lật. Chính yếu tố bất ngờ này khiến cờ úp hấp dẫn, giàu tính toán xác suất và cân bằng hơn giữa người chơi mạnh và yếu.<\/p><h2>Cờ úp là gì?<\/h2><p>Cờ úp giữ nguyên luật đi quân, luật chiếu tướng và mục tiêu của cờ tướng, chỉ thêm một lớp \"che giấu\": danh tính các quân bị úp. Người chơi phải vừa tính nước đi, vừa suy đoán quân úp của mình mạnh hay yếu, và khai thác thời điểm lật quân sao cho có lợi nhất. Vì thế cờ úp thường được xem là môn cờ của <strong>bản lĩnh và may rủi có kiểm soát<\/strong>.<\/p><h2>Cách bày quân cờ úp<\/h2><ul><li>Hai <strong>Tướng<\/strong> (Soái\/Tướng) để <strong>ngửa<\/strong> ngay từ đầu, đặt đúng vị trí gốc trong cung như cờ tướng — Tướng không bao giờ bị úp.<\/li><li>30 quân còn lại của hai bên (mỗi bên 15 quân: 2 Xe, 2 Pháo, 2 Mã, 2 Tượng, 2 Sĩ và 5 Tốt) được <strong>tráo ngẫu nhiên rồi đặt úp<\/strong> lên đúng 15 ô xuất phát còn lại của cờ tướng.<\/li><li>Kết quả: bàn cờ nhìn y hệt thế khai cuộc cờ tướng, nhưng mỗi ô (trừ hai Tướng) là một quân úp bí ẩn.<\/li><\/ul><h2>Cách đi quân úp (khi chưa lật)<\/h2><p>Đây là quy tắc cốt lõi, khác biệt lớn nhất của cờ úp: <strong>quân úp đi theo binh chủng của Ô XUẤT PHÁT mà nó đang đứng<\/strong>, chứ không theo mặt thật (vì mặt thật còn giấu).<\/p><ul><li>Quân úp ở ô góc (vị trí Xe gốc) → đi như <strong>Xe<\/strong>.<\/li><li>Quân úp ở ô cạnh góc (vị trí Mã gốc) → đi như <strong>Mã<\/strong>.<\/li><li>Tương tự cho các ô Tượng, Sĩ, Pháo gốc → đi như Tượng \/ Sĩ \/ Pháo.<\/li><li>Năm quân úp ở hàng Tốt → đi như <strong>Tốt<\/strong> (tiến thẳng, qua sông mới đi ngang).<\/li><\/ul><h2>Lật quân — lộ mặt thật<\/h2><p>Khi một quân úp <strong>đi nước đầu tiên<\/strong>, nó được <strong>lật ngửa để lộ binh chủng thật<\/strong>. Từ nước đi sau trở đi, nó di chuyển theo đúng quân thật của mình.<\/p><p>Ví dụ: một quân đứng ở ô Mã gốc — nước đầu nó đi như Mã; khi lật ra hoá là <strong>Pháo<\/strong>, thì từ đó nó đi và ăn như Pháo. Nghệ thuật của cờ úp nằm ở chỗ chọn <strong>đúng quân, đúng thời điểm để lật<\/strong>: lật trúng Xe, Pháo, Mã mạnh và triển khai được ngay thì chiếm ưu thế lớn.<\/p><h2>Cách phân thắng bại<\/h2><ul><li>Mục tiêu như cờ tướng: <strong>chiếu bí<\/strong> Tướng đối phương (Tướng bị chiếu mà không còn nước gỡ) là thắng.<\/li><li>Vẫn áp dụng luật cấm <strong>lộ mặt Tướng<\/strong> (hai Tướng không được đối mặt trực tiếp trên cùng một cột trống).<\/li><li>Hết nước đi hợp lệ mà không bị chiếu thì xử hoà theo thông lệ; các luật cấm chiếu\/đuổi lặp vô hạn cũng được áp dụng (xem bài riêng về luật đuổi trong cờ úp).<\/li><\/ul><h2>Vì sao cờ úp ngày càng được ưa chuộng<\/h2><p>Cờ úp giữ được chiều sâu chiến thuật của cờ tướng nhưng thêm yếu tố ẩn thông tin, nên mỗi ván là một trải nghiệm mới. Người mới không bị \"chấp\" quá nặng vì ai cũng phải dò quân, còn cao thủ vẫn thắng nhờ tính toán xác suất và khai thác thế cờ tốt hơn. Đây cũng là lý do cờ úp là mảng nội dung còn rất ít nơi hướng dẫn bài bản — và là chỗ để bạn học nhanh, vượt lên.<\/p>",
+            "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ 6 nước khai cuộc cờ úp: quân úp đi theo binh chủng của ô xuất phát, và <strong>lật lộ mặt thật ngay khi đi nước đầu<\/strong>.<\/p><p><strong>Cờ úp<\/strong> (còn gọi là cờ úp bí) là một biến thể của cờ tướng: chơi trên cùng bàn cờ và cùng bộ 32 quân, nhưng phần lớn quân được <strong>úp sấp mặt và tráo ngẫu nhiên<\/strong> — bạn không biết quân của mình và của đối thủ thật sự là gì cho đến khi chúng được lật. Chính yếu tố bất ngờ này khiến cờ úp hấp dẫn, giàu tính toán xác suất và cân bằng hơn giữa người chơi mạnh và yếu.<\/p><h2>Cờ úp là gì?<\/h2><p>Cờ úp giữ nguyên luật đi quân, luật chiếu tướng và mục tiêu của cờ tướng, chỉ thêm một lớp \"che giấu\": danh tính các quân bị úp. Người chơi phải vừa tính nước đi, vừa suy đoán quân úp của mình mạnh hay yếu, và khai thác thời điểm lật quân sao cho có lợi nhất. Vì thế cờ úp thường được xem là môn cờ của <strong>bản lĩnh và may rủi có kiểm soát<\/strong>.<\/p><h2>Cách bày quân cờ úp<\/h2><ul><li>Hai <strong>Tướng<\/strong> (Soái\/Tướng) để <strong>ngửa<\/strong> ngay từ đầu, đặt đúng vị trí gốc trong cung như cờ tướng — Tướng không bao giờ bị úp.<\/li><li>30 quân còn lại của hai bên (mỗi bên 15 quân: 2 Xe, 2 Pháo, 2 Mã, 2 Tượng, 2 Sĩ và 5 Tốt) được <strong>tráo ngẫu nhiên rồi đặt úp<\/strong> lên đúng 15 ô xuất phát còn lại của cờ tướng.<\/li><li>Kết quả: bàn cờ nhìn y hệt thế khai cuộc cờ tướng, nhưng mỗi ô (trừ hai Tướng) là một quân úp bí ẩn.<\/li><\/ul><h2>Cách đi quân úp (khi chưa lật)<\/h2><p>Đây là quy tắc cốt lõi, khác biệt lớn nhất của cờ úp: <strong>quân úp đi theo binh chủng của Ô XUẤT PHÁT mà nó đang đứng<\/strong>, chứ không theo mặt thật (vì mặt thật còn giấu).<\/p><ul><li>Quân úp ở ô góc (vị trí Xe gốc) → đi như <strong>Xe<\/strong>.<\/li><li>Quân úp ở ô cạnh góc (vị trí Mã gốc) → đi như <strong>Mã<\/strong>.<\/li><li>Tương tự cho các ô Tượng, Sĩ, Pháo gốc → đi như Tượng \/ Sĩ \/ Pháo.<\/li><li>Năm quân úp ở hàng Tốt → đi như <strong>Tốt<\/strong> (tiến thẳng, qua sông mới đi ngang).<\/li><\/ul><h2>Lật quân — lộ mặt thật<\/h2><p>Khi một quân úp <strong>đi nước đầu tiên<\/strong>, nó được <strong>lật ngửa để lộ binh chủng thật<\/strong>. Từ nước đi sau trở đi, nó di chuyển theo đúng quân thật của mình.<\/p><p>Ví dụ: một quân đứng ở ô Mã gốc — nước đầu nó đi như Mã; khi lật ra hoá là <strong>Pháo<\/strong>, thì từ đó nó đi và ăn như Pháo. Nghệ thuật của cờ úp nằm ở chỗ chọn <strong>đúng quân, đúng thời điểm để lật<\/strong>: lật trúng Xe, Pháo, Mã mạnh và triển khai được ngay thì chiếm ưu thế lớn.<\/p><h2>Cách phân thắng bại<\/h2><ul><li>Mục tiêu như cờ tướng: <strong>chiếu bí<\/strong> Tướng đối phương (Tướng bị chiếu mà không còn nước gỡ) là thắng.<\/li><li>Vẫn áp dụng luật cấm <strong>lộ mặt Tướng<\/strong> (hai Tướng không được đối mặt trực tiếp trên cùng một cột trống).<\/li><li>Hết nước đi hợp lệ mà không bị chiếu thì xử hoà theo thông lệ; các luật cấm chiếu\/đuổi lặp vô hạn cũng được áp dụng (xem bài riêng về luật đuổi trong cờ úp).<\/li><\/ul><h2>Vì sao cờ úp ngày càng được ưa chuộng<\/h2><p>Cờ úp giữ được chiều sâu chiến thuật của cờ tướng nhưng thêm yếu tố ẩn thông tin, nên mỗi ván là một trải nghiệm mới. Người mới không bị \"chấp\" quá nặng vì ai cũng phải dò quân, còn cao thủ vẫn thắng nhờ tính toán xác suất và khai thác thế cờ tốt hơn. Đây cũng là lý do cờ úp là mảng nội dung còn rất ít nơi hướng dẫn bài bản — và là chỗ để bạn học nhanh, vượt lên.<\/p>",
             "status": "published",
             "decode_confidence": null,
             "thumbnail": null,
             "seo_title": "Cờ Úp Là Gì? Luật Chơi Cờ Úp Cho Người Mới",
             "seo_description": "Luật chơi cờ úp đầy đủ cho người mới: cách bày quân úp, đi quân theo ô xuất phát, lật quân lộ mặt thật, cách thắng thua. Giải thích rõ ràng, dễ hiểu.",
             "is_featured": false,
-            "steps": []
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đấm tốt Biên",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đen mở Xe biên",
+                    "move_notation_iccs": "i9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                    "move_notation_iccs": "a0a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen đấm tốt Biên",
+                    "move_notation_iccs": "a6a5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Pháo",
+                    "move_notation_iccs": "b2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                    "is_flip_reveal": false
+                }
+            ]
         },
         {
             "series_slug": "co-up-so-cap-1",
@@ -30662,16 +30729,83 @@
             "level": "co-ban",
             "source_type": "manual",
             "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-            "move_count": 0,
+            "move_count": 6,
             "summary": "Lật trúng Xe hàng trên sớm là lợi thế lớn trong cờ úp. Bài học chỉ cách khai thác tối đa: ưu tiên mở quân hàng trên, đấm tốt Biên, chỉ đổi kế hoạch khi lật ra Xe hoặc Pháo, và thẩm thế trước thẩm quân sau.",
-            "content": "<p>Trong cờ úp, lật trúng và đưa được <strong>Xe ở hàng trên<\/strong> ra ngay những nước đầu là một lợi thế lớn: con Xe mạnh nhất bàn cờ hiện diện sớm, ép đối phương phải chống đỡ. Nhưng mở Xe sớm mà đi tiếp sai hướng thì lợi thế tan biến rất nhanh. Bài này hướng dẫn cách khai thác tối đa khi bạn mở được Xe sớm.<\/p><h2>Vì sao mở Xe hàng trên là lợi thế<\/h2><p>Con Xe ở hàng trên cơ động hơn hẳn Xe hàng dưới: nó khống chế được nhiều đường, sẵn sàng bắt quân và tiến chiếm cửa tướng. Khi bạn mở Xe trước, đối phương thường phải mất nhịp để chống đỡ — dù bạn đi trước một nước, quân của bạn đã ở vị trí đẹp hơn con Xe hàng dưới của họ.<\/p><h2>Nguyên tắc 1 — Ưu tiên mở quân hàng trên<\/h2><p>Cờ úp khác cờ tướng ở chỗ khai cuộc chỉ gói gọn trong khoảng <strong>5 nước đầu<\/strong>: vì quân còn úp, ta không thể triển khai sâu như cờ tướng. Trong 5 nước ấy, hãy ưu tiên mở các quân ở <strong>hàng trên<\/strong> — chúng vào vị trí thuận lợi nhanh, tạo liên kết và mở rộng không gian. Quân hàng dưới để lại xử lý sau.<\/p><h2>Nguyên tắc 2 — Đấm tốt Biên, đừng vội mở tốt trung lộ<\/h2><p>Khi cần một nước \"mở đường\", hãy <strong>đấm tốt Biên<\/strong> chứ đừng đấm tốt 7 hay tốt đầu quá sớm. Mở tốt trung lộ sớm làm thủng cánh yếu và mở cơ hội phản công cho đối phương — họ có thể đấm tốt biên, mở mã giả rồi phản lại con Xe của bạn. Mở tốt Biên an toàn hơn mà vẫn giúp triển khai quân mạnh.<\/p><p>Ví dụ điển hình: khi cả hai bên cùng mở Xe, nước <strong>Xe 9 bình 3<\/strong> vừa bắt tốt biên của đối phương, vừa đưa Xe tới ô thông thoáng hơn — một nước hai mục đích.<\/p><h2>Chỉ hai trường hợp buộc đổi kế hoạch<\/h2><p>Khi bạn định mở quân hàng trên mà quân vừa lật của đối phương uy hiếp ngay, chỉ có hai tình huống buộc bạn đổi ý:<\/p><ul><li><strong>Đối phương lật ra Xe<\/strong>: có Xe hiện diện, bạn phải lo phòng lộ đáy — thường mở mã giả bên cánh trái để hạn chế bị công phá.<\/li><li><strong>Đối phương lật ra Pháo<\/strong>: Pháo đang bắt trực tiếp Xe của bạn, buộc phải xử lý ngay (bay tượng đỡ hoặc né Xe).<\/li><\/ul><p>Còn lại — Mã, Tượng, Sĩ, Tốt — là những quân chưa uy hiếp ngay, cứ tiếp tục ưu tiên mở quân hàng trên của mình.<\/p><h2>Thẩm thế trước, thẩm quân sau<\/h2><p>Đây là nguyên tắc vay mượn từ cờ tướng nhưng càng đúng trong cờ úp: <strong>ưu tiên hình thế, đừng tham ăn quân<\/strong>. Ăn một quân úp mà chưa biết nó là gì rất rủi ro — ăn trúng quân yếu thì bạn mất nhịp, lại tạo điều kiện cho đối phương mở quân nhanh hơn. Chỉ ăn khi việc đó không làm mất thế chủ động.<\/p><h2>Đánh giá hình thế kiểu cờ úp<\/h2><p>Vì quân chưa lộ mặt, bạn không đánh giá bằng \"đang có quân gì\" như cờ tướng, mà bằng <strong>khả năng các quân úp có thể mở ra và không gian phát triển<\/strong>. Bàn cờ chỉ có bấy nhiêu ô; ai để không gian kiểm soát hẹp dần thì quân sẽ dần rơi vào ô xấu. Hãy giữ đường mở cho Pháo (quân rất uy lực trong cờ úp) và Xe, đồng thời nhắm chiếm <strong>cửa tướng (tứ lục)<\/strong> để phòng ngự cho vững.<\/p><h2>Ghi nhớ<\/h2><ul><li>Mở được Xe hàng trên sớm là lợi thế — khai thác bằng cách ưu tiên mở tiếp quân hàng trên.<\/li><li>Đấm tốt Biên, tránh mở tốt trung lộ quá sớm.<\/li><li>Chỉ đổi kế hoạch khi đối phương lật ra Xe hoặc Pháo.<\/li><li>Thẩm thế trước, thẩm quân sau — không tham ăn quân úp.<\/li><li>Khai cuộc cờ úp chỉ gói trong ~5 nước; luôn nhắm không gian và cửa tướng.<\/li><\/ul>",
+            "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ cách mở quân trong cờ úp: quân úp đi theo binh chủng ô xuất phát và lật lộ mặt thật khi đi nước đầu.<\/p><p>Trong cờ úp, lật trúng và đưa được <strong>Xe ở hàng trên<\/strong> ra ngay những nước đầu là một lợi thế lớn: con Xe mạnh nhất bàn cờ hiện diện sớm, ép đối phương phải chống đỡ. Nhưng mở Xe sớm mà đi tiếp sai hướng thì lợi thế tan biến rất nhanh. Bài này hướng dẫn cách khai thác tối đa khi bạn mở được Xe sớm.<\/p><h2>Vì sao mở Xe hàng trên là lợi thế<\/h2><p>Con Xe ở hàng trên cơ động hơn hẳn Xe hàng dưới: nó khống chế được nhiều đường, sẵn sàng bắt quân và tiến chiếm cửa tướng. Khi bạn mở Xe trước, đối phương thường phải mất nhịp để chống đỡ — dù bạn đi trước một nước, quân của bạn đã ở vị trí đẹp hơn con Xe hàng dưới của họ.<\/p><h2>Nguyên tắc 1 — Ưu tiên mở quân hàng trên<\/h2><p>Cờ úp khác cờ tướng ở chỗ khai cuộc chỉ gói gọn trong khoảng <strong>5 nước đầu<\/strong>: vì quân còn úp, ta không thể triển khai sâu như cờ tướng. Trong 5 nước ấy, hãy ưu tiên mở các quân ở <strong>hàng trên<\/strong> — chúng vào vị trí thuận lợi nhanh, tạo liên kết và mở rộng không gian. Quân hàng dưới để lại xử lý sau.<\/p><h2>Nguyên tắc 2 — Đấm tốt Biên, đừng vội mở tốt trung lộ<\/h2><p>Khi cần một nước \"mở đường\", hãy <strong>đấm tốt Biên<\/strong> chứ đừng đấm tốt 7 hay tốt đầu quá sớm. Mở tốt trung lộ sớm làm thủng cánh yếu và mở cơ hội phản công cho đối phương — họ có thể đấm tốt biên, mở mã giả rồi phản lại con Xe của bạn. Mở tốt Biên an toàn hơn mà vẫn giúp triển khai quân mạnh.<\/p><p>Ví dụ điển hình: khi cả hai bên cùng mở Xe, nước <strong>Xe 9 bình 3<\/strong> vừa bắt tốt biên của đối phương, vừa đưa Xe tới ô thông thoáng hơn — một nước hai mục đích.<\/p><h2>Chỉ hai trường hợp buộc đổi kế hoạch<\/h2><p>Khi bạn định mở quân hàng trên mà quân vừa lật của đối phương uy hiếp ngay, chỉ có hai tình huống buộc bạn đổi ý:<\/p><ul><li><strong>Đối phương lật ra Xe<\/strong>: có Xe hiện diện, bạn phải lo phòng lộ đáy — thường mở mã giả bên cánh trái để hạn chế bị công phá.<\/li><li><strong>Đối phương lật ra Pháo<\/strong>: Pháo đang bắt trực tiếp Xe của bạn, buộc phải xử lý ngay (bay tượng đỡ hoặc né Xe).<\/li><\/ul><p>Còn lại — Mã, Tượng, Sĩ, Tốt — là những quân chưa uy hiếp ngay, cứ tiếp tục ưu tiên mở quân hàng trên của mình.<\/p><h2>Thẩm thế trước, thẩm quân sau<\/h2><p>Đây là nguyên tắc vay mượn từ cờ tướng nhưng càng đúng trong cờ úp: <strong>ưu tiên hình thế, đừng tham ăn quân<\/strong>. Ăn một quân úp mà chưa biết nó là gì rất rủi ro — ăn trúng quân yếu thì bạn mất nhịp, lại tạo điều kiện cho đối phương mở quân nhanh hơn. Chỉ ăn khi việc đó không làm mất thế chủ động.<\/p><h2>Đánh giá hình thế kiểu cờ úp<\/h2><p>Vì quân chưa lộ mặt, bạn không đánh giá bằng \"đang có quân gì\" như cờ tướng, mà bằng <strong>khả năng các quân úp có thể mở ra và không gian phát triển<\/strong>. Bàn cờ chỉ có bấy nhiêu ô; ai để không gian kiểm soát hẹp dần thì quân sẽ dần rơi vào ô xấu. Hãy giữ đường mở cho Pháo (quân rất uy lực trong cờ úp) và Xe, đồng thời nhắm chiếm <strong>cửa tướng (tứ lục)<\/strong> để phòng ngự cho vững.<\/p><h2>Ghi nhớ<\/h2><ul><li>Mở được Xe hàng trên sớm là lợi thế — khai thác bằng cách ưu tiên mở tiếp quân hàng trên.<\/li><li>Đấm tốt Biên, tránh mở tốt trung lộ quá sớm.<\/li><li>Chỉ đổi kế hoạch khi đối phương lật ra Xe hoặc Pháo.<\/li><li>Thẩm thế trước, thẩm quân sau — không tham ăn quân úp.<\/li><li>Khai cuộc cờ úp chỉ gói trong ~5 nước; luôn nhắm không gian và cửa tướng.<\/li><\/ul>",
             "status": "published",
             "decode_confidence": null,
             "thumbnail": null,
             "seo_title": "Mở Xe Sớm Trong Cờ Úp — Tối Ưu Lợi Thế Khai Cuộc",
             "seo_description": "Cách khai thác lợi thế khi mở Xe sớm trong cờ úp: ưu tiên quân hàng trên, đấm tốt Biên, đổi kế hoạch khi lật ra Xe\/Pháo, thẩm thế trước thẩm quân sau.",
             "is_featured": false,
-            "steps": []
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đấm tốt Biên",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đen mở Xe biên",
+                    "move_notation_iccs": "i9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                    "move_notation_iccs": "a0a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen đấm tốt Biên",
+                    "move_notation_iccs": "a6a5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Pháo",
+                    "move_notation_iccs": "b2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                    "is_flip_reveal": false
+                }
+            ]
         },
         {
             "series_slug": "co-up-so-cap-1",
@@ -30683,16 +30817,83 @@
             "level": "co-ban",
             "source_type": "manual",
             "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-            "move_count": 0,
+            "move_count": 6,
             "summary": "Tiếp nối bài mở Xe sớm: hai hướng xử lý khi đối phương lên mã giả (chuyển Xe bắt quân hoặc vật Pháo mã đáy), khi nào dùng cách nào, vì sao hạn chế đổi quân, hiểu đúng khái niệm đối công và tầm quan trọng của cửa tướng.",
-            "content": "<p>Bài trước đã chỉ nguyên tắc chung khi mở được Xe sớm. Bài này đi sâu hơn: khi bạn mở Xe (ví dụ Xe 9 tiến 1) mà đối phương chống bằng cách <strong>lên mã giả<\/strong>, bạn có những hướng khai thác nào để biến lợi thế thành ưu thế thật.<\/p><h2>Hai hướng xử lý khi đối phương lên mã giả<\/h2><p>Sau khi đối phương lên mã giả, bên mở Xe có hai lựa chọn chính:<\/p><ul><li><strong>Chuyển Xe sang bắt quân<\/strong> (ví dụ Xe 9 bình 7 bắt tốt): giữ Xe ở hàng trên, khiến tốt biên của đối phương khó phát triển, đồng thời bạn vẫn kiểm soát và mở được lộ tốt thuận lợi.<\/li><li><strong>Dùng Pháo vật mã đáy<\/strong>: đổi Pháo lấy mã giả để dễ bắt tốt 7 và làm đối phương vỡ tuyến đáy.<\/li><\/ul><h2>Khi nào dùng cách nào<\/h2><p>Vật Pháo mã đáy có nhược điểm lớn: bạn mất một quân phòng ngự quan trọng, nếu sau đó đối phương lật ra Xe thì cánh phải của bạn dễ bị mua. Kinh nghiệm:<\/p><ul><li>Đánh với người <strong>trình độ ngang hoặc thấp hơn<\/strong> → nên <strong>chuyển Xe sang bắt<\/strong>, chơi chắc.<\/li><li>Đánh với người <strong>trình độ cao hơn<\/strong> → có thể <strong>vật Pháo xuống đáy<\/strong> để tạo thế phức tạp, đặt điểm yếu cố định, chờ họ mở quân xấu là khai thác.<\/li><\/ul><h2>Hạn chế đổi quân trong cờ úp<\/h2><p>Một nguyên tắc dễ sai: <strong>đừng ham đổi quân<\/strong>. Khi bạn đang có lợi thế (Xe hiện diện sớm), đổi hai quân giá trị tương đương coi như bạn tự đánh mất lợi thế; kể cả đổi có lời một chút cũng chưa chắc bù được một quân phòng ngự mất đi. Chỉ đổi khi bắt buộc, hoặc khi bạn đã kiểm soát tốt bàn cờ.<\/p><h2>Hiểu đúng \"đối công\"<\/h2><p>Rất nhiều người nhầm: đưa Xe sang sân đối phương ăn quân là \"đối công\". Thực ra <strong>đối công là khi cả hai bên đều đủ lực tấn công<\/strong>. Khi bạn mới có mỗi con Xe còn đối phương chưa lộ quân nào, lao Xe sang thường chỉ đưa Xe vào ô xấu — đối phương bình Pháo giả vào <strong>giam Xe<\/strong>, bạn có Xe mà không đi được. Nhớ: <strong>nhất thế, nhì quân<\/strong> — thế đứng quan trọng hơn ăn được một quân.<\/p><h2>Cửa tướng (lộ 4–6) rất quan trọng<\/h2><p>Trong cờ úp, bộ đỡ Sĩ – Tượng thường chưa lộ và <strong>không liên kết sẵn<\/strong> như cờ tướng, nên phòng thủ mong manh hơn. Vì thế hai vị trí <strong>cửa tướng (lộ 4 và lộ 6)<\/strong> cực kỳ nhạy cảm: ai đưa được Xe khống chế cửa tướng thì phòng ngự lẫn tấn công đều dễ hơn hẳn. Hãy nhắm chiếm hai lộ này.<\/p><h2>Tốc độ mở quân là ưu tiên số một<\/h2><p>Xe – Pháo – Mã của đối phương lật ra thì xử lý gọn: gặp <strong>Xe thì đấu<\/strong>, gặp <strong>Pháo hoặc Mã thì bắt trực tiếp<\/strong> (đi Xe 9 bình 7). Còn lại luôn ưu tiên <strong>mở thêm quân hàng trên<\/strong> — mở càng nhiều quân, theo xác suất bạn càng sớm lật ra quân mạnh và chiếm không gian. Cờ úp rất ít khi hòa: không tạo được uy hiếp nghĩa là bạn đang kém.<\/p><h2>Ghi nhớ<\/h2><ul><li>Đối phương lên mã giả: chuyển Xe sang bắt (chơi chắc) hoặc vật Pháo mã đáy (tạo phức tạp với người mạnh hơn).<\/li><li>Hạn chế đổi quân khi đang có lợi thế.<\/li><li>Đưa Xe sang sân đối phương một mình không phải là đối công — coi chừng bị giam Xe.<\/li><li>Chiếm cửa tướng lộ 4–6 vì bộ đỡ cờ úp không liên kết sẵn.<\/li><li>Ưu tiên tốc độ mở quân hàng trên; Xe thì đấu, Pháo\/Mã thì bắt.<\/li><\/ul>",
+            "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ cách mở quân trong cờ úp: quân úp đi theo binh chủng ô xuất phát và lật lộ mặt thật khi đi nước đầu.<\/p><p>Bài trước đã chỉ nguyên tắc chung khi mở được Xe sớm. Bài này đi sâu hơn: khi bạn mở Xe (ví dụ Xe 9 tiến 1) mà đối phương chống bằng cách <strong>lên mã giả<\/strong>, bạn có những hướng khai thác nào để biến lợi thế thành ưu thế thật.<\/p><h2>Hai hướng xử lý khi đối phương lên mã giả<\/h2><p>Sau khi đối phương lên mã giả, bên mở Xe có hai lựa chọn chính:<\/p><ul><li><strong>Chuyển Xe sang bắt quân<\/strong> (ví dụ Xe 9 bình 7 bắt tốt): giữ Xe ở hàng trên, khiến tốt biên của đối phương khó phát triển, đồng thời bạn vẫn kiểm soát và mở được lộ tốt thuận lợi.<\/li><li><strong>Dùng Pháo vật mã đáy<\/strong>: đổi Pháo lấy mã giả để dễ bắt tốt 7 và làm đối phương vỡ tuyến đáy.<\/li><\/ul><h2>Khi nào dùng cách nào<\/h2><p>Vật Pháo mã đáy có nhược điểm lớn: bạn mất một quân phòng ngự quan trọng, nếu sau đó đối phương lật ra Xe thì cánh phải của bạn dễ bị mua. Kinh nghiệm:<\/p><ul><li>Đánh với người <strong>trình độ ngang hoặc thấp hơn<\/strong> → nên <strong>chuyển Xe sang bắt<\/strong>, chơi chắc.<\/li><li>Đánh với người <strong>trình độ cao hơn<\/strong> → có thể <strong>vật Pháo xuống đáy<\/strong> để tạo thế phức tạp, đặt điểm yếu cố định, chờ họ mở quân xấu là khai thác.<\/li><\/ul><h2>Hạn chế đổi quân trong cờ úp<\/h2><p>Một nguyên tắc dễ sai: <strong>đừng ham đổi quân<\/strong>. Khi bạn đang có lợi thế (Xe hiện diện sớm), đổi hai quân giá trị tương đương coi như bạn tự đánh mất lợi thế; kể cả đổi có lời một chút cũng chưa chắc bù được một quân phòng ngự mất đi. Chỉ đổi khi bắt buộc, hoặc khi bạn đã kiểm soát tốt bàn cờ.<\/p><h2>Hiểu đúng \"đối công\"<\/h2><p>Rất nhiều người nhầm: đưa Xe sang sân đối phương ăn quân là \"đối công\". Thực ra <strong>đối công là khi cả hai bên đều đủ lực tấn công<\/strong>. Khi bạn mới có mỗi con Xe còn đối phương chưa lộ quân nào, lao Xe sang thường chỉ đưa Xe vào ô xấu — đối phương bình Pháo giả vào <strong>giam Xe<\/strong>, bạn có Xe mà không đi được. Nhớ: <strong>nhất thế, nhì quân<\/strong> — thế đứng quan trọng hơn ăn được một quân.<\/p><h2>Cửa tướng (lộ 4–6) rất quan trọng<\/h2><p>Trong cờ úp, bộ đỡ Sĩ – Tượng thường chưa lộ và <strong>không liên kết sẵn<\/strong> như cờ tướng, nên phòng thủ mong manh hơn. Vì thế hai vị trí <strong>cửa tướng (lộ 4 và lộ 6)<\/strong> cực kỳ nhạy cảm: ai đưa được Xe khống chế cửa tướng thì phòng ngự lẫn tấn công đều dễ hơn hẳn. Hãy nhắm chiếm hai lộ này.<\/p><h2>Tốc độ mở quân là ưu tiên số một<\/h2><p>Xe – Pháo – Mã của đối phương lật ra thì xử lý gọn: gặp <strong>Xe thì đấu<\/strong>, gặp <strong>Pháo hoặc Mã thì bắt trực tiếp<\/strong> (đi Xe 9 bình 7). Còn lại luôn ưu tiên <strong>mở thêm quân hàng trên<\/strong> — mở càng nhiều quân, theo xác suất bạn càng sớm lật ra quân mạnh và chiếm không gian. Cờ úp rất ít khi hòa: không tạo được uy hiếp nghĩa là bạn đang kém.<\/p><h2>Ghi nhớ<\/h2><ul><li>Đối phương lên mã giả: chuyển Xe sang bắt (chơi chắc) hoặc vật Pháo mã đáy (tạo phức tạp với người mạnh hơn).<\/li><li>Hạn chế đổi quân khi đang có lợi thế.<\/li><li>Đưa Xe sang sân đối phương một mình không phải là đối công — coi chừng bị giam Xe.<\/li><li>Chiếm cửa tướng lộ 4–6 vì bộ đỡ cờ úp không liên kết sẵn.<\/li><li>Ưu tiên tốc độ mở quân hàng trên; Xe thì đấu, Pháo\/Mã thì bắt.<\/li><\/ul>",
             "status": "published",
             "decode_confidence": null,
             "thumbnail": null,
             "seo_title": "Khai Thác Ưu Thế Khi Mở Xe — Cờ Úp Sơ Cấp",
             "seo_description": "Cách khai thác triệt để ưu thế mở Xe trong cờ úp: hai hướng xử lý khi đối phương lên mã giả, khi nào nên đổi quân, hiểu đúng đối công, chiếm cửa tướng.",
             "is_featured": false,
-            "steps": []
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đấm tốt Biên",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đen mở Xe biên",
+                    "move_notation_iccs": "i9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                    "move_notation_iccs": "a0a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen đấm tốt Biên",
+                    "move_notation_iccs": "a6a5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Pháo",
+                    "move_notation_iccs": "b2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                    "is_flip_reveal": false
+                }
+            ]
         },
         {
             "series_slug": "co-up-so-cap-1",
@@ -30704,16 +30905,83 @@
             "level": "co-ban",
             "source_type": "manual",
             "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-            "move_count": 0,
+            "move_count": 6,
             "summary": "Lật trúng Pháo sớm và bắt được xe giả đối phương là lợi thế lớn trong cờ úp. Bài học chỉ cách khai thác triệt để: khi nào nên đổi Pháo, vì sao đấm tốt Biên, không phí Pháo chạy lung tung, và giữ Pháo cơ động ở Trung lộ.",
-            "content": "<p>Con Pháo là quân uy lực bậc nhất trong cờ úp — mạnh hơn hẳn Pháo trong cờ tướng vì có nhiều quân phối hợp. Khi bạn lật trúng và đưa được <strong>Pháo biên ra sớm<\/strong>, đi thẳng bắt ô xe giả của đối phương, đó là lợi thế lớn. Bài này chỉ cách khai thác triệt để thay vì chỉ chạy theo tốc độ mở quân.<\/p><h2>Đối phương chống đỡ thế nào<\/h2><p>Khi Pháo của bạn dọa ăn xe giả, đối phương thực chất chỉ có một hướng: ngăn Pháo ăn xe. Cách hiệu quả nhất là <strong>gác mã che<\/strong> (đưa mã lên chắn), hoặc treo tượng đỡ.<\/p><h2>Đổi Pháo là nước hay nhất<\/h2><p>Khi đối phương gác mã giả và để lộ Pháo, đừng vội đi mã 8 tiến 7 để tranh thêm nhịp mở quân — làm vậy bạn đánh đổi mất vị trí xe giả cực quan trọng, hỏng cả cánh trái. Nước hay nhất thường là <strong>ăn Pháo (đổi Pháo)<\/strong>. Thà chịu kém một nhịp \"đi dưới\" nhưng ép đối phương vào vị trí xấu, đoạt được tốt biên và làm họ yếu Trung lộ.<\/p><h2>Đấm tốt Biên, đừng làm Pháo bị \"tù\"<\/h2><p>Khi cần một nước mở đường, hãy <strong>đấm tốt Biên (tốt 1)<\/strong> chứ đừng đấm tốt 7. Mở tốt 7 tuy bung được nhiều quân hàng trên nhưng làm con Pháo bị \"tù\", mất cơ động. Đấm tốt Biên giữ Pháo linh hoạt và khiến đối phương không dám đẩy tốt biên. Hai cách chỉ chênh nhau chút ít (khoảng 10 so với 9): gặp đối thủ yếu hơn thì mở tốt 7 để bung nhiều quân, gặp người ngang cơ thì đấm tốt Biên để vắt kiệt lợi thế nhỏ.<\/p><h2>Đừng phí con Pháo<\/h2><p>Nhớ nguyên tắc <strong>nhất xe, nhì pháo<\/strong>: Pháo quá giá trị để đem chạy lung tung \"dò\" hay bắt quân vặt — mỗi nước phí là một nhịp cho không đối phương, chỉ lợi khi bắt trúng xe. Cao thủ thường <strong>mở sĩ<\/strong> thay vì vội đấm tốt biên, rồi dùng đòn <strong>thoái Pháo về bắt tốt biên<\/strong> (Pháo 9 bình 1) rất khó chịu — vì có mã che nên tượng đối phương không giữ nổi tốt biên.<\/p><h2>Khi đã mở được hai Pháo<\/h2><p>Ưu tiên khai thông hàng trên (mở tốt 3, tốt 7 để dọn đường), và khi cần đi mã thì chọn <strong>mã 2 tiến 3<\/strong> hơn mã 2 tiến 1 — mã hướng vào trung tâm phối hợp tốt hơn mã ra biên.<\/p><h2>Ghi nhớ<\/h2><ul><li>Mở Pháo bắt xe giả sớm là lợi thế lớn — khai thác bằng \"thế trước, quân sau\".<\/li><li>Đối phương gác mã lộ Pháo: đổi Pháo thường là hay nhất, đừng tham nhịp mà mất xe giả.<\/li><li>Đấm tốt Biên để giữ Pháo cơ động; tốt 7 làm Pháo bị tù.<\/li><li>Không phí Pháo chạy vặt (nhất xe nhì pháo); Pháo đẹp nhất khi khống chế Trung lộ.<\/li><li>Trong cờ úp, một \"nước trên\" đáng gần hai \"nước dưới\".<\/li><\/ul>",
+            "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ cách mở quân trong cờ úp: quân úp đi theo binh chủng ô xuất phát và lật lộ mặt thật khi đi nước đầu.<\/p><p>Con Pháo là quân uy lực bậc nhất trong cờ úp — mạnh hơn hẳn Pháo trong cờ tướng vì có nhiều quân phối hợp. Khi bạn lật trúng và đưa được <strong>Pháo biên ra sớm<\/strong>, đi thẳng bắt ô xe giả của đối phương, đó là lợi thế lớn. Bài này chỉ cách khai thác triệt để thay vì chỉ chạy theo tốc độ mở quân.<\/p><h2>Đối phương chống đỡ thế nào<\/h2><p>Khi Pháo của bạn dọa ăn xe giả, đối phương thực chất chỉ có một hướng: ngăn Pháo ăn xe. Cách hiệu quả nhất là <strong>gác mã che<\/strong> (đưa mã lên chắn), hoặc treo tượng đỡ.<\/p><h2>Đổi Pháo là nước hay nhất<\/h2><p>Khi đối phương gác mã giả và để lộ Pháo, đừng vội đi mã 8 tiến 7 để tranh thêm nhịp mở quân — làm vậy bạn đánh đổi mất vị trí xe giả cực quan trọng, hỏng cả cánh trái. Nước hay nhất thường là <strong>ăn Pháo (đổi Pháo)<\/strong>. Thà chịu kém một nhịp \"đi dưới\" nhưng ép đối phương vào vị trí xấu, đoạt được tốt biên và làm họ yếu Trung lộ.<\/p><h2>Đấm tốt Biên, đừng làm Pháo bị \"tù\"<\/h2><p>Khi cần một nước mở đường, hãy <strong>đấm tốt Biên (tốt 1)<\/strong> chứ đừng đấm tốt 7. Mở tốt 7 tuy bung được nhiều quân hàng trên nhưng làm con Pháo bị \"tù\", mất cơ động. Đấm tốt Biên giữ Pháo linh hoạt và khiến đối phương không dám đẩy tốt biên. Hai cách chỉ chênh nhau chút ít (khoảng 10 so với 9): gặp đối thủ yếu hơn thì mở tốt 7 để bung nhiều quân, gặp người ngang cơ thì đấm tốt Biên để vắt kiệt lợi thế nhỏ.<\/p><h2>Đừng phí con Pháo<\/h2><p>Nhớ nguyên tắc <strong>nhất xe, nhì pháo<\/strong>: Pháo quá giá trị để đem chạy lung tung \"dò\" hay bắt quân vặt — mỗi nước phí là một nhịp cho không đối phương, chỉ lợi khi bắt trúng xe. Cao thủ thường <strong>mở sĩ<\/strong> thay vì vội đấm tốt biên, rồi dùng đòn <strong>thoái Pháo về bắt tốt biên<\/strong> (Pháo 9 bình 1) rất khó chịu — vì có mã che nên tượng đối phương không giữ nổi tốt biên.<\/p><h2>Khi đã mở được hai Pháo<\/h2><p>Ưu tiên khai thông hàng trên (mở tốt 3, tốt 7 để dọn đường), và khi cần đi mã thì chọn <strong>mã 2 tiến 3<\/strong> hơn mã 2 tiến 1 — mã hướng vào trung tâm phối hợp tốt hơn mã ra biên.<\/p><h2>Ghi nhớ<\/h2><ul><li>Mở Pháo bắt xe giả sớm là lợi thế lớn — khai thác bằng \"thế trước, quân sau\".<\/li><li>Đối phương gác mã lộ Pháo: đổi Pháo thường là hay nhất, đừng tham nhịp mà mất xe giả.<\/li><li>Đấm tốt Biên để giữ Pháo cơ động; tốt 7 làm Pháo bị tù.<\/li><li>Không phí Pháo chạy vặt (nhất xe nhì pháo); Pháo đẹp nhất khi khống chế Trung lộ.<\/li><li>Trong cờ úp, một \"nước trên\" đáng gần hai \"nước dưới\".<\/li><\/ul>",
             "status": "published",
             "decode_confidence": null,
             "thumbnail": null,
             "seo_title": "Mở Pháo Sớm Trong Cờ Úp — Tối Ưu Lợi Thế",
             "seo_description": "Cách tối ưu lợi thế khi mở Pháo sớm trong cờ úp: khi nào đổi Pháo lấy mã, đấm tốt Biên giữ Pháo cơ động, không phí nước Pháo, khống chế Trung lộ.",
             "is_featured": false,
-            "steps": []
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đấm tốt Biên",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đen mở Xe biên",
+                    "move_notation_iccs": "i9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                    "move_notation_iccs": "a0a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen đấm tốt Biên",
+                    "move_notation_iccs": "a6a5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Pháo",
+                    "move_notation_iccs": "b2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                    "is_flip_reveal": false
+                }
+            ]
         },
         {
             "series_slug": "co-up-so-cap-1",
@@ -30725,16 +30993,83 @@
             "level": "co-ban",
             "source_type": "manual",
             "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-            "move_count": 0,
+            "move_count": 6,
             "summary": "Khi đã có Xe – Pháo hàng trên, hãy đưa quân mạnh đến vị trí tối ưu và biến lợi thế hình thế thành lợi thế vật chất cố định. Bài học vạch ra hai sai lầm cốt tử của người chơi cờ úp và cách tránh.",
-            "content": "<p>Bài trước nói cách giành lợi thế khi mở Pháo. Bài này đi tiếp: khi bạn đã có <strong>Xe và Pháo ở hàng trên<\/strong>, làm sao đưa quân mạnh đến vị trí tối ưu để kiểm soát lâu dài, và tuyệt đối không đánh mất lợi thế thật để \"cầu may\" một quân úp chưa lộ.<\/p><h2>Chấm điểm vị trí quân<\/h2><p>Hãy tập cho điểm từng ô: con Xe ở ô <strong>tốt 7 tiến 1<\/strong> đáng 10 điểm (uy hiếp ngay), Xe biên 9 điểm, một con Pháo vừa lộ 8 điểm. Vì thế đi tốt 7 tiến 1 chỉ để \"mở quân\" là lãng phí khi bạn đã có Xe – Pháo hàng trên.<\/p><h2>Nước chính xác: biến thế thành thực lợi<\/h2><p>Nước hay là <strong>Xe 1 bình 7<\/strong>: vừa bình Xe bắt tốt (đoạt thực lợi), vừa gián tiếp khống chế khu tốt biên — chuyển lợi thế hình thế thành lợi thế vật chất cố định. Nếu đối phương đấm tốt đầu để lộ mã, đi <strong>Xe 7 bình 4<\/strong> (dọa đóng Pháo vào đầu, phối hợp tuyến Xe bắt quân). Nếu họ đóng Pháo đầu thì đấu Xe là hợp lý nhất.<\/p><h2>Con Pháo phải ở Trung lộ<\/h2><p>Nếu bắt được Xe, đi <strong>Xe bình 5 bắt mã<\/strong> (duy trì áp lực lớn hơn Xe bình 4), rồi thoái Pháo về lắp Trung lộ. Con Pháo đẹp nhất khi trấn Trung lộ (nằm ở ô sĩ 4-5 hoặc sĩ 6-5), chứ không phải bị đẩy lên cao — Pháo đấm lên chỉ có giá trị uy hiếp nhất thời. Đặc biệt, khi đang có Pháo trấn trung tâm mà lại lên tượng 3 tiến 5 thì chẳng khác nào \"đổ cát vào nòng súng\", làm mất uy lực Pháo — thay vào đó nên đi <strong>Xe 5 bình 6<\/strong>.<\/p><h2>Hai sai lầm cốt tử khi chơi cờ úp<\/h2><p>Rất nhiều người thua vì hai lỗi này:<\/p><ul><li><strong>Bỏ lợi thế thật để đổi lấy lợi thế ảo<\/strong>: bạn đang hơn (có Xe – Pháo) mà lại mở quân linh tinh chờ may; nếu lật ra không phải quân mạnh thì bạn tự mất một Pháo giả và tụt lại về tốc độ — tự đẩy mình vào thế phải \"đợi may mắn\" mới có lợi.<\/li><li><strong>Đi nước cờ không lý giải được mục đích<\/strong>: ăn một quân úp mà không tạo được uy hiếp nào thì đó là một nước cờ thừa.<\/li><\/ul><p>Nhớ rằng cờ úp không phải bài toán xác suất: một cỗ máy tính xác suất chuẩn 100% vẫn không thắng, vì mấu chốt nằm ở việc <strong>xử lý từng tình huống khi quân lộ ra<\/strong>.<\/p><h2>Ghi nhớ<\/h2><ul><li>Đưa quân mạnh đến ô tối ưu; biến lợi thế hình thế thành thực lợi (Xe 1 bình 7).<\/li><li>Pháo đẹp nhất khi trấn Trung lộ, đừng đẩy lên cao hay chặn nòng bằng tượng.<\/li><li>Đừng bỏ lợi thế thật để cầu may quân úp.<\/li><li>Mỗi nước phải có mục đích rõ; ăn quân không kèm uy hiếp là nước thừa.<\/li><\/ul>",
+            "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ cách mở quân trong cờ úp: quân úp đi theo binh chủng ô xuất phát và lật lộ mặt thật khi đi nước đầu.<\/p><p>Bài trước nói cách giành lợi thế khi mở Pháo. Bài này đi tiếp: khi bạn đã có <strong>Xe và Pháo ở hàng trên<\/strong>, làm sao đưa quân mạnh đến vị trí tối ưu để kiểm soát lâu dài, và tuyệt đối không đánh mất lợi thế thật để \"cầu may\" một quân úp chưa lộ.<\/p><h2>Chấm điểm vị trí quân<\/h2><p>Hãy tập cho điểm từng ô: con Xe ở ô <strong>tốt 7 tiến 1<\/strong> đáng 10 điểm (uy hiếp ngay), Xe biên 9 điểm, một con Pháo vừa lộ 8 điểm. Vì thế đi tốt 7 tiến 1 chỉ để \"mở quân\" là lãng phí khi bạn đã có Xe – Pháo hàng trên.<\/p><h2>Nước chính xác: biến thế thành thực lợi<\/h2><p>Nước hay là <strong>Xe 1 bình 7<\/strong>: vừa bình Xe bắt tốt (đoạt thực lợi), vừa gián tiếp khống chế khu tốt biên — chuyển lợi thế hình thế thành lợi thế vật chất cố định. Nếu đối phương đấm tốt đầu để lộ mã, đi <strong>Xe 7 bình 4<\/strong> (dọa đóng Pháo vào đầu, phối hợp tuyến Xe bắt quân). Nếu họ đóng Pháo đầu thì đấu Xe là hợp lý nhất.<\/p><h2>Con Pháo phải ở Trung lộ<\/h2><p>Nếu bắt được Xe, đi <strong>Xe bình 5 bắt mã<\/strong> (duy trì áp lực lớn hơn Xe bình 4), rồi thoái Pháo về lắp Trung lộ. Con Pháo đẹp nhất khi trấn Trung lộ (nằm ở ô sĩ 4-5 hoặc sĩ 6-5), chứ không phải bị đẩy lên cao — Pháo đấm lên chỉ có giá trị uy hiếp nhất thời. Đặc biệt, khi đang có Pháo trấn trung tâm mà lại lên tượng 3 tiến 5 thì chẳng khác nào \"đổ cát vào nòng súng\", làm mất uy lực Pháo — thay vào đó nên đi <strong>Xe 5 bình 6<\/strong>.<\/p><h2>Hai sai lầm cốt tử khi chơi cờ úp<\/h2><p>Rất nhiều người thua vì hai lỗi này:<\/p><ul><li><strong>Bỏ lợi thế thật để đổi lấy lợi thế ảo<\/strong>: bạn đang hơn (có Xe – Pháo) mà lại mở quân linh tinh chờ may; nếu lật ra không phải quân mạnh thì bạn tự mất một Pháo giả và tụt lại về tốc độ — tự đẩy mình vào thế phải \"đợi may mắn\" mới có lợi.<\/li><li><strong>Đi nước cờ không lý giải được mục đích<\/strong>: ăn một quân úp mà không tạo được uy hiếp nào thì đó là một nước cờ thừa.<\/li><\/ul><p>Nhớ rằng cờ úp không phải bài toán xác suất: một cỗ máy tính xác suất chuẩn 100% vẫn không thắng, vì mấu chốt nằm ở việc <strong>xử lý từng tình huống khi quân lộ ra<\/strong>.<\/p><h2>Ghi nhớ<\/h2><ul><li>Đưa quân mạnh đến ô tối ưu; biến lợi thế hình thế thành thực lợi (Xe 1 bình 7).<\/li><li>Pháo đẹp nhất khi trấn Trung lộ, đừng đẩy lên cao hay chặn nòng bằng tượng.<\/li><li>Đừng bỏ lợi thế thật để cầu may quân úp.<\/li><li>Mỗi nước phải có mục đích rõ; ăn quân không kèm uy hiếp là nước thừa.<\/li><\/ul>",
             "status": "published",
             "decode_confidence": null,
             "thumbnail": null,
             "seo_title": "Khai Thác Ưu Thế Khi Mở Pháo — Cờ Úp Sơ Cấp",
             "seo_description": "Khai thác triệt để ưu thế Xe – Pháo trong cờ úp: đưa quân mạnh đến ô tối ưu, giữ Pháo ở Trung lộ, tránh hai sai lầm cốt tử khi chơi cờ úp.",
             "is_featured": false,
-            "steps": []
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đấm tốt Biên",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                    "move_notation_wxf": "Đen mở Xe biên",
+                    "move_notation_iccs": "i9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                    "move_notation_iccs": "a0a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen đấm tốt Biên",
+                    "move_notation_iccs": "a6a5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đỏ mở Pháo",
+                    "move_notation_iccs": "b2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                    "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                    "is_flip_reveal": false
+                }
+            ]
         },
         {
             "series_slug": "co-up-so-cap-1",
