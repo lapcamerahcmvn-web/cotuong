@@ -79,7 +79,14 @@
     <footer class="foot">
         <div class="wrap foot-inner">
             <div>© {{ date('Y') }} Học Cờ Tướng — bàn cờ tương tác, diễn giải từng nước.</div>
-            <div class="muted">Khai cuộc · Trung cuộc · Tàn cuộc · Cờ úp</div>
+            <nav class="foot-links" aria-label="Liên kết chân trang">
+                <a href="{{ route('phase', 'nhap-mon') }}">Nhập môn</a>
+                <a href="{{ route('phase', 'khai-cuoc') }}">Khai cuộc</a>
+                <a href="{{ route('phase', 'trung-cuoc') }}">Trung cuộc</a>
+                <a href="{{ route('phase', 'tan-cuoc') }}">Tàn cuộc</a>
+                <a href="{{ route('phase', 'co-up') }}">Cờ úp</a>
+                <a href="{{ route('sitemap.page') }}">Sơ đồ trang</a>
+            </nav>
         </div>
     </footer>
 

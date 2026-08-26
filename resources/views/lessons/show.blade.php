@@ -26,9 +26,26 @@
     }
     $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $lesson->title];
     $ldCrumb = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $crumbs];
+
+    // HowTo schema cho bài hướng dẫn cách đi quân (nhập môn, có nước demo) — hỗ trợ rich result.
+    $ldHowTo = null;
+    if ($lesson->phase === 'nhap-mon' && $lesson->game_mode === 'co-tuong' && $lesson->steps->isNotEmpty()) {
+        $ldHowTo = [
+            '@context' => 'https://schema.org', '@type' => 'HowTo',
+            'name' => $lesson->title,
+            'description' => \Illuminate\Support\Str::limit(strip_tags($lesson->summary ?: ''), 250),
+            'inLanguage' => 'vi-VN',
+            'step' => $lesson->steps->values()->map(fn ($s, $i) => [
+                '@type' => 'HowToStep', 'position' => $i + 1,
+                'name' => $s->move_notation_wxf ?: ('Bước ' . ($i + 1)),
+                'text' => $s->caption ?: ($s->move_notation_wxf ?: ('Bước ' . ($i + 1))),
+            ])->all(),
+        ];
+    }
 @endphp
 <script type="application/ld+json">{!! json_encode($ldArticle, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 <script type="application/ld+json">{!! json_encode($ldCrumb, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@if($ldHowTo)<script type="application/ld+json">{!! json_encode($ldHowTo, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>@endif
 @endpush
 
 @section('content')
@@ -72,6 +89,24 @@
         @if($prev)<a href="{{ route('lessons.show', $prev->slug) }}" class="btn">‹ {{ \Illuminate\Support\Str::limit($prev->title, 26) }}</a>@else<span></span>@endif
         @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
     </nav>
+
+    @if($related->isNotEmpty())
+    <section style="margin-top:40px;max-width:720px;">
+        <h2 style="font-size:19px;font-weight:800;margin:0 0 12px;">Bài liên quan</h2>
+        <div class="lesson-list">
+            @foreach($related as $r)
+                <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card">
+                    <span class="li-num">{{ str_pad($r->order_in_series ?? '•', 2, '0', STR_PAD_LEFT) }}</span>
+                    <span>
+                        <span class="li-title">{{ $r->title }}</span>
+                        <span class="li-sub">{{ $r->move_count }} nước đi · {{ $r->level_label }}</span>
+                    </span>
+                    <span class="li-meta">→</span>
+                </a>
+            @endforeach
+        </div>
+    </section>
+    @endif
 
     @include('lessons._comments')
 </div>

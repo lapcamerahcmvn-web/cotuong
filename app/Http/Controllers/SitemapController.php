@@ -22,6 +22,7 @@ class SitemapController extends Controller
         };
 
         $add(route('home'), now(), 'daily', '1.0');
+        $add(route('sitemap.page'), now(), 'weekly', '0.4');
 
         // Giai đoạn cờ tướng có ít nhất 1 bài
         foreach (array_keys(Lesson::PHASES) as $ph) {
@@ -60,5 +61,16 @@ class SitemapController extends Controller
         $xml .= '</urlset>';
 
         return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    // Sơ đồ trang cho người dùng (HTML sitemap) — /so-do-trang.
+    public function page()
+    {
+        $series = LessonSeries::with(['publishedLessons' => fn ($q) => $q->orderBy('order_in_series')])
+            ->orderBy('sort_order')->orderBy('id')->get()
+            ->filter(fn ($s) => $s->publishedLessons->isNotEmpty())
+            ->values();
+
+        return view('lessons.sitemap', compact('series'));
     }
 }

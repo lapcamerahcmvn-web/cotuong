@@ -320,3 +320,25 @@ body.xq-fs-lock { overflow: hidden; }
 
 /* Ghi chú dưới bàn cờ minh hoạ tĩnh (bài không có nước đi, VD cờ úp) */
 .board-note { margin:14px 0 0; font-size:13.5px; color:var(--ink-soft); text-align:center; line-height:1.5; }
+
+/* FAQ accordion (trang chủ) */
+.faq-list { display:flex; flex-direction:column; gap:10px; max-width:760px; }
+.faq-item { padding:0; overflow:hidden; }
+.faq-item summary { cursor:pointer; padding:14px 18px; font-weight:700; font-size:15.5px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:'+'; color:var(--red); font-size:22px; font-weight:400; line-height:1; flex-shrink:0; }
+.faq-item[open] summary::after { content:'\2013'; }
+.faq-answer { padding:0 18px 16px; color:var(--ink-soft); font-size:15px; line-height:1.6; }
+
+/* Sơ đồ trang (HTML sitemap) */
+.sitemap-sec { margin-bottom:28px; }
+.sitemap-sec h2 { font-size:19px; font-weight:800; margin:0 0 10px; }
+.sitemap-links { display:flex; flex-direction:column; gap:4px; }
+.sitemap-links a { color:var(--ink); padding:5px 0; font-size:15px; }
+.sitemap-links a:hover { color:var(--red); }
+.sitemap-links .sm-sub { color:var(--ink-faint); font-size:13px; }
+
+/* Footer links */
+.foot-links { display:flex; gap:6px 16px; flex-wrap:wrap; }
+.foot-links a { color:var(--ink-soft); font-size:13.5px; }
+.foot-links a:hover { color:var(--red); }

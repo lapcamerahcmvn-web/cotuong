@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/so-do-trang', [SitemapController::class, 'page'])->name('sitemap.page');
 Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 
 // ---- Đăng nhập thống nhất (Google cho người học + email/mật khẩu cho admin) ----

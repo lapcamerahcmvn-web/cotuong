@@ -82,6 +82,13 @@ class LessonController extends Controller
             ? \Illuminate\Support\Facades\DB::table('comment_likes')->where('user_id', auth()->id())->pluck('comment_id')->all()
             : [];
 
-        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds'));
+        // Bài liên quan (internal linking) — cùng chuỗi, bỏ bài trước/sau đã có ở nav.
+        $related = Lesson::published()->where('id', '!=', $lesson->id)
+            ->where('series_id', $lesson->series_id)
+            ->when($prev, fn ($q) => $q->where('id', '!=', $prev->id))
+            ->when($next, fn ($q) => $q->where('id', '!=', $next->id))
+            ->orderBy('order_in_series')->take(4)->get();
+
+        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related'));
     }
 }
