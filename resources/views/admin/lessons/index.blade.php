@@ -2,6 +2,10 @@
 @section('title', 'Bài học')
 @section('heading', 'Bài học')
 
+@section('top-actions')
+    <a href="{{ route('admin.board-editor.create') }}" class="btn primary">+ Soạn bằng bàn cờ</a>
+@endsection
+
 @section('content')
 <form method="GET" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
     <input class="input" type="search" name="q" value="{{ request('q') }}" placeholder="Tìm theo tiêu đề…" style="max-width:260px;">

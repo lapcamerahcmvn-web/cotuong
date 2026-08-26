@@ -139,3 +139,20 @@ textarea.input { resize: vertical; min-height: 80px; }
     .admin-top { padding: 14px 16px; }
     .chart-val { display: none; }
 }
+
+/* ===== Trình soạn bàn cờ (board editor) ===== */
+.be-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--ink-soft); }
+.be-input { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 9px; padding: 8px 11px; font-family: inherit; font-size: 14px; }
+.be-input:focus { outline: none; border-color: var(--red); }
+.be-modes { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.be-mode { padding: 9px 16px; border-radius: 9px; border: 1px solid var(--line); background: var(--surface); font-weight: 700; font-size: 14px; cursor: pointer; color: var(--ink-soft); }
+.be-mode.on { background: var(--red); color: #fff; border-color: var(--red); }
+.be-tool-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+.be-palette { display: flex; gap: 6px; flex-wrap: wrap; }
+.be-pal { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font-size: 22px; font-family: KaiTi, STKaiti, serif; cursor: pointer; display: grid; place-items: center; line-height: 1; }
+.be-pal.on { border-color: #16a34a; box-shadow: 0 0 0 2px rgba(22,163,74,.3); }
+.be-pal.be-erase { font-size: 16px; color: var(--red); }
+.be-move { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.be-move-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 14px; }
+.be-cap { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 10px; font-size: 13.5px; font-family: inherit; }
+.be-cap:focus { outline: none; border-color: var(--red); }

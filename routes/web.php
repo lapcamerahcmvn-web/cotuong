@@ -61,6 +61,8 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('lessons', [AdminLessonController::class, 'index'])->name('lessons.index');
+    Route::get('lessons/board-editor', [\App\Http\Controllers\Admin\BoardEditorController::class, 'create'])->name('board-editor.create');
+    Route::post('lessons/board-editor', [\App\Http\Controllers\Admin\BoardEditorController::class, 'store'])->name('board-editor.store');
     Route::get('lessons/{lesson:id}/edit', [AdminLessonController::class, 'edit'])->name('lessons.edit');
     Route::put('lessons/{lesson:id}', [AdminLessonController::class, 'update'])->name('lessons.update');
     Route::post('lessons/{lesson:id}/toggle', [AdminLessonController::class, 'togglePublish'])->name('lessons.toggle');
