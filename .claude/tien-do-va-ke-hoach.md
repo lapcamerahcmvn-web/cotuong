@@ -6,18 +6,21 @@
 
 ## Trạng thái tổng quan
 
-- **6 chương trình học / 108 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
-- Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to), đăng nhập Google + email/mật khẩu,
-  đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap động.
+- **6 chương trình học / 161 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
+- Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to + quân úp), đăng nhập Google + email/mật khẩu,
+  đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap XML + HTML.
 
 | Cụm SEO (theo kế hoạch) | Chương trình | Số bài | Trạng thái |
 |---|---|---|---|
 | **A – Nhập môn** (ưu tiên #1) | Nhập Môn Cờ Tướng | 8 | ✅ Luật chơi + 7 quân (có bàn cờ demo động) |
-| **B – Khai cuộc** | 48 Bài Nguyên Lý Khai Cuộc | 14 | 🔄 Đã có nền, còn mở rộng tới 48 |
+| **B – Khai cuộc** | 48 Bài Nguyên Lý Khai Cuộc | 29 | ✅ Đã xuất bản hết ván mẫu XQF có nước đi (14→29); phần còn lại là bài "nói" 0 nước |
 | **C – Trung cuộc** (kế hoạch ghi "chưa có") | Sát Pháp Thực Dụng 13 Đội Hình | 65 | ✅ Lấp xong bằng sát pháp (5 bài/đội hình) |
-| **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 10 | 🔄 Đã có nền, còn mở rộng tới 48 |
+| **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 48 | ✅ Đạt đủ 48 (10→48) từ thế tàn cuộc XQF |
 | **E – Cờ Úp** (ưu tiên #2) | Nhập Môn Cờ Úp + Cờ Úp Sơ Cấp 1 | 1 + 10 | 🔄 Sơ Cấp 1 xong; còn Sơ Cấp 2 + 3 khóa |
 | **F – So sánh/công cụ** | — | 0 | ⬜ Chưa làm (web/app học cờ, bàn cờ tương tác online) |
+
+> Khai cuộc dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14 bài cũ; các "bài" còn lại
+> trong folder là clip thầy giảng bằng lời (0 nước) — muốn đủ 48 phải tự biên soạn hoặc lấy phụ đề video.
 
 ## Đã làm (chi tiết)
 
@@ -46,6 +49,9 @@
 - ✅ **Tối ưu AI search (GEO)** — như lapcamerahcm: `public/llms.txt` (tổng quan site + hỏi đáp + gợi ý cho AI),
   robots.txt mời AI crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, Google-Extended, PerplexityBot, ClaudeBot,
   Claude-Web, anthropic-ai) + trỏ llms.txt, `speakable` schema trên bài học.
+- ✅ **On-page (mục 2A kế hoạch)**: đoạn USP trang chủ (200-300 từ) + phần FAQ (accordion) kèm **FAQPage schema**;
+  **HowTo schema** cho bài cách đi quân (nhập môn); **internal linking** (block "Bài liên quan" cuối mỗi bài);
+  **HTML sitemap** `/so-do-trang` (link footer) + sitemap.xml phủ hết 161 bài.
 
 ## Việc tiếp theo (ưu tiên theo kế hoạch SEO)
 
@@ -64,16 +70,15 @@
 6. **Sát pháp**: mỗi đội hình còn 30–200 file PGN; kho `TTTK VƯỢT QUAN ẢI` (359) + `TRUNG CỤC SÁT CHIÊU`
    (104, nâng cao) chưa dùng — nhân thêm khi cần.
 
-### SEO nâng cao (mục 2A–2C kế hoạch, chưa làm)
-7. **FAQPage schema on-page** cho các bài dạng hỏi-đáp ("cờ úp là gì", "luật chơi cờ úp", "luật đuổi dài") —
-   thêm khối Q&A hiển thị trong bài rồi gắn schema (llms.txt đã có FAQ cho AI, nhưng on-page FAQPage cho Google
-   featured-snippet thì chưa). Cân nhắc thêm `HowTo` schema cho bài hướng dẫn cách đi quân.
-8. **Đoạn giới thiệu USP trang chủ** (200–300 từ) nhấn "bàn cờ tương tác, đi từng nước, có diễn giải" —
-   Google đọc ngữ nghĩa. Hiện trang chủ thiên UI.
-9. **Internal linking**: bài khai cuộc/tàn cuộc link chéo tới bài Nhập môn liên quan (VD "pháo đầu" → "cách đi
-   quân Pháo"); bài listicle link tới toàn bộ bài chi tiết trong cụm.
-10. **Cụm F** (từ khóa thương hiệu "web học cờ tướng", "bàn cờ tương tác online"): dựng 1 landing tối ưu USP.
-11. **Core Web Vitals**: đo LCP/CLS trang có bàn cờ (phần tử nặng nhất). Bàn cờ đã lazy-friendly (SVG nhẹ, không CDN).
+### SEO nâng cao (còn lại)
+7. **FAQPage on-page cho từng bài cờ úp/luật** ("luật đuổi dài" v.v.) — hiện FAQPage mới ở trang chủ; thêm khối
+   Q&A trong các bài rules để bắt thêm featured-snippet.
+8. **Internal linking cross-cluster**: hiện "Bài liên quan" mới trong cùng chuỗi; bổ sung link ngữ cảnh chéo cụm
+   (VD bài "pháo đầu" khai cuộc → "cách đi quân Pháo" nhập môn) — cần chèn link thủ công trong nội dung.
+9. **Cụm F** (từ khóa thương hiệu "web học cờ tướng", "bàn cờ tương tác online"): dựng 1 landing tối ưu USP.
+10. **Core Web Vitals**: đo LCP/CLS trang có bàn cờ (phần tử nặng nhất). Bàn cờ đã lazy-friendly (SVG nhẹ, không CDN).
+11. **Nội dung sâu hơn cho bài ván mẫu**: 15 khai cuộc + 38 tàn cuộc mới hiện có intro + caption tự sinh; có thể
+    viết diễn giải chiến thuật sâu hơn cho các thế trận quan trọng (khi có phụ đề/nguồn).
 
 ### Dài hạn
 12. **Cờ Úp nâng cao** (sau khi có đủ phụ đề 4 khóa): trung cuộc loạn chiến, phản công, cờ tàn cờ úp.
