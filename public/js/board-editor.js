@@ -92,6 +92,23 @@
     else type = p.toUpperCase();
     return moveByType(type, red, b, from, to, up);
   }
+  function findKing(b, red) { var kc = red ? 'K' : 'k'; for (var i = 0; i < 90; i++) if (b[i] === kc) return i; return -1; }
+  // Tướng bên `red` có đang bị chiếu không (kể cả luật đối mặt tướng — legalMove của Tướng đã lo).
+  function inCheck(b, red) {
+    var ki = findKing(b, red); if (ki < 0) return false;
+    for (var i = 0; i < 90; i++) { var p = b[i]; if (!p || isRed(p) === red) continue; if (legalMove(b, i, ki)) return true; }
+    return false;
+  }
+  // Cờ úp: mỗi bên tối đa 2R,2N,2B,2A,2C,5P (15 quân úp; Tướng để ngửa không tính).
+  var MAX_REVEAL = { R: 2, N: 2, B: 2, A: 2, C: 2, P: 5 };
+  // Số quân loại `pieceChar` đã LỘ: trên bàn hiện tại + đã lộ rồi bị ăn dọc đường tới cur.
+  function revealedUsed(pieceChar) {
+    var n = 0, i;
+    for (i = 0; i < 90; i++) if (board[i] === pieceChar) n++;
+    var node = cur;
+    while (node && node.parent) { if (node.parent.board[node.to] === pieceChar) n++; node = node.parent; }
+    return n;
+  }
 
   var board = new Array(90).fill(null);
   var hidden = new Array(90).fill(null);   // binh chủng thật DƯỚI nắp (để tự lật khi đi)
@@ -314,8 +331,25 @@
         var map = { X: 'R', P: 'C', M: 'N', T: 'B', S: 'A', B: 'P' };
         var rc = rv ? map[rv.trim().toUpperCase()] : null;
         if (!rc) { beMsg('Cần chọn binh chủng quân úp lật ra để ghi nước.'); return; }
-        reveal = (piece === 'X') ? rc : rc.toLowerCase();
+        var pieceChar = (piece === 'X') ? rc : rc.toLowerCase();
+        // Cờ úp: không lật quá số cho phép (tính cả quân đã ngửa bị ăn).
+        if (revealedUsed(pieceChar) >= MAX_REVEAL[rc]) {
+          beMsg('Đã lật đủ ' + MAX_REVEAL[rc] + ' ' + (VI_FULL[rc] || rc) + ' cho bên này (tính cả quân đã bị ăn) — không thể lật thêm.');
+          return;
+        }
+        reveal = pieceChar;
       }
+    }
+    // Luật chiếu Tướng: sau nước đi, Tướng BÊN ĐI không được bị chiếu (đang bị chiếu thì phải giải).
+    var moverRed = isRed(piece);
+    var after = board.slice();
+    after[i] = (piece === 'X' || piece === 'x') ? reveal : piece;
+    after[selected] = null;
+    if (inCheck(after, moverRed)) {
+      beMsg(inCheck(board, moverRed)
+        ? 'Đang bị chiếu Tướng — nước này chưa giải được. Phải chống đỡ Tướng (đỡ/ăn quân chiếu/dời Tướng) trước.'
+        : 'Không hợp lệ: nước này để hở Tướng bên bạn cho đối phương chiếu.');
+      return;
     }
     var wasBranch = cur.children.length; // nếu node hiện tại đã có nước → nước mới là 1 biến
     pushMove(selected, i, reveal);
