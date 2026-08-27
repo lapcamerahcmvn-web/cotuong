@@ -79,7 +79,7 @@
         <div class="be-tools" data-be-move-tools>
             <div class="be-tool-row">
                 <button type="button" class="btn" data-be-undo>↶ Xoá nước đang chọn</button>
-                <span class="muted" style="font-size:13px;">Bấm <strong>quân</strong> → <strong>ô đích</strong> để ghi nước (đúng luật, tự sinh ký hiệu). Tạo <strong>biến</strong>: bấm một nước trong danh sách để quay lại, rồi đi nước khác. Quân úp tự lật đúng binh chủng.</span>
+                <span class="muted" style="font-size:13px;">Bấm <strong>quân</strong> → <strong>ô đích</strong> để ghi nước (đúng luật, tự sinh ký hiệu). Tạo <strong>biến</strong>: bấm nút <strong>+ Biến</strong> trên một nước (bàn cờ về thế trước nước đó) rồi đi nước khác. Quân úp tự lật đúng binh chủng.</span>
             </div>
         </div>
 

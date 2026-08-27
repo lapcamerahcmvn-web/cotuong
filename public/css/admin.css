@@ -153,6 +153,6 @@ textarea.input { resize: vertical; min-height: 80px; }
 .be-pal.on { border-color: #16a34a; box-shadow: 0 0 0 2px rgba(22,163,74,.3); }
 .be-pal.be-erase { font-size: 16px; color: var(--red); }
 .be-move { padding: 8px 0; border-bottom: 1px solid var(--line); }
-.be-move-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 14px; }
+.be-move-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 14px; flex-wrap: wrap; }
 .be-cap { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 10px; font-size: 13.5px; font-family: inherit; }
 .be-cap:focus { outline: none; border-color: var(--red); }

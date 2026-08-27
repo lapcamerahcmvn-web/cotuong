@@ -328,7 +328,7 @@
   var flatNodes = [];
   function renderMoves() {
     if (!rootNode || rootNode.children.length === 0) {
-      movesBox.innerHTML = '<p class="muted" style="font-size:13px;line-height:1.6;">Chưa có nước đi. Bấm một quân rồi bấm ô đích để ghi nước.<br>Muốn tạo <strong>biến</strong>: bấm vào một nước trong danh sách để quay lại thế đó, rồi đi một nước khác — nhánh mới (2A, 2B…) sẽ hiện ra.</p>';
+      movesBox.innerHTML = '<p class="muted" style="font-size:13px;line-height:1.6;">Chưa có nước đi. Bấm một quân rồi bấm ô đích để ghi nước.<br>Muốn tạo <strong>biến</strong> cho một nước: bấm nút <strong>+ Biến</strong> trên nước đó (bàn cờ về thế trước nước đó) rồi đi một nước khác — nhánh 1A/1B… sẽ hiện ra.</p>';
       flatNodes = []; syncHidden(); return;
     }
     flatNodes = [];
@@ -349,7 +349,10 @@
         + '<div class="be-move-head">'
         + '<button type="button" class="be-move-nav" data-nav="' + k + '" title="Xem thế cờ sau nước này" style="background:none;border:0;cursor:pointer;font-weight:700;color:inherit;text-align:left;padding:0;">'
         + (isCur ? '▶ ' : '') + m.depth + row.letter + '. ' + side + (m.wxf ? ' · ' + m.wxf : '') + (row.letter ? ' <span style="color:var(--ink-faint,#999);font-weight:600;">(biến ' + row.letter + ')</span>' : '') + '</button>'
+        + '<span style="display:inline-flex;gap:6px;flex-shrink:0;">'
+        + '<button type="button" class="btn" data-branch="' + k + '" title="Tạo biến khác cho nước này: về thế TRƯỚC nước này rồi đi một nước khác" style="min-height:28px;padding:0 10px;">+ Biến</button>'
         + '<button type="button" class="btn danger" data-del="' + k + '" style="min-height:28px;padding:0 10px;">Xoá nhánh</button>'
+        + '</span>'
         + '</div>'
         + '<input type="text" class="be-cap" data-cap="' + k + '" value="' + (m.caption || '').replace(/"/g, '&quot;') + '" placeholder="Lời giảng cho nước này…"></div>';
     });
@@ -359,6 +362,14 @@
         var nd = flatNodes[+el.getAttribute('data-nav')].node;
         gotoNode(nd); render(); renderMoves();
         beMsg('Đang xem sau nước “' + nd.wxf + '”. Đi tiếp để nối nhánh này, hoặc đi nước khác để tạo biến.', true);
+      });
+    });
+    movesBox.querySelectorAll('[data-branch]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var nd = flatNodes[+el.getAttribute('data-branch')].node;
+        gotoNode(nd.parent); // về thế TRƯỚC nước này (quân đã đi trở lại vị trí cũ)
+        render(); renderMoves();
+        beMsg('Đã về thế trước nước “' + nd.wxf + '”. Đi một nước khác để tạo biến — nước cũ giữ nguyên thành nhánh song song (1A, 1B…).', true);
       });
     });
     movesBox.querySelectorAll('[data-cap]').forEach(function (el) {
