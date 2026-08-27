@@ -38,7 +38,8 @@
     return { from: sq(iccs[0], iccs[1]), to: sq(iccs[2], iccs[3]) };
   }
 
-  function renderBoard(fen, lastMove) {
+  // arrows: [{from,to,color,label}] — from/to là chỉ số ô 0..89. Vẽ mũi tên chọn biến.
+  function renderBoard(fen, lastMove, arrows) {
     var M = 26, CW = 52, CH = 52;
     var W = M * 2 + CW * 8, H = M * 2 + CH * 9;
     function X(f) { return M + f * CW; }
@@ -78,6 +79,23 @@
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
       s += '<text x="' + cx + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
     }
+    // Mũi tên chọn biến (vẽ trên cùng, có nhãn A/B ở gần quân xuất phát).
+    if (arrows && arrows.length) {
+      arrows.forEach(function (a, k) {
+        var fx = X(a.from % 9), fy = Y((a.from / 9) | 0), tx = X(a.to % 9), ty = Y((a.to / 9) | 0);
+        var dx = tx - fx, dy = ty - fy, len = Math.sqrt(dx * dx + dy * dy) || 1, ux = dx / len, uy = dy / len;
+        var sx = fx + ux * 20, sy = fy + uy * 20, ex = tx - ux * 20, ey = ty - uy * 20;
+        var px = -uy, py = ux; // pháp tuyến (đặt nhãn lệch cạnh quân)
+        s += '<line x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="' + a.color + '" stroke-width="5" stroke-linecap="round" opacity=".92"/>';
+        var ah = 14, aw = 8.5, bx = ex - ux * ah, by = ey - uy * ah;
+        s += '<polygon points="' + ex + ',' + ey + ' ' + (bx + px * aw) + ',' + (by + py * aw) + ' ' + (bx - px * aw) + ',' + (by - py * aw) + '" fill="' + a.color + '"/>';
+        var lx = fx + px * 16, ly = fy + py * 16;
+        s += '<circle cx="' + lx + '" cy="' + ly + '" r="11.5" fill="' + a.color + '" stroke="#fff" stroke-width="1.5"/>';
+        s += '<text x="' + lx + '" y="' + (ly + 5) + '" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="system-ui,sans-serif">' + a.label + '</text>';
+        // vùng bấm trong suốt để chọn biến bằng cách bấm thẳng mũi tên
+        s += '<line class="xq-brhit" data-br="' + k + '" x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="transparent" stroke-width="26" style="cursor:pointer"/>';
+      });
+    }
     s += '</svg>';
     return s;
   }
@@ -98,6 +116,15 @@
     var capText = root.querySelector('[data-xq-captext]');
     var pill = root.querySelector('[data-xq-pill]');
     var list = root.querySelector('[data-xq-list]');
+    // Chế độ CÂY BIẾN: nếu cfg.tree có nhánh → điều hướng theo cây + mũi tên chọn biến (A/B…).
+    if (Array.isArray(cfg.tree) && cfg.tree.length) {
+      bindFullscreen(root);
+      initTree(root, startFen, cfg.tree, {
+        holder: holder, capStep: capStep, capText: capText, pill: pill, list: list,
+        branches: root.querySelector('[data-xq-branches]')
+      });
+      return;
+    }
     var idx = -1;
 
     function draw() {
@@ -184,6 +211,128 @@
       if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
       if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
     });
+    draw();
+  }
+
+  // Phóng to bàn cờ toàn màn hình (overlay CSS). Dùng chung cho cả 2 chế độ.
+  function bindFullscreen(root) {
+    var boardCard = root.querySelector('[data-xq-boardcard]');
+    var fsBtn = root.querySelector('[data-xq-fs]');
+    if (!fsBtn || !boardCard) return;
+    function setFs(on) {
+      boardCard.classList.toggle('xq-fs', on);
+      document.body.classList.toggle('xq-fs-lock', on);
+      fsBtn.textContent = on ? '✕' : '⛶';
+    }
+    fsBtn.addEventListener('click', function () { setFs(!boardCard.classList.contains('xq-fs')); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && boardCard.classList.contains('xq-fs')) setFs(false); });
+  }
+
+  var BRANCH_COLORS = ['#16a34a', '#e0632f', '#2563eb', '#7c3aed', '#c026d3', '#0891b2'];
+
+  // Điều hướng bài học có CÂY BIẾN: tại điểm rẽ, mỗi biến là 1 mũi tên (A/B…) trên bàn cờ.
+  // Chọn A → đi theo A; Lùi về điểm rẽ → mũi tên các biến hiện lại để chọn biến khác.
+  function initTree(root, startFen, tree, dom) {
+    var rootNode = { fen: startFen, children: tree, parent: null, depth: 0, iccs: null, wxf: null, side: null, caption: null };
+    (function link(node) {
+      (node.children || []).forEach(function (c) { c.parent = node; c.depth = node.depth + 1; c.children = c.children || []; link(c); });
+    })(rootNode);
+    var cur = rootNode, flat = [];
+
+    function setDisabled(name, v) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.disabled = v; }
+    function notifyEnd() { if (!cur.children || !cur.children.length) document.dispatchEvent(new CustomEvent('xq:viewed-all-moves')); }
+
+    function draw() {
+      var kids = cur.children || [];
+      var lm = (cur === rootNode) ? null : iccsToSquares(cur.iccs);
+      var arrows = kids.length > 1 ? kids.map(function (c, k) {
+        return { from: c.from, to: c.to, color: BRANCH_COLORS[k % BRANCH_COLORS.length], label: String.fromCharCode(65 + k) };
+      }) : null;
+      dom.holder.innerHTML = renderBoard(cur.fen, lm, arrows);
+      if (arrows) dom.holder.querySelectorAll('.xq-brhit').forEach(function (el) {
+        el.addEventListener('click', function () { descend(kids[+el.getAttribute('data-br')]); });
+      });
+      if (cur === rootNode) {
+        if (dom.capStep) dom.capStep.textContent = 'Thế cờ mở đầu';
+        if (dom.capText) dom.capText.textContent = kids.length > 1 ? 'Có nhiều biến — chọn một mũi tên (A/B…) hoặc nút bên dưới để đi.' : (kids.length ? 'Bấm “Tiến” để đi từng nước.' : 'Bài học này chưa có nước đi.');
+        if (dom.pill) dom.pill.textContent = 'Thế mở';
+      } else {
+        var sideLabel = cur.side === 'den' ? 'Đen' : (cur.side === 'do' ? 'Đỏ' : '');
+        if (dom.capStep) dom.capStep.textContent = 'Nước ' + cur.depth + (sideLabel ? ' — ' + sideLabel : '') + (cur.wxf ? ' · ' + cur.wxf : '');
+        if (dom.capText) dom.capText.textContent = cur.caption || (kids.length > 1 ? 'Chọn một biến (A/B…) để xem tiếp.' : (cur.wxf ? 'Nước đi: ' + cur.wxf + '.' : '(chưa có lời giảng)'));
+        if (dom.pill) dom.pill.textContent = 'Nước ' + cur.depth;
+      }
+      renderBranchButtons(kids);
+      setDisabled('first', cur === rootNode); setDisabled('prev', cur === rootNode);
+      setDisabled('next', kids.length === 0); setDisabled('last', kids.length === 0);
+      highlightList();
+    }
+
+    function renderBranchButtons(kids) {
+      if (!dom.branches) return;
+      if (kids.length < 2) { dom.branches.innerHTML = ''; dom.branches.style.display = 'none'; return; }
+      dom.branches.style.display = '';
+      var h = '<div class="branch-title">Chọn biến để xem tiếp:</div><div class="branch-row">';
+      kids.forEach(function (c, k) {
+        var color = BRANCH_COLORS[k % BRANCH_COLORS.length], letter = String.fromCharCode(65 + k);
+        h += '<button type="button" class="branch-btn" data-br="' + k + '" style="border:2px solid ' + color + ';color:' + color + '">'
+          + '<span class="branch-badge" style="background:' + color + '">' + letter + '</span>'
+          + escapeHtml(c.wxf || ('Biến ' + letter)) + (k === 0 ? ' <em>(chính)</em>' : '') + '</button>';
+      });
+      dom.branches.innerHTML = h + '</div>';
+      dom.branches.querySelectorAll('.branch-btn').forEach(function (el) {
+        el.addEventListener('click', function () { descend(kids[+el.getAttribute('data-br')]); });
+      });
+    }
+
+    function descend(node) { if (node) { cur = node; draw(); notifyEnd(); } }
+    function back() { if (cur.parent) { cur = cur.parent; draw(); } }
+    function next() { var kids = cur.children || []; if (kids.length) descend(kids[0]); } // Tiến = biến chính
+    function toStart() { cur = rootNode; draw(); }
+    function toEnd() { while (cur.children && cur.children.length) cur = cur.children[0]; draw(); notifyEnd(); }
+
+    function buildList() {
+      if (!dom.list) return;
+      flat = [];
+      (function walk(node, indent) {
+        node.children.forEach(function (c, idx) {
+          var ind = (idx === 0) ? indent : indent + 1;
+          flat.push({ node: c, indent: ind, letter: node.children.length > 1 ? String.fromCharCode(65 + idx) : '' });
+          walk(c, ind);
+        });
+      })(rootNode, 0);
+      var h = '';
+      flat.forEach(function (row, k) {
+        var m = row.node, sideLabel = m.side === 'den' ? 'Đen' : (m.side === 'do' ? 'Đỏ' : '');
+        var dot = m.side === 'den' ? '<span class="side-dot den"></span>' : '<span class="side-dot do"></span>';
+        var cap = m.caption ? '<span class="cap-inline">' + escapeHtml(m.caption) + '</span>' : '';
+        h += '<button type="button" class="move-row" data-k="' + k + '" style="margin-left:' + (row.indent * 14) + 'px">'
+          + '<span class="num">' + m.depth + (row.letter || '') + '.</span>'
+          + '<span class="mv">' + dot + '<span class="mv-label">' + (m.wxf ? escapeHtml(m.wxf) : sideLabel) + '</span>' + cap + '</span></button>';
+      });
+      dom.list.innerHTML = h;
+      dom.list.querySelectorAll('[data-k]').forEach(function (el) {
+        el.addEventListener('click', function () { cur = flat[+el.getAttribute('data-k')].node; draw(); notifyEnd(); });
+      });
+    }
+    function highlightList() {
+      if (!dom.list) return;
+      Array.prototype.forEach.call(dom.list.children, function (el) {
+        var f = flat[+el.getAttribute('data-k')];
+        el.classList.toggle('active', !!f && f.node === cur);
+      });
+    }
+
+    (function bindAll() {
+      [['first', toStart], ['prev', back], ['next', next], ['last', toEnd]].forEach(function (p) {
+        var b = root.querySelector('[data-xq-' + p[0] + ']'); if (b) b.addEventListener('click', p[1]);
+      });
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { next(); e.preventDefault(); }
+        if (e.key === 'ArrowLeft') { back(); e.preventDefault(); }
+      });
+    })();
+    buildList();
     draw();
   }
 

@@ -1,6 +1,7 @@
 @props([
     'initialFen' => 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR',
-    'steps' => [],       // collection LessonStep hoặc mảng
+    'steps' => [],       // collection LessonStep hoặc mảng (mạch chính tuyến tính)
+    'tree' => null,      // cây biến (variation_tree) — nếu có → bàn cờ hiện mũi tên chọn biến
     'showList' => true,  // hiện cột danh sách nước bên phải
     'caption' => null,   // chú thích tĩnh (bài minh hoạ không có nước đi)
 ])
@@ -40,6 +41,7 @@
             @elseif($caption)
             <p class="board-note">{{ $caption }}</p>
             @endunless
+            <div class="branch-box" data-xq-branches style="display:none;"></div>
         </div>
     </div>
 
@@ -50,5 +52,5 @@
         </div>
     @endif
 
-    <script type="application/json">@json(['initialFen' => $initialFen, 'steps' => $payload], JSON_UNESCAPED_UNICODE)</script>
+    <script type="application/json">@json(['initialFen' => $initialFen, 'steps' => $payload, 'tree' => $tree ?: null], JSON_UNESCAPED_UNICODE)</script>
 </div>
