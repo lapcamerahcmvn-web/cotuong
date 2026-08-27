@@ -44,20 +44,6 @@
                 </div>
             </div>
 
-            @if($lesson->steps->isNotEmpty())
-            <div class="panel card">
-                <h3>Lời giảng từng nước ({{ $lesson->steps->count() }} nước)</h3>
-                <p class="hint" style="margin:-6px 0 12px;">Chỉ sửa lời giảng — nước đi &amp; thế cờ (FEN) là dữ liệu gốc, không đổi được ở đây.</p>
-                <div class="cap-editor">
-                    @foreach($lesson->steps as $step)
-                        <div class="cap-item">
-                            <div class="cap-n">{{ $step->step_order }}. {{ $step->move_side==='den'?'Đen':'Đỏ' }}</div>
-                            <textarea class="input" name="captions[{{ $step->id }}]" rows="1" placeholder="Lời giảng nước {{ $step->step_order }}…">{{ $step->caption }}</textarea>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            @endif
         </div>
 
         {{-- Cột phải --}}
@@ -136,14 +122,18 @@
             @endif
         </div>
     </div>
-</form>
 
-{{-- Xem trước bàn cờ + chi tiết từng nước (đối chiếu khi biên soạn caption) --}}
-<div class="panel card" style="margin-top:6px;">
-    <h3>Bàn cờ &amp; chi tiết nước đi</h3>
-    <p class="hint" style="margin:-6px 0 14px;">Bấm “Tiến” hoặc chọn một nước để xem thế cờ tương ứng — dùng để đối chiếu khi viết lời giảng ở trên.</p>
-    <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" :show-list="$lesson->steps->isNotEmpty()" />
-</div>
+    {{-- Trình soạn bàn cờ: sửa nước đi + thêm biến (dùng chung với trang Tạo) --}}
+    <div class="panel card" style="margin-top:6px;">
+        <h3>Bàn cờ — soạn nước đi &amp; biến</h3>
+        <p class="hint" style="margin:-6px 0 14px;">Bấm <strong>quân → ô đích</strong> để sửa/thêm nước; nút <strong>+ Biến</strong> để thêm nhánh; lời giảng nhập ngay dưới mỗi nước. Bấm <strong>Lưu bài học</strong> để lưu (cả nước đi, biến và lời giảng).</p>
+        @include('admin.lessons._board-panel', [
+            'initFen'   => $lesson->initial_fen,
+            'initTree'  => $lesson->variation_tree,
+            'initSteps' => $lesson->steps->map(fn ($s) => ['iccs' => $s->move_notation_iccs, 'caption' => $s->caption])->values(),
+        ])
+    </div>
+</form>
 
 <form method="POST" action="{{ route('admin.lessons.destroy', $lesson) }}" onsubmit="return confirm('Xóa vĩnh viễn bài học này?')" style="margin-top:20px;">
     @csrf @method('DELETE')

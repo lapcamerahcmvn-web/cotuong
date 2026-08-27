@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\LessonSeries;
+use App\Models\LessonStep;
 use App\Services\CotuongContentService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -54,6 +55,9 @@ class LessonController extends Controller
             'status'          => ['required', 'in:draft,review,needs_fix,published'],
             'reslug'          => ['nullable', 'boolean'],
             'captions'        => ['nullable', 'array'],
+            'initial_fen'     => ['nullable', 'string', 'max:120'],
+            'steps_json'      => ['nullable', 'string'],
+            'variation_tree'  => ['nullable', 'string'],
         ]);
 
         $wasPublished = $lesson->status === 'published';
@@ -85,8 +89,42 @@ class LessonController extends Controller
 
         $lesson->save();
 
-        // Cập nhật caption từng bước (KHÔNG đụng fen/move — chỉ cột caption).
-        if (! empty($data['captions'])) {
+        // Nước đi + cây biến từ trình soạn bàn cờ. CHỈ dựng lại khi board editor có chạy
+        // (initial_fen được JS đồng bộ) — tránh xoá nhầm nước đi nếu JS lỗi/không tải.
+        if ($request->filled('initial_fen')) {
+            $steps = json_decode($request->input('steps_json') ?: '[]', true) ?: [];
+            $tree  = json_decode($request->input('variation_tree') ?: '[]', true) ?: [];
+            // Chỉ giữ variation_tree khi có NHÁNH thật (một node >1 con) — bài tuyến tính → null.
+            $hasBranch = function ($nodes) use (&$hasBranch) {
+                foreach ($nodes as $n) {
+                    if (count($n['children'] ?? []) > 1) {
+                        return true;
+                    }
+                    if (! empty($n['children']) && $hasBranch($n['children'])) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+            $lesson->update([
+                'initial_fen'    => $request->input('initial_fen'),
+                'variation_tree' => ($tree && $hasBranch($tree)) ? $tree : null,
+                'move_count'     => count($steps),
+            ]);
+            $lesson->steps()->delete();
+            foreach ($steps as $i => $s) {
+                LessonStep::create([
+                    'lesson_id'          => $lesson->id,
+                    'step_order'         => $i + 1,
+                    'fen'                => $s['fen'] ?? $lesson->initial_fen,
+                    'move_notation_iccs' => $s['iccs'] ?? null,
+                    'move_notation_wxf'  => $s['wxf'] ?? null,
+                    'move_side'          => in_array($s['side'] ?? null, ['do', 'den'], true) ? $s['side'] : 'do',
+                    'caption'            => $s['caption'] ?? null,
+                ]);
+            }
+        } elseif (! empty($data['captions'])) {
+            // Tương thích ngược: sửa caption theo id nếu form cũ còn gửi captions[].
             foreach ($lesson->steps as $step) {
                 if (array_key_exists($step->id, $data['captions'])) {
                     $step->update(['caption' => $data['captions'][$step->id] ?: null]);

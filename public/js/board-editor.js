@@ -486,8 +486,41 @@
     else { enterMove(); }
   });
 
-  // init — mặc định vào ngay chế độ Soạn nước đi để dựng khai cuộc nhanh
-  loadFen(root.getAttribute('data-init') || STARTS.normal);
+  // ---- nạp bài ĐÃ CÓ (trang Sửa) từ <script data-be-init> {fen, tree, steps} ----
+  function fromIccs(s) {
+    if (!s || s.length < 4) return null;
+    function idx(a, b) { return (9 - (b.charCodeAt(0) - 48)) * 9 + (a.charCodeAt(0) - 97); }
+    return { from: idx(s[0], s[1]), to: idx(s[2], s[3]) };
+  }
+  function loadExistingTree(nodes) {
+    newRoot();
+    (function build(list, parent) {
+      list.forEach(function (nd) {
+        gotoNode(parent);
+        pushMove(nd.from, nd.to, nd.reveal || null);
+        cur.caption = nd.caption || '';
+        var made = cur;
+        if (nd.children && nd.children.length) build(nd.children, made);
+      });
+    })(nodes, rootNode);
+    gotoNode(rootNode);
+  }
+  function loadExistingSteps(steps) {
+    newRoot();
+    var node = rootNode;
+    for (var k = 0; k < steps.length; k++) {
+      var mv = fromIccs(steps[k].iccs); if (!mv) break;
+      gotoNode(node); pushMove(mv.from, mv.to, null); cur.caption = steps[k].caption || ''; node = cur;
+    }
+    gotoNode(rootNode);
+  }
+
+  // init
+  var initCfg = null, initEl = root.querySelector('[data-be-init]');
+  if (initEl) { try { initCfg = JSON.parse(initEl.textContent); } catch (e) { initCfg = null; } }
+  loadFen((initCfg && initCfg.fen) || root.getAttribute('data-init') || STARTS.normal);
   buildPalette();
-  enterMove();
+  if (initCfg && initCfg.tree && initCfg.tree.length) { loadExistingTree(initCfg.tree); setMode('move'); beMsg('Đã nạp bài (' + initCfg.tree.length + ' nhánh gốc). Bấm một nước để xem/thêm biến, hoặc + Biến.', true); }
+  else if (initCfg && initCfg.steps && initCfg.steps.length) { loadExistingSteps(initCfg.steps); setMode('move'); beMsg('Đã nạp bài (' + initCfg.steps.length + ' nước). Bấm một nước rồi + Biến để thêm biến.', true); }
+  else { enterMove(); }
 })();
