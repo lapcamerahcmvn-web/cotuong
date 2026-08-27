@@ -131,10 +131,23 @@
     var lessonId = {{ $lesson->id }};
     var url = "{{ route('progress.store', $lesson->id) }}";
     var token = document.querySelector('meta[name=csrf-token]').content;
-    var seconds = 0, viewedAll = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }}, done = {{ $completed ? 'true' : 'false' }}, dirty = true;
+    var isText = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }};
+    var seconds = 0, viewedAll = isText, done = {{ $completed ? 'true' : 'false' }}, dirty = true, finishedReading = false;
 
     // Xem hết các nước → gửi NGAY (không đợi tick) để đánh dấu đã học liền, khỏi phải reload.
     document.addEventListener('xq:viewed-all-moves', function(){ viewedAll = true; dirty = true; send(); });
+
+    // Bài lý thuyết (không bàn cờ): cuộn hết bài = đã đọc xong.
+    if (isText) {
+        var checkEnd = function(){
+            if (finishedReading) return;
+            var docH = document.documentElement.scrollHeight, winH = window.innerHeight;
+            if (docH <= winH + 120 || (window.scrollY + winH >= docH - 120)) { finishedReading = true; dirty = true; send(); }
+        };
+        window.addEventListener('scroll', checkEnd, { passive: true });
+        window.addEventListener('load', checkEnd);
+        checkEnd();
+    }
 
     setInterval(function(){ if(!document.hidden){ seconds += 10; dirty = true; send(); } }, 10000);
 
@@ -144,7 +157,7 @@
         fetch(url, {
             method:'POST', keepalive: true,
             headers:{'Content-Type':'application/json','X-CSRF-TOKEN':token,'Accept':'application/json'},
-            body: JSON.stringify({ read_seconds: seconds, viewed_all_moves: viewedAll })
+            body: JSON.stringify({ read_seconds: seconds, viewed_all_moves: viewedAll, finished_reading: finishedReading })
         }).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
             if (d && d.completed) { done = true; showBadge(); }
         }).catch(function(){});

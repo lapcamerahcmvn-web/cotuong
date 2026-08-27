@@ -100,6 +100,36 @@ function parseMove(board, tok, red) {
   return { from: srcIdx, to: tr * 9 + tx };
 }
 
+// ---------- KIỂM TRA VỊ TRÍ TĨNH (bắt lỗi đọc sơ đồ: Sĩ/Tượng/Tướng sai ô) ----------
+function validatePosition(board) {
+  const bad = [];
+  // ô hợp lệ theo mã rank*10+col
+  const A_RED = new Set([93, 95, 84, 73, 75]), A_BLK = new Set([3, 5, 14, 23, 25]);
+  const B_RED = new Set([92, 96, 70, 74, 78, 52, 56]), B_BLK = new Set([2, 6, 20, 24, 28, 42, 46]);
+  let kR = 0, kB = 0, pawns = { R: 0, N: 0, B: 0, A: 0, C: 0, P: 0, r: 0, n: 0, b: 0, a: 0, c: 0, p: 0 };
+  for (let i = 0; i < 90; i++) {
+    const p = board[i]; if (!p) continue;
+    const r = (i / 9) | 0, c = i % 9, k = r * 10 + c, red = isRed(p), U = p.toUpperCase();
+    if (U !== 'K') pawns[p] = (pawns[p] || 0) + 1;
+    if (U === 'K') {
+      red ? kR++ : kB++;
+      if (c < 3 || c > 5 || (red ? (r < 7) : (r > 2))) bad.push(`Tướng ${p} ngoài cung tại ${toIccs(i)}`);
+    } else if (U === 'A') {
+      if (!(red ? A_RED : A_BLK).has(k)) bad.push(`Sĩ ${p} ở ô không hợp lệ ${toIccs(i)}`);
+    } else if (U === 'B') {
+      if (!(red ? B_RED : B_BLK).has(k)) bad.push(`Tượng ${p} ở ô không hợp lệ ${toIccs(i)}`);
+    } else if (U === 'P') {
+      // Tốt không thể đứng ở 3 hàng đầu của phe mình (chưa thể lùi về đó)
+      if (red ? (r >= 7) : (r <= 2)) bad.push(`Tốt ${p} ở ô không hợp lệ ${toIccs(i)}`);
+    }
+  }
+  if (kR !== 1) bad.push(`Số Tướng đỏ = ${kR} (phải 1)`);
+  if (kB !== 1) bad.push(`Số Tướng đen = ${kB} (phải 1)`);
+  const lim = { R: 2, N: 2, B: 2, A: 2, C: 2, P: 5 };
+  for (const pc in lim) { if (pawns[pc] > lim[pc]) bad.push(`Quá số ${pc}: ${pawns[pc]}`); if (pawns[pc.toLowerCase()] > lim[pc]) bad.push(`Quá số ${pc.toLowerCase()}: ${pawns[pc.toLowerCase()]}`); }
+  return bad;
+}
+
 // ---------- BUILDER cây biến ----------
 function makeBuilder(startFen, firstSide) {
   var root = { children: [], parent: null, depth: 0, board: loadFen(startFen) };
@@ -134,6 +164,7 @@ function makeBuilder(startFen, firstSide) {
     root: root,
     build: function (input) {
       // input: { main:[tok], captions:{ply:txt}, variations:[{after_ply, moves:[tok], captions:{}}] }
+      validatePosition(root.board).forEach(function (m) { warnings.push('Vị trí không hợp lệ: ' + m); });
       line(root, input.main, input.captions || {}, 1);
       (input.variations || []).forEach(function (v) {
         // điều hướng tới node sau `after_ply` nước của mạch chính
@@ -150,7 +181,7 @@ function makeBuilder(startFen, firstSide) {
   };
 }
 
-module.exports = { loadFen, toFen, toIccs, legalMove, notation, parseMove, makeBuilder };
+module.exports = { loadFen, toFen, toIccs, legalMove, notation, parseMove, makeBuilder, validatePosition };
 
 // ---------- SELF-TEST ----------
 if (require.main === module && process.argv[2] === '--test') {

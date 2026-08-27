@@ -32651,7 +32651,7 @@
       "slug": "bach-liem-tuong-vi-du-2",
       "level": "co-ban",
       "source_type": "manual",
-      "initial_fen": "4k4/9/8b/9/9/1R7/9/4A4/6r2/3K5",
+      "initial_fen": "4k4/9/8b/9/9/1R7/9/5A3/6r2/3K5",
       "variation_tree": null,
       "move_count": 7,
       "summary": "Bạch Liễm Tướng trong thế tàn ít quân: Đỏ giành trung lộ, dùng Tướng và Xe phối hợp dồn Tướng đen vào thế chiếu hết.",
@@ -32665,7 +32665,7 @@
       "steps": [
         {
           "step_order": 1,
-          "fen": "4k4/9/8b/9/9/4R4/9/4A4/6r2/3K5",
+          "fen": "4k4/9/8b/9/9/4R4/9/5A3/6r2/3K5",
           "move_notation_wxf": "Xe 8 bình 5",
           "move_notation_iccs": "b4e4",
           "move_side": "do",
@@ -32676,7 +32676,7 @@
         },
         {
           "step_order": 2,
-          "fen": "5k3/9/8b/9/9/4R4/9/4A4/6r2/3K5",
+          "fen": "5k3/9/8b/9/9/4R4/9/5A3/6r2/3K5",
           "move_notation_wxf": "Tướng 5 bình 6",
           "move_notation_iccs": "e9f9",
           "move_side": "den",
@@ -32687,7 +32687,7 @@
         },
         {
           "step_order": 3,
-          "fen": "5k3/9/8b/9/9/4R4/9/4A4/6r2/4K4",
+          "fen": "5k3/9/8b/9/9/4R4/9/5A3/6r2/4K4",
           "move_notation_wxf": "Tướng 6 bình 5",
           "move_notation_iccs": "d0e0",
           "move_side": "do",
@@ -32698,7 +32698,7 @@
         },
         {
           "step_order": 4,
-          "fen": "5k3/6r2/8b/9/9/4R4/9/4A4/9/4K4",
+          "fen": "5k3/6r2/8b/9/9/4R4/9/5A3/9/4K4",
           "move_notation_wxf": "Xe 7 thoái 7",
           "move_notation_iccs": "g1g8",
           "move_side": "den",
@@ -32709,7 +32709,7 @@
         },
         {
           "step_order": 5,
-          "fen": "4Rk3/6r2/8b/9/9/9/9/4A4/9/4K4",
+          "fen": "4Rk3/6r2/8b/9/9/9/9/5A3/9/4K4",
           "move_notation_wxf": "Xe 5 tiến 5",
           "move_notation_iccs": "e4e9",
           "move_side": "do",
@@ -32720,7 +32720,7 @@
         },
         {
           "step_order": 6,
-          "fen": "4R4/5kr2/8b/9/9/9/9/4A4/9/4K4",
+          "fen": "4R4/5kr2/8b/9/9/9/9/5A3/9/4K4",
           "move_notation_wxf": "Tướng 6 tiến 1",
           "move_notation_iccs": "f9f8",
           "move_side": "den",
@@ -32731,7 +32731,7 @@
         },
         {
           "step_order": 7,
-          "fen": "9/4Rkr2/8b/9/9/9/9/4A4/9/4K4",
+          "fen": "9/4Rkr2/8b/9/9/9/9/5A3/9/4K4",
           "move_notation_wxf": "Xe 5 thoái 1",
           "move_notation_iccs": "e9e8",
           "move_side": "do",

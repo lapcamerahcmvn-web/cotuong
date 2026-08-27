@@ -16,6 +16,7 @@ class ProgressController extends Controller
         $data = $request->validate([
             'read_seconds'     => ['nullable', 'integer', 'min:0', 'max:100000'],
             'viewed_all_moves' => ['nullable', 'boolean'],
+            'finished_reading' => ['nullable', 'boolean'],
         ]);
 
         $p = LessonProgress::firstOrNew([
@@ -30,10 +31,10 @@ class ProgressController extends Controller
 
         // Điều kiện "đã học" — đơn giản, thân thiện:
         // - Bài CÓ nước đi: đã xem hết các nước (dù tua nhanh) + ở lại ≥ 20 giây.
-        // - Bài KHÔNG có nước đi (dạng lý thuyết): đọc ≥ 90 giây.
+        // - Bài KHÔNG có nước đi (lý thuyết): đã cuộn hết bài + ở lại ≥ 15 giây, HOẶC đọc ≥ 90 giây.
         $completed = $lesson->move_count > 0
             ? ($p->viewed_all_moves && $p->read_seconds >= 20)
-            : ($p->read_seconds >= 90);
+            : (($request->boolean('finished_reading') && $p->read_seconds >= 15) || $p->read_seconds >= 90);
 
         if ($completed && $p->status !== 'completed') {
             $p->status = 'completed';
