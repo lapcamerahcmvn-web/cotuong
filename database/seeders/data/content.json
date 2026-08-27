@@ -32588,7 +32588,7 @@
     },
     {
       "series_slug": "sat-phap-dai-toan",
-      "order_in_series": 2,
+      "order_in_series": 11,
       "game_mode": "co-tuong",
       "phase": "trung-cuoc",
       "title": "Bạch Liễm Tướng (Tướng Lộ Diện) — Ví Dụ 1",
@@ -32644,7 +32644,7 @@
     },
     {
       "series_slug": "sat-phap-dai-toan",
-      "order_in_series": 3,
+      "order_in_series": 12,
       "game_mode": "co-tuong",
       "phase": "trung-cuoc",
       "title": "Bạch Liễm Tướng (Tướng Lộ Diện) — Ví Dụ 2",
@@ -32744,7 +32744,7 @@
     },
     {
       "series_slug": "sat-phap-dai-toan",
-      "order_in_series": 4,
+      "order_in_series": 21,
       "game_mode": "co-tuong",
       "phase": "trung-cuoc",
       "title": "Hải Để Lao Nguyệt (Vớt Trăng Đáy Biển) — Ví Dụ 1",
@@ -32954,7 +32954,7 @@
     },
     {
       "series_slug": "sat-phap-dai-toan",
-      "order_in_series": 5,
+      "order_in_series": 22,
       "game_mode": "co-tuong",
       "phase": "trung-cuoc",
       "title": "Hải Để Lao Nguyệt (Xe Tốt Đáy) — Ví Dụ 2",
@@ -33092,6 +33092,150 @@
           "moved_piece": null,
           "captured_piece": null,
           "caption": "Xe bình chiếu hết — Xe và Tốt đáy phối hợp dứt điểm.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 13,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Bạch Liễm Tướng (Thí Xe Dẫn Dụ) — Ví Dụ 3",
+      "slug": "bach-liem-tuong-vi-du-3",
+      "level": "co-ban",
+      "source_type": "manual",
+      "initial_fen": "9/3ka4/5a3/2P4R1/9/9/5r1n1/C8/9/2B1KAB1c",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Bạch Liễm Tướng bằng đòn thí Xe: dẫn dụ Tướng đen lên đỉnh cửu cung, rồi Pháo và Tốt phối hợp công sát.",
+      "content": "<h2>Bạch Liễm Tướng — Đòn Thí Xe Dẫn Dụ</h2><p>Ví dụ này minh hoạ cách <strong>thí Xe</strong> để dẫn dụ Tướng đối phương lên đỉnh cửu cung, tạo điều kiện cho Pháo và Tốt phối hợp công sát. Điểm hay của thế cờ: đừng tiếc quân — thí Xe đúng lúc sẽ mở toang lớp phòng thủ, rồi con Tốt nhỏ mượn uy Pháo phía sau kết liễu ván cờ.</p><p>Đây là biến thể sắc bén của đòn Bạch Liễm Tướng, cho thấy giá trị của việc hy sinh quân để đạt thế chiếu hết.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Bạch Liễm Tướng — Đòn Thí Xe Dẫn Dụ (Ví Dụ 3)",
+      "seo_description": "Sát pháp Bạch Liễm Tướng bằng đòn thí Xe cờ tướng: dẫn dụ Tướng đen lên đỉnh cửu cung, Pháo Tốt phối hợp chiếu hết. Bàn cờ tương tác từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/3ka4/5a3/2PR5/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Xe 2 bình 6",
+          "move_notation_iccs": "h6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe bình vào sát cửa Tướng đen — bắt đầu đòn thí Xe dẫn dụ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/3k5/3a1a3/2PR5/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lên Sĩ đỡ đòn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/3k5/3R1a3/2P6/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Xe 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Thí thân Xe, ép Tướng đen bò lên đỉnh cửu cung.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/9/3k1a3/2P6/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/9/3k1a3/3P5/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tốt bình vào, mượn uy Pháo phía sau khống chế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/3k5/5a3/3P5/9/9/5r1n1/C8/9/2B1KAB1c",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3k5/5a3/3P5/9/9/5r1n1/3C5/9/2B1KAB1c",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo bình về trung lộ, chặn đường ngang của Tướng đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/3k5/5a3/3P5/9/9/3r3n1/3C5/9/2B1KAB1c",
+          "move_notation_wxf": "Xe 6 bình 4",
+          "move_notation_iccs": "f3d3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/3k5/3P1a3/9/9/9/3r3n1/3C5/9/2B1KAB1c",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tốt tiến sát, siết chặt vòng vây.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3k5/9/3P1a3/9/9/9/3r3n1/3C5/9/2B1KAB1c",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3k5/3P5/5a3/9/9/9/3r3n1/3C5/9/2B1KAB1c",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tốt tiến chiếu hết — con Tốt nhỏ mượn uy Pháo, nhất cử giành thắng lợi.",
           "is_flip_reveal": false
         }
       ]

@@ -16,7 +16,7 @@
 |---|---|---|
 | Pipeline `tools/mate-book/` (parser + gen + render + batch) | 1 lần | ✅ xong, test 9/9 |
 | Pha 1: Lời Nói Đầu | 1 bài | ✅ (text; ván minh hoạ Lý Lai Quần để bổ sung sau) |
-| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 2/19: **Bạch Liễm Tướng** (2/6 vd) + **Hải Để Lao Nguyệt** (2 vd) |
+| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 Bạch Liễm Tướng 3/6 vd + Hải Để Lao Nguyệt 2 vd (thứ tự type*10+vd) |
 | Pha 2: `puzzle_side` + `xiangqi-rules.js` + `mode=puzzle` | code | ⬜ |
 | Pha 2: bật giải đố cho ví dụ Pha 1 | ~20 | ⬜ |
 | Pha 3: Tàn cuộc nhập thức sát pháp | ? | ⬜ |
