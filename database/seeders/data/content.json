@@ -33239,6 +33239,106 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 15,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Bạch Liễm Tướng (Chặn Mã Giải Sát) — Ví Dụ 5",
+      "slug": "bach-liem-tuong-vi-du-5",
+      "level": "co-ban",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4a4/7R1/5P3/9/9/9/2n6/3rA4/4K4",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bạch Liễm Tướng gắn với phòng thủ: chặn chân Mã hoá giải đòn sát của đối phương (giải sát hoàn sát), rồi phản công thắng bằng thế Tướng lộ diện.",
+      "content": "<h2>Bạch Liễm Tướng — Chặn Mã Giải Sát</h2><p>Ví dụ này cho thấy sát pháp Bạch Liễm Tướng gắn liền với phòng thủ. Trước tiên Đỏ phải <strong>chặn chân Mã</strong> của đối phương để hoá giải đòn sát của họ — đây gọi là <em>giải sát hoàn sát</em> (gỡ nước chiếu của địch rồi lập tức phản công). Sau khi thoát nguy, Đỏ mượn sức Xe thúc Tốt và bình Xe kết liễu bằng thế đối mặt Tướng.</p><p>Bài học rút ra: trong thực chiến, biết chống đỡ đúng lúc rồi phản đòn thường chuyển bại thành thắng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Bạch Liễm Tướng — Chặn Mã Giải Sát Hoàn Sát (Ví Dụ 5)",
+      "seo_description": "Sát pháp Bạch Liễm Tướng cờ tướng: chặn chân Mã hoá giải đòn địch rồi phản công chiếu hết. Kỹ thuật giải sát hoàn sát, bàn cờ tương tác.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak4/4a4/7R1/5P3/9/9/9/2nA5/3r5/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Lên Sĩ chặn chân Mã đen, hoá giải đòn sát của đối phương — giải sát hoàn sát, nước cờ tinh tế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3a1k3/4a4/7R1/5P3/9/9/9/2nA5/3r5/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng đen né sang bên.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3a1k3/4a4/5P1R1/9/9/9/9/2nA5/3r5/4K4",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mượn sức Xe, thúc Tốt lên khống chế Tướng đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a1k3/4a4/5P1R1/9/9/9/9/2nA5/9/3rK4",
+          "move_notation_wxf": "Xe 4 tiến 1",
+          "move_notation_iccs": "d1d0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a1k3/4a4/5P1R1/9/9/9/9/2nA5/4K4/3r5",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng đỏ bò lên, chuẩn bị mượn uy soi thẳng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3a1k3/9/5a1R1/9/9/9/9/2nA5/4K4/3r5",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3a1k3/9/5R3/9/9/9/9/2nA5/4K4/3r5",
+          "move_notation_wxf": "Xe 2 bình 4",
+          "move_notation_iccs": "h7f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe bình sang chiếu hết — kết thúc bằng đòn đối mặt Tướng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
