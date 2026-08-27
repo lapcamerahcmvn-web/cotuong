@@ -3,7 +3,7 @@
 @section('heading', 'Soạn bài bằng bàn cờ')
 
 @section('content')
-<form method="POST" action="{{ route('admin.board-editor.store') }}">
+<form id="board-editor-form" method="POST" action="{{ route('admin.board-editor.store') }}">
     @csrf
 
     <div class="card" style="padding:18px 20px;margin-bottom:18px;">
@@ -52,8 +52,8 @@
             </div>
         </div>
         <div style="margin-top:14px;">
-            <label class="be-label">Nội dung bài (HTML, có thể để trống rồi bổ sung sau)</label>
-            <textarea class="be-input" name="content" rows="3">{{ old('content') }}</textarea>
+            <label class="be-label">Nội dung bài (có thể để trống rồi bổ sung sau)</label>
+            <textarea id="content" class="be-input editor-full" name="content" rows="6">{{ old('content') }}</textarea>
         </div>
     </div>
 
@@ -104,5 +104,28 @@
 
 @push('scripts')
 <script src="{{ asset('js/board-editor.js') }}?v={{ @filemtime(public_path('js/board-editor.js')) }}" defer></script>
+<script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
+<script>
+function initEditors() {
+    if (typeof tinymce === 'undefined') return;
+    tinymce.remove('.editor-full');
+    tinymce.init({
+        selector: '.editor-full',
+        license_key: 'gpl',
+        promotion: false, branding: false, height: 320, menubar: false,
+        plugins: 'lists link autolink',
+        toolbar: 'undo redo | h2 h3 | bold italic | bullist numlist | link | removeformat',
+        block_formats: 'Đoạn=p; Tiêu đề H2=h2; Tiêu đề H3=h3',
+        content_style: "body{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;}",
+        skin: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'oxide-dark' : 'oxide',
+        content_css: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'default',
+    });
+}
+document.addEventListener('DOMContentLoaded', initEditors);
+// Đồng bộ TinyMCE về textarea trước khi submit (nếu không content sẽ rỗng).
+document.getElementById('board-editor-form').addEventListener('submit', function () {
+    if (typeof tinymce !== 'undefined') tinymce.triggerSave();
+});
+</script>
 @endpush
 @endsection

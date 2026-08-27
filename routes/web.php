@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LessonController as AdminLessonController;
+use App\Http\Controllers\Admin\LessonSeriesController;
 use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\SourceAssetController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -68,6 +69,14 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::post('lessons/{lesson:id}/toggle', [AdminLessonController::class, 'togglePublish'])->name('lessons.toggle');
     Route::post('lessons/{lesson:id}/generate', [AdminLessonController::class, 'generate'])->name('lessons.generate');
     Route::delete('lessons/{lesson:id}', [AdminLessonController::class, 'destroy'])->name('lessons.destroy');
+
+    // Quản lý chuỗi bài học (thêm/sửa/xoá) — nhân sự (admin + biên tập).
+    Route::get('series', [LessonSeriesController::class, 'index'])->name('series.index');
+    Route::get('series/create', [LessonSeriesController::class, 'create'])->name('series.create');
+    Route::post('series', [LessonSeriesController::class, 'store'])->name('series.store');
+    Route::get('series/{series}/edit', [LessonSeriesController::class, 'edit'])->name('series.edit');
+    Route::put('series/{series}', [LessonSeriesController::class, 'update'])->name('series.update');
+    Route::delete('series/{series}', [LessonSeriesController::class, 'destroy'])->name('series.destroy');
 
     // Duyệt bình luận + thống kê + quản lý người dùng/nguồn — CHỈ admin.
     Route::middleware('admin')->group(function () {
