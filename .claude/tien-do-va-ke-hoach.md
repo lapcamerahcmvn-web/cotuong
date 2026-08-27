@@ -2,7 +2,7 @@
 
 > Bảng điều khiển chính, cập nhật liên tục. Đối chiếu với `ke-hoach-seo-tong-the-hoccotuong.md`
 > (nghiên cứu từ khóa + chiến lược) — file này theo dõi *đã làm gì* và *làm tiếp gì*.
-> Cập nhật gần nhất: **2026-08-25**.
+> Cập nhật gần nhất: **2026-08-27**.
 
 ## Trạng thái tổng quan
 
@@ -41,6 +41,14 @@
 - **Tài khoản**: đăng nhập Google + email/mật khẩu, **đăng ký** tài khoản học viên, theo dõi tiến độ
   (đọc + xem hết nước → ✓ đã học), trang tài khoản (5 bài gần nhất + "Hiện thêm"), tích ✓ trên trang chuyên đề.
 - **Cộng đồng**: bình luận + trả lời (1 cấp) + **Thích** (AJAX), sắp "quan tâm nhất". Chia sẻ **Facebook/Zalo** + copy link.
+- **Trình soạn bàn cờ (Admin)** — `/admin/lessons/board-editor`, `public/js/board-editor.js`: xếp quân đúng luật
+  số lượng/vị trí (cờ úp cho đặt tự do trừ 2 Tướng, có nút **Đậy nắp quân** nhớ binh chủng thật để tự lật),
+  soạn nước đi **đúng luật từng loại quân** + **tự sinh ký hiệu VN** (Pháo 2 bình 5…). Mặc định vào thẳng chế độ đi quân.
+- **Cây biến (variation tree)** — cột `lessons.variation_tree` (JSON, migration 2026_08_26). Soạn: bấm lại 1 nước
+  để quay về rồi đi nước khác → phân nhánh (2A/2B…), trình soạn vẽ **mũi tên biến** trên bàn. Trang học
+  (`board.js`): tại điểm rẽ mỗi biến là 1 **mũi tên A/B** + nút "Chọn biến"; đổi biến trực tiếp (biến cũ trở lại
+  thành mũi tên). Mạch chính vẫn lưu `lesson_steps` → bài cũ tuyến tính tương thích ngược. **Agent**
+  (`LessonWriterAgent`+`CotuongContentService`) viết `variation_captions` theo path cho từng nhánh, đồng bộ mạch chính.
 
 ### SEO kỹ thuật (theo mục 2B + 3 kế hoạch)
 - ✅ **sitemap.xml động** (trang chủ + giai đoạn + chuỗi Course + toàn bộ bài) + **robots.txt** (trỏ sitemap, chặn trang riêng tư).
