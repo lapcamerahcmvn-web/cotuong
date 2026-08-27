@@ -352,3 +352,13 @@ body.xq-fs-lock { overflow: hidden; }
 .foot-links { display:flex; gap:6px 16px; flex-wrap:wrap; }
 .foot-links a { color:var(--ink-soft); font-size:13.5px; }
 .foot-links a:hover { color:var(--red); }
+
+/* Trang lỗi (404…) */
+.err-page { display:flex; justify-content:center; padding:36px 0 60px; }
+.err-card { max-width:600px; width:100%; text-align:center; padding:36px 28px; }
+.err-card .err-code { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:76px; line-height:1; color:var(--red); letter-spacing:-.02em; }
+.err-card h1 { margin:6px 0 8px; font-size:24px; }
+.err-card .err-sub { color:var(--ink-soft); font-size:15px; margin:0 auto 22px; max-width:440px; line-height:1.6; }
+.err-search { display:flex; gap:8px; max-width:440px; margin:0 auto 22px; }
+.err-search input { flex:1; }
+.err-links { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
