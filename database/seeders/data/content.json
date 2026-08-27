@@ -33339,6 +33339,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 16,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Bạch Liễm Tướng (Chiếu Tướng Giải Sát) — Ví Dụ 6",
+      "slug": "bach-liem-tuong-vi-du-6",
+      "level": "co-ban",
+      "source_type": "manual",
+      "initial_fen": "5a3/3ka4/bP7/9/9/9/6p1r/C8/5p3/R3K4",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Kỹ xảo chiếu Tướng giải sát: đang bị doạ sát, Đỏ chủ động chiếu Tướng đối phương giành thế chủ động rồi hiến Binh dẫn dụ, kết bằng Bạch Liễm Tướng.",
+      "content": "<h2>Bạch Liễm Tướng — Chiếu Tướng Giải Sát</h2><p>Ví dụ này minh hoạ kỹ xảo <strong>chiếu Tướng giải sát</strong>: khi đối phương đang doạ chiếu hết, thay vì phòng thủ bị động, ta chủ động chiếu Tướng họ trước để giành lại thế chủ động. Từ đó Đỏ hiến Binh dẫn dụ Tướng đen và hình thành thế Bạch Liễm Tướng để kết thúc.</p><p>Đây là thủ pháp phòng thủ – phản công thường dùng trong thực chiến để chuyển bại thành thắng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Bạch Liễm Tướng — Chiếu Tướng Giải Sát (Ví Dụ 6)",
+      "seo_description": "Sát pháp Bạch Liễm Tướng cờ tướng: kỹ xảo chiếu Tướng giải sát, hiến Binh dẫn dụ rồi chiếu hết. Chuyển bại thành thắng, bàn cờ tương tác.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5a3/3ka4/bP7/9/9/9/6p1r/C8/5p3/3RK4",
+          "move_notation_wxf": "Xe 9 bình 6",
+          "move_notation_iccs": "a0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe bình vào trung lộ chiếu Tướng để giải đòn sát của đối phương — kỹ xảo 'chiếu Tướng giải sát'.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "5a3/3k5/bP1a5/9/9/9/6p1r/C8/5p3/3RK4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "5a3/3k5/bP1a5/9/9/9/6p1r/3C5/5p3/3RK4",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo bình theo, tiếp tục ép Sĩ đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5a3/3ka4/bP7/9/9/9/6p1r/3C5/5p3/3RK4",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/3ka4/bP7/9/9/9/6p1r/8C/5p3/3RK4",
+          "move_notation_wxf": "Pháo 6 bình 1",
+          "move_notation_iccs": "d2i2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo sang biên, chuẩn bị vòng công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a3/3k5/bP1a5/9/9/9/6p1r/8C/5p3/3RK4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a3/3k5/b1Pa5/9/9/9/6p1r/8C/5p3/3RK4",
+          "move_notation_wxf": "Tốt 8 bình 7",
+          "move_notation_iccs": "b7c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Hiến Binh dẫn dụ Tướng đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5a3/3k5/b1Pa4r/9/9/9/6p2/8C/5p3/3RK4",
+          "move_notation_wxf": "Xe 9 thoái 4",
+          "move_notation_iccs": "i3i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "5a3/3k5/b1Pa4r/9/9/9/6p2/3C5/5p3/3RK4",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "i2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo về trung lộ khống chế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5a3/3ka4/b1P5r/9/9/9/6p2/3C5/5p3/3RK4",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5a3/3ka4/b2P4r/9/9/9/6p2/3C5/5p3/3RK4",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tốt bình vào, ép Tướng đen lên.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "5a3/4a4/b2k4r/9/9/9/6p2/3C5/5p3/3RK4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "5a3/4a4/b2k4r/9/9/9/6p2/8C/5p3/3RK4",
+          "move_notation_wxf": "Pháo 6 bình 1",
+          "move_notation_iccs": "d2i2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo bình chiếu hết — hình thành sát cục Bạch Liễm Tướng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }

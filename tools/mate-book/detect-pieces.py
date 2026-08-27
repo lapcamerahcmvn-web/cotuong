@@ -34,10 +34,10 @@ for r in range(10):
     for c in range(9):
         cx = x0 + cellw * c
         cy = y0 + cellh * r
-        # vùng đĩa quân
-        xs, xe = int(cx - rad), int(cx + rad)
-        ys, ye = int(cy - rad), int(cy + rad)
-        if xs < 0 or ys < 0 or xe > W or ye > H:
+        # vùng đĩa quân — CẮT theo mép ảnh (quân ở hàng biên vẫn dò được, không bỏ sót)
+        xs, xe = max(0, int(cx - rad)), min(W, int(cx + rad))
+        ys, ye = max(0, int(cy - rad)), min(H, int(cy + rad))
+        if (xe - xs) < rad or (ye - ys) < rad:
             continue
         patch = a[ys:ye, xs:xe]
         darkfrac = (patch < 110).mean()
