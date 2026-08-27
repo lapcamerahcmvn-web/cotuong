@@ -22,6 +22,12 @@ class LessonComment extends Model
         return $this->belongsTo(Lesson::class);
     }
 
+    // Bình luận cha (khi đây là câu trả lời). Admin eager-load để hiển thị ngữ cảnh.
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'parent_id');
+    }
+
     // Trả lời (1 cấp) đã duyệt — sắp cũ → mới. (Admin dùng query riêng để xem cả chưa duyệt.)
     public function replies(): HasMany
     {
