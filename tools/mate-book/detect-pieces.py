@@ -40,15 +40,16 @@ for r in range(10):
         if (xe - xs) < rad or (ye - ys) < rad:
             continue
         patch = a[ys:ye, xs:xe]
-        darkfrac = (patch < 110).mean()
-        if darkfrac < 0.18:            # ít mực → ô trống
-            continue
-        # annulus (vành giữa chữ và mép): đặc→tối, viền→sáng
+        # chỉ lấy pixel TRONG đĩa quân (bỏ góc ô + đường kẻ bàn cờ ngoài đĩa)
         yy, xx = np.ogrid[ys:ye, xs:xe]
-        dist = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
-        ring = patch[(dist >= inner) & (dist <= rad)]
-        ringdark = (ring < 110).mean() if ring.size else 0
-        color = 'B' if ringdark > 0.5 else 'R'   # B=Đen(đặc), R=Đỏ(viền)
+        indisc = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2) <= rad
+        disc = patch[indisc]
+        darkfrac = (disc < 110).mean() if disc.size else 0
+        if darkfrac < 0.20:            # ít mực → ô trống
+            continue
+        # Quân ĐẶC (nền đen, chữ trắng) → nhiều mực; quân VIỀN (nền trắng) → ít mực.
+        # Dùng TỈ LỆ MỰC TOÀN ĐĨA (bền với đường viền bàn cờ ở hàng biên, khác annulus cũ).
+        color = 'B' if darkfrac > 0.48 else 'R'   # B=Đen(đặc), R=Đỏ(viền)
         grid[r][c] = '#' if color == 'B' else 'o'
         detail.append((r, c, color))
 
