@@ -16,7 +16,7 @@
 |---|---|---|
 | Pipeline `tools/mate-book/` (parser + gen + render + batch) | 1 lần | ✅ xong, test 9/9 |
 | Pha 1: Lời Nói Đầu | 1 bài | ✅ (text; ván minh hoạ Lý Lai Quần để bổ sung sau) |
-| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 1/19: **Bạch Liễm Tướng** (2 ví dụ) xong |
+| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 2/19: **Bạch Liễm Tướng** (2/6 vd) + **Hải Để Lao Nguyệt** (2 vd) |
 | Pha 2: `puzzle_side` + `xiangqi-rules.js` + `mode=puzzle` | code | ⬜ |
 | Pha 2: bật giải đố cho ví dụ Pha 1 | ~20 | ⬜ |
 | Pha 3: Tàn cuộc nhập thức sát pháp | ? | ⬜ |
@@ -36,5 +36,11 @@
     (`4k4/9/8b/9/9/1R7/9/4A4/6r2/3K5`, 7 nước). Seed local + verify frontend render đúng FEN+steps.
   - Bài học: dày sơ đồ (nhiều quân) dễ đọc lệch cột 1 ô — engine bắt được ngay; ván minh hoạ
     Lời Nói Đầu (25 nước, dày quân) tạm hoãn, làm sau bằng vòng xác thực.
-  - **Còn lại**: 18 loại sát pháp cơ bản + các chương sau. Quy trình mỗi ví dụ ~1 lần đọc sơ đồ
-    lưới + 1 lần đọc bảng nước → build. Làm theo lô ở các phiên sau.
+  - **Còn lại**: các loại sát pháp cơ bản còn lại + các chương sau. Làm theo lô ở các phiên sau.
+- **2026-08-27 (lô 2)**: thêm `detect-pieces.py` — TỰ DÒ vị trí + MÀU quân (đặc=Đen/viền=Đỏ) bằng
+  lấy mẫu pixel; đối chiếu FEN đã biết (Bạch Liễm vd1) khớp 100%. Nhờ đó chỉ cần đọc BINH CHỦNG
+  (chữ) cho các ô đã dò → nhanh + hết lỗi lệch cột/màu. Thêm 2 bài **Hải Để Lao Nguyệt** vd1
+  (`3k5/9/9/9/4R4/3r2C2/9/9/9/4K4`, 17 nước) + vd2 (`3P5/5k3/9/9/5r3/4R4/9/9/9/4K4`, 11 nước) —
+  engine + validatePosition khớp toàn bộ. Quy trình chuẩn giờ: render-diagrams → detect-pieces →
+  đọc chữ điền binh chủng → đọc bảng nước (vision) → gen kiểm → build-batch.
+- **Ghi chú bảng nước**: pdftotext xáo bảng 2 cột → LUÔN đọc bảng nước bằng vision (render full page).
