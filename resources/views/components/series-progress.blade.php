@@ -5,8 +5,6 @@
         $total = $series->published_lessons_count ?? $series->publishedLessons()->count();
     @endphp
     @if($total > 0)
-        <span class="series-prog {{ $done >= $total ? 'is-done' : '' }}">
-            @if($done >= $total)✓ Đã hoàn thành@else Đã học {{ $done }}/{{ $total }} @endif
-        </span>
+        <span class="series-prog {{ $done >= $total ? 'is-done' : '' }}">{{ $done >= $total ? '✓ Đã hoàn thành' : 'Hoàn thành '.$done.'/'.$total }}</span>
     @endif
 @endauth

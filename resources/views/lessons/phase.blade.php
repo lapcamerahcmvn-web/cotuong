@@ -19,11 +19,12 @@
                 @if($s->published_lessons_count > 0)
                 <a href="{{ route('series', $s->slug) }}" class="lesson-item card">
                     <span class="li-num">課</span>
-                    <span>
+                    <span class="li-body">
                         <span class="li-title">{{ $s->name }}</span>
                         <span class="li-sub">{{ $s->published_lessons_count }} bài</span>
+                        <x-series-progress :series="$s" />
                     </span>
-                    <span class="li-meta"><x-series-progress :series="$s" /> →</span>
+                    <span class="li-meta">→</span>
                 </a>
                 @endif
             @endforeach

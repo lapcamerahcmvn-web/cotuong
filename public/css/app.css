@@ -189,9 +189,12 @@ header.nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srg
 .lesson-item { display: grid; grid-template-columns: 40px 1fr auto; gap: 14px; align-items: center; padding: 14px 18px; color: var(--ink); }
 .lesson-item:hover { text-decoration: none; box-shadow: var(--shadow); transform: translateX(2px); }
 .lesson-item .li-num { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-.lesson-item .li-title { font-weight: 600; }
-.lesson-item .li-sub { font-size: 13px; color: var(--ink-soft); margin-top: 1px; }
-.lesson-item .li-meta { display: flex; gap: 6px; align-items: center; }
+.lesson-item .li-body { min-width: 0; }
+.lesson-item .li-title { font-weight: 600; display: block; overflow-wrap: anywhere; }
+.lesson-item .li-sub { font-size: 13px; color: var(--ink-soft); margin-top: 1px; display: block; }
+.lesson-item .li-body .series-prog { margin-top: 6px; }
+.lesson-item .li-meta { display: flex; gap: 6px; align-items: center; color: var(--ink-soft); flex-shrink: 0; }
+@media (max-width: 640px) { .lesson-item { padding: 12px 14px; gap: 10px; grid-template-columns: 32px 1fr auto; } }
 
 /* ---- Lesson page ---- */
 .lesson-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; padding: 8px 0 60px; align-items: start; }

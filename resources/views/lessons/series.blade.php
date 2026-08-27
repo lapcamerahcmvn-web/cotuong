@@ -30,7 +30,7 @@
     <p class="muted" style="font-size:14px;">{{ $lessons->count() }} bài học @if($series->planned_total) / {{ $series->planned_total }} dự kiến @endif
         @auth
             @php $doneN = count($completedIds ?? []); $tot = $lessons->count(); @endphp
-            <span class="series-prog {{ $doneN >= $tot ? 'is-done' : '' }}" style="margin-left:8px;">{{ $doneN >= $tot ? '✓ Đã hoàn thành' : 'Đã học '.$doneN.'/'.$tot }}</span>
+            <span class="series-prog {{ $doneN >= $tot ? 'is-done' : '' }}" style="margin-left:8px;">{{ $doneN >= $tot ? '✓ Đã hoàn thành' : 'Hoàn thành '.$doneN.'/'.$tot }}</span>
         @endauth
     </p>
 

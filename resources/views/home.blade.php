@@ -147,14 +147,12 @@
         @foreach($series as $s)
             <a href="{{ route('series', $s->slug) }}" class="lesson-item card">
                 <span class="li-num">{{ $s->game_mode === 'co-up' ? '揭' : '課' }}</span>
-                <span>
+                <span class="li-body">
                     <span class="li-title">{{ $s->name }}</span>
-                    <span class="li-sub">{{ $s->published_lessons_count }} bài đã xuất bản</span>
-                </span>
-                <span class="li-meta">
+                    <span class="li-sub">{{ $s->published_lessons_count }} bài · {{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span>
                     <x-series-progress :series="$s" />
-                    <span class="tag phase">{{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span>
                 </span>
+                <span class="li-meta">→</span>
             </a>
         @endforeach
     </div>
