@@ -33771,6 +33771,128 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 34,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Giáp Xe Pháo (Song Sĩ Phòng Thủ) — Ví Dụ 4",
+      "slug": "giap-xe-phao-vi-du-4",
+      "level": "co-ban",
+      "source_type": "manual",
+      "initial_fen": "C3knn2/4a4/3ac4/3r2r2/9/9/4p4/9/4A4/CR2KAB2",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Giáp Xe Pháo khi đối phương có song Sĩ: mượn Xe yểm hộ bình Pháo trước, mở đường cho Pháo sau, song Pháo luân phiên khống chế Tướng.",
+      "content": "<h2>Giáp Xe Pháo — Vượt Song Sĩ Phòng Thủ</h2><p>Ví dụ này cho thấy cách bên Trắng mượn sự yểm hộ của Xe để bình Pháo trước, chuẩn bị đường cho Pháo sau tấn công — đúng tinh thần <strong>Giáp Xe Pháo</strong> với song Pháo thay nhau khống chế Tướng.</p><p>Do bên Đen có song Sĩ nên độ khó tăng lên nhiều lần, nhưng khi Xe và song Pháo luân phiên khống chế đường thoát, Tướng đen vẫn không tránh khỏi thế chiếu hết.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Giáp Xe Pháo — Vượt Song Sĩ (Ví Dụ 4)",
+      "seo_description": "Sát pháp Giáp Xe Pháo cờ tướng khi đối phương có song Sĩ: Xe yểm hộ, song Pháo luân phiên khống chế chiếu hết. Bàn cờ tương tác từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "CR2knn2/4a4/3ac4/3r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Xe 8 tiến 9",
+          "move_notation_iccs": "b0b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe đâm lên hàng đáy chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "CR1aknn2/9/3ac4/3r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "C2aknn2/9/3ac4/1R1r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Xe 8 thoái 3",
+          "move_notation_iccs": "b9b6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe lùi điều chỉnh, chờ Pháo phối hợp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "C3knn2/4a4/3ac4/1R1r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Sĩ sau tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1C2knn2/4a4/3ac4/1R1r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Pháo trước bình 8",
+          "move_notation_iccs": "a9b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mượn Xe yểm hộ, bình Pháo trước — mở đường cho Pháo sau tấn công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1C2knn2/9/3aca3/1R1r2r2/9/9/4p4/9/4A4/C3KAB2",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "CC2knn2/9/3aca3/1R1r2r2/9/9/4p4/9/4A4/4KAB2",
+          "move_notation_wxf": "Pháo 9 tiến 9",
+          "move_notation_iccs": "a0a9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo sau tiến lên hàng đáy, tạo thế song Pháo giáp công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "CC3nn2/4k4/3aca3/1R1r2r2/9/9/4p4/9/4A4/4KAB2",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "CC3nn2/1R2k4/3aca3/3r2r2/9/9/4p4/9/4A4/4KAB2",
+          "move_notation_wxf": "Xe 8 tiến 2",
+          "move_notation_iccs": "b6b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe tiến chiếu hết — Giáp Xe Pháo hoàn tất.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
