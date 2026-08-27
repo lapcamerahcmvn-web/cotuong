@@ -35,6 +35,7 @@ class ExportContent extends Command
                     'title' => $l->title, 'slug' => $l->slug, 'level' => $l->level,
                     'source_type' => $l->source_type,
                     'initial_fen' => $l->initial_fen, 'move_count' => $l->move_count,
+                    'variation_tree' => $l->variation_tree, // cây biến (bài đa nhánh) — giữ khi seed lại
                     'summary' => $l->summary, 'content' => $l->content,
                     'status' => 'published',
                     'decode_confidence' => $l->decode_confidence,

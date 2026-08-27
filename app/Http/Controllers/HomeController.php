@@ -31,15 +31,18 @@ class HomeController extends Controller
         // Bàn cờ hero: lấy nước đi THẬT từ 1 bài đã publish bắt đầu từ thế xuất phát chuẩn
         // (ký hiệu do decoder sinh — luôn đúng, không hardcode tay nữa).
         $standardFen = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+        // Ưu tiên bài có CÂY BIẾN để khoe tính năng chọn biến (mũi tên A/B) ngay trang chủ.
         $heroLesson = Lesson::published()
-            ->where('move_count', '>=', 6)
             ->where('initial_fen', $standardFen)
+            ->where(fn ($q) => $q->whereNotNull('variation_tree')->orWhere('move_count', '>=', 6))
+            ->orderByRaw('(variation_tree IS NOT NULL) DESC')
             ->orderByDesc('is_featured')->orderBy('id')
             ->first();
         $heroSteps = $heroLesson
             ? $heroLesson->steps()->orderBy('step_order')->take(6)->get()
             : collect();
+        $heroTree = $heroLesson?->variation_tree;
 
-        return view('home', compact('phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps'));
+        return view('home', compact('phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree'));
     }
 }
