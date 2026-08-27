@@ -49,16 +49,57 @@ class CotuongContentService
             'status'          => 'review', // luôn về review — admin duyệt thủ công mới publish
         ]);
 
-        // Ghi caption theo đúng step_order. CHỈ cột caption.
-        $captions = collect($result['step_captions'] ?? [])->keyBy('step_order');
-        foreach ($lesson->steps as $step) {
-            $cap = $captions->get($step->step_order);
-            if ($cap && ! empty($cap['caption'])) {
-                $step->update(['caption' => $cap['caption']]);
+        // Ghi caption. Bài có CÂY BIẾN → ghi vào TỪNG nút (theo path) + đồng bộ mạch chính sang
+        // lesson_steps. Bài tuyến tính → ghi theo step_order như cũ. CHỈ đụng cột caption.
+        if (! empty($lesson->variation_tree) && ! empty($result['variation_captions'])) {
+            $byPath = collect($result['variation_captions'])->keyBy('path');
+            $tree = $lesson->variation_tree;
+            $this->applyTreeCaptions($tree, '', $byPath);
+            $lesson->update(['variation_tree' => $tree]);
+            $this->syncMainlineFromTree($lesson, $tree);
+        } else {
+            $captions = collect($result['step_captions'] ?? [])->keyBy('step_order');
+            foreach ($lesson->steps as $step) {
+                $cap = $captions->get($step->step_order);
+                if ($cap && ! empty($cap['caption'])) {
+                    $step->update(['caption' => $cap['caption']]);
+                }
             }
         }
 
         return $result;
+    }
+
+    // Ghi caption vào từng nút cây biến theo path (khớp với flattenTreeForPrompt).
+    private function applyTreeCaptions(array &$nodes, string $prefix, \Illuminate\Support\Collection $byPath): void
+    {
+        foreach ($nodes as $i => &$n) {
+            $path = ($prefix === '' ? '' : $prefix . '.') . ($i + 1);
+            $cap = $byPath->get($path);
+            if ($cap && ! empty($cap['caption'])) {
+                $n['caption'] = $cap['caption'];
+            }
+            if (! empty($n['children'])) {
+                $this->applyTreeCaptions($n['children'], $path, $byPath);
+            }
+        }
+        unset($n);
+    }
+
+    // Đồng bộ caption mạch chính (chuỗi con đầu) của cây sang lesson_steps để trình chơi hiện.
+    private function syncMainlineFromTree(Lesson $lesson, array $tree): void
+    {
+        $steps = $lesson->steps->keyBy('step_order');
+        $node = $tree[0] ?? null;
+        $order = 1;
+        while ($node) {
+            $step = $steps->get($order);
+            if ($step && ! empty($node['caption'])) {
+                $step->update(['caption' => $node['caption']]);
+            }
+            $node = $node['children'][0] ?? null;
+            $order++;
+        }
     }
 
     private function buildPrompt(Lesson $lesson, array $referenceAnnotations): string
@@ -88,7 +129,30 @@ class CotuongContentService
             $lines[] = 'Ghi chú tổng quan gốc (tham khảo, viết lại): ' . mb_substr(strip_tags($lesson->summary), 0, 500);
         }
 
+        if (! empty($lesson->variation_tree)) {
+            $lines[] = '';
+            $lines[] = 'CÂY BIẾN (bài đa nhánh — viết lời giảng cho TỪNG nút theo "path"):';
+            $this->flattenTreeForPrompt($lesson->variation_tree, '', 0, $lines);
+            $lines[] = '';
+            $lines[] = 'YÊU CẦU: trả về variation_captions = mảng {path, caption} cho MỌI path liệt kê ở trên. '
+                . 'Tại điểm rẽ nhiều biến, nêu rõ ưu/nhược & khi nào chọn từng biến.';
+        }
+
         return implode("\n", $lines);
+    }
+
+    // Liệt kê cây biến dạng phẳng có "path" (1, 1.1, 2, 2.1…) để Agent viết caption theo path.
+    private function flattenTreeForPrompt(array $nodes, string $prefix, int $depth, array &$lines): void
+    {
+        foreach ($nodes as $i => $n) {
+            $path = ($prefix === '' ? '' : $prefix . '.') . ($i + 1);
+            $side = ($n['side'] ?? '') === 'den' ? 'Đen' : (($n['side'] ?? '') === 'do' ? 'Đỏ' : '');
+            $branch = count($nodes) > 1 ? ' (biến ' . chr(65 + $i) . ')' : '';
+            $lines[] = str_repeat('  ', $depth + 1) . "[{$path}] {$side} " . ($n['wxf'] ?? $n['iccs'] ?? '') . $branch;
+            if (! empty($n['children'])) {
+                $this->flattenTreeForPrompt($n['children'], $path, $depth + 1, $lines);
+            }
+        }
     }
 
     private function run(string $prompt, string $type, ?int $referenceId = null, ?string $referenceType = null): array

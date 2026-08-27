@@ -11,6 +11,7 @@
   };
   var PIECE_VI = { R: 'Xe', N: 'Mã', B: 'Tượng', A: 'Sĩ', K: 'Tướng', C: 'Pháo', P: 'Tốt' };
   var STRAIGHT = 'RCPKrcpk';
+  var BRANCH_COLORS = ['#16a34a', '#e0632f', '#2563eb', '#7c3aed', '#c026d3', '#0891b2']; // màu biến A,B,C…
   var STARTS = {
     normal: 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR',
     up: 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX'
@@ -242,6 +243,27 @@
         s += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + (PIECES[chr] || '?') + '</text>';
       }
       if (i === selected) s += '<circle cx="' + cx + '" cy="' + cy + '" r="23" fill="none" stroke="#16a34a" stroke-width="3"/>';
+    }
+    // Mũi tên biến (giống trang học): ở chế độ soạn nước, khi node hiện tại có nhiều nhánh
+    // hoặc đang xem 1 biến trong nhóm anh em → vẽ mũi tên A/B… cho các biến còn lại.
+    if (mode === 'move' && cur) {
+      var _kids = cur.children || [], _sibs = (cur.parent && cur.parent.children.length > 1) ? cur.parent.children : null;
+      var _set = null, _ci = -1;
+      if (_kids.length > 1) { _set = _kids; }
+      else if (_sibs) { _set = _sibs; _ci = _sibs.indexOf(cur); }
+      if (_set) _set.forEach(function (c, k) {
+        if (k === _ci) return;
+        var col = BRANCH_COLORS[k % BRANCH_COLORS.length], label = String.fromCharCode(65 + k);
+        var fx = X(c.from % 9), fy = Y((c.from / 9) | 0), tx = X(c.to % 9), ty = Y((c.to / 9) | 0);
+        var dx = tx - fx, dy = ty - fy, len = Math.sqrt(dx * dx + dy * dy) || 1, ux = dx / len, uy = dy / len;
+        var sx = fx + ux * 20, sy = fy + uy * 20, ex = tx - ux * 20, ey = ty - uy * 20, px = -uy, py = ux;
+        s += '<line x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="' + col + '" stroke-width="5" stroke-linecap="round" opacity=".9"/>';
+        var ah = 14, aw = 8.5, bx = ex - ux * ah, by = ey - uy * ah;
+        s += '<polygon points="' + ex + ',' + ey + ' ' + (bx + px * aw) + ',' + (by + py * aw) + ' ' + (bx - px * aw) + ',' + (by - py * aw) + '" fill="' + col + '"/>';
+        var lx = fx + px * 16, ly = fy + py * 16;
+        s += '<circle cx="' + lx + '" cy="' + ly + '" r="11.5" fill="' + col + '" stroke="#fff" stroke-width="1.5"/>';
+        s += '<text x="' + lx + '" y="' + (ly + 5) + '" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="system-ui,sans-serif">' + label + '</text>';
+      });
     }
     // điểm bấm (trong suốt)
     for (var j = 0; j < 90; j++) {

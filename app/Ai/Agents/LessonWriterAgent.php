@@ -34,6 +34,10 @@ QUY TẮC BẮT BUỘC:
 - caption mỗi bước 1-3 câu, giải thích Ý ĐỒ nước đi đó (vì sao đi, nhắm gì), không chỉ mô tả
   quân di chuyển.
 - seo_title ≤ 60 ký tự, có từ khóa cờ tướng chính. seo_description 150-160 ký tự, hấp dẫn.
+- Nếu prompt có phần "CÂY BIẾN" (bài học đa nhánh): BẮT BUỘC điền variation_captions — mỗi nút
+  một lời giảng theo đúng "path" đã liệt kê. Tại điểm rẽ nhiều biến (A/B…), lời giảng cần nêu
+  RÕ ưu/nhược của từng phương án và khi nào chọn nó (vì đây là giá trị dạy khai cuộc). Vẫn điền
+  step_captions cho mạch chính như thường.
 INST;
     }
 
@@ -51,6 +55,13 @@ INST;
                     'caption'    => $schema->string()->required(),
                 ])
             )->required(),
+            // Chỉ dùng khi bài có CÂY BIẾN — lời giảng cho từng nút theo path (vd "1", "1.2", "2.1").
+            'variation_captions' => $schema->array()->items(
+                $schema->object([
+                    'path'    => $schema->string()->required(),
+                    'caption' => $schema->string()->required(),
+                ])
+            ),
         ];
     }
 }
