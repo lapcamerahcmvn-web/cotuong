@@ -27,7 +27,12 @@
 <section class="section" style="padding-top:12px;">
     <h1 style="font-size:clamp(24px,4vw,34px);font-weight:800;margin:0 0 8px;">{{ $series->name }}</h1>
     @if($series->description)<p class="sub" style="max-width:44em;">{{ $series->description }}</p>@endif
-    <p class="muted" style="font-size:14px;">{{ $lessons->count() }} bài học @if($series->planned_total) / {{ $series->planned_total }} dự kiến @endif</p>
+    <p class="muted" style="font-size:14px;">{{ $lessons->count() }} bài học @if($series->planned_total) / {{ $series->planned_total }} dự kiến @endif
+        @auth
+            @php $doneN = count($completedIds ?? []); $tot = $lessons->count(); @endphp
+            <span class="series-prog {{ $doneN >= $tot ? 'is-done' : '' }}" style="margin-left:8px;">{{ $doneN >= $tot ? '✓ Đã hoàn thành' : 'Đã học '.$doneN.'/'.$tot }}</span>
+        @endauth
+    </p>
 
     <div class="lesson-list" style="margin-top:20px;">
         @foreach($lessons as $lesson)

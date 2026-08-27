@@ -362,3 +362,12 @@ body.xq-fs-lock { overflow: hidden; }
 .err-search { display:flex; gap:8px; max-width:440px; margin:0 auto 22px; }
 .err-search input { flex:1; }
 .err-links { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+
+/* Tiến độ chuỗi (đã học X/Y) + gợi ý học tiếp */
+.series-prog { display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:999px; background:var(--red-soft); color:var(--red); white-space:nowrap; vertical-align:middle; }
+.series-prog.is-done { background:#e7f5ec; color:#1a7f4b; }
+@media (prefers-color-scheme: dark) { .series-prog.is-done { background:#12301f; color:#5fd39a; } }
+.continue-card { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; flex-wrap:wrap; border-left:3px solid var(--red); }
+.continue-info { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.continue-eyebrow { font-size:12px; font-weight:800; color:var(--red); text-transform:uppercase; letter-spacing:.03em; }
+.continue-title { font-size:17px; font-weight:700; color:var(--ink); }

@@ -55,6 +55,22 @@
     </div>
 </section>
 
+@auth
+    @php $continueLesson = auth()->user()->nextLesson(); @endphp
+    @if($continueLesson)
+    <section class="section" style="padding-top:8px;">
+        <div class="continue-card card">
+            <div class="continue-info">
+                <span class="continue-eyebrow">▸ Tiếp tục học</span>
+                <span class="continue-title">{{ $continueLesson->title }}</span>
+                <span class="muted" style="font-size:13.5px;">{{ $continueLesson->series?->name ?? (\App\Models\Lesson::PHASES[$continueLesson->phase] ?? 'Bài học') }}</span>
+            </div>
+            <a href="{{ route('lessons.show', $continueLesson->slug) }}" class="btn primary">Học tiếp →</a>
+        </div>
+    </section>
+    @endif
+@endauth
+
 <section class="section">
     <h2>Học theo giai đoạn ván cờ</h2>
     <p class="sub">Mỗi giai đoạn có tư duy riêng — chọn nơi bạn muốn mạnh lên.</p>
@@ -135,7 +151,10 @@
                     <span class="li-title">{{ $s->name }}</span>
                     <span class="li-sub">{{ $s->published_lessons_count }} bài đã xuất bản</span>
                 </span>
-                <span class="li-meta"><span class="tag phase">{{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span></span>
+                <span class="li-meta">
+                    <x-series-progress :series="$s" />
+                    <span class="tag phase">{{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span>
+                </span>
             </a>
         @endforeach
     </div>

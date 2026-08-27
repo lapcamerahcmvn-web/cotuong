@@ -91,6 +91,17 @@
         @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
     </nav>
 
+    @if(!empty($suggestNext))
+    <div class="continue-card card" style="margin-top:20px;max-width:720px;">
+        <div class="continue-info">
+            <span class="continue-eyebrow">▸ Gợi ý học tiếp</span>
+            <span class="continue-title">{{ $suggestNext->title }}</span>
+            <span class="muted" style="font-size:13px;">{{ $suggestNext->series?->name ?? (\App\Models\Lesson::PHASES[$suggestNext->phase] ?? 'Bài học') }}</span>
+        </div>
+        <a href="{{ route('lessons.show', $suggestNext->slug) }}" class="btn primary">Học bài này →</a>
+    </div>
+    @endif
+
     @if($related->isNotEmpty())
     <section style="margin-top:40px;max-width:720px;">
         <h2 style="font-size:19px;font-weight:800;margin:0 0 12px;">Bài liên quan</h2>

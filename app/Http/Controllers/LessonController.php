@@ -82,13 +82,29 @@ class LessonController extends Controller
             ? \Illuminate\Support\Facades\DB::table('comment_likes')->where('user_id', auth()->id())->pluck('comment_id')->all()
             : [];
 
-        // Bài liên quan (internal linking) — cùng chuỗi, bỏ bài trước/sau đã có ở nav.
+        // Bài liên quan (internal linking) — cùng chuỗi, BỎ bài đã học + bài trước/sau ở nav.
+        $doneIds = auth()->check() ? auth()->user()->completedLessonIds() : [];
         $related = Lesson::published()->where('id', '!=', $lesson->id)
             ->where('series_id', $lesson->series_id)
             ->when($prev, fn ($q) => $q->where('id', '!=', $prev->id))
             ->when($next, fn ($q) => $q->where('id', '!=', $next->id))
+            ->whereNotIn('id', $doneIds)
             ->orderBy('order_in_series')->take(4)->get();
+        // Thiếu thì bù bằng bài CÙNG GIAI ĐOẠN chưa học (khác chuỗi) để luôn gợi ý nội dung mới.
+        if ($related->count() < 4 && $lesson->phase) {
+            $exclude = $related->pluck('id')->push($lesson->id)->merge($doneIds)->unique()->all();
+            $fill = Lesson::published()->mode($lesson->game_mode)->where('phase', $lesson->phase)
+                ->whereNotIn('id', $exclude)->inRandomOrder()->take(4 - $related->count())->get();
+            $related = $related->concat($fill);
+        }
 
-        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related'));
+        // Gợi ý học tiếp: bài kế trong chuỗi chưa học (ưu tiên $next nếu chưa học), rồi tới gợi ý toàn cục.
+        $suggestNext = ($next && ! in_array($next->id, $doneIds)) ? $next
+            : (auth()->check() ? auth()->user()->nextLesson() : null);
+        if ($suggestNext && $suggestNext->id === $lesson->id) {
+            $suggestNext = null;
+        }
+
+        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related', 'suggestNext'));
     }
 }

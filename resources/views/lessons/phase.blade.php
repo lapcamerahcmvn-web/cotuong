@@ -23,7 +23,7 @@
                         <span class="li-title">{{ $s->name }}</span>
                         <span class="li-sub">{{ $s->published_lessons_count }} bài</span>
                     </span>
-                    <span class="li-meta">→</span>
+                    <span class="li-meta"><x-series-progress :series="$s" /> →</span>
                 </a>
                 @endif
             @endforeach
