@@ -51,6 +51,28 @@ function notation(b, from, to) {
 }
 function sideOf(p) { return (p === p.toUpperCase()) ? 'do' : 'den'; }
 
+// ---------- CHIẾU / CHIẾU BÍ (để xác nhận nước cuối có thật sự là sát cục) ----------
+function findKing(b, red) { var kc = red ? 'K' : 'k'; for (var i = 0; i < 90; i++) if (b[i] === kc) return i; return -1; }
+// red đang bị chiếu? (mọi quân đối phương — kể cả Tướng đối mặt qua legalMove — có ăn được Tướng red không)
+function inCheck(b, red) {
+  var k = findKing(b, red); if (k < 0) return false;
+  for (var i = 0; i < 90; i++) { var p = b[i]; if (!p || isRed(p) === red) continue; if (legalMove(b, i, k)) return true; }
+  return false;
+}
+// nước hợp lệ VÀ không để hở Tướng mình (lọc tự chiếu — legalMove thuần không lọc)
+function legalNoSelfCheck(b, from, to) {
+  if (!legalMove(b, from, to)) return false;
+  var nb = b.slice(); nb[to] = nb[from]; nb[from] = null;
+  return !inCheck(nb, isRed(b[from]));
+}
+// red bị chiếu bí? (đang bị chiếu và không còn nước gỡ nào)
+function isCheckmate(b, red) {
+  if (!inCheck(b, red)) return false;
+  for (var f = 0; f < 90; f++) { var p = b[f]; if (!p || isRed(p) !== red) continue;
+    for (var t = 0; t < 90; t++) { if (t !== f && legalNoSelfCheck(b, f, t)) return false; } }
+  return true;
+}
+
 // ---------- PARSER ký hiệu La-tinh sách ----------
 // token: [piece][ t|s (trước/sau) | file-digit ][ . | / | - (tiến/thoái/bình) ][ target-digit ]
 // piece: Tg=K, X=R, M=N, P=C, S=A, B=P(Tốt), V/T=B(Tượng). red do caller truyền (theo lượt).
@@ -68,7 +90,23 @@ function parseMove(board, tok, red) {
   var isTien = (verb === '.' || verb === '进' || verb === '進');
   var pieceChar = red ? piece : piece.toLowerCase();
 
-  var srcIdx = -1;
+  var tnum = +targetCh; if (isNaN(tnum)) return null;
+  var straight = 'RCPK'.indexOf(piece) >= 0;
+
+  // Đích của quân xuất phát tại srcIdx (theo verb + target). Trả -1 nếu ra ngoài bàn.
+  function destOf(srcIdx) {
+    var sfx = srcIdx % 9, sfr = (srcIdx / 9) | 0, tx = sfx, tr = sfr;
+    if (isBinh) { tx = red ? (9 - tnum) : (tnum - 1); tr = sfr; }
+    else if (straight) { tx = sfx; tr = red ? (isTien ? sfr - tnum : sfr + tnum) : (isTien ? sfr + tnum : sfr - tnum); }
+    else {
+      tx = red ? (9 - tnum) : (tnum - 1);
+      var dx = Math.abs(tx - sfx), dr = piece === 'A' ? 1 : piece === 'B' ? 2 : (dx === 1 ? 2 : 1);
+      tr = red ? (isTien ? sfr - dr : sfr + dr) : (isTien ? sfr + dr : sfr - dr);
+    }
+    if (tx < 0 || tx > 8 || tr < 0 || tr > 9) return -1;
+    return tr * 9 + tx;
+  }
+
   if (marker) {
     var cols = {};
     for (var i = 0; i < 90; i++) if (board[i] === pieceChar) { var x = i % 9; (cols[x] = cols[x] || []).push(i); }
@@ -76,28 +114,27 @@ function parseMove(board, tok, red) {
     for (var xk in cols) if (cols[xk].length >= 2) { group = cols[xk]; break; }
     if (!group) { group = []; for (var j = 0; j < 90; j++) if (board[j] === pieceChar) group.push(j); }
     group.sort(function (a, b) { return a - b; });
-    srcIdx = marker === 'front' ? (red ? group[0] : group[group.length - 1]) : (red ? group[group.length - 1] : group[0]);
-  } else {
-    var fnum = +fileCh; if (!fnum) return null;
-    var fx = red ? (9 - fnum) : (fnum - 1);
-    for (var r2 = 0; r2 < 10; r2++) { var idx = r2 * 9 + fx; if (board[idx] === pieceChar) { srcIdx = idx; break; } }
+    var srcIdx = marker === 'front' ? (red ? group[0] : group[group.length - 1]) : (red ? group[group.length - 1] : group[0]);
+    if (srcIdx == null) return null;
+    var to = destOf(srcIdx);
+    return to < 0 ? null : { from: srcIdx, to: to };
   }
-  if (srcIdx < 0) return null;
 
-  var tnum = +targetCh; if (isNaN(tnum)) return null;
-  var sfx = srcIdx % 9, sfr = (srcIdx / 9) | 0, tx = sfx, tr = sfr;
-  if (isBinh) { tx = red ? (9 - tnum) : (tnum - 1); tr = sfr; }
-  else {
-    var straight = 'RCPK'.indexOf(piece) >= 0;
-    if (straight) { tx = sfx; tr = red ? (isTien ? sfr - tnum : sfr + tnum) : (isTien ? sfr + tnum : sfr - tnum); }
-    else {
-      tx = red ? (9 - tnum) : (tnum - 1);
-      var dx = Math.abs(tx - sfx), dr = piece === 'A' ? 1 : piece === 'B' ? 2 : (dx === 1 ? 2 : 1);
-      tr = red ? (isTien ? sfr - dr : sfr + dr) : (isTien ? sfr + dr : sfr - dr);
-    }
+  // Không có hậu tố trước/sau: cột xác định quân. Nếu >1 quân cùng cột (VD 2 Sĩ chồng nhau
+  // mà sách không ghi trước/sau vì chỉ 1 quân đi được), chọn quân có nước ĐÚNG LUẬT.
+  var fnum = +fileCh; if (!fnum) return null;
+  var fx = red ? (9 - fnum) : (fnum - 1);
+  var cands = [];
+  for (var r2 = 0; r2 < 10; r2++) { var idx = r2 * 9 + fx; if (board[idx] === pieceChar) cands.push(idx); }
+  if (!cands.length) return null;
+  if (cands.length === 1) { var d0 = destOf(cands[0]); return d0 < 0 ? null : { from: cands[0], to: d0 }; }
+  var fallback = null;
+  for (var ci = 0; ci < cands.length; ci++) {
+    var d = destOf(cands[ci]); if (d < 0) continue;
+    if (legalMove(board, cands[ci], d)) return { from: cands[ci], to: d };
+    if (fallback === null) fallback = { from: cands[ci], to: d };
   }
-  if (tx < 0 || tx > 8 || tr < 0 || tr > 9) return null;
-  return { from: srcIdx, to: tr * 9 + tx };
+  return fallback;
 }
 
 // ---------- KIỂM TRA VỊ TRÍ TĨNH (bắt lỗi đọc sơ đồ: Sĩ/Tượng/Tướng sai ô) ----------
@@ -181,7 +218,7 @@ function makeBuilder(startFen, firstSide) {
   };
 }
 
-module.exports = { loadFen, toFen, toIccs, legalMove, notation, parseMove, makeBuilder, validatePosition };
+module.exports = { loadFen, toFen, toIccs, legalMove, notation, parseMove, makeBuilder, validatePosition, inCheck, isCheckmate, legalNoSelfCheck, findKing };
 
 // ---------- SELF-TEST ----------
 if (require.main === module && process.argv[2] === '--test') {

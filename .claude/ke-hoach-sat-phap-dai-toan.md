@@ -16,7 +16,7 @@
 |---|---|---|
 | Pipeline `tools/mate-book/` (parser + gen + render + batch) | 1 lần | ✅ xong, test 9/9 |
 | Pha 1: Lời Nói Đầu | 1 bài | ✅ (text; ván minh hoạ Lý Lai Quần để bổ sung sau) |
-| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 Bạch Liễm Tướng 3/6 vd + Hải Để Lao Nguyệt 2 vd (thứ tự type*10+vd) |
+| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 **21 bài** xong: Bạch Liễm 5vd, Hải Để 3vd, Giáp Xe Pháo 5vd (vd2=Hình1.13 hoãn), Thiên Địa Pháo 3vd (vd4=Hình1.21 hoãn), **Đại Đảm Xuyên Tâm 4vd** (Hình1.22-1.25; vd5=Hình1.26 chưa làm) |
 | Pha 2: `puzzle_side` + `xiangqi-rules.js` + `mode=puzzle` | code | ⬜ |
 | Pha 2: bật giải đố cho ví dụ Pha 1 | ~20 | ⬜ |
 | Pha 3: Tàn cuộc nhập thức sát pháp | ? | ⬜ |
@@ -44,3 +44,10 @@
   engine + validatePosition khớp toàn bộ. Quy trình chuẩn giờ: render-diagrams → detect-pieces →
   đọc chữ điền binh chủng → đọc bảng nước (vision) → gen kiểm → build-batch.
 - **Ghi chú bảng nước**: pdftotext xáo bảng 2 cột → LUÔN đọc bảng nước bằng vision (render full page).
+- **2026-08-28 (lô 3)**: Chốt quy trình VÀNG cho mỗi Hình: (1) `render-diagrams.py` cắt sơ đồ + phủ lưới, (2) `detect-pieces.py` dò vị trí+màu, (3) **Read ảnh `-grid.png` để đọc BINH CHỦNG (chữ Hán)** — kết hợp 2+3 cho FEN chắc, (4) render FULL PAGE (`pymupdf` Matrix 2x) rồi Read để lấy bảng nước ĐÚNG THỨ TỰ (tránh xáo 2 cột), (5) `gen.cjs` validate. Ghi chú then chốt: nhãn lưới là `{col}{rank}`; đỏ file=9-col, đen file=col+1; quân THẲNG (R/C/P/K) số sau verb = SỐ BƯỚC, quân CHÉO (A/B/N) số sau = FILE ĐÍCH.
+  - **Hoàn tất Bài 3 Giáp Xe Pháo**: thêm vd3 (Hình1.14, `C2k1ab1r/4a4/4b4/9/9/1R7/9/4B2C1/3pAK3/2BA4r`, 13 nước, có Xs/Xt), vd5 (Hình1.16, 13 nước), vd6 (Hình1.17, 15 nước, thí Mã quải giác). **vd2 (Hình1.13) HOÃN** — sơ đồ đọc rõ nhưng nước X6/5 & S5.6 của Đen không khớp quân trên bàn (mâu thuẫn sách/sơ đồ không giải được từ xa), đừng đoán.
+  - **Bài 4 Thiên Địa Pháo**: vd1 (Hình1.18, mate-6, mượn Tướng trợ công), vd2 (Hình1.19, 19 nước, đắc Xe — không phải chiếu hết), vd3 (Hình1.20, 19 nước, song Binh ăn Sĩ). **vd4 (Hình1.21) HOÃN** — bảng nước dòng 1 layout nhập nhằng (X7-5 lặp).
+  - **Sửa `gen.cjs` parseMove**: khi >1 quân CÙNG CỘT mà sách KHÔNG ghi trước/sau (VD 2 Sĩ chồng, chỉ 1 quân đi hợp lệ) → giờ thử mọi ứng viên trên cột, chọn nước ĐÚNG LUẬT (trước đây lấy quân đầu tiên → fail "S4/5"). Self-test vẫn PASS 9/9.
+  - **Bài 5 Đại Đảm Xuyên Tâm**: vd1 (Hình1.22, mate-3, thí Xe lộ đáy — Pháo file4 cản Sĩ đỡ), vd2 (Hình1.23, mate-7, tặng Xe dụ Tướng + lộ mặt Tướng), vd3 (Hình1.24, 9 nước, giải sát hoàn sát), vd4 (Hình1.25, 19 nước, đôi công một cánh). vd5 (Hình1.26) chưa làm — cần trang 23 + có biến "nếu S6.5 thì...".
+  - **Local đã seed 213 bài** (21 bài trong series `sat-phap-dai-toan`). CHƯA deploy production.
+  - **Tiếp theo**: Đại Đảm Xuyên Tâm vd5 (Hình1.26, trang 22-23) → Bài 6 (trang 23+). Map loại: Bài6 Song Binh? xem trang 23.

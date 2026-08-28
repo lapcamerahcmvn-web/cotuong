@@ -43,7 +43,7 @@ cd ~/hocotuong
 git fetch origin && git reset --hard origin/main
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
-php artisan db:seed --class=Database\\Seeders\\ContentSeeder --force   # nếu content.json đổi
+php artisan db:seed --class=ContentSeeder --force   # nếu content.json đổi (KHÔNG kèm namespace — shell nuốt dấu \\ thành DatabaseSeedersContentSeeder)
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
 
