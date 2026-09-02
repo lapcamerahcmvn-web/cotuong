@@ -65,3 +65,9 @@
   - **Series = 41 bài** (8 có cây biến). Local seed 233.
   - **ĐÃ PUSH GitHub** (lô 5, tới 41 bài) — hoàn tất Bài 7+8+9. Deploy hosting như cũ (git reset + db:seed ContentSeeder + cache).
   - **Tiếp theo**: Bài 10 (trang 36+) — xem loại gì.
+- **2026-09-02 (lô 6 — tới 46 bài) — Bài 10 Muộn Cung Sát** (trang 34-41):
+  - vd1 (Hình1.51, mượn Sĩ làm giá — **sửa lỗi in sách: "P2.7" đúng ra là P3.7**, engine xác nhận), vd2 (Hình1.52, thí Xe tranh trung lộ — **giải mã đánh số nước bị xáo trong sách**, engine confirm mate), vd3 (Hình1.53, tàn cuộc Pháo Binh Tượng quản chế), vd4 (Hình1.54, **ván Na Kiện Đình — bức Pháo**; sách in tới zugzwang, mình NỐI 2 nước cuối mà sách MÔ TẢ (P7-8, P3.1) — đã verify isCheckmate + là nước ÉP DUY NHẤT nên không phải bịa), vd6 (Hình1.56, hiến Binh phong bế — **"S6/5" đúng ra là S6.5**, OCR nhầm / ↔ .).
+  - **Hoãn vd5 (Hình1.55)**: nước cuối "P7.9" bất khả (Pháo file7 đang ở rank0 sau khi thí; 2 Pháo khác file nên front/rear không áp; không tìm ra nước sát khớp) — cần đọc lại kỹ.
+  - **Bài học chốt thêm**: sách CÓ lỗi in ký hiệu (số file sai, / ↔ ., bỏ nước cuối zugzwang). Engine + isCheckmate là lưới an toàn: nước sách phạm luật/không-sát ⇒ soi lại, thường là 1 ký tự OCR sai. KHÔNG đăng nếu không tìm ra bản đúng verify được.
+  - **Series = 46 bài**. Local seed 235. ĐÃ PUSH GitHub (lô 6).
+  - **Tiếp theo**: Bài 11 (Hình 1.57+, trang 42+) — xem loại.
