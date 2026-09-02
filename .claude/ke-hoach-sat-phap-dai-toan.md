@@ -70,4 +70,6 @@
   - **Hoãn vd5 (Hình1.55)**: nước cuối "P7.9" bất khả (Pháo file7 đang ở rank0 sau khi thí; 2 Pháo khác file nên front/rear không áp; không tìm ra nước sát khớp) — cần đọc lại kỹ.
   - **Bài học chốt thêm**: sách CÓ lỗi in ký hiệu (số file sai, / ↔ ., bỏ nước cuối zugzwang). Engine + isCheckmate là lưới an toàn: nước sách phạm luật/không-sát ⇒ soi lại, thường là 1 ký tự OCR sai. KHÔNG đăng nếu không tìm ra bản đúng verify được.
   - **Series = 46 bài**. Local seed 235. ĐÃ PUSH GitHub (lô 6).
-  - **Tiếp theo**: Bài 11 (Hình 1.57+, trang 42+) — xem loại.
+  - **2026-09-02 (lô 7)**: hoàn tất **Bài 10** — thêm vd7 (Hình1.57, bức Pháo bằng Mã), vd8 (Hình1.58, Pháo trước Xe sau, 2 biến), vd9 (Hình1.59, thí Xe cản thông đạo), vd10 (Hình1.60, Tiền Mã hậu Pháo, 2 biến), vd11 (Hình1.61, thí Binh thí Xe). Tất cả isCheckmate=true. Bài 10 = 10 bài (vd1-11 trừ vd5 hoãn). **Fix cột: Hình1.58 top row là col3-5 (Tướng file5), không phải col2-4.**
+  - **Series = 51 bài**. ĐÃ PUSH GitHub (lô 7, Bài 10 hoàn tất).
+  - **Tiếp theo**: Bài 11 **Thiết Môn Thuyên** (铁门闩, trang 44+, Hình 1.62+).

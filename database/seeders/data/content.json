@@ -40140,6 +40140,764 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 107,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Muộn Cung Sát (Bức Pháo Bằng Mã) — Ví Dụ 7",
+      "slug": "muon-cung-sat-vi-du-7",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "C3k4/3ca4/N4a3/9/6c2/3N5/9/3A3n1/5p2n/4KAB2",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Kỹ thuật 'bức Pháo' bằng quân Mã: Mã đảo qua lại liên tục ép quả Pháo đen phải di chuyển, cho tới khi Pháo hết chỗ đứng thì Mã về đúng vị trí khống chế tạo muộn cung sát.",
+      "content": "<h2>Bức Pháo bằng Mã</h2><p>Giống như kỹ thuật bức Pháo trong ván Na Kiện Đình, nhưng ở đây quân chủ công là <strong>Mã</strong>. Con Mã đảo qua đảo lại như con thoi, mỗi nhịp lại ép quả Pháo đen phải né. Do quân Đen chỉ còn Pháo là cử động được, nó buộc phải di chuyển mãi cho tới khi hết chỗ; đúng lúc đó Mã về ô khống chế là muộn cung sát. Bài học: quân Mã ở đúng vị trí có thể 'trói' cả một cỗ Pháo.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Muộn Cung Sát — Bức Pháo Bằng Mã (Ví Dụ 7)",
+      "seo_description": "Sát pháp Muộn Cung Sát: dùng Mã đảo bước bức Pháo đen hết đường rồi khống chế muộn cung sát. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "CN2k4/3ca4/5a3/9/6c2/3N5/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 9 tiến 8",
+          "move_notation_iccs": "a7b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã tiến, bắt đầu vây ép quả Pháo đen (bức Pháo bằng Mã).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "CN1ck4/4a4/5a3/9/6c2/3N5/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Pháo 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thoái Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "C2ck4/3Na4/5a3/9/6c2/3N5/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "b9d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã đảo bước, tiếp tục dồn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "C3k4/3Na4/5a3/9/6c2/3c5/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Pháo 4 tiến 5",
+          "move_notation_iccs": "d9d4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "CN2k4/4a4/5a3/9/6c2/3c5/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 6 tiến 8",
+          "move_notation_iccs": "d8b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã qua lại như con thoi, Pháo đen không có chỗ đứng yên.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "CN1ck4/4a4/5a3/9/6c2/9/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Pháo 4 thoái 5",
+          "move_notation_iccs": "d4d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "C2ck4/3Na4/5a3/9/6c2/9/9/3A3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "b9d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "C3k4/3Na4/5a3/9/6c2/9/9/3c3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Pháo 4 tiến 7",
+          "move_notation_iccs": "d9d2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "CN2k4/4a4/5a3/9/6c2/9/9/3c3n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 6 tiến 8",
+          "move_notation_iccs": "d8b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "CN1ck4/4a4/5a3/9/6c2/9/9/7n1/5p2n/4KAB2",
+          "move_notation_wxf": "Pháo 4 thoái 7",
+          "move_notation_iccs": "d2d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo đen bị ép đến hết đường.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "C2ck4/3Na4/5a3/9/6c2/9/9/7n1/5p2n/4KAB2",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "b9d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã về đúng ô khống chế — muộn cung sát. Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 108,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Muộn Cung Sát (Pháo Trước Xe Sau) — Ví Dụ 8",
+      "slug": "muon-cung-sat-vi-du-8",
+      "level": "trung-cap",
+      "source_type": "manual",
+      "initial_fen": "3aka3/9/9/9/2PRCP3/9/4Pr3/4C4/4Ap3/3K4c",
+      "variation_tree": [
+        {
+          "from": 40,
+          "to": 13,
+          "iccs": "e5e8",
+          "wxf": "Pháo trước tiến 3",
+          "side": "do",
+          "reveal": null,
+          "fen": "3aka3/4C4/9/9/2PR1P3/9/4Pr3/4C4/4Ap3/3K4c",
+          "caption": "Pháo trước tiến thẳng vào tuyến đáy.",
+          "children": [
+            {
+              "from": 5,
+              "to": 13,
+              "iccs": "f9e8",
+              "wxf": "Sĩ 6 tiến 5",
+              "side": "den",
+              "reveal": null,
+              "fen": "3ak4/4a4/9/9/2PR1P3/9/4Pr3/4C4/4Ap3/3K4c",
+              "caption": "Đen lên Sĩ chắn giữa.",
+              "children": [
+                {
+                  "from": 39,
+                  "to": 3,
+                  "iccs": "d5d9",
+                  "wxf": "Xe 6 tiến 4",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3Rk4/4a4/9/9/2P2P3/9/4Pr3/4C4/4Ap3/3K4c",
+                  "caption": "Xe tiến khép — muộn cung sát. Trắng thắng.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "from": 3,
+              "to": 13,
+              "iccs": "d9e8",
+              "wxf": "Sĩ 4 tiến 5",
+              "side": "den",
+              "reveal": null,
+              "fen": "4ka3/4a4/9/9/2PR1P3/9/4Pr3/4C4/4Ap3/3K4c",
+              "caption": "Biến: nếu Đen S4.5, Trắng X6.4 vẫn sát.",
+              "children": [
+                {
+                  "from": 39,
+                  "to": 3,
+                  "iccs": "d5d9",
+                  "wxf": "Xe 6 tiến 4",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3Rka3/4a4/9/9/2P2P3/9/4Pr3/4C4/4Ap3/3K4c",
+                  "caption": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "from": 59,
+              "to": 58,
+              "iccs": "f3e3",
+              "wxf": "Xe 6 bình 5",
+              "side": "den",
+              "reveal": null,
+              "fen": "3aka3/4C4/9/9/2PR1P3/9/4r4/4C4/4Ap3/3K4c",
+              "caption": "Biến: nếu Đen X6-5 chắn, Trắng X6.4 vẫn sát.",
+              "children": [
+                {
+                  "from": 39,
+                  "to": 3,
+                  "iccs": "d5d9",
+                  "wxf": "Xe 6 tiến 4",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3Rka3/4C4/9/9/2P2P3/9/4r4/4C4/4Ap3/3K4c",
+                  "caption": "",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "move_count": 3,
+      "summary": "Song Pháo chồng trung lộ phối hợp Xe: Pháo trước tiến vào đáy, Xe tiến khép muộn cung sát. Dù Đen chắn kiểu nào (lên Sĩ hay đưa Xe chắn) cũng bị X6.4 bắt sát.",
+      "content": "<h2>Gọn mà chắc</h2><p>Đây là ví dụ ngắn nhưng minh họa rõ cấu trúc muộn cung: hai quả Pháo chồng nhau ở trung lộ, phối hợp với Xe. Pháo trước tiến vào tuyến đáy tạo áp lực, rồi <strong>Xe tiến khép</strong> là muộn cung sát. Điều hay là bất luận Đen chống đỡ thế nào — lên Sĩ hay đưa Xe vào chắn — bên Trắng đều có cùng một nước X6.4 bắt sát. Bấm các nhánh biến để so sánh.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Muộn Cung Sát — Pháo Trước Xe Sau (Ví Dụ 8)",
+      "seo_description": "Sát pháp Muộn Cung Sát: song Pháo trung lộ + Xe khép muộn cung sát, mọi cách chống đỡ đều thua. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3aka3/4C4/9/9/2PR1P3/9/4Pr3/4C4/4Ap3/3K4c",
+          "move_notation_wxf": "Pháo trước tiến 3",
+          "move_notation_iccs": "e5e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo trước tiến thẳng vào tuyến đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak4/4a4/9/9/2PR1P3/9/4Pr3/4C4/4Ap3/3K4c",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lên Sĩ chắn giữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3Rk4/4a4/9/9/2P2P3/9/4Pr3/4C4/4Ap3/3K4c",
+          "move_notation_wxf": "Xe 6 tiến 4",
+          "move_notation_iccs": "d5d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe tiến khép — muộn cung sát. Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 109,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Muộn Cung Sát (Thí Xe Cản Thông Đạo) — Ví Dụ 9",
+      "slug": "muon-cung-sat-vi-du-9",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1kab2/4a4/2N1c4/3R5/9/r1C6/9/4B4/2p1A4/3K1AB2",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bên Trắng thí Xe để Mã và Pháo mượn được trợ lực của Tướng, cản trở thông đạo hoạt động của Tướng đen, rồi tiến Mã hình thành muộn sát.",
+      "content": "<h2>Thí Xe để mở lối cho Mã Pháo</h2><p>Nước mở màn là một đòn <strong>thí Xe</strong> táo bạo. Nhờ quả Xe hi sinh, Mã và Pháo của bên Trắng mượn được trợ lực của Tướng, cùng nhau cản trở thông đạo hoạt động của Tướng đen — Tướng bị bó chặt trong cung. Khi lối thoát đã bị bịt, chỉ một nước tiến Mã là hình thành muộn sát. Đây là minh họa đẹp cho tinh thần của muộn cung sát: quan trọng không phải chiếu nhiều, mà là bịt hết đường sống của Tướng đối phương.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Muộn Cung Sát — Thí Xe Cản Thông Đạo (Ví Dụ 9)",
+      "seo_description": "Sát pháp Muộn Cung Sát: thí Xe để Mã Pháo cản thông đạo Tướng đen rồi tiến Mã muộn sát. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2bRkab2/4a4/2N1c4/9/9/r1C6/9/4B4/2p1A4/3K1AB2",
+          "move_notation_wxf": "Xe 6 tiến 3",
+          "move_notation_iccs": "d6d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Thí Xe đâm lên — mượn trợ lực của Tướng, cản thông đạo hoạt động của Tướng đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2bakab2/9/2N1c4/9/9/r1C6/9/4B4/2p1A4/3K1AB2",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thoái Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2Cakab2/9/2N1c4/9/9/r8/9/4B4/2p1A4/3K1AB2",
+          "move_notation_wxf": "Pháo 7 tiến 5",
+          "move_notation_iccs": "c4c9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo tiến áp sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2C1kab2/4a4/2N1c4/9/9/r8/9/4B4/2p1A4/3K1AB2",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lên Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2CNkab2/4a4/4c4/9/9/r8/9/4B4/2p1A4/3K1AB2",
+          "move_notation_wxf": "Mã 7 tiến 6",
+          "move_notation_iccs": "c7d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã tiến — hình thành muộn sát. Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 110,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Muộn Cung Sát (Tiền Mã Hậu Pháo) — Ví Dụ 10",
+      "slug": "muon-cung-sat-vi-du-10",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "C4ab2/3ka4/4b4/9/9/1N1C5/9/9/3p1p3/2p1K1p2",
+      "variation_tree": [
+        {
+          "from": 46,
+          "to": 29,
+          "iccs": "b4c6",
+          "wxf": "Mã 8 tiến 7",
+          "side": "do",
+          "reveal": null,
+          "fen": "C4ab2/3ka4/4b4/2N6/9/3C5/9/9/3p1p3/2p1K1p2",
+          "caption": "Mã tiến quải giác chiếu Tướng.",
+          "children": [
+            {
+              "from": 12,
+              "to": 3,
+              "iccs": "d8d9",
+              "wxf": "Tướng 4 thoái 1",
+              "side": "den",
+              "reveal": null,
+              "fen": "C2k1ab2/4a4/4b4/2N6/9/3C5/9/9/3p1p3/2p1K1p2",
+              "caption": "Tướng lùi.",
+              "children": [
+                {
+                  "from": 29,
+                  "to": 10,
+                  "iccs": "c6b8",
+                  "wxf": "Mã 7 tiến 8",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "C2k1ab2/1N2a4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                  "caption": "Mã tiến thêm (Tiền Mã).",
+                  "children": [
+                    {
+                      "from": 3,
+                      "to": 4,
+                      "iccs": "d9e9",
+                      "wxf": "Tướng 4 bình 5",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "C3kab2/1N2a4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                      "caption": "Tướng bình sang giữa.",
+                      "children": [
+                        {
+                          "from": 48,
+                          "to": 3,
+                          "iccs": "d4d9",
+                          "wxf": "Pháo 6 tiến 5",
+                          "side": "do",
+                          "reveal": null,
+                          "fen": "C2Ckab2/1N2a4/4b4/9/9/9/9/9/3p1p3/2p1K1p2",
+                          "caption": "Pháo tiến áp sát (hậu Pháo).",
+                          "children": [
+                            {
+                              "from": 22,
+                              "to": 2,
+                              "iccs": "e7c9",
+                              "wxf": "Tượng 5 thoái 3",
+                              "side": "den",
+                              "reveal": null,
+                              "fen": "C1bCkab2/1N2a4/9/9/9/9/9/9/3p1p3/2p1K1p2",
+                              "caption": "Đen phi Tượng đỡ.",
+                              "children": [
+                                {
+                                  "from": 3,
+                                  "to": 12,
+                                  "iccs": "d9d8",
+                                  "wxf": "Pháo 6 thoái 1",
+                                  "side": "do",
+                                  "reveal": null,
+                                  "fen": "C1b1kab2/1N1Ca4/9/9/9/9/9/9/3p1p3/2p1K1p2",
+                                  "caption": "Pháo lùi khép — muộn sát (cũng có thể M8/6). Trắng thắng.",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "from": 3,
+                      "to": 12,
+                      "iccs": "d9d8",
+                      "wxf": "Tướng 4 tiến 1",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "C4ab2/1N1ka4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                      "caption": "Biến: nếu Đen Tg4.1, Trắng P9/1 Tiền Mã hậu Pháo sát.",
+                      "children": [
+                        {
+                          "from": 0,
+                          "to": 9,
+                          "iccs": "a9a8",
+                          "wxf": "Pháo 9 thoái 1",
+                          "side": "do",
+                          "reveal": null,
+                          "fen": "5ab2/CN1ka4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                          "caption": "",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "from": 12,
+              "to": 21,
+              "iccs": "d8d7",
+              "wxf": "Tướng 4 tiến 1",
+              "side": "den",
+              "reveal": null,
+              "fen": "C4ab2/4a4/3kb4/2N6/9/3C5/9/9/3p1p3/2p1K1p2",
+              "caption": "Biến: nếu Đen Tg4.1, Trắng M7.8, Tg4/1, P9/1 Tiền Mã hậu Pháo sát.",
+              "children": [
+                {
+                  "from": 29,
+                  "to": 10,
+                  "iccs": "c6b8",
+                  "wxf": "Mã 7 tiến 8",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "C4ab2/1N2a4/3kb4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                  "caption": "",
+                  "children": [
+                    {
+                      "from": 21,
+                      "to": 12,
+                      "iccs": "d7d8",
+                      "wxf": "Tướng 4 thoái 1",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "C4ab2/1N1ka4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                      "caption": "",
+                      "children": [
+                        {
+                          "from": 0,
+                          "to": 9,
+                          "iccs": "a9a8",
+                          "wxf": "Pháo 9 thoái 1",
+                          "side": "do",
+                          "reveal": null,
+                          "fen": "5ab2/CN1ka4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+                          "caption": "",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "move_count": 7,
+      "summary": "Thế sát Tiền Mã hậu Pháo trong khung muộn cung: Mã quải giác chiếu liên hoàn dồn Tướng, rồi hậu Pháo khép lưới. Nhiều biến theo cách chạy Tướng đều bị bắt sát.",
+      "content": "<h2>Tiền Mã hậu Pháo</h2><p>Ví dụ này kết hợp thế sát <strong>Tiền Mã hậu Pháo</strong> với ý tưởng muộn cung. Con Mã quải giác đi trước, tiến lên chiếu liên hoàn dồn Tướng đen; quả Pháo theo sau khép lưới. Tùy cách Đen chạy Tướng ở từng nhịp, bên Trắng có nhiều nhánh — nhưng tất cả đều dẫn tới bắt sát. Bấm các nhánh biến để xem từng cách bị hóa giải.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Muộn Cung Sát — Tiền Mã Hậu Pháo (Ví Dụ 10)",
+      "seo_description": "Sát pháp Muộn Cung Sát: Tiền Mã hậu Pháo dồn Tướng khép sát, nhiều biến đều thua. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "C4ab2/3ka4/4b4/2N6/9/3C5/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "b4c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã tiến quải giác chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "C2k1ab2/4a4/4b4/2N6/9/3C5/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng lùi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "C2k1ab2/1N2a4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Mã 7 tiến 8",
+          "move_notation_iccs": "c6b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã tiến thêm (Tiền Mã).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "C3kab2/1N2a4/4b4/9/9/3C5/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng bình sang giữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "C2Ckab2/1N2a4/4b4/9/9/9/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Pháo 6 tiến 5",
+          "move_notation_iccs": "d4d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo tiến áp sát (hậu Pháo).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "C1bCkab2/1N2a4/9/9/9/9/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Tượng 5 thoái 3",
+          "move_notation_iccs": "e7c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen phi Tượng đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "C1b1kab2/1N1Ca4/9/9/9/9/9/9/3p1p3/2p1K1p2",
+          "move_notation_wxf": "Pháo 6 thoái 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo lùi khép — muộn sát (cũng có thể M8/6). Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 111,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Muộn Cung Sát (Thí Binh Thí Xe) — Ví Dụ 11",
+      "slug": "muon-cung-sat-vi-du-11",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1n1ck3C/2PPa1R2/5a3/9/8N/9/9/3n5/4p4/5K3",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Chuỗi thí quân liên hoàn: thí Binh dẫn dụ Tướng lên, rồi thí Xe cản thông đạo hoạt động của Tướng đen, cuối cùng bình Pháo muộn sát.",
+      "content": "<h2>Thí quân để giăng lưới muộn cung</h2><p>Ví dụ khép lại chuyên đề Muộn cung sát bằng một chuỗi thí quân đẹp mắt. Trước hết <strong>thí Binh</strong> để dẫn dụ Tướng đen di chuyển lên trên — vị trí bất lợi cho phòng thủ. Sau đó, cao trào là nước <strong>thí Xe</strong> nhằm cản trở thông đạo hoạt động của Tướng, bó chặt nó lại. Khi mọi lối thoát đã bị bịt, quả Pháo bình sang là muộn sát. Toàn bộ ý tưởng đều xoay quanh một chữ: khóa chặt Tướng đối phương.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Muộn Cung Sát — Thí Binh Thí Xe (Ví Dụ 11)",
+      "seo_description": "Sát pháp Muộn Cung Sát: thí Binh dẫn dụ Tướng, thí Xe cản thông đạo rồi bình Pháo muộn sát. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1n1ck1R1C/2PPa4/5a3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Xe 3 tiến 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe tiến chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1n1ckaR1C/2PP5/5a3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thoái Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1n1ckaR1C/2P1P4/5a3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Thí Binh — dẫn dụ Tướng đen di chuyển lên trên, có lợi cho việc tấn công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1n1c1aR1C/2P1k4/5a3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng tiến.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1n1c1a2C/2P1k1R2/5a3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Xe 3 thoái 1",
+          "move_notation_iccs": "g9g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe rút chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1n1c1a2C/2P3R2/4ka3/9/8N/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e8e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng tiến.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1n1c1a2C/2P3R2/4ka3/6N2/9/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "i5g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã tiến áp sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1n1c1a2C/2P3R2/3k1a3/6N2/9/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e7d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tướng bình sang cánh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1n1c1a2C/2PR5/3k1a3/6N2/9/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Xe 3 bình 6",
+          "move_notation_iccs": "g8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Thí Xe — cản trở thông đạo hoạt động của Tướng đen, dựng thế muộn sát!",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3c1a2C/2Pn5/3k1a3/6N2/9/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Mã 2 tiến 4",
+          "move_notation_iccs": "b9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3C1a3/2Pn5/3k1a3/6N2/9/9/9/3n5/4p4/5K3",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "i9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Pháo bình sang — muộn sát. Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
