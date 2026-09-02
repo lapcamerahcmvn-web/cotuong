@@ -54,3 +54,14 @@
   - **Nâng cấp gen.cjs**: thêm `isCheckmate/inCheck/legalNoSelfCheck` — giờ MỌI bài "Trắng thắng" đều tự xác nhận là chiếu bí thật trước khi seed (bắt được vd2 Hình1.31 chỉ là thang, không sát). Đây là chốt chất lượng mới: nếu isCheckmate=false mà sách ghi "Trắng thắng" → hoãn, không đoán.
   - **ĐÃ PUSH GitHub `6034523`** (origin/main). Deploy hosting: user tự chạy (máy này không có SSH) — `cd ~/hocotuong && git fetch origin && git reset --hard origin/main && php artisan db:seed --class=ContentSeeder --force && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache`. KHÔNG cần migrate/composer (batch chỉ đổi content.json + tool).
   - **Tiếp theo**: Bài 7 Xe Pháo Rút Sát (Hình 1.36-1.37, trang 27+).
+- **2026-09-02 (lô 5 — tới 35 bài)**:
+  - **Bài 7 Xe Pháo Rút Sát**: vd1 (Hình1.36, mượn Sĩ làm ngòi, **3 biến** chi Sĩ/phi hữu Tượng/phi tả Tượng đều sát), vd2 (Hình1.37, song Xe thay nhau rút, có biến), vd3 (Hình1.38, thí trung Pháo dụ Xe, 2 biến). Hoãn vd4 (Hình1.39): ván dài kết bằng đắc song Xe (đổi 1 Xe lấy 2), không phải chiếu bí ngay.
+  - **Bài 8 Pháo Triển Đan Sa (Pháo lăn)**: vd1 (Hình1.40, quét song Sĩ→thắng thế, KHUNG "kỹ thuật→thắng" không phải chiếu bí — framing thành thật), vd3 (Hình1.42, lăn xong khép sát — chiếu bí thật ✓). Hoãn vd2/vd4/vd5/vd6 (Hình1.41/1.43/1.44/1.45 — đa số là quét→"thắng chắc", không sát ngay; đã có vd1+vd3 đại diện đủ loại).
+  - **CHÍNH SÁCH loại "kỹ thuật→thắng"** (Pháo lăn, thang song Xe...): CHỈ xuất bản dạng "chiếu bí" khi `isCheckmate=true`. Ví dụ chỉ "thắng thế" (quét sạch phòng thủ, đối phương chắc thua nhưng chưa chiếu hết ở nước cuối sách in) → hoặc (a) đưa 1-2 bài đại diện với LỜI GIẢNG THÀNH THẬT (không ghi "chiếu hết"), hoặc (b) hoãn nếu trùng lặp. KHÔNG bịa thêm nước để ép thành mate.
+  - Local seed 227 bài (35 trong series). CHƯA push (chờ đủ ~20 bài mới kể từ lần push 30 → push ở ~50).
+  - **Tiếp theo**: Bài 8 còn Hình1.44/1.45 (vd5/6, xem có mate không) → Bài 9 Pháo Trùng/Song Pháo (trang 33+).
+  - Bài 8 vd5 (Hình1.44), vd6 (Hình1.45) đều CHIẾU BÍ THẬT ✓ → đã thêm. Bài 8 chốt: vd1(win)/vd3/vd5/vd6, hoãn vd2/vd4.
+  - **Bài 9 Pháo Trùng (Song Pháo)** trang 33-35: vd1 (Hình1.46, song Pháo trung lộ), vd3 (Hình1.48, thí Binh khống chế), vd4 (Hình1.49, thí Xe hiến Binh), vd5 (Hình1.50, **Tiền Mã hậu Pháo + 4 BIẾN** đều sát ✓) — TẤT CẢ isCheckmate=true. Hoãn vd2 (Hình1.47 — ví dụ "nguyên tắc" kết bằng P5-6 chỉ NÓI không in nước, kết ở nước lặng).
+  - **Series = 41 bài** (8 có cây biến). Local seed 233.
+  - **ĐÃ PUSH GitHub** (lô 5, tới 41 bài) — hoàn tất Bài 7+8+9. Deploy hosting như cũ (git reset + db:seed ContentSeeder + cache).
+  - **Tiếp theo**: Bài 10 (trang 36+) — xem loại gì.
