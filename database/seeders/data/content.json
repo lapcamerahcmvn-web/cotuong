@@ -40898,6 +40898,162 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 1101,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Thiết Môn Thuyên (Mượn Tướng Trợ Công) — Ví Dụ 1",
+      "slug": "thiet-mon-thuyen-vi-du-1",
+      "level": "co-ban",
+      "source_type": "manual",
+      "initial_fen": "3ak1b2/4a4/4b4/4CR3/7r1/9/3p5/4B1p2/4A4/3AK1B2",
+      "variation_tree": null,
+      "move_count": 3,
+      "summary": "Hình thức cơ bản của Thiết môn thuyên: Pháo trấn trung lộ trói Tướng Sĩ Tượng, chỉ cần mượn sức Tướng nhà rồi Xe cắm cửa Tướng là thành sát.",
+      "content": "<h2>Thiết Môn Thuyên là gì?</h2><p>Một bên dùng <strong>Pháo trấn trung lộ</strong> kềm chế Tướng, Sĩ, Tượng đối phương, đồng thời dùng <strong>Xe (hoặc Binh) khống chế cửa Tướng</strong> — giống như chốt cửa sắt (thiết môn thuyên) phong bế chặt Tướng, rồi các quân khác chiếu bí. Điểm trọng yếu: Pháo trung lộ không bị đuổi hay đổi mất, và quân công phải tập trung vào cửa Tướng đối phương.</p><h2>Diễn biến</h2><p>Ở thế cơ bản này, cấu trúc thiết môn thuyên đã sẵn sàng: Pháo trấn giữa trói chặt phòng thủ Đen. Bên Trắng chỉ cần <strong>bình Tướng sang trợ lực</strong> rồi <strong>Xe tiến cắm cửa Tướng</strong> là chiếu bí ngay.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Thiết Môn Thuyên — Mượn Tướng Trợ Công (Ví Dụ 1)",
+      "seo_description": "Học sát pháp Thiết Môn Thuyên: Pháo trấn trung lộ trói Tướng Sĩ Tượng, Xe cắm cửa Tướng chiếu bí. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak1b2/4a4/4b4/4CR3/7r1/9/3p5/4B1p2/4A4/3A1KB2",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Soái đỏ bình sang, mượn sức mạnh của chủ Tướng trợ công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak1b2/4a4/4b4/4CR3/4r4/9/3p5/4B1p2/4A4/3A1KB2",
+          "move_notation_wxf": "Xe 8 bình 5",
+          "move_notation_iccs": "h5e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen đưa Xe về trung lộ chắn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akRb2/4a4/4b4/4C4/4r4/9/3p5/4B1p2/4A4/3A1KB2",
+          "move_notation_wxf": "Xe 4 tiến 3",
+          "move_notation_iccs": "f6f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Xe tiến khép — Pháo trấn trung lộ trói Tướng Sĩ Tượng, Xe cắm cửa Tướng như then cài cửa sắt: thiết môn thuyên sát. Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 1103,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "Thiết Môn Thuyên (Thí Mã Dựng Thế) — Ví Dụ 3",
+      "slug": "thiet-mon-thuyen-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3akab2/2r6/4b4/2C4N1/9/9/1p3p3/4p4/9/3K3R1",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Xe Pháo Mã đấu Xe và 3 Tốt, bên Trắng dù nguy khốn nhưng đi trước: thí Mã cướp điểm nóng, Xe và Tướng khống chế cửa Tướng, Pháo trấn trung lộ — hình thành thiết môn thuyên giành thắng thế.",
+      "content": "<h2>Thí quân cướp điểm nóng</h2><p>So quân lực, bên Trắng (Xe Pháo Mã) tưởng mạnh hơn Đen (Xe + 3 Tốt), nhưng cửu cung Trắng trống rỗng, 3 Tốt đen đã áp sát — Trắng nguy khốn cận kề. May là Trắng đi trước, dựa vào lợi thế bốn quân chiếm vị trí cực tốt để thực thi diệu sát.</p><h2>Dựng thế thiết môn thuyên</h2><p>Mở màn là nước <strong>nhảy Mã góc Sĩ chiếu Tướng</strong>, ép Xe đen phải chèn chân Mã — từ đó quả Xe đen kẹt cứng. Tiếp theo bên Trắng <strong>thí Mã</strong> để chiếm tuyến hoành 2 và điều Xe sang cánh, mượn Tướng trợ lực khống chế cửa Tướng. Nước cuối bình Pháo trấn trung lộ hoàn tất cấu trúc <strong>thiết môn thuyên</strong>: Pháo trói chặt trung Sĩ trung Tượng, Xe và Tướng chốt cửa — Đen bị bó hoàn toàn, thua đã định. (Đây là ví dụ 'hình thành thế thắng' chứ chưa phải chiếu hết ở nước cuối — đòn kết liễu theo sau là tất yếu.)</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Thiết Môn Thuyên — Thí Mã Dựng Thế (Ví Dụ 3)",
+      "seo_description": "Sát pháp Thiết Môn Thuyên: thí Mã cướp điểm nóng, Xe Tướng khống chế cửa Tướng, Pháo trấn trung lộ dựng thế thắng. Bàn cờ tương tác, giảng từng nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akab2/2r6/4bN3/2C6/9/9/1p3p3/4p4/9/3K3R1",
+          "move_notation_wxf": "Mã 2 tiến 4",
+          "move_notation_iccs": "h6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Nhảy Mã góc Sĩ chiếu Tướng — màn mở đầu, ép Xe đen phải chèn chân Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akab2/5r3/4bN3/2C6/9/9/1p3p3/4p4/9/3K3R1",
+          "move_notation_wxf": "Xe 3 bình 6",
+          "move_notation_iccs": "c8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc bình Xe chèn chân Mã giải chiếu (Xe kẹt cứng một chỗ).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akab2/5r1R1/4bN3/2C6/9/9/1p3p3/4p4/9/3K5",
+          "move_notation_wxf": "Xe 2 tiến 8",
+          "move_notation_iccs": "h0h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Tiến Xe đánh Xe, chủ động thí Mã — vừa chiếm tuyến hoành 2 sát đáy, vừa làm Xe đen chật hẹp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3akab2/7R1/4br3/2C6/9/9/1p3p3/4p4/9/3K5",
+          "move_notation_wxf": "Xe 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen ăn Mã, nhưng lọt vào vị trí bị bó.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3akab2/3R5/4br3/2C6/9/9/1p3p3/4p4/9/3K5",
+          "move_notation_wxf": "Xe 2 bình 6",
+          "move_notation_iccs": "h8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Bình Xe chiếm cánh sườn, mượn Tướng trợ lực khống chế cửa Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4kab2/3Ra4/4br3/2C6/9/9/1p3p3/4p4/9/3K5",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lên Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4kab2/3Ra4/4br3/4C4/9/9/1p3p3/4p4/9/3K5",
+          "move_notation_wxf": "Pháo 7 bình 5",
+          "move_notation_iccs": "c6e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Bình Pháo trấn trung lộ — thiết môn thuyên đã thành hình, Trắng giành thắng thế (Đen bị trói không gỡ nổi).",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }

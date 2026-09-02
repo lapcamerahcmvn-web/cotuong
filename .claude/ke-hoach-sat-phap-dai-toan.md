@@ -73,3 +73,10 @@
   - **2026-09-02 (lô 7)**: hoàn tất **Bài 10** — thêm vd7 (Hình1.57, bức Pháo bằng Mã), vd8 (Hình1.58, Pháo trước Xe sau, 2 biến), vd9 (Hình1.59, thí Xe cản thông đạo), vd10 (Hình1.60, Tiền Mã hậu Pháo, 2 biến), vd11 (Hình1.61, thí Binh thí Xe). Tất cả isCheckmate=true. Bài 10 = 10 bài (vd1-11 trừ vd5 hoãn). **Fix cột: Hình1.58 top row là col3-5 (Tướng file5), không phải col2-4.**
   - **Series = 51 bài**. ĐÃ PUSH GitHub (lô 7, Bài 10 hoàn tất).
   - **Tiếp theo**: Bài 11 **Thiết Môn Thuyên** (铁门闩, trang 44+, Hình 1.62+).
+- **2026-09-02 (lô 8) — Bài 11 Thiết Môn Thuyên** (Pháo trấn trung lộ + Xe/Binh chốt cửa Tướng):
+  - vd1 (Hình1.62, mượn Tướng trợ công — chiếu bí thật ✓). vd3 (Hình1.64, thí Mã cướp điểm nóng → hình thành thiết môn thuyên; isCheckmate=false vì nước cuối P7-5 chỉ DỰNG THẾ, không chiếu ngay → framing "giành thắng thế" thành thật).
+  - **Hoãn vd2 (Hình1.63)**: X4.3 sách ghi "sát" nhưng engine cho king ăn được Xe (0,5) không được phòng thủ → chưa phải chiếu bí với sơ đồ đang đọc; nghi đọc sót 1 quân, cần soi lại.
+  - **ĐỔI SCHEME ORDER từ Bài 11**: `type*10+vd` bị đụng (Bài10 vd11 = Bài11 vd1 = 111). Bài 11+ dùng **`Bài*100+vd`** (1101, 1103...) — sort sau Bài 10 (≤111), không đụng.
+  - **NHẬN XÉT loại thiết môn thuyên**: nhiều ví dụ kết bằng "hình thành thế → thắng" (không chiếu hết ngay ở nước cuối sách in) — giống Pháo lăn. Chỉ đăng chiếu-bí khi isCheckmate=true; ví dụ "dựng thế" thì framing thành thật.
+  - **Series = 53 bài**. ĐÃ PUSH (lô 8).
+  - **Tiếp theo**: Bài 11 còn Hình 1.65+ (vd4+), rồi Bài 12.
