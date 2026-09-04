@@ -80,3 +80,9 @@
   - **NHẬN XÉT loại thiết môn thuyên**: nhiều ví dụ kết bằng "hình thành thế → thắng" (không chiếu hết ngay ở nước cuối sách in) — giống Pháo lăn. Chỉ đăng chiếu-bí khi isCheckmate=true; ví dụ "dựng thế" thì framing thành thật.
   - **Series = 53 bài**. ĐÃ PUSH (lô 8).
   - **Tiếp theo**: Bài 11 còn Hình 1.65+ (vd4+), rồi Bài 12.
+- **2026-09-03/04 (lô 9) — hết Bài 11 + mở Bài 12**:
+  - **Bài 11 Thiết Môn Thuyên** thêm: vd5 (Hình1.66, vận Pháo cánh trái), vd6 (Hình1.67, Tam bá thủ Xe Binh Tướng), vd8 (Hình1.69, tàn cuộc Pháo Binh — mate thật 15 nước), vd9 (Hình1.70, song Xe tam bá thủ). Hoãn: vd2 (Hình1.63 X4.3 chưa sát), vd4/vd7/vd10 (domination dài / dày quân).
+  - **Bài 12 MÃ NGỌA TÀO** (马卧槽, Mã cài chuồng — Mã nhảy lên Tượng đáy đối phương, vừa chiếu vừa rút Xe): vd1 (Hình1.72, dẫn Xe về đáy), vd2 (Hình1.73, thí Xe dẫn Xe bịt mắt Tượng), vd3 (Hình1.74, lưỡng chiếu Mã Binh), vd4 (Hình1.75, thí Binh phá Sĩ), vd5 (Hình1.76, thí Xe sát Tượng). TẤT CẢ isCheckmate=true.
+  - **Fix đọc sơ đồ (bài học)**: `validatePosition` bắt Sĩ/Tượng ĐỎ sai ô (Hình1.75 mình đọc lệch cụm phòng thủ đáy 1 cột → detector sửa: 相(7,4)/仕(8,4)/相(9,2)/仕(9,3)/帥(9,4)). Hình1.76 Mã đỏ ở (4,7)=file2 không phải (4,6). LUÔN chạy validatePosition trước khi seed.
+  - **Series = 62 bài** (10 cây biến). ĐÃ PUSH GitHub (lô 9).
+  - **Tiếp theo**: Bài 12 còn Hình 1.77-1.78+ (vd6+), rồi Bài 13.
