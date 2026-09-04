@@ -86,3 +86,8 @@
   - **Fix đọc sơ đồ (bài học)**: `validatePosition` bắt Sĩ/Tượng ĐỎ sai ô (Hình1.75 mình đọc lệch cụm phòng thủ đáy 1 cột → detector sửa: 相(7,4)/仕(8,4)/相(9,2)/仕(9,3)/帥(9,4)). Hình1.76 Mã đỏ ở (4,7)=file2 không phải (4,6). LUÔN chạy validatePosition trước khi seed.
   - **Series = 62 bài** (10 cây biến). ĐÃ PUSH GitHub (lô 9).
   - **Tiếp theo**: Bài 12 còn Hình 1.77-1.78+ (vd6+), rồi Bài 13.
+- **2026-09-04 (lô 10) — hết Bài 12**:
+  - Thêm vd6 (Hình1.77, hiến Xe lộ Binh đáy, có biến), vd7 (Hình1.78, hiến Xe miệng Tượng). **vd8 (Hình1.79) là ví dụ HÒA CỜ** (Mã ngọa tào cầm hòa, không phải sát) → KHÔNG đưa vào (không phải sát pháp). Bài 12 = vd1-7 (7 bài).
+  - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
+  - **Series = 64 bài**. ĐÃ PUSH (lô 10, hết Bài 12).
+  - **Tiếp theo**: **Bài 13 QUẢI GIÁC MÃ** (挂角马/Sĩ giác Mã — Mã ở góc Sĩ trên cao cửu cung đối phương, chiếu Tướng nguyên vị). Trang 56+, Hình 1.80+.
