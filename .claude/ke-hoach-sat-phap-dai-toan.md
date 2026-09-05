@@ -91,3 +91,8 @@
   - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
   - **Series = 64 bài**. ĐÃ PUSH (lô 10, hết Bài 12).
   - **Tiếp theo**: **Bài 13 QUẢI GIÁC MÃ** (挂角马/Sĩ giác Mã — Mã ở góc Sĩ trên cao cửu cung đối phương, chiếu Tướng nguyên vị). Trang 56+, Hình 1.80+.
+- **2026-09-05 (lô 11) — trọn Bài 13 Quải Giác Mã** (Hình 1.80-1.85, 6 ví dụ, TẤT CẢ isCheckmate=true):
+  - vd1 (Xe tiến Pháo hậu), vd2 (Kim câu quải ngọc/Bạch Mã hiện đề — thí Xe dẫn ly Sĩ), vd3 (nhất thạch tam điêu — Pháo dẫn ly 3 tác dụng), vd4 (song Xe hiến Xe), vd5 (điều Mã đảo góc — nhấn TRÌNH TỰ), vd6 (Tiền Mã hậu Pháo, 2 biến).
+  - **Fix đọc**: Hình1.80 Tướng đen (0,4)=file5 không phải (0,3) (detector). Hình1.81 "M8.6" thực ra **M8/6** (Mã xuống (2,3) quải giác — OCR /↔.). Hình1.82 cụm phòng thủ đáy lệch +1 cột. Hình1.84 detector báo (3,6) là FALSE POSITIVE (crop xác nhận trống).
+  - **Series = 70 bài**. ĐÃ PUSH (lô 11).
+  - **Tiếp theo**: **Bài 14 BẠT HOÀNG MÃ** (拔簧马 — Xe mượn sức Mã chiếu rút/chiếu bí, Mã như lò xo). Trang 60+, Hình 1.86+.
