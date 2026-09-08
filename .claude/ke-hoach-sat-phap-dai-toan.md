@@ -86,6 +86,12 @@
   - **Fix đọc sơ đồ (bài học)**: `validatePosition` bắt Sĩ/Tượng ĐỎ sai ô (Hình1.75 mình đọc lệch cụm phòng thủ đáy 1 cột → detector sửa: 相(7,4)/仕(8,4)/相(9,2)/仕(9,3)/帥(9,4)). Hình1.76 Mã đỏ ở (4,7)=file2 không phải (4,6). LUÔN chạy validatePosition trước khi seed.
   - **Series = 62 bài** (10 cây biến). ĐÃ PUSH GitHub (lô 9).
   - **Tiếp theo**: Bài 12 còn Hình 1.77-1.78+ (vd6+), rồi Bài 13.
+- **2026-09-05/06 (lô 11-12) — hoàn tất Bài 13 Quải Giác Mã (6 vd) + Bài 14 Bạt Hoàng Mã (5 vd)**:
+  - **Bài 13 QUẢI GIÁC MÃ** (挂角马/Sĩ giác Mã — Mã ở góc Sĩ trên cao, chiếu Tướng nguyên vị): vd1 (Xe tiến Pháo hậu), vd2 (Kim câu quải ngọc / Bạch Mã hiện đề — sửa lỗi in "M8.6"→"M8/6"), vd3 (nhất thạch tam điêu), vd4-6 hoàn tất từ phiên trước. Series đủ 6 ví dụ.
+  - **Bài 14 BẠT HOÀNG MÃ** (拔皇马 — Mã như lò xo đàn hồi, Xe mượn sức Mã chiếu rút): vd1 (Xe mượn Mã chiếu rút), vd2 (Mã bật dẫn Xe về đáy, có biến), vd3 (mượn Mã khéo sát), vd4 (mượn Tướng trợ chiến, 15 nước), vd5 (chọn điểm đột phá — sửa giải mã "Xs.4" đúng là Xe sau vì có 2 Xe đen cùng lộ 6, không phải lỗi in). TẤT CẢ isCheckmate=true.
+  - **Bài học transcribe**: OCR hay lẫn `/` (thoái) ↔ `.` (tiến) — luôn thử cả 2 khi 1 cái parse fail hoặc không mate. Ký hiệu `Xs`/`Xt` (trước/sau) chỉ hợp lệ khi THỰC SỰ có 2 quân cùng loại cùng file tại thời điểm đó — dùng engine đếm để xác nhận trước khi nghi ngờ lỗi in.
+  - **Series = 75 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 11-12).
+  - **Tiếp theo**: Bài 15 (trang 64+, xem tên loại).
 - **2026-09-04 (lô 10) — hết Bài 12**:
   - Thêm vd6 (Hình1.77, hiến Xe lộ Binh đáy, có biến), vd7 (Hình1.78, hiến Xe miệng Tượng). **vd8 (Hình1.79) là ví dụ HÒA CỜ** (Mã ngọa tào cầm hòa, không phải sát) → KHÔNG đưa vào (không phải sát pháp). Bài 12 = vd1-7 (7 bài).
   - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
