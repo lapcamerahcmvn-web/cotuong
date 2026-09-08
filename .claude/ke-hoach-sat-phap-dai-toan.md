@@ -92,6 +92,11 @@
   - **Bài học transcribe**: OCR hay lẫn `/` (thoái) ↔ `.` (tiến) — luôn thử cả 2 khi 1 cái parse fail hoặc không mate. Ký hiệu `Xs`/`Xt` (trước/sau) chỉ hợp lệ khi THỰC SỰ có 2 quân cùng loại cùng file tại thời điểm đó — dùng engine đếm để xác nhận trước khi nghi ngờ lỗi in.
   - **Series = 75 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 11-12).
   - **Tiếp theo**: Bài 15 (trang 64+, xem tên loại).
+- **2026-09-06 (lô 13) — hoàn tất Bài 15 BÁT GIÁC MÃ (Mã Điền)** (Mã chiếm góc Sĩ đối diện chéo với Tướng, tước tự do hoạt động):
+  - vd1 (song Mã đối diện góc), vd2 (biến "Mã chết" thành "Mã sống" + mượn Soái trợ chiến — **phát hiện: sách in thêm 2 nước cuối "X5-6"/"B6-5" dù thế đã CHIẾU BÍ ở nước 7 Trắng "B4.1"; dùng engine đếm nước đáp của Đen=0 xác nhận, cắt bỏ 2 nước thừa**), vd3 (thí Tượng cản Xe), vd4 (mượn Xe kềm Sĩ, chú ý thứ tự nước), vd5 (thí Xe phá Sĩ — thạch phá thiên kinh).
+  - **Fix đọc sơ đồ**: Hình1.92/1.93 nhầm màu Sĩ đen thành đỏ (uppercase A thay vì lowercase a — validatePosition bắt ngay); Hình1.96 nhầm 1 quân Binh(P) thành Tượng(B) thứ 3 (validatePosition bắt "Quá số B: 3").
+  - **Series = 80 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 13).
+  - **Tiếp theo**: **Bài 16 ĐIỀU NGƯ MÃ (MÃ CÂU CÁ)** — Mã ở vị trí 3.3/3.7 phối Xe câu chiếu bí, giống "song Tượng liên hoàn" nhưng khống chế Sĩ giữa+Sĩ đáy. Trang 65+, Hình 1.97+.
 - **2026-09-04 (lô 10) — hết Bài 12**:
   - Thêm vd6 (Hình1.77, hiến Xe lộ Binh đáy, có biến), vd7 (Hình1.78, hiến Xe miệng Tượng). **vd8 (Hình1.79) là ví dụ HÒA CỜ** (Mã ngọa tào cầm hòa, không phải sát) → KHÔNG đưa vào (không phải sát pháp). Bài 12 = vd1-7 (7 bài).
   - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
