@@ -97,6 +97,12 @@
   - **Fix đọc sơ đồ**: Hình1.92/1.93 nhầm màu Sĩ đen thành đỏ (uppercase A thay vì lowercase a — validatePosition bắt ngay); Hình1.96 nhầm 1 quân Binh(P) thành Tượng(B) thứ 3 (validatePosition bắt "Quá số B: 3").
   - **Series = 80 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 13).
   - **Tiếp theo**: **Bài 16 ĐIỀU NGƯ MÃ (MÃ CÂU CÁ)** — Mã ở vị trí 3.3/3.7 phối Xe câu chiếu bí, giống "song Tượng liên hoàn" nhưng khống chế Sĩ giữa+Sĩ đáy. Trang 65+, Hình 1.97+.
+- **2026-09-06 (lô 14) — HOÀN TẤT Bài 16 Điều Ngư Mã (6 vd) + mở Bài 17 Cao Điều Mã (2 vd)**:
+  - **Bài 16 ĐIỀU NGƯ MÃ**: vd1 (thí Binh lộ đáy), vd2 (thí Xe sát Sĩ), vd3 (song Xe Mã tạo sát cục), vd4 (ép Tướng về nguyên vị), vd5 (thí Xe kịp thời, có "Mã sau" — 2 Mã đen cùng file, engine tự chọn đúng), vd6 (song Xe nước đi lão luyện, "Xe sau" tương tự). Series đủ 6/6 ví dụ.
+  - **Bài 17 CAO ĐIỀU MÃ (Trắc Diện Hổ)** (Mã chiếm lộ nguyên vị Tốt đối phương, Tướng ở đường sườn, Xe phối Mã): vd1 (**thủ đoạn Tiến Chiếu** — kết thúc chỉ ở thế áp đảo, KHÔNG chiếu bí ngay vì Tướng còn 2 ô lùi — framing thành thật "Trắng chiếm ưu thế"), vd2 (**thủ đoạn Thiềm Chiếu** — đổi hướng Xe né Pháo phòng thủ, chiếu bí thật ✓). Đây là 2 kỹ thuật ĐỐI LẬP có chủ đích của chính sách (tiến chiếu vs thiềm chiếu), không phải lỗi.
+  - **Fix đọc sơ đồ nhiều lần**: Hình1.98 hàng 0 lệch 1 cột (validatePosition bắt Tượng/Sĩ sai ô); Hình1.101 đọc lại từ đầu bằng detector thô (nhầm Sĩ/Tượng đỏ vị trí, lẫn A_RED/B_RED).
+  - **Series = 88 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 14).
+  - **Tiếp theo**: Bài 17 còn vd3+ (Hình 1.105 đã detect, trang 72+), rồi Bài 18.
 - **2026-09-04 (lô 10) — hết Bài 12**:
   - Thêm vd6 (Hình1.77, hiến Xe lộ Binh đáy, có biến), vd7 (Hình1.78, hiến Xe miệng Tượng). **vd8 (Hình1.79) là ví dụ HÒA CỜ** (Mã ngọa tào cầm hòa, không phải sát) → KHÔNG đưa vào (không phải sát pháp). Bài 12 = vd1-7 (7 bài).
   - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
