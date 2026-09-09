@@ -39,7 +39,8 @@
   }
 
   // arrows: [{from,to,color,label}] — from/to là chỉ số ô 0..89. Vẽ mũi tên chọn biến.
-  function renderBoard(fen, lastMove, arrows) {
+  // selected: chỉ số ô đang chọn (chế độ giải đố) — vẽ vòng tròn viền quanh quân đó.
+  function renderBoard(fen, lastMove, arrows, selected) {
     var M = 26, CW = 52, CH = 52;
     var W = M * 2 + CW * 8, H = M * 2 + CH * 9;
     function X(f) { return M + f * CW; }
@@ -79,6 +80,9 @@
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
       s += '<text x="' + cx + '" y="' + (Y(rr) + 8) + '" text-anchor="middle" font-size="24" font-family="KaiTi,STKaiti,serif" fill="' + col + '">' + p.c + '</text>';
     }
+    if (typeof selected === 'number' && selected >= 0) {
+      s += '<circle cx="' + X(selected % 9) + '" cy="' + Y((selected / 9) | 0) + '" r="23" fill="none" stroke="#2563eb" stroke-width="3"/>';
+    }
     // Mũi tên chọn biến (vẽ trên cùng, có nhãn A/B ở gần quân xuất phát).
     if (arrows && arrows.length) {
       arrows.forEach(function (a, k) {
@@ -116,6 +120,14 @@
     var capText = root.querySelector('[data-xq-captext]');
     var pill = root.querySelector('[data-xq-pill]');
     var list = root.querySelector('[data-xq-list]');
+    // Chế độ GIẢI ĐỐ: người dùng tự đi quân bên `puzzleSide`, máy tự đáp trả theo `steps` có sẵn.
+    if (cfg.mode === 'puzzle' && cfg.puzzleSide && steps.length) {
+      bindFullscreen(root);
+      initPuzzle(root, startFen, steps, {
+        holder: holder, capStep: capStep, capText: capText, pill: pill
+      }, cfg.puzzleSide);
+      return;
+    }
     // Chế độ CÂY BIẾN: nếu cfg.tree có nhánh → điều hướng theo cây + mũi tên chọn biến (A/B…).
     if (Array.isArray(cfg.tree) && cfg.tree.length) {
       bindFullscreen(root);
@@ -346,6 +358,126 @@
       });
     })();
     buildList();
+    draw();
+  }
+
+  // Chế độ GIẢI ĐỐ: người dùng bấm quân mình rồi bấm ô đích; so khớp với `steps` (lời giải có
+  // sẵn từ mạch chính của bài học) — đúng thì áp dụng + tự động đáp trả nước đối phương sau một
+  // nhịp ngắn, sai thì báo lỗi và cho thử lại. Dùng chung luật từ window.XiangqiRules.
+  function initPuzzle(root, startFen, steps, dom, puzzleSide) {
+    var Rules = window.XiangqiRules;
+    if (!Rules) { dom.holder.innerHTML = renderBoard(startFen, null); return; }
+    var M = 26, CW = 52, CH = 52;
+    var board = Rules.loadFen(startFen);
+    var stepIdx = -1;   // đã áp dụng xong steps[0..stepIdx]
+    var selected = -1;
+    var solved = false;
+    var svgClickBound = null;
+
+    function curExpected() { return stepIdx + 1 < steps.length ? steps[stepIdx + 1] : null; }
+    function isSolverTurn() { var e = curExpected(); return !solved && !!e && e.side === puzzleSide; }
+
+    function squareFromEvent(evt) {
+      var svg = dom.holder.querySelector('svg'); if (!svg) return -1;
+      var pt = svg.createSVGPoint();
+      var t = (evt.touches && evt.touches[0]) || evt;
+      pt.x = t.clientX; pt.y = t.clientY;
+      var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+      var f = Math.round((loc.x - M) / CW), r = Math.round((loc.y - M) / CH);
+      if (f < 0 || f > 8 || r < 0 || r > 9) return -1;
+      return r * 9 + f;
+    }
+
+    function setMsg(text, kind) {
+      if (!dom.capText) return;
+      dom.capText.textContent = text;
+      dom.capText.style.color = kind === 'err' ? 'var(--red,#c0392b)' : (kind === 'ok' ? 'var(--jade,#16a34a)' : '');
+    }
+
+    function applyStep() {
+      stepIdx++;
+      var ic = iccsToSquares(steps[stepIdx].iccs);
+      if (!ic) return;
+      var fromIdx = ic.from[1] * 9 + ic.from[0], toIdx = ic.to[1] * 9 + ic.to[0];
+      board[toIdx] = board[fromIdx]; board[fromIdx] = null;
+      if (stepIdx + 1 >= steps.length) solved = true;
+    }
+
+    function draw() {
+      var lm = stepIdx >= 0 ? iccsToSquares(steps[stepIdx].iccs) : null;
+      dom.holder.innerHTML = renderBoard(Rules.toFen(board), lm, null, selected);
+      bindClicks();
+      // Nhãn theo LƯỢT HIỆN TẠI (không cố định theo puzzleSide) — tránh báo sai "đến lượt bạn"
+      // trong lúc máy đang tự đáp trả nước đối phương.
+      var e = curExpected(), turnLabel = e ? (e.side === 'den' ? 'Đen' : 'Đỏ') : '';
+      if (dom.pill) dom.pill.textContent = solved ? 'Đã giải xong!' : ('Nước ' + (stepIdx + 2) + ' — bên ' + turnLabel + ' đi');
+      if (dom.capStep) dom.capStep.textContent = solved ? 'Hoàn thành! 🎉' : (isSolverTurn() ? 'Đến lượt bạn' : 'Đối phương đang đi…');
+      if (solved) {
+        setMsg('Chính xác! Bạn đã giải xong bài tập này.', 'ok');
+        document.dispatchEvent(new CustomEvent('xq:puzzle-solved'));
+      } else if (isSolverTurn()) {
+        setMsg('Bấm quân của bạn rồi bấm ô muốn đi.', null);
+      } else {
+        setMsg('Đối phương đang đi…', null);
+      }
+    }
+
+    function bindClicks() {
+      var svg = dom.holder.querySelector('svg'); if (!svg) return;
+      svg.style.cursor = isSolverTurn() ? 'pointer' : 'default';
+      svg.addEventListener('click', onClick);
+    }
+
+    function onClick(evt) {
+      if (!isSolverTurn()) return;
+      var sq = squareFromEvent(evt); if (sq < 0) return;
+      var piece = board[sq];
+      var isOwn = piece && Rules.isRed(piece) === (puzzleSide === 'do');
+      if (selected < 0) { if (isOwn) { selected = sq; draw(); } return; }
+      if (sq === selected) { selected = -1; draw(); return; }
+      if (isOwn) { selected = sq; draw(); return; }
+      attemptMove(selected, sq);
+    }
+
+    function attemptMove(from, to) {
+      var expect = curExpected();
+      var got = Rules.toIccs(from) + Rules.toIccs(to);
+      selected = -1;
+      if (!expect || got !== expect.iccs) {
+        draw();
+        setMsg('Nước sai rồi — thử lại nhé.', 'err');
+        return;
+      }
+      applyStep();
+      draw();
+      var next = curExpected();
+      if (next && next.side !== puzzleSide) {
+        setMsg('Đối phương đang đi…', null);
+        setTimeout(function () { applyStep(); draw(); }, 550);
+      }
+    }
+
+    function reset() { board = Rules.loadFen(startFen); stepIdx = -1; selected = -1; solved = false; draw(); }
+    function showSolution() {
+      reset();
+      var i = 0;
+      (function step() {
+        if (i >= steps.length) { solved = true; draw(); return; }
+        applyStep(); draw(); i++;
+        setTimeout(step, 750);
+      })();
+    }
+    function copyFen() {
+      var fen = Rules.toFen(board);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(fen).then(function () { setMsg('Đã sao chép FEN vào bộ nhớ tạm.', 'ok'); });
+      } else {
+        setMsg('FEN: ' + fen, null);
+      }
+    }
+
+    function bind(name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
+    bind('reset', reset); bind('solution', showSolution); bind('copyfen', copyFen);
     draw();
   }
 

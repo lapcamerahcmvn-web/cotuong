@@ -66,12 +66,47 @@
     </div>
 
     @if($lesson->initial_fen || $lesson->steps->isNotEmpty())
-        <x-chess-board
-            :initial-fen="$lesson->initial_fen"
-            :steps="$lesson->steps"
-            :tree="$lesson->variation_tree"
-            :show-list="$lesson->steps->isNotEmpty()"
-            :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật. Bấm ⛶ để phóng to.' : null" />
+        @if($lesson->puzzle_side && $lesson->steps->isNotEmpty())
+            <div class="board-mode-toggle" style="display:flex;gap:8px;margin-bottom:10px;">
+                <button type="button" class="btn primary" id="lesson-mode-view">📖 Xem lời giảng</button>
+                <button type="button" class="btn" id="lesson-mode-puzzle">🧩 Thử tự giải</button>
+            </div>
+            <div id="lesson-board-view">
+                <x-chess-board
+                    :initial-fen="$lesson->initial_fen"
+                    :steps="$lesson->steps"
+                    :tree="$lesson->variation_tree"
+                    :show-list="$lesson->steps->isNotEmpty()" />
+            </div>
+            <div id="lesson-board-puzzle" style="display:none;">
+                <x-chess-board
+                    :initial-fen="$lesson->initial_fen"
+                    :steps="$lesson->steps"
+                    mode="puzzle"
+                    :puzzle-side="$lesson->puzzle_side" />
+            </div>
+            <script>
+            (function () {
+                var vBtn = document.getElementById('lesson-mode-view'), pBtn = document.getElementById('lesson-mode-puzzle');
+                var vBox = document.getElementById('lesson-board-view'), pBox = document.getElementById('lesson-board-puzzle');
+                function setMode(puzzle) {
+                    vBox.style.display = puzzle ? 'none' : '';
+                    pBox.style.display = puzzle ? '' : 'none';
+                    vBtn.classList.toggle('primary', !puzzle);
+                    pBtn.classList.toggle('primary', puzzle);
+                }
+                vBtn.addEventListener('click', function () { setMode(false); });
+                pBtn.addEventListener('click', function () { setMode(true); });
+            })();
+            </script>
+        @else
+            <x-chess-board
+                :initial-fen="$lesson->initial_fen"
+                :steps="$lesson->steps"
+                :tree="$lesson->variation_tree"
+                :show-list="$lesson->steps->isNotEmpty()"
+                :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật. Bấm ⛶ để phóng to.' : null" />
+        @endif
     @endif
 
     @if($lesson->content)

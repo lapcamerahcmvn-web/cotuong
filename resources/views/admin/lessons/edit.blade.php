@@ -59,6 +59,15 @@
                     </select>
                 </div>
                 <label class="check"><input type="checkbox" name="is_featured" value="1" @checked(old('is_featured',$lesson->is_featured))> Bài nổi bật (hiện trang chủ)</label>
+                <div class="field" style="margin-top:10px;">
+                    <label for="puzzle_side">Bài tập giải đố</label>
+                    <select class="input" id="puzzle_side" name="puzzle_side">
+                        <option value="" @selected(old('puzzle_side',$lesson->puzzle_side)===null)>— Không (chỉ xem/biến) —</option>
+                        <option value="do" @selected(old('puzzle_side',$lesson->puzzle_side)==='do')>Đỏ tự giải</option>
+                        <option value="den" @selected(old('puzzle_side',$lesson->puzzle_side)==='den')>Đen tự giải</option>
+                    </select>
+                    <p class="hint" style="margin-top:4px;">Bật thì trang bài học hiện thêm nút "Thử tự giải" — người học tự đi quân bên đã chọn, máy tự đáp trả theo các nước đã soạn.</p>
+                </div>
             </div>
 
             <div class="panel card">

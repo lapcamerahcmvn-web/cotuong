@@ -36,6 +36,7 @@ class ExportContent extends Command
                     'source_type' => $l->source_type,
                     'initial_fen' => $l->initial_fen, 'move_count' => $l->move_count,
                     'variation_tree' => $l->variation_tree, // cây biến (bài đa nhánh) — giữ khi seed lại
+                    'puzzle_side' => $l->puzzle_side, // bài tập giải đố: bên người dùng tự giải (do/den/null)
                     'summary' => $l->summary, 'content' => $l->content,
                     'status' => 'published',
                     'decode_confidence' => $l->decode_confidence,

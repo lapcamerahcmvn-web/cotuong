@@ -16,7 +16,7 @@ class Lesson extends Model
     protected $fillable = [
         'series_id', 'order_in_series', 'game_mode', 'phase', 'title', 'slug',
         'level', 'source_type', 'source_xqf_path', 'source_pgn_path',
-        'initial_fen', 'variation_tree', 'move_count', 'summary', 'content', 'status',
+        'initial_fen', 'variation_tree', 'puzzle_side', 'move_count', 'summary', 'content', 'status',
         'decode_confidence', 'decode_warnings', 'thumbnail',
         'seo_title', 'seo_description', 'is_featured', 'view_count', 'published_at',
     ];

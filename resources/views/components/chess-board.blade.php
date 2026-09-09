@@ -4,6 +4,8 @@
     'tree' => null,      // cây biến (variation_tree) — nếu có → bàn cờ hiện mũi tên chọn biến
     'showList' => true,  // hiện cột danh sách nước bên phải
     'caption' => null,   // chú thích tĩnh (bài minh hoạ không có nước đi)
+    'mode' => 'view',    // 'view' (mặc định) | 'puzzle' (giải đố — tự đi quân, máy đáp trả)
+    'puzzleSide' => null, // 'do' | 'den' — bên người dùng tự giải (bắt buộc khi mode=puzzle)
 ])
 
 @php
@@ -14,8 +16,16 @@
         'side'    => is_array($s) ? ($s['move_side'] ?? null) : $s->move_side,
         'caption' => is_array($s) ? ($s['caption'] ?? null) : $s->caption,
     ])->values();
-    $hasList = $showList && $payload->count() > 0;
+    $isPuzzle = $mode === 'puzzle' && $puzzleSide && $payload->count() > 0;
+    $hasList = $showList && $payload->count() > 0 && !$isPuzzle;
     $isStatic = $payload->count() === 0;   // bàn cờ minh hoạ tĩnh (không có nước đi)
+    $jsonConfig = [
+        'initialFen' => $initialFen,
+        'steps'      => $payload,
+        'tree'       => $isPuzzle ? null : ($tree ?: null),
+        'mode'       => $isPuzzle ? 'puzzle' : 'view',
+        'puzzleSide' => $puzzleSide,
+    ];
 @endphp
 
 <div data-xqboard tabindex="0" aria-label="Bàn cờ tương tác"
@@ -24,23 +34,33 @@
         <div class="board-card card" data-xq-boardcard>
             <div class="board-holder" data-xq-holder></div>
             <div class="controls">
-                @unless($isStatic)
+                @if($isPuzzle)
+                <button type="button" class="btn" data-xq-reset aria-label="Làm lại từ đầu">↺ Làm lại</button>
+                <span class="step-pill" data-xq-pill>Đang giải…</span>
+                <button type="button" class="btn" data-xq-solution aria-label="Xem lời giải">Xem lời giải</button>
+                <button type="button" class="btn" data-xq-copyfen aria-label="Sao chép FEN">Copy FEN</button>
+                @elseif(!$isStatic)
                 <button type="button" class="btn" data-xq-first title="Về đầu" aria-label="Về thế mở">⏮</button>
                 <button type="button" class="btn" data-xq-prev aria-label="Lùi một nước">‹ Lùi</button>
                 <span class="step-pill" data-xq-pill>Thế mở</span>
                 <button type="button" class="btn primary" data-xq-next aria-label="Tiến một nước">Tiến ›</button>
                 <button type="button" class="btn" data-xq-last title="Đến cuối" aria-label="Đến nước cuối">⏭</button>
-                @endunless
+                @endif
                 <button type="button" class="btn" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
             </div>
-            @unless($isStatic)
+            @if($isPuzzle)
+            <div class="caption-box">
+                <div class="cap-step" data-xq-capstep>Đang giải…</div>
+                <div class="cap-text" data-xq-captext>Bấm quân của bạn rồi bấm ô muốn đi.</div>
+            </div>
+            @elseif(!$isStatic)
             <div class="caption-box">
                 <div class="cap-step" data-xq-capstep>Thế cờ mở đầu</div>
                 <div class="cap-text" data-xq-captext>Bấm “Tiến” để đi từng nước.</div>
             </div>
             @elseif($caption)
             <p class="board-note">{{ $caption }}</p>
-            @endunless
+            @endif
             <div class="branch-box" data-xq-branches style="display:none;"></div>
         </div>
     </div>
@@ -52,5 +72,5 @@
         </div>
     @endif
 
-    <script type="application/json">@json(['initialFen' => $initialFen, 'steps' => $payload, 'tree' => $tree ?: null], JSON_UNESCAPED_UNICODE)</script>
+    <script type="application/json">@json($jsonConfig, JSON_UNESCAPED_UNICODE)</script>
 </div>

@@ -118,6 +118,7 @@
     </script>
     @endguest
 
+    <script src="{{ asset('js/xiangqi-rules.js') }}?v={{ @filemtime(public_path('js/xiangqi-rules.js')) }}" defer></script>
     <script src="{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}" defer></script>
     @stack('scripts')
 </body>

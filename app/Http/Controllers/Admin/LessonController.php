@@ -52,6 +52,7 @@ class LessonController extends Controller
             'seo_title'       => ['nullable', 'string', 'max:255'],
             'seo_description' => ['nullable', 'string', 'max:255'],
             'is_featured'     => ['nullable', 'boolean'],
+            'puzzle_side'     => ['nullable', 'in:do,den'],
             'status'          => ['required', 'in:draft,review,needs_fix,published'],
             'reslug'          => ['nullable', 'boolean'],
             'captions'        => ['nullable', 'array'],
@@ -73,6 +74,7 @@ class LessonController extends Controller
             'seo_title'       => $data['seo_title'] ?? null,
             'seo_description' => $data['seo_description'] ?? null,
             'is_featured'     => $request->boolean('is_featured'),
+            'puzzle_side'     => $data['puzzle_side'] ?? null,
             'status'          => $data['status'],
         ]);
 
