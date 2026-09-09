@@ -56362,6 +56362,128 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20601,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Tiễn Phật Quy Điện — Ép Tướng Về Đúng Ngôi Vị Cũ — Ví Dụ 1",
+      "slug": "c2-tien-phat-quy-dien-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/9/3k5/9/2PC4n/2r6/9/C3K4/4App2/9",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Bài toán tuyển từ cổ phổ \"Thao Lược Nguyên Cơ\" quyển 4, cuộc thứ 6 \"Lập Chùy Vô Thổ\": bên Trắng dùng Pháo mở đường rồi kiên trì đẩy hai Binh, buộc Tướng Đen và Xe Đen liên tục phải đi những nước bắt buộc duy nhất, dần dần ép Tướng lùi về đúng vị trí gốc để rồi bị chính không gian chật hẹp đó giam giữ — mở đầu chuyên đề Bài 6, sát pháp Tiễn Phật Quy Điện.",
+      "content": "<h2>Tiễn Phật Quy Điện — đưa \"Phật\" về đúng chỗ để giam giữ</h2><p>Đây là bài toán tuyển từ cổ phổ <strong>\"Thao Lược Nguyên Cơ\"</strong>, quyển 4, cuộc thứ 6, mang tên \"Lập Chùy Vô Thổ\". Bài học mở đầu chuyên đề Bài 6 với một cái tên rất hình tượng: <strong>Tiễn Phật Quy Điện</strong> (đưa Phật về lại chính điện) — ví Tướng đối phương như một pho tượng Phật bị chính những người muốn \"tôn thờ\" ép buộc quay về đúng vị trí ban đầu, để rồi bị giam cầm ngay tại đó bởi không gian chật hẹp quen thuộc.</p><h2>Chuỗi nước bắt buộc liên tiếp</h2><p>Toàn bộ ván đấu là một chuỗi các nước đi gần như hoàn toàn bắt buộc cho bên Đen — sách nhấn mạnh liên tục: \"nước đi bắt buộc đành chịu\", rồi \"lại là nước đi bắt buộc\". Ngay cả khi Xe Đen buộc phải ăn Pháo Trắng để \"tạm thời hóa giải thế nguy cấp\", đó cũng chỉ là một khoảng thở tạm thời — bên Trắng vẫn tiếp tục đẩy Binh, và Tướng Đen vẫn phải tiếp tục lùi.</p><h2>Không lối thoát, chỉ còn quay về nơi bắt đầu</h2><p>Điều đặc sắc của sát pháp này là Tướng Đen không bị dồn ra một góc xa lạ nào cả — mà bị buộc phải lùi dần về đúng vị trí quen thuộc ban đầu của mình. Nhưng chính tại đó, không gian vốn chật hẹp của cửu cung, kết hợp với hai Binh đã áp sát, khiến Tướng \"không có lối để thoát\", đúng như cái tên Tiễn Phật Quy Điện gợi lên: về đến nơi rồi, nhưng lại không thể rời đi nữa.</p><p>Bài học từ bài toán cổ này: đôi khi không cần đuổi đối phương đi thật xa hay vào một góc xa lạ mới có thể giam giữ được — chỉ cần liên tục tạo ra các nước đi bắt buộc, buộc đối phương tự thu hẹp dần không gian hoạt động của chính mình, cho đến khi ngay cả vị trí quen thuộc nhất cũng trở thành cái bẫy.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Tiễn Phật Quy Điện — Ép Tướng Về Đúng Ngôi Vị Cũ (Ví Dụ 1)",
+      "seo_description": "Bài toán cờ tàn cổ điển: Pháo mở đường, hai Binh kiên trì ép Tướng lùi về đúng vị trí ban đầu rồi giam giữ tại đó — sát pháp Tiễn Phật Quy Điện. 9 nước, chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/9/3k5/9/2PC4n/2r6/9/3CK4/4App2/9",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/9/3k5/9/2PC4n/3r5/9/3CK4/4App2/9",
+          "move_notation_wxf": "Xe 3 bình 4",
+          "move_notation_iccs": "c4d4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe — nước đi bắt buộc đành chịu; Xe Đen từ đây mất đi tính chiến đấu, bị bên Trắng kềm chế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/9/3k5/2P6/3C4n/3r5/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tốt 7 tiến 1",
+          "move_notation_iccs": "c5c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/3k5/9/2P6/3C4n/3r5/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng — lại là nước đi bắt buộc, nếu Tướng không thoái về sau thì bên Trắng B7-6 sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/3k5/9/3P5/3C4n/3r5/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/3k5/9/3P5/3r4n/9/9/3CK4/4App2/9",
+          "move_notation_wxf": "Xe 4 thoái 1",
+          "move_notation_iccs": "d4d5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Xe ăn Pháo — tạm thời hóa giải thế nguy cấp trước mắt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3k5/3P5/9/3r4n/9/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3k5/9/3P5/9/3r4n/9/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3k5/3P5/9/9/3r4n/9/9/3CK4/4App2/9",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — bên Trắng từng bước bức ép, Tướng Đen không có lối để thoát, cho đến Tiễn Phật Quy Điện, bó tay chịu trói.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
