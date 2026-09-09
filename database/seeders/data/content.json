@@ -73313,6 +73313,194 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21604,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Lập Xe Mã Sát Pháp — Xe Tróc Mắt Tượng Mở Đường, Bất Ngờ Xuất Diệu Thủ Ăn Pháo — Ví Dụ 4",
+      "slug": "c2-lap-xe-ma-vi-du-4",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "r1bak4/4a4/n3b4/2p1N3p/1cc3pn1/p2R2P2/P3P3P/4CCN1B/4A1r2/R1B1KA3",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Ván đấu thực chiến đến hồi thứ 16 giữa Phí Cẩm Khâm (Trắng) và Tăng Triển Hồng (Đen) tại giải cá nhân toàn quốc — ví dụ cuối cùng Bài 16: Xe Trắng tróc mắt Tượng mở đường cho Mã nhảy vào trung lộ phát động thế công, Đen tham ăn Tượng rơi vào cạm bẫy Pháo tiến tuyến đáy, cuối cùng Trắng bất ngờ xuất diệu thủ dùng Xe ăn Pháo, hoàn tất hình chữ điền giữa Mã và Tướng Đen — đúng sát pháp Lập Xe Mã tinh xảo.",
+      "content": "<h2>Xe tróc mắt Tượng, mở đường cho Mã nhảy vào trung lộ</h2><p>Đây là hình thế thực chiến đến hồi thứ 16 trong ván đấu giữa <strong>Phí Cẩm Khâm</strong> (cầm quân Trắng) và <strong>Tăng Triển Hồng</strong> (cầm quân Đen) tại giải cá nhân toàn quốc — ví dụ khép lại Bài 16. Trắng mở màn bằng nước Xe tróc mắt Tượng, một nước chuẩn bị kỹ lưỡng: sách giải thích rõ mục đích là \"chuẩn bị nước sau nhảy Mã ở trung Pháo ăn Tướng, phát động thế công\" — một kế hoạch hai bước rõ ràng ngay từ đầu.</p><h2>Một nước bình Tướng được khen là \"mê hoặc cao\"</h2><p>Giữa ván, Trắng tung ra một nước bình Tướng được sách dành cho lời khen hiếm có: \"đây là nước cờ tinh hoa giành thắng lợi. Bên Trắng nước đi hàm súc uyển chuyển, huyền diệu biến ảo, có tính mê hoặc cao.\" Đây là một trong những lời khen giàu hình ảnh nhất trong toàn bộ sách — không chỉ đánh giá nước đi là tốt về mặt kỹ thuật, mà còn nhấn mạnh tính chất \"mê hoặc\", khiến đối phương khó lòng nhận ra ý đồ thực sự đằng sau.</p><h2>Cạm bẫy tham ăn Tượng dẫn tới đại họa</h2><p>Đen tham ăn Tượng của Trắng nhưng lập tức rơi vào cạm bẫy đã giăng sẵn. Sách mô tả hậu quả bằng ngôn ngữ đầy kịch tính: \"Pháo Trắng nhanh như chớp tiến tuyến đáy đối phương, có nước sát. Cửu cung bên Đen phút chốc tràn ngập khói lửa, đại họa lâm đầu.\" Đây là minh chứng kinh điển cho nguyên tắc: một nước ăn quân trông có vẻ hời lại có thể là chính cái bẫy dẫn tới thất bại toàn diện.</p><h2>Diệu thủ bất ngờ: Xe ăn Pháo hoàn tất hình chữ điền</h2><p>Đòn kết thúc của ván đấu không phải là một nước chiếu tướng trực tiếp, mà là một diệu thủ bất ngờ: Trắng dùng Xe ăn thẳng Pháo của Đen. Sách giải thích lý do nước này quyết định toàn cục: \"do vị trí Mã Trắng với Tướng Đen có hình chữ điền, tạo thành sát pháp Lập Xe Mã tinh xảo.\" Đây là lần thứ hai trong Bài 16 hình ảnh chữ \"điền\" xuất hiện (sau ví dụ 2), củng cố thêm vai trò của mô hình hình học này như một dấu hiệu nhận diện quan trọng của sát pháp Lập Xe Mã — khi Mã đã áp sát đúng vị trí, chỉ cần một đòn ăn quân đơn giản cũng đủ để khóa chặt hoàn toàn thế cờ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Lập Xe Mã Nâng Cao — Diệu Thủ Xe Ăn Pháo, Hình Chữ Điền (Ví Dụ 4)",
+      "seo_description": "Ván đấu thực chiến Phí Cẩm Khâm vs Tăng Triển Hồng: Xe tróc mắt Tượng mở thế công, cạm bẫy tham ăn Tượng, kết liễu bằng diệu thủ Xe ăn Pháo theo sát pháp Lập Xe Mã.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "r1bak4/3Ra4/n3b4/2p1N3p/1cc3pn1/p5P2/P3P3P/4CCN1B/4A1r2/R1B1KA3",
+          "move_notation_wxf": "Xe 6 tiến 4",
+          "move_notation_iccs": "d4d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — sách cho biết: Xe Trắng tróc mắt Tượng, chuẩn bị nước sau nhảy Mã vào giữa để trung Pháo ăn Tướng, phát động thế công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "r1bak4/3Ra4/n3b4/2p1N3p/1cc3p2/p5P2/P3P1n1P/4CCN1B/4A1r2/R1B1KA3",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "h5g3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1cc3p2/p5P2/P3P1n1P/4CCN1B/4A1r2/R1B1KA3",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1cc3p2/p5P2/P3P3P/4nCN1B/4A1r2/R1B1KA3",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "g3e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1cc3p2/p5P2/P3P3P/4BCN1B/4A1r2/R3KA3",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "c0e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1c2c1p2/p5P2/P3P3P/4BCN1B/4A1r2/R3KA3",
+          "move_notation_wxf": "Pháo 3 bình 5",
+          "move_notation_iccs": "c5e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1c2c1p2/p5P2/P3P3P/4BCN1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách khen hết lời: đây là nước cờ tinh hoa giành thắng lợi, nước đi hàm súc uyển chuyển, huyền diệu biến ảo, có tính mê hoặc cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "r1bak4/3Ra4/n3b1N2/2p5p/1c4p2/p5P2/P3P3P/4cCN1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Pháo 5 tiến 3",
+          "move_notation_iccs": "e5e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "r1bakC3/3Ra4/n3b1N2/2p5p/1c4p2/p5P2/P3P3P/4c1N1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Pháo 4 tiến 7",
+          "move_notation_iccs": "f2f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — sách cho biết: nước cờ tinh diệu, Đen sau khi ăn Tượng lại rơi vào cạm bẫy, Pháo Trắng nhanh như chớp tiến tuyến đáy đối phương, đã có sẵn nước sát tiếp theo — cửu cung bên Đen phút chốc như tràn ngập khói lửa, đại họa lâm đầu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "rcbakC3/3Ra4/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Pháo 2 thoái 4",
+          "move_notation_iccs": "b5b9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "rcbCk4/3Ra4/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Pháo 4 bình 6",
+          "move_notation_iccs": "f9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "rcbak4/3R5/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4A1r2/R2K1A3",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "rcbak4/3R5/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4A1r2/1R1K1A3",
+          "move_notation_wxf": "Xe 9 bình 8",
+          "move_notation_iccs": "a0b0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "rcbak4/3R5/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4Ar3/1R1K1A3",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "g1f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "rRbak4/3R5/n3b1N2/2p5p/6p2/p5P2/P3P3P/4c1N1B/4Ar3/3K1A3",
+          "move_notation_wxf": "Xe 8 tiến 9",
+          "move_notation_iccs": "b0b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe. Đúng như sách khẳng định: \"Bên Trắng bất ngờ xuất diệu thủ dùng Xe ăn Pháo. Do vị trí Mã Trắng với Tướng Đen có hình chữ điền, tạo thành sát pháp Lập Xe Mã tinh xảo.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
