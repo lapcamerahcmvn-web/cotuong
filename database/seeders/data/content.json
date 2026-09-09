@@ -62960,6 +62960,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20907,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Quỉ Giác Mã — Dụ Rắn Ra Khỏi Hang, Song Pháo Phục Kích — Ví Dụ 7",
+      "slug": "c2-qui-giac-ma-vi-du-7",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4ka3/4a4/c3b1n2/p1Cn4p/4p1p2/PN2c4/2P3P1P/4C1N2/4A4/2BAK1B2",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Ván đấu thực chiến đến hồi thứ 17 giữa Hồ Vinh Hoa (Trắng) và Viên Hồng Lượng (Đen) tại giải Phái Uy Hổ Đường Bôi Vô: Trắng thực hiện trọn vẹn kế hoạch bốn giai đoạn — giành Tốt giữa, dụ Đen dốc quân tấn công để lộ hậu phương, rồi quỉ giác Mã phối hợp song Pháo kết liễu — kết thúc bằng một chiếu bí thật sự.",
+      "content": "<h2>Dụ rắn ra khỏi hang</h2><p>Đây là hình thế thực chiến đến hồi thứ 17 trong ván đấu giữa <strong>Hồ Vinh Hoa</strong> (cầm quân Trắng) và <strong>Viên Hồng Lượng</strong> (cầm quân Đen) tại giải Phái Uy Hổ Đường Bôi Vô. Sách vạch rõ kế hoạch tổng thể của Trắng ngay từ đầu: \"Bên Trắng xuất Tướng để tiến cho Pháo giành lấy trung Tốt, xác lập vị thế Pháo đầu, và dẫn dụ rắn ra khỏi hang, cho bên Đen Pháo phải Mã trái qua sông trợ công, tạo nên hậu phương bên Đen trống rỗng, sau cùng một nước quỉ giác Mã, phối hợp với song Pháo phục kích, dẫn bên Đen vào tử địa.\" Đây là một trong những mô tả kế hoạch chi tiết và đầy đủ nhất trong toàn bộ chuyên đề — bốn giai đoạn rõ ràng từ đầu đến cuối.</p><h2>Cái bẫy mang tên \"dẫn xà xuất động\"</h2><p>Đúng như kế hoạch, Đen đưa cả Pháo và Mã qua sông để tấn công, tưởng chừng đang chủ động — nhưng sách chỉ thẳng: đây chính là lúc Đen \"trúng kế 'dẫn xà xuất động' (dụ rắn ra khỏi hang), khiến hậu phương vô cùng trống rỗng.\" Đây là một bài học chiến lược quan trọng: đôi khi đối phương chủ động mời gọi bạn tấn công, chính vì họ đã tính toán trước rằng việc bạn dốc quân ra tấn công sẽ để lại khoảng trống chí mạng ở nhà.</p><h2>Cảnh báo bị bỏ lỡ</h2><p>Sách còn chỉ ra một thời điểm Đen có thể còn cơ hội: \"Bên Đen nhận thức không đầy đủ nguy cơ tiềm tàng\", nên chọn một phương án khác thì \"còn có thể chống cự.\" Đây là một chi tiết hiếm hoi khi sách phê bình trực tiếp mức độ nhận thức của người chơi (không chỉ nước đi cụ thể) — cho thấy tầm quan trọng của việc luôn tự hỏi \"đối phương đang toan tính điều gì\" thay vì chỉ tập trung vào kế hoạch tấn công của chính mình.</p><h2>Quỉ giác Mã phối hợp song Pháo</h2><p>Đúng như tên bài học và đúng như kế hoạch đã vạch ra từ đầu, Trắng đưa Mã vào góc cung phối hợp với hai Pháo để hoàn tất đòn kết liễu. Thế cờ cuối cùng được xác nhận là một chiếu bí thật sự — đúng như câu kết ngắn gọn của sách: \"Trắng thắng.\"</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Quỉ Giác Mã Nâng Cao — Dụ Rắn Ra Khỏi Hang, Song Pháo Phục Kích (Ví Dụ 7)",
+      "seo_description": "Ván đấu thực chiến Hồ Vinh Hoa vs Viên Hồng Lượng: Trắng dụ Đen dốc quân tấn công để lộ hậu phương, rồi quỉ giác Mã phối hợp song Pháo tạo chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4ka3/4a4/c3b1n2/p1Cn4p/4p1p2/PN2c4/2P3P1P/4C1N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng xuất Tướng — sách mở đầu: dùng nước này để dọn đường cho Pháo tiến giành Tốt giữa, xác lập thế Pháo đầu, đồng thời dụ rắn ra khỏi hang.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4ka3/4a4/4b1n2/p1Cn4p/4p1p2/cN2c4/2P3P1P/4C1N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Pháo 1 tiến 3",
+          "move_notation_iccs": "a7a4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo, ăn Binh Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4ka3/4a4/4b1n2/p1Cn4p/4C1p2/cN2c4/2P3P1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Pháo 5 tiến 3",
+          "move_notation_iccs": "e2e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo, ăn lại Tốt Đen — đúng như dự tính, giành được Tốt giữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4ka3/4a4/4b1n2/p1Cn4p/4C1p2/1N2c4/c1P3P1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Pháo 1 tiến 1",
+          "move_notation_iccs": "a4a3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4ka3/4a4/4b1n2/p1Cn4p/3NC1p2/4c4/c1P3P1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Mã 8 tiến 6",
+          "move_notation_iccs": "b4d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4ka3/4a4/4b1n2/p1Cn5/3NC1p1p/4c4/c1P3P1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Tốt 9 tiến 1",
+          "move_notation_iccs": "i6i5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt biên — sách cho biết: chuẩn bị nhảy Mã trái lên, tránh Trắng dùng Pháo đánh Tốt rồi tiến đáy tập kích; Pháo biên Đen không di chuyển cũng đủ để khống chế Mã phải bên Trắng xuất động.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4ka3/4a4/4b1n2/p1Cn5/3NC1p1p/2P1c4/c5P1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Tốt 7 tiến 1",
+          "move_notation_iccs": "c3c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4ka3/4a4/4b1n2/p1Cn5/3NC1p1p/2P1c4/5cP1P/6N2/4A4/2BA1KB2",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "a3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4ka3/4a4/4b1n2/p1Cn5/3NC1p1p/2P1c4/5cP1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "c0e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4ka3/4a4/4b4/p1Cn5/3NCnp1p/2P1c4/5cP1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 7 tiến 6",
+          "move_notation_iccs": "g7f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4ka3/4a4/4b4/pNCn5/4Cnp1p/2P1c4/5cP1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 6 tiến 8",
+          "move_notation_iccs": "d5b6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "4ka3/4a4/4b4/pNCn5/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "f5g3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã, ăn Binh Trắng — sách nhận xét: Pháo Mã Đen gấp gáp qua sông tấn công, đúng là trúng kế \"dẫn xà xuất động\" (dụ rắn ra khỏi hang) của Trắng, khiến hậu phương Đen vô cùng trống rỗng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "4ka3/4a4/4b4/CN1n5/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Pháo 7 bình 9",
+          "move_notation_iccs": "c6a6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn lại Tốt Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "4ka3/4a4/1n2b4/CN7/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 4 thoái 2",
+          "move_notation_iccs": "d6b7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "4ka3/4a4/1n1Nb4/C8/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 8 tiến 6",
+          "move_notation_iccs": "b6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "4ka3/3na4/3Nb4/C8/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 2 thoái 4",
+          "move_notation_iccs": "b7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "4ka3/3na4/3Nb4/7C1/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Pháo 9 bình 2",
+          "move_notation_iccs": "a6h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "3k1a3/3na4/3Nb4/7C1/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "3k1a3/1N1na4/4b4/7C1/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Mã 6 tiến 8",
+          "move_notation_iccs": "d7b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "4ka3/1N1na4/4b4/7C1/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "4ka1C1/1N1na4/4b4/9/4C1p1p/2P1c4/5cn1P/4B1N2/4A4/3A1KB2",
+          "move_notation_wxf": "Pháo 2 tiến 3",
+          "move_notation_iccs": "h6h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — CHIẾU BÍ THẬT SỰ. \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
