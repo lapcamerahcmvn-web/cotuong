@@ -56628,6 +56628,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20603,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Tiễn Phật Quy Điện — Hiến Xe Chuyển Bại Thành Thắng — Ví Dụ 3",
+      "slug": "c2-tien-phat-quy-dien-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/3ka1n2/9/4PN3/9/4p4/CR7/9/r2p1p3/4K4",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Bài toán tuyển từ cổ phổ \"Lạn Kha Thần Cơ\", cuộc thứ 27 \"Tiểu Trúc Sơ Hoa\": đối mặt với đòn sát chí mạng chỉ còn một nước của bên Đen, bên Trắng hiến ngay Xe chiếu Tướng để giành quyền chủ động, rồi dùng Binh truy đuổi không ngừng cho tới khi hoàn tất sát pháp Tiễn Phật Quy Điện.",
+      "content": "<h2>Nguy trong tấc gang — hiến Xe cứu vãn</h2><p>Đây là bài toán tuyển từ cổ phổ <strong>\"Lạn Kha Thần Cơ\"</strong>, cuộc thứ 27, mang tên \"Tiểu Trúc Sơ Hoa\", bên Trắng đi trước. Sách mô tả tình huống hết sức nguy cấp ngay từ đầu: bên Đen đang nắm giữ \"sát thế một chiêu chí mạng\" — nghĩa là chỉ cần một nước nữa, Đen sẽ chiếu bí. Trước áp lực đó, bên Trắng \"cần phải liên tiếp chiếu Tướng, mới có thể chuyển bại thành thắng\" — không còn thời gian để phòng thủ thông thường, chỉ có tấn công liên tục mới cứu vãn được tình thế.</p><h2>Hiến Xe — nước đi xuất kỳ bất ý</h2><p>Nước đi mở màn cho cuộc phản công là một quyết định táo bạo: hiến hẳn quân Xe để chiếu Tướng ngay lập tức. Sách khen ngợi đây là nước đi \"xuất kỳ bất ý, khởi phát liên hoàn tấn công\" — bất ngờ đến mức đối phương không kịp trở tay, mở ra cả một chuỗi tấn công phối hợp ngay sau đó. Đây là minh chứng rõ ràng cho tinh thần \"tấn công là cách phòng thủ tốt nhất\" khi đối mặt với một đòn sát sắp xảy ra.</p><h2>Binh nhỏ hoàn tất sát cục</h2><p>Sau khi giành lại quyền chủ động bằng nước hiến Xe, phần còn lại của ván đấu lặp lại mô-típ quen thuộc của chuyên đề Tiễn Phật Quy Điện: một quân Binh khiêm tốn kiên trì truy đuổi. Sách mô tả rất sinh động: \"Binh Trắng từng bước ép tới, hình bóng không rời, Tướng Đen muốn trốn cũng trốn không kịp, nấp lại không có chỗ nấp\" — cho đến khi \"Tướng Đen bị chết dưới tay tiểu Binh hèn mọn nhỏ nhoi\", một hình ảnh đối lập thú vị giữa một vị tướng và một quân cờ thấp bé nhất bàn cờ.</p><p>Bài học từ bài toán cổ này: khi đối mặt với một đòn sát sắp xảy ra mà không có nước phòng thủ trực tiếp nào hiệu quả, đôi khi giải pháp tốt nhất là phản công ngay lập tức, kể cả phải hy sinh quân lớn — miễn là đòn phản công đó đủ mạnh để giành lại quyền chủ động trước khi đối phương kịp hoàn tất kế hoạch của họ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Tiễn Phật Quy Điện — Hiến Xe Chuyển Bại Thành Thắng (Ví Dụ 3)",
+      "seo_description": "Bài toán cờ tàn cổ điển: hiến Xe chiếu Tướng cứu nguy trước đòn sát chí mạng, Binh nhỏ hoàn tất Tiễn Phật Quy Điện. Bàn cờ tương tác 11 nước, chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/3ka1n2/9/4PN3/9/4p4/C2R5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Xe 8 bình 6",
+          "move_notation_iccs": "b3d3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — đối diện với sát thế một chiêu chí mạng của bên Đen, bên Trắng cần phải liên tiếp chiếu Tướng mới có thể chuyển bại thành thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/3k2n2/3a5/4PN3/9/4p4/C2R5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/3k2n2/3R5/4PN3/9/4p4/C8/9/r2p1p3/4K4",
+          "move_notation_wxf": "Xe 6 tiến 4",
+          "move_notation_iccs": "d3d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng hiến Xe chiếu Tướng — xuất kỳ bất ý, khởi phát liên hoàn tấn công, là nước đi tinh diệu giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/6n2/3k5/4PN3/9/4p4/C8/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/6n2/3k5/3P1N3/9/4p4/C8/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/3k2n2/9/3P1N3/9/4p4/C8/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3k2n2/9/3P1N3/9/4p4/3C5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a3d3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/3k2n2/9/3P1N3/9/3p5/3C5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e4d4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/3k2n2/3P5/5N3/9/3p5/3C5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — Binh Trắng từng bước ép tới, hình bóng không rời; Tướng Đen muốn trốn cũng trốn không kịp, nấp lại không có chỗ nấp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3k5/6n2/3P5/5N3/9/3p5/3C5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3k5/3P2n2/9/5N3/9/3p5/3C5/9/r2p1p3/4K4",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — chiếu bí! Sau cùng Tướng Đen bị chết dưới tay tiểu Binh hèn mọn nhỏ nhoi.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
