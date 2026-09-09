@@ -65137,6 +65137,194 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21103,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Song Xe Thác — Bài Toán Cờ Tàn Cải Biên — Ví Dụ 3",
+      "slug": "c2-song-xe-thac-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "C3kab2/4a4/4b4/p7p/1Rp2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Bài toán cờ tàn cải biên minh họa sát pháp Song Xe Thác: Trắng dùng Pháo quét sạch toàn bộ Sĩ Tượng phòng thủ của Đen trong khi cả hai Xe lần lượt vào cuộc siết vòng vây, tạo chiếu bí thật sự — sách còn phân tích đầy đủ nhiều nhánh phòng thủ khác nhau của Đen, tất cả đều dẫn tới cùng kết quả Trắng thắng.",
+      "content": "<h2>Một bài toán cờ tàn: thứ tự nước đi quyết định thắng bại</h2><p>Khác với các ví dụ khác trong Bài 11 (đều là ván đấu thực chiến giữa hai kỳ thủ cụ thể), Ví dụ 3 này là một \"tàn cuộc thực chiến cải biên\" — một bài toán cờ tàn được biên soạn dựa trên một ván đấu thực tế, dùng để minh họa rõ nét nguyên lý của sát pháp Song Xe Thác. Sách đặt ra một câu hỏi thú vị ngay từ đầu: \"Bên Trắng lúc này nhảy Mã trước hay là tiến Xe chiếu Tướng, trông có vẻ là vấn đề trước sau, thực ra lại quan hệ đến thắng bại.\" Đây là một bài học kinh điển: đôi khi thứ tự thực hiện các nước đi — chứ không phải bản thân các nước đi — mới là yếu tố quyết định giữa thắng và thua.</p><h2>Ba đường đều dẫn tới Trắng thắng</h2><p>Điều làm bài toán này đặc biệt đáng học là sách phân tích đầy đủ nhiều nhánh khác nhau mà Đen có thể thử, và khẳng định tất cả đều dẫn tới cùng kết quả: \"cũng là Trắng thắng.\" Đây là một minh chứng cho một thế cờ tàn cuộc được tính toán chính xác đến mức không còn kẽ hở nào cho bên yếu thế — dù đối phương chọn phòng thủ theo hướng nào.</p><h2>Pháo quét sạch, Song Xe khép vòng vây</h2><p>Quan sát kỹ chuỗi nước đi, có thể thấy Pháo Trắng lần lượt ăn sạch cả hai Sĩ và cả hai Tượng của Đen — tước bỏ toàn bộ hệ thống phòng ngự quanh Tướng. Trong khi đó, cả hai Xe Trắng đều tham gia vào quá trình siết vòng vây (một Xe mở màn ở nước đầu tiên, Xe còn lại vào cuộc giữa chừng), đúng với tên gọi \"Song Xe Thác\" của cả bài học. Thế cờ cuối cùng được xác nhận là một chiếu bí thật sự, đúng như câu kết của sách: \"Bên Trắng dùng sát pháp Song Xe thác giành thắng lợi.\"</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Song Xe Thác Nâng Cao — Bài Toán Cờ Tàn Cải Biên (Ví Dụ 3)",
+      "seo_description": "Bài toán cờ tàn minh họa Song Xe Thác: Pháo Trắng quét sạch Sĩ Tượng Đen, song Xe siết vòng vây tạo chiếu bí thật, mọi nhánh phòng thủ đều dẫn tới Trắng thắng.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "CR2kab2/4a4/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Xe 8 tiến 4",
+          "move_notation_iccs": "b5b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "CR1akab2/9/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1R1Ckab2/9/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn Sĩ Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1R1Ck1b2/4a4/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1R2k1C2/4a4/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Pháo 6 bình 3",
+          "move_notation_iccs": "d9g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn Tượng Đen — sách cho biết: lúc này Trắng cũng có thể đổi hướng lui Pháo ăn Xe, tiếp theo cũng là Trắng thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1R1ak1C2/9/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1R1Ck4/9/4b4/p7p/2p2N1R1/3np1r2/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Pháo 3 bình 6",
+          "move_notation_iccs": "g9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn nốt Sĩ còn lại của Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1R1Ck4/9/4b4/p7p/2p2N1R1/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Xe sau bình 6",
+          "move_notation_iccs": "g4f4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe sau — sách nhận xét: nếu Đen đổi thành lui Xe thì Trắng vẫn có cách ăn thêm 1 Pháo của Đen, tiếp tục giằng co cũng là Trắng thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1R1Ck2R1/9/4b4/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Xe 2 tiến 4",
+          "move_notation_iccs": "h5h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "1R1Ck1bR1/9/9/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Tượng 5 thoái 7",
+          "move_notation_iccs": "e7g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "1R2k1CR1/9/9/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Pháo 6 bình 3",
+          "move_notation_iccs": "d9g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn nốt Tượng còn lại của Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "1R4CR1/4k4/9/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "6CR1/1R2k4/9/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Xe 8 thoái 1",
+          "move_notation_iccs": "b9b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "4k1CR1/1R7/9/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "4k2R1/1R7/6C2/p7p/2p2N3/3npr3/P1P5P/B8/4A4/2B1KArc1",
+          "move_notation_wxf": "Pháo 3 thoái 2",
+          "move_notation_iccs": "g9g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — CHIẾU BÍ THẬT SỰ. Đúng như sách khẳng định: \"Bên Trắng dùng sát pháp Song Xe thác giành thắng lợi.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
