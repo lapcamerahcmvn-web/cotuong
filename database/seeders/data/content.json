@@ -32952,7 +32952,8 @@
           "caption": "Xe bình sang chiếu hết — chuyển hoá thành đòn Bạch Liễm Tướng, kết thúc ván cờ.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33096,7 +33097,8 @@
           "caption": "Xe bình chiếu hết — Xe và Tốt đáy phối hợp dứt điểm.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33240,7 +33242,8 @@
           "caption": "Tốt tiến chiếu hết — con Tốt nhỏ mượn uy Pháo, nhất cử giành thắng lợi.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33340,7 +33343,8 @@
           "caption": "Xe bình sang chiếu hết — kết thúc bằng đòn đối mặt Tướng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33506,7 +33510,8 @@
           "caption": "Pháo bình chiếu hết — hình thành sát cục Bạch Liễm Tướng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33694,7 +33699,8 @@
           "caption": "Xe bình chiếu hết — Xe Pháo phối hợp, lợi dụng Sĩ Tượng đen cản nhau.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -33895,7 +33901,8 @@
           "caption": "Xe tiến chiếu hết — Giáp Xe Pháo hoàn tất.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -34061,7 +34068,8 @@
           "caption": "Pháo đáy lùi giăng, song Pháo cùng Xe khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -34227,7 +34235,8 @@
           "caption": "Xe lên đáy, hợp cùng song Pháo khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -34415,7 +34424,8 @@
           "caption": "Pháo đáy khép sát, song Pháo giáp công chiếu hết. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -34559,7 +34569,8 @@
           "caption": "Xe cắm hàng đáy, một Pháo trấn giữa một Pháo trầm đáy khép lưới — chiếu hết. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -34791,7 +34802,8 @@
           "caption": "Bình Xe ăn nốt — Trắng đoạt được Xe, thắng thế đã định.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -35023,7 +35035,8 @@
           "caption": "Tốt bình 5 ăn Sĩ trung tâm, tạo thành tuyệt sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -35180,7 +35193,8 @@
           "caption": "Xe thoái một bước — vừa chiếu vừa để lộ mặt Tướng đôi bên, chiếu hết. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -35535,7 +35549,8 @@
           "caption": "Xe bình sang khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -35836,7 +35851,8 @@
           "caption": "Đẩy Tốt khép sát cục Pháo Binh. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -36160,7 +36176,8 @@
           "caption": "Pháo kia tiến lên, song Pháo giáp công khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -36238,7 +36255,8 @@
           "caption": "Xe bình sang khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -36583,7 +36601,8 @@
           "caption": "Xe lùi khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -36985,7 +37004,8 @@
           "caption": "",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -37129,7 +37149,8 @@
           "caption": "",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -37273,7 +37294,8 @@
           "caption": "Xe kia bình sang khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -37461,7 +37483,8 @@
           "caption": "Xe kia bình sang khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -37714,7 +37737,8 @@
           "caption": "Xe tiến khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38059,7 +38083,8 @@
           "caption": "",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38289,7 +38314,8 @@
           "caption": "Xe rút, tắc mắt Tượng đen, Pháo đáy tuyệt sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38411,7 +38437,8 @@
           "caption": "Pháo lăn về, quét sạch phòng thủ — giải sát hoàn sát, Trắng giành thắng thế.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38577,7 +38604,8 @@
           "caption": "Xe lộ 2 thoái khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38721,7 +38749,8 @@
           "caption": "Xe thoái khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38799,7 +38828,8 @@
           "caption": "Pháo lăn về khép sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -38877,7 +38907,8 @@
           "caption": "Pháo bình vào trung lộ: quả Pháo sau chiếu Tướng xuyên qua quả Pháo trước làm ngòi — song Pháo trùng điệp chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -39100,7 +39131,8 @@
           "caption": "Pháo kia bình sang — song Pháo khéo léo tạo sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -39492,7 +39524,8 @@
           "caption": "Pháo rút — thế Tiền Mã hậu Pháo, trùng Pháo chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -39671,7 +39704,8 @@
           "caption": "Thoái Sĩ — muộn cung sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -39815,7 +39849,8 @@
           "caption": "Bình Pháo vào lộ 6 — điều kiện muộn sát đã đủ, chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40025,7 +40060,8 @@
           "caption": "Pháo tiến — muộn cung sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40292,7 +40328,8 @@
           "caption": "Mã về đúng ô khống chế — muộn cung sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40430,7 +40467,8 @@
           "caption": "Xe tiến khép — muộn cung sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40508,7 +40546,8 @@
           "caption": "Mã tiến — hình thành muộn sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40762,7 +40801,8 @@
           "caption": "Pháo lùi khép — muộn sát (cũng có thể M8/6). Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40906,7 +40946,8 @@
           "caption": "Pháo bình sang — muộn sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -40962,7 +41003,8 @@
           "caption": "Xe tiến khép — Pháo trấn trung lộ trói Tướng Sĩ Tượng, Xe cắm cửa Tướng như then cài cửa sắt: thiết môn thuyên sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41141,7 +41183,8 @@
           "caption": "Xe tiến cắm cửa Tướng — thiết môn thuyên sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41263,7 +41306,8 @@
           "caption": "Xe tiến cắm cửa Tướng — thiết môn thuyên sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41429,7 +41473,8 @@
           "caption": "Xe tiến khép — sát thế tam bá thủ đã thành. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41617,7 +41662,8 @@
           "caption": "Binh bình khép — Pháo Binh thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41796,7 +41842,8 @@
           "caption": "Binh bình khép cửa — Mã ngọa tào thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41874,7 +41921,8 @@
           "caption": "Binh tiến chiếu — Mã và Binh đồng thời chiếu Tướng (lưỡng chiếu), Đen không cách đối phó. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -41974,7 +42022,8 @@
           "caption": "Xe tiến — Mã ngọa tào thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42052,7 +42101,8 @@
           "caption": "Mã vào chuồng — Mã ngọa tào thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42421,7 +42471,8 @@
           "caption": "Xe bình khép — Mã ngọa tào thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42565,7 +42616,8 @@
           "caption": "Binh tiến — Mã ngọa tào phối Pháo Binh thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42665,7 +42717,8 @@
           "caption": "Xe tiến ăn Sĩ — quải giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42800,7 +42853,8 @@
           "caption": "Tốt bình khép cửa — quải giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -42900,7 +42954,8 @@
           "caption": "Xe kia bình khép — quải giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -43088,7 +43143,8 @@
           "caption": "Xe tiến — quải giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -43412,7 +43468,8 @@
           "caption": "Pháo thoái — thế Tiền Mã hậu Pháo chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -43534,7 +43591,8 @@
           "caption": "Xe bình vào giữa — chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -43929,7 +43987,8 @@
           "caption": "Xe bình khép — bạt hoàng Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44095,7 +44154,8 @@
           "caption": "Tốt bình khép — bạt hoàng Mã khéo léo giành thắng lợi. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44283,7 +44343,8 @@
           "caption": "Tốt tiến — bạt hoàng Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44405,7 +44466,8 @@
           "caption": "Xe bình khép — bạt hoàng Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44650,7 +44712,8 @@
           "caption": "Tốt tiến — bát giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44772,7 +44835,8 @@
           "caption": "Tốt bình khép — chiếu bí. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44850,7 +44914,8 @@
           "caption": "Xe bình khép — bát giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -44950,7 +45015,8 @@
           "caption": "Xe bình khép — bát giác Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45173,7 +45239,8 @@
           "caption": "Xe bình khép — điều ngư Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45317,7 +45384,8 @@
           "caption": "Xe bình khép — Xe Mã tạo thành sát cục. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45461,7 +45529,8 @@
           "caption": "Xe bình khép — điều ngư Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45649,7 +45718,8 @@
           "caption": "Xe bình khép — điều ngư Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45837,7 +45907,8 @@
           "caption": "Mã thoái — điều ngư Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -45959,7 +46030,8 @@
           "caption": "Xe tiến — Trắng chiếm ưu thế áp đảo, thế cờ đã định đoạt.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46103,7 +46175,8 @@
           "caption": "Xe tiến — cao điều Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46291,7 +46364,8 @@
           "caption": "Xe tiến — Trắng chiếm thế áp đảo hoàn toàn, Tướng đen bị dồn vào góc không lối thoát an toàn.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46457,7 +46531,8 @@
           "caption": "Xe tiến — cao điều Mã thành sát, gọn gàng sạch sẽ. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46645,7 +46720,8 @@
           "caption": "Xe bình khép — cao điều Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46877,7 +46953,8 @@
           "caption": "Xe bình khép — cao điều Mã thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -46955,7 +47032,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47121,7 +47199,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47309,7 +47388,8 @@
           "caption": "Mã thoái — Trắng chiếm ưu thế quyết định, thắng lợi đã định đoạt.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47453,7 +47533,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47597,7 +47678,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47785,7 +47867,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -47973,7 +48056,8 @@
           "caption": "Mã tiến — song Mã ẩm tuyền thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -48051,7 +48135,8 @@
           "caption": "Pháo bình khép — Mã nằm cùng tuyến hoành với Tướng cách 1 ô, Pháo phía sau chiếu qua Mã: Tiền Mã hậu Pháo thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -48151,7 +48236,8 @@
           "caption": "Mã tiến — Tiền Mã hậu Pháo thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -48317,7 +48403,8 @@
           "caption": "Mã thoái — Tiền Mã hậu Pháo thành sát. Trắng thắng.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     },
     {
       "series_slug": "sat-phap-dai-toan",
@@ -48505,7 +48592,8 @@
           "caption": "Pháo thoái — nước chờ. Đến đây tiểu Tốt Đen dù bình 3 hay bình 5, Trắng đều có thể Binh bình 6 chiếu Tướng, hình thành sát pháp thiết môn thuyên hoàn chỉnh.",
           "is_flip_reveal": false
         }
-      ]
+      ],
+      "puzzle_side": "do"
     }
   ]
 }
