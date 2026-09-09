@@ -63490,6 +63490,216 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21001,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Đại Đảm Xuyên Tâm — Mã Tiến Lui Đều Lợi, Hai Đường Đến Thắng — Ví Dụ 1",
+      "slug": "c2-dai-dam-xuyen-tam-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1r2kabr1/4a4/2n1b4/p7p/2P1c1p2/2R6/P3N1n1c/1CN1B1C2/4A4/3RKAB2",
+      "variation_tree": null,
+      "move_count": 17,
+      "summary": "Ván đấu thực chiến đến hồi thứ 21 giữa Lý Bổn Hàm (Trắng) và Lưu Văn Triết (Đen) tại giải Đấu Tranh Giải Tượng Kỳ Toàn Quốc: Trắng dùng một nước Mã \"tiến lui đều lợi\" tinh diệu, chủ động thí Pháo để dọn đường cho Mã ngọa tào, kết thúc bằng tuyên bố Đen \"hết đường cứu vãn\" — sách chỉ ra Trắng có tới hai cách kết thúc khác nhau (gồm cả đúng tên chủ đề Đại Đảm Xuyên Tâm) mà không cần chơi tiếp cụ thể.",
+      "content": "<h2>Một cái tên đầy khí phách: \"Đại Đảm Xuyên Tâm\"</h2><p>Đây là hình thế thực chiến đến hồi thứ 21 trong ván đấu giữa <strong>Lý Bổn Hàm</strong> (cầm quân Trắng) và <strong>Lưu Văn Triết</strong> (Bắc Kinh, cầm quân Đen) tại giải Đấu Tranh Giải Tượng Kỳ Toàn Quốc. Bài 10 mang một cái tên đầy hình ảnh: \"Đại Đảm Xuyên Tâm\" (gan lớn xuyên thẳng vào tim) — ám chỉ những nước Xe táo bạo lao thẳng vào trung tâm phòng thủ của đối phương bất chấp rủi ro.</p><h2>Một nước đi \"tất yếu\" theo cả hai hướng</h2><p>Điểm nổi bật đầu ván là một nước Mã được sách khen ngợi đặc biệt: \"nước cờ tinh diệu, tiến về trước có thể ăn Pháo, thoái về sau có thể ăn Xe, đây là nước đi tất yếu để triển khai thế công.\" Đây là một ví dụ điển hình về nước đi \"hai chiều đều lợi\" (dù đi tới hay lui đều có lợi ích riêng) — một dạng nước đi khiến đối phương không thể đoán trước ý đồ thực sự.</p><h2>Thí Pháo không tiếc, chuẩn bị Mã ngọa tào</h2><p>Một chi tiết chiến thuật thú vị: Trắng chủ động để mất một quân Pháo cho Mã Đen ăn mà \"không tiếc\", vì đang bận chuẩn bị một kế hoạch lớn hơn — tiến Mã vào vị trí \"ngọa tào\" (nằm ở máng, ô cạnh cung Tướng), \"lấy công làm thủ, nhìn xa trông rộng.\" Đây là bài học về ưu tiên: đôi khi giữ chặt một quân nhỏ lại cản trở một kế hoạch tấn công lớn hơn nhiều.</p><h2>Hai con đường dẫn tới chiến thắng</h2><p>Ván đấu khép lại bằng một tuyên bố dứt khoát của sách: \"Đến đây, bên Đen cùng đường bí lối, hết đường cứu vãn.\" Đáng chú ý, thay vì chơi tiếp cho đến chiếu bí cụ thể, sách chỉ ra rằng Trắng có tới hai cách kết thúc khác nhau đều đủ sức giành thắng lợi: nước Xe bình \"Đại Đảm Xuyên Tâm\" (đúng tên chủ đề của cả Bài 10) hoặc một phối hợp song Xe khác gọi là \"Song Xe Thác\". Vì thế cờ đã rõ ràng ngã ngũ, sách không cần chơi tiếp đến chiếu bí cụ thể — bài học ở đây không nằm ở nước chiếu bí chính xác, mà ở việc nhận ra khi nào một thế cờ đã chắc thắng đến mức có nhiều hơn một cách để kết thúc.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Đại Đảm Xuyên Tâm Nâng Cao — Mã Tiến Lui Đều Lợi (Ví Dụ 1)",
+      "seo_description": "Ván đấu thực chiến Lý Bổn Hàm vs Lưu Văn Triết: Trắng dùng Mã tinh diệu, thí Pháo dọn đường Mã ngọa tào, kết thúc với 2 cách thắng gồm Đại Đảm Xuyên Tâm.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1r2kabr1/4a4/2n1b4/p7p/1P2c1p2/2R6/P3N1n1c/1CN1B1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Tốt 7 bình 8",
+          "move_notation_iccs": "c5b5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4kabr1/4a4/2n1b4/p7p/1r2c1p2/2R6/P3N1n1c/1CN1B1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Xe 2 tiến 4",
+          "move_notation_iccs": "b9b5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn Binh Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4kabr1/4a4/2R1b4/p7p/1r2c1p2/9/P3N1n1c/1CN1B1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Xe 7 tiến 3",
+          "move_notation_iccs": "c4c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe, ăn Mã Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4kabr1/4a4/2R1b4/p7p/4c1p2/9/P3N1n1c/1rN1B1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Xe 2 tiến 3",
+          "move_notation_iccs": "b5b2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn Pháo Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4kabr1/4a4/2R1b4/p7p/4c1p2/2N6/P5n1c/1rN1B1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Mã 5 tiến 7",
+          "move_notation_iccs": "e3c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — sách khen đây là \"nước cờ tinh diệu\": tiến về trước có thể ăn Pháo, thoái về sau có thể ăn Xe, là nước đi tất yếu để triển khai thế công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4kabr1/4a4/2R1b4/p7p/4c1p2/2N6/P7c/1rN1n1C2/4A4/3RKAB2",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "g3e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã, ăn Tượng Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4kabr1/3Ra4/2R1b4/p7p/4c1p2/2N6/P7c/1rN1n1C2/4A4/4KAB2",
+          "move_notation_wxf": "Xe 6 tiến 8",
+          "move_notation_iccs": "d0d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — sách nhận xét: Trắng nắm bắt thời cơ, Xe chèn mắt Tượng, tiếp theo có thể sát; Đen tiến thoái lưỡng nan.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4kabr1/3Ra4/2R1b4/p7p/4c1p2/2N2n3/P7c/1rN3C2/4A4/4KAB2",
+          "move_notation_wxf": "Mã 5 thoái 6",
+          "move_notation_iccs": "e2f4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4kabr1/3Ra4/2R1b4/p7p/4c1p2/2N2n3/P7c/1rN3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách chỉ rõ: Trắng vừa không nhảy Mã ăn Pháo, cũng vừa không tiếc Pháo lộ 3 của mình bị Mã Đen ăn, mà chuẩn bị tiến Mã ngọa tào, lấy công làm thủ, nhìn xa trông rộng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "1r2kabr1/3Ra4/2R1b4/p7p/4c1p2/2N2n3/P7c/2N3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Xe 2 thoái 7",
+          "move_notation_iccs": "b2b9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "1r2kabr1/3Ra4/2R1b4/pN6p/4c1p2/5n3/P7c/2N3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Mã trước tiến 8",
+          "move_notation_iccs": "c4b6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "1r2kabr1/3Ra4/2R1b4/pN6p/3c2p2/5n3/P7c/2N3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Pháo 5 bình 4",
+          "move_notation_iccs": "e5d5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "1r2kabr1/2NRa4/2R1b4/p7p/3c2p2/5n3/P7c/2N3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "b6c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — sách cho biết: vì Trắng nước sau rút Pháo cầu sát, Xe Đen cần phải làm tốt việc chuẩn bị ăn Mã giải sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2r1kabr1/2NRa4/2R1b4/p7p/3c2p2/5n3/P7c/2N3C2/4A4/3K1AB2",
+          "move_notation_wxf": "Xe 2 bình 3",
+          "move_notation_iccs": "b9c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2r1kabr1/2NRa4/2R1b4/p7p/3c2p2/5n3/P7c/2N1C4/4A4/3K1AB2",
+          "move_notation_wxf": "Pháo 3 bình 5",
+          "move_notation_iccs": "g2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo trung lộ — sách nhận xét: nước đi hung hãn; lúc này nếu Xe Đen không ăn Mã thì Trắng có X6/3 chiếu Tướng, còn nếu Xe Đen ăn Mã thì Trắng có nước X6.4 Thiết Môn Thuyên tuyệt sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "4kabr1/2rRa4/2R1b4/p7p/3c2p2/5n3/P7c/2N1C4/4A4/3K1AB2",
+          "move_notation_wxf": "Xe 3 tiến 1",
+          "move_notation_iccs": "c9c8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn Mã Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "4kabr1/2RRa4/4b4/p7p/3c2p2/5n3/P7c/2N1C4/4A4/3K1AB2",
+          "move_notation_wxf": "Xe 7 tiến 1",
+          "move_notation_iccs": "c7c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe, ăn Xe Đen. Đến đây, Đen cùng đường bí lối, hết đường cứu vãn. Sách cho biết Trắng còn có cả hai đòn kết thúc khác nhau: X6-5 \"Đại Đảm Xuyên Tâm\" (đúng tên chủ đề Bài 10) hoặc X7.1 \"Song Xe Thác\" — cả hai đều đủ sức giành thắng lợi, dù sách không chơi tiếp cụ thể vì thế cờ đã ngã ngũ.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
