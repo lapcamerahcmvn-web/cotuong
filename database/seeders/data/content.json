@@ -54474,6 +54474,128 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20402,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Giáp Xe Pháo — Mã Kẹt Không Lối Thoát — Ví Dụ 2",
+      "slug": "c2-giap-xe-phao-nangcao-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "c3kab2/1R7/3nba3/8C/p2rp4/2P1P1Pp1/P8/3CB4/4A4/4K1B2",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ván đấu thực chiến giữa Chu Kim Thu (Trắng) và Trần Bá Tường (Đen) tuyển từ giải Cờ Tướng Thượng Hải và Quảng Đông, hình thế đến hồi thứ 61: Mã Đen bị kẹt hoàn toàn không có lối thoát, buộc Đen chỉ còn nước đẩy Tốt một chiều; bên Trắng ung dung tập kết Xe Pháo, dồn Tướng Đen tiến lui theo ý mình, hoàn tất sát thế Giáp Xe Pháo mà Đen không có cách nào hóa giải.",
+      "content": "<h2>Một quân Mã bị bỏ quên</h2><p>Đây là hình thế thực chiến giữa <strong>Chu Kim Thu</strong> (cầm quân Trắng) và <strong>Trần Bá Tường</strong> (cầm quân Đen), tuyển từ giải Cờ Tướng Thượng Hải và Quảng Đông, hình thế đến hồi thứ 61, hiện tại đến lượt bên Trắng đi cờ. Điểm mấu chốt của toàn bộ ván đấu nằm ở một chi tiết tưởng như nhỏ: <strong>Mã Đen hoàn toàn không có lối thoát</strong>. Vì vậy, ngay cả nước đi đầu tiên của Đen cũng là \"nước đi bắt buộc\" — chỉ còn cách đẩy Tốt ăn Binh, vì mọi phương án khác (như lên Sĩ) đều dẫn tới mất Xe ngay lập tức.</p><h2>Ung dung tập kết lực lượng</h2><p>Vì Mã Đen bị vô hiệu hóa hoàn toàn, bên Trắng có toàn quyền tự do tập kết Xe và Pháo mà không lo bị phản công. Sách mô tả giai đoạn này rất rõ: \"bên Trắng nhiều quân có thế, ưu thế không ngừng mở rộng, nhiệm vụ tập kết binh lực đã hoàn thành, Pháo ngắm chuẩn Tướng Đen\" — một quá trình chuẩn bị từ tốn nhưng chắc chắn, không vội vàng vì đối phương không có khả năng đảo ngược tình thế.</p><h2>Dồn Tướng theo đúng nhịp điệu</h2><p>Sau khi đã bố trí xong, bên Trắng luân phiên tiến lui Xe, buộc Tướng Đen phải tiến rồi lui theo đúng nhịp điệu mà Trắng sắp đặt. Cuối cùng, một nước bình Pháo đơn giản hoàn tất toàn bộ thế trận — sát thế Giáp Xe Pháo chính thức hình thành, và như sách khẳng định, \"bên Đen không có cách nào hóa giải\".</p><p>Bài học từ ván đấu: khi phát hiện một quân của đối phương bị kẹt hoàn toàn không có lối thoát (ở đây là Mã), đừng vội tấn công ngay — hãy tận dụng khoảng thời gian an toàn đó để tập kết đầy đủ lực lượng trước khi ra đòn quyết định. Một cuộc tấn công được chuẩn bị kỹ càng luôn chắc chắn hơn một đòn tấn công vội vàng khi lực lượng chưa đủ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Giáp Xe Pháo Nâng Cao — Mã Kẹt Không Lối Thoát (Ví Dụ 2)",
+      "seo_description": "Ván đấu thực chiến Chu Kim Thu vs Trần Bá Tường: Mã Đen kẹt hoàn toàn cho phép Trắng ung dung tập kết Xe Pháo, hoàn tất sát thế Giáp Xe Pháo không thể hóa giải.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "c3kab2/9/1R1nba3/8C/p2rp4/2P1P1Pp1/P8/3CB4/4A4/4K1B2",
+          "move_notation_wxf": "Xe 8 thoái 1",
+          "move_notation_iccs": "b8b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "c3kab2/9/1R1nba3/8C/p2r5/2P1p1Pp1/P8/3CB4/4A4/4K1B2",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e5e4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tốt ăn Binh đối phương — nước đi bắt buộc vì Mã Đen không có lối thoát; nếu đổi thành S6.5 thì X8.2, S5/4, X8/4 ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "c3kab2/9/1R1Cba3/8C/p2r5/2P1p1Pp1/P8/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Pháo 6 tiến 5",
+          "move_notation_iccs": "d2d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — bên Trắng nhiều quân có thế, ưu thế không ngừng mở rộng, nhiệm vụ tập kết binh lực đã hoàn thành, Pháo ngắm chuẩn Tướng Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "c3kab2/9/1R1Cba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e4e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "cR2kab2/9/3Cba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Xe 8 tiến 2",
+          "move_notation_iccs": "b7b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "cR3ab2/4k4/3Cba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "c4ab2/1R2k4/3Cba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Xe 8 thoái 1",
+          "move_notation_iccs": "b9b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "c3kab2/1R7/3Cba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "c3kab2/1R7/2C1ba3/8C/p2r5/2P3Pp1/P3p4/4B4/4A4/4K1B2",
+          "move_notation_wxf": "Pháo 6 bình 7",
+          "move_notation_iccs": "d7c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — bên Trắng đã thành sát thế Giáp Xe Pháo, bên Đen không có cách nào hóa giải.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
