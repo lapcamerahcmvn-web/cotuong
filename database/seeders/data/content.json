@@ -71679,6 +71679,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21503,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Song Mã Ẩm Tuyền Sát Pháp — Song Mã Sóng Đôi Cánh Bên, Ngọa Tào Quải Giác — Ví Dụ 3",
+      "slug": "c2-song-ma-am-tuyen-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5a1C1/3k2C2/4bNc2/p3p3p/9/2P2n3/c4n2P/N3B4/4A4/2BAK4",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Ván đấu thực chiến đến hồi thứ 33 giữa Phùng Minh Quang (Trắng) và Trần Hàn Phong (Đen) tại giải cá nhân toàn quốc: Đen có sẵn song Mã sóng đôi ở cánh bên tạo thành thế Song Mã Ẩm Tuyền, dùng phương thức Mã nhảy ngọa tào phối hợp Pháo tấn công, tận dụng một nước lui Mã sai lầm của Trắng để mở toang cửa chiến thắng, kết liễu bằng chiếu bí thật sự.",
+      "content": "<h2>Song Mã sóng đôi — hình mẫu chuẩn mực của cả Bài 15</h2><p>Đây là hình thế thực chiến đến hồi thứ 33 trong ván đấu giữa <strong>Phùng Minh Quang</strong> (cầm quân Trắng) và <strong>Trần Hàn Phong</strong> (cầm quân Đen) tại giải cá nhân toàn quốc. Khác với hai ví dụ trước — nơi thế Song Mã Ẩm Tuyền chỉ hình thành dần qua nhiều nước — ví dụ này được sách giới thiệu như hình mẫu kinh điển ngay từ đầu: \"bên Đen song Mã sóng đôi ở cánh bên, tạo thành thế Song Mã ẩm tuyền, phương thức công kích chủ yếu là Mã nhảy ngọa tào hoặc quải giác, song Mã Pháo phối hợp công kích tạo thành sát thế.\"</p><h2>Một nước lui Mã bị chỉ thẳng là nguyên nhân thua cuộc</h2><p>Giữa ván, sách đưa ra một trong những lời phê bình trực diện và nặng nề nhất trong toàn bộ chương sách: khi Trắng vận Mã rời khỏi vị trí thủ Sĩ giác, sách khẳng định thẳng đây \"là nguyên nhân hình thành thế bại\" — không phải chỉ là một nước không tốt, mà là nước quyết định toàn bộ kết cục ván đấu. Việc rời bỏ đúng ô phòng thủ này đã mở đường cho Đen bình Pháo Sĩ giác và nhảy Mã ngọa tạo — chính hai kỹ thuật được nêu tên trong phần giới thiệu.</p><h2>Tướng Trắng bị dồn ép liên tục</h2><p>Từ điểm đó trở đi, Tướng Trắng liên tục phải di chuyển để né tránh sức ép ngày càng siết chặt từ song Mã và Pháo của Đen. Sách còn hai lần chỉ ra các phương án khác của Trắng đều dẫn đến chuỗi nước Mã chiếu sát tương tự — cho thấy một khi thế Song Mã Ẩm Tuyền đã hình thành hoàn chỉnh với sự hỗ trợ của Pháo, Trắng gần như không còn phương án phòng thủ khả dĩ nào.</p><h2>Kết liễu đúng bằng kỹ thuật đã giới thiệu từ đầu</h2><p>Ván đấu khép lại bằng chính nước Mã tạo thành chiếu bí hoàn chỉnh, đúng như những gì sách đã mô tả ngay từ dòng giới thiệu đầu tiên. Đây là một ví dụ mẫu mực về cách trình bày sư phạm của sách: nêu rõ kỹ thuật và cơ chế vận hành trước, rồi minh họa bằng một ván đấu thực tế đi đúng theo kịch bản đã mô tả — giúp người học nắm chắc bản chất của Song Mã Ẩm Tuyền trước khi bước sang các biến thể phức tạp hơn.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Song Mã Ẩm Tuyền Nâng Cao — Song Mã Sóng Đôi Cánh Bên (Ví Dụ 3)",
+      "seo_description": "Ván đấu thực chiến Phùng Minh Quang vs Trần Hàn Phong: song Mã sóng đôi cánh bên, Mã ngọa tào phối hợp Pháo, kết liễu bằng chiếu bí thật sự.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5a1C1/3k2C2/4bNc2/p3p3p/9/2P6/c4n1nP/N3B4/4A4/2BAK4",
+          "move_notation_wxf": "Mã sau tiến 8",
+          "move_notation_iccs": "f4h3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "5a1C1/3k2C2/4bNc2/p3p3p/9/2P6/c1N2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Mã 9 tiến 7",
+          "move_notation_iccs": "a2c3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "5a1C1/3k2C2/4bNc2/p3p3p/9/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 1 bình 2",
+          "move_notation_iccs": "a3b3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4Na1C1/3k2C2/4b1c2/p3p3p/9/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Mã 4 tiến 5",
+          "move_notation_iccs": "f7e9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — sách cho biết: Trắng chuẩn bị ứng phó Đen tiến Pháo, nên tranh thủ đổi 1 Mã ngay lúc này, làm suy yếu năng lực tấn công của song Mã bên Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4Na1C1/3k2C2/4b1c2/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a1C1/2Nk2C2/4b1c2/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Mã 5 thoái 7",
+          "move_notation_iccs": "e9c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã — sách chỉ thẳng: Trắng vận Mã rời khỏi đúng vị trí thủ Sĩ giác, vô tình cho Đen cơ hội bình Pháo Sĩ giác và nhảy Mã ngọa tạo — chính là nguyên nhân hình thành thế bại cho Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a1C1/2Nk2C2/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 7 bình 6",
+          "move_notation_iccs": "g7f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5a3/2Nk2CC1/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 2 thoái 1",
+          "move_notation_iccs": "h9h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3k1a3/2N3CC1/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3k1a1C1/2N3C2/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 2 tiến 1",
+          "move_notation_iccs": "h8h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5a1C1/2Nk2C2/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "5a3/2Nk2CC1/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 2 thoái 1",
+          "move_notation_iccs": "h9h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3k1a3/2N3CC1/4bc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3k1a3/6CC1/4Nc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Mã trước thoái 5",
+          "move_notation_iccs": "c8e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n1nP/4B4/4A4/2BAK4",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n1nP/4BA3/9/2BAK4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e1f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ — sách cho biết: nếu Trắng đổi hướng khác, Đen có ngay nước Mã chiếu sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n2P/4Bn3/9/2BAK4",
+          "move_notation_wxf": "Mã 8 tiến 6",
+          "move_notation_iccs": "h3f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n2P/4Bn3/4K4/2BA5",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng — sách cho biết: nếu Trắng đổi hướng khác, Đen vẫn có chuỗi nước Mã dẫn đến chiếu sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n1nP/4B4/4K4/2BA5",
+          "move_notation_wxf": "Mã trước thoái 8",
+          "move_notation_iccs": "f2h3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n1nP/4B4/9/2BAK4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "3k5/4a1CC1/4Nc3/p7p/4p4/2P6/1cN2n2P/4B4/6n2/2BAK4",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "h3g1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — CHIẾU BÍ. Đúng như sách khẳng định: \"Bên Đen dùng sát pháp Song Mã ẩm tuyền giành thắng lợi.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
