@@ -73501,6 +73501,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21701,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Thiên Địa Pháo Sát Pháp — Thế Sát Đã Thành, Phản Kháng Chỉ Phí Công — Ví Dụ 1",
+      "slug": "c2-thien-dia-phao-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "Cn1rka3/4a4/5c3/2p5p/4R4/2P1pr3/P5p1P/B3C1n1B/4A4/1R2KA1Nc",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Mở đầu Bài 17 và cũng là bài cuối cùng của Chương 2: hình thế thực chiến cho thấy dù Đen nhiều hơn hẳn 1 Mã, thế sát Thiên Địa Pháo của Trắng đã hình thành hoàn chỉnh từ trước, không cách nào cứu vãn — Đen ngoan cường phản kích suốt nhiều hồi nhưng chỉ phí công vô ích, cuối cùng phải bó tay chịu trói nhận thua.",
+      "content": "<h2>Mở đầu bài học cuối cùng của Chương 2</h2><p>Bài 17 <strong>Thiên Địa Pháo Sát Pháp</strong> khép lại toàn bộ Chương 2 của sách. Ví dụ đầu tiên giới thiệu khái niệm cốt lõi ngay từ dòng đầu: \"bên Đen nhiều hơn 1 Mã, nhưng bên Trắng thế sát Thiên địa Pháo đã thành, không cách nào cứu vãn.\" Tên gọi \"Thiên Địa Pháo\" (Pháo Trời Đất) gợi hình ảnh hai quân Pháo đứng ở hai đầu — một gần \"trời\" (phía trên), một gần \"đất\" (phía dưới) — cùng khống chế một tuyến, tạo thành gọng kìm không thể phá vỡ.</p><h2>Hơn quân vẫn vô phương cứu vãn</h2><p>Điều đáng chú ý nhất của ví dụ này là sự tương phản giữa vật chất và thế trận: Đen đang CÓ ưu thế về quân số (nhiều hơn 1 Mã), nhưng điều đó hoàn toàn không có ý nghĩa khi thế sát Thiên Địa Pháo của Trắng \"đã thành\". Sách khẳng định dứt khoát: \"cho dù cố sức nổi loạn cũng phí công vô ích, chẳng giải quyết được gì.\" Đây là bài học nền tảng cho cả Bài 17: một khi thế sát Thiên Địa Pháo đã hình thành hoàn chỉnh, lợi thế quân số của đối phương trở thành vô nghĩa.</p><h2>Truy kích không ngừng nghỉ</h2><p>Trắng thực hiện đúng triết lý \"đánh thẳng một mạch, thừa thắng truy kích, không cho bên Đen cơ hội ngơi nghỉ\" — không có một nước nào lơi lỏng hay cho phép Đen tổ chức lại phòng ngự. Ngay cả khi có cơ hội đi chậm lại, sách vẫn khen ngợi việc Trắng \"quyết không mềm tay, làm tốt sát pháp của mình\" — một lời nhắc nhở về tầm quan trọng của sự kiên định khi đã nắm chắc phần thắng.</p><h2>Phản kháng ngoan cường nhưng vô ích</h2><p>Ván đấu khép lại với hình ảnh Đen đã \"trải qua mấy hồi ngoan cường dũng mãnh phản kích\" — không đầu hàng ngay mà cố gắng chống trả đến cùng — nhưng cuối cùng vẫn phải \"bó tay chịu trói, đành phải nhận thua.\" Đây là một cách mở đầu phù hợp cho bài học cuối chương: khẳng định ngay từ ví dụ đầu tiên rằng một khi Thiên Địa Pháo đã thành hình, kết quả gần như đã được định đoạt từ trước, bất kể đối phương có bao nhiêu quân hay phản kháng quyết liệt đến đâu.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Thiên Địa Pháo Nâng Cao — Thế Sát Đã Thành, Vô Phương Cứu Vãn (Ví Dụ 1)",
+      "seo_description": "Mở đầu Bài 17 và khép lại Chương 2: dù Đen hơn quân, thế sát Thiên Địa Pháo của Trắng đã thành khiến mọi phản kháng đều vô ích.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "CR1rka3/4a4/5c3/2p5p/4R4/2P1pr3/P5p1P/B3C1n1B/4A4/4KA1Nc",
+          "move_notation_wxf": "Xe 8 tiến 9",
+          "move_notation_iccs": "b0b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — sách cho biết: Trắng đánh thẳng một mạch, thừa thắng truy kích, không cho Đen cơ hội ngơi nghỉ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "CR1rka3/4a4/9/2p5p/4R4/2P1pr3/P5p1P/B3C1n1B/4A4/4Kc1Nc",
+          "move_notation_wxf": "Pháo 6 tiến 7",
+          "move_notation_iccs": "f7f0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P5p1P/B3C1n1B/4A4/4Kc1Nc",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e5d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — sách khen: nước cờ tinh diệu, Trắng quyết không mềm tay, làm tốt sát pháp của mình.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C1n1B/4A4/4K2Nc",
+          "move_notation_wxf": "Pháo 6 thoái 3",
+          "move_notation_iccs": "f0f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C1n1B/4AN3/4K3c",
+          "move_notation_wxf": "Mã 2 tiến 4",
+          "move_notation_iccs": "h0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C3B/4AN3/4K2nc",
+          "move_notation_wxf": "Mã 7 tiến 8",
+          "move_notation_iccs": "g2h0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C4/4AN3/4K1Bnc",
+          "move_notation_wxf": "Tượng 1 thoái 3",
+          "move_notation_iccs": "i2g0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C1n2/4AN3/4K1B1c",
+          "move_notation_wxf": "Mã 8 thoái 7",
+          "move_notation_iccs": "h0g2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C1n1B/4AN3/4K3c",
+          "move_notation_wxf": "Tượng 3 tiến 1",
+          "move_notation_iccs": "g0i2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C3B/4AN3/4Kn2c",
+          "move_notation_wxf": "Mã 7 tiến 6",
+          "move_notation_iccs": "g2f0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "CR1rka3/4a4/9/2p5p/3R5/2P1pr3/P4cp1P/B3C4/4AN3/4KnB1c",
+          "move_notation_wxf": "Tượng 1 thoái 3",
+          "move_notation_iccs": "i2g0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tượng. Đúng như sách khẳng định: \"Trải qua mấy hồi ngoan cường dũng mãnh phản kích, đến đây bên Đen bó tay chịu trói, đành phải nhận thua.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
