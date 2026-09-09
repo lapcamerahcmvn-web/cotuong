@@ -51704,6 +51704,513 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20204,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Ngọa Tào Mã — Kết Hợp Tiến Mã Hậu Pháo — Ví Dụ 4",
+      "slug": "c2-ngoa-tao-ma-vi-du-4",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4ka3/4a4/c3b4/p7p/2n2Nb2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+      "variation_tree": [
+        {
+          "from": 41,
+          "to": 30,
+          "iccs": "f5d6",
+          "wxf": "Mã 4 tiến 6",
+          "side": "do",
+          "reveal": null,
+          "fen": "4ka3/4a4/c3b4/p2N4p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "caption": "Trắng nhảy Mã Ngọa tào — nước đi tốt nhất lúc này: Pháo đã khống chế Mã Đen nhưng chưa có nước sát, cần Mã phối hợp mới phát động được tấn công.",
+          "children": [
+            {
+              "from": 13,
+              "to": 21,
+              "iccs": "e8d7",
+              "wxf": "Sĩ 5 tiến 4",
+              "side": "den",
+              "reveal": null,
+              "fen": "4ka3/9/c2ab4/p2N4p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+              "caption": "Đen chỉ Sĩ ngăn ngừa Mã Ngọa tào — cũng có thể đi P1-4 để ngăn Mã, nhưng nếu sai lầm đi P1.3 thì sẽ dính cả chuỗi sát cục dài phía sau.",
+              "children": [
+                {
+                  "from": 30,
+                  "to": 23,
+                  "iccs": "d6f7",
+                  "wxf": "Mã 6 tiến 4",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "4ka3/9/c2abN3/p7p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                  "caption": "Trắng tiến Mã.",
+                  "children": [
+                    {
+                      "from": 4,
+                      "to": 13,
+                      "iccs": "e9e8",
+                      "wxf": "Tướng 5 tiến 1",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "5a3/4k4/c2abN3/p7p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                      "caption": "Đen tiến Tướng.",
+                      "children": [
+                        {
+                          "from": 23,
+                          "to": 34,
+                          "iccs": "f7h6",
+                          "wxf": "Mã 4 thoái 2",
+                          "side": "do",
+                          "reveal": null,
+                          "fen": "5a3/4k4/c2ab4/p6Np/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                          "caption": "Trắng lui Mã.",
+                          "children": [
+                            {
+                              "from": 38,
+                              "to": 31,
+                              "iccs": "c5e6",
+                              "wxf": "Mã 3 thoái 5",
+                              "side": "den",
+                              "reveal": null,
+                              "fen": "5a3/4k4/c2ab4/p3n2Np/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                              "caption": "Đen tiến Mã.",
+                              "children": [
+                                {
+                                  "from": 34,
+                                  "to": 15,
+                                  "iccs": "h6g8",
+                                  "wxf": "Mã 2 tiến 3",
+                                  "side": "do",
+                                  "reveal": null,
+                                  "fen": "5a3/4k1N2/c2ab4/p3n3p/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                                  "caption": "Mã Trắng tự xuống hậu tất, vừa khống chế Tướng Đen, lại vừa ẩn chứa nước P2.5 tạo thành thế Tiến Mã Hậu Pháo sát.",
+                                  "children": [
+                                    {
+                                      "from": 13,
+                                      "to": 14,
+                                      "iccs": "e8f8",
+                                      "wxf": "Tướng 5 bình 6",
+                                      "side": "den",
+                                      "reveal": null,
+                                      "fen": "5a3/5kN2/c2ab4/p3n3p/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+                                      "caption": "Đen bình Tướng.",
+                                      "children": [
+                                        {
+                                          "from": 61,
+                                          "to": 16,
+                                          "iccs": "h3h8",
+                                          "wxf": "Pháo 2 tiến 5",
+                                          "side": "do",
+                                          "reveal": null,
+                                          "fen": "5a3/5kNC1/c2ab4/p3n3p/6b2/P7P/4P3n/3CBA2B/4A4/4K4",
+                                          "caption": "Trắng tiến Pháo.",
+                                          "children": [
+                                            {
+                                              "from": 14,
+                                              "to": 23,
+                                              "iccs": "f8f7",
+                                              "wxf": "Tướng 6 tiến 1",
+                                              "side": "den",
+                                              "reveal": null,
+                                              "fen": "5a3/6NC1/c2abk3/p3n3p/6b2/P7P/4P3n/3CBA2B/4A4/4K4",
+                                              "caption": "Đen tiến Tướng — nếu Trắng đổi thành đi B5.1 thì công dứt khoát hơn nữa; còn nếu Đen đổi thành đi M9.7 thì cũng dính một chuỗi sát dài khác.",
+                                              "children": [
+                                                {
+                                                  "from": 67,
+                                                  "to": 51,
+                                                  "iccs": "e2g4",
+                                                  "wxf": "Tượng 5 tiến 3",
+                                                  "side": "do",
+                                                  "reveal": null,
+                                                  "fen": "5a3/6NC1/c2abk3/p3n3p/6b2/P5B1P/4P3n/3C1A2B/4A4/4K4",
+                                                  "caption": "Trắng tiến Tượng.",
+                                                  "children": [
+                                                    {
+                                                      "from": 31,
+                                                      "to": 24,
+                                                      "iccs": "e6g7",
+                                                      "wxf": "Mã 5 thoái 7",
+                                                      "side": "den",
+                                                      "reveal": null,
+                                                      "fen": "5a3/6NC1/c2abkn2/p7p/6b2/P5B1P/4P3n/3C1A2B/4A4/4K4",
+                                                      "caption": "Đen lui Mã — nếu đổi thành S6.5 ngay từ đây thì cũng dính chuỗi sát dài khác; Trắng thí Pháo ở đoạn này có sức tuyệt diệu.",
+                                                      "children": [
+                                                        {
+                                                          "from": 58,
+                                                          "to": 49,
+                                                          "iccs": "e3e4",
+                                                          "wxf": "Tốt 5 tiến 1",
+                                                          "side": "do",
+                                                          "reveal": null,
+                                                          "fen": "5a3/6NC1/c2abkn2/p7p/6b2/P3P1B1P/8n/3C1A2B/4A4/4K4",
+                                                          "caption": "Trắng đẩy Binh.",
+                                                          "children": [
+                                                            {
+                                                              "from": 5,
+                                                              "to": 13,
+                                                              "iccs": "f9e8",
+                                                              "wxf": "Sĩ 6 tiến 5",
+                                                              "side": "den",
+                                                              "reveal": null,
+                                                              "fen": "9/4a1NC1/c2abkn2/p7p/6b2/P3P1B1P/8n/3C1A2B/4A4/4K4",
+                                                              "caption": "Đen bình Sĩ.",
+                                                              "children": [
+                                                                {
+                                                                  "from": 49,
+                                                                  "to": 40,
+                                                                  "iccs": "e4e5",
+                                                                  "wxf": "Tốt 5 tiến 1",
+                                                                  "side": "do",
+                                                                  "reveal": null,
+                                                                  "fen": "9/4a1NC1/c2abkn2/p7p/4P1b2/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                  "caption": "Trắng đẩy Binh tiếp — đến đây bên Đen nhận thua. Nếu đi tiếp đều thua, xem 2 biến bên dưới.",
+                                                                  "children": [
+                                                                    {
+                                                                      "from": 18,
+                                                                      "to": 9,
+                                                                      "iccs": "a7a8",
+                                                                      "wxf": "Pháo 1 thoái 1",
+                                                                      "side": "den",
+                                                                      "reveal": null,
+                                                                      "fen": "9/c3a1NC1/3abkn2/p7p/4P1b2/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                      "caption": "Biến 1: Trắng thí Pháo dụ.",
+                                                                      "children": [
+                                                                        {
+                                                                          "from": 40,
+                                                                          "to": 31,
+                                                                          "iccs": "e5e6",
+                                                                          "wxf": "Tốt 5 tiến 1",
+                                                                          "side": "do",
+                                                                          "reveal": null,
+                                                                          "fen": "9/c3a1NC1/3abkn2/p3P3p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                          "caption": "Đen đẩy Binh.",
+                                                                          "children": [
+                                                                            {
+                                                                              "from": 9,
+                                                                              "to": 15,
+                                                                              "iccs": "a8g8",
+                                                                              "wxf": "Pháo 1 bình 7",
+                                                                              "side": "den",
+                                                                              "reveal": null,
+                                                                              "fen": "9/4a1cC1/3abkn2/p3P3p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                              "caption": "Trắng bình Pháo.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "from": 31,
+                                                                                  "to": 32,
+                                                                                  "iccs": "e6f6",
+                                                                                  "wxf": "Tốt 5 bình 4",
+                                                                                  "side": "do",
+                                                                                  "reveal": null,
+                                                                                  "fen": "9/4a1cC1/3abkn2/p4P2p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                                  "caption": "Đen buộc bình Binh — chiếu bí thật, Trắng thắng.",
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "from": 42,
+                                                                      "to": 26,
+                                                                      "iccs": "g5i7",
+                                                                      "wxf": "Tượng 7 thoái 9",
+                                                                      "side": "den",
+                                                                      "reveal": null,
+                                                                      "fen": "9/4a1NC1/c2abkn1b/p7p/4P4/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                      "caption": "Biến 2: Trắng lui Tượng.",
+                                                                      "children": [
+                                                                        {
+                                                                          "from": 40,
+                                                                          "to": 31,
+                                                                          "iccs": "e5e6",
+                                                                          "wxf": "Tốt 5 tiến 1",
+                                                                          "side": "do",
+                                                                          "reveal": null,
+                                                                          "fen": "9/4a1NC1/c2abkn1b/p3P3p/9/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                          "caption": "Đen đẩy Binh.",
+                                                                          "children": [
+                                                                            {
+                                                                              "from": 24,
+                                                                              "to": 43,
+                                                                              "iccs": "g7h5",
+                                                                              "wxf": "Mã 7 tiến 8",
+                                                                              "side": "den",
+                                                                              "reveal": null,
+                                                                              "fen": "9/4a1NC1/c2abk2b/p3P3p/7n1/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                              "caption": "Trắng nhảy Mã.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "from": 15,
+                                                                                  "to": 34,
+                                                                                  "iccs": "g8h6",
+                                                                                  "wxf": "Mã 3 thoái 2",
+                                                                                  "side": "do",
+                                                                                  "reveal": null,
+                                                                                  "fen": "9/4a2C1/c2abk2b/p3P2Np/7n1/P5B1P/8n/3C1A2B/4A4/4K4",
+                                                                                  "caption": "Trắng rút ăn Mã Đen — thắng chắc về chất, dù chưa chiếu hết ngay.",
+                                                                                  "children": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "move_count": 19,
+      "summary": "Ván đấu thực chiến giữa Hạ Ngân Xuyên (Trắng) và Hồng Trà (Đen) tại giải Phối Uy hộ băng vị, hình thế đến hồi thứ 30: Pháo Trắng đã khống chế Mã Đen nhưng chưa có nước sát, buộc phải dùng Mã Ngọa tào phối hợp mới phát động được tấn công; sau 15 nước kết hợp thế Tiến Mã Hậu Pháo, Đen nhận thua — dù đi hướng nào cũng dẫn tới thua, một hướng là chiếu bí thật sự.",
+      "content": "<h2>Khi Pháo khống chế thôi chưa đủ — cần Mã phối hợp</h2><p>Đây là hình thế thực chiến đến hồi thứ 30 trong ván đấu giữa <strong>Hạ Ngân Xuyên</strong> (cầm quân Trắng) và <strong>Hồng Trà</strong> (cầm quân Đen) tại giải Phối Uy hộ băng vị, hiện tại đến lượt bên Trắng đi cờ. Sách nêu rõ tình huống chiến thuật ban đầu: \"bên Trắng Pháo khống Mã Đen, nhưng không có nước sát, cần dùng Mã phối hợp để phát động tấn công. Rõ ràng, Trắng nhảy Mã Ngọa tào là nước đi tốt nhất\" — một minh họa điển hình cho việc một quân khống chế đơn lẻ (Pháo) cần thêm một quân phối hợp (Mã Ngọa tào) mới có thể chuyển hóa thành đòn tấn công thực sự.</p><h2>Cạm bẫy cho phòng thủ sai lầm</h2><p>Ngay từ nước phòng thủ đầu tiên, sách đã cảnh báo: bên Đen có hai lựa chọn hợp lý (chỉ Sĩ hoặc đẩy Pháo ngăn Mã), nhưng nếu chọn sai một nước tưởng chừng vô hại khác (P1.3) sẽ ngay lập tức rơi vào một chuỗi sát cục dài. Đây là kiểu bẫy thường gặp trong sát pháp Ngọa tào mã: bề ngoài có nhiều nước phòng thủ trông hợp lý, nhưng chỉ một vài trong số đó thực sự an toàn.</p><h2>Tiến Mã Hậu Pháo — đòn kết hợp then chốt</h2><p>Điểm nhấn kỹ thuật của ván đấu là cách Mã Trắng \"tự xuống hậu tất\" (lui về vị trí sau chốt), vừa khống chế trực tiếp Tướng Đen, vừa ẩn chứa sẵn nước Pháo tiến tạo thành thế <strong>Tiến Mã Hậu Pháo</strong> — một mẫu sát pháp khác kết hợp nhuần nhuyễn với chủ đề Ngọa tào mã của bài học. Xuyên suốt phần còn lại, sách liên tục chỉ ra: bất kể bên Đen chọn phòng thủ theo hướng nào ở mỗi ngã rẽ, đều có một chuỗi nước dẫn tới thất bại — cho thấy thế cờ đã được tính toán rất sâu, không chỉ dựa vào một đường thắng duy nhất.</p><p>Bài học từ ván đấu: khi một quân đã khống chế được mục tiêu của đối phương nhưng chưa đủ lực để dứt điểm, đừng vội tấn công đơn độc — hãy tìm quân thứ hai phối hợp (ở đây là Mã Ngọa tào) để biến thế khống chế thành đòn sát thật sự; đồng thời, trước một thế trận phức tạp với nhiều lựa chọn phòng thủ, chỉ có phân tích kỹ từng nhánh mới biết được nhánh nào thực sự an toàn.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Ngọa Tào Mã Nâng Cao — Kết Hợp Tiến Mã Hậu Pháo (Ví Dụ 4)",
+      "seo_description": "Ván đấu thực chiến Hạ Ngân Xuyên vs Hồng Trà: Mã Ngọa tào phối hợp Pháo tạo thế Tiến Mã Hậu Pháo, dẫn tới chiếu bí. Bàn cờ tương tác đầy đủ 2 biến kết thúc.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4ka3/4a4/c3b4/p2N4p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f5d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã Ngọa tào — nước đi tốt nhất lúc này: Pháo đã khống chế Mã Đen nhưng chưa có nước sát, cần Mã phối hợp mới phát động được tấn công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4ka3/9/c2ab4/p2N4p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen chỉ Sĩ ngăn ngừa Mã Ngọa tào — cũng có thể đi P1-4 để ngăn Mã, nhưng nếu sai lầm đi P1.3 thì sẽ dính cả chuỗi sát cục dài phía sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4ka3/9/c2abN3/p7p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "d6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5a3/4k4/c2abN3/p7p/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/4k4/c2ab4/p6Np/2n3b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Mã 4 thoái 2",
+          "move_notation_iccs": "f7h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a3/4k4/c2ab4/p3n2Np/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Mã 3 thoái 5",
+          "move_notation_iccs": "c5e6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a3/4k1N2/c2ab4/p3n3p/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Mã 2 tiến 3",
+          "move_notation_iccs": "h6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Mã Trắng tự xuống hậu tất, vừa khống chế Tướng Đen, lại vừa ẩn chứa nước P2.5 tạo thành thế Tiến Mã Hậu Pháo sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5a3/5kN2/c2ab4/p3n3p/6b2/P7P/4P2Cn/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "5a3/5kNC1/c2ab4/p3n3p/6b2/P7P/4P3n/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Pháo 2 tiến 5",
+          "move_notation_iccs": "h3h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5a3/6NC1/c2abk3/p3n3p/6b2/P7P/4P3n/3CBA2B/4A4/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — nếu Trắng đổi thành đi B5.1 thì công dứt khoát hơn nữa; còn nếu Đen đổi thành đi M9.7 thì cũng dính một chuỗi sát dài khác.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5a3/6NC1/c2abk3/p3n3p/6b2/P5B1P/4P3n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Tượng 5 tiến 3",
+          "move_notation_iccs": "e2g4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "5a3/6NC1/c2abkn2/p7p/6b2/P5B1P/4P3n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Mã 5 thoái 7",
+          "move_notation_iccs": "e6g7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã — nếu đổi thành S6.5 ngay từ đây thì cũng dính chuỗi sát dài khác; Trắng thí Pháo ở đoạn này có sức tuyệt diệu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "5a3/6NC1/c2abkn2/p7p/6b2/P3P1B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e3e4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng đẩy Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "9/4a1NC1/c2abkn2/p7p/6b2/P3P1B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "9/4a1NC1/c2abkn2/p7p/4P1b2/P5B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e4e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng đẩy Binh tiếp — đến đây bên Đen nhận thua. Nếu đi tiếp đều thua, xem 2 biến bên dưới.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "9/c3a1NC1/3abkn2/p7p/4P1b2/P5B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Pháo 1 thoái 1",
+          "move_notation_iccs": "a7a8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Biến 1: Trắng thí Pháo dụ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "9/c3a1NC1/3abkn2/p3P3p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e5e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen đẩy Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/4a1cC1/3abkn2/p3P3p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Pháo 1 bình 7",
+          "move_notation_iccs": "a8g8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "9/4a1cC1/3abkn2/p4P2p/6b2/P5B1P/8n/3C1A2B/4A4/4K4",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e6f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc bình Binh — chiếu bí thật, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
