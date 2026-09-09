@@ -103,6 +103,12 @@
   - **Fix đọc sơ đồ nhiều lần**: Hình1.98 hàng 0 lệch 1 cột (validatePosition bắt Tượng/Sĩ sai ô); Hình1.101 đọc lại từ đầu bằng detector thô (nhầm Sĩ/Tượng đỏ vị trí, lẫn A_RED/B_RED).
   - **Series = 88 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 14).
   - **Tiếp theo**: Bài 17 còn vd3+ (Hình 1.105 đã detect, trang 72+), rồi Bài 18.
+- **2026-09-09 (lô 15) — HOÀN TẤT Bài 17 (6vd) + Bài 18 Song Mã Ẩm Tuyền (6vd) — 10 bài mới**:
+  - **Bài 17 CAO ĐIỀU MÃ** hoàn tất: vd3 (song Mã đảo bước — framing "áp đảo" vì Đen còn nước chắn), vd4 (gọn gàng sạch sẽ, mate), vd5 (tặng Binh cho ăn, mate), vd6 (Xe Mã liên hợp tác chiến, 19 nước, mate). Đủ 6/6 ví dụ.
+  - **Bài 18 SONG MÃ ẨM TUYỀN (Đá Cổn Mã)** (song Mã cánh sườn: 1 Mã khống chế cửa Tướng lộ 2/8 hoành 9, 1 Mã ngọa tào, mượn sức nhau chiếu rút): vd1 (khống chế rồi ngọa tào, mate), vd2 (mượn sức chiếu rút, mate), vd3 (mượn uy hiếp từ xa — framing "ưu thế" vì không mate ngay), vd4 (thí Mã quải giác, mate), vd5 (đổi hướng mượn Tướng trợ lực, mate), vd6 (nhảy vào miệng hổ — kinh điển nhất, 15 nước, mate). Đủ 6/6 ví dụ.
+  - **Lỗi FEN đáng nhớ phiên này**: (1) thiếu 1 hàng trống giữa 2 dòng FEN (Hình1.109 — làm lệch toàn bộ nửa dưới bàn cờ 1 hàng); (2) đếm sai offset ký tự số trong chuỗi FEN (Hình1.107, "3akab1c" vs "3aka1b1c" — B TƯỢNG lạc sang cột kế); (3) nhầm màu quân do độ phân giải thấp — Pháo đen tưởng đỏ (Hình1.107), Mã đỏ tưởng đen (Hình1.108); (4) đọc lệch cột do đếm nhầm quân trong cụm dày (Hình1.111, phải zoom + đối chiếu nhãn lưới `colrow` trực tiếp mới đúng). Bài học: LUÔN chạy `validatePosition` — mọi lỗi trên đều bị bắt ngay, không lỗi nào lọt qua.
+  - **Series = 98 bài** (13 cây biến). ĐÃ PUSH GitHub (lô 15).
+  - **Tiếp theo**: **Bài 19 TIỀN MÃ HẬU PHÁO** (Mã cùng trục dọc/hoành với Tướng, cách 1 ô trống, hạn chế Tướng; Pháo sau Mã chiếu bí). Trang 79+, Hình 1.115 đã detect (vd1 dở).
 - **2026-09-04 (lô 10) — hết Bài 12**:
   - Thêm vd6 (Hình1.77, hiến Xe lộ Binh đáy, có biến), vd7 (Hình1.78, hiến Xe miệng Tượng). **vd8 (Hình1.79) là ví dụ HÒA CỜ** (Mã ngọa tào cầm hòa, không phải sát) → KHÔNG đưa vào (không phải sát pháp). Bài 12 = vd1-7 (7 bài).
   - **Fix**: Hình1.78 相 đỏ ở (5,6) không phải (5,7) (validatePosition bắt). Biến vd7 sách in "X2.1" mâu thuẫn X2-5 (bỏ biến, chỉ giữ mạch chính).
