@@ -12,17 +12,16 @@
 - **Puzzle** (Pha 2): TÁI DÙNG `Lesson` + cột `puzzle_side` (do|den|null); `mode="puzzle"` trong `board.js` (bấm quân giải, đối chiếu ICCS, máy đáp). Cả ví dụ dạy + phần Bài Luyện đều thành puzzle.
 
 ## Bảng tiến độ
+> Bảng này để lại nguyên trạng lịch sử ban đầu (Pha 1/2 theo kế hoạch cũ) — **trạng thái THẬT SỰ mới nhất nằm ở dòng "Chương 2 hoàn tất" bên dưới và mục lục Nhật ký thực thi**, không cập nhật lại từng dòng cũ để tránh nhiễu.
 | Hạng mục | Ước lượng | Trạng thái |
 |---|---|---|
-| Pipeline `tools/mate-book/` (parser + gen + render + batch) | 1 lần | ✅ xong, test 9/9 |
-| Pha 1: Lời Nói Đầu | 1 bài | ✅ (text; ván minh hoạ Lý Lai Quần để bổ sung sau) |
-| Pha 1: Sát Pháp Cơ Bản (19 loại) | ~19 bài | 🔄 **21 bài** xong: Bạch Liễm 5vd, Hải Để 3vd, Giáp Xe Pháo 5vd (vd2=Hình1.13 hoãn), Thiên Địa Pháo 3vd (vd4=Hình1.21 hoãn), **Đại Đảm Xuyên Tâm 4vd** (Hình1.22-1.25; vd5=Hình1.26 chưa làm) |
-| Pha 2: `puzzle_side` + `xiangqi-rules.js` + `mode=puzzle` | code | ⬜ |
-| Pha 2: bật giải đố cho ví dụ Pha 1 | ~20 | ⬜ |
-| Pha 3: Tàn cuộc nhập thức sát pháp | ? | ⬜ |
-| Pha 3: Phổ Sĩ / Phổ Tượng sát pháp | ? | ⬜ |
-| Pha 3: các chương còn lại | ? | ⬜ |
-| Pha 3: phần Bài Luyện → puzzle | ? | ⬜ |
+| Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
+| Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
+| Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | ⬜ chưa bắt đầu |
+| Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
+| Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
+| Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
 
 ## Nhật ký thực thi
 - **2026-08-27**: Khảo sát + chốt kế hoạch. Dựng xong pipeline `tools/mate-book/`:
@@ -274,3 +273,8 @@
     - **vd2 (Hình2.91, PDF trang171-d1, tuyển từ "Quyết Trung Bảo")**: FEN `6b2/2N2k3/4b4/7R1/9/9/3p5/4B4/4r1p3/3K5`, first=đỏ, 10 quân (1 false positive r6c8 loại đúng qua cell-crop). Giới thiệu khái niệm hình học mới: Mã+Tướng đối phương tạo "hình chữ điền" (田) = dấu hiệu Mã đã áp sát đúng vị trí khống chế. 17 nước, validate 0 warning, kết thúc bằng lời khẳng định "Trắng thắng" KHÔNG chiếu bí cụ thể (`inCheck=false` cuối mạch) — đã trace từng ply xác nhận đúng thời điểm "trực chiếu Tướng" (ply15) và "ăn Tốt" (ply17) khớp hoàn toàn lời văn sách trước khi chấp nhận không có chiếu bí. Series=374.
     - **vd3 (Hình2.92, PDF trang172, Lưu Điện Trung vs Miêu Vĩnh Bằng)**: FEN `2C1kab2/2Nran3/4b4/1R2C3p/2c3p2/4r4/P1R5P/6c1B/4A4/2BAK4`, first=đỏ (hồi32), 24 quân đọc sạch (cell-crop toàn bộ). 19 nước, validate 0 warning NGAY LẦN ĐẦU, kết "Trắng thắng" qua Pháo bình trung chiếu Tướng (`inCheck=true`, không phải chiếu bí). Series=375.
     - **vd4 (Hình2.93, PDF trang173, Phí Cẩm Khâm vs Tăng Triển Hồng)** — VÍ DỤ CUỐI BÀI 16, sơ đồ dày nhất chương (30 quân): FEN `r1bak4/4a4/n3b4/2p1N3p/1cc3pn1/p2R2P2/P3P3P/4CCN1B/4A1r2/R1B1KA3`, first=đỏ (hồi16), cell-crop toàn bộ 30 ô không sai lần nào. ⚠️ Tên người chơi đọc sai qua OCR ban đầu ("Phó Cẩm Khâm"/"Tưởng Triển Hồng") → **re-render xác nhận đúng là "Phí Cẩm Khâm"/"Tăng Triển Hồng"**. 15 nước, validate 0 warning NGAY LẦN ĐẦU — nước cuối `X8.9` tưởng chừng vô lý (không có Xe trên file8) nhưng hoá ra Trắng có 2 Xe, Xe thứ 2 ở đúng file8 đi trọn 9 ô ăn Pháo đối phương ở hàng 0 — đã tự trace bằng tay xác nhận đúng trước khi tin kết quả engine. Kết thúc mô tả "hình chữ điền" giữa Mã Trắng và Tướng Đen (`inCheck=false`, thắng bằng đòn ăn quân quyết định chứ không phải chiếu). **BÀI 16 LẬP XE MÃ HOÀN TẤT ĐỦ 4/4 VÍ DỤ** (xác nhận: ngay sau vd4 sách chuyển sang "Bài 17 THIÊN ĐỊA PHÁO SÁT PHÁP" — bài CUỐI CÙNG của Chương 2). Series=376.
+  - **Bài 17 THIÊN ĐỊA PHÁO SÁT PHÁP** — BÀI CUỐI CÙNG CỦA CHƯƠNG 2 (tên đọc đúng ngay, không có sự cố dấu):
+    - **vd1 (Hình2.94, PDF trang174, không phải ván thực chiến có tên tuổi — chỉ mô tả "hình thế thực chiến của một ván cờ sát pháp Thiên Địa Pháo")**: FEN `Cn1rka3/4a4/5c3/2p5p/4R4/2P1pr3/P5p1P/B3C1n1B/4A4/1R2KA1Nc`, first=đỏ, 26 quân. Chủ đề: Đen hơn 1 Mã nhưng thế sát Thiên Địa Pháo (2 Pháo đứng 2 đầu 1 tuyến) của Trắng đã thành sẵn từ đầu, hoàn toàn vô phương cứu vãn. 11 nước, validate 0 warning NGAY LẦN ĐẦU, kết "Đen bó tay chịu trói nhận thua" (`inCheck=false`). Series=377.
+    - **vd2 (Hình2.95, PDF trang175, Vương Vũ Tuyền vs Triệu Chấn Hòa)**: FEN `r3kab2/4a4/1cn1b1c2/p1p1p3/4PR3/2P6/P3N2rP/1C2C1p1B/9/R1BAKA3`, first=đỏ (hồi13), 28 quân. Có 1 câu TỰ PHÊ BÌNH hiếm gặp của sách nhắm vào chính nước đi của bên "chính diện" (Trắng) — "nên đổi đi hướng khác sẽ tương đối tốt hơn". **Đảo vai trò thú vị**: Trắng giăng bẫy Thiên Địa Pháo nhưng Đen tránh được, rồi CHÍNH ĐEN lại là bên cấu thành thế sát Thiên Địa Pháo, cuối cùng chuyển hóa thành **Thiết Môn Thuyên Sát** (kỹ thuật Bài 1 Chương 2) mới thực sự kết liễu. 32 nước, validate 0 warning, kết thúc bằng lời khẳng định (không chiếu bí cụ thể, `inCheck=false`). Series=378.
+    - **vd3 (Hình2.96, PDF trang176, Vương Dược Phi vs Hứa Ngân Xuyên)** — VÍ DỤ CUỐI BÀI 17 VÀ CUỐI CHƯƠNG 2: FEN `Cr1ak4/3Ca4/4br3/R7p/5n1p1/2P5c/6P2/4B4/4A4/2B1KA1R1`, first=đỏ (hồi34), 21 quân. Chủ đề: Trắng đổi kế hoạch giữa chừng (Pháo đáy bị cản → lắp trung Pháo), nhiều pha dẫn dụ qua lại cả 2 bên, chuyển Xe từ trái sang phải công sát cánh bên. 19 nước mạch chính (`inCheck=false`, Đen "nhận thua") + biến phụ dài 16 nước (Hình2.97, dùng cả Xs/Xt disambiguation) — validate 0 warning cho TOÀN BỘ cấu trúc main+variation cùng lúc, `isCheckmate=true` THẬT khớp "Trắng thắng". **BÀI 17 THIÊN ĐỊA PHÁO HOÀN TẤT ĐỦ 3/3 VÍ DỤ.**
+    - **🎉 CHƯƠNG 2 "SÁT PHÁP CƠ BẢN NÂNG CAO" HOÀN TẤT ĐỦ 17/17 BÀI** (xác nhận qua render trực tiếp trang kế: ngay sau vd3 sách chuyển sang trang bìa "CHƯƠNG 3 — TÀN CUỘC ĐỊNH THỨC SÁT PHÁP", đúng như mục lục đã ghi từ đầu phiên). Series cuối chương = **379 bài**, trong đó 81 bài mang tiền tố `c2-` (Chương 2 nâng cao). Toàn bộ đã seed local + push GitHub. **Việc tiếp theo**: chờ chỉ đạo người dùng có tiếp tục sang Chương 3 hay không.
