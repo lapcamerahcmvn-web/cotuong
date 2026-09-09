@@ -64484,6 +64484,238 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21005,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Đại Đảm Xuyên Tâm — Khi Thế Sát Quay Ngược Lại Chính Mình — Ví Dụ 5",
+      "slug": "c2-dai-dam-xuyen-tam-vi-du-5",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "r3kab2/4a4/n3bc3/pR2p3p/3N2p2/2R6/P3P1n1P/C5N2/4A2r1/2B1KAB2",
+      "variation_tree": null,
+      "move_count": 19,
+      "summary": "Ván đấu thực chiến giữa Trương Giang (Trắng) và Chu Tống Tứ (Đen) tại giải \"Liễu Lâm Bôi\": cả hai bên đều mắc sai lầm liên tiếp, nhưng bước ngoặt quyết định là khi thế Đại Đảm Xuyên Tâm mà chính Trắng đang xây dựng bị một nước bất cẩn biến thành vũ khí của Đen — kết thúc bằng chiếu bí thật sự theo đúng sát pháp Thiết Môn Thuyên.",
+      "content": "<h2>Một nước hấp tấp mở đường cho rắc rối</h2><p>Đây là hình thế thực chiến giữa <strong>Trương Giang</strong> (cầm quân Trắng) và <strong>Chu Tống Tứ</strong> (cầm quân Đen) tại giải \"Liễu Lâm Bôi\". Sách mô tả thế trận cân bằng ban đầu: \"Xe trái bên Đen đã vào tuyến hoành 2, ấm phục sức tấn công nhất định. Nhưng bên Trắng tập kết quân lực ở cánh trái, cũng có sức tấn công tương đối mạnh.\" Ngay từ giữa ván, sách đã cảnh báo một nước đi \"có chút hấp tấp\" của Đen, khiến cánh phải của chính Đen trở nên trống rỗng — một lỗ hổng mà lẽ ra có thể tránh được.</p><h2>Đối phương lơ là, cơ hội bị bỏ lỡ</h2><p>Sách tiếp tục chỉ ra Đen \"có vẻ lơ là sao lãng\" trước sự uy hiếp của Trắng, rồi ngay sau đó lại quay sang phê bình chính Trắng: \"Nước đi sai lầm. Bên Trắng mất đi cơ hội.\" Đây là một ván đấu mà cả hai bên đều mắc lỗi liên tiếp — minh chứng rằng ngay cả các kỳ thủ trình độ cao cũng không tránh khỏi sai sót khi áp lực dồn dập từ cả hai phía.</p><h2>Khi thế sát của đối phương quay ngược lại chính họ</h2><p>Điểm đặc sắc nhất của ván đấu nằm ở câu bình luận cuối cùng của sách: \"Cuộc này sát thế đảm xuyên tâm của bên Trắng, một nước không cẩn thận, trở thành sát thế đảm xuyên tâm của bên Đen.\" Nói cách khác, chính Trắng mới là bên đang xây dựng thế \"Đại Đảm Xuyên Tâm\" trước — nhưng một nước bất cẩn duy nhất đã khiến toàn bộ thế trận đảo chiều, biến vũ khí của Trắng thành vũ khí kết liễu chính Trắng trong tay Đen. Đây là bài học sâu sắc: một sát pháp mạnh mẽ luôn tiềm ẩn rủi ro tự phản — nếu người cầm nó không đủ thận trọng, chính đối phương có thể cướp lấy và quay ngược nó lại.</p><h2>Kết thúc bằng một sát pháp khác: Thiết Môn Thuyên</h2><p>Sau khi cướp được thế trận, Đen không hoàn tất bằng đúng hình ảnh Đại Đảm Xuyên Tâm ban đầu, mà sách ghi nhận: \"sau đó hình thành sát pháp Thiết môn thuyên\" — kỹ thuật đã học ở Bài 1 Chương 2. Thế cờ cuối cùng được xác nhận là một chiếu bí thật sự. Đây là một minh chứng nữa (như đã thấy ở một vài ví dụ khác trong sách) rằng ranh giới giữa các sát pháp không phải lúc nào cũng rạch ròi — một ván đấu có thể bắt đầu theo mô-típ này nhưng lại khép lại bằng mô-típ khác.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Đại Đảm Xuyên Tâm Nâng Cao — Khi Thế Sát Quay Ngược Lại (Ví Dụ 5)",
+      "seo_description": "Ván đấu thực chiến Trương Giang vs Chu Tống Tứ: thế Đại Đảm Xuyên Tâm của Trắng bị 1 nước bất cẩn biến thành vũ khí của Đen, kết bằng Thiết Môn Thuyên.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3rkab2/4a4/n3bc3/pR2p3p/3N2p2/2R6/P3P1n1P/C5N2/4A2r1/2B1KAB2",
+          "move_notation_wxf": "Xe 1 bình 4",
+          "move_notation_iccs": "a9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3rkab2/4a4/n3bc3/p3p3p/1R1N2p2/2R6/P3P1n1P/C5N2/4A2r1/2B1KAB2",
+          "move_notation_wxf": "Xe 8 thoái 1",
+          "move_notation_iccs": "b6b5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3rkab2/4a4/n3b4/p3p3p/1R1N1cp2/2R6/P3P1n1P/C5N2/4A2r1/2B1KAB2",
+          "move_notation_wxf": "Pháo 6 tiến 2",
+          "move_notation_iccs": "f7f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo — sách nhận xét: Đen thẳng Pháo đánh Xe đuổi Mã Trắng, để tiến Xe sẵn đối công, nhưng Mã biên của Đen không có quân bảo vệ, sau khi tiến Xe sẵn thì cánh phải lại trở nên trống rỗng, Đen cần phải đề phòng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3rkab2/4a4/n1N1b4/p3p3p/1R3cp2/2R6/P3P1n1P/C5N2/4A2r1/2B1KAB2",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "d5c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4kab2/4a4/n1N1b4/p3p3p/1R3cp2/2R6/P3P1n1P/C5N2/3rA2r1/2B1KAB2",
+          "move_notation_wxf": "Xe 4 tiến 8",
+          "move_notation_iccs": "d9d1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe — sách nhận xét: Đen có chút hấp tấp, đáng lẽ nên lui Tượng phòng thủ một nước sẽ tốt hơn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4kab2/4a4/nRN1b4/p3p3p/5cp2/2R6/P3P1n1P/C5N2/3rA2r1/2B1KAB2",
+          "move_notation_wxf": "Xe 8 tiến 2",
+          "move_notation_iccs": "b5b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4kab2/4a4/nRN1b4/p3p3p/5cp2/2R6/P3P1n1P/C5N2/3rA1r2/2B1KAB2",
+          "move_notation_wxf": "Xe 8 bình 7",
+          "move_notation_iccs": "h1g1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4kab2/4a4/R1N1b4/p3p3p/5cp2/2R6/P3P1n1P/C5N2/3rA1r2/2B1KAB2",
+          "move_notation_wxf": "Xe 8 bình 9",
+          "move_notation_iccs": "b7a7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe, ăn Mã Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4kab2/4a4/R1N1b4/p3p3p/5cp2/2R6/P3P1n1P/C5r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Xe 7 thoái 1",
+          "move_notation_iccs": "g1g2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe, ăn lại Mã Trắng — sách nhận xét: đối với sự uy hiếp của Trắng, Đen có vẻ lơ là sao lãng; đáng lẽ chọn hướng phòng thủ khác thì Trắng vẫn dài hơi hơn Đen so với thực chiến.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4kab2/4a4/R1N1b4/p3p3p/5cp2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — sách chê thẳng: đây là nước đi sai lầm, Trắng đã bỏ lỡ cơ hội tốt hơn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2b1kab2/4a4/R1N6/p3p3p/5cp2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Tượng 5 thoái 3",
+          "move_notation_iccs": "e7c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "R1b1kab2/4a4/2N6/p3p3p/5cp2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Xe 9 tiến 2",
+          "move_notation_iccs": "a7a9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "R1b1ka3/4a4/2N1b4/p3p3p/5cp2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "g9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "R1b1ka3/4a4/4b4/p3p3p/3N1cp2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Mã 7 thoái 6",
+          "move_notation_iccs": "c7d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "R1b1ka3/4a4/4b4/p3p3p/3Nc1p2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Pháo 6 bình 5",
+          "move_notation_iccs": "f5e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "R1b1ka3/4a4/4N4/p3p3p/4c1p2/2R6/P3P1n1P/3C2r2/3rA4/2B1KAB2",
+          "move_notation_wxf": "Mã 6 tiến 5",
+          "move_notation_iccs": "d5e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã, ăn Tượng Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "R1b1ka3/4a4/4N4/p3p3p/4c1p2/2R6/P3P1n1P/3C2r2/4r4/2B1KAB2",
+          "move_notation_wxf": "Xe 4 bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, ăn Sĩ Trắng — đây chính là bước ngoặt: sách mô tả \"cuộc này sát thế đảm xuyên tâm của bên Trắng, một nước không cẩn thận, trở thành sát thế đảm xuyên tâm của bên Đen\" — thế trận vốn dành cho Trắng nay quay ngược lại đúng vào Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "R1b1ka3/4a4/4N4/p3p3p/4c1p2/2R6/P3P1n1P/3C2r2/4A4/2B1K1B2",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "f0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ, ăn lại Xe Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "R1b1ka3/4a4/4N4/p3p3p/4c1p2/2R6/P3P1n1P/3C5/4A4/2B1K1r2",
+          "move_notation_wxf": "Xe 7 tiến 2",
+          "move_notation_iccs": "g2g0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn nốt Tượng còn lại — CHIẾU BÍ THẬT SỰ, hình thành đúng sát pháp \"Thiết Môn Thuyên\" (đã học ở Bài 1). \"Đen thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
