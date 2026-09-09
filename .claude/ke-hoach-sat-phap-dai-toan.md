@@ -2,7 +2,7 @@
 
 > Nhật ký sống, cập nhật sau mỗi lô. Kế hoạch đầy đủ: xem mô tả bên dưới.
 > Nguồn: `E:\sach-co-tuong\TUONG+KY+KINH+DIEN+SAT+PHAP+DAI+TOAN.pdf` (421 trang, ~415+ ví dụ).
-> Cập nhật gần nhất: **2026-08-27**.
+> Cập nhật gần nhất: **2026-09-09**.
 
 ## Tóm tắt cách làm (đã chốt)
 - **Nước đi**: `pdftotext` trích ASCII hoàn hảo (`M9.8`, `X7-6`, biến `Nếu…thì…`). Văn xuôi dấu vỡ → **viết lại bằng lời riêng** (bản quyền).
@@ -147,3 +147,11 @@
   - **Fix đọc**: Hình1.80 Tướng đen (0,4)=file5 không phải (0,3) (detector). Hình1.81 "M8.6" thực ra **M8/6** (Mã xuống (2,3) quải giác — OCR /↔.). Hình1.82 cụm phòng thủ đáy lệch +1 cột. Hình1.84 detector báo (3,6) là FALSE POSITIVE (crop xác nhận trống).
   - **Series = 70 bài**. ĐÃ PUSH (lô 11).
   - **Tiếp theo**: **Bài 14 BẠT HOÀNG MÃ** (拔簧马 — Xe mượn sức Mã chiếu rút/chiếu bí, Mã như lò xo). Trang 60+, Hình 1.86+.
+- **2026-09-09 (lô 20) — tiếp tục Chương 2 theo yêu cầu "nhớ đưa lý thuyết trong sách vào"**: sau khi Pha 2 (giải đố) đã xong và bật cho 102/103 bài Chương 1 (lô18-19), quay lại Chương 2 Bài 1 Thiết Môn Thuyên (đã có vd1-3 từ trước khi tóm tắt phiên) và làm tiếp:
+  - **Phát hiện gốc lỗi Chương 2 trước đây**: đợt thử đầu (log ở trên, "Hình 2.6... 6 lần sửa FEN... CHƯA giải quyết xong") thất bại không phải vì detector sai, mà vì TỰ CHÉP TAY lưới detector ra FEN bị đọc nhầm `o`(đỏ)↔`#`(đen) ở 1-2 ô. Từ lô này: LUÔN đối chiếu FEN cuối cùng với RAW output của `detect-pieces.py` từng ký tự một trước khi chạy engine, không chỉ nhìn ảnh phóng to bằng mắt.
+  - **vd4 (Hình2.4, Hồ Vinh Hoa vs Cận Ngọc Nghiễn)**: mở rộng từ 6 nước (bản trước khi tóm tắt) lên TRỌN 25 nước (hồi 18-30) — đọc lại đầy đủ bảng nước trang 87, toàn bộ validate 0 warning. Content viết lại đầy đủ lý thuyết: kế hoạch nhiều bước của Trắng, 3 thời điểm Đen chọn nước chưa tối ưu (sách chỉ rõ từng lần), điểm Trắng cũng phải cân nhắc (M7.6 nếu đổi thì mất ưu thế).
+  - **vd5 (Hình2.5, trang 91, Phó Quang Minh vs Lý Cường)**: FEN `4kab2/4a4/4b4/pr2p3p/7r1/2R6/2P1P2cP/B2AC1N2/9/3K2BR1`, first=đỏ. 21 nước mạch chính (hồi 20-30, kết "Đen nhận thua") + 2 biến: (1) sau ply4 "nếu Tg6.1" (cảnh báo Trắng thua nếu chọn sai) — 4 nước; (2) sau ply21 "nếu Đen đi tiếp X1/2" → 6 nước → **isCheckmate=true THẬT** (Thiết môn thuyên). Chủ đề bài: khi Soái/Tướng lộ + khuyết Sĩ, phòng thủ là việc cấp bách phải làm TRƯỚC khi tính phản công.
+  - **vd6 (Hình2.6, trang 92, Kim Ba vs Trương Hóa Minh)** — ĐÂY LÀ VỊ TRÍ TỪNG THẤT BẠI 6 LẦN Ở PHIÊN TRƯỚC: đọc lại từ đầu bằng quy trình detector-first, ra FEN `2bak4/4a4/4b4/p1p1R3p/1r7/P1P6/1c2c2r1/1R2B1C2/4A4/1N2KAB2` (first=**đen** — Đen đi trước, khác các vd trước), validate OK NGAY LẦN ĐẦU, 13 nước mạch chính 0 warning, kết "Trắng nhận thua" (không chiếu hết theo nghĩa đen, đúng lời sách). Điểm hay: Đen thiếu hẳn 1 Mã vẫn thắng nhờ khai thác liên tiếp 2 nước phòng thủ chưa tối ưu của Trắng (sách chỉ đích danh từng nước).
+  - **⚠️ SỬA NHÃN QUAN TRỌNG**: dựng xong "vd7" (Hình2.7, trang 93, Hồ Minh vs Lâm Dã, 19 nước mạch chính + 2 biến ĐỀU isCheckmate=true) rồi mới phát hiện qua đọc lại text trang 90 rằng đoạn "Bài 2 NGỌA TÀO MÃ SÁT PHÁP / Cuộc ví dụ 1" xuất hiện NGAY TRƯỚC ván này — tức đây là **Bài 2 vd1**, không phải Bài 1 vd7. Đã sửa slug/title/order_in_series (`c2-thiet-mon-thuyen-vi-du-7`→`c2-ngoa-tao-ma-vi-du-1`) + sửa câu văn content nhắc sai "Thiết môn thuyên đang học trong bài này". **Bài học**: LUÔN đọc lại đoạn text NGAY TRƯỚC diagram để bắt tiêu đề "Bài N" mới, đừng mặc định tiếp nối số thứ tự bài trước.
+  - **Bài 1 Thiết Môn Thuyên Chương 2 = ĐỦ 6 ví dụ (vd1-6)**, khớp đúng số ví dụ sách đưa ra trước khi sang Bài 2. Series hiện 301 bài. Đã seed local xác nhận không lỗi, ĐÃ PUSH GitHub (2 commit: vd4-full+vd5, rồi vd6+Bài2-vd1).
+  - **Tiếp theo**: **Bài 2 NGỌA TÀO MÃ SÁT PHÁP** — đã xong vd1 (Hồ Minh vs Lâm Dã, Hình2.7). Hình2.8 xuất hiện ở trang 94 (đã thấy nhãn "Hình 2.8" nhưng chưa đọc nội dung) — đọc tiếp text quanh đó để lấy ván đấu + bảng nước cho vd2.
