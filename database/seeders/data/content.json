@@ -65004,6 +65004,139 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21102,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Song Xe Thác — Nước Đi Tuyệt Diệu Không Thể Tưởng — Ví Dụ 2",
+      "slug": "c2-song-xe-thac-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1kab2/4a4/2n1c4/p1cr4p/9/2B2R3/P7P/3CB2C1/4A1r2/1R1AK4",
+      "variation_tree": null,
+      "move_count": 10,
+      "summary": "Trận chiến giữa hai cao thủ Tượng kỳ Quách Xuân Lâm (Trắng) và Lâm Dịch Tiên (Đen) đến nước thứ 29: Đen dùng một nước Xe \"hiến tặng\" đầy toan tính rồi tung ra nước bình Xe được sách khen \"tuyệt diệu không thể tưởng\" (với đủ 3 phương án phòng thủ của Trắng đều vô hiệu), khép lại bằng song Xe siết chặt Tướng Trắng vào thế vô phương giải cứu.",
+      "content": "<h2>Trận chiến giữa hai cao thủ</h2><p>Đây là hình thế thực chiến đến nước thứ 29 trong \"trận chiến giữa hai cao thủ Tượng kỳ\" — <strong>Quách Xuân Lâm</strong> (cầm quân Trắng) và <strong>Lâm Dịch Tiên</strong> (cầm quân Đen). Cách sách giới thiệu ván đấu này đã cho thấy đây là một ví dụ đáng chú ý về trình độ cao.</p><h2>Một quân Xe \"hiến tặng\" đầy toan tính</h2><p>Ngay từ đầu, sách chỉ ra một nước đi tinh tế của Đen: \"Bên Đen lý minh hiệp yếu. Trông có vẻ hiến Xe, thực ra nước sau ăn Tướng làm bàn đạp.\" Đây là một cái bẫy tinh vi — nước đi trông như đang tự nguyện dâng Xe cho đối phương, nhưng thực chất là bước đệm cho một đòn tấn công lớn hơn. Sách cảnh báo ngay: nếu Trắng tham ăn Xe, sẽ dính ngay một chuỗi tuyệt sát.</p><h2>Một nước đi \"tuyệt diệu không thể tưởng\"</h2><p>Đỉnh điểm chiến thuật của ván đấu là một nước bình Xe được sách khen bằng những lời lẽ hiếm khi dùng: \"tuyệt diệu không thể tưởng.\" Sách còn phân tích đầy đủ cả ba phương án phòng thủ khác nhau mà Trắng có thể thử — và cả ba đều dẫn tới thất bại như nhau. Đây là dấu hiệu của một nước đi thực sự mang tính quyết định: không có bất kỳ lối thoát nào, dù đối phương có suy nghĩ theo hướng nào.</p><h2>Song Xe Thác khép chặt số phận Tướng Trắng</h2><p>Ván đấu kết thúc với cả hai Xe của Đen ăn liên tiếp hai Tượng và một Pháo của Trắng, khép chặt vòng vây quanh Tướng. Sách khẳng định dứt khoát: \"Đến đây, bên Đen Song Xe thác sát Tướng Trắng, bên Trắng vô phương giải cứu.\" Đúng như Ví dụ 1 trước đó của cùng Bài 11, thế cờ tại điểm dừng này chưa phải chiếu bí ngay trên bàn cờ (được xác nhận qua engine) — nhưng quân lực và thế trận đã nghiêng hoàn toàn về Đen đến mức không còn phương án cứu vãn nào cho Trắng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Song Xe Thác Nâng Cao — Nước Đi Tuyệt Diệu Không Thể Tưởng (Ví Dụ 2)",
+      "seo_description": "Trận chiến hai cao thủ Quách Xuân Lâm vs Lâm Dịch Tiên: Đen hiến Xe làm bàn đạp rồi tung nước tuyệt diệu, song Xe siết Tướng Trắng vào thế vô phương giải cứu.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2b1kab2/4a4/2n1c4/p1cr4p/9/2B2R3/PR6P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 8 tiến 3",
+          "move_notation_iccs": "b0b3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b1kab2/4a4/2n1c4/p1c5p/9/2Br1R3/PR6P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 4 tiến 2",
+          "move_notation_iccs": "d6d4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe — sách nhận xét: Đen lý minh hiệp yếu; trông có vẻ hiến Xe, thực ra nước sau ăn Tượng làm bàn đạp; Trắng không thể ăn Xe, nếu không sẽ dính chuỗi tuyệt sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/2Br5/PR6P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 4 tiến 4",
+          "move_notation_iccs": "f4f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/2r6/PR6P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 4 bình 3",
+          "move_notation_iccs": "d4c4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, ăn Tượng Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/2r6/P3R3P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 8 bình 5",
+          "move_notation_iccs": "b3e3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/4r4/P3R3P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 3 bình 5",
+          "move_notation_iccs": "c4e4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, ăn Tượng Trắng — sách khen: nước này của Đen \"tuyệt diệu không thể tưởng\"; nếu Trắng dùng Xe ăn lại thì Đen có Pháo chiếu đánh Tướng; Trắng còn 3 phương án khác đều bất lợi như nhau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/4r4/P1R5P/3CB2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 5 bình 7",
+          "move_notation_iccs": "e3c3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/9/P1R5P/3Cr2C1/4A1r2/3AK4",
+          "move_notation_wxf": "Xe 5 tiến 2",
+          "move_notation_iccs": "e4e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn Pháo Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/9/P1R5P/3Cr2C1/4A1r2/3A1K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2b1kab2/4aR3/2n1c4/p1c5p/9/9/P1R5P/3C3r1/4A1r2/3A1K3",
+          "move_notation_wxf": "Xe 5 bình 8",
+          "move_notation_iccs": "e2h2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, ăn nốt Pháo Trắng. Sách khẳng định: \"Đến đây, bên Đen Song Xe thác sát Tướng Trắng, bên Trắng vô phương giải cứu\" — dù thế cờ tại đây chưa phải chiếu bí ngay trên bàn, quân lực và thế trận đã hoàn toàn nghiêng về Đen không thể cứu vãn.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
