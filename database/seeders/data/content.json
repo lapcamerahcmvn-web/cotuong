@@ -61381,6 +61381,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20901,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Quỉ Giác Mã — Bóp Nghẹt Đối Phương Không Cần Ăn Quân — Ví Dụ 1",
+      "slug": "c2-qui-giac-ma-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3akab2/4n2R1/4b1n2/p3p3p/2r6/1C7/Pc2P1r1P/B1N2C3/4A4/2R1KAB2",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Ván đấu thực chiến đến hồi thứ 19 giữa Kim Ba (Trắng) và Lâm Hoằng Mẫn (Đen) tại giải Thách thức Tượng kỳ thế giới BGN: Trắng bóp nghẹt Mã oa tâm của Đen bằng một chuỗi 13 nước thuần túy vị trí — không hề ăn một quân nào — buộc Đen nhận thua; sách còn dẫn thêm một nhánh giả định cho thấy đúng kỹ thuật \"nhảy quỉ giác Mã\" đặt tên cho cả Bài 9.",
+      "content": "<h2>Mở đầu bằng một cái bẫy không ai dám sập</h2><p>Đây là hình thế thực chiến đến hồi thứ 19 trong ván đấu giữa <strong>Kim Ba</strong> (cầm quân Trắng) và <strong>Lâm Hoằng Mẫn</strong> (cầm quân Đen) tại giải Thách thức Tượng kỳ thế giới BGN. Nhận thấy \"Mã oa tâm bên Đen là cơ hội tốt\", Trắng mở đầu bằng một nước Xe để hờ một Mã. Ngay lập tức sách chỉ rõ đây là bẫy: nếu Đen tham ăn Mã, Trắng có sẵn chuỗi chiếu bí ba nước. Vì vậy Đen buộc phải bỏ qua miếng mồi, lui Xe về phòng thủ.</p><h2>Một ván cờ không hề có quân nào bị ăn</h2><p>Đây là điểm đặc biệt hiếm gặp trong toàn bộ chuyên đề: suốt 13 nước của mạch chính, không một quân nào bị bắt. Trắng chỉ đơn thuần điều Xe, Mã, Pháo tiến sát để thu hẹp không gian của Đen — đặc biệt nước Xe \"đạp lên\" một Tượng Đen (không ăn, chỉ khống chế) được sách gọi thẳng là \"then chốt\", vì nếu bỏ lỡ, Mã oa tâm của Đen sẽ thoát ra ngoài và mọi công sức trước đó coi như uổng phí. Đây là minh chứng rõ ràng rằng sát pháp không phải lúc nào cũng cần đổi chác quân số — đôi khi chỉ cần đúng những quân đúng vị trí là đủ để đối phương hết đường xoay xở.</p><h2>Song Xe tái hiện thế Nhị Quỷ Gõ Cửa</h2><p>Về cuối mạch chính, hai Xe Trắng lần lượt tróc hai Tượng còn lại của Đen, tình cờ tái hiện lại đúng bố cục \"Nhị Quỷ Gõ Cửa\" đã học ở Bài 5 — cho thấy các sát pháp trong sách không tách biệt hoàn toàn mà thường lồng ghép, bổ trợ lẫn nhau. Bị dồn đến chân tường (không thể ăn Pháo vì sẽ dính chiếu ngay), Đen chủ động nhận thua.</p><h2>Kỹ thuật thật sự mang tên Bài 9 — chỉ xuất hiện ở nhánh giả định</h2><p>Một chi tiết thú vị: đúng kỹ thuật \"nhảy quỉ giác Mã\" đặt tên cho cả Bài 9 lại KHÔNG xuất hiện trong 13 nước thực chiến kết thúc bằng đầu hàng — mà chỉ xuất hiện ở nhánh giả định \"Hình 2-46\" mà sách dẫn thêm, mô tả điều gì sẽ xảy ra nếu Đen ngoan cố chơi tiếp thay vì đầu hàng sớm. Ở nhánh này, sau vài nước Mã và Xe phối hợp, Trắng mới thật sự nhảy Mã vào góc, kết hợp song Xe hình thành thế sát đúng như tên chủ đề. Bài học rút ra: đôi khi bên thua nhận ra tình thế vô vọng và đầu hàng trước khi kỹ thuật mang tên bài học kịp xuất hiện trên bàn cờ — không có nghĩa là kỹ thuật đó không hiện diện, chỉ là không cần thiết phải đi tới cùng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Quỉ Giác Mã Nâng Cao — Bóp Nghẹt Không Cần Ăn Quân (Ví Dụ 1)",
+      "seo_description": "Ván đấu thực chiến Kim Ba vs Lâm Hoằng Mẫn: Trắng bóp nghẹt Mã oa tâm của Đen bằng 13 nước thuần vị trí không ăn quân nào, tái hiện thế Nhị Quỷ Gõ Cửa.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akab2/4n2R1/4b1n2/p3p3p/2r6/1C7/Pc2P1r1P/B1N2C3/4A4/3RKAB2",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "c0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe, mở đầu kế hoạch thí Mã dụ Đen: nếu tham ăn bằng X3.3, sách cho biết Trắng vẫn thắng bằng chuỗi P8.5, M5/3, X6.9 chiếu bí — nên Đen không dám ăn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2rakab2/4n2R1/4b1n2/p3p3p/9/1C7/Pc2P1r1P/B1N2C3/4A4/3RKAB2",
+          "move_notation_wxf": "Xe 3 thoái 4",
+          "move_notation_iccs": "c5c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Xe về phòng thủ tuyến đáy — nếu không, sách chỉ ra 2 phương án khác của Đen đều dẫn tới bất lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2rakab2/4n2R1/4b1n2/p3p3p/9/1C7/Pc1RP1r1P/B1N2C3/4A4/4KAB2",
+          "move_notation_wxf": "Xe 6 tiến 3",
+          "move_notation_iccs": "d0d3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2rakab2/4n2R1/4b1n2/p3p3p/9/1C7/P2RP1r1P/B1N2C3/1c2A4/4KAB2",
+          "move_notation_wxf": "Pháo 2 tiến 2",
+          "move_notation_iccs": "b3b1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2rakab2/3Rn2R1/4b1n2/p3p3p/9/1C7/P3P1r1P/B1N2C3/1c2A4/4KAB2",
+          "move_notation_wxf": "Xe 6 tiến 5",
+          "move_notation_iccs": "d3d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe, đạp lên một Tượng Đen — sách nhấn mạnh đây là nước then chốt: nếu không, Mã oa tâm của Đen sẽ thoát ra ngoài và cục diện sẽ trở nên lỏng lẻo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2rakab2/3Rn2R1/4b1n2/p3p3p/6r2/1C7/P3P3P/B1N2C3/1c2A4/4KAB2",
+          "move_notation_wxf": "Xe 7 thoái 2",
+          "move_notation_iccs": "g3g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2rakab2/3Rn2R1/4b1n2/p3p3p/6r2/1C1N5/P3P3P/B4C3/1c2A4/4KAB2",
+          "move_notation_wxf": "Mã 7 tiến 6",
+          "move_notation_iccs": "c2d4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2rakab2/3Rn2R1/4b1n2/p3p3p/6r2/1C1N5/P3P3P/B4C3/4A4/1c2KAB2",
+          "move_notation_wxf": "Pháo 2 tiến 1",
+          "move_notation_iccs": "b1b0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo, chìm xuống đáy tạo nước dọa chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2rakab2/3Rn2R1/4b1n2/p3p3p/6r2/1C1N5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Pháo 4 bình 7",
+          "move_notation_iccs": "f2c2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "1r1akab2/3Rn2R1/4b1n2/p3p3p/6r2/1C1N5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 3 bình 2",
+          "move_notation_iccs": "c9b9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, tróc một Tượng Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "1r1akab2/3RnR3/4b1n2/p3p3p/6r2/1C1N5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 2 bình 4",
+          "move_notation_iccs": "h8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — song Xe cùng lúc tróc Tượng, hình thành thế \"Nhị Quỷ Gõ Cửa\" (đã học ở Bài 5), càng siết chặt Mã oa tâm của Đen; lúc này Đen không thể ăn Pháo bằng X2.5 vì Trắng có sẵn nước P7.7 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "1r1akab2/3RnR3/4b1n2/p3p3p/2r6/1C1N5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 7 bình 3",
+          "move_notation_iccs": "g5c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "1r1akab2/3RnR3/4b1n2/p3p3p/2r6/2CN5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Pháo 8 bình 7",
+          "move_notation_iccs": "b4c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo. Đến đây Đen không còn cách chống đỡ, chủ động nhận thua — đáng chú ý, suốt cả 13 nước không hề có quân nào bị ăn, đây thuần túy là một cuộc bóp nghẹt vị trí.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "1r1akab2/3RnR3/4b1n2/p3p3p/6r2/2CN5/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 3 bình 7",
+          "move_notation_iccs": "c5g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Biến (Hình 2-46, giả sử Đen không đầu hàng mà thử chơi tiếp): Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "1r1akab2/3RnR3/4b1n2/p1N1p3p/6r2/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "d4c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "1r1akab2/3RnR3/6n2/p1N1p3p/2b3r2/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Tượng 5 tiến 3",
+          "move_notation_iccs": "e7c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng, phòng ngừa Trắng ăn nốt Tượng còn lại; sách cho biết Đen còn cách khác là đổi Xe tạo thế cân bằng cho Tướng, nhưng Trắng vẫn thắng bằng chuỗi M7.9, X6/3, M9.8, V5.3, M8/7, M5.4, X6.1 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "1r1akab2/1N1RnR3/6n2/p3p3p/2b3r2/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Mã 7 tiến 8",
+          "move_notation_iccs": "c6b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "1r1akab2/1N1RnR3/6n2/p3p3p/2b2r3/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "g5f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, hy vọng đổi Xe để xoa dịu cuộc thế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "1r1akab2/3RnR3/3N2n2/p3p3p/2b2r3/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "b8d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "3akab2/3RnR3/1r1N2n2/p3p3p/2b2r3/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 2 tiến 2",
+          "move_notation_iccs": "b9b7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe — sách cho biết nếu đổi thành lui Xe thì Trắng có ngay nước X6-7 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "3akab2/4RR3/1r1N2n2/p3p3p/2b2r3/2C6/P3P3P/B1C6/4A4/1c2KAB2",
+          "move_notation_wxf": "Xe 6 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — nhảy quỉ giác Mã phối hợp cùng song Xe, hình thành thế sát. Đây chính là kỹ thuật mang tên chủ đề Bài 9, dù thế cờ tại đây vẫn chưa phải chiếu bí tức thời trên bàn.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
