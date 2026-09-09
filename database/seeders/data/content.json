@@ -59319,6 +59319,326 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20706,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Hải Để Lao Nguyệt — Cản Xe Rồi Đột Phá Trung Lộ — Ví Dụ 6",
+      "slug": "c2-hai-de-lao-nguyet-vi-du-6",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3akab2/4n4/1c2b1n2/2P1N3p/r8/p2N3R1/4P1c1P/1C2C4/4A4/2BAK4",
+      "variation_tree": null,
+      "move_count": 27,
+      "summary": "Ván đấu thực chiến đến hồi thứ 21 giữa Viên Hồng Lương (Trắng) và Miêu Vĩnh Bằng (Đen) tại giải đồng đội toàn quốc: Trắng trước thăng Pháo cản Xe, sau thúc Binh lộ 7 đột phá trung lộ, buộc Đen phải rút lui một Mã oa tâm nguy hiểm, rồi từng bước siết chặt cho tới khi hoàn tất sát pháp Hải Để Lao Nguyệt.",
+      "content": "<h2>Cản Xe trước, đột phá sau</h2><p>Đây là hình thế thực chiến đến hồi thứ 21 trong ván đấu giữa <strong>Viên Hồng Lương</strong> (cầm quân Trắng) và <strong>Miêu Vĩnh Bằng</strong> (cầm quân Đen) tại giải đồng đội toàn quốc. Sách tóm tắt kế hoạch của Trắng rất rõ ràng: \"trước thăng Pháo cản Xe, sau lại thúc Binh lộ 7, đột phá trung lộ, hình thành sát thế\" — một kế hoạch hai giai đoạn: trước tiên vô hiệu hóa quân phòng thủ chủ lực của đối phương (cản Xe), sau đó mới mở đường tấn công trực diện vào trung lộ.</p><h2>Mã oa tâm — con dao hai lưỡi</h2><p>Một chi tiết chiến thuật đáng chú ý là quân Mã của Đen ở vị trí gọi là \"oa tâm\" (nằm ngay giữa lòng trận địa) — sách mô tả đây là vị trí \"vô cùng nguy hiểm\", nhưng nguy hiểm cho ai? Chính vì thế trận đã chuyển biến bất lợi, bên Đen buộc phải rút lui quân Mã này, nếu không bên Trắng sẽ ngay lập tức có nước Binh hình thành thế công sát. Điều này cho thấy một quân đặt ở vị trí trung tâm không phải lúc nào cũng là lợi thế — nếu thế trận xung quanh đã đổi chiều, chính quân đó có thể trở thành mục tiêu hoặc gánh nặng.</p><h2>Từng bước siết chặt tới Hải Để Lao Nguyệt</h2><p>Phần còn lại của ván đấu là một quá trình siết chặt kiên trì: Binh tiếp tục tiến, Xe tiếp tục cơ động, buộc Tướng Đen phải liên tục tiến lui theo những nước bắt buộc. Sách còn chỉ ra một nước đi của Đen \"bại nhanh\" — dù có đổi hướng khác thì \"cũng khó ứng phó\", xác nhận thế cờ đã nghiêng hẳn về phía Trắng từ trước đó khá lâu.</p><p>Bài học từ ván đấu: một kế hoạch tấn công hiệu quả thường cần đúng trình tự — vô hiệu hóa quân phòng thủ nguy hiểm nhất của đối phương trước, rồi mới mở đường đột phá; đồng thời, một quân ở vị trí trung tâm tưởng chừng mạnh mẽ vẫn có thể trở thành điểm yếu nếu không được hỗ trợ đúng lúc bởi thế trận xung quanh.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Hải Để Lao Nguyệt Nâng Cao — Cản Xe Rồi Đột Phá Trung Lộ (Ví Dụ 6)",
+      "seo_description": "Ván đấu thực chiến Viên Hồng Lương vs Miêu Vĩnh Bằng: cản Xe, đột phá trung lộ, ép Mã oa tâm rút lui, hoàn tất Hải Để Lao Nguyệt. 27 nước, chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akab2/4n4/1c2b1n2/2P1N3p/rC7/p2N3R1/4P1c1P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 8 tiến 3",
+          "move_notation_iccs": "b2b5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — trước thăng Pháo cản Xe, sau lại thúc Binh lộ 7, đột phá trung lộ, hình thành sát thế.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akab2/4n4/1c2b1n2/2P1N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 7 thoái 3",
+          "move_notation_iccs": "g3g6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akab2/4n4/1cP1b1n2/4N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Tốt 7 tiến 1",
+          "move_notation_iccs": "c6c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3akab2/4n4/2P1b1n2/1c2N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 2 tiến 1",
+          "move_notation_iccs": "b7b6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3akab2/4n4/3Pb1n2/1c2N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2nakab2/9/3Pb1n2/1c2N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Mã 5 thoái 3",
+          "move_notation_iccs": "e8c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã — Đen có Mã oa tâm vô cùng nguy hiểm, nếu không rút lui thì Trắng B6.1 hình thành thế công sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2nakab2/9/4P1n2/1c2N1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "d7e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2nakab2/9/4P4/1c2n1c1p/rC7/p2N3R1/4P3P/4C4/4A4/2BAK4",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "g7e6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2nakab2/9/4P4/1c2C1c1p/rC7/p2N3R1/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 5 tiến 4",
+          "move_notation_iccs": "e2e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2n1kab2/4a4/4P4/1c2C1c1p/rC7/p2N3R1/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2n1kab2/4P4/9/1c2C1c1p/rC7/p2N3R1/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Tốt trước tiến 1",
+          "move_notation_iccs": "e7e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2n2ab2/4k4/9/1c2C1c1p/rC7/p2N3R1/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2n2ab2/4k2R1/9/1c2C1c1p/rC7/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 2 tiến 4",
+          "move_notation_iccs": "h4h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2n1kab2/7R1/9/1c2C1c1p/rC7/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2n1kab2/2R6/9/1c2C1c1p/rC7/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 2 bình 7",
+          "move_notation_iccs": "h8c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "4kab2/n1R6/9/1c2C1c1p/rC7/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Mã 3 tiến 1",
+          "move_notation_iccs": "c9a8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "4kab2/nR7/9/1c2C1c1p/rC7/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 7 bình 8",
+          "move_notation_iccs": "c8b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "4kab2/nR7/9/1c2C3p/rC4c2/p2N5/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 7 tiến 1",
+          "move_notation_iccs": "g6g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo — Đen tiến Pháo bại nhanh; nhưng nếu đổi cách đi khác thì Trắng P5/2, Đen cũng khó ứng phó.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "4kab2/nR7/9/1cN1C3p/rC4c2/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "d4c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã gọi sát — Đen không tiện P2-5 ăn Pháo, nếu không Trắng M7/9 ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "4kab2/nR7/9/1cN1C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Pháo 7 bình 3",
+          "move_notation_iccs": "g5c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "4kab2/nR7/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "c6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "4k1b2/nR2a4/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "4k1b2/n3R4/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 8 bình 5",
+          "move_notation_iccs": "b8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 24,
+          "fen": "5kb2/n3R4/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 25,
+          "fen": "4Rkb2/n8/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 5 tiến 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 26,
+          "fen": "4R1b2/n4k3/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 27,
+          "fen": "5Rb2/n4k3/4N4/1c2C3p/rCc6/p8/4P3P/9/4A4/2BAK4",
+          "move_notation_wxf": "Xe 5 bình 4",
+          "move_notation_iccs": "e9f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — hình thành sát thế Hải Để Lao Nguyệt. Chiếu bí!",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
