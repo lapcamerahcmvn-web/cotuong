@@ -62386,6 +62386,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20905,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Quỉ Giác Mã — Song Mã Quỉ Giác, Song Xe Tuyệt Sát — Ví Dụ 5",
+      "slug": "c2-qui-giac-ma-vi-du-5",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1ka3/2c1a4/3nbc3/p5R1p/2P2CP2/2N6/Prn4rP/2N1B3C/4A4/2BAK3R",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Ván đấu thực chiến đến hồi thứ 21 giữa Lê Hiển (Trắng) và Tiết Vân Cường (Đen) tại giải cá nhân toàn quốc: Đen thực hiện đúng kế hoạch ba giai đoạn — đổi Pháo lấy Mã dọn đường, đưa song Mã tung hoành trung tâm, rồi quỉ giác cả hai Mã kết hợp song Xe — kết thúc bằng một chiếu bí thật sự.",
+      "content": "<h2>Pháo đổi Mã — dọn đường cho đôi Mã tung hoành</h2><p>Đây là hình thế thực chiến đến hồi thứ 21 trong ván đấu giữa <strong>Lê Hiển</strong> (cầm quân Trắng) và <strong>Tiết Vân Cường</strong> (cầm quân Đen) tại giải cá nhân toàn quốc. Sách tóm tắt cả kế hoạch ngay từ đầu: \"bên Đen Pháo đổi Mã, trước tiên quét sạch trở ngại để Mã sỹ giác nhảy ra, tiếp theo song Mã bay lên ở khu trung tâm như thiên Mã hành không, thể hiện bát diện uy phong. Cuối cùng song Mã quỉ giác rồi dùng song Xe tuyệt sát.\" — một bản thiết kế ba giai đoạn rõ ràng cho toàn bộ ván đấu.</p><h2>Mã hoang ra khỏi rừng</h2><p>Sau khi đổi Pháo lấy Mã để dọn đường, Đen lần lượt đưa cả hai Mã tiến sâu vào trận địa. Sách dùng một hình ảnh đầy chất thơ để mô tả bước ngoặt này: các nước đi tưởng như \"còn ở tạm hậu phương nhảy ra qua sông, có nước ngọa tào chiếu Tướng rút ăn Xe Trắng, như thể Mã hoang ra khỏi rừng, uy danh lừng lẫy.\" Ngay sau đó, Mã Đen \"chiếm giữ trung tâm bàn cờ, chiếm lĩnh không chế điểm cao, thế cực hùng tráng, ép dần về sát cục.\"</p><h2>Khi phòng thủ chủ động lại phản tác dụng</h2><p>Một điểm thú vị: khi Trắng đưa Xe ra tróc Mã, tưởng chừng là một nước phòng thủ tích cực, sách lại chỉ ra điều ngược lại: \"Bên Trắng Xe tróc Mã, ngược lại giúp Mã đen quỉ giác công sát.\" Sách còn phân tích: đáng lẽ Trắng nên chọn phương án kiên trì hơn (lui Tượng phòng thủ), nhưng dù vậy vẫn không thoát khỏi thế hạ phong — cho thấy vị trí của Trắng đã xấu đến mức không còn nước đi nào thực sự cứu vãn được tình thế.</p><h2>Song Mã quỉ giác, song Xe tuyệt sát</h2><p>Đúng như kế hoạch vạch ra từ đầu, Đen đưa lần lượt cả hai Mã vào đúng góc cung Tướng, rồi dùng hai Xe phối hợp giáng đòn kết liễu. Thế cờ cuối cùng được xác nhận là một chiếu bí thật sự — không chỉ là đe dọa, mà là một chiếu bí hoàn chỉnh trên bàn cờ, đúng như tên gọi mà sách đã hứa hẹn ngay từ dòng giới thiệu đầu tiên: \"song Mã quỉ giác rồi dùng song Xe tuyệt sát\".</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Quỉ Giác Mã Nâng Cao — Song Mã Quỉ Giác, Song Xe Tuyệt Sát (Ví Dụ 5)",
+      "seo_description": "Ván đấu thực chiến Lê Hiển vs Tiết Vân Cường: Đen đổi Pháo lấy Mã, đưa song Mã tung hoành trung tâm rồi quỉ giác cả hai, kết hợp song Xe tạo tuyệt sát thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2b1ka3/4a4/3nbc3/p5R1p/2P2CP2/2c6/Prn4rP/2N1B3C/4A4/2BAK3R",
+          "move_notation_wxf": "Pháo 3 tiến 4",
+          "move_notation_iccs": "c8c4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo, ăn Mã Trắng — mở đầu bằng \"Pháo đổi Mã\", quét sạch trở ngại để Mã sau này nhảy ra góc.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b1ka3/4a4/3nbc3/p5R1p/2P2CP2/2B6/Prn4rP/2N5C/4A4/2BAK3R",
+          "move_notation_wxf": "Tượng 5 tiến 7",
+          "move_notation_iccs": "e2c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng, ăn lại Pháo Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b1ka3/4a4/4bc3/p5R1p/2P1nCP2/2B6/Prn4rP/2N5C/4A4/2BAK3R",
+          "move_notation_wxf": "Mã 4 tiến 5",
+          "move_notation_iccs": "d7e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b1ka3/4a4/4bc3/p5R1p/3PnCP2/2B6/Prn4rP/2N5C/4A4/2BAK3R",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c5d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b1ka3/4a4/4bc3/p5R1p/3P1CP2/2B6/Prn2n1rP/2N5C/4A4/2BAK3R",
+          "move_notation_wxf": "Mã 5 tiến 6",
+          "move_notation_iccs": "e5f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — sách mô tả: Mã Đen mấy nước trước còn ở tạm hậu phương, nay nhảy qua sông có nước ngọa tào chiếu Tướng rút ăn Xe Trắng, \"như thể Mã hoang ra khỏi rừng, uy danh lừng lẫy\".",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b1ka3/4a4/4bc3/p5R1p/3P1CP2/2B6/Prn2n1rP/2N2C3/4A4/2BAK3R",
+          "move_notation_wxf": "Pháo 1 bình 4",
+          "move_notation_iccs": "i2f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2b1ka3/4a4/4bc3/p5R1p/3P1CP2/2B1n4/Pr3n1rP/2N2C3/4A4/2BAK3R",
+          "move_notation_wxf": "Mã 3 thoái 5",
+          "move_notation_iccs": "c3e4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã — sách nhận xét: Mã Đen chiếm giữ trung tâm bàn cờ, khống chế điểm cao, thế cực hùng tráng, ép dần về sát cục.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/2B1n4/Pr3n1rP/2N2C3/4A4/2BAK3R",
+          "move_notation_wxf": "Xe 3 bình 5",
+          "move_notation_iccs": "g6e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe, tróc Mã — sách chỉ ra điều ngược lại: chính nước này lại giúp Mã Đen nhảy quỉ giác công sát; đáng lẽ Trắng nên kiên trì lui Tượng phòng thủ sẽ tốt hơn, nhưng dù vậy vẫn ở thế hạ phong.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/2B1n4/Pr5rP/2Nn1C3/4A4/2BAK3R",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "f3d2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/2B1n4/Pr5rP/2Nn1C3/4A4/2BA1K2R",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách khen Đen quyết đoán nhảy Mã quỉ giác chiếu Tướng công sát ngay, khiến Trắng dù chọn phương án nào cũng đều bất lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/2B1n4/P4r1rP/2Nn1C3/4A4/2BA1K2R",
+          "move_notation_wxf": "Xe 2 bình 6",
+          "move_notation_iccs": "b3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/4n4/P4r1rP/2NnBC3/4A4/2BA1K2R",
+          "move_notation_wxf": "Tượng trước thoái 5",
+          "move_notation_iccs": "c4e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tượng trước — sách cho biết Trắng không dám dùng Sĩ ăn Mã, vì Đen có sẵn nước Xe chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P4r1rP/2NnBn3/4A4/2BA1K2R",
+          "move_notation_wxf": "Mã 5 tiến 6",
+          "move_notation_iccs": "e4f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã, ăn Pháo Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P4r1rP/2NABn3/9/2BA1K2R",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ, ăn lại Mã Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P4r1rP/2NAB4/9/2BA1Kn1R",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "f2g0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P4r1rP/2NAB4/9/2BAK1n1R",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P6rP/2NAB4/9/2BAKrn1R",
+          "move_notation_wxf": "Xe 6 tiến 3",
+          "move_notation_iccs": "f3f0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P6rP/2NAB4/4K4/2BA1rn1R",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P1CP2/9/P7P/2NAB4/4K2r1/2BA1rn1R",
+          "move_notation_wxf": "Xe 8 tiến 2",
+          "move_notation_iccs": "h3h1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P2P2/9/P7P/2NAB4/4KC1r1/2BA1rn1R",
+          "move_notation_wxf": "Pháo 4 thoái 4",
+          "move_notation_iccs": "f5f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "2b1ka3/4a4/4bc3/p3R3p/3P2P2/9/P7P/2NAB4/4Kr3/2BA1rn1R",
+          "move_notation_wxf": "Xe 8 bình 6",
+          "move_notation_iccs": "h1f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe, ăn nốt Pháo Trắng — CHIẾU BÍ THẬT SỰ bằng song Xe, đúng như sách khẳng định ngay từ đầu: \"cuối cùng song Mã quỉ giác rồi dùng song Xe tuyệt sát\". Đen thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
