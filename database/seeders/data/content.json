@@ -52211,6 +52211,238 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20205,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Ngọa Tào Mã — Kế Hoạch Hay Chưa Chắc Thắng — Ví Dụ 5",
+      "slug": "c2-ngoa-tao-ma-vi-du-5",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4kab2/4a4/c8/1CP5p/4P1N2/9/np4n1P/B2AB4/4A2c1/N3K4",
+      "variation_tree": null,
+      "move_count": 19,
+      "summary": "Ván đấu thực chiến giữa Vương Bân (Trắng) và Nhiếp Thiết Văn (Đen) tại giải \"Ngân Lệ Bài\", hình thế đến hồi thứ 46: Đen triển khai kế hoạch Mã Ngọa tào phối hợp song Pháo bài bản, từng được sách nhận xét đã hợp thành hệ thống chiến đấu trong khi Trắng phòng thủ bất lợi — nhưng cuối cùng chính bên Đen lại là bên nhận thua, cho thấy một kế hoạch hay và một thế cờ được đánh giá tốt vẫn chưa chắc chuyển hóa thành chiến thắng nếu các nước cụ thể ở đoạn kết không đủ chính xác.",
+      "content": "<h2>Một kế hoạch tấn công bài bản</h2><p>Đây là hình thế thực chiến đến hồi thứ 46 trong ván đấu giữa <strong>Vương Bân</strong> (cầm quân Trắng) và <strong>Nhiếp Thiết Văn</strong> (cầm quân Đen) tại giải \"Ngân Lệ Bài\", hiện tại đến lượt bên Đen đi cờ. Sách mô tả rất rõ kế hoạch của bên Đen ngay từ đầu: \"cho Mã tiên phong dẫn đường, tiến tay đến gần Tướng Trắng, sau đó Ngọa tào chiếu Tướng, rồi điều động song Pháo liên hợp công kích, thực hiện sát thế Pháo trục\" — một kế hoạch tấn công nhiều tầng, phối hợp nhịp nhàng giữa Mã và hai Pháo.</p><h2>Những cơ hội bị Trắng bỏ lỡ</h2><p>Xuyên suốt ván đấu, sách chỉ ra ít nhất hai thời điểm bên Trắng có phương án phòng thủ tốt hơn nhưng không chọn: lần đầu đáng lẽ nên đi S5.4 để trì hoãn tốc độ tấn công của Đen; lần sau đáng lẽ nên giữ vững cánh sườn bằng B5.1 thay vì nhảy Mã ăn Tượng — nước đi mà sách nhận xét thẳng là \"không có lối lợi gì, ngược lại cho Pháo Đen cơ hội chuyển vào Sĩ giác\". Đến giữa ván, sách còn khẳng định rõ ràng: \"bốn quân bên Đen đã hợp thành một hệ thống chiến đấu\" trong khi \"bên Trắng thì quân lực phân tán, phòng thủ bất lợi\" — một đánh giá nghiêng hẳn về phía Đen.</p><h2>Kế hoạch hay không đảm bảo chiến thắng</h2><p>Điều bất ngờ của ván đấu này nằm ở đoạn kết: dù được đánh giá thuận lợi trong phần lớn ván đấu, bên Đen lại là bên phải nhận thua. Đây chính là điểm khác biệt so với phần lớn các ví dụ khác trong sách — không phải mọi kế hoạch hay, mọi thế cờ được đánh giá tốt đều tự động chuyển hóa thành chiến thắng; những nước đi cụ thể ở đoạn cuối (khi Mã Trắng tìm được đường nhảy chiếu Tướng liên tục) mới là yếu tố quyết định cuối cùng.</p><p>Bài học từ ván đấu: một kế hoạch tấn công bài bản, phối hợp nhiều quân, và thậm chí một đánh giá thế cờ có lợi giữa ván vẫn cần được hiện thực hóa bằng những nước đi chính xác đến tận nước cuối cùng. Đây là lời nhắc quan trọng: đừng chủ quan khi thế trận đang có vẻ thuận lợi — đối phương luôn có thể tìm ra con đường phản công mà mình chưa lường hết.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Ngọa Tào Mã Nâng Cao — Kế Hoạch Hay Chưa Chắc Thắng (Ví Dụ 5)",
+      "seo_description": "Ván đấu thực chiến Vương Bân vs Nhiếp Thiết Văn: kế hoạch Ngọa Tào Mã phối hợp song Pháo bài bản nhưng vẫn dẫn tới thua cuộc. Bàn cờ tương tác đầy đủ 19 nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4kab2/4a4/c8/1CP5p/4P1N2/9/np6P/B2An4/4A2c1/N3K4",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "g3e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — mở đầu kế hoạch: cho Mã tiên phong dẫn đường, tiến tới gần Tướng Trắng, sau đó Ngọa tào chiếu Tướng, rồi điều song Pháo liên hợp công kích, thực hiện sát thế Pháo trục.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4kab2/4a4/c8/2P5C/4P1N2/9/np6P/B2An4/4A2c1/N3K4",
+          "move_notation_wxf": "Pháo 8 bình 1",
+          "move_notation_iccs": "b6i6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiên tay ăn Tốt, vô tình cho Đen cơ hội nhảy Mã Ngọa tào — đáng lẽ nên đi S5.4 phòng thủ trước, trì hoãn tốc độ tấn công của Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4kab2/4a4/c8/2P5C/4P1N2/9/np6P/B2A5/4A1nc1/N3K4",
+          "move_notation_wxf": "Mã 5 tiến 7",
+          "move_notation_iccs": "e2g1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã Ngọa tào.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4kab2/4a4/c8/2P5C/4P1N2/9/np6P/B2A5/4A1nc1/N4K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng buộc bình Tướng — nếu đổi thành Tg5-6 thì dính chuỗi nước dẫn tới Đen tất thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4kab2/4a4/c8/2P4cC/4P1N2/9/np6P/B2A5/4A1n2/N4K3",
+          "move_notation_wxf": "Pháo 8 thoái 5",
+          "move_notation_iccs": "h1h6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo, chuẩn bị thọc P1-3 đuổi Mã, phối hợp song Pháo cùng Mã Ngọa tào giữ thế sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4kab2/4a4/c6N1/2P4cC/4P4/9/np6P/B2A5/4A1n2/N4K3",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "g5h7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã ăn Tượng — không có lối lợi gì, ngược lại cho Pháo Đen cơ hội chuyển vào Sĩ giác; đáng lẽ nên đi B5.1 giữ vững cánh sườn quan trọng, khiến Pháo Đen khó lòng thi triển.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4ka3/4a4/c6Nb/2P4cC/4P4/9/np6P/B2A5/4A1n2/N4K3",
+          "move_notation_wxf": "Tượng 7 tiến 9",
+          "move_notation_iccs": "g9i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4ka3/4a4/c6Nb/2P1P2cC/9/9/np6P/B2A5/4A1n2/N4K3",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e5e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng đẩy Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4ka3/4a4/c6Nb/2P1P2cC/1n7/9/1p6P/B2A5/4A1n2/N4K3",
+          "move_notation_wxf": "Mã 1 thoái 2",
+          "move_notation_iccs": "a3b5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4ka3/4a4/c6Nb/2P1P2cC/1n7/9/1p6P/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Tượng 9 thoái 7",
+          "move_notation_iccs": "a2c0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4ka3/4a4/5c1Nb/2P1P2cC/1n7/9/1p6P/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "a7f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo cứu sát — song Pháo phối hợp tấn công rất mạnh, bốn quân Đen đã hợp thành một hệ thống chiến đấu; ngược lại quân Trắng phân tán, phòng thủ bất lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "4ka3/4a4/4Pc1Nb/2P4cC/1n7/9/1p6P/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng đẩy Binh tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "4ka3/4a4/4P2Nb/2P4cC/1n3c3/9/1p6P/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Pháo 6 tiến 2",
+          "move_notation_iccs": "f7f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "4ka3/4a4/4P3b/2P2N1cC/1n3c3/9/1p6P/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Mã 2 thoái 4",
+          "move_notation_iccs": "h7f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "4ka3/4a4/4P3b/2P2N2C/1n3c3/9/1p5cP/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Pháo 8 tiến 3",
+          "move_notation_iccs": "h6h3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "4ka3/4a1N2/4P3b/2P5C/1n3c3/9/1p5cP/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Mã 4 tiến 3",
+          "move_notation_iccs": "f6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "3k1a3/4a1N2/4P3b/2P5C/1n3c3/9/1p5cP/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "3k1a3/4a4/4P3b/2P4NC/1n3c3/9/1p5cP/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Mã 3 thoái 2",
+          "move_notation_iccs": "g8h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "3k1a3/4a4/4P3b/2P4NC/1n7/5c3/1p5cP/3A5/4A1n2/N1B2K3",
+          "move_notation_wxf": "Pháo 6 tiến 1",
+          "move_notation_iccs": "f5f4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo — đến đây bên Đen nhận thua.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
