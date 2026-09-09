@@ -54286,6 +54286,194 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20401,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Giáp Xe Pháo — Ép Tướng Leo Đỉnh Cửu Cung — Ví Dụ 1",
+      "slug": "c2-giap-xe-phao-nangcao-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1C1k1a3/4a4/R4n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Một hình tàn cuộc thực chiến trong giải đấu tranh giải Tượng kỳ toàn quốc: bên Trắng luân phiên dùng Xe và Pháo buộc Tướng Đen phải liên tục tiến lui theo ý mình, từng bước ép Tướng leo lên tận đỉnh cửu cung, cuối cùng khép chặt bằng chính Xe và Pháo kẹp hai phía, mở đầu chuyên đề Bài 4 — sát pháp Giáp Xe Pháo.",
+      "content": "<h2>Giáp Xe Pháo — Xe và Pháo cùng kẹp chặt</h2><p>Đây là một hình tàn cuộc thực chiến trong giải đấu tranh giải Tượng kỳ toàn quốc, hiện tại đến lượt bên Trắng đi cờ. Bài học này mở đầu chuyên đề <strong>Giáp Xe Pháo Sát Pháp</strong> — kiểu sát pháp dùng Xe khống chế một hướng, Pháo khống chế hướng còn lại, cùng lúc kẹp chặt Tướng đối phương không còn ô nào để thoát.</p><h2>Từng bước ép Tướng lên đỉnh</h2><p>Điều đáng chú ý ở ván này là cách Tướng Đen bị buộc phải di chuyển liên tục theo đúng ý đồ của Trắng — mỗi nước tiến hay lui của Tướng đều là nước bắt buộc duy nhất để tránh bị ăn Xe hoặc bị chiếu. Sách chỉ rõ ngay từ nước đầu: nếu Tướng không tiến, Trắng sẽ đi Pháo chiếu ăn thẳng Xe. Cứ như vậy, từng nước một, Tướng Đen bị dồn dần lên phía trên, cuối cùng phải \"leo lên tận đỉnh cửu cung\" — không còn khoảng trống nào để né tránh.</p><h2>Hoàn tất bằng Pháo trục sát</h2><p>Nước kết thúc mạch chính rất tiêu biểu cho tên gọi \"Giáp Xe Pháo\": sách mô tả \"trước đó Trắng dùng Xe chiếu Tướng, sau dùng Pháo khống chế Tướng Đen, lúc này thoái Pháo hình thành Pháo trục sát\" — nghĩa là Xe đã hoàn thành nhiệm vụ ép buộc, còn Pháo giữ vai trò khóa chặt đường lui, hai quân phối hợp nhịp nhàng như hai gọng kìm khép lại từ hai phía khác nhau.</p><p>Bài học từ ván đấu: sát pháp Giáp Xe Pháo không đòi hỏi những nước hy sinh ngoạn mục — chỉ cần kiên nhẫn luân phiên dùng hai quân (Xe và Pháo) buộc đối phương đi những nước bắt buộc hết lần này đến lần khác, cho đến khi Tướng đối phương tự dồn mình vào một góc không còn lối thoát.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Giáp Xe Pháo Nâng Cao — Ép Tướng Leo Đỉnh Cửu Cung (Ví Dụ 1)",
+      "seo_description": "Tàn cuộc thực chiến giải Tượng kỳ toàn quốc: Xe và Pháo luân phiên ép Tướng leo đỉnh cửu cung, hoàn tất sát pháp Giáp Xe Pháo kinh điển. Bàn cờ tương tác.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "RC1k1a3/4a4/5n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Xe 9 tiến 2",
+          "move_notation_iccs": "a7a9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "RC3a3/3ka4/5n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng — nước cần phải đi, nếu không Trắng đi P8/6 chiếu Tướng ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1C3a3/R2ka4/5n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Xe 9 thoái 1",
+          "move_notation_iccs": "a9a8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1C1k1a3/R3a4/5n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1C1k1a3/2R1a4/5n3/2c5p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Xe 9 bình 7",
+          "move_notation_iccs": "a8c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1C1k1a3/2R1a4/5n3/6c1p/p3p4/9/4P1r1P/2C1B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 3 bình 7",
+          "move_notation_iccs": "c6g6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1C1k1a3/2R1a4/5n3/2C3c1p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 7 tiến 4",
+          "move_notation_iccs": "c2c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1C1k1a3/2R1a1c2/5n3/2C5p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 7 thoái 2",
+          "move_notation_iccs": "g6g8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1CRk1a3/4a1c2/5n3/2C5p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Xe 7 tiến 1",
+          "move_notation_iccs": "c8c9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "1CR2a3/3ka1c2/5n3/2C5p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "1CR2a3/3ka1c2/5n3/C7p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 7 bình 9",
+          "move_notation_iccs": "c6a6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — bên Trắng chuẩn bị dùng sát pháp Giáp Xe Pháo giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "1CR2ac2/3ka4/5n3/C7p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 7 thoái 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "1C3ac2/2Rka4/5n3/C7p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Xe 7 thoái 1",
+          "move_notation_iccs": "c9c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe — bên Trắng thừa cơ chiếu Tướng, ép Tướng Đen leo lên tận đỉnh cửu cung.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "1C3ac2/2R1a4/3k1n3/C7p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "5ac2/2R1a4/1C1k1n3/C7p/p3p4/9/4P1r1P/4B1N2/4A4/4K4",
+          "move_notation_wxf": "Pháo 8 thoái 2",
+          "move_notation_iccs": "b9b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — trước đó Trắng dùng Xe chiếu Tướng, sau dùng Pháo khống chế Tướng Đen, lúc này thoái Pháo hình thành Pháo trục sát, tạo thành sát pháp Giáp Xe Pháo kinh điển.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
