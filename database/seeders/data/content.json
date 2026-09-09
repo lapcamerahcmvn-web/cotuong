@@ -54596,6 +54596,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20403,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Giáp Xe Pháo — Đổi Cánh Pháo, Tam Tử Quy Biên — Ví Dụ 3",
+      "slug": "c2-giap-xe-phao-nangcao-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1Cbakc3/1r2aR3/4b4/p6nC/4P1p2/2B6/P7P/9/4A4/4KA3",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Ván đấu thực chiến giữa Triệu Kim (Trắng) và Lý Bằng (Đen) tại giải cá nhân toàn quốc, hình thế đến hồi thứ 36: hai bên quân lực đối thế tương đương, nhưng chìa khóa thắng lợi của Trắng không nằm ở việc tiến Pháo biên tấn công ngay mà ở việc điều Pháo cánh trái sang cánh phải, tạo thành thế tam tử quy biên rồi hoàn tất bằng sát pháp Giáp Xe Pháo.",
+      "content": "<h2>Quân lực ngang nhau — chìa khóa nằm ở hướng đi</h2><p>Đây là hình thế thực chiến đến hồi thứ 36 trong ván đấu giữa <strong>Triệu Kim</strong> (cầm quân Trắng) và <strong>Lý Bằng</strong> (cầm quân Đen) tại giải cá nhân toàn quốc, hai bên quân lực đối thế tương đương. Sách chỉ ra một điểm chiến lược quan trọng ngay từ đầu: bên Trắng CÓ THỂ toan tính tiến Pháo biên tuyến tấn công trực diện để ăn hơn một quân, nhưng cách đó \"Xe Pháo khó hình thành sát thế\". Điều thực sự quan trọng là phải <strong>đưa Pháo từ cánh trái sang cánh phải</strong> — chỉ khi đó mới lập tức hình thành được sát thế \"tam tử quy biên\" (ba quân cùng dồn về một góc) kết hợp với Giáp Xe Pháo.</p><h2>Không nóng vội, đổi cánh đúng lúc</h2><p>Xuyên suốt ván đấu, các phối hợp của Trắng đều nhất quán với chiến lược ban đầu: sau khi ăn hơn một quân bằng những nước đơn giản, bên Trắng không lao vào tấn công ngay mà từ từ điều chỉnh vị trí Xe và Pháo, buộc Tướng Đen phải tiến lui theo ý mình trong khi Pháo dần dần dịch chuyển sang đúng cánh cần thiết. Sách cũng chỉ rõ bên Đen có ít nhất hai thời điểm bắt buộc phải chọn đúng nước phòng thủ (không thể bỏ Sĩ cản Pháo, không thể đổi hướng Xe khác) — nếu không sẽ mất Xe ngay lập tức.</p><h2>Tam tử quy biên gặp Giáp Xe Pháo</h2><p>Nước kết thúc hoàn tất đúng như kế hoạch đã vạch ra từ đầu: Xe, Pháo và các quân hỗ trợ cùng hội tụ về một góc bàn cờ, khép chặt bằng chính sát pháp Giáp Xe Pháo. Đây là minh chứng cho việc hai kiểu sát pháp khác nhau (tam tử quy biên và Giáp Xe Pháo) hoàn toàn có thể lồng ghép, bổ trợ lẫn nhau trong cùng một kế hoạch tấn công.</p><p>Bài học từ ván đấu: khi quân lực hai bên tương đương, việc chọn ĐÚNG HƯỚNG điều quân (ở đây là chuyển Pháo sang cánh phải) quan trọng hơn nhiều so với việc tấn công ngay lập tức bằng phương án đầu tiên nhìn thấy — đôi khi phải chấp nhận đi vòng một chút để đặt quân vào đúng vị trí trước khi ra đòn quyết định.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Giáp Xe Pháo Nâng Cao — Đổi Cánh Pháo, Tam Tử Quy Biên (Ví Dụ 3)",
+      "seo_description": "Ván đấu thực chiến Triệu Kim vs Lý Bằng: đổi Pháo sang cánh phải tạo thế tam tử quy biên, hoàn tất sát pháp Giáp Xe Pháo. Bàn cờ tương tác đầy đủ 21 nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1Cbakc2C/1r2aR3/4b4/p6n1/4P1p2/2B6/P7P/9/4A4/4KA3",
+          "move_notation_wxf": "Pháo 1 tiến 3",
+          "move_notation_iccs": "i6i9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1Cbak3C/1r2aR3/4b4/p6n1/4P1p2/2B6/P7P/9/4A4/4Kc3",
+          "move_notation_wxf": "Pháo 6 tiến 9",
+          "move_notation_iccs": "f9f0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1Cbak3C/1r2aR3/4b4/p6n1/4P1p2/2B6/P7P/9/4A4/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — Trắng ăn nhiều hơn 1 quân, lại có sẵn nước X4.1 sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1Cbak3C/4aR3/4b4/p6n1/4P1p2/2B6/P7P/9/4A4/1r3K3",
+          "move_notation_wxf": "Xe 2 tiến 8",
+          "move_notation_iccs": "b8b0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1Cbak3C/4aR3/4b4/p6n1/4P1p2/2B6/P7P/9/4AK3/1r7",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1Cbak3C/5R3/4ba3/p6n1/4P1p2/2B6/P7P/9/4AK3/1r7",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1Cbak3C/7R1/4ba3/p6n1/4P1p2/2B6/P7P/9/4AK3/1r7",
+          "move_notation_wxf": "Xe 4 bình 2",
+          "move_notation_iccs": "f8h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — nếu Đen đổi thành X2/9 thì X2/2, bên Trắng nhiều quân lại có Binh qua sông chiếm ưu, bên Đen khó lòng chống đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1Cbak3C/7R1/4ba3/p8/4P1p2/2B3n2/P7P/9/4AK3/1r7",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "h6g4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2bak3C/1C5R1/4ba3/p8/4P1p2/2B3n2/P7P/9/4AK3/1r7",
+          "move_notation_wxf": "Pháo 8 thoái 1",
+          "move_notation_iccs": "b9b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2bak3C/1C5R1/4ba3/p8/4P1p2/2B3n2/Pr6P/9/4AK3/9",
+          "move_notation_wxf": "Xe 2 thoái 3",
+          "move_notation_iccs": "b0b3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe — bên Đen không thể bỏ Sĩ cản Pháo; nếu đổi thành S4.5 thì Trắng X2.1, S5/6, X2/9 rút ăn Xe Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2bak3C/6CR1/4ba3/p8/4P1p2/2B3n2/Pr6P/9/4AK3/9",
+          "move_notation_wxf": "Pháo 8 bình 3",
+          "move_notation_iccs": "b8g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2bak3C/6CR1/4ba3/p8/4P1p2/2B3n2/P7r/9/4AK3/9",
+          "move_notation_wxf": "Xe 2 bình 9",
+          "move_notation_iccs": "b3i3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/2B3n2/P7r/9/4AK3/9",
+          "move_notation_wxf": "Pháo 1 bình 2",
+          "move_notation_iccs": "i9h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/2B6/P3n3r/9/4AK3/9",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "g4e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n3r/4B4/4AK3/9",
+          "move_notation_wxf": "Tượng 7 thoái 5",
+          "move_notation_iccs": "c4e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n4/4B4/4AK2r/9",
+          "move_notation_wxf": "Xe 9 tiến 2",
+          "move_notation_iccs": "i3i1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n4/4BK3/4A3r/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f1f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n4/4BK2r/4A4/9",
+          "move_notation_wxf": "Xe 9 thoái 1",
+          "move_notation_iccs": "i1i2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n4/4B3r/4AK3/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "f2f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "2bak2C1/6CR1/4ba3/p8/4P1p2/9/P3n4/4r4/4AK3/9",
+          "move_notation_wxf": "Xe 9 bình 5",
+          "move_notation_iccs": "i2e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "2bak1CC1/7R1/4ba3/p8/4P1p2/9/P3n4/4r4/4AK3/9",
+          "move_notation_wxf": "Pháo 3 tiến 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — bên Trắng dùng sát pháp Giáp Xe Pháo giành thắng lợi.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
