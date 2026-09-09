@@ -64716,6 +64716,194 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21006,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Đại Đảm Xuyên Tâm — Xuất Tướng Giải Sát, Khép Lại Bài 10 — Ví Dụ 6",
+      "slug": "c2-dai-dam-xuyen-tam-vi-du-6",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2baka1r1/7c1/3Rb4/p3p2Rp/6c2/2P2rp2/P3P1n1P/2N1BC2C/4A4/4KAB2",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Ván đấu thực chiến đến hồi thứ 21 giữa Đào Hán Minh (Trắng) và Hồ Vinh Hoa (Đen) tại giải \"Ngũ Dương Bôi\" 2001: Trắng bình tĩnh phản công đúng lúc trước lời đe dọa của Đen, xuất Tướng giải sát rồi phục sẵn nhiều đòn sát liên tiếp, cuối cùng ăn cả hai Sĩ Đen tạo chiếu bí thật sự — khép lại trọn vẹn Bài 10 Đại Đảm Xuyên Tâm (6/6 ví dụ).",
+      "content": "<h2>Nhận diện đúng mối đe dọa, phản công bằng Pháo</h2><p>Đây là ví dụ cuối cùng khép lại Bài 10, hình thế thực chiến đến hồi thứ 21 trong ván đấu giữa <strong>Đào Hán Minh</strong> (cầm quân Trắng) và <strong>Hồ Vinh Hoa</strong> (cầm quân Đen) tại giải \"Ngũ Dương Bôi\" lần thứ 22 năm 2001. Đối diện với thế Mã Đen tróc Tượng và sát thế Pháo đánh muộn cung, sách khen ngợi phản ứng của Trắng: \"bên Trắng nhận thức chính xác uy hiếp không chỉ mộng, quyết định huy động Pháo biên ăn Tốt đối công, chỉ cần Pháo trấn trung lộ thì sẽ có nhiều thủ đoạn công sát.\" Đây là bài học về sự tỉnh táo: thay vì hoảng loạn trước lời đe dọa của đối phương, Trắng bình tĩnh đánh giá đúng mức độ nguy hiểm và chọn phản công thay vì phòng thủ thụ động.</p><h2>Xuất Tướng để giải sát — một nước đi nghịch lý</h2><p>Một chi tiết chiến thuật đáng chú ý: Trắng chủ động đưa Tướng ra khỏi cung để hóa giải thế chiếu của Đen. Sách gọi đây là \"xuất Tướng giải sát hoàn sát\" — dùng chính sự di chuyển của Tướng như một công cụ phòng thủ chủ động, buộc Đen \"không thể xuất Tướng, chỉ có thể thoái Pháo bảo vệ Sĩ.\" Đây là minh chứng rằng Tướng không phải lúc nào cũng là quân thụ động cần được bảo vệ tuyệt đối — đôi khi chính Tướng cần tham gia vào ván cờ để giải quyết tình huống.</p><h2>Chuẩn bị từng bước, phục sẵn nhiều đòn sát</h2><p>Từ giữa ván trở đi, sách liên tục nhắc đến các chuỗi nước \"phục sẵn\" của Trắng — mỗi nước đi không chỉ có tác dụng tức thời mà còn ngầm chuẩn bị cho một đòn sát tiếp theo nếu Đen không phản ứng đúng. Đây là phong cách chơi đặc trưng của các sát pháp trong sách: xây dựng từng lớp đe dọa chồng lên nhau, khiến đối phương không thể giải quyết hết mọi nguy cơ cùng lúc.</p><h2>Đại Đảm Xuyên Tâm khép lại trọn vẹn Bài 10</h2><p>Ở giai đoạn cuối, sau một cuộc đổi Xe Pháo phức tạp, Xe Trắng ăn liên tiếp cả hai Sĩ của Đen để hoàn tất đòn kết liễu. Thế cờ cuối cùng được xác nhận là một chiếu bí thật sự, đúng như câu kết của sách: \"Bên Trắng hình thành sát thế đại đảm xuyên tâm.\" Đây cũng là ví dụ cuối cùng khép lại trọn vẹn Bài 10 (6/6 ví dụ) — một chuyên đề đã cho thấy đủ mọi khía cạnh của kỹ thuật này: từ thành công trọn vẹn, đến bị đối phương cướp lấy và quay ngược, cho đến chiến thắng bằng chính đúng tên gọi của nó.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Đại Đảm Xuyên Tâm Nâng Cao — Xuất Tướng Giải Sát, Khép Bài 10 (Ví Dụ 6)",
+      "seo_description": "Ván đấu thực chiến Đào Hán Minh vs Hồ Vinh Hoa: Trắng xuất Tướng giải sát, phục sẵn nhiều đòn tấn công, ăn cả 2 Sĩ Đen tạo chiếu bí Đại Đảm Xuyên Tâm.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2baka1r1/7c1/3Rb4/p3p2RC/6c2/2P2rp2/P3P1n1P/2N1BC3/4A4/4KAB2",
+          "move_notation_wxf": "Pháo 1 tiến 4",
+          "move_notation_iccs": "i2i6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo, ăn Tốt Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2baka1r1/7c1/3Rb4/p3p2RC/6c2/2P2rp2/P3P3P/2N1BC3/4An3/4KAB2",
+          "move_notation_wxf": "Mã 7 tiến 6",
+          "move_notation_iccs": "g3f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2baka1r1/7c1/3Rb4/p3C2R1/6c2/2P2rp2/P3P3P/2N1BC3/4An3/4KAB2",
+          "move_notation_wxf": "Pháo 1 bình 5",
+          "move_notation_iccs": "i6e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, ăn nốt Tốt Đen — sách nhận xét: Trắng nhận thức chính xác uy hiếp không chỉ là mộng tưởng, quyết định huy động Pháo biên ăn Tốt đối công, chỉ cần Pháo trấn trung lộ thì sẽ có nhiều thủ đoạn công sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2bak2r1/4a2c1/3Rb4/p3C2R1/6c2/2P2rp2/P3P3P/2N1BC3/4An3/4KAB2",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2bak2r1/4a2c1/3Rb4/p3C2R1/6c2/2P2rp2/P3P3P/2N1BC3/4An3/3K1AB2",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách chỉ rõ: Trắng xuất Tướng để giải sát hoàn sát, buộc Đen không thể xuất Tướng, chỉ có thể lui Pháo bảo vệ Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2bak1cr1/4a2c1/3Rb4/p3C2R1/9/2P2rp2/P3P3P/2N1BC3/4An3/3K1AB2",
+          "move_notation_wxf": "Pháo 7 thoái 4",
+          "move_notation_iccs": "g5g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2bak1cr1/4a2c1/3Rb4/p3C1R2/9/2P2rp2/P3P3P/2N1BC3/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 2 bình 3",
+          "move_notation_iccs": "h6g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — sách cho biết: Trắng phục sẵn chuỗi Xe tiến, Xe bình, Xe tiến sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2bakc1r1/4a2c1/3Rb4/p3C1R2/9/2P2rp2/P3P3P/2N1BC3/4An3/3K1AB2",
+          "move_notation_wxf": "Pháo 7 bình 6",
+          "move_notation_iccs": "g9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2bakc1r1/4a1Rc1/3Rb4/p3C4/9/2P2rp2/P3P3P/2N1BC3/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 3 tiến 2",
+          "move_notation_iccs": "g6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — sách cho biết: Trắng tiếp theo có chuỗi Xe tiến, Pháo bình, Xe bình sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2bakc1r1/4a1Rc1/3Rb4/p3C4/9/2P3p2/P3P3P/2N1Br3/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 6 tiến 2",
+          "move_notation_iccs": "f4f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe, ăn Pháo Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2bakc1r1/3Ra1Rc1/4b4/p3C4/9/2P3p2/P3P3P/2N1Br3/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2bakc1r1/3Ra1Rc1/4b4/p3Cr3/9/2P3p2/P3P3P/2N1B4/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 6 thoái 4",
+          "move_notation_iccs": "f2f6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2bakc1r1/3RR2c1/4b4/p3Cr3/9/2P3p2/P3P3P/2N1B4/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 3 bình 5",
+          "move_notation_iccs": "g8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe, ăn Sĩ Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2b1kc1r1/3Ra2c1/4b4/p3Cr3/9/2P3p2/P3P3P/2N1B4/4An3/3K1AB2",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ, ăn lại Xe Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2b1kc1r1/4R2c1/4b4/p3Cr3/9/2P3p2/P3P3P/2N1B4/4An3/3K1AB2",
+          "move_notation_wxf": "Xe 6 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe, ăn nốt Sĩ còn lại — CHIẾU BÍ THẬT SỰ. Đúng như sách khẳng định: \"Bên Trắng hình thành sát thế đại đảm xuyên tâm.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
