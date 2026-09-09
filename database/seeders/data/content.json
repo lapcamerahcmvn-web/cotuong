@@ -52675,6 +52675,227 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20301,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Đối Diện Tiêu — Dồn Tướng Đối Mặt Tướng — Ví Dụ 1",
+      "slug": "c3-doi-dien-tieu-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/4a4/b2k5/7C1/9/2P2n3/P3r2cP/4B3R/4A4/2BA1K2c",
+      "variation_tree": null,
+      "move_count": 18,
+      "summary": "Cuộc tuyển từ tàn cuộc thực chiến tại vòng chung kết Tượng kỳ Đại hội Thể dục Thể thao toàn quốc: bên Đen dựa vào ưu thế nhiều quân áp sát thành trì, dồn Tướng Trắng phải liên tục di chuyển tránh né, cuối cùng đưa chính Tướng của mình vào cùng đường thẳng với Tướng Trắng, dựng thành sát pháp Đối diện tiêu — kỹ thuật mở đầu chuyên đề Bài 3.",
+      "content": "<h2>Đối diện tiêu — khi hai Tướng cùng vào một đường thẳng</h2><p>Đây là một cuộc tuyển từ tàn cuộc thực chiến tại vòng chung kết Tượng kỳ Đại hội Thể dục Thể thao toàn quốc. Bên Đen dựa vào ưu thế nhiều quân áp sát thành trì, trực tiếp tấn công Tướng Trắng, tạo thành sát pháp mang tên chủ đề của bài học này: <strong>Đối diện tiêu</strong> — một kiểu sát pháp đặc biệt dựa trên luật cấm hai Tướng đối mặt trực diện trên cùng một đường dọc mà không có quân nào che chắn ở giữa.</p><h2>Dồn Tướng đối phương chạy khắp bàn cờ</h2><p>Điều thú vị của ván đấu này là cả hai Tướng đều phải di chuyển liên tục — không giống phần lớn sát pháp khác nơi chỉ một bên Tướng bị truy đuổi. Bên Đen trước tiên tiến Mã Ngọa tào để ép bên Trắng phải lên Sĩ, đuổi Tướng Trắng ra khỏi vị trí ban đầu; từ đó Tướng Trắng liên tục phải bình qua bình lại để né tránh. Ở giữa ván, bên Đen còn chủ động thí Mã — sách nhận xét bên Trắng \"hiểu rõ không phải thiện ý, nhưng lại không có cách trốn tránh\", cho thấy đây là một sự hy sinh có tính toán, buộc Trắng phải chấp nhận dù biết có cạm bẫy phía sau.</p><h2>Nước quyết định — đưa Tướng vào trung lộ</h2><p>Nước cuối cùng của mạch chính là điều bất ngờ nhất: thay vì dùng một quân tấn công thông thường, bên Đen tự đưa <strong>Tướng của chính mình</strong> vào trung lộ, đặt hai Tướng vào thế đối mặt tiềm tàng. Sách giải thích: \"tiếp theo Xe Đen lại chiếu, lập tức có thể hình thành sát cục đối diện tiêu\" — nghĩa là quân Xe đã có sẵn trên bàn chỉ cần một nước nữa là hoàn tất thế sát, tận dụng đúng lúc luật cấm hai Tướng đối mặt để khóa chặt đường thoát cuối cùng của Tướng Trắng.</p><p>Bài học từ ván đấu: sát pháp Đối diện tiêu là lời nhắc rằng đôi khi quân \"tấn công\" quyết định lại chính là Tướng của mình — chủ động đưa Tướng vào đúng đường thẳng với Tướng đối phương (khi đã có quân khác kiểm soát đường đó) có thể khóa chết mọi khả năng thoát thân, một góc nhìn chiến thuật khác hẳn việc luôn giữ Tướng ở vị trí an toàn nhất có thể.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Đối Diện Tiêu Nâng Cao — Dồn Tướng Đối Mặt Tướng (Ví Dụ 1)",
+      "seo_description": "Tàn cuộc thực chiến chung kết toàn quốc: dồn Tướng đối phương rồi tự đưa Tướng mình vào trung lộ, dựng sát pháp Đối Diện Tiêu. Bàn cờ tương tác đầy đủ 18 nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/4a4/b2k5/7C1/9/2P2n3/P3r2cP/4B4/4A4/2BA1K2R",
+          "move_notation_wxf": "Xe 1 thoái 2",
+          "move_notation_iccs": "i2i0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng thoái Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/4a4/b2k5/7C1/9/2P2n3/P4r1cP/4B4/4A4/2BA1K2R",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/4a4/b2k5/7C1/9/2P2n3/P4r1cP/4B4/4A4/2BAK3R",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/P2n1r1cP/4B4/4A4/2BAK3R",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "f4d3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — chuẩn bị tiến Mã Ngọa tào, ép bên Trắng lên Sĩ, đuổi Tướng Trắng ra khỏi vị trí, để tiện bề tổ chức thế công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/P2n1r1cP/3AB4/9/2BAK3R",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/P4r1cP/3ABn3/9/2BAK3R",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "d3f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/P4r1cP/3ABn3/4K4/2BA4R",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/Pr5cP/3ABn3/4K4/2BA4R",
+          "move_notation_wxf": "Xe 6 bình 2",
+          "move_notation_iccs": "f3b3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/4a4/b2k5/7C1/9/2P6/Pr5cP/3ABn3/5K3/2BA4R",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "9/4a4/b2k5/7C1/7c1/2P6/Pr6P/3ABn3/5K3/2BA4R",
+          "move_notation_wxf": "Pháo 8 thoái 2",
+          "move_notation_iccs": "h3h5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "9/4a4/b2k5/7C1/7c1/2P3B2/Pr6P/3A1n3/5K3/2BA4R",
+          "move_notation_wxf": "Tượng 5 tiến 3",
+          "move_notation_iccs": "e2g4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/Pr6P/3A1n3/5K3/2BA4R",
+          "move_notation_wxf": "Pháo 8 bình 6",
+          "move_notation_iccs": "h5f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo — bên Đen thí Mã, bên Trắng hiểu rõ không phải thiện ý, nhưng lại không có cách trốn tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/Pr6P/3A1K3/9/2BA4R",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f1f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/P4r2P/3A1K3/9/2BA4R",
+          "move_notation_wxf": "Xe 2 bình 6",
+          "move_notation_iccs": "b3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/P4r2P/3AK4/9/2BA4R",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/P3r3P/3AK4/9/2BA4R",
+          "move_notation_wxf": "Xe 6 bình 5",
+          "move_notation_iccs": "f3e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "9/4a4/b2k5/7C1/5c3/2P3B2/P3r3P/3A1K3/9/2BA4R",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e2f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/4a4/b3k4/7C1/5c3/2P3B2/P3r3P/3A1K3/9/2BA4R",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d7e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng vào trung lộ — tiếp theo Xe Đen lại chiếu, lập tức có thể hình thành sát cục Đối diện tiêu. Bên Đen thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
