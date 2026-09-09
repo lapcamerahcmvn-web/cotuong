@@ -53269,6 +53269,282 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20303,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Đối Diện Tiêu — Nước Đi Tưởng Vô Dụng Từ Cổ Phổ — Ví Dụ 3",
+      "slug": "c3-doi-dien-tieu-vi-du-3",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4a1P2/9/9/9/9/9/9/5r3/3AK1R2",
+      "variation_tree": null,
+      "move_count": 23,
+      "summary": "Tuyển từ cổ phổ \"Lạn Kha Thần Cơ\", cuộc thứ 22 \"Sĩ Phùng Bàn Thạc\": chỉ với 8 quân còn lại trên bàn, Trắng dùng một nước đi tưởng chừng vô dụng (tiến Xe không rõ mục đích) làm mấu chốt, kết hợp đẩy Binh phong tỏa Tướng Đen, sau 23 nước tính toán chính xác tuyệt đối đã hoàn tất sát pháp Đối diện tiêu.",
+      "content": "<h2>Một thế cờ cổ chỉ còn 8 quân</h2><p>Đây là bài toán tuyển từ cổ phổ <strong>\"Lạn Kha Thần Cơ\"</strong> (爛柯神機), cuộc thứ 22 mang tên \"Sĩ Phùng Bàn Thạc\", bên Trắng đi trước. Khác hẳn các ví dụ thực chiến hiện đại trong sách, đây là một bài toán cờ tàn cổ điển — chỉ còn vỏn vẹn 8 quân trên bàn (mỗi bên 1 Xe, 1 Sĩ, cộng thêm Tướng/Soái, và một Binh/Tốt), nhưng đòi hỏi độ chính xác tuyệt đối ở từng nước.</p><h2>Nước đi \"vô dụng\" lại là chìa khóa</h2><p>Điểm đặc sắc nhất nằm ở nước thứ 2 của Trắng: sách mô tả thẳng \"nước này đi trông có vẻ không có tác dụng gì, thực ra là mấu chốt giành thắng lợi\" — một bài học kinh điển của cờ tàn cổ phổ, nơi nước đi quyết định thường không phải nước tấn công trực diện mà là một nước chuẩn bị âm thầm, chỉ phát huy tác dụng nhiều nước sau đó. Ngay sau đó, nước đẩy Binh cũng được đánh giá là \"nước đi quan trọng\": tận dụng đúng lúc để phong tỏa hạn chế tự do hoạt động của Tướng Đen — không phải để ăn quân hay chiếu ngay, mà để đặt nền móng cho một kế hoạch dài hơi.</p><h2>Nhiều con đường cùng dẫn tới một đích</h2><p>Sách còn phân tích tỉ mỉ nhiều nhánh biến thể ở giữa ván — cả trường hợp Đen chọn cách phòng thủ khác lẫn trường hợp Trắng có thể chọn một đường đi khác (rút ăn Xe Đen thay vì tiếp tục theo cổ phổ) — và đều đi đến cùng một kết luận: sát pháp Đối diện tiêu là không thể tránh khỏi, dù con đường đi tới đó có thể ngắn hơn hoặc dài hơn tùy lựa chọn cụ thể.</p><p>Bài học từ bài toán cổ này: trong cờ tàn với ít quân, mỗi nước đi đều mang trọng lượng lớn hơn nhiều so với trung cuộc — một nước tưởng như \"không làm gì\" đôi khi lại là nước chuẩn bị quan trọng nhất, và việc kiên nhẫn đọc hết dụng ý phía sau mỗi nước đi tưởng chừng vô hại chính là chìa khóa để giải mã cờ tàn cổ điển.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Đối Diện Tiêu Nâng Cao — Nước Đi Tưởng Vô Dụng (Ví Dụ 3, Cổ Phổ)",
+      "seo_description": "Bài toán cờ tàn cổ \"Lạn Kha Thần Cơ\": nước đi tưởng vô dụng là mấu chốt, phong tỏa Tướng rồi hoàn tất sát pháp Đối Diện Tiêu. Bàn cờ tương tác đầy đủ 23 nước.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak4/4a1P2/9/9/9/9/9/9/5r3/3AK2R1",
+          "move_notation_wxf": "Xe 3 bình 2",
+          "move_notation_iccs": "g0h0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akr3/4a1P2/9/9/9/9/9/9/9/3AK2R1",
+          "move_notation_wxf": "Xe 6 thoái 8",
+          "move_notation_iccs": "f1f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akr3/4a1P2/9/9/9/9/9/7R1/9/3AK4",
+          "move_notation_wxf": "Xe 2 tiến 2",
+          "move_notation_iccs": "h0h2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — nước này trông có vẻ không có tác dụng gì, thực ra là mấu chốt giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3ak3r/4a1P2/9/9/9/9/9/7R1/9/3AK4",
+          "move_notation_wxf": "Xe 6 bình 9",
+          "move_notation_iccs": "f9i9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3ak3r/4aP3/9/9/9/9/9/7R1/9/3AK4",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "g8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng đẩy Binh — nước đi quan trọng: thừa cơ phong bế Tướng, hạn chế tự do hoạt động của Tướng Đen, đặt nền móng vững chắc để sau này giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3ak4/4aP3/9/9/9/9/9/7R1/9/3AK3r",
+          "move_notation_wxf": "Xe 9 tiến 9",
+          "move_notation_iccs": "i9i0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3ak4/4aP3/9/9/9/9/9/7R1/4K4/3A4r",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3ak3r/4aP3/9/9/9/9/9/7R1/4K4/3A5",
+          "move_notation_wxf": "Xe 9 thoái 9",
+          "move_notation_iccs": "i0i9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3ak3r/4aP3/9/9/9/9/9/4K2R1/9/3A5",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e1e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng tiếp — không cho phép bên Đen có cơ hội chiếu Tướng, để sau này lên cao tổ chức tấn công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3ak1r2/4aP3/9/9/9/9/9/4K2R1/9/3A5",
+          "move_notation_wxf": "Xe 9 bình 7",
+          "move_notation_iccs": "i9g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3ak1r2/4aP3/9/9/9/9/9/4K2R1/4A4/9",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "d0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3ak3r/4aP3/9/9/9/9/9/4K2R1/4A4/9",
+          "move_notation_wxf": "Xe 7 bình 9",
+          "move_notation_iccs": "g9i9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3ak3r/4aP3/9/9/9/9/9/4KA1R1/9/9",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e1f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3ak1r2/4aP3/9/9/9/9/9/4KA1R1/9/9",
+          "move_notation_wxf": "Xe 9 bình 7",
+          "move_notation_iccs": "i9g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3ak1r2/4aP3/9/9/9/9/7R1/4KA3/9/9",
+          "move_notation_wxf": "Xe 2 tiến 1",
+          "move_notation_iccs": "h2h3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "3ak3r/4aP3/9/9/9/9/7R1/4KA3/9/9",
+          "move_notation_wxf": "Xe 7 bình 9",
+          "move_notation_iccs": "g9i9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "3ak3r/4aP3/9/9/9/7R1/9/4KA3/9/9",
+          "move_notation_wxf": "Xe 2 tiến 1",
+          "move_notation_iccs": "h3h4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — đây là một nước nhàn (chờ), ép bên Đen buộc lặp lại đường cũ; nước tiếp theo sẽ giống như trong cổ phổ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "3ak1r2/4aP3/9/9/9/7R1/9/4KA3/9/9",
+          "move_notation_wxf": "Xe 9 bình 7",
+          "move_notation_iccs": "i9g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "3ak1r2/4aP3/9/9/9/2R6/9/4KA3/9/9",
+          "move_notation_wxf": "Xe 2 bình 7",
+          "move_notation_iccs": "h4c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bất ngờ xuất diệu thủ, bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "3ak4/4aP3/9/9/6r2/2R6/9/4KA3/9/9",
+          "move_notation_wxf": "Xe 7 tiến 4",
+          "move_notation_iccs": "g9g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "3ak4/4P4/9/9/6r2/2R6/9/4KA3/9/9",
+          "move_notation_wxf": "Tốt 4 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh vào ngay trung tâm cửu cung — bên Đen bại cuộc đã định.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "4k4/4a4/9/9/6r2/2R6/9/4KA3/9/9",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "2R1k4/4a4/9/9/6r2/9/9/4KA3/9/9",
+          "move_notation_wxf": "Xe 7 tiến 5",
+          "move_notation_iccs": "c4c9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe — lợi dụng quy định Tướng và Soái không thể gặp mặt, dùng Xe tiến giữ sát, hoàn tất sát pháp Đối diện tiêu.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
