@@ -60191,6 +60191,214 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20802,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Tiền Mã Hậu Pháo — Mọi Ngả Đường Đều Dẫn Tới Tuyệt Sát — Ví Dụ 2",
+      "slug": "c2-tien-ma-hau-phao-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P3n3P/1C1CBA3/4K1r2/2BA4c",
+      "variation_tree": [
+        {
+          "from": 76,
+          "to": 85,
+          "iccs": "e1e0",
+          "wxf": "Tướng 5 thoái 1",
+          "side": "do",
+          "reveal": null,
+          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P3n3P/1C1CBA3/6r2/2BAK3c",
+          "caption": "Trắng lui Tướng.",
+          "children": [
+            {
+              "from": 58,
+              "to": 69,
+              "iccs": "e3g2",
+              "wxf": "Mã 5 tiến 7",
+              "side": "den",
+              "reveal": null,
+              "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/6r2/2BAK3c",
+              "caption": "Đen nhảy Mã — nước đi mấu chốt giành thắng lợi, giải quyết dứt khoát; bên Trắng cũng không còn lực vùng vẫy nữa.",
+              "children": [
+                {
+                  "from": 64,
+                  "to": 55,
+                  "iccs": "b2b3",
+                  "wxf": "Pháo 8 tiến 1",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/PC6P/3CBAn2/6r2/2BAK3c",
+                  "caption": "Trắng tiến Pháo.",
+                  "children": [
+                    {
+                      "from": 78,
+                      "to": 77,
+                      "iccs": "g1f1",
+                      "wxf": "Xe 7 bình 6",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/PC6P/3CBAn2/5r3/2BAK3c",
+                      "caption": "Đen bình Xe — phong chặt cửa Tướng, tạo thành thế tuyệt sát. Nước sau bên Đen cũng dùng Tiền Mã Hậu Pháo giành thắng lợi.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "from": 68,
+                  "to": 76,
+                  "iccs": "f2e1",
+                  "wxf": "Sĩ 4 thoái 5",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CB1n2/4A1r2/2BAK3c",
+                  "caption": "Biến 1: nếu Trắng đổi thành lui Sĩ.",
+                  "children": [
+                    {
+                      "from": 78,
+                      "to": 87,
+                      "iccs": "g1g0",
+                      "wxf": "Xe 7 tiến 1",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CB1n2/4A4/2BAK1r1c",
+                      "caption": "Đen tiến Xe.",
+                      "children": [
+                        {
+                          "from": 76,
+                          "to": 86,
+                          "iccs": "e1f0",
+                          "wxf": "Sĩ 5 thoái 4",
+                          "side": "do",
+                          "reveal": null,
+                          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CB1n2/9/2BAKAr1c",
+                          "caption": "Trắng buộc bình Sĩ.",
+                          "children": [
+                            {
+                              "from": 87,
+                              "to": 86,
+                              "iccs": "g0f0",
+                              "wxf": "Xe 7 bình 6",
+                              "side": "den",
+                              "reveal": null,
+                              "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CB1n2/9/2BAKr2c",
+                              "caption": "Đen bình Xe — tuyệt sát thật sự, Trắng thua.",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "from": 85,
+                  "to": 86,
+                  "iccs": "e0f0",
+                  "wxf": "Tướng 5 bình 4",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/6r2/2BA1K2c",
+                  "caption": "Biến 2: nếu Trắng đổi thành bình Tướng.",
+                  "children": [
+                    {
+                      "from": 78,
+                      "to": 76,
+                      "iccs": "g1e1",
+                      "wxf": "Xe 7 bình 5",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/4r4/2BA1K2c",
+                      "caption": "Đen bình Xe — cũng là tuyệt sát thật sự, Trắng thua.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "from": 84,
+                  "to": 76,
+                  "iccs": "d0e1",
+                  "wxf": "Sĩ 6 tiến 5",
+                  "side": "do",
+                  "reveal": null,
+                  "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/4A1r2/2B1K3c",
+                  "caption": "Biến 3: nếu Trắng đổi thành tiến Sĩ.",
+                  "children": [
+                    {
+                      "from": 78,
+                      "to": 77,
+                      "iccs": "g1f1",
+                      "wxf": "Xe 7 bình 6",
+                      "side": "den",
+                      "reveal": null,
+                      "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/4Ar3/2B1K3c",
+                      "caption": "Đen bình Xe — dùng chính sát pháp Tiền Mã Hậu Pháo của bài học để giành thắng lợi.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "move_count": 4,
+      "summary": "Ván đấu thực chiến đến hồi thứ 30 giữa Minh Nguyệt Anh (Trắng) và Lý Thúy Phương (Đen) tại giải đồng đội toàn quốc: một nước nhảy Mã của Đen giải quyết dứt khoát toàn bộ ván đấu — sách phân tích cả ba phương án phòng thủ khác nhau của Trắng, và cả ba đều dẫn tới thất bại, hai trong số đó được engine xác nhận là chiếu bí thật sự.",
+      "content": "<h2>Một nước đi giải quyết tất cả</h2><p>Đây là hình thế thực chiến đến hồi thứ 30 trong ván đấu giữa <strong>Minh Nguyệt Anh</strong> (cầm quân Trắng) và <strong>Lý Thúy Phương</strong> (cầm quân Đen) tại giải đồng đội toàn quốc. Sách mô tả nước nhảy Mã của Đen bằng những từ ngữ mạnh mẽ: \"nước đi mấu chốt giành thắng lợi, giải quyết dứt khoát, bên Trắng cũng không còn lực vùng vẫy nữa\" — một lời khẳng định rằng ván đấu đã ngã ngũ chỉ sau một nước đi duy nhất.</p><h2>Ba con đường, cùng một kết cục</h2><p>Điều làm ví dụ này đặc biệt thuyết phục là cách sách phân tích đầy đủ CẢ BA phương án phòng thủ khác nhau mà bên Trắng có thể thử: lui Sĩ, bình Tướng, hoặc tiến Sĩ. Không giống nhiều ví dụ khác chỉ đưa ra một nhánh phụ ngắn gọn, ở đây cả ba nhánh đều được xác nhận qua tính toán máy: hai trong ba phương án dẫn tới chiếu bí xác thực ngay lập tức, còn phương án thứ ba tuy chưa chiếu bí tức thì nhưng cũng dẫn tới đúng sát pháp Tiền Mã Hậu Pháo mà bài học đang giới thiệu.</p><h2>Xe khép cửa Tướng — chốt hạ</h2><p>Trong cả ba nhánh, hình ảnh chung là quân Xe Đen di chuyển để \"phong chặt cửa Tướng\" — khóa hoàn toàn lối thoát duy nhất còn lại. Đây là kỹ thuật cốt lõi của sát pháp: không cần nhiều quân phức tạp, chỉ cần đúng một quân đóng đúng vị trí then chốt là đủ để biến một thế cờ khó khăn thành chiến thắng rõ ràng.</p><p>Bài học từ ván đấu: khi đã tìm ra một nước đi thực sự mang tính quyết định, hãy tự tin rằng đối phương sẽ không còn phương án phòng thủ khả thi nào — việc sách phân tích đủ ba nhánh khác nhau ở đây chính là minh chứng cho sự tự tin đó, và là một bài tập tốt để người học tự kiểm chứng logic đằng sau mỗi phương án.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Tiền Mã Hậu Pháo Nâng Cao — Mọi Ngả Đường Đều Dẫn Tới Tuyệt Sát (Ví Dụ 2)",
+      "seo_description": "Ván đấu thực chiến Minh Nguyệt Anh vs Lý Thúy Phương: một nước Mã giải quyết dứt khoát, cả 3 phương án phòng thủ của Trắng đều dẫn tới Tiền Mã Hậu Pháo.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P3n3P/1C1CBA3/6r2/2BAK3c",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/P7P/1C1CBAn2/6r2/2BAK3c",
+          "move_notation_wxf": "Mã 5 tiến 7",
+          "move_notation_iccs": "e3g2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen nhảy Mã — nước đi mấu chốt giành thắng lợi, giải quyết dứt khoát; bên Trắng cũng không còn lực vùng vẫy nữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/PC6P/3CBAn2/6r2/2BAK3c",
+          "move_notation_wxf": "Pháo 8 tiến 1",
+          "move_notation_iccs": "b2b3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3ak4/3Na4/b5n2/p3p3p/2b6/1R7/PC6P/3CBAn2/5r3/2BAK3c",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "g1f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe — phong chặt cửa Tướng, tạo thành thế tuyệt sát. Nước sau bên Đen cũng dùng Tiền Mã Hậu Pháo giành thắng lợi.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
