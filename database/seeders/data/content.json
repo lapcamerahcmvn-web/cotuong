@@ -60069,6 +60069,128 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20801,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Tiền Mã Hậu Pháo — Bố Trí Cạm Bẫy Dụ Đối Phương — Ví Dụ 1",
+      "slug": "c2-tien-ma-hau-phao-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1R4/3k5/2ca3c1/p1p4C1/6N2/2P3P2/P3P3P/3KB4/1rN6/5A3",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ván đấu thực chiến đến hồi thứ 34 giữa Huệ Tùng Tường (Trắng) và Lý Bổn Hàm (Đen) tại giải Tượng kỳ toàn quốc, mở đầu chuyên đề Bài 8: Trắng khéo léo bố trí cạm bẫy dụ Đen mắc lừa, rồi bất ngờ thí Xe buộc Tướng Đen phải ăn để giải chiếu, cuối cùng hoàn tất sát pháp Tiền Mã Hậu Pháo — Mã dẫn đầu chiếu Tướng với Pháo yểm trợ phía sau.",
+      "content": "<h2>Cạm bẫy được bố trí từ trước</h2><p>Đây là hình thế thực chiến đến hồi thứ 34 trong ván đấu giữa <strong>Huệ Tùng Tường</strong> (cầm quân Trắng) và <strong>Lý Bổn Hàm</strong> (cầm quân Đen) tại giải Tượng kỳ toàn quốc — ván đấu mở đầu chuyên đề Bài 8, sát pháp <strong>Tiền Mã Hậu Pháo</strong> (Mã đi trước, Pháo yểm trợ phía sau). Ngay từ nước nhảy Mã thứ hai, sách đã tiết lộ ý đồ thực sự: \"bố trí cạm bẫy, dụ bên Đen mắc lừa\" — một kế hoạch được tính toán trước nhiều nước, không phải phản ứng ngẫu nhiên.</p><h2>Đen sập bẫy trong lúc tìm đường hòa</h2><p>Bên Đen, nhận thấy tình thế không thuận lợi, cố gắng tìm lối thoát bằng một kế hoạch đổi quân: \"nổ Tượng đánh Xe, có ý dùng Pháo đổi Mã, sau đó Xe ăn Binh, hình thành Xe Tốt đánh với Xe Binh, tranh thủ cầu hòa\" — một nỗ lực hợp lý để đơn giản hóa thế cờ và hướng tới hòa cờ. Nhưng đây chính xác là cái bẫy đã giăng sẵn.</p><h2>Thí Xe — không thể từ chối</h2><p>Nước quyết định là một sự bất ngờ hoàn toàn: \"bên Trắng chủ động thí Xe mời ăn, Tướng Đen không cách nào trốn tránh, đành phải ăn Xe giải nước chiếu\". Đây là điểm mấu chốt của cả cái bẫy: quân Xe được hiến không phải vì yếu thế mà chính là công cụ ép buộc Tướng Đen di chuyển đến đúng vị trí cần thiết cho đòn kết liễu.</p><h2>Mã đi trước, Pháo yểm trợ sau</h2><p>Nước cuối cùng thể hiện đúng bản chất tên gọi của sát pháp: quân Mã tiến lên chiếu trực tiếp, trong khi quân Pháo đã âm thầm chờ sẵn phía sau trên cùng một đường, khóa chặt mọi khả năng Tướng thoát ra theo hướng đó. Sự phối hợp \"trước sau\" này chính là điều làm cho Tướng Đen hoàn toàn hết đường thoát.</p><p>Bài học từ ván đấu: một cái bẫy hiệu quả thường được ẩn giấu bên trong một nước đi có vẻ hợp lý cho đối phương (ở đây là kế hoạch đổi quân cầu hòa của Đen) — và đôi khi, hiến một quân lớn (Xe) không phải là sai lầm mà chính là bước cuối cùng để hoàn tất một kế hoạch đã được tính toán từ trước.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Tiền Mã Hậu Pháo Nâng Cao — Bố Trí Cạm Bẫy Dụ Đối Phương (Ví Dụ 1)",
+      "seo_description": "Ván đấu thực chiến Huệ Tùng Tường vs Lý Bổn Hàm: bố trí cạm bẫy, thí Xe buộc Tướng ăn, hoàn tất sát pháp Tiền Mã Hậu Pháo. Bàn cờ tương tác, chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2b1R4/3k5/2ca3c1/p1p1N2C1/9/2P3P2/P3P3P/3KB4/1rN6/5A3",
+          "move_notation_wxf": "Mã 3 tiến 5",
+          "move_notation_iccs": "g5e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b1R4/3k5/2cac4/p1p1N2C1/9/2P3P2/P3P3P/3KB4/1rN6/5A3",
+          "move_notation_wxf": "Pháo 8 bình 5",
+          "move_notation_iccs": "h7e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b1R4/3k5/2cac1N2/p1p4C1/9/2P3P2/P3P3P/3KB4/1rN6/5A3",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã — bố trí cạm bẫy, dụ bên Đen mắc lừa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b1R4/3k5/2cac1N2/p1p4C1/9/2P3P2/P3P3P/3KB4/2r6/5A3",
+          "move_notation_wxf": "Xe 2 bình 3",
+          "move_notation_iccs": "b1c1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b1R2C1/3k5/2cac1N2/p1p6/9/2P3P2/P3P3P/3KB4/2r6/5A3",
+          "move_notation_wxf": "Pháo 2 tiến 3",
+          "move_notation_iccs": "h6h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b1R2C1/3k5/2ca2N2/p1p6/9/2P3P2/P3P3P/3Kc4/2r6/5A3",
+          "move_notation_wxf": "Pháo 5 tiến 5",
+          "move_notation_iccs": "e7e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo — nổ Tượng đánh Xe, có ý dùng Pháo đổi Mã, sau đó Xe ăn Binh, hình thành thế Xe Tốt đánh với Xe Binh, tranh thủ cầu hòa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2bR3C1/3k5/2ca2N2/p1p6/9/2P3P2/P3P3P/3Kc4/2r6/5A3",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — không ngờ bên Trắng chủ động thí Xe mời ăn, Tướng Đen không cách nào trốn tránh, đành phải ăn Xe giải nước chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2bk3C1/9/2ca2N2/p1p6/9/2P3P2/P3P3P/3Kc4/2r6/5A3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2bk1N1C1/9/2ca5/p1p6/9/2P3P2/P3P3P/3Kc4/2r6/5A3",
+          "move_notation_wxf": "Mã 3 tiến 4",
+          "move_notation_iccs": "g7f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng nhảy Mã — hình thành tuyệt sát Tiền Mã Hậu Pháo. Chiếu bí!",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
