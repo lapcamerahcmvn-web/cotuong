@@ -6,7 +6,7 @@
   if (!root) return;
 
   var PIECES = {
-    K: '帥', A: '仕', B: '相', N: '傌', R: '俥', C: '炮', P: '兵',
+    K: '帥', A: '仕', B: '相', N: '馬', R: '俥', C: '炮', P: '兵',
     k: '將', a: '士', b: '象', n: '馬', r: '車', c: '砲', p: '卒'
   };
   var PIECE_VI = { R: 'Xe', N: 'Mã', B: 'Tượng', A: 'Sĩ', K: 'Tướng', C: 'Pháo', P: 'Tốt' };

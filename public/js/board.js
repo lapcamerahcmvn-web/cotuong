@@ -7,7 +7,7 @@
   // Ký tự quân theo lối truyền thống: Đỏ và Đen dùng chữ khác nhau cho cùng loại quân.
   var PIECES = {
     K: { c: '帥', red: true }, A: { c: '仕', red: true }, B: { c: '相', red: true },
-    N: { c: '傌', red: true }, R: { c: '俥', red: true }, C: { c: '炮', red: true }, P: { c: '兵', red: true },
+    N: { c: '馬', red: true }, R: { c: '俥', red: true }, C: { c: '炮', red: true }, P: { c: '兵', red: true },
     k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' },
     // Quân ÚP (cờ úp): mặt sấp, chưa lộ binh chủng. X = Đỏ úp, x = Đen úp.
     X: { up: true, red: true }, x: { up: true }
