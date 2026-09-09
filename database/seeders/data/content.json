@@ -56484,6 +56484,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 20602,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Tiễn Phật Quy Điện — Thí Song Xe Đổi Lấy Sát Cục — Ví Dụ 2",
+      "slug": "c2-tien-phat-quy-dien-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k1a3/1R2n4/2R1b4/9/3P5/9/9/9/r3rn3/3K5",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Bài toán tuyển từ cổ phổ \"Bách Biến Tượng Kỳ Phổ\", cuộc thứ 18 \"Nguyệt Hạ Truy Hàn Tín\": mượn lợi thế đi trước, bên Trắng liên tiếp thí cả hai Xe cho Tướng Đen ăn để dụ Tướng leo lên tận đỉnh cửu cung, sau đó một Binh nhỏ bé một mình truy đuổi không ngừng, khép lại bằng sát pháp Tiễn Phật Quy Điện.",
+      "content": "<h2>Thí cả hai Xe — nước đi khí thế hùng tráng</h2><p>Đây là bài toán tuyển từ cổ phổ <strong>\"Bách Biến Tượng Kỳ Phổ\"</strong>, cuộc thứ 18, mang tên \"Nguyệt Hạ Truy Hàn Tín\" (Đuổi theo Hàn Tín dưới ánh trăng). Tình huống ban đầu rất nguy hiểm cho bên Trắng: \"bên Đen song Xe một Mã uy hiếp cửu cung, cách nước sát bắt Tướng Trắng chỉ có một nước đi\" — nghĩa là nếu không hành động ngay, Trắng sẽ bị chiếu bí ngay lập tức. Sách mô tả giải pháp là \"mượn lợi thế đi trước, liên tiếp thí song Xe cho Tướng Đen ăn, thi triển sát pháp Tiễn Phật Quy Điện\" — một quyết định táo bạo hiếm thấy: hy sinh CẢ HAI cỗ Xe chỉ để dụ Tướng đối phương vào đúng vị trí mong muốn.</p><h2>Một Binh nhỏ, một cuộc truy đuổi không ngừng</h2><p>Sau khi hai Xe đã hoàn thành sứ mệnh (đưa Tướng Đen \"lên tới đỉnh cửu cung\"), phần còn lại của ván đấu chỉ cần MỘT quân Binh nhỏ bé. Sách mô tả đầy hình ảnh: \"tiểu Binh thừa cơ uy hiếp lão Tướng, liên tiếp chiếu Tướng, truy đuổi không bỏ\" — một quân binh chủng thấp nhất bàn cờ một mình áp giải cả một vị tướng, không cho một khoảnh khắc nghỉ ngơi nào.</p><h2>Không còn đường lui — buộc phải bình ngang</h2><p>Điểm kỹ thuật thú vị ở cuối ván: sau khi bị Binh dồn ép liên tục, Tướng Đen lùi tới tận rìa bàn cờ, không còn ô nào để lùi tiếp — nước duy nhất còn lại là bình ngang sang một ô bên cạnh. Đây chính là bản chất của Tiễn Phật Quy Điện: đối phương bị dồn về đúng vị trí quen thuộc ban đầu, và tại đó, mọi hướng thoát đều đã bị tính toán và khóa chặt.</p><p>Bài học từ bài toán cổ này: đôi khi phải chấp nhận hy sinh lớn (ở đây là cả hai Xe) để đổi lấy một vị trí chiến lược quyết định — sau khi đã đạt được mục tiêu đó, ngay cả quân yếu nhất trên bàn cờ (một Binh đơn độc) cũng có thể một mình hoàn tất sát cục nếu vị trí đã được chuẩn bị đúng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Tiễn Phật Quy Điện — Thí Song Xe Đổi Lấy Sát Cục (Ví Dụ 2)",
+      "seo_description": "Bài toán cờ tàn cổ điển: thí cả hai Xe dụ Tướng lên đỉnh cửu cung, một Binh đơn độc truy đuổi hoàn tất Tiễn Phật Quy Điện. Bàn cờ tương tác 11 nước, chiếu bí thật.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k1a3/3Rn4/2R1b4/9/3P5/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Xe 8 bình 6",
+          "move_notation_iccs": "b8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "5a3/3kn4/2R1b4/9/3P5/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "5a3/3kn4/3Rb4/9/3P5/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "c7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5a3/4n4/3kb4/9/3P5/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/4n4/3kb4/3P5/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d5d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — sau khi liên tiếp thí song Xe, bên Trắng đã đưa Tướng Đen lên tới đỉnh cửu cung.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a3/3kn4/4b4/3P5/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a3/3kn4/3Pb4/9/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh tiếp — tiểu Binh thừa cơ uy hiếp lão Tướng, liên tiếp chiếu Tướng, truy đuổi không bỏ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3k1a3/4n4/3Pb4/9/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3k1a3/3Pn4/4b4/9/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — trực tiếp tiễn Phật quy điện, khốn chết Tướng Đen. Nước đi súc tích, hung mãnh, tinh diệu tuyệt luân.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4ka3/3Pn4/4b4/9/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc bình Tướng — nước duy nhất còn lại, vì Tướng đã lùi tới hết cỡ không còn đường lui.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3Pka3/4n4/4b4/9/9/9/9/9/r3rn3/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — chiếu bí! Bên Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
