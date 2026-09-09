@@ -64904,6 +64904,106 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 21101,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Nâng Cao] Song Xe Thác — Song Xe Dồn Tướng Khỏi Tổ Ấm — Ví Dụ 1",
+      "slug": "c2-song-xe-thac-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4ka3/3ra4/1R2P4/p7p/2p6/2P1n3P/P1r6/2N4R1/4A4/2B1KA3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Ván đấu thực chiến đến hồi thứ 29 giữa Lý Nghĩa Đình (Trắng) và Khương Lâm Khôn (Đen) tại giải Tượng kỳ 9 thành phố (Hợp Phì, An Huy): mở đầu Bài 11 Song Xe Thác Sát Pháp — Trắng lần lượt đưa cả hai Xe vào cuộc, buộc Tướng Đen liên tục rời vị trí, sách khẳng định phần thắng thuộc về Trắng dù chưa chơi tiếp đến chiếu bí cụ thể.",
+      "content": "<h2>Song Xe dồn Tướng khỏi tổ ấm</h2><p>Đây là mở đầu chuyên đề mới của sách: Bài 11 \"Song Xe Thác Sát Pháp\" (hai Xe cùng dồn ép, đẩy Tướng đến đường cùng). Hình thế thực chiến đến hồi thứ 29 trong ván đấu giữa <strong>Lý Nghĩa Đình</strong> (cầm quân Trắng) và <strong>Khương Lâm Khôn</strong> (cầm quân Đen) tại giải Tượng kỳ 9 thành phố tổ chức tại Hợp Phì, tỉnh An Huy.</p><h2>Một cuộc đổi quân nhỏ mở đường cho đòn lớn</h2><p>Ván đấu bắt đầu bằng một cuộc đổi quân đơn giản (Binh Trắng ăn Sĩ, Sĩ Đen ăn lại Binh), nhưng ngay sau đó Trắng lập tức chuyển sang tấn công trực diện bằng cả hai Xe. Sách mô tả: \"Bên Trắng cầu sát, Tướng Đen chỉ có thể bình 6 rời khỏi vị trí\" — chỉ với một Xe, Trắng đã buộc được Tướng Đen phải rời khỏi vị trí an toàn ban đầu, mở đường cho Xe còn lại tham chiến.</p><h2>Hai Xe cùng dồn ép — đúng tên chủ đề</h2><p>Sau khi Tướng Đen đã bị đẩy ra khỏi cung, Trắng tiếp tục đưa Xe thứ hai vào cuộc, buộc Tướng Đen tiếp tục di chuyển. Sách khép lại ví dụ bằng câu khẳng định ngắn gọn: \"Bên Trắng tiếp theo dùng sát pháp Song Xe thác giành lấy thắng lợi.\" Đúng như ví dụ đầu tiên của Bài 10 trước đó, sách không chơi tiếp cụ thể đến chiếu bí — engine xác nhận thế cờ tại đây chưa phải chiếu bí ngay, nhưng phần thắng đã hoàn toàn thuộc về Trắng với hai Xe cùng tham chiến.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Song Xe Thác Nâng Cao — Song Xe Dồn Tướng Khỏi Tổ (Ví Dụ 1)",
+      "seo_description": "Ván đấu thực chiến Lý Nghĩa Đình vs Khương Lâm Khôn: Trắng lần lượt đưa cả 2 Xe vào cuộc, dồn Tướng Đen liên tục di chuyển, mở đầu sát pháp Song Xe Thác.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4ka3/3rP4/1R7/p7p/2p6/2P1n3P/P1r6/2N4R1/4A4/2B1KA3",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e7e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh, ăn Sĩ Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4k4/3ra4/1R7/p7p/2p6/2P1n3P/P1r6/2N4R1/4A4/2B1KA3",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ, ăn lại Binh Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4k4/3ra4/4R4/p7p/2p6/2P1n3P/P1r6/2N4R1/4A4/2B1KA3",
+          "move_notation_wxf": "Xe 8 bình 5",
+          "move_notation_iccs": "b7e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — Trắng cầu sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5k3/3ra4/4R4/p7p/2p6/2P1n3P/P1r6/2N4R1/4A4/2B1KA3",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc bình Tướng, rời khỏi vị trí.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5k1R1/3ra4/4R4/p7p/2p6/2P1n3P/P1r6/2N6/4A4/2B1KA3",
+          "move_notation_wxf": "Xe 2 tiến 7",
+          "move_notation_iccs": "h2h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "7R1/3rak3/4R4/p7p/2p6/2P1n3P/P1r6/2N6/4A4/2B1KA3",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "7R1/3rak3/6R2/p7p/2p6/2P1n3P/P1r6/2N6/4A4/2B1KA3",
+          "move_notation_wxf": "Xe 5 bình 3",
+          "move_notation_iccs": "e7g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe. Sách cho biết Trắng tiếp theo dùng sát pháp \"Song Xe Thác\" (đúng tên chủ đề Bài 11) giành lấy thắng lợi, dù chưa chơi tiếp cụ thể vì thế cờ đã ngã ngũ.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
