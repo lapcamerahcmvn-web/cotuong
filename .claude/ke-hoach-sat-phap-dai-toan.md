@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 🔄 13/25 (vd1,3-14; vd2 hoãn); tiếp Bài 6 vd15-25 rồi Bài 7 Xe Binh |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25 (vd2,23,24,25 hoãn); tiếp Bài 7 "Loại Hình Xe Binh" |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -387,4 +387,13 @@
     - **vd7-14** (commit ...): vd7 vs Song Tượng (3 nước, Pháo tróc Tượng); vd8 "Pháo Tướng chiếm trung lộ" ăn 1 Tượng; vd9-10 Pháo Binh Cao Đơn Tượng (Trắng CÓ 1 Tượng) vs Song Tượng — vd10 gọn hơn (15 vs 29 nước) nhờ dùng công thức lộ 4/6 ngay; vd11 vs Đơn Sĩ Tượng (ăn Sĩ trước; ⚠️ nước 3 B6-7 chứ KHÔNG B6-5 nếu không HÒA); vd12-13 Pháo Binh đáy Đơn Sĩ vs Đơn Sĩ Tượng ("Sĩ Đen che mặt Tướng"; vd13 "lắp không tâm Pháo" + Binh diệt Sĩ đáy, 9 nước); vd14 Pháo Binh đáy Đơn Sĩ Tượng vs Đơn Sĩ Tượng (35 nước, cân bằng vật chất nhất).
     - **⚠️ HOÃN**: **vd2 (Hình 3.96)** — ván 33 nước Pháo tour dài, "P5-4" nước 7 phạm luật (Pháo đâm vào Soái); thử K ở r8/r9 đều kẹt (r8 kẹt nước 11). Nhiều lỗi transcription chồng nhau. **vd11 nước 12** "V3.5"→"V3/5" (Tượng đen không qua sông được, `.`↔`/` OCR) — đã sửa, 0 warnings.
     - **Series ~= 293 bài** (tổng ~485). ĐÃ PUSH nhiều lần.
-    - **Việc tiếp theo**: Bài 6 vd15-25 (còn 11 ví dụ, Hình 3.109-3.119, PDF trang 245-252), rồi Bài 7 "LOẠI HÌNH XE BINH". Nợ: vd16 Bài 5, vd2 Bài 6.
+    - **2026-09-10 (tiếp) — Bài 6 mở rộng Ví dụ 15-22** (8 ví dụ), trang PDF 245-249:
+      - vd15 Pháo Binh đáy Đơn Sĩ Tượng vs Đơn Sĩ Tượng — **nguyên lý "đánh Tượng chỉ là bề ngoài, mục đích thật là lộ mặt Tướng trói Sĩ"**; quân Binh đáy = quân phá thế hòa (không có nó Đen đi Sĩ đối phó vô tận → hòa).
+      - vd16-17 Pháo Binh thấp Đơn Sĩ vs Đơn Khuyết Sĩ (1 Sĩ 2 Tượng) — diệt Sĩ lẻ, dùng cả Sĩ Trắng làm quân tấn công.
+      - vd18-19 Pháo Binh Cao Đơn Tượng vs Đơn Khuyết Tượng (2 Sĩ 1 Tượng) — ép Tượng bay biên, đổi vị trí Binh/Tướng (chiếm lộ 4/6), Pháo bình cánh khống chế Tượng biên.
+      - vd20-21 Pháo Binh Cao KHÉO thắng Sĩ Tượng toàn (**trường hợp ĐẶC BIỆT** — thường Pháo Binh cao không Sĩ Tượng KHÔNG thắng nổi Sĩ Tượng toàn; thắng vì đội hình Đen xấu). vd20 "Pháo chìm đáy" ăn song Sĩ + tắc mắt Tượng; vd21 "Pháo Tướng yểm hộ Binh" → **Pháo Binh lưỡng chiếu** (song chiếu, chỉ né Tướng).
+      - vd22 Pháo Binh thấp khéo thắng Sĩ Tượng toàn "truyền thống" — chuỗi vận quân tinh diệu (Pháo+Tướng đổi vị trí liên tục, đe dọa nhỏ dồn dập).
+      - Cả 8 validate 0 warnings (vd18 phải sửa K đỏ về hàng 9, vd22 Pháo ở c7 không c8).
+    - **Series ~= 301 bài** (tổng ~493). ĐÃ PUSH.
+    - **⚠️ HOÃN thêm vd23, vd24, vd25 (Hình 3.117-3.119)** — cả 3 là "Pháo Binh Cao Đơn Khuyết Sĩ tất thắng Sĩ Tượng toàn", ván 25-35 nước, có nhiều lỗi OCR (`P7/9`→`V7/9`, Đen không có Pháo) chồng nhau + Trắng có 1-2 Tượng + 1 Sĩ. Làm sau bằng vòng xác thực cẩn thận.
+    - **Việc tiếp theo**: **Bài 7 "LOẠI HÌNH XE BINH"** (PDF trang 253). Nợ: vd16 Bài 5, vd2+vd23+vd24+vd25 Bài 6.
