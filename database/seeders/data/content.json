@@ -82504,6 +82504,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30307,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Một Định Thức Khác Của Pháo Sĩ Tượng Thắng Binh — Ví Dụ 7",
+      "slug": "c3-loai-hinh-phao-vi-du-7",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5c3/3k5/5a3/4P4/2b6/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Ví dụ 7 là định thức thứ năm liên tiếp về dạng Pháo Sĩ Tượng thắng Đơn Binh, với cách bố trí ban đầu khác các ví dụ trước, và kết thúc bằng một công thức năm bước cô đọng mà người học có thể ghi nhớ để áp dụng cho toàn bộ nhóm định thức này.",
+      "content": "<h2>Nhiều thế xuất phát, một công thức kết thúc</h2><p>Đến Ví dụ 7, sách đã trình bày tới năm cách bố trí quân ban đầu khác nhau (Ví dụ 3-4-5-6-7) cho cùng một dạng tàn cuộc: bên có Pháo Sĩ Tượng đối đầu một quân Binh đơn độc. Điều đáng chú ý: dù xuất phát điểm khác nhau đến đâu, TẤT CẢ đều hội tụ về cùng một thế trận cốt lõi và cùng một công thức kết thúc.</p><h2>Công thức năm bước để ghi nhớ</h2><p>Sách chốt lại toàn bộ nhóm định thức này bằng một công thức năm bước ngắn gọn, dễ thuộc: (1) Pháo đánh Binh — dùng Pháo đe dọa và đuổi quân Binh của đối phương; (2) Tướng thăng đỉnh — đưa Tướng lên đỉnh cửu cung; (3) Pháo đánh Tướng chiếm trung lộ — điều Pháo về vị trí khống chế trung lộ; (4) tiến Tướng — Tướng tiến thêm để hoàn tất thế vây; (5) Pháo chiếu sát — đòn kết liễu. Việc gói toàn bộ một nhóm định thức phức tạp vào năm từ khóa như vậy là một kỹ thuật ghi nhớ hiệu quả cho người học.</p><h2>Vì sao sách trình bày nhiều ví dụ đến vậy cho một dạng tàn cuộc?</h2><p>Năm ví dụ liên tiếp cho cùng một dạng có thể thoạt nhìn là thừa. Nhưng mục đích sư phạm rõ ràng: trong thực chiến, người chơi hầu như không bao giờ gặp đúng thế chuẩn ngay lập tức. Mỗi ví dụ dạy một cách ĐƯA một thế xuất phát cụ thể về thế chuẩn. Nắm được cả năm, người học có đủ công cụ để nhận ra bất kỳ biến thể nào của thế cờ này và biết chính xác các nước cần đi để \"quy về\" dạng đã biết cách thắng.</p><h2>Kết luận: từ ví dụ cụ thể đến công thức trừu tượng</h2><p>Bộ năm ví dụ này minh họa một quá trình học tập điển hình: bắt đầu từ những ván đấu cụ thể được phân tích chi tiết (Ví dụ 3), dần dần rút gọn phần lặp lại (Ví dụ 4-5-6), và cuối cùng chưng cất thành một công thức trừu tượng năm bước (Ví dụ 7) mà người học đã đủ nền tảng để hiểu và áp dụng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Pháo Sĩ Tượng Thắng Binh — Công Thức Năm Bước Cô Đọng (Ví Dụ 7)",
+      "seo_description": "Định thức thứ năm liên tiếp về Pháo Sĩ Tượng thắng Đơn Binh, kết thúc bằng công thức năm bước dễ nhớ: Pháo đánh Binh, Tướng thăng đỉnh, Pháo chiếm trung lộ, tiến Tướng, Pháo chiếu sát.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5c3/3k5/5a3/3P5/2b6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh. Đây lại là một định thức khác nữa của cùng dạng tàn cuộc Pháo Đơn Sĩ Tượng thắng Đơn Binh, với cách bố trí quân ban đầu khác các ví dụ trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4c4/3k5/5a3/3P5/2b6/9/9/9/9/4K4",
+          "move_notation_wxf": "Pháo 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo về trung lộ — sách nêu nhiều nhánh phụ ở đây (nếu Trắng đổi hướng tiến Tướng thì có các biến khác), tất cả đều dẫn đến bên Đen ăn được Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4c4/3k5/5a3/3P5/2b6/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4c4/3k5/b4a3/3P5/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tượng 3 thoái 1",
+          "move_notation_iccs": "c5a7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4c4/3k5/b4a3/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b1c4/3k5/5a3/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 1 thoái 3",
+          "move_notation_iccs": "a7c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng tiếp — Tượng di chuyển qua lại để tìm đúng vị trí phối hợp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2b1c4/3k5/5a3/3P5/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2bkc4/9/5a3/3P5/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2bkc4/9/5a3/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3kc4/9/4ba3/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 3 tiến 5",
+          "move_notation_iccs": "c9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng về đúng vị trí khống chế trung lộ cùng Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3kc4/9/4ba3/3P5/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — đến đây thế trận đã hình thành đầy đủ: Pháo Tượng khống chế trung lộ, Binh và Sĩ khác cánh, Sĩ giương góc. Từ đây, cách thắng của bên Đen được sách tóm gọn thành công thức năm bước: Pháo đánh Binh, Tướng thăng đỉnh, Pháo đánh Tướng chiếm trung lộ, tiến Tướng, Pháo chiếu sát. Kết quả: \"Đen thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
