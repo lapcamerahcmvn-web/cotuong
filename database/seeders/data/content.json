@@ -78314,6 +78314,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30202,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Vì Sao Sĩ Chỉ 5 Điểm Không Thể Thoát Mã — Ví Dụ 2",
+      "slug": "c3-loai-hinh-ma-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k5/4a4/9/6N2/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Ví dụ 2 giải thích rõ CĂN CỨ LÝ THUYẾT vì sao đơn Mã luôn thắng được đơn Sĩ: Sĩ bị giới hạn trong đúng 5 điểm hoạt động của cửu cung, một không gian đủ hẹp để Mã luôn tính ra được cách dồn ép và ăn được nó.",
+      "content": "<h2>Từ minh họa cụ thể (Ví dụ 1) đến giải thích nguyên lý (Ví dụ 2)</h2><p>Nếu Ví dụ 1 tập trung trình bày TỪNG BƯỚC cụ thể của kỹ thuật \"tiên tróc Sĩ, hậu cấm vảy\", thì Ví dụ 2 lùi lại một bước để giải thích CĂN CỨ LÝ THUYẾT vì sao kỹ thuật đó luôn hiệu quả: Sĩ, dù là quân phòng thủ, lại bị giới hạn di chuyển nghiêm ngặt nhất trong toàn bộ hệ thống quân cờ — chỉ có thể đứng ở 5 trong số 9 điểm của cửu cung (bốn góc và điểm chính giữa), và không bao giờ được phép rời khỏi phạm vi đó dù chỉ một bước.</p><h2>Không gian hẹp = không có nơi ẩn náu lâu dài</h2><p>Chính giới hạn \"chỉ 5 điểm\" này là chìa khóa lý thuyết: một quân Mã đứng ở vị trí thoáng bên ngoài cung có thể tính toán trước toàn bộ các điểm Sĩ có thể lui tới, rồi lần lượt khống chế từng điểm một cho đến khi không còn điểm nào an toàn. Đây là sự khác biệt căn bản so với việc Mã đối đầu Tượng (chủ đề của các ví dụ sau) — Tượng tuy cũng bị giới hạn trong nửa bàn cờ của mình, nhưng phạm vi đó (7 điểm) vẫn rộng hơn đáng kể so với 5 điểm của Sĩ.</p><h2>Một thế cờ, hai nhánh rẽ — lại một lần nữa</h2><p>Giống mô hình đã thấy ở cặp Ví dụ 20-21 của Bài 1, Ví dụ 2 cũng chủ động chỉ ra một ngã ba quan trọng (tại nước 4: Đen có thể bình Tướng sang một trong hai hướng), một hướng dẫn đến Ví dụ 2 tiếp tục như đã trình bày, hướng còn lại được dành riêng cho Ví dụ 3 kế tiếp. Đây tiếp tục là minh chứng cho phương pháp giảng dạy nhất quán của toàn cuốn sách: trình bày đầy đủ cây quyết định thay vì chỉ một đường đi duy nhất.</p><h2>Vì sao sách không lặp lại phần \"hậu cấm vảy\"?</h2><p>Sau khi Mã ăn được Sĩ ở nước cuối, sách chỉ gói gọn bằng một câu: \"cách thắng giống cuộc trước\". Đây là cách trình bày cô đọng hợp lý — vì phần kỹ thuật dồn Tướng trơ trọi vào góc (\"hậu cấm vảy\") đã được giảng đầy đủ, chi tiết ở Ví dụ 1, việc lặp lại y hệt ở đây sẽ chỉ gây trùng lặp không cần thiết. Đây cũng là lời nhắc cho người học: khi ôn tập một nhóm ví dụ liên quan, không phải ví dụ nào cũng cần đọc riêng biệt từ đầu đến cuối — nhiều khi giá trị chính nằm ở NHỮNG GÌ KHÁC BIỆT so với ví dụ trước, không phải toàn bộ chuỗi nước đi.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Đơn Mã Thắng Đơn Sĩ: Vì Sao Sĩ Chỉ 5 Điểm Không Thoát (Ví Dụ 2)",
+      "seo_description": "Giải thích căn cứ lý thuyết đơn Mã luôn thắng đơn Sĩ: Sĩ bị giới hạn đúng 5 điểm trong cửu cung, không gian đủ hẹp để Mã luôn tính ra cách dồn ép và ăn được.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k5/4aN3/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 3 tiến 4",
+          "move_notation_iccs": "g6f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã. Sách nêu ngay lý do vì sao đơn Mã luôn thắng được đơn Sĩ về mặt lý thuyết: Sĩ bị giới hạn tuyệt đối trong phạm vi 9 điểm của cửu cung, và trong số đó chỉ có đúng 5 điểm nó có thể thực sự đứng — không gian hẹp đến mức Mã luôn có đủ cách tính để dồn nó vào chỗ không còn lối tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4k4/4aN3/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — sách lưu ý nếu Đen chọn tiến Tướng ở đây, cách thắng sẽ giống hệt Ví dụ 1.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4k4/4aN3/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng — giống Ví dụ 1, Tướng Trắng tích cực tham gia áp sát ngay từ đầu, không chỉ đứng chờ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5k3/4aN3/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — sách lưu ý: nếu Đen đổi hướng bình sang phía kia (Tg5-4), thế cờ sẽ rẽ sang một biến khác, được trình bày chi tiết ở ví dụ kế tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5k1N1/4a4/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Mã 4 tiến 2",
+          "move_notation_iccs": "f8h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã áp sát góc.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5k1N1/9/3a5/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ ra đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5k1N1/9/3a5/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng — điều chỉnh lại vị trí hỗ trợ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5k1N1/4a4/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ — sách chỉ rõ: nếu Đen đổi hướng bình Tướng (Tg6-5) ở đây, Trắng có ngay nước Mã lui tróc chết Sĩ, thắng chắc chắn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "5k3/4a4/6N2/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 2 thoái 3",
+          "move_notation_iccs": "h9g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã, vòng về đúng vị trí cần thiết để áp sát Sĩ từ hướng khác.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4k4/4a4/6N2/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4k4/4N4/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 3 tiến 5",
+          "move_notation_iccs": "g7e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã ăn thẳng Sĩ — đúng như sách kết luận ngắn gọn: \"Sau khi ăn Sĩ thì cách thắng giống cuộc trước\", nghĩa là phần còn lại (dồn Tướng trơ trọi vào góc) áp dụng lại nguyên vẹn kỹ thuật \"hậu cấm vảy\" đã trình bày đầy đủ ở Ví dụ 1.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
