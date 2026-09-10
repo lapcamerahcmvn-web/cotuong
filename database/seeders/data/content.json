@@ -81144,6 +81144,326 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30216,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Song Mã Tướng Liên Công Ép Pháo Lột Chiếu, Khép Lại Bài 2 — Ví Dụ 16",
+      "slug": "c3-loai-hinh-ma-vi-du-16",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k4c/4a4/3a5/7N1/1N7/9/9/9/9/4K1B2",
+      "variation_tree": null,
+      "move_count": 27,
+      "summary": "Ví dụ 16 khép lại Bài 2 bằng một ván đấu tổng hợp gần như mọi kỹ thuật đã học: Tướng khống chế trung lộ, song Mã chuẩn bị nước đi trước, Tượng chủ động tham chiến, và đòn kết truy đuổi Pháo bằng thế tróc quen thuộc.",
+      "content": "<h2>Ví dụ tổng kết: hội tụ nhiều kỹ thuật đã học</h2><p>Là ví dụ cuối cùng của Bài 2, Ví dụ 16 không giới thiệu kỹ thuật hoàn toàn mới, mà đóng vai trò như một bài tổng ôn: Tướng khống chế trung lộ (đã học từ Ví dụ 9), kỹ thuật chuẩn bị nước đi trước (Ví dụ 15), quân Tượng chủ động tham chiến thay vì đứng yên (Ví dụ 13-14), và đòn kết bằng thế \"tróc\" thay vì ăn quân trực tiếp (lặp lại nhiều lần xuyên suốt các ví dụ song Mã). Việc kết thúc Bài 2 bằng một ví dụ tổng hợp như vậy giúp người học củng cố lại toàn bộ hệ thống kiến thức đã tiếp thu qua 16 ví dụ.</p><h2>Một nhánh phụ đáng chú ý: quy về bài toán đã biết</h2><p>Nhánh phụ ở nước 15 đặc biệt có giá trị sư phạm: nếu Đen chọn một hướng phòng thủ khác, thế cờ sẽ ngay lập tức quy về đúng dạng \"Mã thắng đơn Sĩ\" — kỹ thuật đầu tiên và cơ bản nhất được dạy ở Ví dụ 1-3 của Bài 2. Đây là một minh chứng đẹp cho tính HỆ THỐNG của toàn bộ Bài 2: các ví dụ phức tạp sau này (song Mã đối nhiều loại quân phòng thủ khác nhau) đều có thể, trong một số nhánh cụ thể, thu gọn lại về những kỹ thuật đơn giản đã học ở đầu bài.</p><h2>Nhìn lại toàn bộ Bài 2 \"Loại Hình Mã\"</h2><p>Qua 16 ví dụ, Bài 2 đã trình bày một hệ thống đầy đủ về khả năng của quân Mã trong tàn cuộc: từ đơn Mã đối đơn Sĩ/Tượng/Tốt (Ví dụ 1-7), đến song Mã đối các tổ hợp phòng thủ ngày càng phức tạp hơn — Sĩ Tượng toàn, Mã Song Sĩ, Mã Song Tượng, và cuối cùng là Pháo Song Sĩ (Ví dụ 8-16). Xuyên suốt, một số nguyên lý lặp lại nhất quán: \"Bát diện uy phong\" khi Mã đứng ở vị trí thoáng, điểm yếu \"cài chân\" khi bị dồn góc, nguyên tắc \"tránh đổi quân\" khi có ưu thế song Mã, vai trò tích cực của Tướng trong tàn cuộc ít quân, và các kỹ thuật đặt tên riêng như \"Song Mã ẩm tuyền\" hay \"ép Tướng lên đỉnh\".</p><h2>Chuẩn bị cho Bài 3</h2><p>Ngay sau Ví dụ 16, sách chuyển sang \"Bài 3 — Loại Hình Pháo\", mở ra một nhóm nguyên lý mới xoay quanh đặc điểm riêng của quân Pháo (cần ngòi để ăn quân, uy lực khi có ngòi tốt, hạn chế khi thiếu ngòi) — một chương tiếp theo trong hành trình khám phá đầy đủ khả năng của từng loại quân trong tàn cuộc định thức.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Mã Tướng Liên Công Ép Pháo, Khép Lại Bài 2 Loại Hình Mã (Ví Dụ 16)",
+      "seo_description": "Ví dụ tổng kết Bài 2: Tướng khống chế trung lộ, song Mã chuẩn bị nước đi trước, Tượng chủ động tham chiến, kết bằng thế tróc Pháo — khép lại 16 ví dụ Loại Hình Mã.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k4c/4a4/2Na5/7N1/9/9/9/9/9/4K1B2",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "b5c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã. Ví dụ cuối cùng của Bài 2 nêu yếu lĩnh tổng hợp: trước hết dùng chủ Tướng khống chế trung lộ, phối hợp song Mã liên tục tấn công để ép quân Pháo Đen phải lột chiếu (rời khỏi vị trí phòng thủ), rồi truy đuổi cho đến khi tróc chết Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "8c/3ka4/2Na5/7N1/9/9/9/9/9/4K1B2",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "8c/3ka4/3a5/N6N1/9/9/9/9/9/4K1B2",
+          "move_notation_wxf": "Mã 7 thoái 9",
+          "move_notation_iccs": "c7a6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã — chủ đích lui về để chuẩn bị cho nước sau tiến sang lộ 8, nhảy đến hàng ngang thứ 2 nhằm khống chế Tướng Đen, đúng kỹ thuật \"chuẩn bị trước cho nước sau\" đã học ở Ví dụ 15.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4c4/3ka4/3a5/N6N1/9/9/9/9/9/4K1B2",
+          "move_notation_wxf": "Pháo 9 bình 5",
+          "move_notation_iccs": "i9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4c4/3ka4/3a5/N6N1/9/9/9/4B4/9/4K4",
+          "move_notation_wxf": "Tượng 3 tiến 5",
+          "move_notation_iccs": "g0e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng — quân Tượng của Trắng chủ động tham gia, khác hẳn vai trò đứng yên ở nhiều ví dụ trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2c6/3ka4/3a5/N6N1/9/9/9/4B4/9/4K4",
+          "move_notation_wxf": "Pháo 5 bình 3",
+          "move_notation_iccs": "e9c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2c6/1N1ka4/3a5/7N1/9/9/9/4B4/9/4K4",
+          "move_notation_wxf": "Mã 9 tiến 8",
+          "move_notation_iccs": "a6b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/1Ncka4/3a5/7N1/9/9/9/4B4/9/4K4",
+          "move_notation_wxf": "Pháo 3 tiến 1",
+          "move_notation_iccs": "c9c8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/1Ncka4/3a5/7N1/9/2B6/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 5 tiến 7",
+          "move_notation_iccs": "e2c4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tượng, hoàn tất việc điều chỉnh vị trí.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3k5/1Nc1a4/3a5/7N1/9/2B6/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3k5/1Nc1a1N2/3a5/9/9/2B6/9/9/9/4K4",
+          "move_notation_wxf": "Mã 2 tiến 3",
+          "move_notation_iccs": "h6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3k1a3/1Nc3N2/3a5/9/9/2B6/9/9/9/4K4",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3k1a3/1Nc3N2/3a5/9/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3k5/1Nc1a1N2/3a5/9/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3k5/1Nc1a4/3a5/5N3/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã 3 thoái 4",
+          "move_notation_iccs": "g8f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã — sách chỉ rõ nhánh khác: nếu Đen chọn lui Sĩ ở nước trước thay vì tiến, Trắng có ngay phương án lui Mã tiến Pháo ăn Sĩ, hình thành cục diện Mã thắng đơn Sĩ đã học từ đầu Bài 2 — một minh chứng đẹp cho việc các kỹ thuật đơn giản luôn là nền tảng cho các thế cờ phức tạp hơn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "9/1Ncka4/3a5/5N3/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "9/1Ncka4/3a5/9/3N5/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã 4 thoái 6",
+          "move_notation_iccs": "f6d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/1N1ka4/3a5/9/2cN5/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Pháo 3 tiến 3",
+          "move_notation_iccs": "c8c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "9/1N1ka4/2Na5/9/2c6/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã 6 tiến 7",
+          "move_notation_iccs": "d5c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "5a3/1N1k5/2Na5/9/2c6/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "1N3a3/1N1k5/3a5/9/2c6/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã 7 tiến 8",
+          "move_notation_iccs": "c7b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "1Nc2a3/1N1k5/3a5/9/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Pháo 3 thoái 4",
+          "move_notation_iccs": "c5c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "1Nc2a3/3k5/3a5/2N6/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã sau thoái 7",
+          "move_notation_iccs": "b8c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 24,
+          "fen": "1Nck1a3/9/3a5/2N6/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 25,
+          "fen": "2ck1a3/9/2Na5/2N6/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã 8 thoái 7",
+          "move_notation_iccs": "b9c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 26,
+          "fen": "3k1a3/2c6/2Na5/2N6/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Pháo 3 tiến 1",
+          "move_notation_iccs": "c9c8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 27,
+          "fen": "3k1a3/2c6/N1Na5/9/9/2B6/9/9/4K4/9",
+          "move_notation_wxf": "Mã sau tiến 9",
+          "move_notation_iccs": "c6a7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sau — nước đi trực tiếp uy hiếp quân Pháo của Đen, khiến nó không còn ô nào an toàn. Đúng như sách khẳng định: \"tróc chết Pháo thắng\" — khép lại toàn bộ Bài 2 \"Loại Hình Mã\" bằng đúng mô-típ đã lặp lại nhiều lần: đe dọa trực tiếp (tróc) chứ không nhất thiết phải ăn quân ngay tại nước cuối.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
