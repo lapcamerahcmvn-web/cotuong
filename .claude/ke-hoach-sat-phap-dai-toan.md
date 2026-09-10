@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 ✅15/20 (vd1-5,7-12,14,17-19); tiếp Bài 8 Pháo Mã. Nợ: B5vd16, B6vd2/23-25, B7vd6/13/15/16/20 |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), B5 ✅17/18, B6 ✅21/25, B7 ✅15/20, B8 🔄 2/7; tiếp B8 vd3-7 rồi B9 Xe Mã. Nợ: B5vd16, B6vd2/23-25, B7vd6/13/15/16/20 |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -424,5 +424,10 @@
     - ⚠️ Sửa row: vd14 Xe hàng 7 (không 6); vd18/19 Sĩ trắng hàng 7 (không 6, "d3" không phải điểm Sĩ hợp lệ); vd19 chỉ 2 Tượng đen ở (2,0)+(4,6).
     - **Series ~= 317 bài** (tổng ~525 — re-seed nền đang chạy). ĐÃ PUSH.
     - **⚠️ HOÃN vd15, vd16, vd20 Bài 7** — vd15/vd20 ván 19+ nước nhiều biến; vd16 "X7.2"→"X2-3" nước 1-2 mâu thuẫn (chỉ 1 Xe trắng, không parse được) + Xe trắng ở cột 4 (file 5) không khớp "X7". Cần dò lại kỹ.
-    - **Việc tiếp theo**: **Bài 8 "LOẠI HÌNH PHÁO MÃ"** (PDF tr.266). Chương 3 sau đó: Bài 9 Xe Mã, Bài 10 Xe Pháo, Bài 11+ (Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe).
-    - **Nợ tổng (làm sau, vòng xác thực cẩn thận từng ván)**: B5 vd16; B6 vd2,23,24,25; B7 vd6,13,15,16,20.
+  - **2026-09-10 (tiếp) — mở CHƯƠNG 3 BÀI 8 "LOẠI HÌNH PHÁO MÃ" — intro + vd1-2**, trang PDF 266-267. Bài 8 chỉ có **7 ví dụ** (Hình 3.140-3.146), tới Bài 9 "LOẠI HÌNH XE MÃ" ở PDF tr.271.
+    - **Khái niệm cốt lõi**: Pháo Mã = tổ hợp KHÔNG XE tốt nhất (hơn Song Mã/Song Pháo). Sát chiêu tên riêng: **"Tiền Mã hậu Pháo"** (Mã trước khống chế ô chạy Tướng, Pháo sau cùng tuyến bắn tới), **"mượn Pháo khiến Mã"** (Pháo canh tuyến để Mã rảnh nhảy vào sát). Nước Tướng ("tranh chiếm yếu đạo") quan trọng ngang 2 quân tấn công. Pháo Mã + Tướng TẤT THẮNG Sĩ Tượng toàn (không cần thí quân).
+    - vd1 Pháo Mã tất thắng Sĩ Tượng toàn (25 nước — dồn Tướng góc, phá từng Sĩ Tượng). vd2 bản thắng nhanh 7 nước (nước "Tg5-4!" chiếm yếu đạo + Pháo phục sát M2.3). Cả 2 validate 0 warnings. FEN: vd1 `5k3/4a4/3ab4/C1N6/6b2/9/9/9/9/4K4`, vd2 `5k3/4a4/3ab4/7N1/2b6/9/9/1C7/9/4K4`.
+    - **Series ~= 320 bài** (tổng ~528). ĐÃ PUSH.
+    - **⚠️ vd3-7 Bài 8 CHƯA LÀM** — vd3,4 "Pháo Mã Sĩ Tượng toàn lệ thắng Mã Sĩ Tượng toàn" (sơ đồ DÀY 12-13 quân, cả 2 bên đủ Sĩ Tượng + Trắng có 2 Tượng 2 Sĩ), vd5,6 tương tự, vd7 dài nhiều biến. Cần dò FEN cẩn thận (đã render `fullpg268/269/270_hires.png`). Move list đã trích ở `pg266_270.txt`.
+    - **Việc tiếp theo**: Bài 8 vd3-7, rồi Bài 9 "LOẠI HÌNH XE MÃ" (PDF tr.271). Chương 3 sau đó: Bài 10 Xe Pháo, Bài 11+ (Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe).
+    - **Nợ tổng (làm sau, vòng xác thực cẩn thận từng ván)**: B5 vd16; B6 vd2,23,24,25; B7 vd6,13,15,16,20; B8 vd3-7.
