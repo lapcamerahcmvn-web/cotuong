@@ -75902,6 +75902,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30112,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Binh Đáy Trợ Lực Cho Binh Cao Ăn Trọn Song Sĩ — Ví Dụ 12",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-12",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5k2P/4a4/3a5/4P4/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Ví dụ 12 giới thiệu một biến thể tinh tế khác của định thức \"Binh cao Binh thấp thắng song Sĩ\": quân Binh đã đi hết đường (Binh đáy, chỉ còn có thể đi ngang) không trực tiếp tấn công, mà làm nhiệm vụ hỗ trợ từ xa, mượn đúng vị trí của nó để Binh cao rảnh tay ăn trọn cả hai Sĩ của Đen.",
+      "content": "<h2>Binh đáy — quân tưởng như \"hết tác dụng\" lại có vai trò riêng</h2><p>Ví dụ 12 khai thác một khái niệm đặc biệt: \"Binh đáy\" — quân Binh đã tiến hết mức, chạm tới tuyến cuối cùng của bàn cờ và từ đó chỉ còn khả năng di chuyển sang ngang, không thể tiến thêm được nữa. Nhiều người mới học thường coi Binh đáy là quân đã \"hết giá trị chiến đấu\", nhưng sách chứng minh điều ngược lại: \"Binh cao bên Trắng mượn trợ lực của Tướng và tác dụng của Binh đáy, ăn trọn Sĩ bên Đen mà giành thắng lợi.\"</p><h2>Phân công vai trò rõ ràng giữa hai quân Binh</h2><p>Ván đấu cho thấy sự phân công nhiệm vụ rất rõ ràng: Binh đáy đảm nhận việc di chuyển qua lại ở tuyến cuối để phối hợp cùng Tướng ép Tướng Đen phải liên tục thay đổi vị trí, trong khi Binh cao — quân vẫn còn khả năng tiến — mới là quân trực tiếp áp sát và tiêu diệt lần lượt cả hai Sĩ của Đen. Đây là mô hình \"một quân giữ nhịp, một quân ra đòn\" — không nhất thiết quân nào cũng phải trực tiếp tấn công, miễn là toàn đội hình phối hợp nhịp nhàng.</p><h2>Vì sao \"mượn trợ lực\" lại là cách diễn đạt chính xác?</h2><p>Cách sách dùng từ \"mượn trợ lực của Tướng và tác dụng của Binh đáy\" rất đáng chú ý về mặt tư duy chiến thuật: Binh cao không tự mình đủ sức ăn cả hai Sĩ nếu hành động đơn độc — nó cần Tướng che chắn ở phía sau và Binh đáy khống chế các ô thoát hiểm ở tuyến dưới. Đây là lời nhắc rằng ngay cả một quân Binh đang chiếm ưu thế tấn công vẫn cần cả hệ thống phối hợp đứng sau lưng mới có thể hoàn tất nhiệm vụ.</p><h2>Kết cục quen thuộc: khốn tù khép lại ván đấu</h2><p>Sau khi cả hai Sĩ lần lượt bị Binh cao tiêu diệt, thế cờ trở về đúng mô hình quen thuộc đã thấy nhiều lần trong Bài 1: Tướng Đen trơ trọi, bị Tướng và Binh còn lại của Trắng khóa chặt mọi ô di chuyển. Việc liên tục quay lại đúng một cơ chế kết thúc (khốn tù) xuyên suốt nhiều ví dụ với xuất phát điểm khác nhau chính là minh chứng rõ ràng nhất cho tính \"định thức\" — ổn định và có thể dự đoán trước — của toàn bộ Chương 3.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Binh Đáy Trợ Lực Binh Cao Ăn Trọn Song Sĩ (Ví Dụ 12)",
+      "seo_description": "Định thức Binh cao Binh thấp thắng song Sĩ: Binh đáy đã hết đường tiến vẫn có vai trò hỗ trợ quan trọng, giúp Binh cao rảnh tay ăn trọn song Sĩ đối phương.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5k2P/4a4/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "8P/4ak3/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "7P1/4ak3/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 1 bình 2",
+          "move_notation_iccs": "i9h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5k1P1/4a4/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5kP2/4a4/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 2 bình 3",
+          "move_notation_iccs": "h9g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "6P2/4ak3/3aP4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "6P2/4ak3/3aP4/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3a2P2/5k3/3aP4/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3a2P2/5k3/3P5/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "6P2/4ak3/3P5/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "6P2/4ak3/4P4/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "d7e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "6P2/5k3/4Pa3/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "6P2/5k3/4Pa3/9/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — Binh cao vừa ăn trọn cả hai Sĩ của Đen qua các bước di chuyển vừa rồi, Tướng Đen hoàn toàn hết nước đi hợp lệ. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
