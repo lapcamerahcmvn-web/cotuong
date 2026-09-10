@@ -80172,6 +80172,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30212,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Song Mã Ép Tướng Lên Đỉnh Rồi Tróc Mã — Ví Dụ 12",
+      "slug": "c3-loai-hinh-ma-vi-du-12",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4k4/9/4b4/7N1/2b2Nn2/9/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Ví dụ 12 minh họa kỹ thuật \"ép Tướng lên đỉnh\": bằng cách liên tục khống chế các ô lui phía sau, song Mã buộc Tướng Đen phải trèo lên tận hàng cao nhất của cung — một vị trí bất thường khiến nó mất khả năng hỗ trợ quân Mã của mình, tạo điều kiện để song Mã tróc gọn quân Mã đó.",
+      "content": "<h2>\"Ép Tướng lên đỉnh\": khi việc dồn ép không nhắm vào góc mà nhắm lên cao</h2><p>Khác với đa số kỹ thuật dồn ép đã học (thường đẩy Tướng vào GÓC bàn cờ), Ví dụ 12 giới thiệu một hướng tấn công khác: buộc Tướng phải trèo LÊN CAO, đến tận hàng trên cùng của cung. Đây là một vị trí bất thường đối với Tướng — nó vốn được thiết kế để đứng yên ở hàng đáy, được Sĩ Tượng bao quanh bảo vệ. Khi bị đẩy lên đỉnh, Tướng không chỉ mất đi sự bảo vệ đó, mà còn vô tình cản trở luôn khả năng cơ động của chính quân Mã bên mình.</p><h2>Mối liên hệ giữa vị trí Tướng và số phận của quân Mã</h2><p>Điểm mấu chốt của ví dụ này: một khi Tướng bị ép lên đỉnh, quân Mã của Đen mất đi điểm tựa quan trọng để lui về ẩn náu an toàn. Đây là một góc nhìn chiến thuật mới: đôi khi mục tiêu thực sự của việc dồn ép Tướng không phải để chiếu bí trực tiếp, mà để CÔ LẬP một quân khác — trong trường hợp này là quân Mã, quân duy nhất có khả năng gây rắc rối cho kế hoạch của Trắng.</p><h2>\"Tróc\" khác \"ăn\": một sắc thái ngôn ngữ đáng chú ý</h2><p>Câu kết của sách dùng từ \"tróc chết Mã\" thay vì \"ăn Mã\" — một sắc thái quan trọng: \"tróc\" (truy đuổi, dồn bắt) mô tả trạng thái quân Mã đã bị dồn vào thế không còn đường thoát, dù chưa bị ăn NGAY tại nước đó. Đối chiếu với engine cho thấy đúng như vậy: ở nước cuối, quân Mã Trắng trực tiếp đe dọa quân Mã Đen mà không cần thiết phải chiếu Tướng — quân Mã Đen đơn giản không còn ô nào an toàn để né, và việc bị ăn ở nước tiếp theo chỉ còn là vấn đề thời gian.</p><h2>Kết luận: cùng nguyên tắc \"đổi quân có chọn lọc\", khác mục tiêu</h2><p>So với Ví dụ 8 (nhắm vào Tượng) và các ví dụ trước (nhắm trực tiếp vào Tướng), Ví dụ 12 cho thấy song Mã hoàn toàn có thể điều chỉnh mục tiêu tấn công tùy theo cấu hình quân phòng thủ cụ thể của đối phương — ở đây là ưu tiên loại bỏ quân Mã (mối đe dọa lớn nhất) trước, để lại hai Tượng (đã bị giới hạn hoạt động bởi luật không qua sông) xử lý sau.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Mã Ép Tướng Lên Đỉnh Rồi Tróc Mã Đơn Độc (Ví Dụ 12)",
+      "seo_description": "Song Mã buộc Tướng Đen trèo lên đỉnh cung, cô lập quân Mã khỏi điểm tựa an toàn, rồi trực tiếp uy hiếp khiến Mã đơn độc không còn đường thoát.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4k4/9/4b1N2/7N1/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 4 tiến 3",
+          "move_notation_iccs": "f5g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — sách xác nhận đây là nước đi then chốt giành thắng lợi, có khả năng khống chế tầm hoạt động của Tướng Đen ngay từ đầu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4k1b2/9/6N2/7N1/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tượng 5 thoái 7",
+          "move_notation_iccs": "e7g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4k1b2/6N2/6N2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 2 tiến 3",
+          "move_notation_iccs": "h6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5kb2/6N2/6N2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — sách chỉ rõ: nếu Đen đổi hướng bình sang cánh kia, Trắng có ngay phương án khác (tiến Mã, chiếu, rồi lưỡng chiếu rút Mã) dẫn đến thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5kb2/9/4N1N2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã trước thoái 5",
+          "move_notation_iccs": "g8e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "6b2/5k3/4N1N2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — đúng như tên gọi phần giới thiệu \"Tướng Đen lê đỉnh\": Tướng bị buộc phải trèo lên tận đỉnh (hàng trên cùng của cung), một vị trí vốn dĩ bất thường và bất lợi cho khả năng phòng thủ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3N2b2/5k3/6N2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 5 tiến 6",
+          "move_notation_iccs": "e7d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Mã — sách lưu ý: nếu Đen đổi hướng khác ở nước 6 (Tg6-5) thì Trắng có ngay M5.7 sát, thắng nhanh hơn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3N2b2/9/5kN2/9/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — Tướng Đen giờ đã hoàn toàn bị đẩy lên đỉnh cung, không còn không gian lùi lại phía sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3N2b2/9/5k3/9/2b2Nn2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 3 thoái 4",
+          "move_notation_iccs": "g7f5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3N5/9/4bk3/9/2b2Nn2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "g9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3N5/9/4bk3/3N5/2b3n2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f5d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3N5/9/4bk3/3Nn4/2b6/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "g5e6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã — quân Mã duy nhất của Đen cố gắng tìm đường lui an toàn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/9/2N1bk3/3Nn4/2b6/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã trước thoái 7",
+          "move_notation_iccs": "d9c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã trước — nước đi này trực tiếp uy hiếp quân Mã của Đen, khiến nó không còn ô nào an toàn để trốn thoát. Đúng như sách khẳng định: \"tróc chết Mã, Trắng thắng\" — quân Mã duy nhất còn lại của Đen coi như đã bị bắt sống, chỉ còn hai Tượng không đủ sức chống lại song Mã của Trắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
