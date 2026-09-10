@@ -81674,6 +81674,84 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30302,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Chỉ Cần Tướng Chiếm Trung Lộ, Đơn Tượng Khó Giữ — Ví Dụ 2",
+      "slug": "c3-loai-hinh-phao-vi-du-2",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k5/9/4b4/9/9/9/9/4K4/4A4/8C",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Ví dụ 2 là bản rút gọn nhanh gọn của nguyên lý \"Pháo Đơn Sĩ tất thắng\": khi quân phòng thủ chỉ còn một mình Tượng (thay vì hai Sĩ như Ví dụ 1), Tướng chỉ cần chiếm đúng trung lộ là đủ để Pháo (mượn ngòi từ Sĩ) kết liễu ngay lập tức.",
+      "content": "<h2>Từ ba bước phức tạp đến ba nước đơn giản</h2><p>So với công thức ba bước khá dài của Ví dụ 1 (đặt Sĩ, dồn Tướng, lắp Pháo), Ví dụ 2 cho thấy khi quân phòng thủ của Đen yếu hơn — chỉ còn một Tượng thay vì hai Sĩ — toàn bộ quá trình kết liễu có thể rút gọn chỉ còn ba nước đi. Đây là minh chứng trực tiếp cho nguyên lý đã học: Tượng có phạm vi bảo vệ Tướng kém hơn hẳn Sĩ, vì nó bị giới hạn hoàn toàn trong nửa bàn cờ và không thể đứng trong cửu cung.</p><h2>Vì sao chỉ cần chiếm trung lộ là đủ?</h2><p>Khi Tướng Trắng chiếm giữ đúng đường trung lộ, nó tạo ra một áp lực trực tiếp buộc Tướng Đen phải nhường đường — vì hai Tướng không được phép đối mặt nhau trên cùng một cột không có quân chắn (luật \"tướng đối mặt\"). Một khi Tướng Đen bị đẩy dạt sang một bên, quân Tượng duy nhất không đủ khả năng bao quát toàn bộ khu vực xung quanh Tướng, tạo ra khoảng trống để Pháo — mượn ngòi từ quân Sĩ vừa được đặt đúng vị trí — vươn tới ăn gọn.</p><h2>Bài học tổng quát: mức độ phòng thủ quyết định tốc độ thua</h2><p>Đặt cạnh Ví dụ 1, Ví dụ 2 củng cố thêm một nguyên lý quan trọng đã thấy nhiều lần xuyên suốt cả Chương 3: SỐ NƯỚC CẦN THIẾT để kết liễu một thế cờ định thức tỷ lệ thuận với SỐ LƯỢNG VÀ CHẤT LƯỢNG quân phòng thủ còn lại. Hai Sĩ đầy đủ (Ví dụ 1) cần đến 15 nước; một Tượng đơn độc (Ví dụ 2) chỉ cần 5 nước — cùng một nguyên lý cốt lõi (Pháo Đơn Sĩ mượn ngòi, Tướng chiếm trung lộ), nhưng tốc độ thắng khác biệt rõ rệt tùy vào đối thủ phòng thủ mạnh hay yếu.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Pháo Đơn Sĩ Thắng Đơn Tượng Chỉ 3 Nước (Ví Dụ 2)",
+      "seo_description": "Chỉ cần Tướng chiếm trung lộ, một mình Tượng không đủ sức bảo vệ Tướng — Pháo mượn ngòi từ Sĩ ăn gọn Tượng chỉ trong 3 nước đi ngắn gọn.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k5/9/4b4/9/9/9/9/3AK4/9/8C",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ. Sách khẳng định ngay yếu lĩnh: chỉ cần Tướng Trắng chiếm được đường trung lộ, một mình quân Tượng của Đen không đủ sức bảo vệ Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/3k5/4b4/9/9/9/9/3AK4/9/8C",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/3k5/4b4/9/9/9/9/3AK4/9/4C4",
+          "move_notation_wxf": "Pháo 1 bình 5",
+          "move_notation_iccs": "i0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo về trung lộ, mượn đúng quân Sĩ vừa đặt xong làm ngòi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/4k4/4b4/9/9/9/9/3AK4/9/4C4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — không còn ô nào khác để né tránh sự khống chế của Pháo đang mượn ngòi từ Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/4k4/4C4/9/9/9/9/3AK4/9/9",
+          "move_notation_wxf": "Pháo 5 tiến 7",
+          "move_notation_iccs": "e0e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo ăn thẳng quân Tượng — đúng như sách khẳng định: \"ăn Tượng thắng.\" Chỉ với ba nước đi ngắn gọn, Pháo Đơn Sĩ đã hoàn tất nhiệm vụ trước một quân Tượng đơn độc.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
