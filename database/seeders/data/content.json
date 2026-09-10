@@ -75370,6 +75370,316 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30108,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Song Sĩ Đứng Chéo Nhau Vẫn Không Thoát — Ví Dụ 8",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-8",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k5/9/3a1a3/4P4/9/9/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ví dụ 8 khảo sát một \"tình thế đặc biệt\" khác của định thức song Sĩ: hai Sĩ Đen đứng ở hai góc chéo nhau trong cung (không thẳng hàng như các ví dụ trước) — nhưng ngay cả cách sắp xếp phòng thủ khác biệt này vẫn không đủ để cản Trắng giành chiến thắng.",
+      "content": "<h2>Một cách sắp xếp Sĩ khác — liệu có phòng thủ tốt hơn?</h2><p>Sách giới thiệu ví dụ này là \"một ví dụ về cuộc khéo thắng trong tình thế đặc biệt\": hai Sĩ của Đen không đứng theo mô thức quen thuộc đã thấy ở các ví dụ trước, mà nằm ở hai vị trí chéo nhau trong cung. Về mặt hình học, đây là một cách bố trí phòng thủ khác — người mới học có thể nghĩ rằng thay đổi cách sắp xếp Sĩ sẽ tạo ra sự khác biệt về kết quả. Sách khẳng định ngay: dù vậy, \"bên Trắng vẫn có thể giành chiến thắng\".</p><h2>Nguyên lý không đổi: Tướng và Binh vẫn phối hợp theo đúng mô thức cũ</h2><p>Dù vị trí ban đầu của các Sĩ có khác đi, kỹ thuật thắng của Trắng gần như không đổi so với các ví dụ trước: Binh tiến dần vào cung, kết hợp với Tướng liên tục di chuyển để thu hẹp không gian hoạt động của Tướng Đen. Điều này cho thấy sức mạnh thực sự của định thức tàn cuộc nằm ở nguyên lý phối hợp Tướng-Binh tổng quát, chứ không phụ thuộc quá nhiều vào cách bố trí cụ thể của quân phòng thủ đối phương — miễn là quân số tổng thể vẫn nằm trong phạm vi định thức đã biết.</p><h2>Khi bị dồn ép, một nước sai nhỏ cũng đủ để thua nhanh hơn</h2><p>Sách vẫn cẩn thận chỉ ra: dù Đen chọn tiến Tướng hay lui Sĩ ở bước quan trọng, Trắng đều có sẵn phương án thắng tương ứng — cho thấy Đen, một khi đã rơi vào thế bị động của định thức thua, không còn phương án phòng thủ nào thực sự thay đổi được kết quả cuối cùng, chỉ có thể lựa chọn cách thua nhanh hay chậm.</p><h2>Bài học tổng kết cho nhóm ví dụ về song Sĩ</h2><p>Qua ba ví dụ liên tiếp (6, 7, 8) đều xoay quanh chủ đề \"đơn Binh thắng song Sĩ\" với các biến thể khác nhau về cách quân được sắp xếp hoặc dẫn dắt đến, người học có thể rút ra kết luận chắc chắn: hai Sĩ, dù đứng ở vị trí nào trong cung, đơn thuần là KHÔNG ĐỦ để cầm hòa trước một Binh đã tiến sâu và có Tướng hỗ trợ đúng cách. Đây là một trong những định thức tàn cuộc chắc chắn và ít ngoại lệ nhất của toàn bộ Chương 3.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Sĩ Đứng Chéo Vẫn Thua Đơn Binh (Ví Dụ 8)",
+      "seo_description": "Dù song Sĩ đứng chéo nhau ở vị trí phòng thủ khác biệt, đơn Binh phối hợp Tướng vẫn đủ sức giành thắng lợi — củng cố định thức đơn Binh thắng song Sĩ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k5/9/3aPa3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4k4/9/3aPa3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4k4/9/3a1P3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e7f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/4k4/3a1P3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — sách cho biết: nếu Đen đổi hướng lui Sĩ thay vì tiến Tướng, Trắng vẫn có chuỗi nước Binh Tướng phối hợp dẫn đến cùng kết quả thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/4k4/3a1P3/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "d0d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4k4/9/3a1P3/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4k4/5P3/3a5/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f7f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4k4/4aP3/9/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4k4/4aP3/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30109,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Song Binh Luân Phiên Phá Thành Song Tượng — Ví Dụ 9",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-9",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/1P1k5/4b3b/3P5/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Ví dụ 9 mở ra một định thức hoàn toàn mới của Bài 1: \"Binh cao Binh thấp thắng song Tượng\" — hai quân Binh ở hai mức độ tiến khác nhau luân phiên dựa vào sức mạnh yểm hộ của Tướng để lần lượt xâm nhập cửu cung, cùng nhau phá vỡ hàng phòng ngự song Tượng của đối phương theo đúng hai giai đoạn kế tiếp nhau.",
+      "content": "<h2>Một định thức mới: song Tượng không đủ sức cản song Binh</h2><p>Sau tám ví dụ xoay quanh chủ đề \"đấu với Sĩ\", Ví dụ 9 chuyển sang một định thức mới: \"Binh cao Binh thấp thắng song Tượng\". Ở đây, Đen phòng thủ bằng cả hai quân Tượng còn nguyên vẹn — về lý thuyết, Tượng có nhiệm vụ bảo vệ khu vực sông và nửa sân nhà, nên hai Tượng đủ để che chắn khá rộng. Nhưng sách khẳng định ngay: khi Trắng có đến hai Binh ở hai mức độ tiến quân khác nhau, \"song Binh luân phiên nhau dựa vào sức mạnh của Tướng mà xâm nhập cửu cung, cùng đi phá thành\" — nghĩa là Tượng, dù giỏi phòng thủ ở khu vực giữa sân, lại bất lực khi đối thủ đã đưa được Binh vào tận trong cung.</p><h2>\"Binh cao\", \"Binh thấp\" nghĩa là gì?</h2><p>Cụm từ \"Binh cao Binh thấp\" mô tả chính xác tình huống của hai quân Binh Trắng: một quân đã tiến sâu hơn (Binh cao — gần đạt mục tiêu hơn), một quân còn ở phía sau (Binh thấp — mới bắt đầu hành trình xâm nhập). Đây không phải hai quân ngang hàng cùng tiến một lúc, mà là hai quân ở hai giai đoạn khác nhau của cùng một kế hoạch, được Tướng lần lượt yểm trợ theo đúng thứ tự ưu tiên.</p><h2>Chiến lược hai giai đoạn rõ ràng</h2><p>Sách trình bày rất rõ trình tự ưu tiên của Trắng qua hai câu chú thích liên tiếp: giai đoạn đầu, Tướng di chuyển \"trước là để bảo vệ Binh thấp xâm nhập cửu cung\" — ưu tiên hộ tống quân Binh còn chậm chân trước. Sau khi Binh thấp đã an toàn tiến vào vị trí, Tướng mới chuyển hướng, \"sau đó bảo vệ Binh cao xâm nhập cửu cung đoạt thành\" — dồn lực yểm trợ cho quân Binh còn lại hoàn tất nhiệm vụ. Đây là một mẫu hình chiến lược giá trị: khi có hai mục tiêu tấn công cùng lúc mà chỉ có một lực lượng yểm trợ (Tướng), cần giải quyết dứt điểm từng mục tiêu theo đúng thứ tự, không dàn trải cùng lúc.</p><h2>Kết quả: cửu cung bị phá từ cả hai phía</h2><p>Ván đấu kết thúc với Trắng ở thế đang chiếu Tướng và hoàn toàn kiểm soát cục diện, đúng như tên gọi \"cùng đi phá thành\" của định thức này — không phải một quân Binh đơn độc chọc thủng phòng tuyến, mà là kết quả của sự phối hợp nhịp nhàng, tuần tự giữa hai quân Binh dưới sự chỉ huy trực tiếp của Tướng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Binh Luân Phiên Phá Thành Song Tượng (Ví Dụ 9)",
+      "seo_description": "Định thức Binh cao Binh thấp thắng song Tượng: Tướng lần lượt yểm hộ từng quân Binh xâm nhập cửu cung theo hai giai đoạn kế tiếp, phá vỡ hàng phòng ngự song Tượng.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/2Pk5/4b3b/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 8 bình 7",
+          "move_notation_iccs": "b8c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh — sách cho biết: nếu Đen đổi hướng lui Tướng thay vì bình Tướng, Trắng vẫn có chuỗi nước Binh Tướng phối hợp dẫn đến cùng kết quả thắng, chỉ khác đường đi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/2P1k4/4b3b/3P5/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/2P1k4/4b3b/4P4/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "d6e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/2P1k4/8b/4P4/2b6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 5 tiến 3",
+          "move_notation_iccs": "e7c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/2P1k4/8b/4P4/2b6/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách cho biết: trước hết là để bảo vệ đường xâm nhập cửu cung của Binh thấp (quân Binh đi sau, chưa tiến sâu bằng Binh kia).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/2P1k4/9/4P4/2b3b2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tượng 9 tiến 7",
+          "move_notation_iccs": "i7g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3Pk4/9/4P4/2b3b2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 7 bình 6",
+          "move_notation_iccs": "c8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/3P1k3/9/4P4/2b3b2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/3P1k3/9/5P3/2b3b2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e6f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "9/3P1k3/4b4/5P3/6b2/9/9/9/9/3K5",
+          "move_notation_wxf": "Tượng 3 thoái 5",
+          "move_notation_iccs": "c5e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "9/3P1k3/4b4/5P3/6b2/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/3P1k3/4b3b/5P3/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 7 thoái 9",
+          "move_notation_iccs": "g5i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/3P1k3/4b3b/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "9/3P1k3/4b4/5P3/6b2/9/9/9/9/5K3",
+          "move_notation_wxf": "Tượng 9 tiến 7",
+          "move_notation_iccs": "i7g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng — sách cho biết: sau khi đã hoàn tất việc yểm hộ Binh thấp, Trắng chuyển sang bảo vệ đường xâm nhập của Binh cao (quân Binh đã tiến sâu hơn), quyết đoạt thành cửu cung.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "9/3P1k3/4bP3/9/6b2/9/9/9/9/5K3",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
