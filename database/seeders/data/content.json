@@ -76068,6 +76068,128 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30113,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Binh Đáy Cũng Biết Trợ Công — Ví Dụ 13",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-13",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3aka1P1/9/9/4P4/9/9/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ví dụ 13 khẳng định lại và mở rộng bài học của Ví dụ 12: Binh đáy — quân tưởng như đã hết tác dụng tiến công — hoàn toàn có thể trực tiếp phát huy vai trò trợ công, không chỉ đứng yên hỗ trợ từ xa, góp phần cùng Binh cao ăn trọn song Sĩ của Đen.",
+      "content": "<h2>Khẳng định lại: Binh đáy không hề \"nghỉ hưu\"</h2><p>Nối tiếp bài học từ Ví dụ 12, sách một lần nữa nhấn mạnh giá trị của Binh đáy bằng một câu khẳng định trực tiếp: \"Binh đáy bên Trắng cũng có thể phát huy tác dụng trợ công.\" Đây là một điểm lý thuyết quan trọng cần khắc sâu, vì rất nhiều người mới học tàn cuộc có xu hướng đánh giá thấp quân Binh đã tiến hết mức, coi nó gần như \"quân chết\" chỉ còn khả năng đi ngang. Ví dụ này, cùng với Ví dụ 12, chứng minh ngược lại: khả năng di chuyển ngang của Binh đáy vẫn là một công cụ tấn công thực sự, không chỉ đơn thuần là phòng thủ hay hỗ trợ thụ động.</p><h2>Hai Binh, hai vai trò bổ sung cho nhau</h2><p>Xuyên suốt ván đấu, Binh cao và Binh đáy thay phiên nhau tạo áp lực: Binh cao trực tiếp đe dọa vị trí của các Sĩ, còn Binh đáy di chuyển ngang để khóa các ô lui mà Sĩ hoặc Tướng có thể muốn sử dụng để né tránh. Sự phối hợp nhịp nhàng giữa một quân \"còn khả năng tiến\" và một quân \"chỉ còn khả năng đi ngang\" cho thấy trong tàn cuộc, GIÁ TRỊ CHIẾN THUẬT của một quân không đơn thuần được quyết định bởi khả năng di chuyển còn lại của riêng nó, mà bởi việc nó có đang đứng đúng chỗ để phối hợp với đồng đội hay không.</p><h2>Một cái bẫy tốc độ: đi sai thua nhanh hơn</h2><p>Sách chỉ ra một chi tiết chiến thuật thú vị: nếu tại một thời điểm quan trọng Đen chọn tiến Tướng thay vì lui Sĩ, Trắng sẽ có ngay nước Binh đáy đe dọa trực tiếp Sĩ còn lại, dẫn đến thua NHANH HƠN cả biến chính đã trình bày. Điều này cho thấy trong các thế cờ đã ở thế thua về lý thuyết, không có \"nước đi an toàn\" thực sự cho bên phòng thủ — chỉ có sự khác biệt giữa thua chậm và thua nhanh, tùy vào việc bên phòng thủ chọn hướng nào.</p><h2>Kết thúc: định thức được củng cố qua lặp lại</h2><p>Việc hai ví dụ liên tiếp (12 và 13) cùng minh họa vai trò của Binh đáy trong việc thắng song Sĩ, dù xuất phát điểm và trình tự nước đi khác nhau, giúp người học không chỉ ghi nhớ MỘT ván đấu cụ thể, mà nắm được NGUYÊN LÝ tổng quát đứng sau nó — đây chính là mục tiêu cốt lõi của phương pháp học tàn cuộc định thức mà sách theo đuổi.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Binh Đáy Trợ Công Thắng Song Sĩ (Ví Dụ 13)",
+      "seo_description": "Binh đáy đã hết đường tiến vẫn có thể trực tiếp trợ công, phối hợp Binh cao ăn trọn song Sĩ — củng cố định thức Binh cao Binh thấp thắng song Sĩ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3aka1P1/9/4P4/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak2P1/4a4/4P4/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3ak1P2/4a4/4P4/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 2 bình 3",
+          "move_notation_iccs": "h9g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3akaP2/9/4P4/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3akaP2/9/5P3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e7f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3ak1P2/4a4/5P3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ — sách cho biết: nếu Đen đổi hướng tiến Tướng thay vì lui Sĩ, Trắng có ngay nước Binh đáy sát Sĩ, thắng nhanh hơn hẳn biến chính.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3ak1P2/4aP3/9/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f7f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3ak1P2/5P3/5a3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3akP3/5P3/5a3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "g9f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh đáy — Binh cao vừa ăn nốt Sĩ còn lại, Tướng Đen hoàn toàn hết nước đi hợp lệ. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
