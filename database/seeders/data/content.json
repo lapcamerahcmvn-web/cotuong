@@ -82106,6 +82106,249 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30305,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Định Thức Cơ Bản Thứ Ba, Kỹ Thuật Đòi Hỏi Cao Hơn — Ví Dụ 5",
+      "slug": "c3-loai-hinh-phao-vi-du-5",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4c4/3k5/3ab4/5P3/9/9/9/9/9/5K3",
+      "variation_tree": null,
+      "move_count": 20,
+      "summary": "Ví dụ 5 là \"định thức cơ bản thứ ba\" của dạng Pháo Sĩ Tượng thắng Đơn Binh, đòi hỏi kỹ thuật tinh vi hơn hai định thức trước: chỉ một nước đi sai ở đầu ván (nước 2) là đủ để bên Đen đánh mất toàn bộ cơ hội thắng, chuyển thành hòa cờ.",
+      "content": "<h2>Cùng một định thức, nhưng độ khó kỹ thuật tăng dần</h2><p>Sách trình bày ba \"định thức cơ bản\" của dạng Pháo Sĩ Tượng thắng Đơn Binh (Ví dụ 3, 4, 5) theo thứ tự độ khó tăng dần. Ví dụ 5 được sách nói rõ: \"kỹ thuật phải cao minh hơn một chút\". Lý do nằm ở nước đi thứ hai — nếu bên Đen không chọn đúng nước tiến Pháo, mà lại vội bình Tướng, toàn bộ kế hoạch sẽ sụp đổ.</p><h2>Vì sao một nước sai lại đủ để mất cả ván?</h2><p>Sách dành hẳn một chuỗi biến dài để chứng minh: nếu Đen chơi sai ở nước 2, bên Trắng có đủ thời gian để đưa quân Binh về vị trí an toàn, và bên Đen \"không có cách nào hình thành thế Pháo Tượng khống chế trung lộ\" — thế trận cốt lõi cần thiết để tổ chức đòn chiếu sát. Kết quả: hòa cờ, dù bên Đen vẫn hơn quân. Đây là một bài học sâu sắc về tàn cuộc có Pháo: đôi khi ranh giới giữa THẮNG và HÒA chỉ nằm ở đúng một nước đi, và nước đó thường không phải nước tấn công trực diện, mà là nước GIỮ ĐÚNG cấu trúc đội hình.</p><h2>\"Nước đi chính xác\": khi phòng thủ chủ động quan trọng hơn tấn công</h2><p>Nước tiến Pháo ở lượt 2 không đe dọa trực tiếp bất cứ điều gì. Giá trị của nó nằm ở chỗ nó giữ cho quân Pháo ở đúng vị trí để sau này có thể phối hợp với Tượng khống chế trung lộ. Đây là biểu hiện của tư duy \"phòng thủ chủ động\" — không phải phòng thủ theo nghĩa bị động chống đỡ, mà là chủ động bảo toàn những điều kiện cần thiết cho kế hoạch thắng lợi lâu dài.</p><h2>Kết luận: ba định thức, một nguyên lý, ba mức độ tinh vi</h2><p>Bộ ba Ví dụ 3-4-5 tạo thành một khối kiến thức hoàn chỉnh về dạng Pháo Sĩ Tượng thắng Đơn Binh: cùng chung nguyên lý (đuổi Binh đến đỉnh cửu cung, Tướng chiếm trung lộ, Sĩ làm ngòi), nhưng độ khó của việc đưa đội hình về thế chuẩn tăng dần. Sách kết luận rõ: \"Đây là cách giành thắng lợi cần phải ghi nhớ\" — người học cần nắm vững cả ba để có thể xử lý mọi biến thể của thế cờ này trong thực chiến.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Định Thức Cơ Bản Thứ Ba Của Pháo Sĩ Tượng Thắng Binh (Ví Dụ 5)",
+      "seo_description": "Định thức đòi hỏi kỹ thuật cao hơn: chỉ một nước sai ở đầu ván là đủ để bên Đen mất toàn bộ cơ hội thắng, chuyển thành hòa cờ dù vẫn hơn quân.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4c4/3k5/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/3kc4/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Pháo 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo — sách nhấn mạnh đây là nước đi CHÍNH XÁC. Nếu Đen sai lầm chọn bình Tướng ngay lúc này, sách trình bày cả một chuỗi biến dài chứng minh bên Đen sẽ KHÔNG thể hình thành được thế \"Pháo Tượng khống chế trung lộ\", dẫn đến hòa cờ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/3kc4/3ab4/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "f1f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k5/4c4/3ab4/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k5/4c4/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4k4/4c4/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4k4/4c4/3ab4/6P2/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tốt 4 bình 3",
+          "move_notation_iccs": "f6g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4k4/5c3/3ab4/6P2/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Pháo 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4k4/5c3/3ab4/6P2/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5k3/5c3/3ab4/6P2/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5k3/5c3/3ab4/6P2/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "5k3/5c3/3a5/6P2/2b6/9/9/9/5K3/9",
+          "move_notation_wxf": "Tượng 5 tiến 3",
+          "move_notation_iccs": "e7c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "5k3/5c3/3a5/6P2/2b6/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "5k3/4c4/3a5/6P2/2b6/9/9/9/4K4/9",
+          "move_notation_wxf": "Pháo 6 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo về trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "5k3/4c4/3a5/5P3/2b6/9/9/9/4K4/9",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "g6f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "5k3/4c4/3ab4/5P3/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tượng 3 thoái 5",
+          "move_notation_iccs": "c5e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng — Tượng trở về đúng vị trí phối hợp với Pháo khống chế trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "5k3/4c4/3ab4/5P3/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/4ck3/3ab4/5P3/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "9/4ck3/3ab4/5P3/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "d1d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "4c4/5k3/3ab4/5P3/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Pháo 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo — đến đây, đội hình đã được đưa về đúng thế chuẩn, và cách thắng lặp lại đúng như Ví dụ 3. Kết quả cuối cùng: \"Đen thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
