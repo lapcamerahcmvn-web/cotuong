@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25 (vd2,23,24,25 hoãn); tiếp Bài 7 "Loại Hình Xe Binh" |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 🔄 5/20; nợ B5vd16, B6vd2/23/24/25 |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -397,3 +397,10 @@
     - **Series ~= 301 bài** (tổng ~493). ĐÃ PUSH.
     - **⚠️ HOÃN thêm vd23, vd24, vd25 (Hình 3.117-3.119)** — cả 3 là "Pháo Binh Cao Đơn Khuyết Sĩ tất thắng Sĩ Tượng toàn", ván 25-35 nước, có nhiều lỗi OCR (`P7/9`→`V7/9`, Đen không có Pháo) chồng nhau + Trắng có 1-2 Tượng + 1 Sĩ. Làm sau bằng vòng xác thực cẩn thận.
     - **Việc tiếp theo**: **Bài 7 "LOẠI HÌNH XE BINH"** (PDF trang 253). Nợ: vd16 Bài 5, vd2+vd23+vd24+vd25 Bài 6.
+  - **2026-09-10 (tiếp) — mở CHƯƠNG 3 BÀI 7 "LOẠI HÌNH XE BINH" — intro + vd1-5**, trang PDF 253-256. Bài 7 có **20 ví dụ** (Hình 3.120-3.139), tới Bài 8 "LOẠI HÌNH PHÁO MÃ" ở PDF trang 266.
+    - **Bài 7 = tàn cuộc Xe đối Xe** (2 bên đều có 1 Xe; Trắng thêm 1 Binh, đôi khi +1 Sĩ). Đây là chuyên đề rộng/sâu nhất tàn cuộc (ván cổ điển "Thất tinh tụ hội" nghiên cứu >100 năm).
+    - **Khái niệm cốt lõi**: (1) "đổi Xe đúng lúc" — nhưng phải đánh giá thế Binh–Tướng còn lại LÀ THẮNG hay HÒA trước (vd1 đổi Xe = thắng; vd2 đổi Xe = HÒA vì Binh đáy không thắng nổi Tướng); (2) "Đơn Binh/Đơn Xe cầm Vương" — dùng 1 Tốt/Xe + Tướng dồn Tướng đối phương chết; (3) "Lão Binh xét/soát rừng" (老兵搜林) — chuỗi vận quân tên riêng; (4) "Bạch liễm Tướng" — mô hình chiếu bí; (5) khai thác "Sĩ che mặt Tướng"; (6) "mời đổi Xe" (đặt Xe cho đối phương đổi — đằng nào cũng lợi).
+    - **vd1** Xe Binh thấp tất thắng Đơn Xe (đuổi Tướng rời trung lộ → đổi Xe → Đơn Binh cầm Vương). **vd2** khai thác Tướng Đen vị trí xấu (Lão Binh xét rừng). **vd3-4** Xe Binh thấp Đơn Sĩ vs Xe Đơn Sĩ (mời đổi Xe + Tướng trói xâu → khốn tễ; vd4 "nếu Xe/Sĩ Đen đổi chỗ được thì hòa"). **vd5** Xe Binh ĐÁY Đơn Sĩ (Binh đáy tác dụng nhỏ, nhờ Tướng trung lộ mà Binh vượt tuyến Sĩ).
+    - **⚠️ Ghi chú đọc FEN Xe-Binh**: nhiều sơ đồ Tướng đỏ ở **file 4 (cột 5)** không phải file 5 (cột 4) — xác nhận qua move "Tg4-5" (đỏ). vd1/vd2 K đỏ ở cột 5; vd3 K đỏ hàng 9 (không hàng 8). Cả 5 validate 0 warnings. Binh chủng: X=Xe(R/r), B=Binh(P), S=Sĩ(A/a) trong text gốc.
+    - **Series ~= 307 bài** (tổng ~499). ĐÃ PUSH.
+    - **Việc tiếp theo**: Bài 7 vd6-20 (vd6 = ván 19 nước rất dài nhiều biến, cân nhắc hoãn). Rồi Bài 8 "Pháo Mã". Nợ: vd16 B5; vd2,23,24,25 B6; (vd6 B7?).
