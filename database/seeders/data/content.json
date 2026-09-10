@@ -82349,6 +82349,161 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30306,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Khi Binh Và Sĩ Ở Khác Cánh — Ví Dụ 6",
+      "slug": "c3-loai-hinh-phao-vi-du-6",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ac1b2/4k4/9/5P3/9/9/9/9/5K3/9",
+      "variation_tree": null,
+      "move_count": 12,
+      "summary": "Ví dụ 6 xử lý tình huống khó hơn: khi quân Binh của Trắng và quân Sĩ của Đen bắt đầu ở hai cánh khác nhau, bên Đen phải dành một số nước đầu ván để đưa quân Sĩ và Tượng của mình về cùng một cánh, tạo thành thế Pháo Tượng khống chế trung lộ quen thuộc trước khi có thể áp dụng kỹ thuật thắng đã học.",
+      "content": "<h2>Vấn đề: các quân ở sai cánh</h2><p>Các Ví dụ 3-4-5 đều bắt đầu với đội hình của bên Đen đã ít nhiều gọn gàng ở một cánh. Ví dụ 6 đặt ra một thử thách mới: quân Binh của Trắng và quân Sĩ của Đen nằm ở HAI CÁNH KHÁC NHAU. Điều này quan trọng vì thế trận thắng lợi cốt lõi — \"Pháo Tượng khống chế trung lộ, Sĩ giương góc làm ngòi\" — đòi hỏi tất cả các quân của bên Đen phải phối hợp được với nhau, nghĩa là phải ở gần nhau về mặt vị trí.</p><h2>Giải pháp: dành nước đầu ván để tái tổ chức đội hình</h2><p>Phần lớn 12 nước của Ví dụ 6 không phải là các nước tấn công, mà là quá trình bên Đen kiên nhẫn đưa quân Sĩ và Tượng của mình về cùng một cánh, đồng thời điều Tướng đến vị trí thích hợp. Chỉ sau khi đội hình đã được tái tổ chức hoàn chỉnh (nước 12), thế cờ mới thực sự trở về đúng dạng chuẩn đã phân tích ở Ví dụ 3, và từ đó cách thắng lặp lại y nguyên.</p><h2>Bài học tổng quát: nhận diện \"thế chuẩn\" và biết cách đưa về</h2><p>Ví dụ 6 dạy một kỹ năng quan trọng bậc nhất trong việc học tàn cuộc định thức: không chỉ biết cách CHƠI một thế chuẩn, mà còn biết cách NHẬN RA khi thế cờ chưa ở dạng chuẩn, và biết những nước cần thiết để ĐƯA nó về dạng chuẩn. Trong thực chiến, hiếm khi người chơi gặp đúng thế chuẩn ngay lập tức — kỹ năng \"quy về bài toán đã biết\" mới là thứ quyết định thắng thua.</p><h2>Khép lại nhóm ví dụ Pháo Sĩ Tượng thắng Đơn Binh</h2><p>Bốn ví dụ liên tiếp (3, 4, 5, 6) cùng khai thác một dạng tàn cuộc, mỗi ví dụ thêm một lớp khó: định thức cơ bản, biến thể bố trí, yêu cầu kỹ thuật cao, và cuối cùng là tình huống các quân ở sai cánh. Người học nắm được cả bốn sẽ có đủ công cụ để xử lý gần như mọi biến thể của thế cờ \"bên có Pháo Sĩ Tượng đối đầu một quân Binh đơn độc\" trong thực chiến.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Pháo Sĩ Tượng Thắng Đơn Binh Khi Các Quân Ở Sai Cánh (Ví Dụ 6)",
+      "seo_description": "Khi Binh và Sĩ ở hai cánh khác nhau, bên Đen phải dành nước đầu ván tái tổ chức đội hình về thế chuẩn Pháo Tượng khống chế trung lộ trước khi áp dụng kỹ thuật thắng.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ac1b2/4k4/9/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "f1f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng. Ở ví dụ này, Pháo và Tượng của Đen đã khống chế trung lộ, nhưng quân Binh của Trắng và quân Sĩ của Đen lại nằm ở HAI CÁNH KHÁC NHAU — một khởi điểm bất lợi hơn các ví dụ trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ac1b2/5k3/9/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3ac1b2/5k3/9/5P3/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách lưu ý: nếu Trắng đổi hướng tiến Binh, cũng thua cờ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4c1b2/4ak3/9/5P3/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ — bắt đầu quá trình đưa quân Sĩ về cùng cánh với các quân khác.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4c1b2/4ak3/9/5P3/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4c1b2/5k3/3a5/5P3/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4c1b2/5k3/3a5/5P3/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4ckb2/9/3a5/5P3/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng — sách chỉ rõ: nếu Đen chọn tiến Binh... (biến khác), vẫn dẫn đến Đen thắng qua chuỗi nước tương tự.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4ckb2/9/3a5/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4ck3/9/3ab4/5P3/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "g9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng về đúng vị trí phối hợp với Pháo khống chế trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4ck3/9/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "4c4/5k3/3ab4/5P3/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — đến đây, đội hình của Đen đã được đưa hoàn toàn về đúng thế chuẩn (Pháo Tượng khống chế trung lộ, Sĩ cùng cánh), và bên Đen chỉ cần phỏng theo biến hóa đã học ở Ví dụ 3 là giành thắng lợi. Kết quả: \"Đen thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
