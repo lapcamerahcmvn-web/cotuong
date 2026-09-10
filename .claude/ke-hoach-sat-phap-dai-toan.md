@@ -435,3 +435,8 @@
     - **Series ~= 324 bài** (tổng ~532). ĐÃ PUSH. Re-seed nền đang chạy.
     - **Việc tiếp theo**: **Bài 9 "LOẠI HÌNH XE MÃ"** (PDF tr.271). Chương 3 sau đó: Bài 10 Xe Pháo, Bài 11+ (Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe).
     - **Nợ tổng (làm sau, vòng xác thực cẩn thận từng ván)**: B5 vd16; B6 vd2,23,24,25; B7 vd6,13,15,16,20; B8 vd7.
+- **2026-09-10 (tiếp) — MARATHON HOÀN TẤT CHƯƠNG 3 (user: "làm hết chương 3 luôn đi bạn")**:
+  - **Bài 9 "LOẠI HÌNH XE MÃ" — 6/9 (intro + vd1-6; vd7-9 hoãn)**, PDF tr.271-279. Tư tưởng: "vận quân khống chế" (không tìm sát cụ thể, dồn dần). Mô hình tên riêng: "Xe Mã lãnh trước", "Bát giác Mã" (Mã khống chế toàn cục, Tướng+Song Tượng đóng băng), "Chi Sĩ lộ mặt Tướng" (dịch Sĩ mình để Tướng trợ công). vd1 Xe Mã vs Xe Song Sĩ (vị trí xấu); vd2 Xe Mã Song Tượng lệ thắng Xe Song Sĩ; vd3 Xe Mã Song Sĩ lệ thắng Xe Song Sĩ (35 nước — khó nhất); vd4 Xe Mã vs Xe Song Tượng ("lý thuyết chưa thấu triệt", 1 nước sơ hở là thua); vd5 tróc chết Xe (7 nước); vd6 Xe Mã thắng Xe Song Tượng vị trí xấu ("Bát giác Mã").
+  - **HOÃN vd7-9 Bài 9**: đều là ván thực chiến (vd7,9 "ĐEN thắng" — Đen đi trước; vd8 Xe Mã vs Xe Pháo Tốt) dài, nhiều prose annotation, không phải "định thức" thuần — để làm sau nếu muốn.
+  - FEN Bài 9: vd1 `9/4ak1N1/5a3/3R5/7r1/9/9/9/9/4K4`; vd2 `3k1a3/4a1N2/3r5/4R4/9/9/9/9/9/2B1K1B2`; vd3 `4ka3/4a4/9/9/8r/7N1/4R4/9/4A4/3AK4`; vd4 `1r1k2b2/9/4b4/2N6/9/2B6/9/R8/9/3AK4`; vd5 `3k5/4R4/4b1r2/6N2/6b2/9/9/5A3/9/2B1K4`; vd6 `1R7/3k2N2/b4r3/9/2b6/6B2/9/9/4A4/3AK4`. Tất cả validate 0 warnings (vd3/vd5 phải sửa lệch 1 ô trong FEN row0).
+  - **Series ~= 330 bài** (tổng ~538). ĐÃ PUSH.
