@@ -75214,6 +75214,162 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30106,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Khi Chính Song Sĩ Lại Là Cái Bẫy Của Chủ Nhân — Ví Dụ 6",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-6",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4a1P2/9/9/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 1,
+      "summary": "Ví dụ ngắn nhất Chương 3 nhưng lại rất giàu tính thực dụng: đơn Binh khéo léo thắng cả song Sĩ chỉ trong đúng 1 nước đi — chìa khóa nằm ở chỗ chính hai quân Sĩ của Đen, vốn là quân phòng thủ, lại vô tình chiếm hết các ô lui của Tướng mình, biến Tướng Đen thành \"tự giam\" ngay trong cung của chính nó.",
+      "content": "<h2>Ví dụ ngắn nhất nhưng không hề tầm thường</h2><p>Sách mở đầu bằng một nhận xét đáng suy ngẫm: thế cờ này \"trông có vẻ đơn giản nhưng thực ra có tính thực dụng cao\". Quả thật, đây là ví dụ ngắn nhất trong toàn bộ Bài 1 — chỉ cần đúng MỘT nước đi của Trắng là ván đấu kết thúc — nhưng chính sự ngắn gọn ấy lại ẩn chứa một cơ chế thắng rất tinh tế, đáng để dừng lại phân tích kỹ.</p><h2>Hai cách đi khác nhau, cùng một kết quả</h2><p>Điều thú vị đầu tiên: sách đưa ra HAI lựa chọn nước đi hoàn toàn khác nhau về hướng di chuyển (tiến thẳng hoặc bình sang ngang), nhưng khẳng định cả hai đều dẫn đến cùng một kết quả — Đen bị khốn tù ngay lập tức. Đây là dấu hiệu cho thấy thế cờ đã chín muồi đến mức nào: không phải chỉ có một \"nước thần\" duy nhất mới thắng được, mà cả một VÙNG các nước đi hợp lý đều dẫn đến chiến thắng như nhau.</p><h2>Nghịch lý: quân phòng thủ lại trở thành cái bẫy</h2><p>Đây là bài học lý thuyết giá trị nhất của ví dụ này. Đen đang sở hữu ĐẦY ĐỦ CẢ HAI quân Sĩ — nhiều hơn hẳn Đen ở các ví dụ trước chỉ có 1 Sĩ hoặc không có Sĩ nào. Thế nhưng, chính vì có đủ song Sĩ đứng án ngữ ở hai vị trí cố định trong cung, chúng đã vô tình bịt kín luôn cả hai ô duy nhất mà Tướng Đen có thể lui tới để né tránh. Nói cách khác: càng nhiều quân phòng thủ đứng sai chỗ, không gian sống của Tướng càng bị chính quân nhà mình siết chặt lại — nhiều quân hơn không đồng nghĩa với an toàn hơn.</p><h2>Bài học rút ra cho cả nhóm định thức Binh Tốt</h2><p>Ví dụ này là lời nhắc quan trọng khi tổng kết cả Bài 1: kết quả của một tàn cuộc không chỉ phụ thuộc vào SỐ LƯỢNG quân còn lại, mà phụ thuộc rất nhiều vào VỊ TRÍ TƯƠNG ĐỐI giữa các quân — kể cả tương quan giữa các quân CÙNG PHE với nhau. Một thế trận tưởng như phòng thủ vững chắc (đủ song Sĩ) hoàn toàn có thể trở thành cái bẫy chết người nếu Tướng bị chính đồng đội của mình vô tình khóa chặt đường lui.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Đơn Binh Thắng Song Sĩ Chỉ 1 Nước (Ví Dụ 6)",
+      "seo_description": "Ví dụ ngắn nhất Chương 3: đơn Binh thắng song Sĩ chỉ trong 1 nước — chính hai quân Sĩ của Đen lại khóa chặt đường lui của Tướng mình, dẫn đến khốn tù tức thì.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak1P2/4a4/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 3 tiến 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — chỉ MỘT nước duy nhất là đủ kết thúc ván đấu: sách cho biết Trắng có thể chọn tiến thẳng hoặc bình sang ngang, cả hai cách đều lập tức đẩy Đen vào thế khốn tù. Đen chỉ còn đúng một ô hợp lệ để lui Tướng tới (vì hai Sĩ của chính mình đã chiếm hết hai ô còn lại trong cung), nhưng Binh Trắng vừa đi lại kiểm soát luôn đúng ô duy nhất đó.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30107,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Đổi Hết Xe Để Quay Về Đúng Cái Bẫy Song Sĩ — Ví Dụ 7",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-7",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4a2P1/2R6/9/9/9/9/5A3/3R1pr2/4K4",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ví dụ 7 là phần thực dụng thứ hai của cùng một ý tưởng đã học ở Ví dụ 6: xuất phát từ một thế cờ đầy đủ Xe Binh Sĩ phức tạp hơn hẳn, Trắng chủ động dẫn dắt cuộc đổi quân sao cho khi mọi Xe đã biến mất khỏi bàn cờ, phần còn lại đúng là cấu trúc \"đơn Binh thắng song Sĩ\" quen thuộc — và Đen lại rơi vào đúng cái bẫy khốn tù đã thấy trước đó.",
+      "content": "<h2>Điểm \"xảo diệu\" nằm ở chỗ nào?</h2><p>Sách giới thiệu ví dụ này bằng một câu ngắn gọn nhưng đầy hàm ý: \"có điểm xảo diệu tương đồng với cuộc ở trên\" — tức Ví dụ 6. Nhìn thoáng qua, hai thế cờ này rất khác nhau: Ví dụ 6 chỉ có vỏn vẹn 5 quân, còn Ví dụ 7 đầy đủ Xe của cả hai bên cùng Binh và Sĩ, phức tạp hơn hẳn. Vậy điểm tương đồng nằm ở đâu?</p><h2>Chủ động đổi quân để dẫn về đúng cấu trúc đã biết</h2><p>Câu trả lời chính là chiến lược tổng thể của ván đấu: Trắng không cố giữ lại Xe của mình để tấn công trực diện, mà chủ động dẫn dắt một chuỗi đổi Xe qua lại, với mục tiêu rõ ràng là loại bỏ HOÀN TOÀN mọi quân Xe khỏi bàn cờ. Khi lớp áo phức tạp bên ngoài (các quân Xe) đã bị gỡ bỏ, phần \"lõi\" còn sót lại — đúng như tính toán trước của Trắng — chính là cấu trúc quen thuộc: một Binh đơn độc đối đầu với song Sĩ của Đen, y hệt Ví dụ 6.</p><h2>Một kỹ năng tàn cuộc bậc cao: nhìn xuyên qua lớp quân phức tạp</h2><p>Đây là bài học có giá trị vượt xa bản thân ví dụ: người chơi giỏi tàn cuộc không chỉ thuộc lòng từng định thức riêng lẻ, mà còn phải NHẬN RA khi nào một thế cờ phức tạp hơn thực chất có thể quy giản về một định thức đơn giản đã biết, thông qua việc chủ động tổ chức đổi quân. Việc \"đổi Xe\" ở đây không phải ngẫu nhiên hay bị ép buộc, mà là một quyết định chiến lược có chủ đích: Trắng nhận ra rằng một khi Xe biến mất, phần còn lại sẽ tự động là một thế thắng đã được chứng minh.</p><h2>Kết quả: lại một lần nữa, chính song Sĩ tự khóa đường lui</h2><p>Đúng như dự đoán, sau khi cặp Xe cuối cùng đổi hết nhau, bàn cờ quay trở về chính xác cấu trúc của Ví dụ 6: Tướng Đen bị chính hai quân Sĩ của mình bịt kín hai ô lui duy nhất, trong khi Binh Trắng vừa tiến tới đã khống chế nốt ô còn lại. Việc hai ví dụ liên tiếp cùng kết thúc bằng chính xác một cơ chế thắng cho thấy đây không phải sự trùng hợp, mà là một định thức đủ vững chắc để xuất hiện lặp lại trong nhiều bối cảnh khác nhau — từ đơn giản đến phức tạp.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Xe Binh Thắng Xe Song Sĩ — Đổi Về Đúng Bẫy Cũ (Ví Dụ 7)",
+      "seo_description": "Chủ động đổi hết Xe để quy giản thế cờ phức tạp về đúng định thức đơn Binh thắng song Sĩ đã học — kỹ năng tàn cuộc bậc cao: nhìn xuyên lớp quân phức tạp.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak4/4a2P1/2R6/9/9/9/9/5A3/5Rr2/4K4",
+          "move_notation_wxf": "Xe 6 bình 4",
+          "move_notation_iccs": "d1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak4/4a2P1/2R6/9/9/9/9/5A3/5r3/4K4",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "g1f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3ak4/4a2P1/6R2/9/9/9/9/5A3/5r3/4K4",
+          "move_notation_wxf": "Xe 7 bình 3",
+          "move_notation_iccs": "c7g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3ak4/4a2P1/6R2/9/9/9/9/5r3/9/4K4",
+          "move_notation_wxf": "Xe 6 thoái 1",
+          "move_notation_iccs": "f1f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3ak1R2/4a2P1/9/9/9/9/9/5r3/9/4K4",
+          "move_notation_wxf": "Xe 3 tiến 2",
+          "move_notation_iccs": "g7g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3akrR2/4a2P1/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Xe 6 thoái 7",
+          "move_notation_iccs": "f2f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3akrR2/4a1P2/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 2 bình 3",
+          "move_notation_iccs": "h8g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3ak1r2/4a1P2/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Xe 6 bình 7",
+          "move_notation_iccs": "f9g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3ak1P2/4a4/9/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 3 tiến 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — cặp Xe cuối cùng vừa đổi hết nhau, bàn cờ trở về đúng cấu trúc \"đơn Binh đấu song Sĩ\" đã học ở Ví dụ 6, và Đen lập tức rơi vào thế khốn tù y hệt.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
