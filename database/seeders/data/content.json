@@ -79686,6 +79686,282 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30210,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Không Cho Đổi Mã, Song Mã Phá Song Sĩ — Ví Dụ 10",
+      "slug": "c3-loai-hinh-ma-vi-du-10",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4k4/4a4/3an4/8N/9/2N6/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 23,
+      "summary": "Ví dụ 10 nhấn mạnh một nguyên tắc chiến lược bao trùm: khi sở hữu song Mã đối đầu đơn Mã, việc đầu tiên cần làm không phải là tấn công ngay, mà là NGĂN CHẶN khả năng đối phương đổi Mã — vì một khi mất đi ưu thế về số lượng Mã, toàn bộ kế hoạch tấn công sẽ sụp đổ.",
+      "content": "<h2>Nguyên tắc hàng đầu: bảo vệ ưu thế song Mã trước khi tấn công</h2><p>Điều đầu tiên sách nhấn mạnh ở Ví dụ 10 không phải là cách tấn công, mà là cách PHÒNG TRÁNH một rủi ro cụ thể: nếu để Đen đổi được Mã của mình lấy một trong hai Mã của Trắng, thế trận sẽ quay về dạng đơn Mã đối đơn Sĩ (Sĩ còn lại) — vẫn có thể thắng nhưng mất đi lợi thế rõ rệt của việc có HAI Mã phối hợp. Đây là một bài học chiến lược tổng quát quan trọng: trong tàn cuộc, đôi khi nhiệm vụ cấp bách nhất không phải là tấn công nhanh nhất có thể, mà là bảo toàn đúng ưu thế cấu trúc đang có trong tay.</p><h2>Vai trò kép của Tướng: vừa trợ chiến, vừa ngăn đổi quân</h2><p>Việc Tướng Trắng liên tục đối đầu và di chuyển xuyên suốt ván đấu phục vụ đồng thời hai mục đích: vừa hạn chế không gian di chuyển của Tướng Đen (như đã thấy ở nhiều ví dụ trước), vừa gián tiếp góp phần kiểm soát nhịp độ ván đấu để Mã của Đen không có cơ hội tiếp cận đúng vị trí có thể đổi ngang với một trong hai Mã Trắng.</p><h2>Nhiều nhánh phụ, cùng một kết quả: minh chứng cho tính định thức</h2><p>Ví dụ 10 có tới bốn nhánh phụ được sách nêu rõ (ở nước 1, nước 7, nước 8 và nước 9 tùy theo lựa chọn cụ thể của Đen), tất cả đều dẫn đến cùng kết quả \"phá song Sĩ, thắng\". Đây là ví dụ có mật độ nhánh phụ dày đặc nhất trong toàn Bài 2 tính đến thời điểm này, cho thấy mức độ phức tạp của tổ hợp quân song Mã đối đơn Mã song Sĩ — nhưng đồng thời cũng khẳng định chắc chắn hơn bao giờ hết: đây thực sự là một thế cờ ĐỊNH THỨC, nơi mọi lựa chọn phòng thủ hợp lý của Đen đều đã được tính toán trước và đều dẫn đến cùng một kết cục.</p><h2>Kết quả: phá hủy công cụ phòng thủ, không nhất thiết phải chiếu bí ngay</h2><p>Giống một số ví dụ trước, Ví dụ 10 kết thúc bằng việc phá hủy hoàn toàn công cụ phòng thủ của đối phương (cả hai Sĩ) chứ chưa phải một nước chiếu bí trực tiếp. Đây là cách tiếp cận thực dụng nhất quán của toàn Bài 2: một khi quân phòng thủ đã bị loại bỏ, phần còn lại (dồn Tướng trơ trọi hoặc gần trơ trọi vào góc) chỉ là vấn đề áp dụng lại đúng kỹ thuật cơ bản đã học từ những ví dụ đầu tiên.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Mã Không Cho Đổi Mã, Phá Song Sĩ Đơn Mã (Ví Dụ 10)",
+      "seo_description": "Nguyên tắc hàng đầu khi có song Mã: ngăn đối phương đổi Mã trước khi tấn công — Tướng trợ chiến, song Mã phối hợp phá hủy cả hai Sĩ bảo vệ Tướng.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4k4/4a4/3an4/1N6N/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 7 tiến 8",
+          "move_notation_iccs": "c4b6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã. Sách nêu ngay nguyên tắc chỉ đạo xuyên suốt cả ván: KHÔNG cho phép Đen có cơ hội đổi Mã (nếu hai Mã đổi nhau, ưu thế song Mã của Trắng sẽ biến mất), đồng thời huy động cả Tướng tham chiến, để song Mã tập trung tấn công thẳng vào hai Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k5/4a4/3an4/1N6N/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k5/4a4/3an1N2/1N7/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "i6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k5/9/3anaN2/1N7/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k5/2N6/3anaN2/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "b6c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/2Nk5/3anaN2/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3k5/N2anaN2/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 7 thoái 9",
+          "move_notation_iccs": "c8a7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã — luôn giữ khoảng cách hợp lý để không rơi vào tình huống bị đổi Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/4k4/N2anaN2/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/4k4/N2anaN2/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — Tướng Trắng chủ động đối đầu, đúng tinh thần \"dùng Tướng trợ chiến\" đã nêu từ đầu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "9/5k3/N2anaN2/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "9/5k3/3anaN2/2N6/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 9 thoái 7",
+          "move_notation_iccs": "a7c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/5k3/3a1aN2/2N6/3n5/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 5 tiến 4",
+          "move_notation_iccs": "e7d5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — quân Mã duy nhất của Đen cố gắng tìm cách phối hợp, nhưng sách đã cảnh báo trước: mọi lựa chọn đổi Mã hay né tránh của Đen đều đã có phương án đối phó tương ứng dẫn đến cùng kết quả thua.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/5k3/3a1aN2/9/3nN4/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "c6e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "9/4ak3/3a2N2/9/3nN4/9/9/9/9/4K4",
+          "move_notation_wxf": "Sĩ 6 thoái 5",
+          "move_notation_iccs": "f7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "9/4ak3/3a5/8N/3nN4/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 3 thoái 1",
+          "move_notation_iccs": "g7i6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "9/4ak3/3an4/8N/4N4/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 4 thoái 5",
+          "move_notation_iccs": "d5e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "9/4ak1N1/3an4/9/4N4/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 1 tiến 2",
+          "move_notation_iccs": "i6h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/4ak1N1/3a5/9/4Nn3/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 5 tiến 6",
+          "move_notation_iccs": "e7f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "9/4ak1N1/3a5/9/4Nn3/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "9/5k1N1/3a1a3/9/4Nn3/9/9/9/9/5K3",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "9/5k1N1/3N1a3/9/5n3/9/9/9/9/5K3",
+          "move_notation_wxf": "Mã 5 tiến 6",
+          "move_notation_iccs": "e5d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — đây là nước đi then chốt giành thắng lợi: sách chỉ rõ nếu Đen chọn lui Tướng thay vì đáp trả như đã diễn ra, Trắng vẫn có phương án khác (tiến Mã, bình Tướng, tiến Mã chiếu, phá luôn Sĩ) dẫn đến cùng kết quả thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "9/4k2N1/3N1a3/9/5n3/9/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "9/4k4/3N1N3/9/5n3/9/9/9/9/5K3",
+          "move_notation_wxf": "Mã 2 thoái 4",
+          "move_notation_iccs": "h8f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã — đòn kết liễu: cả hai Sĩ của Đen đều đã bị phá hủy qua các bước phối hợp của song Mã trong suốt ván đấu. Đúng như sách khẳng định: \"phá song Sĩ, thắng.\" Chỉ còn lại Tướng trơ trọi cùng một quân Mã đơn độc, không đủ sức chống lại song Mã của Trắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
