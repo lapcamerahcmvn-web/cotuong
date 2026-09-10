@@ -82648,6 +82648,348 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30308,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Pháo Song Sĩ Thắng Tốt Cao Đơn Tượng — Ví Dụ 8",
+      "slug": "c3-loai-hinh-phao-vi-du-8",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b6/4k4/8C/9/9/9/2p6/5A3/3KA4/9",
+      "variation_tree": null,
+      "move_count": 29,
+      "summary": "Ví dụ 8 giới thiệu dạng Pháo Song Sĩ thắng Tốt cao Đơn Tượng, với bài học then chốt: bên có Pháo TUYỆT ĐỐI phải bảo toàn ít nhất một quân Sĩ của mình làm ngòi — nếu để quân Tốt đối phương đổi được Sĩ, Pháo mất ngòi và toàn bộ ưu thế biến thành hòa cờ.",
+      "content": "<h2>\"Cần phải giữ Sĩ!\": lời cảnh báo quan trọng nhất của Bài 3</h2><p>Lời chú giải tại nước 17 của Ví dụ 8 là một trong những bài học quan trọng nhất của toàn Bài 3, và nó liên hệ trực tiếp với khái niệm \"giá Pháo\" đã nêu ở phần giới thiệu. Trắng đang có Pháo cộng hai Sĩ, ưu thế rõ rệt so với Tốt cộng Tượng của Đen. Nhưng nếu Trắng vội vàng dùng Pháo ăn Tượng (P5.7) mà không tính đến việc quân Tốt của Đen có thể lao lên đổi một Sĩ, thì hậu quả là: Pháo mất đi quân làm ngòi duy nhất, và từ đó \"không có cách nào giành thắng lợi\" — thế cờ thắng lý thuyết chuyển thành hòa.</p><h2>Vì sao đổi một quân lại có thể phá vỡ cả thế thắng?</h2><p>Trong tàn cuộc, Pháo cần đúng một quân làm ngòi để có thể ăn được quân đối phương (đặc biệt là ăn Tướng để chiếu bí). Khi Trắng chỉ còn một Sĩ, quân Sĩ đó là ngòi DUY NHẤT khả dụng. Nếu quân Tốt của Đen đổi được nó, Pháo còn lại trên bàn nhưng \"gần như bằng 0\" về giá trị — nó không thể tổ chức bất kỳ đòn chiếu bí nào. Đây chính là hiện thân cụ thể nhất của nguyên lý \"tàn cuộc Pháo phải giữ Sĩ\" đã học.</p><h2>Thứ tự ưu tiên: bảo toàn ngòi trước, ăn quân sau</h2><p>Ván đấu cho thấy Trắng kiên nhẫn chờ đến khi đã bảo toàn được hai Sĩ ở vị trí an toàn (không còn nguy cơ bị Tốt đổi) mới dùng Pháo ăn Tượng (nước 19). Đây là một bài học về THỨ TỰ ưu tiên: khi bạn có ưu thế nhưng ưu thế đó phụ thuộc vào việc giữ được một quân cụ thể (ngòi Pháo), thì việc bảo vệ quân đó phải được đặt lên trước cả những cơ hội ăn quân hấp dẫn.</p><h2>Kết cục: quy về thế thắng lý thuyết đã biết</h2><p>Sau khi \"đánh chết\" quân Tốt của Đen ở nước cuối, thế cờ còn lại là Pháo cộng một Sĩ đối đầu Tướng trơ trọi — một thế thắng lý thuyết cơ bản (Pháo cộng một Sĩ luôn thắng được Tướng đơn thuần, vì luôn có đủ ngòi để tổ chức chiếu bí). Đây tiếp tục là mô hình \"quy về bài toán đã biết\" xuất hiện xuyên suốt Chương 3.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Pháo Song Sĩ Thắng Tốt Cao Đơn Tượng — Bài Học Giữ Ngòi Pháo (Ví Dụ 8)",
+      "seo_description": "Bài học then chốt: bên có Pháo phải bảo toàn ít nhất một Sĩ làm ngòi — nếu để Tốt đối phương đổi được Sĩ, Pháo mất ngòi và thế thắng biến thành hòa cờ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2b6/4k4/9/9/9/9/2p6/5A3/3KA4/8C",
+          "move_notation_wxf": "Pháo 1 thoái 7",
+          "move_notation_iccs": "i7i0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo. Đây là dạng tàn cuộc mới trong Bài 3: Trắng có Pháo cộng hai Sĩ, đối đầu với một quân Tốt đã tiến khá cao cộng một quân Tượng của Đen. Yếu lĩnh: dùng các cách công phá lần lượt từng bên để giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b6/4k4/9/9/9/9/3p5/5A3/3KA4/8C",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "c3d3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b6/4k4/9/9/9/9/3p5/5A3/3KA4/3C5",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "i0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo về cánh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b6/4k4/9/9/9/9/2p6/5A3/3KA4/3C5",
+          "move_notation_wxf": "Tốt 4 bình 3",
+          "move_notation_iccs": "d3c3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt trở lại — quân Tốt của Đen liên tục di chuyển qua lại để tìm đường tiến sâu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b6/4k4/9/9/9/9/2p6/3K1A3/4A4/3C5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "d1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/4k4/4b4/9/9/9/2p6/3K1A3/4A4/3C5",
+          "move_notation_wxf": "Tượng 3 tiến 5",
+          "move_notation_iccs": "c9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng về trung tâm.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/4k4/4b4/9/9/9/2p6/4KA3/4A4/3C5",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/4k4/4b4/9/9/9/3p5/4KA3/4A4/3C5",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "c3d3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/4k4/4b4/9/9/9/3p5/3AKA3/9/3C5",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ — dùng chính quân Sĩ của mình làm bức tường và làm ngòi tiềm năng cho Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "9/4k4/4b4/9/9/9/4p4/3AKA3/9/3C5",
+          "move_notation_wxf": "Tốt 4 bình 5",
+          "move_notation_iccs": "d3e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "9/4k4/4b4/9/9/9/4p4/3A1A3/4K4/3C5",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e2e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/4k4/4b4/9/9/9/5p3/3A1A3/4K4/3C5",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/4k4/4b4/9/9/9/5p3/3A1A3/4K4/5C3",
+          "move_notation_wxf": "Pháo 6 bình 4",
+          "move_notation_iccs": "d0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "9/4k4/4b4/9/9/9/4p4/3A1A3/4K4/5C3",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "f3e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "9/4k4/4b4/9/9/9/4p4/3A1A3/4K4/4C4",
+          "move_notation_wxf": "Pháo 4 bình 5",
+          "move_notation_iccs": "f0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo về trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "9/4k4/4b4/9/9/9/3p5/3A1A3/4K4/4C4",
+          "move_notation_wxf": "Tốt 5 bình 4",
+          "move_notation_iccs": "e3d3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "9/4k4/4b4/9/9/9/3p5/3AKA3/9/4C4",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e1e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng — sách đặc biệt lưu ý nước này: \"Cần phải GIỮ SĨ!\" Nếu Trắng vội bắt Tượng bằng Pháo (P5.7) ngay lúc này, sách trình bày cả một chuỗi biến dài chứng minh sau khi quân Tốt của Đen đổi được một Sĩ, \"Pháo Trắng không còn giá Pháo\" (mất ngòi), và Trắng \"không có cách nào giành thắng lợi\" — hòa cờ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "9/5k3/4b4/9/9/9/3p5/3AKA3/9/4C4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e8f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "9/5k3/4C4/9/9/9/3p5/3AKA3/9/9",
+          "move_notation_wxf": "Pháo 5 tiến 7",
+          "move_notation_iccs": "e0e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo ăn quân Tượng — giờ đây, sau khi đã bảo toàn được hai Sĩ, việc ăn Tượng mới an toàn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "9/5k3/4C4/9/9/9/4p4/3AKA3/9/9",
+          "move_notation_wxf": "Tốt 4 bình 5",
+          "move_notation_iccs": "d3e3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "9/5k3/4C4/9/9/9/4p4/3A1A3/4K4/9",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e2e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "9/5k3/4C4/9/9/9/5p3/3A1A3/4K4/9",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e3f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "9/5k3/1C7/9/9/9/5p3/3A1A3/4K4/9",
+          "move_notation_wxf": "Pháo 5 bình 8",
+          "move_notation_iccs": "e7b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang cánh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 24,
+          "fen": "9/5k3/1C7/9/9/9/9/3A1p3/4K4/9",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "f3f2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 25,
+          "fen": "9/5k3/9/9/9/9/9/1C1A1p3/4K4/9",
+          "move_notation_wxf": "Pháo 8 thoái 5",
+          "move_notation_iccs": "b7b2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 26,
+          "fen": "9/5k3/9/9/9/9/9/1C1A5/4Kp3/9",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "f2f1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 27,
+          "fen": "9/5k3/9/9/9/9/9/1C1A5/3K1p3/9",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 28,
+          "fen": "9/4k4/9/9/9/9/9/1C1A5/3K1p3/9",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 29,
+          "fen": "9/4k4/9/9/9/9/9/3A5/1C1K1p3/9",
+          "move_notation_wxf": "Pháo 8 thoái 1",
+          "move_notation_iccs": "b2b1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — mượn chính Tướng của mình làm ngòi, Pháo giờ đã khống chế trực tiếp quân Tốt cuối cùng của Đen dọc theo hàng ngang. Đúng như sách khẳng định: \"đánh chết Binh, thắng.\" Sau khi quân Tốt bị loại, thế cờ còn lại (Pháo cộng một Sĩ đối Tướng trơ trọi) là một thế thắng lý thuyết đã biết.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
