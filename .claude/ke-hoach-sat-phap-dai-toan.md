@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 🔄 7/20 (vd1-5,7,8); nợ B5vd16, B6vd2/23/24/25, B7vd6 |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 🔄 11/20 (vd1-5,7-12); nợ B5vd16, B6vd2/23-25, B7vd6/13 |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -411,3 +411,11 @@
     - **⚠️ HOÃN vd6 Bài 7** (Hình 3.125 "Xe Binh cao vs Xe Đơn Tượng") — ván 19 nước, 3+ biến phụ rất dài, nhiều `.`↔`/` khả nghi. Làm sau.
     - **Việc tiếp theo**: **Bài 7 vd9-20** — CẢNH BÁO: từ vd9 trở đi là "Xe Binh vs Mã/Pháo Sĩ Tượng TOÀN", ván 13-35 nước, nhiều OCR (`P7/9`→`V7/9` v.v.), rủi ро cao → validate cẩn thận từng ván, hoãn cái nào không sạch. Rồi Bài 8 "LOẠI HÌNH PHÁO MÃ" (PDF tr.266). Chương 3 còn: Bài 8 Pháo Mã, Bài 9 Xe Mã, Bài 10 Xe Pháo, Bài 11+ (Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe) — TỔNG chương 3 còn ~80+ ví dụ.
     - **Nợ tổng (làm sau bằng vòng xác thực cẩn thận)**: B5 vd16; B6 vd2,23,24,25; B7 vd6.
+  - **2026-09-10 (tiếp) — Bài 7 thêm vd9-12** (Xe Binh vs Mã Sĩ Tượng TOÀN), trang PDF 259-261:
+    - **Nguyên lý cốt lõi nhóm này** (từ intro vd9): Đơn Xe TRƠN KHÔNG thắng nổi Sĩ Tượng toàn (hòa) → phải giữ quân Binh làm ưu thế; 4 đường thắng đều là "dùng Binh ĐỔI 1-2 quân phòng thủ → quy về Đơn Xe thắng Mã + ít quân" (Bài 4 vd13-16). **Cấm**: để Mã đổi Binh mà không được gì. **Được phép**: thí Binh để đổi lấy 1 Sĩ (vd11 — vẫn lời vì Đơn Xe thắng Mã Đơn Sĩ Tượng).
+    - vd9 "4 đường thắng" (biến chính: Binh đổi Song Sĩ). vd10 "Xe khống chế Mã, Binh công sát" (X4.4 tiếp Xe ép Mã). vd11 "thí Binh đổi Sĩ + Xe vận dụng nước dừng" (điểm yếu: Tượng Đen không bay cao). vd12 Xe Binh Cao Đơn Tượng (Trắng có 1 Tượng của mình) truy Mã 25 nước → "gọi sát ăn Mã".
+    - ⚠️ vd9 Xe trắng hàng 7 (không hàng 6 — "X2.7" tiến 7). Cả 4 validate 0 warnings.
+    - **Series ~= 313 bài** (tổng ~505). ĐÃ PUSH. Đã chạy `db:seed` nền.
+    - **⚠️ HOÃN vd13 Bài 7** (Hình 3.132 "Xe Binh cao vs Pháo Sĩ Tượng toàn") — có 4 biến phụ rất dài, `P` trong text = Pháo Đen (khác nội bộ engine).
+    - **Việc tiếp theo**: Bài 7 vd14-20 (còn Xe Binh vs Pháo/Mã/Song... Sĩ Tượng toàn — tiếp tục rủi ro cao, validate từng ván). Rồi Bài 8 "LOẠI HÌNH PHÁO MÃ" (PDF tr.266).
+    - **Nợ tổng**: B5 vd16; B6 vd2,23,24,25; B7 vd6,vd13.
