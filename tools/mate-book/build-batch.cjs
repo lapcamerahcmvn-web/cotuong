@@ -14,7 +14,7 @@ function buildLesson(L, seriesSlug) {
   if (!L.main || !L.fen) {
     return {
       series_slug: seriesSlug, order_in_series: L.order,
-      game_mode: 'co-tuong', phase: 'trung-cuoc',
+      game_mode: 'co-tuong', phase: L.phase || 'trung-cuoc',
       title: L.title, slug: L.slug, level: L.level || 'co-ban',
       source_type: 'manual', initial_fen: null, variation_tree: null, move_count: 0,
       summary: L.summary || null, content: L.content || null,
@@ -40,7 +40,7 @@ function buildLesson(L, seriesSlug) {
   const tree = (r.variation_tree.length && hasBranch(r.variation_tree)) ? r.variation_tree : null;
   return {
     series_slug: seriesSlug, order_in_series: L.order,
-    game_mode: 'co-tuong', phase: 'trung-cuoc',
+    game_mode: 'co-tuong', phase: L.phase || 'trung-cuoc',
     title: L.title, slug: L.slug, level: L.level || 'co-ban',
     source_type: 'manual', initial_fen: r.initial_fen,
     variation_tree: tree,
