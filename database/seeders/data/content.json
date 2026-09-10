@@ -79520,6 +79520,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30209,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Song Mã Thắng Đơn Mã Song Sĩ, Tướng Chiếm Trung Lộ — Ví Dụ 9",
+      "slug": "c3-loai-hinh-ma-vi-du-9",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4a4/5n3/8N/9/2N6/9/9/9/5K3",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Ví dụ 9 giới thiệu một kỹ thuật mở màn đặc biệt: thay vì đưa Mã ra trước, Trắng cho TƯỚNG đi nước đầu tiên để chiếm lấy đường trung lộ, vô hiệu hóa khả năng phối hợp của cả hai Sĩ bên Đen ngay từ giai đoạn sớm nhất của ván đấu.",
+      "content": "<h2>Một nước mở đầu bất ngờ: Tướng đi trước cả Mã</h2><p>Trong hầu hết ví dụ trước của Bài 2, Mã luôn là quân hành động đầu tiên. Ví dụ 9 phá vỡ thói quen đó: nước đi mở màn là một nước Tướng, với mục đích rất rõ ràng — chiếm giữ đường trung lộ (cột giữa bàn cờ) để khống chế phạm vi hoạt động của cả hai Sĩ bên Đen. Đây là một minh chứng sinh động cho nguyên lý đã được nhắc đi nhắc lại xuyên suốt Bài 2: trong tàn cuộc ít quân, Tướng không đứng ngoài cuộc mà là một quân chiến thuật thực thụ, và đôi khi vai trò của nó cần được kích hoạt NGAY TỪ NƯỚC ĐẦU TIÊN chứ không phải chỉ ở giai đoạn cuối.</p><h2>Vì sao khống chế trung lộ lại vô hiệu hóa được Sĩ?</h2><p>Hai Sĩ luôn phải di chuyển giữa các điểm trong phạm vi cửu cung, và đường trung lộ (cột giữa) chính là tuyến kết nối quan trọng giữa các điểm đó. Khi Tướng Trắng chiếm giữ và kiểm soát đúng tuyến này, hai Sĩ Đen bị buộc phải hoạt động tách biệt, không còn khả năng phối hợp bảo vệ lẫn nhau hay hỗ trợ quân Mã của mình. Đây là một góc nhìn chiến thuật mới bổ sung cho các nguyên lý đã học: đôi khi việc khống chế một QUÂN CỤ THỂ không hiệu quả bằng việc khống chế một TUYẾN ĐƯỜNG DI CHUYỂN quan trọng mà nhiều quân cùng phụ thuộc vào.</p><h2>Kết cục: cô lập trước, tiêu diệt sau</h2><p>Nhờ chiến lược khống chế trung lộ ngay từ đầu, khi song Mã Trắng tiến đến gần, quân Mã duy nhất của Đen hoàn toàn đơn độc — không được Sĩ hỗ trợ vì Sĩ đã bị cô lập từ trước. Điều này lý giải vì sao ván đấu kết thúc nhanh gọn chỉ trong 13 nước dù thoạt nhìn tổ hợp quân hai bên (song Mã đối đơn Mã cộng song Sĩ) có vẻ khá cân bằng về số lượng.</p><h2>Liên hệ với Ví dụ 8: hai cách tiếp cận khác nhau cho cùng một mục tiêu</h2><p>So sánh với Ví dụ 8 (dùng một Mã ép Tướng ra ngoài trước, rồi mới lui về khống chế), Ví dụ 9 cho thấy một cách tiếp cận khác: chủ động khống chế không gian trung tâm NGAY LẬP TỨC bằng chính Tướng, thay vì đợi đến giai đoạn sau. Cả hai đều nhằm mục đích cô lập quân phòng thủ của đối phương, nhưng thứ tự và công cụ thực hiện khác nhau tùy vào đặc điểm cụ thể của từng thế cờ ban đầu — một lần nữa khẳng định: không có một công thức duy nhất áp dụng máy móc cho mọi tàn cuộc \"song Mã\", mà cần đọc đúng đặc điểm riêng của từng thế cờ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Mã Thắng Đơn Mã Song Sĩ — Tướng Chiếm Trung Lộ (Ví Dụ 9)",
+      "seo_description": "Tướng đi nước đầu tiên chiếm đường trung lộ, cô lập hoàn toàn hai Sĩ bên Đen, để song Mã tự do tiêu diệt quân Mã đơn độc không còn ai hỗ trợ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3ak4/4a4/5n3/8N/9/2N6/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng vào giữa. Sách nêu ngay ý nghĩa của nước đi đầu tiên: Tướng đi trước để chiếm lấy đường trung lộ, khống chế luôn khả năng hoạt động của cả hai Sĩ bên Đen — một cách vận Tướng chủ động hiếm thấy ngay từ nước đầu tiên của cả ván.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3a1k3/4a4/5n3/8N/9/2N6/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — cố gắng né tránh sự khống chế trung lộ vừa được thiết lập.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3a1k3/4a4/5nN2/9/9/2N6/9/9/9/4K4",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "i6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a5/4ak3/5nN2/9/9/2N6/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — sách lưu ý: nếu Đen đổi hướng bình Tướng trở lại, Trắng có ngay nước Mã tiến sát, tốc thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a5/4ak3/5nN2/9/9/2N6/9/9/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng, tiếp tục bám sát đường trung lộ dù Tướng Đen đã di chuyển.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3a5/5k3/3a1nN2/9/9/2N6/9/9/9/5K3",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ — Sĩ bị Tướng Trắng khống chế trung lộ nên không còn nhiều lựa chọn, buộc phải tự thu hẹp không gian của chính mình.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3a5/5k3/3a1nN2/9/4N4/9/9/9/9/5K3",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "c4e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3a5/4ak3/5nN2/9/4N4/9/9/9/9/5K3",
+          "move_notation_wxf": "Sĩ trước thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3a5/4ak3/5nN2/9/4N4/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "f0f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng, siết chặt thêm không gian.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3a1a3/5k3/5nN2/9/4N4/9/9/9/5K3/9",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3a1a1N1/5k3/5n3/9/4N4/9/9/9/5K3/9",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "g7h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3a1a1N1/4k4/5n3/9/4N4/9/9/9/5K3/9",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — quân Mã duy nhất của Đen giờ không còn quân nào yểm trợ, trong khi cả hai Sĩ đã bị Tướng Trắng khống chế hoàn toàn không thể tiếp cận hỗ trợ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3a1a1N1/4k4/5N3/9/9/9/9/9/5K3/9",
+          "move_notation_wxf": "Mã 5 tiến 4",
+          "move_notation_iccs": "e5f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã ăn thẳng quân Mã của Đen — đúng như sách khẳng định: \"ăn Mã, thắng.\" Một khi quân Mã duy nhất của Đen bị loại bỏ, chỉ còn lại hai Sĩ vốn đã bị cô lập từ đầu ván, không đủ sức chống lại song Mã của Trắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
