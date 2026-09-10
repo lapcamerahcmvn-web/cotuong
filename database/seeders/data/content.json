@@ -83156,6 +83156,348 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30310,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Song Pháo Song Tượng Thắng Song Tượng — Ví Dụ 10",
+      "slug": "c3-loai-hinh-phao-vi-du-10",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "6b2/3kC4/4b4/9/9/2B3B2/9/5K3/4C4/9",
+      "variation_tree": null,
+      "move_count": 29,
+      "summary": "Ví dụ 10 là dạng Song Pháo Song Tượng thắng Song Tượng, với yếu lĩnh đặc trưng: không tấn công trực diện mà dùng hai Pháo dồn ép Tướng và cả hai Tượng của đối phương về CÙNG một cánh cho đến khi chúng cản trở lẫn nhau, tạo điều kiện tiêu diệt lần lượt.",
+      "content": "<h2>Chiến lược \"dồn ép về một cánh\"</h2><p>Khác với Ví dụ 9 (Song Pháo trực tiếp trùng sát), Ví dụ 10 áp dụng một chiến lược kiên nhẫn hơn: dùng hai Pháo và Tướng để LIÊN TỤC KHỐNG CHẾ không gian, buộc Tướng và cả hai quân Tượng của Đen phải dồn về cùng một phía bàn cờ. Khi ba quân này bị nhồi nhét vào một khu vực chật hẹp, chúng bắt đầu cản trở đường di chuyển của nhau — quân Tượng che mất ô Tướng cần dùng, Tướng chặn đường Tượng cần bay. Từ đó, Pháo có thể lần lượt \"tiêu diệt\" từng quân Tượng mà không sợ bị phản đòn.</p><h2>Vì sao hai Tượng lại là một điểm yếu khi bị dồn?</h2><p>Về lý thuyết, hai Tượng là hàng phòng ngự khá chắc chắn. Nhưng chúng có một nhược điểm cấu trúc: Tượng di chuyển theo hình chữ điền (2 điểm chéo), cần một điểm trung tâm trống làm bản lề, và không bao giờ được vượt sông. Khi cả hai Tượng cộng Tướng bị ép vào một góc nửa sân, số điểm khả dụng cho mỗi quân giảm mạnh, và việc một quân chiếm mất điểm bản lề của quân kia trở nên gần như không tránh khỏi. Đây là lý do chiến lược \"dồn về một cánh\" đặc biệt hiệu quả chống lại đội hình nhiều Tượng.</p><h2>Song Pháo Song Tượng: khi ưu thế quân số đủ lớn để không cần ngòi đối phương</h2><p>Điểm đáng chú ý: bên Trắng ở đây có tới hai Pháo VÀ hai Tượng của riêng mình. Với đội hình đầy đủ như vậy, Trắng luôn có sẵn quân làm ngòi cho Pháo (Tượng của mình, hoặc Pháo này làm ngòi cho Pháo kia), không hề phụ thuộc vào việc giữ Sĩ như các ví dụ Pháo đơn trước đó. Đây là lý do dạng tàn cuộc này được xếp vào loại \"tất thắng\" chắc chắn — ưu thế quân số đủ lớn để mọi điều kiện cần thiết đều được thỏa mãn.</p><h2>Kết cục: dồn ép đến mức không còn chống đỡ</h2><p>Ván đấu kéo dài 29 nước, phần lớn là quá trình dồn ép kiên nhẫn. Nước cuối cùng, Pháo Trắng khống chế trực tiếp một quân Tượng của Đen — và một khi Tượng đó bị ăn, đội hình phòng ngự của Đen sụp đổ, dẫn đến thắng lợi chắc chắn cho Trắng qua các kỹ thuật Song Pháo đã học ở Ví dụ 9.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Pháo Song Tượng Thắng Song Tượng — Dồn Ép Về Một Cánh (Ví Dụ 10)",
+      "seo_description": "Dùng hai Pháo dồn ép Tướng và cả hai Tượng đối phương về cùng một cánh cho đến khi chúng cản trở lẫn nhau, rồi tiêu diệt lần lượt từng quân Tượng.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "6b2/3k1C3/4b4/9/9/2B3B2/9/5K3/4C4/9",
+          "move_notation_wxf": "Pháo trước bình 4",
+          "move_notation_iccs": "e8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo trước. Dạng Song Pháo Song Tượng thắng Song Tượng. Cách giành chiến thắng: ép Tướng VÀ Tượng của bên Đen dồn về cùng một cánh, khiến chúng vướng víu lẫn nhau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k2b2/5C3/4b4/9/9/2B3B2/9/5K3/4C4/9",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k2b2/5C3/4b4/9/9/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "f2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng chiếm trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k2b2/5C3/9/9/6b2/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Tượng 5 tiến 7",
+          "move_notation_iccs": "e7g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k2b2/9/9/5C3/6b2/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Pháo 4 thoái 2",
+          "move_notation_iccs": "f8f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "6b2/3k5/9/5C3/6b2/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "6b2/3k5/9/5C3/6b2/2B3B2/9/4K4/6C2/9",
+          "move_notation_wxf": "Pháo 5 bình 3",
+          "move_notation_iccs": "e1g1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — sách nêu nhánh phụ: nếu Đen bay Tượng theo hướng khác, Trắng có ngay đòn Pháo bình tốc thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "6b2/3k5/8b/5C3/9/2B3B2/9/4K4/6C2/9",
+          "move_notation_wxf": "Tượng trước thoái 9",
+          "move_notation_iccs": "g5i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "6b2/3k5/8b/3C5/9/2B3B2/9/4K4/6C2/9",
+          "move_notation_wxf": "Pháo 4 bình 6",
+          "move_notation_iccs": "f6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "9/3k5/4b3b/3C5/9/2B3B2/9/4K4/6C2/9",
+          "move_notation_wxf": "Tượng 7 tiến 5",
+          "move_notation_iccs": "g9e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "9/3k5/4b3b/3C5/9/2B3B2/9/4K4/3C5/9",
+          "move_notation_wxf": "Pháo 3 bình 6",
+          "move_notation_iccs": "g1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/4k4/4b3b/3C5/9/2B3B2/9/4K4/3C5/9",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/4k4/4b3b/3C5/9/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Pháo sau bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "6b2/4k4/4b4/3C5/9/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Tượng 9 thoái 7",
+          "move_notation_iccs": "i7g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "6b2/4k4/4b4/9/9/2B3B2/9/4K4/4C4/3C5",
+          "move_notation_wxf": "Pháo 6 thoái 6",
+          "move_notation_iccs": "d6d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — hai Pháo tiếp tục điều động, dồn ép các quân Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "6b2/3k5/4b4/9/9/2B3B2/9/4K4/4C4/3C5",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e8d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "6b2/3k5/4b4/9/9/2B3B2/9/4K4/3C5/3C5",
+          "move_notation_wxf": "Pháo 5 bình 6",
+          "move_notation_iccs": "e1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "6b2/4k4/4b4/9/9/2B3B2/9/4K4/3C5/3C5",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "6b2/4k4/4b4/9/9/2B3B2/9/3K5/3C5/3C5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "4k1b2/9/4b4/9/9/2B3B2/9/3K5/3C5/3C5",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "4k1b2/9/4b4/9/9/2B3B2/9/3K5/4C4/3C5",
+          "move_notation_wxf": "Pháo trước bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "5kb2/9/4b4/9/9/2B3B2/9/3K5/4C4/3C5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "5kb2/9/4b4/9/9/2B3B2/9/3K5/4C4/6C2",
+          "move_notation_wxf": "Pháo 6 bình 3",
+          "move_notation_iccs": "d0g0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — sách khen: \"Cờ hay! Ép Tướng và Tượng đối phương tắc nghẽn một bên, có lợi cho việc tiêu diệt sau cùng.\"",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 24,
+          "fen": "5k3/9/4b3b/9/9/2B3B2/9/3K5/4C4/6C2",
+          "move_notation_wxf": "Tượng 7 tiến 9",
+          "move_notation_iccs": "g9i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 25,
+          "fen": "5k3/9/4b3b/9/9/2B3B2/9/4K4/4C4/6C2",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 26,
+          "fen": "5k3/9/4b4/9/6b2/2B3B2/9/4K4/4C4/6C2",
+          "move_notation_wxf": "Tượng 9 tiến 7",
+          "move_notation_iccs": "i7g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 27,
+          "fen": "5k3/9/4b4/9/6b2/2B3B2/9/4K4/4C4/5C3",
+          "move_notation_wxf": "Pháo 3 bình 4",
+          "move_notation_iccs": "g0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — sách lưu ý: nếu Đen chọn lui Tượng ở đây, Trắng có ngay đòn Pháo tốc thắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 28,
+          "fen": "9/5k3/4b4/9/6b2/2B3B2/9/4K4/4C4/5C3",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 29,
+          "fen": "9/5k3/4b4/5C3/6b2/2B3B2/9/4K4/4C4/9",
+          "move_notation_wxf": "Pháo 4 tiến 6",
+          "move_notation_iccs": "f0f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — Pháo giờ đã khống chế trực tiếp một quân Tượng của Đen. Đúng như sách khẳng định: \"Bên Trắng sau khi ăn Tượng nhất định thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
