@@ -102357,6 +102357,194 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 31004,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Xe Pháo — Xe Đuổi Pháo Theo Tuần Tự, Pháo Nổ Sĩ Đáy — Ví Dụ 4",
+      "slug": "c3-loai-hinh-xe-phao-vi-du-4",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3a1a3/5k3/9/8p/4R4/9/P5pcP/5C3/4Ar3/2BAK4",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Ví dụ 4 lấy từ giải toàn quốc: quân Xe Trắng liên tiếp tróc quân Pháo Đen theo tuần tự để đẩy nó vào vị trí bất lợi, rồi kết bằng đòn \"Pháo nổ Sĩ đáy\" đánh ngược lại quân Xe.",
+      "content": "<h2>\"Rất có tuần tự\"</h2><p>Sách khen cách chơi của Trắng là \"rất có tuần tự\" — nghĩa là các nước đi nối tiếp nhau theo một trình tự logic, mỗi nước chuẩn bị cho nước sau. Trình tự ở đây: (1) tróc Tốt để buộc Đen động binh; (2) chiếu Tướng ép Tướng lên cao; (3) lui Xe tróc Pháo; (4) tiến Xe lại tróc Pháo. Sau bốn bước, quân Pháo Đen đã bị đẩy tới ô hoàn toàn bất lợi.</p><h2>\"Pháo nổ Sĩ đáy, đánh ngược lại Xe\"</h2><p>Nước 13 là đòn kết. Quân Pháo Trắng tiến lên ăn quân Sĩ ở góc đáy của Đen. Nghe qua thì chỉ là ăn một Sĩ, nhưng nó \"đánh ngược lại Xe\" — sau khi Sĩ mất, quân Pháo (hoặc Xe) Trắng khống chế luôn quân Xe Đen. Đây là đòn phối hợp: một nước ăn quân đồng thời tạo mối đe dọa lên quân khác.</p><h2>Xe đuổi Pháo: vì sao hiệu quả?</h2><p>Quân Pháo yếu hơn quân Xe rõ rệt. Khi quân Xe liên tục tấn công quân Pháo, quân Pháo chỉ có thể chạy, và mỗi lần chạy nó lại rơi vào ô tệ hơn (vì các ô tốt đã bị Xe hoặc quân khác kiểm soát). Cuối cùng quân Pháo hết chỗ, hoặc bị bắt, hoặc phải đứng vào ô mà từ đó Trắng có đòn sát.</p><h2>Tàn cuộc thực chiến: giá trị học tập</h2><p>Ví dụ 4 (và cả Bài 10) là các ván thật, không phải thế cờ dàn dựng. Giá trị của chúng: cho thấy các nguyên lý (công sát trục dọc, Xe đuổi Pháo, Pháo nổ Sĩ đáy) hoạt động thế nào trong tình huống nhiều quân, phức tạp — gần với những gì người chơi gặp trên bàn cờ thật.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Xe Pháo — Xe Đuổi Pháo Theo Tuần Tự, Pháo Nổ Sĩ Đáy (Ví Dụ 4)",
+      "seo_description": "Quân Xe Trắng liên tiếp tróc quân Pháo Đen theo tuần tự để đẩy nó vào vị trí bất lợi, rồi kết bằng đòn Pháo nổ Sĩ đáy đánh ngược lại quân Xe.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3a1a3/5k3/9/8p/6R2/9/P5pcP/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 5 bình 3",
+          "move_notation_iccs": "e5g5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 3 — bình Xe tróc Tốt, đánh trúng chỗ yếu bên Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3a1a3/5k3/9/8p/6R2/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Pháo 8 thoái 1",
+          "move_notation_iccs": "h3h4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3a1a3/5kR2/9/8p/9/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 3 tiến 3",
+          "move_notation_iccs": "g5g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a1a3/6R2/5k3/8p/9/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng lên cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a1a3/9/5k3/8p/9/6Rc1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 3 thoái 4",
+          "move_notation_iccs": "g8g4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe tróc Pháo — trước chiếu Tướng ép Tướng Đen lên cao, sau thoái Xe tróc Pháo, rất có tuần tự.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3a1a3/9/5k3/8p/7c1/6R2/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Pháo 8 thoái 1",
+          "move_notation_iccs": "h4h5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3a1a3/9/5k3/8p/6Rc1/9/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 3 tiến 1",
+          "move_notation_iccs": "g4g5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe, lại tróc Pháo — tuyệt diệu! Buộc Pháo Đen đến vị trí bất lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3a1a3/9/5k3/8p/6R2/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Pháo 8 tiến 1",
+          "move_notation_iccs": "h5h4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3a1a3/9/5k3/8p/5R3/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 3 bình 4",
+          "move_notation_iccs": "g5f5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 4.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3a1a3/9/4k4/8p/5R3/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f7e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng về giữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3a1a3/9/4k4/8p/4R4/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 4 bình 5",
+          "move_notation_iccs": "f5e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe về trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3a1a3/9/5k3/8p/4R4/7c1/P5p1P/5C3/4Ar3/2BAK4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e7f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng. Sách nêu: nếu Đen đi Tg5-4 thì S5.6 tuyệt sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3a1C3/9/5k3/8p/4R4/7c1/P5p1P/9/4Ar3/2BAK4",
+          "move_notation_wxf": "Pháo 4 tiến 7",
+          "move_notation_iccs": "f2f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — Pháo nổ Sĩ đáy, đánh ngược lại Xe, diệu thủ! Nước đi tinh hoa giành thắng lợi.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3a1C3/9/5k3/8p/4R4/5c3/P5p1P/9/4Ar3/2BAK4",
+          "move_notation_wxf": "Pháo 8 bình 6",
+          "move_notation_iccs": "h4f4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo. Nếu Đen đi X6-7 hoặc B7-6 thì Trắng có S5.4 hình thành thế tuyệt sát.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3a1C3/9/5k3/8p/5R3/5c3/P5p1P/9/4Ar3/2BAK4",
+          "move_notation_wxf": "Xe 5 bình 4",
+          "move_notation_iccs": "e5f5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 4 — chiếu Tướng ăn Pháo. Đúng như sách khẳng định: \"bên Trắng nhất định thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
