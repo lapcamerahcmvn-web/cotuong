@@ -81464,6 +81464,216 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30300,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Vì Sao Giá Trị Của Pháo Sụt Giảm Khi Vào Tàn Cuộc",
+      "slug": "c3-loai-hinh-phao-gioi-thieu",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": null,
+      "variation_tree": null,
+      "move_count": 0,
+      "summary": "Mở đầu Bài 3, tìm hiểu vì sao quân Pháo — một trong những quân mạnh nhất ở khai cuộc và trung cuộc — lại mất gần hết uy lực khi bước vào giai đoạn tàn cuộc, và vì sao việc giữ đúng \"ngòi\" cho Pháo lại quan trọng đến vậy.",
+      "content": "<h2>Pháo: giá trị thay đổi theo từng giai đoạn ván đấu</h2><p>Không giống nhiều quân cờ khác giữ giá trị tương đối ổn định xuyên suốt ván đấu, quân Pháo trong cờ tướng có một đặc điểm riêng biệt: giá trị thực chiến của nó biến đổi rõ rệt theo từng giai đoạn. Ở khai cuộc và trung cuộc, khi bàn cờ còn đông quân, Pháo phát huy sức mạnh kép hiếm có — tấn công từ xa nhờ tầm bắn dọc theo hàng và cột, đồng thời vẫn có thể lui về phòng thủ hiệu quả ở cự ly gần. Chính sự linh hoạt hai chiều này khiến Pháo được xếp vào nhóm quân có giá trị cao trong phần lớn ván đấu.</p><h2>\"Giá Pháo\": chìa khóa lý thuyết cho mọi nghịch lý về sau</h2><p>Bí quyết duy nhất giải thích toàn bộ sức mạnh của Pháo nằm ở cách nó ăn quân: khác với Xe di chuyển và ăn quân theo cùng một cách, Pháo muốn ăn quân bắt buộc phải có đúng MỘT quân khác (của bất kỳ bên nào) nằm chắn giữa nó và mục tiêu — quân trung gian này được gọi là \"giá Pháo\" hay \"ngòi Pháo\". Không có ngòi, Pháo chỉ còn khả năng di chuyển tự do như Xe nhưng hoàn toàn mất khả năng ăn quân — về bản chất tấn công, nó trở thành vô dụng.</p><h2>Vì sao tàn cuộc lại là \"khắc tinh\" của Pháo?</h2><p>Đây chính là chỗ nghịch lý xuất hiện: giai đoạn tàn cuộc, theo đúng bản chất của nó, là lúc số lượng quân trên bàn cờ đã giảm đi đáng kể so với đầu ván. Số quân giảm đồng nghĩa với việc số \"ngòi\" khả dụng cho Pháo cũng giảm theo tỷ lệ thuận. Trường hợp cực đoan nhất — khi một bên chỉ còn lại đúng Tướng và một Pháo đối đầu Tướng đơn thuần của bên kia — cho thấy rõ nhất điều này: dù xét về quân số, bên có Pháo vẫn \"nhiều hơn\", nhưng vì hoàn toàn không có bất kỳ quân nào khác trên bàn để làm ngòi, giá trị thực chiến của Pháo lúc này gần như bằng KHÔNG — nó không thể ăn được Tướng đối phương, và ván đấu kết thúc hòa.</p><h2>Hai nguyên tắc thực chiến rút ra từ đó</h2><p>Chính vì lý do trên, sách đúc kết hai nguyên tắc quan trọng sẽ xuất hiện xuyên suốt Bài 3: thứ nhất, khi bước vào tàn cuộc mà không còn hy vọng giữ được ngòi cho Pháo, phương án thực dụng nhất thường là chủ động đổi Pháo lấy quân khác (\"tàn cuộc Pháo về nhà\") thay vì cố giữ một quân đã gần như mất giá trị. Thứ hai, nếu muốn Pháo tiếp tục phát huy tác dụng trong tàn cuộc, bên sở hữu Pháo bắt buộc phải tìm cách GIỮ LẠI ít nhất một quân làm ngòi — thường là chính quân Sĩ của mình hoặc một quân Sĩ của đối phương đứng đúng vị trí cần thiết.</p><h2>Bài 3 sẽ trình bày điều gì?</h2><p>Các ví dụ tiếp theo sẽ lần lượt minh họa cách vận dụng chính xác nguyên tắc \"giữ ngòi cho Pháo\" trong nhiều tổ hợp quân khác nhau — bắt đầu từ trường hợp cơ bản nhất: một Pháo được hỗ trợ bởi đúng một Sĩ của chính mình, đối đầu với hai Sĩ còn nguyên vẹn của đối phương.</p>",
+      "status": "published",
+      "decode_confidence": null,
+      "thumbnail": null,
+      "seo_title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Vì Sao Giá Trị Của Pháo Sụt Giảm Khi Vào Tàn Cuộc",
+      "seo_description": "Mở đầu Bài 3, tìm hiểu vì sao quân Pháo — một trong những quân mạnh nhất ở khai cuộc và trung cuộc — lại mất gần hết uy lực khi bước vào giai đoạn tàn cuộc, và vì sao việc giữ đúng \"ngòi\" cho Pháo lại quan trọng đến vậy.",
+      "is_featured": false,
+      "steps": []
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30301,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Ba Bước Kinh Điển: Đặt Sĩ, Dồn Tướng, Lắp Pháo — Ví Dụ 1",
+      "slug": "c3-loai-hinh-phao-vi-du-1",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5k3/4a4/3a5/9/9/9/9/3A5/7C1/4K4",
+      "variation_tree": null,
+      "move_count": 15,
+      "summary": "Ví dụ 1 minh họa trọn vẹn công thức ba bước kinh điển của \"Pháo Đơn Sĩ thắng Song Sĩ\": đặt Sĩ của mình đúng cánh không có Sĩ đối phương, dùng Tướng ép đối phương dạt về đúng cánh yếu của chính họ, rồi lắp Pháo vào trung tâm để kìm kẹp cả Tướng lẫn Sĩ cùng lúc.",
+      "content": "<h2>Một công thức ba bước có thể học thuộc và tái sử dụng</h2><p>Khác với nhiều ví dụ tàn cuộc khác vốn phụ thuộc nhiều vào vị trí cụ thể ban đầu, Ví dụ 1 của Bài 3 trình bày một CÔNG THỨC BA BƯỚC tổng quát có thể ghi nhớ và áp dụng lại: (1) đặt quân Sĩ của Trắng vào đúng cánh sườn mà Đen không có Sĩ trấn giữ; (2) dùng Tướng đi các nước \"cầm chân\" hợp lý để ép Tướng Đen phải dạt về đúng cánh sườn yếu của CHÍNH NÓ; (3) lắp Pháo vào vị trí trung tâm để đồng thời kìm kẹp cả Tướng lẫn Sĩ còn lại của Đen. Việc trình bày dưới dạng công thức rõ ràng như vậy cho thấy đây được xem là kỹ thuật NỀN TẢNG của toàn bộ Bài 3 — mọi ví dụ phức tạp hơn phía sau nhiều khả năng sẽ là biến thể của chính ba bước này.</p><h2>Vai trò của Sĩ Trắng: không phải phòng thủ, mà là làm ngòi</h2><p>Đúng như bài học đã nêu ở phần giới thiệu Bài 3, quân Sĩ duy nhất của Trắng trong ví dụ này không đóng vai trò phòng thủ — nó là NGÒI PHÁO sống còn. Việc đặt nó đúng cánh sườn mà Đen không có Sĩ (bước một) không phải ngẫu nhiên: đó chính là vị trí duy nhất giúp Pháo, khi lắp vào trung tâm ở bước ba, có thể vươn tới và khống chế đồng thời cả hai lộ sĩ giác còn lại của Tướng Đen.</p><h2>\"Nước cầm chân\": kỹ thuật dùng Pháo giới hạn lựa chọn của đối phương</h2><p>Bước hai của công thức thể hiện một kỹ thuật tinh tế: Pháo không tấn công trực diện, mà di chuyển qua lại giữa hai cánh để LIÊN TỤC KHỐNG CHẾ các ô mà Tướng Đen có thể muốn dùng, buộc nó chỉ còn một hướng duy nhất để dạt tới — đúng hướng mà Trắng đã định trước. Đây là minh chứng cho việc Pháo, dù chỉ di chuyển theo đường thẳng đơn giản, vẫn có thể tạo ra hiệu ứng \"ép buộc\" gián tiếp mạnh mẽ không kém các đòn tấn công trực diện.</p><h2>Kết luận: một ví dụ mẫu mực để mở đầu Bài 3</h2><p>Việc sách chọn một ví dụ có công thức rõ ràng, dễ ghi nhớ, kèm giải thích ý đồ ở từng bước làm ví dụ mở đầu cho Bài 3 là một lựa chọn sư phạm hợp lý — người học không chỉ thấy MỘT ván đấu cụ thể, mà nắm được KHUNG TƯ DUY tổng quát để tiếp cận cả nhóm bài toán \"Pháo cộng ít quân khác đối đầu quân phòng thủ đông hơn\" sẽ còn xuất hiện nhiều lần trong các ví dụ tiếp theo.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Pháo Đơn Sĩ Thắng Song Sĩ — Công Thức 3 Bước Kinh Điển (Ví Dụ 1)",
+      "seo_description": "Công thức 3 bước của Loại Hình Pháo: đặt Sĩ đúng cánh yếu đối phương, dùng Tướng ép đối phương dạt về cánh yếu của mình, lắp Pháo trung tâm kìm kẹp Tướng và Sĩ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5k3/4a4/3a5/9/9/9/9/9/4A2C1/4K4",
+          "move_notation_wxf": "Sĩ 6 thoái 5",
+          "move_notation_iccs": "d2e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Sĩ. Sách nêu ngay công thức ba bước cho toàn bộ ví dụ: bước một dùng Tướng chiếm đúng đường trung lộ, đặt Sĩ của mình vào đúng cánh sườn mà bên Đen KHÔNG có Sĩ trấn giữ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4k4/4a4/3a5/9/9/9/9/9/4A2C1/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4k4/4a4/3a5/9/9/9/9/5A3/7C1/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e1f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k5/4a4/3a5/9/9/9/9/5A3/7C1/4K4",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — bước một đã hoàn thành: Sĩ Trắng giờ đứng đúng ở cánh sườn mà Đen không có Sĩ, chuẩn bị làm ngòi Pháo lâu dài.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k5/4a4/3a5/9/9/9/9/5A3/5C3/4K4",
+          "move_notation_wxf": "Pháo 2 bình 4",
+          "move_notation_iccs": "h1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — bắt đầu bước hai: dùng nước \"đi cầm chân\" (chặn không cho Tướng Đen về đúng hướng) để ép Tướng Đen phải dạt về đúng cánh sườn không có Sĩ của CHÍNH NÓ. Vì hai lộ sĩ giác ở trung lộ bên Đen đều đã nằm trong tầm khống chế của Pháo, Tướng Đen chỉ còn cách duy nhất là di chuyển.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4k4/4a4/3a5/9/9/9/9/5A3/5C3/4K4",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4k4/4a4/3a5/9/9/9/9/5A3/3C5/4K4",
+          "move_notation_wxf": "Pháo 4 bình 6",
+          "move_notation_iccs": "f1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo, tiếp tục ép Tướng Đen dạt đúng hướng cần thiết.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5k3/4a4/3a5/9/9/9/9/5A3/3C5/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng — Tướng Đen giờ đã bị ép về đúng cánh sườn không có Sĩ của chính mình, đúng như bước hai đã vạch ra.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "5k3/4a4/3a5/9/9/9/9/5A3/4C4/4K4",
+          "move_notation_wxf": "Pháo 6 bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo vào chính giữa (lắp trung Pháo) — bước ba bắt đầu: đây là nước dừng rất có lực, vì hai lộ mà Sĩ Đen có thể tiến tới đều đã nằm trong tầm khống chế của Pháo Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5k3/9/3a1a3/9/9/9/9/5A3/4C4/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc phải tiến Sĩ — nước đi duy nhất còn hợp lệ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5k3/9/3a1a3/9/9/9/9/5A3/5C3/4K4",
+          "move_notation_wxf": "Pháo 5 bình 4",
+          "move_notation_iccs": "e1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang cánh sườn lần nữa, hoàn tất thế trận dùng Pháo kìm kẹp cả Tướng lẫn Sĩ Đen cùng lúc.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "5k3/4a4/5a3/9/9/9/9/5A3/5C3/4K4",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "5k3/4a4/5a3/9/9/9/9/5A3/9/4KC3",
+          "move_notation_wxf": "Pháo 4 thoái 1",
+          "move_notation_iccs": "f1f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — nước này đã ăn được một Sĩ của Đen. Đen chỉ còn đúng một lựa chọn hợp lệ là bình Tướng ra trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "4k4/4a4/5a3/9/9/9/9/5A3/9/4KC3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng ra trung lộ — nước bắt buộc, vì Tướng Trắng đang khống chế chặt đường Sĩ-Tướng còn lại.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "4k4/4a4/5C3/9/9/9/9/5A3/9/4K4",
+          "move_notation_wxf": "Pháo 4 tiến 7",
+          "move_notation_iccs": "f0f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo ăn nốt quân Sĩ cuối cùng — đúng như sách khẳng định: \"ăn Sĩ, thắng.\" Không còn Sĩ nào bảo vệ, Tướng Đen trơ trọi hoàn toàn không thể chống lại Tướng và Pháo phối hợp của Trắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
