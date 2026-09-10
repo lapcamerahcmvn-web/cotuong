@@ -76334,6 +76334,84 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30115,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Chỉ Ba Nước Là Đủ Khép Lại Định Thức — Ví Dụ 15",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-15",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2Pak4/4a4/9/4P4/9/9/9/9/9/5K3",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Ví dụ 15 là bản rút gọn tối đa của định thức Binh cao Binh thấp thắng song Sĩ: chỉ vỏn vẹn 3 nước đi của Trắng, tận dụng đúng vị trí sẵn có của Binh đáy làm hậu thuẫn, là đủ để khép lại toàn bộ ván đấu bằng thế khốn tù.",
+      "content": "<h2>Định thức được rút gọn đến mức tối giản</h2><p>Sau một loạt ví dụ minh họa chi tiết cơ chế \"Binh cao Binh thấp thắng song Sĩ\" từ nhiều góc độ, Ví dụ 15 cho thấy khi vị trí ban đầu đã đủ thuận lợi — Binh đáy đã nằm sẵn đúng chỗ — toàn bộ quá trình kết liễu có thể rút gọn chỉ còn 3 nước đi. Đây là minh chứng cho việc một khi người chơi đã nắm vững nguyên lý của định thức, việc nhận ra \"đã đủ điều kiện thắng nhanh\" cũng quan trọng không kém việc biết thực hiện từng bước dài dòng.</p><h2>Vai trò của Binh đáy: đã sẵn sàng chờ đúng thời điểm</h2><p>Điểm khác biệt với các ví dụ về Binh đáy trước đó (12, 13) là ở đây Binh đáy không cần di chuyển nhiều — nó đã án ngữ sẵn đúng vị trí cần thiết ngay từ đầu ván, chỉ chờ đúng thời điểm để phối hợp với Binh cao. Điều này củng cố thêm bài học: giá trị của Binh đáy phụ thuộc phần lớn vào việc nó đã được đặt đúng chỗ từ trước, không phải lúc nào cũng cần chủ động di chuyển thêm.</p><h2>Một lần nữa: chọn sai hướng sẽ thua nhanh hơn</h2><p>Sách vẫn giữ thói quen chỉ ra cạm bẫy tốc độ quen thuộc: nếu Đen chọn tiến Tướng thay vì lui Sĩ ở nước đáp đầu tiên, Trắng có ngay phương án ăn thẳng Sĩ bằng Binh đáy, kết liễu ván đấu nhanh hơn cả biến chính. Đây là mẫu hình lặp lại xuyên suốt gần như mọi ví dụ trong Bài 1: bên phòng thủ ở thế thua theo lý thuyết không có \"nước đi cứu vãn\", chỉ có lựa chọn giữa các mức độ thua nhanh khác nhau.</p><h2>Khép lại một chuỗi ví dụ về cùng một định thức</h2><p>Đây là ví dụ ngắn gọn nhất minh họa cho nhóm \"Binh cao Binh thấp thắng song Sĩ\" (các Ví dụ 11 đến 15), cho thấy cùng một nguyên lý cốt lõi có thể biểu hiện qua nhiều thế cờ với độ dài và độ phức tạp rất khác nhau — từ những ván cần phối hợp nhiều bước đổi quân phức tạp, đến những ván chỉ cần vài nước đơn giản khi vị trí quân đã đủ thuận lợi từ đầu.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Binh Cao Binh Thấp Thắng Song Sĩ Chỉ 3 Nước (Ví Dụ 15)",
+      "seo_description": "Bản rút gọn của định thức Binh cao Binh thấp thắng song Sĩ: chỉ 3 nước đi tận dụng vị trí sẵn có của Binh đáy để khép lại ván đấu bằng thế khốn tù.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2Pak4/4a4/4P4/9/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2Paka3/9/4P4/9/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ — sách cho biết: nếu Đen đổi hướng tiến Tướng thay vì lui Sĩ, Trắng có ngay nước Binh đáy ăn thẳng Sĩ, thắng nhanh hơn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2Paka3/9/3P5/9/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2P1ka3/4a4/3P5/9/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2P1ka3/3Pa4/9/9/9/9/9/9/9/5K3",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh cao — Tướng Đen bị chính hai Sĩ của mình chiếm hết hai ô lui, chỉ còn duy nhất một ô nhưng cũng đã bị Binh khống chế. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
