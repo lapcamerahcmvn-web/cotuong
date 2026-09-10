@@ -75680,6 +75680,228 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30110,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Song Binh Ép Song Tượng Tứ Tán — Ví Dụ 10",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-10",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/3k2P2/b1P1b4/9/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Ví dụ 10 là một biến thể ngắn gọn khác của định thức \"Binh cao Binh thấp thắng song Tượng\": thay vì luân phiên xâm nhập theo hai giai đoạn như Ví dụ 9, ở đây song Binh phối hợp trực tiếp với Tướng để ép hai Tượng của Đen phải tứ tán mỗi quân một hướng, mất khả năng hỗ trợ lẫn nhau.",
+      "content": "<h2>Cùng một chủ đề, khác cách tiếp cận</h2><p>Ví dụ 10 tiếp tục minh họa định thức \"Binh cao Binh thấp thắng song Tượng\" đã giới thiệu ở Ví dụ 9, nhưng với một cơ chế thắng khác biệt. Sách mô tả: \"song Binh phối hợp với Tướng, khiến song Tượng tứ tán\" — thay vì để Tướng lần lượt yểm hộ từng Binh xâm nhập theo hai giai đoạn tuần tự, ở đây trọng tâm là buộc hai quân Tượng của Đen phải tách rời nhau, mỗi quân bị đẩy về một phía của cung, không còn đứng gần nhau để hỗ trợ lẫn nhau nữa.</p><h2>Vì sao \"tứ tán\" lại nguy hiểm cho Tượng?</h2><p>Về bản chất, Tượng là quân phòng thủ hoạt động tốt nhất khi phối hợp theo cặp, che chắn chéo cho nhau ở các điểm mắt Tượng quan trọng. Một khi bị tách rời — \"tứ tán\" theo đúng nghĩa đen là chạy tán loạn mỗi quân một ngả — hai Tượng không còn khả năng bảo vệ chéo cho nhau, và mỗi Tượng đơn độc lại quá yếu để cản một quân Binh đã tiến sâu. Đây là nguyên lý phòng thủ quan trọng cần ghi nhớ: sức mạnh phòng thủ của một cặp quân không chỉ đến từ số lượng, mà còn đến từ khả năng phối hợp — khi bị chia cắt, tổng sức mạnh phòng thủ giảm đi nhiều hơn so với phép cộng đơn giản.</p><h2>Một cái bẫy ẩn: tham chiếm trung tâm cung sẽ thua nhanh hơn</h2><p>Sách chỉ ra một chi tiết thú vị: nếu Đen cố gắng đưa Tượng còn lại vào che chắn ngay giữa cung (thay vì lùi ra biên), Trắng sẽ có ngay nước Binh áp sát Tướng và chiếm cứ đúng trung tâm cung — vị trí quan trọng nhất — khiến Đen thua còn nhanh hơn cả biến chính. Đây là một nghịch lý phòng thủ đáng lưu ý: đôi khi cố gắng phòng thủ \"tập trung\" ở điểm quan trọng nhất lại phản tác dụng nếu quân phòng thủ không đủ sức trấn giữ.</p><h2>Kết quả: cùng đích đến, khác con đường</h2><p>Dù cơ chế khác với Ví dụ 9, kết quả cuối cùng vẫn nhất quán: một khi hai Binh đã phối hợp đúng cách với Tướng, hai Tượng của Đen — dù đứng gần nhau hay bị buộc phải tứ tán — đều không đủ sức ngăn cản. Hai ví dụ liên tiếp với hai cách tiếp cận khác nhau nhưng cùng một kết quả cho thấy định thức \"song Binh thắng song Tượng\" có nhiều con đường dẫn đến chiến thắng, không chỉ một công thức cứng nhắc duy nhất.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Binh Ép Song Tượng Tứ Tán (Ví Dụ 10)",
+      "seo_description": "Định thức Binh cao Binh thấp thắng song Tượng: song Binh phối hợp Tướng buộc hai Tượng phải tách rời, mất khả năng hỗ trợ lẫn nhau, dẫn đến thất bại.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/3k1P3/b1P1b4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "g8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "9/3k1P3/2P1b4/9/2b6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 1 tiến 3",
+          "move_notation_iccs": "a7c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "9/3k1P3/1P2b4/9/2b6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 7 bình 8",
+          "move_notation_iccs": "c7b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — sách cho biết: nếu Đen đổi hướng đưa Tượng còn lại vào giữa che chắn, Trắng vẫn có nước Binh áp sát Tướng, chiếm cứ ngay trung tâm cung, thắng chắc chắn.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/3k1P3/bP2b4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tượng 3 thoái 1",
+          "move_notation_iccs": "c5a7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/3k1P3/P3b4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 8 bình 9",
+          "move_notation_iccs": "b7a7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/5P3/P2kb4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/4P4/P2kb4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 4 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30111,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Đổi Một Binh Lấy Trọn Song Sĩ, Đơn Binh Cấm Vảy Thắng — Ví Dụ 11",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-11",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5a3/3kaP3/9/4P4/9/9/9/9/9/4K4",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Ví dụ 11 giới thiệu định thức \"Binh cao Binh thấp thắng song Sĩ\" với một kỹ thuật đặc biệt: sau khi cả hai Binh cùng xâm nhập cửu cung, Trắng chủ động dùng một Binh đổi lấy trọn cả hai Sĩ của Đen, rồi dùng chính Binh còn lại phối hợp với luật \"lộ Tướng\" tạo thành thế \"đơn Binh cấm vảy\" — một Binh duy nhất mà vẫn đủ sức khóa chặt Tướng đối phương.",
+      "content": "<h2>Đổi 1 Binh lấy 2 Sĩ — một cuộc trao đổi có lợi bất ngờ</h2><p>Ví dụ 11 tiếp tục nhóm định thức \"Binh cao Binh thấp\" nhưng lần này đấu với song Sĩ thay vì song Tượng. Điểm đặc biệt được sách nêu rõ: \"khi hai Binh đều xâm nhập cửu cung, sau khi dùng 1 Binh đổi song Sĩ thì trở thành 'đơn Binh cấm vảy' mà thắng.\" Nói cách khác, Trắng chủ động hy sinh một quân Binh để đổi lấy CẢ HAI Sĩ của Đen cùng lúc — một cuộc trao đổi tưởng như \"lỗ\" về mặt số lượng quân riêng lẻ, nhưng lại cực kỳ có lợi vì đã quét sạch toàn bộ lực lượng phòng thủ còn sót lại của đối phương.</p><h2>\"Đơn Binh cấm vảy\" — khi một quân yếu nhất lại là kẻ khóa chặt cuộc chơi</h2><p>Sau cuộc trao đổi, bàn cờ chỉ còn lại một Binh Trắng đối đầu trực tiếp với Tướng trơ trọi của Đen. Đây chính là hình thái \"đơn Binh cấm vảy\" mà sách nhắc đến — một Binh duy nhất, kết hợp đúng lúc với Tướng của chính mình, đủ sức ngăn chặn hoàn toàn mọi cử động của Tướng đối phương. Đây là minh chứng rõ ràng cho nguyên lý cốt lõi của cả Bài 1: giá trị của một quân Binh trong tàn cuộc không nằm ở bản thân nó, mà nằm ở VỊ TRÍ nó chiếm giữ trong không gian di chuyển chật hẹp của cung Tướng.</p><h2>Cơ chế khóa kép: chặn trực tiếp và luật lộ Tướng</h2><p>Nước kết thúc là một minh họa đẹp cho việc phối hợp hai cơ chế khóa khác nhau cùng lúc: Binh Trắng trực tiếp khống chế một ô di chuyển của Tướng Đen, trong khi Tướng Trắng tiến lên đúng cùng cột dọc với Tướng Đen — nhờ khoảng trống ở giữa hoàn toàn không còn quân nào che chắn, luật \"hai Tướng không được đối mặt trực tiếp\" khiến ô di chuyển còn lại cũng trở thành bất hợp lệ đối với Đen. Hai cơ chế này cộng hưởng, khóa chặt Tướng Đen từ cả hai phía cùng lúc.</p><h2>Bài học kỹ thuật: đôi khi thắng lợi đến từ việc chủ động đơn giản hóa</h2><p>Ví dụ này dạy một kỹ năng tàn cuộc quan trọng: khi đối phương còn nhiều quân phòng thủ (ở đây là song Sĩ), đôi khi con đường ngắn nhất đến chiến thắng không phải là né tránh trao đổi, mà là chủ động trao đổi để LOẠI BỎ HOÀN TOÀN khả năng phòng thủ, dù phải trả giá bằng chính một phần lực lượng tấn công của mình. Miễn là phần còn lại đủ để hoàn tất định thức đã biết (ở đây là đơn Binh cấm vảy), việc đơn giản hóa bàn cờ luôn là lựa chọn đáng cân nhắc.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Đổi Binh Lấy Song Sĩ, Đơn Binh Cấm Vảy Thắng (Ví Dụ 11)",
+      "seo_description": "Định thức Binh cao Binh thấp thắng song Sĩ: chủ động đổi 1 Binh lấy trọn song Sĩ đối phương, dùng Binh còn lại phối hợp luật lộ Tướng tạo thế đơn Binh cấm vảy.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5a3/3kaP3/4P4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3a1a3/3k1P3/4P4/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3a1a3/3k1P3/4P4/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5a3/3kaP3/4P4/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/3kPP3/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e7e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "9/3kaP3/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "9/3kP4/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tốt 4 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh — quân Binh vừa dâng mình đổi lấy chỗ đứng của song Sĩ Đen: sau nước này, cả hai Sĩ đều đã bị Binh Trắng tiêu diệt lần lượt qua các bước tiến vừa rồi, bàn cờ chỉ còn đúng một Binh của Trắng đối đầu trực tiếp với Tướng trơ trọi của Đen.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "9/4P4/3k5/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "9/4P4/3k5/9/9/9/9/4K4/9/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e1e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng — Tướng Trắng xuất hiện trên cùng cột dọc với Tướng Đen, kết hợp với đúng vị trí của Binh còn lại, khiến Đen hoàn toàn hết nước đi hợp lệ. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
