@@ -76190,6 +76190,150 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30114,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Binh Tốt — Tướng Đen Ra Khỏi Cung Cũng Không Cứu Được — Ví Dụ 14",
+      "slug": "c3-loai-hinh-binh-tot-vi-du-14",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "6P2/9/3aka3/9/4P4/9/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Ví dụ 14 khác biệt ngay từ vị trí ban đầu: Tướng Đen đã tiến ra khỏi hàng ghế sau, đứng lộ ở hàng thứ hai của cung cùng song Sĩ vây quanh — nhưng dù có vẻ chủ động và \"an toàn hơn\" khi được Sĩ hộ tống sát bên, thế bố trí này vẫn không đủ sức chống lại đúng định thức Binh cao Binh thấp đã học.",
+      "content": "<h2>Một khởi điểm khác: Tướng đứng giữa hai Sĩ</h2><p>Khác với phần lớn ví dụ trước có Tướng đứng ở hàng sau cùng, Ví dụ 14 cho thấy một cách bố trí có vẻ chặt chẽ hơn: Tướng Đen nằm ngay chính giữa, được hai Sĩ áp sát hai bên ở cùng một hàng. Về trực giác, đây có vẻ là đội hình phòng thủ vững chắc — Tướng luôn có quân hộ vệ sát cạnh ở cả hai phía.</p><h2>Đội hình chặt vẫn không đổi được kết quả định thức</h2><p>Tuy nhiên, ván đấu chứng minh một lần nữa nguyên lý cốt lõi của Chương 3: kết quả của một tàn cuộc định thức được quyết định bởi TỔ HỢP QUÂN CÒN LẠI (ở đây là hai Binh của Trắng đối đầu Tướng và song Sĩ của Đen), chứ không phải bởi việc quân phòng thủ đứng sát nhau hay tản ra. Trắng vẫn áp dụng đúng nguyên lý quen thuộc: hai Binh ở hai mức độ tiến khác nhau, phối hợp cùng Tướng, lần lượt siết chặt không gian di chuyển cho đến khi không còn ô nào an toàn.</p><h2>Từng bước thu hẹp không gian một cách có hệ thống</h2><p>Quan sát kỹ trình tự nước đi sẽ thấy một khuôn mẫu quen thuộc: mỗi lần Binh Trắng tiến thêm một bước, Tướng hoặc Sĩ Đen buộc phải nhường lại một ô di chuyển. Đây không phải là một chuỗi nước đi ngẫu nhiên, mà là một quá trình thu hẹp không gian có tính toán — mỗi nước của Trắng đều nhắm đến việc loại bỏ chính xác một lựa chọn phòng thủ cụ thể của Đen, không lãng phí bất kỳ nước nào.</p><h2>Kết cục tất yếu: khốn tù dù đội hình phòng thủ trông có vẻ chặt chẽ</h2><p>Ván đấu khép lại đúng như mọi ví dụ khác trong nhóm \"Binh cao Binh thấp thắng song Sĩ\": Tướng Đen, dù ban đầu có vị trí trông an toàn hơn, cuối cùng vẫn bị khóa chặt hoàn toàn bởi chính hai Sĩ của mình cộng với song Binh Trắng. Đây là lời nhắc cuối cùng cho nhóm ví dụ này: một khi tổ hợp quân đã rơi vào phạm vi định thức thua, không có cách sắp xếp đội hình ban đầu nào — dù trông có vẻ vững chắc đến đâu — có thể thay đổi được kết quả lý thuyết đã định sẵn.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Tướng Ra Khỏi Cung Vẫn Thua Binh Cao Binh Thấp (Ví Dụ 14)",
+      "seo_description": "Dù Tướng Đen đứng giữa được song Sĩ hộ tống hai bên, định thức Binh cao Binh thấp thắng song Sĩ vẫn phát huy hiệu quả, dồn Đen vào thế khốn tù.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "6P2/9/3aka3/4P4/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e5e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "6P2/4k4/3a1a3/4P4/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "6P2/4k4/3a1a3/3P5/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e6d6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh cao.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4k1P2/9/3a1a3/3P5/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4k1P2/9/3P1a3/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4k1P2/4a4/3P5/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 6 thoái 5",
+          "move_notation_iccs": "f7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "4k1P2/3Pa4/9/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Tốt 6 tiến 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4k1P2/3P5/3a5/9/9/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4k1P2/3P5/3a5/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "d0d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4k1P2/3Pa4/9/9/9/9/9/9/3K5/9",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4k1P2/3Pa4/9/9/9/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d1e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — Tướng Đen bị chính hai Sĩ của mình và song Binh Trắng khóa chặt mọi hướng. Đúng như sách khẳng định: \"Trắng thắng.\"",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
