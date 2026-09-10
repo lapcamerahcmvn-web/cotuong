@@ -333,4 +333,17 @@
   - **vd2** (Hình3.42, order 30302, FEN `3k5/9/4b4/9/9/9/9/4K4/4A4/8C1`, 5 nước): bản rút gọn — Tượng đơn độc yếu hơn Sĩ, chỉ cần Tướng chiếm trung lộ là đủ, không cần công thức 3 bước đầy đủ.
   - **⚠️ Phát hiện vị trí khác thường**: ở Hình 3.42, Tướng ĐỎ nằm ở **hàng 7** (không phải hàng 9 quen thuộc) ngay từ vị trí khởi đầu — xác nhận qua darkfrac + crop trực tiếp, không phải lỗi đọc. Tiếp tục củng cố bài học từ Bài 2 (Hình2.82+): nhiều sơ đồ Chương 2-3 có Tướng/Sĩ lệch vị trí gốc vì đang ở giữa ván tàn cuộc, không phải khai cuộc — luôn xác minh qua pixel, không mặc định.
   - **Series = 232 bài** (tổng 424 bài toàn hệ thống). ĐÃ PUSH GitHub 2 lần (`83bb457` giới thiệu+vd1, `475e27f` vd2).
-  - **Việc tiếp theo**: Bài 3 vd3 (Hình 3.43, trang PDF 203) — **CHÚ Ý QUAN TRỌNG**: đây là ví dụ ĐEN THẮNG (không phải Trắng!) — "Pháo Đơn Sĩ Tượng tất thắng Đơn Bình Tướng", liên quan đến Binh/Tốt bên Trắng bị dồn. Đã đọc sơ bộ text thô qua thumbnail (move1 "Tg6/1 P5-6" theo sau nhiều nước phức tạp có ký hiệu lạ "B4-3"/"B3-4" cho Binh) nhưng CHƯA zoom xác nhận chính xác từng dấu `.`/`/`, CHƯA đọc FEN sơ đồ Hình3.43 bằng pixel-grid. Cần xử lý cẩn thận vì đảo bên thắng so với các ví dụ trước.
+  - **2026-09-10 (tiếp) — Bài 3 mở rộng Ví dụ 3-6** (nhóm "Pháo Sĩ Tượng thắng Đơn Binh" — BÊN ĐEN THẮNG, đảo chiều so với mọi ví dụ trước trong Chương 3), trang PDF 203-206:
+    - **vd3** (Hình3.43, order 30303, FEN `4c4/5k3/3ab4/5P3/9/9/9/9/3K5/9`, 18 nước): định thức cơ bản thứ 1 — dùng Pháo đuổi Binh Trắng ra khỏi trung lộ đến đỉnh cửu cung, Tướng chiếm trung lộ, Sĩ giương góc làm ngòi. ⚠️ Lưu ý ký hiệu: trong text GỐC của sách, `P`=Pháo (không phải Binh!), `B`=Binh, `V`=Tượng — khác bảng chuyển đổi nội bộ engine. "Đen thắng" là đánh giá thế cờ (Đen có Pháo+Sĩ+Tượng vs Trắng chỉ 1 Binh).
+    - **vd4** (Hình3.44, order 30304, FEN `3k5/4c4/3ab4/5P3/9/9/9/9/3K5/9`, 10 nước): định thức cơ bản thứ 2 (Pháo Tượng khống chế trung lộ, Sĩ giương góc sẵn) — phần sau giản lược vì giống vd3.
+    - **vd5** (Hình3.45, order 30305, FEN `4c4/3k5/3ab4/5P3/9/9/9/9/9/5K3`, 20 nước): định thức cơ bản thứ 3 — kỹ thuật đòi hỏi cao hơn, chỉ 1 nước sai ở nước 2 là chuyển thắng thành HÒA. ⚠️ Sơ đồ này lúc đầu dò grid sai (bỏ sót 3 hàng đầu vì phạm vi quét y bắt đầu quá thấp) — đã sửa, bài học lặp lại: MỞ RỘNG phạm vi quét y cả 2 chiều khi tìm được < 10 hàng.
+    - **vd6** (Hình3.46, order 30306, FEN `3ac1b2/4k4/9/5P3/9/9/9/9/5K3/9`, 12 nước): khi Binh và Sĩ ở KHÁC CÁNH — Đen phải dành nước đầu ván tái tổ chức đội hình về thế chuẩn rồi mới áp dụng kỹ thuật của vd3. Kết thúc FEN đúng bằng FEN khởi đầu của vd5 (đã quy về thế chuẩn).
+    - Cả 4 validate qua engine 0 warnings.
+    - **Series = 236 bài** (tổng 428 bài toàn hệ thống). ĐÃ PUSH GitHub nhiều lần (`e3cb023` vd3-4, `178b0d3` vd5, `dd3f378` vd6).
+  - **CẤU TRÚC CHƯƠNG 3 ĐÃ XÁC MINH qua pdftotext quét mục lục**:
+    - Bài 1 "Loại Hình Binh Tốt" — ✅ HOÀN TẤT 24/24
+    - Bài 2 "Loại Hình Mã" — ✅ HOÀN TẤT 16/16
+    - Bài 3 "Loại Hình Pháo" — 🔄 đang làm, **có 14 ví dụ tổng cộng** (đã xong intro + vd1-6, còn vd7-14)
+    - Bài 4 "LOẠI HÌNH XE" (Đơn Xe tất thắng Song Sĩ/Song Tượng/Đơn Khuyết Tượng/Đơn Khuyết Sĩ...) — có ~14+ ví dụ, bắt đầu khoảng trang PDF 213
+    - Sau đó còn nhiều Bài nữa (theo mục lục gốc: Mã Binh, Pháo Binh, Xe Binh, Pháo Mã, Xe Mã, Xe Pháo, Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe) — TỔNG chương 3 ước tính còn ~120+ ví dụ nữa, là marathon nhiều phiên.
+  - **Việc tiếp theo**: Bài 3 vd7-14 (trang PDF 206-213), rồi Bài 4 "Loại Hình Xe" và các bài còn lại của Chương 3. Quy trình pixel-grid đã rất ổn định; nhớ `P`=Pháo trong text gốc; nhiều ví dụ Bài 3 là "Đen thắng" (bên có Pháo/nhiều quân hơn).
