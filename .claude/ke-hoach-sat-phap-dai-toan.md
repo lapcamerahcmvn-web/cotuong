@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1 ✅24/24, Bài 2 ✅16/16, Bài 3 ✅14/14, Bài 4 ✅22/22; tiếp Bài 5 Mã Binh |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1 ✅24/24, Bài 2 ✅16/16, Bài 3 ✅14/14, Bài 4 ✅22/22, Bài 5 ✅17/18 (vd16 hoãn); tiếp Bài 6 Pháo Binh |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -372,3 +372,12 @@
     - **Tất cả 22 validate 0 warnings** (không có bài nào là chiếu bí — toàn "định thức tàn cuộc" quy về thế thắng lý thuyết bậc thấp hơn, framing thành thật giữ nguyên như Bài 3).
     - **Series = 251 bài** (tổng 443 bài). ĐÃ PUSH nhiều lần (454cc55 → 7eed34a → ... → bài vd9).
     - **Việc tiếp theo**: Bài 5 "LOẠI HÌNH MÃ BINH" (bắt đầu PDF trang 225; "Mã Binh tất thắng Song Sĩ → Mã Binh khéo thắng Sĩ Tượng toàn"). Sau đó Bài 6 Pháo Binh, v.v.
+  - **2026-09-10 (tiếp) — CHƯƠNG 3 BÀI 5 "LOẠI HÌNH MÃ BINH" — 17/18 ví dụ + giới thiệu** (vd16 HOÃN), trang PDF 225-236 (render `fullpg226-236_hires.png`). Bài 5 có **18 ví dụ** (Hình 3.77-3.94); ngay sau vd18 là "Bài 6 LOẠI HÌNH PHÁO BINH".
+    - **Khái niệm cốt lõi Bài 5**: (1) đưa quân Binh AN TOÀN vào cửu cung là điều kiện tiên quyết mọi thế thắng; (2) **"Tướng và Binh chia nhau chiếm lộ 4, lộ 6"** = công thức khống chế cửu cung (Tướng 1 cột sườn + Binh cột sườn kia); (3) "nước dừng"/"đi nước rỗi" = zugzwang, vũ khí chính. Sát chiêu tên riêng gặp: "Ngọa tào Mã", "Điếu ngư Mã", "Hồi Mã kim thương", "Mã lượn biên / hồi Mã tuyến biên".
+    - **intro + vd1-6** (commit ...): vd1 Mã Binh đáy vs Song Sĩ (đổi Binh lấy 1 Sĩ → "Mã bắt đơn Sĩ"); vd2 vs Đơn Tượng (Binh chốt lộ sườn cạnh Tượng); vd3 Mã Binh Cao vs Pháo Sĩ (Ngọa tào Mã); vd4 vs Pháo Đơn Tượng (Tướng Binh lộ 4/6 + Hồi Mã kim thương); vd5 Mã Binh đáy vs Đơn Sĩ Tượng (Đen đi trước — "tàn cuộc thực dụng khó"); vd6 đưa Binh vào cung khi Binh/Tướng KHÁC cánh.
+    - **vd7-12** (commit ...): vd7 đưa Binh vào cung CÙNG cánh; vd8-9 Đen đi trước, Mã lượn bắt Tượng ("tróc chết Tượng"); vd10 Mã Binh Cao vs Đơn Khuyết Sĩ "hai mặt giáp công" (Binh tự leo lên đáy); vd11 "Mã lượn biên bắt Sĩ"; vd12 trừng phạt Tượng đứng xa trung lộ (5 nước).
+    - **vd13-15, 17-18** (commit ...): vd13 phá Sĩ khi "Sĩ chưa hạ về đáy Tướng"; vd14 Mã Binh Cao vs Đơn Khuyết Tượng (Binh chiếm trung lộ phong tỏa Tượng, 5 nước); vd15 điều kiện thủ hòa Đơn Khuyết Tượng (Tướng lộ mặt + Tướng/Tượng KHÁC cánh) — hỏng khi cùng cánh; vd17 Mã Binh khéo thắng Sĩ Tượng TOÀN khi Đen "chưa kịp làm tốt giai đoạn chuẩn bị phòng thủ" (hồi Mã tuyến biên); vd18 khép bài — "vận Mã giành thế", nước "B5-4!", rút Mã ăn 1 Tượng → quy về vd14.
+    - **⚠️ vd1 nước 8 & vd16**: vd1 nước 8 sách in "S5.6" nhưng Sĩ đang ở lộ 6 → sửa "S6.5" (đảo chữ số), 0 warnings + khớp lời sách. **vd16 (Hình 3.92) HOÃN**: ván 23 nước có màn Mã lượn biên + Tượng nhảy qua lại, "M3/5" nước 5 phạm luật; thử M4/3+M3.5 đi được xa hơn nhưng vẫn kẹt ở nước 16 "V3/5" — nhiều lỗi transcription chồng nhau trong 1 ván dài, không guess-chain, để lại làm sau bằng vòng xác thực cẩn thận.
+    - **Kỹ thuật đọc**: `renderpg2.py` (zoom=1429/w) + `cropdiag.py` crop sơ đồ + zoom 2.2x đọc thẳng chữ Hán từng quân + engine validate. Sơ đồ Mã Binh ÍT quân (5-8) nên đọc thẳng khá chắc.
+    - **Series = 268 bài** (tổng 460 bài). ĐÃ PUSH nhiều lần.
+    - **Việc tiếp theo**: **Bài 6 "LOẠI HÌNH PHÁO BINH"** (bắt đầu PDF trang 236). Sau đó Bài 7 Xe Binh, v.v. Còn lại vd16 Bài 5 (làm sau).
