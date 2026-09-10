@@ -18,7 +18,7 @@
 | Pipeline `tools/mate-book/` (parser + gen + render + batch + regioncrop) | 1 lần | ✅ xong |
 | Chương 1 — Sát Pháp Cơ Bản (19 loại) | 19 bài | ✅ **HOÀN TẤT 19/19** (Pha 2 giải đố cũng đã bật cho phần lớn Chương 1) |
 | Chương 2 — Sát Pháp Cơ Bản Nâng Cao (17 bài) | 17 bài | ✅ **HOÀN TẤT 17/17**, 379 bài trong series (81 bài mang tiền tố `c2-`) |
-| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 🔄 11/20 (vd1-5,7-12); nợ B5vd16, B6vd2/23-25, B7vd6/13 |
+| Chương 3 — Tàn Cuộc Định Thức Sát Pháp | ? | 🔄 đang làm — Bài 1-4 ✅ (76 vd), Bài 5 ✅17/18, Bài 6 ✅21/25, Bài 7 ✅15/20 (vd1-5,7-12,14,17-19); tiếp Bài 8 Pháo Mã. Nợ: B5vd16, B6vd2/23-25, B7vd6/13/15/16/20 |
 | Chương 4 — Phổ Sĩ / Phổ Tượng Sát Pháp | ? | ⬜ |
 | Chương 5 — "Thích Tình Như Thơ" tuyển chọn (43 cuộc) | 43 cuộc | ⬜ |
 | Chương 6 — Kiểm Tra Sát Pháp + đáp án | ? | ⬜ |
@@ -417,5 +417,12 @@
     - ⚠️ vd9 Xe trắng hàng 7 (không hàng 6 — "X2.7" tiến 7). Cả 4 validate 0 warnings.
     - **Series ~= 313 bài** (tổng ~505). ĐÃ PUSH. Đã chạy `db:seed` nền.
     - **⚠️ HOÃN vd13 Bài 7** (Hình 3.132 "Xe Binh cao vs Pháo Sĩ Tượng toàn") — có 4 biến phụ rất dài, `P` trong text = Pháo Đen (khác nội bộ engine).
-    - **Việc tiếp theo**: Bài 7 vd14-20 (còn Xe Binh vs Pháo/Mã/Song... Sĩ Tượng toàn — tiếp tục rủi ro cao, validate từng ván). Rồi Bài 8 "LOẠI HÌNH PHÁO MÃ" (PDF tr.266).
-    - **Nợ tổng**: B5 vd16; B6 vd2,23,24,25; B7 vd6,vd13.
+  - **2026-09-10 (tiếp) — Bài 7 thêm vd14, 17, 18, 19** (Xe Binh vs Pháo/Xe Sĩ Tượng toàn), trang PDF 262-265:
+    - vd14 Xe Binh cao vs Pháo Sĩ Tượng toàn — khai thác "Tượng cao/đầu sông", Binh tắc mắt Tượng, kết tróc đôi Pháo+Sĩ (9 nước).
+    - vd17 "bình Binh tắc mắt Tượng (B3-4) — nước quyết định: đúng thì THẮNG, nhầm X8-3 thì HÒA" + Xe phục 2 đòn (5 nước).
+    - vd18-19 **Xe SONG Binh Sĩ Tượng toàn vs Xe Sĩ Tượng toàn** — hơn 2 Tốt, đủ khéo thắng: đẩy 2 Binh vào cung + Xe + Tướng khép sát (vd18 9 nước; vd19 dùng Tướng đuổi Tướng trước, "đổi Xe đằng nào cũng thua" — 13 nước).
+    - ⚠️ Sửa row: vd14 Xe hàng 7 (không 6); vd18/19 Sĩ trắng hàng 7 (không 6, "d3" không phải điểm Sĩ hợp lệ); vd19 chỉ 2 Tượng đen ở (2,0)+(4,6).
+    - **Series ~= 317 bài** (tổng ~525 — re-seed nền đang chạy). ĐÃ PUSH.
+    - **⚠️ HOÃN vd15, vd16, vd20 Bài 7** — vd15/vd20 ván 19+ nước nhiều biến; vd16 "X7.2"→"X2-3" nước 1-2 mâu thuẫn (chỉ 1 Xe trắng, không parse được) + Xe trắng ở cột 4 (file 5) không khớp "X7". Cần dò lại kỹ.
+    - **Việc tiếp theo**: **Bài 8 "LOẠI HÌNH PHÁO MÃ"** (PDF tr.266). Chương 3 sau đó: Bài 9 Xe Mã, Bài 10 Xe Pháo, Bài 11+ (Xe Mã Binh, Xe Pháo Binh, Pháo Mã Binh, Xe Pháo Mã, Song Xe).
+    - **Nợ tổng (làm sau, vòng xác thực cẩn thận từng ván)**: B5 vd16; B6 vd2,23,24,25; B7 vd6,13,15,16,20.
