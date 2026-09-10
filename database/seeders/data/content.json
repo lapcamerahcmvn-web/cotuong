@@ -79962,6 +79962,216 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30211,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Mã — Tướng Khống Chế Trung Lộ Dựng Thế Song Mã Ẩm Tuyền — Ví Dụ 11",
+      "slug": "c3-loai-hinh-ma-vi-du-11",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k5/2N6/3a1aN2/9/3n5/9/9/9/9/3K5",
+      "variation_tree": null,
+      "move_count": 17,
+      "summary": "Ví dụ 11 áp dụng lại đúng nguyên tắc đã học ở Ví dụ 10 (ngăn đổi Mã, dùng Tướng khống chế trung lộ), nhưng lần này với một khởi điểm khác, cho thấy \"Song Mã ẩm tuyền\" không phải một chuỗi nước cố định mà là một MÔ HÌNH kết thúc có thể đạt được qua nhiều lộ trình khác nhau.",
+      "content": "<h2>Cùng nguyên tắc, khác lộ trình</h2><p>Ví dụ 11 áp dụng lại chính xác hai nguyên tắc đã học ở Ví dụ 10: không để đối phương đổi Mã, và dùng Tướng khống chế đường trung lộ. Nhưng vị trí khởi điểm khác biệt dẫn đến một chuỗi nước hoàn toàn khác — 17 nước với nhiều lần Mã lui tiến qua lại tìm đúng nhịp phối hợp. Điều này củng cố một bài học quan trọng: \"Song Mã ẩm tuyền\" không phải là một chuỗi nước cố định cần học thuộc, mà là một MÔ HÌNH kết thúc (hai Mã đứng cạnh nhau, cùng khống chế các điểm quan trọng quanh Tướng) có thể đạt được qua nhiều lộ trình khác nhau tùy thế cờ ban đầu.</p><h2>Khi nào một nước Tướng đáng được khen là \"nước dừng hay\"?</h2><p>Một chi tiết bình luận hiếm gặp trong sách: tại nước 9, sách đặc biệt khen nước bình Tướng là \"nước dừng hay\" và nhận xét rằng trong ván này, các nước di chuyển Tướng đều \"khá có tác dụng\". Đây là một gợi ý quý cho người học: không phải nước Tướng nào cũng có giá trị ngang nhau — một nước Tướng \"hay\" là nước vừa giữ đúng vị trí khống chế cần thiết, vừa không tự đặt mình vào nguy hiểm, đồng thời tạo thêm áp lực buộc đối phương phải phản ứng.</p><h2>Chuẩn bị trước, không chỉ phản ứng</h2><p>Nước 11 minh họa một tư duy chiến thuật nâng cao: thay vì chỉ phản ứng với nước đi hiện tại của Đen, Trắng chủ động lui Mã về đúng vị trí có thể ăn Sĩ NẾU Đen chọn một hướng đi cụ thể sau này. Đây là kiểu tư duy \"rình sẵn\" — chuẩn bị một mối đe dọa tiềm tàng trước khi nó thực sự cần thiết, để khi tình huống xảy ra, đòn tấn công có thể được tung ra ngay lập tức mà không cần thêm nước chuẩn bị.</p><h2>Kết thúc mở: khi sách tin tưởng người đọc đã nắm vững</h2><p>Giống một vài ví dụ trước, Ví dụ 11 dừng lại đúng lúc thế sát đã hình thành rõ ràng, without liệt kê nốt nước cuối cùng — vì đến giai đoạn này, người học đã đủ quen thuộc với mô hình \"Song Mã ẩm tuyền\" (qua Ví dụ 8) để tự hoàn thành nước kết thúc. Đây là một minh chứng cho cách sách xây dựng kiến thức có hệ thống: những kỹ thuật đã học kỹ ở ví dụ trước không cần lặp lại chi tiết ở các ví dụ sau, giúp người học tập trung vào ĐIỂM MỚI của từng ví dụ thay vì lặp lại điều đã biết.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Tướng Khống Chế Trung Lộ Dựng Song Mã Ẩm Tuyền (Ví Dụ 11)",
+      "seo_description": "Áp dụng lại nguyên tắc ngăn đổi Mã và khống chế trung lộ với khởi điểm khác — minh chứng Song Mã ẩm tuyền là một mô hình kết thúc, không phải chuỗi nước cố định.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k5/2N6/3a1a3/8N/3n5/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 3 thoái 1",
+          "move_notation_iccs": "g7i6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã. Cùng một nguyên tắc chỉ đạo như Ví dụ 10: không cho Đen cơ hội đổi Mã, đồng thời dùng Tướng khống chế đường trung lộ để dần dần tạo thành thế \"Song Mã ẩm tuyền\" — kỹ thuật đã học ở Ví dụ 8.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k5/2N1a4/3a5/8N/3n5/9/9/9/9/3K5",
+          "move_notation_wxf": "Sĩ 6 thoái 5",
+          "move_notation_iccs": "f7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k5/2N1a4/3a5/9/3n2N2/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 1 thoái 3",
+          "move_notation_iccs": "i6g5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k5/2N1a4/3a5/9/6N2/9/2n6/9/9/3K5",
+          "move_notation_wxf": "Mã 4 tiến 3",
+          "move_notation_iccs": "d5c3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k5/2N1a4/3a5/4N4/9/9/2n6/9/9/3K5",
+          "move_notation_wxf": "Mã 3 tiến 5",
+          "move_notation_iccs": "g5e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3k5/2N1a4/3a5/4N4/3n5/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 3 thoái 4",
+          "move_notation_iccs": "c3d5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3k5/2N1a4/3a5/9/2Nn5/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 5 thoái 7",
+          "move_notation_iccs": "e6c5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3k5/2N1a4/2na5/9/2N6/9/9/9/9/3K5",
+          "move_notation_wxf": "Mã 4 thoái 3",
+          "move_notation_iccs": "d5c7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3k5/2N1a4/2na5/9/2N6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d0e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng — sách đặc biệt khen ngợi đây là \"nước dừng hay\": trong ván đấu này, hầu như mọi nước di chuyển của Tướng đều phát huy tác dụng thiết thực, không có nước nào chỉ mang tính hình thức.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3k5/2N1a4/3a5/9/2Nn5/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 3 tiến 4",
+          "move_notation_iccs": "c7d5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3k5/4a4/3a5/1N7/2Nn5/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã trước thoái 8",
+          "move_notation_iccs": "c8b6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã trước, chuẩn bị đón đầu — sách giải thích rõ mục đích: rình sẵn nước Mã sau ăn Sĩ, để tiện bề kìm chế nếu Đen chọn bình Tướng sang cánh khác.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3k5/4a4/2na5/1N7/2N6/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 4 thoái 3",
+          "move_notation_iccs": "d5c7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3k5/4a4/2na5/1N7/2N6/9/9/9/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3k5/4a4/3a5/1N7/1nN6/9/9/9/4K4/9",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "c7b5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3k5/4a4/3a5/1N7/1nN6/9/9/9/9/4K4",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e1e0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "3k5/4a4/3a5/1N7/2N6/9/2n6/9/9/4K4",
+          "move_notation_wxf": "Mã 2 tiến 3",
+          "move_notation_iccs": "b5c3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã — quân Mã đơn độc của Đen liên tục di chuyển qua lại tìm cách thoát khỏi vòng vây, nhưng mỗi bước lại càng lún sâu hơn vào đúng phạm vi khống chế của song Mã Trắng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "3k5/4a4/3a5/NN7/9/9/2n6/9/9/4K4",
+          "move_notation_wxf": "Mã 7 tiến 9",
+          "move_notation_iccs": "c5a6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — sách xác nhận: nước tiếp theo (chưa liệt kê cụ thể) sẽ hoàn tất thế sát mang tên \"Song Mã ẩm tuyền\", giành thắng lợi chắc chắn cho Trắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
