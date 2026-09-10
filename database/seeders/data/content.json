@@ -82990,6 +82990,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 30309,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Tàn Cuộc Định Thức] Loại Hình Pháo — Song Pháo Thắng Song Sĩ Bằng Đòn Trùng Sát — Ví Dụ 9",
+      "slug": "c3-loai-hinh-phao-vi-du-9",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "9/4ak3/3a5/9/9/9/9/3K5/C8/2C6",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Ví dụ 9 chuyển sang dạng Song Pháo thắng Song Sĩ, và khác với các ví dụ Pháo Đơn trước đó, ván này kết thúc bằng một đòn CHIẾU BÍ THẬT SỰ — hai quân Pháo phối hợp giáng đòn trùng sát mà Tướng Đen không thể đỡ.",
+      "content": "<h2>Song Pháo: khi hai quân cùng loại tạo ra sức mạnh cộng hưởng</h2><p>Các ví dụ đầu Bài 3 đều xoay quanh một quân Pháo đơn độc, phụ thuộc nặng vào việc giữ đúng một quân làm ngòi. Ví dụ 9 giới thiệu dạng Song Pháo — khi có hai quân Pháo, chúng có thể làm ngòi cho NHAU: một Pháo đứng làm ngòi để Pháo kia bắn qua, tạo ra các đòn phối hợp mà một Pháo đơn không bao giờ làm được. Đây là lý do Song Pháo có thể trực tiếp chiếu bí Tướng đối phương, thay vì chỉ ăn quân như Pháo đơn.</p><h2>\"Trùng sát\": đòn chiếu đúp đặc trưng của Song Pháo</h2><p>Kỹ thuật cốt lõi của ví dụ này là \"trùng sát\" (chiếu đúp) — đưa hai Pháo về hai tuyến khác nhau cùng nhắm vào Tướng đối phương, sao cho khi một Pháo chiếu, Tướng không thể vừa né vừa tránh được Pháo còn lại. Điều kiện tiên quyết, đúng như yếu lĩnh nêu ở đầu ví dụ, là phải ép được Tướng Đen dạt về đúng cánh KHÔNG CÓ SĨ — vì chỉ ở đó, khoảng không gian trống mới đủ để hai Pháo triển khai đòn phối hợp.</p><h2>Vai trò của Tướng Trắng: chiếm trung lộ để mở đường</h2><p>Giống nhiều ví dụ khác trong Chương 3, Tướng Trắng chủ động chiếm giữ đường trung lộ. Ở đây mục đích cụ thể là: dùng luật \"tướng đối mặt\" để hạn chế đường di chuyển của Tướng Đen, buộc nó phải đi đúng hướng mà Trắng muốn (về cánh không có Sĩ), tạo điều kiện cho đòn trùng sát.</p><h2>Một kết thúc dứt khoát: chiếu bí thật sự</h2><p>Khác với các ví dụ Pháo Sĩ Tượng thắng Binh (kết thúc bằng \"đánh chết\" quân yếu rồi quy về thế thắng lý thuyết), Ví dụ 9 kết thúc bằng một nước chiếu bí trực tiếp — Tướng Đen bị chiếu và không có bất kỳ nước đỡ hợp lệ nào. Điều này cho thấy Song Pháo, khi được triển khai đúng, là một cỗ máy tấn công đủ mạnh để kết liễu ván đấu ngay trên bàn cờ, không cần giai đoạn \"dọn dẹp\" phía sau.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Tàn Cuộc Song Pháo Thắng Song Sĩ Bằng Đòn Trùng Sát (Ví Dụ 9)",
+      "seo_description": "Song Pháo làm ngòi cho nhau, ép Tướng Đen dạt về cánh không có Sĩ rồi giáng đòn trùng sát (chiếu đúp) — kết thúc bằng chiếu bí thật sự, không cần dọn dẹp.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "9/4ak3/3a5/9/9/9/9/3K5/C8/5C3",
+          "move_notation_wxf": "Pháo 7 bình 4",
+          "move_notation_iccs": "c0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo. Đây là dạng Song Pháo (hai quân Pháo) tất thắng Song Sĩ. Yếu lĩnh: Tướng Trắng chiếm trung lộ, trước tiên ép Tướng Đen dạt về cánh không có Sĩ, rồi dùng hai Pháo phối hợp giáng đòn \"trùng sát\" (chiếu đúp).",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "5k3/4a4/3a5/9/9/9/9/3K5/C8/5C3",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "5k3/4a4/3a5/9/9/9/9/3K5/5C3/5C3",
+          "move_notation_wxf": "Pháo 9 bình 4",
+          "move_notation_iccs": "a1f1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo còn lại — hai Pháo giờ đứng chồng lên nhau trên cùng một cột, chuẩn bị cho đòn chiếu đúp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4k4/4a4/3a5/9/9/9/9/3K5/5C3/5C3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4k4/4a4/3a5/9/9/9/9/4K4/5C3/5C3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "d2e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng chiếm đúng trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3k5/4a4/3a5/9/9/9/9/4K4/5C3/5C3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng dạt sang cánh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3k5/4a4/3a5/9/9/9/9/4K4/3C5/5C3",
+          "move_notation_wxf": "Pháo trước bình 6",
+          "move_notation_iccs": "f1d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo trước sang cánh — bắt đầu điều động hai Pháo về đúng vị trí phối hợp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "4k4/4a4/3a5/9/9/9/9/4K4/3C5/5C3",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "4k4/4a4/3a5/9/9/9/3C5/4K4/9/5C3",
+          "move_notation_wxf": "Pháo 6 tiến 2",
+          "move_notation_iccs": "d1d3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — nước cờ hay được sách khen: ép Tướng Đen phải bình sang lộ 6, đúng cánh không có Sĩ trấn giữ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5k3/4a4/3a5/9/9/9/3C5/4K4/9/5C3",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng sang cánh không có Sĩ — đúng như Trắng đã tính.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5k3/4a4/3a5/9/9/9/4C4/4K4/9/5C3",
+          "move_notation_wxf": "Pháo 6 bình 5",
+          "move_notation_iccs": "d3e3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo về trung lộ — đến đây, sách khẳng định thế cờ đã thành sát cục không thể giải.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "9/4ak3/3a5/9/9/9/4C4/4K4/9/5C3",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng — nước bắt buộc cuối cùng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "9/4ak3/3a5/9/9/9/5C3/4K4/9/5C3",
+          "move_notation_wxf": "Pháo 5 bình 4",
+          "move_notation_iccs": "e3f3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — đòn chiếu bí trọn vẹn: hai Pháo phối hợp trên hai tuyến, Tướng Đen bị chiếu và hoàn toàn không có nước đỡ. Đúng như sách khẳng định: \"Trắng thắng.\" Sách còn nêu một biến ngắn: nếu Đen chọn lui Sĩ ở nước áp cuối, Trắng có ngay đòn \"Bạch liễm Tướng\" (Pháo bình chiếu Tướng qua khoảng trống) kết thúc.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
