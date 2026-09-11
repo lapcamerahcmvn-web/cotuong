@@ -109028,6 +109028,162 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60010,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 10 — Xe Phá Tượng Rồi Đổi Vai Chiếu Bí",
+      "slug": "c6-de-kiem-tra-bai-10",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4k4/9/C2cb4/3N5/9/4R4/9/9/3p1p1r1/4K4",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 10: Trắng cầm Xe, Pháo, Mã, mở đầu bằng nước Xe ăn thẳng vào quân Tượng để phá vỡ tuyến phòng ngự trước khi vào chiếu bí.",
+      "content": "<p>Trắng có Xe, Pháo, Mã. Bước đầu tiên phải phá bỏ một quân phòng thủ ngoài cung của Đen trước khi quân Xe và Mã phối hợp chiếu bí. Hãy tìm đúng thứ tự.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 10 — Xe Phá Tượng Rồi Đổi Vai Chiếu Bí",
+      "seo_description": "Bài kiểm tra sát pháp số 10: Trắng cầm Xe Pháo Mã, mở đầu bằng nước Xe ăn Tượng phá vỡ phòng ngự trước khi Xe và Mã phối hợp chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4k4/9/C2cR4/3N5/9/9/9/9/3p1p1r1/4K4",
+          "move_notation_wxf": "Xe 5 tiến 3",
+          "move_notation_iccs": "e4e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe ăn Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k5/9/C2cR4/3N5/9/9/9/9/3p1p1r1/4K4",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k5/9/C2R5/3N5/9/9/9/9/3p1p1r1/4K4",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 6.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "9/3k5/C2R5/3N5/9/9/9/9/3p1p1r1/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "9/3k5/CN1R5/9/9/9/9/9/3p1p1r1/4K4",
+          "move_notation_wxf": "Mã 6 tiến 8",
+          "move_notation_iccs": "d6b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60012,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 12 — Bình Pháo Đổi Đường, Song Xe Đổi Vai",
+      "slug": "c6-de-kiem-tra-bai-12",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1r2ka3/3Pa2P1/4b1CRN/9/9/9/9/6p2/4p4/3K4c",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 12: Trắng cầm Xe, Pháo, Mã cùng hai Binh đã áp sát; một nước Pháo mở màn buộc Tượng Đen phải nhượng bộ, mở đường cho Mã vào chiếu bí.",
+      "content": "<p>Trắng có Xe, Pháo, Mã và hai Binh đã tiến sát cung Đen. Hãy tìm nước Pháo mở màn buộc quân Tượng Đen phải nhượng bộ, rồi tính tiếp đường vào chiếu bí bằng Mã.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 12 — Bình Pháo Đổi Đường, Song Xe Đổi Vai",
+      "seo_description": "Bài kiểm tra sát pháp số 12: nước Pháo mở màn buộc Tượng Đen nhượng bộ, Xe và Mã phối hợp dứt điểm bằng đòn chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1r2kaC2/3Pa2P1/4b2RN/9/9/9/9/6p2/4p4/3K4c",
+          "move_notation_wxf": "Pháo 3 tiến 2",
+          "move_notation_iccs": "g7g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1r2kab2/3Pa2P1/7RN/9/9/9/9/6p2/4p4/3K4c",
+          "move_notation_wxf": "Tượng 5 thoái 7",
+          "move_notation_iccs": "e7g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc phải bay Tượng đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1r2kab2/3Pa2P1/1R6N/9/9/9/9/6p2/4p4/3K4c",
+          "move_notation_wxf": "Xe 2 bình 8",
+          "move_notation_iccs": "h7b7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 8.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4kab2/3Pa2P1/1r6N/9/9/9/9/6p2/4p4/3K4c",
+          "move_notation_wxf": "Xe 2 tiến 2",
+          "move_notation_iccs": "b9b7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4kab2/3Pa1NP1/1r7/9/9/9/9/6p2/4p4/3K4c",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "i7g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
