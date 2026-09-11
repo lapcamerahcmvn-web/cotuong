@@ -472,3 +472,16 @@
   - **Series ~= 380 bài** (tổng ~588).
   - **Trạng thái Chương 4**: coi như ĐÃ ĐÓNG ở mức lý thuyết — 47 ví dụ cụ thể của Bài 1 (21 còn lại) và Bài 2 (25) KHÔNG làm, trừ khi user yêu cầu lại sau này với hiểu biết rõ về chi phí.
   - **Việc tiếp theo (nếu user muốn)**: Chương 5 "'Thích Tình Nhã Thú' Kinh Điển Sát Pháp Tuyển Chọn" (43 cuộc, PDF tr.349-370) hoặc Chương 6 "Đề Kiểm Tra Sát Pháp" (PDF tr.373-398, có đáp án) — cả hai đều CHƯA khảo sát độ khó sơ đồ, nên khảo sát nhanh trước khi cam kết làm toàn bộ.
+
+- **2026-09-11 (tiếp) — CHƯƠNG 6 "ĐỀ KIỂM TRA SÁT PHÁP" (user: "làm tiếp"/"làm tiếp đi bạn")**:
+  - **Khảo sát**: Chương 6 = 100 bài toán đố (Hình 6.1-6.100), sơ đồ THƯA (4-10 quân, giống độ khó Chương 3), đáp án gọn 3-7 nước, đáp án đầy đủ ở "ĐÁP ÁN THAM KHẢO" (PDF tr.398-413) — đã trích xuất TOÀN BỘ 100 đáp án bằng pdftotext/pymupdf (nhanh, chính xác, không cần đọc ảnh). Lưu tại scratchpad `c6_answers.txt`.
+  - **Kỹ thuật đọc sơ đồ đúc kết được (quan trọng cho việc tiếp theo)**:
+    1. **Phân biệt màu quân bằng CHỮ HÁN, không chỉ tô/không tô**: Đen dùng 將/士/象/砲/卒/馬; Đỏ dùng 帥/仕/相/炮/兵/馬 — Tướng/Sĩ/Tượng/Pháo/Tốt có ký tự RIÊNG cho mỗi bên, chỉ có Xe(車) và Mã(馬) dùng chung ký tự nên mới cần phân biệt bằng tô đen/viền trắng.
+    2. **Tướng KHÔNG LUÔN ở giữa cung** trong cờ thế soạn sẵn (composed) — có thể lệch sang cột 3 hoặc 5, phải kiểm chứng qua nước đi chứ không mặc định giữa.
+    3. **Lỗi đếm ký tự rỗng trong chuỗi FEN** (ví dụ `r1R1b4` vô tình đặt quân ở cột 2 thay vì cột 1 vì quên digit đứng sau 1 ký tự quân đại diện số ô trống BẮT ĐẦU TỪ ô kế tiếp) — đã gây nhầm lẫn nhiều lần, cần đếm cẩn thận từng ký tự khi qui đổi cột.
+    4. Tốt/Binh chưa qua sông của mỗi bên bị chặn ở 3 hàng đầu nhà mình (validatePosition của engine bắt lỗi này tốt).
+    5. Đọc theo trang đầy đủ (không crop từng ô) rồi đo tỉ lệ pixel theo cột lưới chính xác hơn crop nhỏ từng góc.
+  - **Kết quả (24 puzzle đầu đã thử)**: ✅ Validate + xác nhận chiếu bí thật: Bài 1,2,3,4,7,10,12,13,14,18,19,21,24 (13 bài). ⏸️ Hoãn (chưa chốt được cột/hàng dù đã thử engine-debug nhiều vòng): Bài 5,6,9,11,15,16,17,20,22,23 (10 bài).
+  - **Cấu trúc bài học**: 1 bài intro (order 60000, giải thích cách chấm điểm + mục đích tự luyện) + mỗi puzzle 1 bài riêng (slug `c6-de-kiem-tra-bai-N`, order `600NN`), field `content` ngắn gọn (chỉ 1 đoạn mô tả lực lượng, không phân tích dài như Chương 1-5 vì đây là dạng đố tự giải).
+  - **Series ~= 393 bài** (tổng ~601). Đã push nhiều đợt lên origin/main.
+  - **Việc tiếp theo**: còn 76 puzzle (25-100) của Chương 6 chưa làm. Có thể quay lại 10 bài đã hoãn với kỹ thuật đọc đã cải thiện (đặc biệt lỗi đếm FEN — nhiều bài hoãn trước 6.21 rất có thể sửa được ngay nếu soát lại theo lỗi #3 ở trên).
