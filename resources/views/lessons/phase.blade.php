@@ -80,8 +80,10 @@
         <div class="lesson-list mt-3" style="margin-bottom:28px;">
             @foreach($seriesList as $s)
                 @if($s->published_lessons_count > 0)
-                <a href="{{ route('series', $s->slug) }}" class="lesson-item card">
-                    <span class="li-num">課</span>
+                <a href="{{ route('series', $s->slug) }}" class="lesson-item card has-thumb">
+                    <span class="li-thumb">
+                        <img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="" loading="lazy">
+                    </span>
                     <span class="li-body">
                         <span class="li-title">{{ $s->name }}</span>
                         <span class="li-sub">{{ $s->published_lessons_count }} bài</span>
@@ -98,8 +100,11 @@
         <h2 class="phase-sec-title">Tất cả bài học</h2>
         <div class="lesson-list">
             @foreach($lessons as $i => $lesson)
-                <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card">
-                    <span class="li-num">{{ str_pad($lessons->firstItem() + $i, 2, '0', STR_PAD_LEFT) }}</span>
+                <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card has-thumb">
+                    <span class="li-thumb">
+                        <img src="{{ \App\Support\Seo::ogThumb($lesson) }}" alt="" loading="lazy">
+                        <span class="li-rank">{{ str_pad($lessons->firstItem() + $i, 2, '0', STR_PAD_LEFT) }}</span>
+                    </span>
                     <span>
                         <span class="li-title">{{ $lesson->title }}</span>
                         <span class="li-sub">{{ $lesson->move_count }} nước đi · {{ $lesson->level_label }}</span>

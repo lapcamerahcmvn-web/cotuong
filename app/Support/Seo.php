@@ -46,6 +46,29 @@ class Seo
         return asset('icon-512.png');
     }
 
+    /**
+     * URL TUYỆT ĐỐI tới ảnh THUMBNAIL vuông (chỉ bàn cờ, không chữ) dùng trong danh sách
+     * bài/chuỗi — nhẹ hơn ảnh OG 1200×630. Không có bản riêng thì rơi về icon thương hiệu
+     * (không rơi về ảnh OG ngang vì sẽ bị crop lệch/dính chữ khi hiển thị ô vuông nhỏ).
+     */
+    public static function ogThumb(mixed $subject = null): string
+    {
+        $rel = match (true) {
+            $subject instanceof Lesson => "og/thumbs/lessons/{$subject->slug}.png",
+            $subject instanceof LessonSeries => "og/thumbs/series/{$subject->slug}.png",
+            default => null,
+        };
+
+        if ($rel) {
+            $abs = public_path($rel);
+            if (is_file($abs)) {
+                return asset($rel).'?v='.@filemtime($abs);
+            }
+        }
+
+        return asset('icon-512.png');
+    }
+
     private static function phaseImage(?string $phase, ?string $gameMode): ?string
     {
         if ($gameMode === 'co-up') {

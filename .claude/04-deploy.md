@@ -62,7 +62,10 @@ php artisan optimize:clear && php artisan config:cache && php artisan route:cach
 - **Ảnh OG + favicon là file tĩnh commit sẵn** trong `public/og/`, `public/favicon.*`,
   `public/icon-*.png`, `public/apple-touch-icon.png`, `public/site.webmanifest` — KHÔNG cần build.
   Sinh lại ở LOCAL: `php tools/brand-assets/generate.php` (favicon + OG giai đoạn/trang chủ) và
-  (P1) `node tools/og-image/generate.cjs` (OG từng bài học). Toolchain Node/`@resvg` chỉ chạy LOCAL.
+  `node tools/og-image/generate.cjs` (OG 1200×630 từng bài/chuỗi **+ thumbnail vuông 320×320**
+  trong `public/og/thumbs/` dùng cho ảnh nhỏ trong danh sách bài trên site). Toolchain Node/`@resvg`
+  chỉ chạy LOCAL. Có bài/chuỗi mới → `node tools/og-image/generate.cjs --missing` (nhanh, chỉ sinh
+  ảnh còn thiếu) rồi `python tools/og-image/optimize.py`.
 - Sau deploy, ép Facebook/Zalo quét lại thẻ mới: Facebook Sharing Debugger (Scrape Again) +
   Zalo share link để cache preview.
 - **Migration mới `create_pages_table`** + seeder `PagesSeeder` (nội dung intro 5 trang giai đoạn từ

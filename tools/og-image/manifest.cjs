@@ -58,7 +58,12 @@ function buildJobs(content) {
       .filter((l) => l.series_slug === s.slug)
       .sort((a, b) => (a.order_in_series || 0) - (b.order_in_series || 0));
     if (!inSeries.length) continue;
-    const pos = pickPosition(inSeries[0]);
+    // Lấy bài ĐẦU TIÊN trong chuỗi CÓ thế cờ (bỏ qua bài mở đầu thuần văn bản kiểu "Lời nói đầu").
+    let pos = null;
+    for (const l of inSeries) {
+      pos = pickPosition(l);
+      if (pos && pos.fen) break;
+    }
     if (!pos || !pos.fen) continue;
     jobs.push({
       kind: 'series',

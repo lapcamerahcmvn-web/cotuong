@@ -13,6 +13,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DIRS = [
     os.path.join(ROOT, "public", "og", "lessons"),
     os.path.join(ROOT, "public", "og", "series"),
+    os.path.join(ROOT, "public", "og", "thumbs", "lessons"),
+    os.path.join(ROOT, "public", "og", "thumbs", "series"),
     os.path.join(ROOT, "public", "og"),  # home.png + phase-*.png
 ]
 

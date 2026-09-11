@@ -158,8 +158,10 @@
         <h2>Bài liên quan</h2>
         <div class="lesson-list">
             @foreach($related as $r)
-                <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card">
-                    <span class="li-num">{{ str_pad($r->order_in_series ?? '•', 2, '0', STR_PAD_LEFT) }}</span>
+                <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card has-thumb">
+                    <span class="li-thumb">
+                        <img src="{{ \App\Support\Seo::ogThumb($r) }}" alt="" loading="lazy">
+                    </span>
                     <span>
                         <span class="li-title">{{ $r->title }}</span>
                         <span class="li-sub">{{ $r->move_count }} nước đi · {{ $r->level_label }}</span>

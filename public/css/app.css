@@ -186,7 +186,6 @@ header.nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srg
 /* Phase grid */
 .phase-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 @media (max-width: 900px) { .phase-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .phase-grid { grid-template-columns: 1fr; } }
 .phase-card { padding: 22px; display: block; color: var(--ink); position: relative; overflow: hidden; transition: transform .15s, box-shadow .15s; }
 .phase-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); text-decoration: none; }
 .phase-card .pc-icon { font-family: "XiangqiKai","KaiTi","STKaiti",serif; font-size: 34px; color: var(--red); line-height: 1; }
@@ -458,6 +457,35 @@ body.xq-fs-lock { overflow: hidden; }
 .lesson__related { margin-top: 40px; max-width: 720px; }
 .lesson__related h2 { font-size: 19px; font-weight: 800; margin: 0 0 12px; }
 .lesson__share { margin-top: 28px; max-width: 720px; }
+
+/* ---- Ảnh thu nhỏ trong danh sách bài/chuỗi (tái dùng ảnh OG đã sinh sẵn) ---- */
+.lesson-item.has-thumb { grid-template-columns: 48px 1fr auto; }
+.li-thumb { position: relative; width: 48px; height: 48px; border-radius: 10px; overflow: hidden; background: var(--bg); flex-shrink: 0; }
+.li-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: left center; display: block; }
+.li-thumb .li-rank { position: absolute; right: 2px; bottom: 2px; background: rgba(33,29,23,.72); color: #fff; font-size: 10px; font-weight: 800; line-height: 1; padding: 2px 5px; border-radius: 6px; letter-spacing: .02em; }
+@media (max-width: 640px) {
+  .lesson-item.has-thumb { grid-template-columns: 40px 1fr auto; gap: 10px; }
+  .li-thumb { width: 40px; height: 40px; border-radius: 9px; }
+  .li-thumb .li-rank { font-size: 9px; padding: 1px 4px; }
+}
+
+/* ---- Khoảng cách section gọn hơn trên mobile (giảm cảm giác "trống") ---- */
+@media (max-width: 640px) {
+  .section { padding: 26px 0; }
+  .hero { padding: 22px 0 24px; gap: 22px; }
+  .page-head { padding-top: 6px; }
+}
+
+/* ---- Lưới giai đoạn: giữ 2 cột tới tận mobile nhỏ (trước đây co về 1 cột <520px,
+   khiến 4 thẻ xếp dọc chiếm rất nhiều chỗ) ---- */
+@media (max-width: 520px) {
+  .phase-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .phase-card { padding: 14px; }
+  .phase-card .pc-icon { font-size: 26px; }
+  .phase-card h3 { font-size: 15.5px; margin: 8px 0 3px; }
+  .phase-card p { font-size: 12.5px; line-height: 1.4; }
+  .phase-card .pc-count { margin-top: 8px; font-size: 12px; }
+}
 
 /* ---- Đảo hướng nút phụ trên mobile cho gọn ---- */
 @media (max-width: 480px) {

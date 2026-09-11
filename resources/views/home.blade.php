@@ -97,8 +97,11 @@
     <p class="sub">Những thế trận kinh điển, có bàn cờ đi từng nước.</p>
     <div class="lesson-list">
         @foreach($featured as $i => $lesson)
-            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card">
-                <span class="li-num">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card has-thumb">
+                <span class="li-thumb">
+                    <img src="{{ \App\Support\Seo::ogThumb($lesson) }}" alt="" loading="{{ $i < 4 ? 'eager' : 'lazy' }}">
+                    <span class="li-rank">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                </span>
                 <span>
                     <span class="li-title">{{ $lesson->title }}</span>
                     <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count }} nước đi</span>
@@ -137,9 +140,11 @@
     <h2>Chương trình học</h2>
     <p class="sub">Giáo trình có hệ thống, theo từng chuỗi bài.</p>
     <div class="lesson-list">
-        @foreach($series as $s)
-            <a href="{{ route('series', $s->slug) }}" class="lesson-item card">
-                <span class="li-num">{{ $s->game_mode === 'co-up' ? '揭' : '課' }}</span>
+        @foreach($series as $i => $s)
+            <a href="{{ route('series', $s->slug) }}" class="lesson-item card has-thumb">
+                <span class="li-thumb">
+                    <img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="" loading="{{ $i < 2 ? 'eager' : 'lazy' }}">
+                </span>
                 <span class="li-body">
                     <span class="li-title">{{ $s->name }}</span>
                     <span class="li-sub">{{ $s->published_lessons_count }} bài · {{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span>
