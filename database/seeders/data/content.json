@@ -109184,6 +109184,162 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60013,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 13 — Xe Biên Phối Hợp Song Mã Chiếu Bí",
+      "slug": "c6-de-kiem-tra-bai-13",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k5/1R2a4/3aN1N2/9/9/4n4/6r2/3K5/9/9",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 13: Trắng cầm Xe và hai Mã, dùng đúng một nước Xe chiếu rồi lập tức lui về ngay khi Song Mã đã khóa chặt các ô thoát của Tướng Đen.",
+      "content": "<p>Trắng có Xe và hai Mã. Cả hai quân Mã đã áp sát cửu cung Đen từ trước — chỉ cần một nước Xe đúng lúc là đủ khép lưới chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 13 — Xe Biên Phối Hợp Song Mã Chiếu Bí",
+      "seo_description": "Bài kiểm tra sát pháp số 13: Trắng cầm Xe và hai Mã, một nước Xe chiếu rồi lui về ngay khi Song Mã đã khóa chặt các ô thoát của Tướng Đen.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1R1k5/4a4/3aN1N2/9/9/4n4/6r2/3K5/9/9",
+          "move_notation_wxf": "Xe 8 tiến 1",
+          "move_notation_iccs": "b8b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1R7/3ka4/3aN1N2/9/9/4n4/6r2/3K5/9/9",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1R3N3/3ka4/3aN4/9/9/4n4/6r2/3K5/9/9",
+          "move_notation_wxf": "Mã 3 tiến 4",
+          "move_notation_iccs": "g7f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1R3a3/3k5/3aN4/9/9/4n4/6r2/3K5/9/9",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/1R1k5/3aN4/9/9/4n4/6r2/3K5/9/9",
+          "move_notation_wxf": "Xe 8 thoái 1",
+          "move_notation_iccs": "b9b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60014,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 14 — Song Xe Đổi Cột Dồn Tướng Vào Góc",
+      "slug": "c6-de-kiem-tra-bai-14",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3a1ab2/4krR1C/4bN3/9/9/5r1C1/4p4/3K5/9/9",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 14: Trắng cầm Xe, Song Pháo và Mã, chỉ cần bình Xe qua lại hai lần chiếu liên tiếp là đủ dồn Tướng Đen vào thế bí không lối thoát.",
+      "content": "<p>Trắng có Xe, hai Pháo và một Mã áp sát cung Đen. Hãy tìm hai nước Xe chiếu liên tiếp để dồn Tướng Đen vào đúng ô mà quân Pháo còn lại có thể dứt điểm.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 14 — Song Xe Đổi Cột Dồn Tướng Vào Góc",
+      "seo_description": "Bài kiểm tra sát pháp số 14: Trắng cầm Xe, Song Pháo và Mã, bình Xe chiếu liên tiếp để dồn Tướng Đen vào thế bí không lối thoát.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3a1ab2/4kR2C/4bN3/9/9/5r1C1/4p4/3K5/9/9",
+          "move_notation_wxf": "Xe 3 bình 4",
+          "move_notation_iccs": "g8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 4 chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akab2/5R2C/4bN3/9/9/5r1C1/4p4/3K5/9/9",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akab2/4R3C/4bN3/9/9/5r1C1/4p4/3K5/9/9",
+          "move_notation_wxf": "Xe 4 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 5 chiếu tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a1ab2/4k3C/4bN3/9/9/5r1C1/4p4/3K5/9/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a1abC1/4k3C/4bN3/9/9/5r3/4p4/3K5/9/9",
+          "move_notation_wxf": "Pháo 2 tiến 5",
+          "move_notation_iccs": "h4h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
