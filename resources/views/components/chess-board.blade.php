@@ -39,7 +39,12 @@
                     @else
                         <span></span>
                     @endif
-                    <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
+                    <span class="board-fab-group">
+                        @if(!$isStatic)
+                            <button type="button" class="board-fab" data-xq-sound title="Bật/tắt âm thanh nước đi">🔊</button>
+                        @endif
+                        <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
+                    </span>
                 </div>
                 <div class="board-holder" data-xq-holder></div>
             </div>

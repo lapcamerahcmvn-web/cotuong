@@ -114,7 +114,6 @@
                 @endforeach
                 <a href="{{ route('account.index') }}" class="drawer-account">{!! $userIcon !!} {{ auth()->check() ? 'Tài khoản của tôi' : 'Đăng nhập' }}</a>
             </nav>
-            <button type="button" class="drawer-theme" data-theme-toggle>{!! $themeIcons !!} <span>Giao diện sáng / tối</span></button>
         </div>
     </header>
 

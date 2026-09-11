@@ -10,6 +10,74 @@
 
   var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Âm thanh nước đi — tổng hợp bằng Web Audio API (không cần file audio): tiếng "tốc" gỗ trầm
+  // cho nước đi thường, thêm tiếng "sực" (noise ngắn) khi ăn quân. Nhớ trạng thái tắt/mở qua
+  // localStorage, dùng chung 1 AudioContext cho mọi bàn cờ trên trang.
+  var Sound = (function () {
+    var muted = false;
+    try { muted = localStorage.getItem('xq_muted') === '1'; } catch (e) {}
+    var ctx = null;
+    function ac() {
+      if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+      if (ctx.state === 'suspended') ctx.resume();
+      return ctx;
+    }
+    function tone(freq, dur, type, gain, delay) {
+      var c = ac(); if (!c) return;
+      var t0 = c.currentTime + (delay || 0);
+      var osc = c.createOscillator(), g = c.createGain();
+      osc.type = type; osc.frequency.setValueAtTime(freq, t0);
+      g.gain.setValueAtTime(0, t0);
+      g.gain.linearRampToValueAtTime(gain, t0 + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      osc.connect(g); g.connect(c.destination);
+      osc.start(t0); osc.stop(t0 + dur + 0.02);
+    }
+    function noiseBurst(dur, gain, delay) {
+      var c = ac(); if (!c) return;
+      var t0 = c.currentTime + (delay || 0);
+      var len = Math.max(1, Math.floor(c.sampleRate * dur));
+      var buf = c.createBuffer(1, len, c.sampleRate);
+      var d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2);
+      var src = c.createBufferSource(); src.buffer = buf;
+      var g = c.createGain(); g.gain.setValueAtTime(gain, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      src.connect(g); g.connect(c.destination);
+      src.start(t0);
+    }
+    function move(isCapture) {
+      if (muted) return;
+      tone(isCapture ? 150 : 190, 0.09, 'triangle', 0.22, 0);
+      tone(isCapture ? 95 : 115, 0.12, 'sine', 0.16, 0.006);
+      if (isCapture) noiseBurst(0.05, 0.14, 0.012);
+    }
+    function toggle() {
+      muted = !muted;
+      try { localStorage.setItem('xq_muted', muted ? '1' : '0'); } catch (e) {}
+      return muted;
+    }
+    return { move: move, toggle: toggle, isMuted: function () { return muted; } };
+  })();
+
+  function attachSound(root) {
+    var btn = root.querySelector('[data-xq-sound]');
+    if (!btn) return;
+    function render() {
+      btn.textContent = Sound.isMuted() ? '🔇' : '🔊';
+      btn.setAttribute('aria-pressed', Sound.isMuted() ? 'true' : 'false');
+      btn.setAttribute('aria-label', Sound.isMuted() ? 'Bật âm thanh nước đi' : 'Tắt âm thanh nước đi');
+    }
+    render();
+    btn.addEventListener('click', function () { Sound.toggle(); render(); });
+  }
+
+  // So số quân sống trên FEN — chỉ dùng để suy ra "có ăn quân không" giữa 2 thế, không cần
+  // backend gửi kèm captured_piece.
+  function countPieces(fen) {
+    var m = (fen || '').split(' ')[0].match(/[A-Za-z]/g);
+    return m ? m.length : 0;
+  }
+
   // Ký tự quân theo lối truyền thống: Đỏ và Đen dùng chữ khác nhau cho cùng loại quân.
   var PIECES = {
     K: { c: '帥', red: true }, A: { c: '仕', red: true }, B: { c: '相', red: true },
@@ -208,6 +276,7 @@
     var list = root.querySelector('[data-xq-list]');
 
     bindFullscreen(root);
+    attachSound(root);
 
     if (cfg.mode === 'puzzle' && cfg.puzzleSide && steps.length) {
       initPuzzle(root, startFen, steps, { holder: holder, capStep: capStep, capText: capText, pill: pill }, cfg.puzzleSide);
@@ -255,8 +324,10 @@
     function go(i, userAction) {
       var clamped = Math.max(-1, Math.min(steps.length - 1, i));
       if (clamped === idx) return false;
+      var beforeFen = idx < 0 ? startFen : steps[idx].fen;
       idx = clamped;
       draw();
+      if (idx >= 0) Sound.move(countPieces(beforeFen) !== countPieces(steps[idx].fen));
       if (userAction) root.dispatchEvent(new CustomEvent('xq:userstep'));
       if (steps.length > 0 && idx === steps.length - 1) document.dispatchEvent(new CustomEvent('xq:viewed-all-moves'));
       return true;
@@ -368,8 +439,21 @@
       });
     }
 
-    function descend(node) { if (node) { cur = node; draw(); notifyEnd(); } }
-    function back() { if (cur.parent) { cur = cur.parent; draw(); } }
+    function descend(node) {
+      if (!node) return;
+      var beforeFen = cur.fen;
+      cur = node;
+      draw();
+      Sound.move(countPieces(beforeFen) !== countPieces(cur.fen));
+      notifyEnd();
+    }
+    function back() {
+      if (!cur.parent) return;
+      var beforeFen = cur.fen;
+      cur = cur.parent;
+      draw();
+      Sound.move(countPieces(beforeFen) !== countPieces(cur.fen));
+    }
     function next() { var kids = cur.children || []; if (kids.length) { descend(kids[0]); return true; } return false; }
     function toStart() { cur = rootNode; draw(); }
     function toEnd() { while (cur.children && cur.children.length) cur = cur.children[0]; draw(); notifyEnd(); }
@@ -460,8 +544,10 @@
       var ic = iccsToSquares(steps[stepIdx].iccs);
       if (!ic) return;
       var fromIdx = ic.from[1] * 9 + ic.from[0], toIdx = ic.to[1] * 9 + ic.to[0];
+      var captured = !!board[toIdx];
       board[toIdx] = board[fromIdx]; board[fromIdx] = null;
       if (stepIdx + 1 >= steps.length) solved = true;
+      Sound.move(captured);
     }
 
     function draw() {

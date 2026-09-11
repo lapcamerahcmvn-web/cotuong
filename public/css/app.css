@@ -219,8 +219,10 @@ h1.title { font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin: 6px 0 8p
 
 /* Thanh nhỏ trên bàn cờ: pill "Nước n/m" (trái) + nút phóng to (phải). */
 .board-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; min-height: 34px; }
+.board-fab-group { display: flex; gap: 6px; flex-shrink: 0; }
 .board-fab { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--ink-soft); font-size: 16px; line-height: 1; cursor: pointer; flex-shrink: 0; }
 .board-fab:hover { border-color: var(--red); color: var(--red); }
+.board-fab[aria-pressed="true"] { color: var(--ink-faint); opacity: .6; }
 .board-bar .step-pill { padding: 5px 12px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
 
 .controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -428,7 +430,6 @@ body.xq-fs-lock { overflow: hidden; }
   :root:not([data-theme="light"]) .theme-toggle .ic-dark { display: block; }
   :root:not([data-theme="light"]) .theme-toggle .ic-light { display: none; }
 }
-.drawer-theme { display: flex; align-items: center; gap: 10px; width: 100%; justify-content: center; margin-top: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font-weight: 500; cursor: pointer; font-family: inherit; font-size: 15px; }
 
 /* ---- Tiện ích layout nhỏ (thay style="" rải rác) ---- */
 .stack-2 { display: flex; flex-direction: column; gap: 8px; }
