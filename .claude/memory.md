@@ -5,6 +5,76 @@
 
 ---
 
+## 2026-09-11 — Đợt SEO + ảnh thế cờ + giao diện bàn cờ hiện đại (đã push `5a77477`)
+
+User yêu cầu "làm hết kế hoạch rồi đẩy GitHub để đồng bộ". Đã push `origin/main` `5a77477`.
+Kế hoạch đầy đủ: `C:\Users\MinhTuyen\.claude\plans\pure-pondering-haven.md` (máy dev).
+
+**⚠️ DEPLOY đợt này CẦN**: `migrate --force` (bảng `pages` mới) + `db:seed --class=ContentSeeder --force`
++ `db:seed --class=PagesSeeder --force` + clear/cache. Thiếu PagesSeeder → trang giai đoạn mất intro+FAQ.
+`.env` prod phải có `APP_URL=https://hoccotuong.top` (đã xác nhận có). Sau deploy chạy Facebook
+Sharing Debugger "Scrape Again" để cập nhật ảnh share.
+
+**SEO/structured data** (`layouts/app.blade.php` + `app/Support/Seo.php` mới + View Composer trong
+`AppServiceProvider`):
+- `og:title` giờ mirror `<title>` (trước hardcode "Học Cờ Tướng" mọi trang — bug lớn nhất). Thêm
+  `og:image`/`og:image:*`, twitter card, `og:site_name`, `og:type=article`+`article:*` cho bài học.
+- JSON-LD toàn site: Organization + WebSite(SearchAction), tham chiếu `@id` `url('/#org')`/`#website`.
+- Phase page: thêm BreadcrumbList + CollectionPage + ItemList (trước KHÔNG có JSON-LD).
+- Series page: `Course` đủ `offers`(free)/`hasCourseInstance`/`hasPart`/`provider.logo` + BreadcrumbList.
+- Lesson: BreadcrumbList thêm cấp series (trước thiếu), Article→`["Article","LearningResource"]`+`isPartOf`.
+- `config/site.php`: `SITE_SOCIAL_*` + `SITE_TWITTER` qua `.env` → `sameAs` + `twitter:site` (đang trống).
+- favicon.ico (đang 0 byte) → thật; + favicon.svg, apple-touch, icon-192/512, site.webmanifest.
+- Nav thêm "Nhập môn". De-dupe title 5 trang giai đoạn (trong `LessonController::PHASE_META`).
+
+**Ảnh thế cờ OG** — `tools/og-image/` (Node + `@resvg/resvg-js`, **CHỈ LOCAL, không lên hosting**):
+- `render-board.cjs` port `renderBoard` của `board.js` (màu HEX cứng — resvg không resolve `var()`).
+  ⚠️ GIỮ ĐỒNG BỘ 2 file này khi sửa cách vẽ bàn cờ.
+- Quy tắc chọn thế: FEN nước mainline CUỐI (thế "kết"), fallback tree→node cuối→initial_fen.
+- `generate.cjs` sinh 541 bài + 9 chuỗi → `public/og/{lessons,series}/{slug}.png` 1200×630, COMMIT git.
+- `optimize.py` (Pillow, quantize 128 màu) chạy SAU generate: 41MB → 14MB.
+- `tools/brand-assets/generate.php` (PHP GD, font Windows): favicon + 6 ảnh OG giai đoạn/trang chủ.
+- `Seo::ogImage($model)`: lesson→phase→home, cache-bust `?v=mtime`.
+
+**Font quân cờ** `public/fonts/xiangqi-kai.{woff2,ttf}` — subset 19 glyph Noto Serif TC (SIL OFL,
+lấy qua Google Fonts `text=` API), internal family đổi thành "XiangqiKai" (fonttools). Trước đây
+quân dựa `KaiTi`/`STKaiti` của HĐH → Android/iOS render lệch. Wire vào `app.css` `@font-face` +
+`board.js` (glyph quân + 楚河漢界) + `.brand .logo`/`.phase-card .pc-icon`/`.li-num`.
+
+**Giao diện bàn cờ** (`board.js` viết lại + `components/chess-board.blade.php` + `app.css`):
+- Điều khiển gọn: hàng chính "‹ Lùi" + "Tiến ›" (primary, lớn); thanh riêng pill "Nước n/m" + ⛶;
+  hàng phụ "⏮ Đầu / Cuối ⏭ / ⟲ Lật bàn / ▶ Tự chạy". Tap target ≥44-52px.
+- MỚI trong board.js: `renderBoard(...flip)` (tham số 5), vuốt trái/phải trên bàn để đi nước
+  (view+tree), lật bàn, tự chạy (setInterval 1400ms), nhấp nháy ô đích, **trượt quân** khi đổi
+  bước (`.xq-pc-moved` + `--fx/--fy` + WAAPI, tắt nếu `prefers-reduced-motion`). Tree/puzzle giữ nguyên.
+- Mobile ≤900px: `.board-col` `position:sticky;top:56px` (bàn cờ dính khi cuộn đọc caption — trước
+  đây trôi mất); `.move-list--full` `max-height:44vh;overflow-y:auto`.
+- `.board-holder` giờ nằm trong `.board-stage` + `.board-bar` (nút overlay tách khỏi vùng bị
+  innerHTML-replace).
+
+**Dark/Light toggle** — nút trong nav + drawer (`[data-theme-toggle]`), cycle auto→light→dark,
+localStorage, script chống FOUC ngay đầu `<head>`, cập nhật `<meta theme-color>`. CSS `[data-theme]`
+đã hỗ trợ sẵn từ trước.
+
+**Nội dung SEO** (P2):
+- Bảng `pages` mới (`App\Models\Page`, migration `2026_09_11_100001`) + `PagesSeeder` +
+  `cotuong:export-pages` → `database/seeders/data/pages.json`. Intro 300-500 từ + 4 FAQ mỗi trang
+  cho 5 giai đoạn. `LessonController@phase` load `Page::firstWhere('slug',"phase:$phase")`, render
+  `body_html` + FAQ accordion + FAQPage schema. Page có `seo_title`/`seo_description` thì override.
+- Viết lại 7 bài "cách đi quân X" nhập môn (id 348-355 trừ 354) từ ~100 → ~300+ từ qua
+  `cotuong:lesson-fill --publish` → `cotuong:export-content`. content.json +1 bài
+  (`c2-thiet-mon-thuyen-vi-du-7` đã publish sẵn từ commit trước, chỉ chưa export).
+
+**CHƯA làm / hoãn** (trong kế hoạch nhưng không cấp thiết):
+- Admin override `lessons.og_step` (chọn thủ công thế cờ làm ảnh OG) — quy tắc mặc định (nước cuối)
+  cho ảnh đẹp rồi, chưa cần. Nếu làm: migration + `Lesson::$fillable` + `ExportContent` map +
+  `build-batch.cjs` (2 chỗ `thumbnail:null`) + regen; `manifest.cjs` đã đọc `og_step` sẵn.
+- Intro + FAQ cho 10 trang chuỗi (`lesson_series` thêm cột `intro_html`/`faq`) — chuỗi đã có
+  `description` + Course schema đã fix, ưu tiên thấp hơn.
+- `@layer` cho `app.css` — giữ file phẳng, chỉ thêm section BỔ SUNG 09/2026 ở cuối + utility nhỏ.
+
+---
+
 ## 2026-08-24 — Phase 2: tài khoản + UI bài học + tìm kiếm + admin + DEPLOY GitHub
 
 Loạt việc lớn (user yêu cầu), làm trực tiếp session chính (subagent bị chặn bởi **monthly
