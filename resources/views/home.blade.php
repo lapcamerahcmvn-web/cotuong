@@ -5,13 +5,7 @@
 
 @push('head')
 @php
-    $ld = [
-        '@context' => 'https://schema.org',
-        '@type' => 'WebSite',
-        'name' => 'Học Cờ Tướng',
-        'url' => url('/'),
-        'inLanguage' => 'vi-VN',
-    ];
+    // WebSite + Organization JSON-LD đã xuất toàn site trong layouts/app.blade.php.
     // Câu hỏi thường gặp — dùng cho cả FAQPage schema (Google/AI) lẫn phần hiển thị bên dưới.
     $faqs = [
         ['Học cờ tướng cho người mới bắt đầu từ đâu?', 'Bắt đầu từ luật chơi cơ bản và cách đi từng quân (Xe, Pháo, Mã, Tượng, Sĩ, Tướng, Tốt), sau đó học khai cuộc, trung cuộc (sát pháp) và tàn cuộc. Tại Học Cờ Tướng, mỗi bài có bàn cờ tương tác đi từng nước để bạn thấy rõ cách quân di chuyển.'],
@@ -29,7 +23,6 @@
         ])->all(),
     ];
 @endphp
-<script type="application/ld+json">{!! json_encode($ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 <script type="application/ld+json">{!! json_encode($ldFaq, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 @endpush
 

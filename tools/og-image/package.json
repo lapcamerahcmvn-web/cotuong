@@ -1,0 +1,9 @@
+{
+  "name": "cotuong-og-image",
+  "private": true,
+  "description": "Sinh ảnh OG/preview thế cờ cho từng bài học (CHỈ chạy LOCAL, không lên hosting).",
+  "type": "commonjs",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

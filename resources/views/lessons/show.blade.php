@@ -1,18 +1,31 @@
 @extends('layouts.app')
 
-@section('title', \Illuminate\Support\Str::limit($lesson->seo_title_formatted, 60, ''))
+@section('title', $lesson->seo_title ?: (mb_strlen($lesson->title) <= 55 ? $lesson->title . ' — Học Cờ Tướng' : \Illuminate\Support\Str::limit($lesson->title, 60, '…')))
 @section('description', \Illuminate\Support\Str::limit(strip_tags($lesson->seo_description ?: $lesson->summary ?: ($lesson->title . ' — học cờ tướng qua bàn cờ tương tác, diễn giải từng nước đi.')), 155))
+@section('og_title', $lesson->title)
+@section('og_type', 'article')
+@section('og_image', \App\Support\Seo::ogImage($lesson))
+@section('og_image_alt', 'Thế cờ bài học: ' . $lesson->title . ' — Học Cờ Tướng')
 
 @push('head')
+<meta property="article:published_time" content="{{ $lesson->published_at?->toIso8601String() }}">
+<meta property="article:modified_time" content="{{ $lesson->updated_at?->toIso8601String() }}">
+@if($lesson->phase)<meta property="article:section" content="{{ $lesson->phase_label }}">@endif
 @php
+    $_ogImage = \App\Support\Seo::ogImage($lesson);
+
     $ldArticle = array_filter([
         '@context' => 'https://schema.org',
-        '@type' => 'Article',
+        '@type' => ['Article', 'LearningResource'],
         'headline' => $lesson->title,
         'description' => \Illuminate\Support\Str::limit(strip_tags($lesson->summary ?: ''), 300),
         'inLanguage' => 'vi-VN',
-        'author' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
-        'publisher' => ['@type' => 'Organization', 'name' => 'Học Cờ Tướng'],
+        'learningResourceType' => 'lesson',
+        'educationalLevel' => $lesson->level_label,
+        'image' => $_ogImage,
+        'author' => ['@id' => url('/#org')],
+        'publisher' => ['@id' => url('/#org')],
+        'isPartOf' => $lesson->series ? ['@type' => 'Course', 'name' => $lesson->series->name, 'url' => route('series', $lesson->series->slug)] : null,
         'datePublished' => $lesson->published_at?->toIso8601String(),
         'dateModified' => $lesson->updated_at?->toIso8601String(),
         'mainEntityOfPage' => url()->current(),
@@ -22,7 +35,10 @@
 
     $crumbs = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Trang chủ', 'item' => route('home')]];
     if ($lesson->phase) {
-        $crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => $lesson->phase_label, 'item' => route('phase', $lesson->phase)];
+        $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $lesson->phase_label, 'item' => route('phase', $lesson->phase)];
+    }
+    if ($lesson->series) {
+        $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $lesson->series->name, 'item' => route('series', $lesson->series->slug)];
     }
     $crumbs[] = ['@type' => 'ListItem', 'position' => count($crumbs) + 1, 'name' => $lesson->title];
     $ldCrumb = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $crumbs];
@@ -56,18 +72,18 @@
     <span>{{ \Illuminate\Support\Str::limit($lesson->title, 40) }}</span>
 </nav>
 
-<div style="padding:8px 0 60px;">
+<div class="lesson">
     <h1 class="title">{{ $lesson->title }}</h1>
     <div class="meta-row">
         <span class="tag level">{{ $lesson->level_label }}</span>
         @if($lesson->series)<span class="tag series">{{ \Illuminate\Support\Str::limit($lesson->series->name, 34) }}</span>@endif
         <span class="tag count">{{ $lesson->move_count }} nước đi</span>
-        <span id="lesson-done-badge" class="tag" style="background:var(--jade-soft);color:var(--jade);{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
+        <span id="lesson-done-badge" class="tag tag--done" style="{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
     </div>
 
     @if($lesson->initial_fen || $lesson->steps->isNotEmpty())
         @if($lesson->puzzle_side && $lesson->steps->isNotEmpty())
-            <div class="board-mode-toggle" style="display:flex;gap:8px;margin-bottom:10px;">
+            <div class="board-mode-toggle">
                 <button type="button" class="btn primary" id="lesson-mode-view">📖 Xem lời giảng</button>
                 <button type="button" class="btn" id="lesson-mode-puzzle">🧩 Thử tự giải</button>
             </div>
@@ -114,20 +130,20 @@
     @elseif($lesson->summary)
         <article class="prose"><p>{{ $lesson->summary }}</p></article>
     @else
-        <div class="notice" style="margin-top:28px;max-width:720px;">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
+        <div class="notice wrap-720 mt-7">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
     @endif
 
-    <div style="margin-top:28px;max-width:720px;">
-        <x-share-buttons :url="url()->current()" :title="$lesson->title" />
+    <div class="lesson__share">
+        <x-share-buttons :url="url()->current()" :title="$lesson->title" :image="\App\Support\Seo::ogImage($lesson)" />
     </div>
 
-    <nav style="display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap;max-width:720px;">
+    <nav class="lesson__nav">
         @if($prev)<a href="{{ route('lessons.show', $prev->slug) }}" class="btn">‹ {{ \Illuminate\Support\Str::limit($prev->title, 26) }}</a>@else<span></span>@endif
         @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
     </nav>
 
     @if(!empty($suggestNext))
-    <div class="continue-card card" style="margin-top:20px;max-width:720px;">
+    <div class="continue-card card wrap-720 mt-5">
         <div class="continue-info">
             <span class="continue-eyebrow">▸ Gợi ý học tiếp</span>
             <span class="continue-title">{{ $suggestNext->title }}</span>
@@ -138,8 +154,8 @@
     @endif
 
     @if($related->isNotEmpty())
-    <section style="margin-top:40px;max-width:720px;">
-        <h2 style="font-size:19px;font-weight:800;margin:0 0 12px;">Bài liên quan</h2>
+    <section class="lesson__related">
+        <h2>Bài liên quan</h2>
         <div class="lesson-list">
             @foreach($related as $r)
                 <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card">

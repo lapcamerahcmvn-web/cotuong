@@ -32,22 +32,37 @@
      class="xqboard-root {{ $hasList ? 'xqboard-split' : '' }}">
     <div class="board-col">
         <div class="board-card card" data-xq-boardcard>
-            <div class="board-holder" data-xq-holder></div>
-            <div class="controls">
-                @if($isPuzzle)
-                <button type="button" class="btn" data-xq-reset aria-label="Làm lại từ đầu">↺ Làm lại</button>
-                <span class="step-pill" data-xq-pill>Đang giải…</span>
-                <button type="button" class="btn" data-xq-solution aria-label="Xem lời giải">Xem lời giải</button>
-                <button type="button" class="btn" data-xq-copyfen aria-label="Sao chép FEN">Copy FEN</button>
-                @elseif(!$isStatic)
-                <button type="button" class="btn" data-xq-first title="Về đầu" aria-label="Về thế mở">⏮</button>
-                <button type="button" class="btn" data-xq-prev aria-label="Lùi một nước">‹ Lùi</button>
-                <span class="step-pill" data-xq-pill>Thế mở</span>
-                <button type="button" class="btn primary" data-xq-next aria-label="Tiến một nước">Tiến ›</button>
-                <button type="button" class="btn" data-xq-last title="Đến cuối" aria-label="Đến nước cuối">⏭</button>
-                @endif
-                <button type="button" class="btn" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
+            <div class="board-stage">
+                <div class="board-bar">
+                    @if(!$isStatic)
+                        <span class="step-pill" data-xq-pill>{{ $isPuzzle ? 'Đang giải…' : 'Thế mở' }}</span>
+                    @else
+                        <span></span>
+                    @endif
+                    <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
+                </div>
+                <div class="board-holder" data-xq-holder></div>
             </div>
+
+            @if($isPuzzle)
+                <div class="controls">
+                    <button type="button" class="btn" data-xq-reset aria-label="Làm lại từ đầu">↺ Làm lại</button>
+                    <button type="button" class="btn" data-xq-solution aria-label="Xem lời giải">Xem lời giải</button>
+                    <button type="button" class="btn btn--ghost" data-xq-copyfen aria-label="Sao chép FEN">Copy FEN</button>
+                </div>
+            @elseif(!$isStatic)
+                <div class="controls controls--main">
+                    <button type="button" class="btn" data-xq-prev aria-label="Lùi một nước">‹ Lùi</button>
+                    <button type="button" class="btn primary" data-xq-next aria-label="Tiến một nước">Tiến ›</button>
+                </div>
+                <div class="controls controls--sub">
+                    <button type="button" class="btn btn--ghost" data-xq-first aria-label="Về thế mở">⏮ Đầu</button>
+                    <button type="button" class="btn btn--ghost" data-xq-last aria-label="Đến nước cuối">Cuối ⏭</button>
+                    <button type="button" class="btn btn--ghost" data-xq-flip aria-label="Lật bàn cờ">⟲ Lật bàn</button>
+                    <button type="button" class="btn btn--ghost" data-xq-autoplay aria-label="Tự chạy các nước">▶ Tự chạy</button>
+                </div>
+            @endif
+
             @if($isPuzzle)
             <div class="caption-box">
                 <div class="cap-step" data-xq-capstep>Đang giải…</div>
@@ -56,7 +71,7 @@
             @elseif(!$isStatic)
             <div class="caption-box">
                 <div class="cap-step" data-xq-capstep>Thế cờ mở đầu</div>
-                <div class="cap-text" data-xq-captext>Bấm “Tiến” để đi từng nước.</div>
+                <div class="cap-text" data-xq-captext>Bấm “Tiến”, dùng phím ←/→ hoặc vuốt trên bàn cờ.</div>
             </div>
             @elseif($caption)
             <p class="board-note">{{ $caption }}</p>

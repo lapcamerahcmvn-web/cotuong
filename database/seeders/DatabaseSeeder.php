@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AdminUserSeeder::class,   // admin@cotuong.test / cotuong@2026 — ĐỔI mật khẩu sau khi deploy
-            ContentSeeder::class,     // 14 bài học từ database/seeders/data/content.json
+            ContentSeeder::class,     // bài học + chuỗi từ database/seeders/data/content.json
+            PagesSeeder::class,       // trang nội dung biên tập từ database/seeders/data/pages.json
         ]);
     }
 }

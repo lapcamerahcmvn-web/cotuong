@@ -1,0 +1,16 @@
+{
+    "name": "Học Cờ Tướng",
+    "short_name": "Học Cờ Tướng",
+    "description": "Học cờ tướng và cờ úp qua bàn cờ tương tác, diễn giải từng nước đi.",
+    "lang": "vi-VN",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#f4efe4",
+    "theme_color": "#c8451f",
+    "icons": [
+        { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+        { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+        { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ]
+}

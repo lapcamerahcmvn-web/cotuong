@@ -44,7 +44,42 @@ git fetch origin && git reset --hard origin/main
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
 php artisan db:seed --class=ContentSeeder --force   # nếu content.json đổi (KHÔNG kèm namespace — shell nuốt dấu \\ thành DatabaseSeedersContentSeeder)
+php artisan db:seed --class=PagesSeeder --force     # nếu pages.json đổi (intro trang giai đoạn)
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
+```
+
+## Đợt SEO/UI (từ 09/2026) — lưu ý deploy
+
+- **`view:clear` bắt buộc** trong bước cache ở trên (`optimize:clear` đã bao gồm) — nhiều blade
+  đổi (layout head, phase/series/lesson). Nếu `/so-do-trang` hiện RỖNG sau deploy: chạy
+  `php artisan view:clear && php artisan db:seed --class=ContentSeeder --force` rồi
+  `php artisan view:cache`. Trang này loop `LessonSeries` có `publishedLessons` — rỗng nghĩa là
+  seeder chưa chạy sau khi thêm series, hoặc blade cũ còn bị cache.
+- **`.env` production PHẢI có `APP_URL=https://hoccotuong.top`** — `og:image`, `canonical`,
+  `asset()` (favicon/icon/OG PNG) và JSON-LD `@id` đều dựng từ đây. Sai domain ⇒ thẻ share hỏng.
+  Tùy chọn: `SITE_SOCIAL_FACEBOOK=`, `SITE_SOCIAL_YOUTUBE=`, `SITE_TWITTER=@...` (JSON-LD
+  Organization.sameAs + thẻ `twitter:site`).
+- **Ảnh OG + favicon là file tĩnh commit sẵn** trong `public/og/`, `public/favicon.*`,
+  `public/icon-*.png`, `public/apple-touch-icon.png`, `public/site.webmanifest` — KHÔNG cần build.
+  Sinh lại ở LOCAL: `php tools/brand-assets/generate.php` (favicon + OG giai đoạn/trang chủ) và
+  (P1) `node tools/og-image/generate.cjs` (OG từng bài học). Toolchain Node/`@resvg` chỉ chạy LOCAL.
+- Sau deploy, ép Facebook/Zalo quét lại thẻ mới: Facebook Sharing Debugger (Scrape Again) +
+  Zalo share link để cache preview.
+- **Migration mới `create_pages_table`** + seeder `PagesSeeder` (nội dung intro 5 trang giai đoạn từ
+  `database/seeders/data/pages.json`). Deploy lần đầu sau đợt này BẮT BUỘC `migrate --force` +
+  `db:seed --class=PagesSeeder --force`, nếu không trang `/khai-cuoc`… mất phần intro + FAQ.
+- **Font quân cờ** `public/fonts/xiangqi-kai.{woff2,ttf}` (subset Noto Serif TC, SIL OFL) commit sẵn —
+  quân cờ hiển thị giống nhau mọi thiết bị. Sinh lại: xem `public/fonts/README.md`.
+- **Toolchain LOCAL** (không lên hosting): `tools/og-image/` (Node + @resvg), `tools/brand-assets/generate.php`
+  (PHP GD, dùng font Windows). `npm install` trong `tools/og-image/` chỉ để chạy local.
+
+### Quy trình khi biên soạn thêm bài / sửa nội dung (LOCAL)
+```bash
+php artisan cotuong:lesson-fill <id> --file=<json> --publish   # ghi nội dung (an toàn, không đụng FEN)
+php artisan cotuong:export-content                             # → content.json
+php artisan cotuong:export-pages                               # → pages.json (nếu sửa intro giai đoạn)
+node tools/og-image/generate.cjs --changed                     # ảnh OG bài mới/đổi thế cờ
+git add database/seeders/data public/og public/fonts <code> && git commit && git push
 ```
 
 ## Google OAuth (để bật đăng nhập Google)

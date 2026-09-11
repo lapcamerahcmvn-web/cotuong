@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Support\Seo;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,5 +33,26 @@ class AppServiceProvider extends ServiceProvider
         // dùng class Tailwind nên hiển thị vỡ). Xem resources/views/vendor/pagination/cotuong.blade.php.
         Paginator::defaultView('vendor.pagination.cotuong');
         Paginator::defaultSimpleView('vendor.pagination.cotuong');
+
+        // Biến SEO dùng chung cho layout: ảnh OG mặc định (suy ra từ route hiện tại,
+        // trang bài học / chuỗi tự set @section('og_image') riêng) + JSON-LD Organization/WebSite.
+        View::composer('layouts.app', function ($view) {
+            $route = request()->route();
+            $name = $route?->getName();
+            $subject = match ($name) {
+                'lessons.show' => $route->parameter('lesson'),
+                'series' => $route->parameter('series'),
+                'phase' => $route->parameter('phase'),
+                default => null,
+            };
+
+            $view->with([
+                'ogImageDefault' => Seo::ogImage($subject),
+                'siteName' => config('site.name'),
+                'siteTwitter' => config('site.twitter'),
+                'orgLd' => Seo::organizationLd(),
+                'websiteLd' => Seo::websiteLd(),
+            ]);
+        });
     }
 }

@@ -1,0 +1,145 @@
+{
+    "exported_at": "2026-09-11T00:27:43+00:00",
+    "pages": [
+        {
+            "slug": "phase:co-up",
+            "title": "Cờ Úp — Luật Chơi, Chiến Thuật & Bài Học Có Bàn Cờ",
+            "h1": "Cờ úp",
+            "lede": "Cờ úp là biến thể cờ tướng có 30 quân úp sấp, tráo ngẫu nhiên — bạn không biết quân thật là gì cho tới khi lật. Ít hòa, nhiều bất ngờ, đang rất thịnh hành.",
+            "body_html": "<p>Cờ úp dùng đúng bàn cờ và bộ quân cờ tướng, nhưng 30 quân (trừ hai Tướng để ngửa) được lật úp và xáo trộn vị trí. Mỗi quân úp <strong>đi theo binh chủng của ô nó đứng lúc khởi đầu<\/strong> (ô Xe thì đi như Xe...) cho đến khi thực hiện nước đi đầu tiên — lúc đó lật lên và từ nước sau đi theo binh chủng thật của nó.<\/p><h2>Điểm khác cờ tướng<\/h2><ul><li><strong>Khai cuộc rất ngắn<\/strong>: chỉ khoảng 5 nước, vì bạn cần nhanh chóng \"khui\" quân để biết mình có gì.<\/li><li><strong>Con Pháo và cửa Tướng quan trọng hơn<\/strong>: Pháo có thể là quân úp bất kỳ, và đòn chiếu qua cửa Tướng thường mang tính quyết định.<\/li><li><strong>Sĩ và Tượng cơ động hơn<\/strong>: khi lật ra, Sĩ đi được khỏi cung và Tượng qua được sông (đi theo luật quân thật của chúng như trong cờ tướng chuẩn — nhưng vị trí xuất phát bất kỳ khiến chúng năng động hơn nhiều).<\/li><li><strong>Rất ít khi hòa<\/strong>: do yếu tố ẩn thông tin và lực lượng thường không cân bằng.<\/li><\/ul><h2>Cách chơi cờ úp hiệu quả<\/h2><p>Ưu tiên khui những quân ở vị trí tốt và giữ lại quân ở ô mạnh (ô Xe, ô Pháo) để khai thác lâu hơn. Tính cả xác suất: nếu đối phương còn nhiều quân chưa lật ở gần cung của bạn, hãy phòng thủ chắc thay vì lao lên. Khi đã lật hết, cờ úp trở về gần giống trung — tàn cuộc cờ tướng, nên nền tảng cờ tướng vẫn rất có ích.<\/p><p>Mục Cờ úp có bài về luật chơi đầy đủ và các ván mẫu đi lại từng nước, cả sơ cấp lẫn nâng cao. Nếu bạn mới, nên xem qua <a href=\"\/nhap-mon\">Nhập môn cờ tướng<\/a> trước để nắm cách đi các binh chủng.<\/p>",
+            "seo_title": "Cờ Úp — Luật Chơi, Chiến Thuật Lật Quân & Bài Học 2026",
+            "seo_description": "Học cờ úp: luật chơi (quân úp đi theo ô xuất phát, lật khi đi nước đầu), điểm khác cờ tướng, mẹo khui quân và chiến thuật. Ván mẫu có bàn cờ tương tác.",
+            "og_image": null,
+            "faq": [
+                {
+                    "a": "Cờ úp là biến thể cờ tướng: 30 quân (trừ hai Tướng) được úp sấp và tráo ngẫu nhiên vị trí. Quân úp đi theo binh chủng của ô xuất phát cho tới khi đi nước đầu tiên thì lật lộ mặt thật, sau đó đi theo quân thật.",
+                    "q": "Cờ úp là gì?"
+                },
+                {
+                    "a": "Khai cuộc chỉ khoảng 5 nước, con Pháo và cửa Tướng quan trọng hơn, Sĩ Tượng cơ động hơn khi lật ra, và rất ít khi hòa vì có yếu tố ẩn thông tin. Bàn cờ và cách đi các binh chủng vẫn theo luật cờ tướng.",
+                    "q": "Cờ úp khác cờ tướng thế nào?"
+                },
+                {
+                    "a": "Nên nắm cách đi các quân trong cờ tướng trước, vì quân úp khi lật ra vẫn đi theo đúng luật đó. Sau khi thuộc cách đi Xe Pháo Mã Tượng Sĩ Tốt, bạn học thêm luật lật quân là chơi được cờ úp.",
+                    "q": "Người mới nên học cờ úp hay cờ tướng trước?"
+                },
+                {
+                    "a": "Khui nhanh các quân ở vị trí tốt để biết lực lượng, giữ lại quân ở ô mạnh (ô Xe, ô Pháo) để khai thác lâu, và phòng thủ chắc khi đối phương còn nhiều quân chưa lật gần cung của bạn.",
+                    "q": "Chiến thuật cơ bản của cờ úp là gì?"
+                }
+            ]
+        },
+        {
+            "slug": "phase:khai-cuoc",
+            "title": "Khai Cuộc Cờ Tướng — Nguyên Lý & Các Thế Trận Phổ Biến",
+            "h1": "Khai cuộc cờ tướng",
+            "lede": "Khai cuộc là 10–15 nước đầu quyết định thế trận: bố trí Xe Mã Pháo hợp lý, tranh tiên và tránh những cái bẫy quen thuộc.",
+            "body_html": "<p>Mục tiêu khai cuộc không phải là ăn quân mà là <strong>phát triển quân nhanh và an toàn<\/strong>, chiếm các đường quan trọng (trung lộ, lộ 2 và lộ 8), rồi nối Xe để sẵn sàng vào trung cuộc. Bên đi trước (Đỏ) cố giữ tiên; bên đi sau (Đen) tìm cách cân bằng hoặc phản tiên.<\/p><h2>Các hệ khai cuộc thường gặp<\/h2><ul><li><strong>Pháo đầu (Trung Pháo)<\/strong>: Đỏ đưa Pháo về cột giữa nhắm Tốt đầu và Tướng đối phương. Đây là khai cuộc tấn công phổ biến nhất.<\/li><li><strong>Bình Phong Mã<\/strong>: Đen lên hai Mã che Tốt đầu, phòng thủ vững chắc trước Pháo đầu — cặp đấu \"Trung Pháo đối Bình Phong Mã\" là kinh điển của cờ tướng.<\/li><li><strong>Phản Cung Mã<\/strong>: một Mã lên bình thường, Mã kia vòng qua để phản công cánh, linh hoạt hơn Bình Phong Mã.<\/li><li><strong>Thuận Pháo \/ Nghịch Pháo<\/strong>: cả hai bên cùng đi Pháo đầu, tạo thế đối công sắc bén.<\/li><li><strong>Phi Tượng cuộc<\/strong>: Đỏ lên Tượng ngay nước đầu, chơi chậm và chắc, thiên về khống chế.<\/li><li><strong>Tiên Nhân Chỉ Lộ<\/strong>: Đỏ tiến Tốt 3 (hoặc Tốt 7) nước đầu, giữ thế mềm dẻo, chờ đối phương lộ ý đồ.<\/li><\/ul><h2>Sai lầm khai cuộc hay gặp<\/h2><p>Đẩy Tốt biên sớm, đi Pháo hoặc Xe lung tung không có kế hoạch, xuất Tướng quá sớm, hoặc tham ăn một Tốt để rồi bị dồn ép mất mấy nước phát triển. Nguyên tắc an toàn: mỗi nước nên đưa thêm một quân vào trận, ưu tiên Mã rồi Xe, giữ cửa Tướng kín.<\/p><p>Các bài trong mục Khai cuộc đi lại từng nước của những định thức mẫu, chỉ rõ nước nào tranh tiên, nước nào chống đỡ. Nắm vững vài hệ khai cuộc bạn sẽ không còn bị dẫn dắt trong 10 nước đầu. Sau đó chuyển sang <a href=\"\/trung-cuoc\">Trung cuộc<\/a> để học các đòn sát.<\/p>",
+            "seo_title": "Khai Cuộc Cờ Tướng — Nguyên Lý & Các Thế Trận Phổ Biến 2026",
+            "seo_description": "Học khai cuộc cờ tướng: Pháo đầu, Bình Phong Mã, Phản Cung Mã, Thuận Pháo, Phi Tượng, Tiên Nhân Chỉ Lộ. Nguyên lý tranh tiên và các bẫy hay gặp. Bàn cờ tương tác.",
+            "og_image": null,
+            "faq": [
+                {
+                    "a": "Pháo đầu cho bên Đỏ và Bình Phong Mã cho bên Đen là hai lựa chọn dễ hiểu, ít bẫy và có nhiều tài liệu. Học cặp 'Trung Pháo đối Bình Phong Mã' trước sẽ giúp bạn hiểu phần lớn ván cờ thực chiến.",
+                    "q": "Khai cuộc cờ tướng nào dễ học nhất cho người mới?"
+                },
+                {
+                    "a": "Tiên là quyền chủ động — được đi nước tạo đe dọa buộc đối phương phải phản ứng. Bên Đỏ khởi đầu có tiên nhờ đi trước; khai cuộc là cuộc giằng co xem ai giữ hoặc giành được quyền chủ động đó.",
+                    "q": "Tranh tiên trong khai cuộc nghĩa là gì?"
+                },
+                {
+                    "a": "Nên nhớ tư tưởng và vài nước đầu của hệ mình chọn, nhưng quan trọng hơn là hiểu vì sao đi nước đó. Khi đối phương đi lệch sách, bạn dựa vào nguyên lý (ra quân nhanh, giữ trung lộ, an toàn cửa Tướng) để xử lý.",
+                    "q": "Có nên học thuộc lòng các nước khai cuộc không?"
+                },
+                {
+                    "a": "Bình Phong Mã đưa cả hai Mã lên vị trí bình thường che Tốt đầu, phòng thủ chắc. Phản Cung Mã để một Mã vòng qua cung nhằm phản công sớm ở một cánh, đổi lấy sự linh hoạt nhưng khó chơi hơn.",
+                    "q": "Bình Phong Mã và Phản Cung Mã khác nhau thế nào?"
+                }
+            ]
+        },
+        {
+            "slug": "phase:nhap-mon",
+            "title": "Nhập Môn Cờ Tướng — Luật Chơi & Cách Đi Từng Quân",
+            "h1": "Nhập môn cờ tướng",
+            "lede": "Học cờ tướng từ số 0: bàn cờ, luật đi từng quân và những nguyên tắc đầu tiên để không thua oan trong 10 nước.",
+            "body_html": "<p>Cờ tướng chơi trên bàn 9 đường dọc, 10 đường ngang, quân đặt ở giao điểm. Hai bên mỗi bên 16 quân: 1 Tướng, 2 Sĩ, 2 Tượng, 2 Mã, 2 Xe, 2 Pháo và 5 Tốt. Bên Đỏ đi trước. Ai chiếu bí được Tướng đối phương (Tướng hết đường chạy hợp lệ) thì thắng.<\/p><h2>Cách đi từng quân<\/h2><ul><li><strong>Tướng (Soái)<\/strong>: đi và ăn 1 ô dọc hoặc ngang, chỉ trong cung 9 điểm. Hai Tướng không được đối mặt nhau trên cùng một đường dọc khi giữa không có quân.<\/li><li><strong>Sĩ<\/strong>: đi chéo 1 ô, cũng chỉ trong cung — là quân phòng thủ sát Tướng.<\/li><li><strong>Tượng<\/strong>: đi chéo đúng 2 ô (\"điền\"), không qua sông và bị cản nếu điểm giữa có quân (\"cản mắt tượng\").<\/li><li><strong>Mã<\/strong>: đi hình chữ nhật 1 ngang + 1 chéo. Bị \"cản chân mã\": nếu ô ngay cạnh theo hướng đi có quân thì Mã không nhảy được hướng đó.<\/li><li><strong>Xe<\/strong>: đi thẳng dọc hoặc ngang bao xa tùy ý nếu không bị chắn — quân mạnh nhất.<\/li><li><strong>Pháo<\/strong>: <em>di chuyển<\/em> giống Xe, nhưng khi <em>ăn quân<\/em> phải nhảy qua đúng một quân bất kỳ làm \"ngòi\".<\/li><li><strong>Tốt (Binh)<\/strong>: khi chưa qua sông chỉ tiến 1 ô; qua sông được đi ngang 1 ô; không bao giờ lùi.<\/li><\/ul><h2>Ba nguyên tắc cho người mới<\/h2><p>Thứ nhất, <strong>ra quân nhanh<\/strong>: trong khoảng 6–8 nước đầu nên đưa Xe, Mã, Pháo vào vị trí hoạt động thay vì đẩy Tốt biên hay đi Tướng sớm. Thứ hai, <strong>giữ trung lộ<\/strong>: cột giữa là nơi Pháo đầu và Xe dễ tạo sức ép nhất. Thứ ba, <strong>đừng ham ăn Tốt<\/strong> mà bỏ lỡ phát triển — mất tiên (quyền chủ động) thường nguy hiểm hơn mất một Tốt.<\/p><p>Ở mỗi bài trong mục Nhập môn, bạn bấm \"Tiến\" để xem từng nước cờ diễn ra trên bàn cờ tương tác, kèm lời giải thích vì sao đi nước đó. Học xong cách đi quân, bạn chuyển sang <a href=\"\/khai-cuoc\">Khai cuộc<\/a> để nắm các thế trận mở màn phổ biến.<\/p>",
+            "seo_title": "Nhập Môn Cờ Tướng — Luật Chơi & Cách Đi Từng Quân 2026",
+            "seo_description": "Học cờ tướng cho người mới: luật chơi, cách đi Xe Pháo Mã Tượng Sĩ Tướng Tốt, cản chân mã, cản mắt tượng và 3 nguyên tắc khai cuộc. Có bàn cờ tương tác.",
+            "og_image": null,
+            "faq": [
+                {
+                    "a": "Bắt đầu từ cách đi từng quân và luật cơ bản (chiếu, chiếu bí, hòa), sau đó học 3 nguyên tắc khai cuộc: ra quân nhanh, giữ trung lộ, không ham ăn Tốt. Mỗi bài ở mục Nhập môn có bàn cờ đi từng nước để bạn thấy rõ.",
+                    "q": "Người mới nên học cờ tướng từ đâu?"
+                },
+                {
+                    "a": "Xe mạnh nhất vì đi thẳng bao xa tùy ý. Kế đến là Pháo (mạnh khi còn nhiều quân làm ngòi) và Mã (mạnh ở cuối ván khi bàn cờ thoáng). Một Xe thường được coi là ngang giá hai Pháo hoặc hai Mã.",
+                    "q": "Quân nào mạnh nhất trong cờ tướng?"
+                },
+                {
+                    "a": "Nếu ô nằm ngay cạnh Mã theo hướng nó định đi có một quân (của bất kỳ bên nào), Mã không nhảy được hướng đó. Đây là cách phổ biến để hạn chế Mã đối phương mà không cần ăn nó.",
+                    "q": "Cản chân mã là gì?"
+                },
+                {
+                    "a": "Không. Nếu hai Tướng ở cùng một đường dọc và giữa không có quân nào chắn thì đó là nước đi phạm luật — bên nào tạo ra thế đó là bên thua (hoặc không được phép đi nước đó).",
+                    "q": "Hai Tướng có được nhìn thẳng nhau không?"
+                }
+            ]
+        },
+        {
+            "slug": "phase:tan-cuoc",
+            "title": "Tàn Cuộc Cờ Tướng — Kỹ Thuật Thắng Thế Cờ Ít Quân",
+            "h1": "Tàn cuộc cờ tướng",
+            "lede": "Tàn cuộc là lúc còn ít quân, mỗi nước đi và mỗi Tốt đều quan trọng. Nắm các thế thắng\/hòa cơ bản giúp bạn không đánh rơi ván đang hơn.",
+            "body_html": "<p>Khi trên bàn chỉ còn vài quân, ván cờ chuyển sang giai đoạn kỹ thuật: nhiều thế đã được nghiên cứu đến mức <strong>biết trước là thắng, hòa hay thua<\/strong> nếu chơi chính xác. Học tàn cuộc là học thuộc và hiểu các thế mẫu đó.<\/p><h2>Các thế tàn cần thuộc<\/h2><ul><li><strong>Xe thắng Tốt<\/strong>, <strong>Xe thắng Sĩ Tượng bền<\/strong> (có điều kiện), <strong>Xe Tốt thắng Xe<\/strong>: nền tảng vì Xe là quân hay còn lại nhất.<\/li><li><strong>Pháo Sĩ Tượng đối Tốt<\/strong>, <strong>Mã thắng Tốt<\/strong>, <strong>Mã Tốt thắng Sĩ<\/strong>: các thế Pháo\/Mã cơ bản.<\/li><li><strong>Tốt qua sông đổi Sĩ<\/strong>, <strong>đơn Tốt hạ thành<\/strong>: cách dùng Tốt để phá phòng thủ.<\/li><li><strong>Sĩ Tượng bền<\/strong> (đủ 2 Sĩ 2 Tượng) thường hòa được Pháo đơn hoặc Mã đơn — biết điều này để không cố thắng thế hòa.<\/li><\/ul><h2>Nguyên tắc tàn cuộc<\/h2><p>Thứ nhất, <strong>Tướng là quân tấn công<\/strong>: ở tàn cuộc nên đưa Tướng ra tham gia trận, đừng để mãi trong góc. Thứ hai, <strong>Tốt thông (Tốt không bị Tốt đối phương cản trên đường phong)<\/strong> rất giá trị — bảo vệ và đẩy nó lên. Thứ ba, khi hơn quân thì <strong>đổi hết quân tấn công của đối phương<\/strong> rồi dùng ưu thế quân để thắng; khi kém quân thì tìm cách đổi về các thế hòa lý thuyết.<\/p><p>Các bài trong mục Tàn cuộc trình bày từng thế mẫu với nước đi chính xác của cả hai bên, chỉ rõ đâu là nước duy nhất giữ thắng hoặc giữ hòa. Đây là phần cờ mà việc luyện tập cho kết quả rõ rệt nhất.<\/p>",
+            "seo_title": "Tàn Cuộc Cờ Tướng — Kỹ Thuật Thắng Thế Cờ Ít Quân 2026",
+            "seo_description": "Học tàn cuộc cờ tướng: Xe thắng Tốt, Pháo Sĩ Tượng, Mã Tốt thắng Sĩ, Sĩ Tượng bền hòa Pháo đơn. Nước đi chính xác từng thế mẫu, bàn cờ tương tác.",
+            "og_image": null,
+            "faq": [
+                {
+                    "a": "Thường là hòa nếu bên phòng thủ còn đủ 2 Sĩ 2 Tượng và chơi chính xác, vì Pháo đơn thiếu ngòi để công phá cung kín. Nếu mất một Sĩ hoặc một Tượng thì thế cân bằng lung lay và có thể thua.",
+                    "q": "Sĩ Tượng bền có hòa được Pháo đơn không?"
+                },
+                {
+                    "a": "Rất quan trọng. Một Tốt qua sông không bị cản có thể tiến sát cung, đổi Sĩ hoặc trực tiếp tham gia chiếu bí. Ở tàn cuộc, một Tốt thông đôi khi đủ để chuyển thế hòa thành thắng.",
+                    "q": "Tốt thông trong tàn cuộc quan trọng thế nào?"
+                },
+                {
+                    "a": "Khi ít quân, Tướng không còn bị đe dọa chiếu bí nhanh và trở thành một quân đi được 1 ô mỗi nước — đủ để hỗ trợ Tốt lên hoặc khống chế Tướng đối phương. Giữ Tướng trong góc là bỏ phí một quân.",
+                    "q": "Tại sao ở tàn cuộc phải đưa Tướng ra?"
+                },
+                {
+                    "a": "Nhiều huấn luyện viên khuyên học tàn cuộc sớm vì nó dạy cách tính toán chính xác và hiểu giá trị từng quân — nền tảng cho cả ván. Bạn có thể học song song: vài thế tàn cơ bản cùng với một hệ khai cuộc.",
+                    "q": "Nên học tàn cuộc trước hay khai cuộc trước?"
+                }
+            ]
+        },
+        {
+            "slug": "phase:trung-cuoc",
+            "title": "Trung Cuộc Cờ Tướng — Sát Pháp & Chiến Thuật Phối Hợp",
+            "h1": "Trung cuộc cờ tướng",
+            "lede": "Trung cuộc là lúc quyết định thắng thua: phối hợp Xe Pháo Mã tấn công cửa Tướng, tính nước đổi quân và nhận ra các thế sát quen thuộc.",
+            "body_html": "<p>Sau khai cuộc, hai bên đã ra quân xong và bắt đầu va chạm. Trung cuộc xoay quanh ba việc: <strong>tạo đòn tấn công vào Tướng đối phương<\/strong>, <strong>đổi quân có lợi<\/strong> và <strong>chiếm giữ các điểm mạnh<\/strong> (đường Xe thông, ô Mã bám sát cung, Pháo có ngòi tốt).<\/p><h2>Các thế sát cần thuộc<\/h2><ul><li><strong>Song Xe sát<\/strong>: hai Xe phối hợp chiếu Tướng thiếu Sĩ — \"khuyết Sĩ sợ Song Xe\".<\/li><li><strong>Pháo Mã sát<\/strong>: Mã bám sát cung, Pháo đứng xa lấy Mã hoặc quân khác làm ngòi để chiếu bí.<\/li><li><strong>Xe Pháo sát<\/strong>: Xe khống chế đường ngang hoặc dọc, Pháo chiếu qua ngòi — rất phổ biến khi Tướng bị lộ.<\/li><li><strong>Mã hậu Pháo<\/strong>, <strong>Pháo hậu Mã<\/strong>, <strong>Bạch mã hiện đề<\/strong>, <strong>nhị quỷ gõ cửa<\/strong> (hai Tốt qua sông áp sát cung): những mô hình lặp lại trong hàng nghìn ván cờ.<\/li><\/ul><h2>Nguyên tắc tính toán<\/h2><p>Trước khi tấn công, kiểm tra ba điều: mình có đủ quân tham gia đòn không (thường cần ít nhất hai quân phối hợp), đối phương phòng thủ được bằng nước nào, và nếu đòn không thành thì mình có bị phản đòn không. Khi tính đổi quân, nhớ giá trị tương đối: Xe ≈ 2 Pháo ≈ 2 Mã, Pháo và Mã xấp xỉ nhau (Pháo nhỉnh hơn khi bàn cờ nhiều quân, Mã nhỉnh hơn khi bàn cờ thoáng).<\/p><p>Các bài trong mục Trung cuộc mổ xẻ từng đòn sát từ thế xuất phát đến nước kết, giải thích vì sao đối phương không đỡ được. Xem nhiều thế sát mẫu là cách nhanh nhất để \"nhìn ra\" đòn trong ván thật. Kỹ thuật ít quân hơn nằm ở <a href=\"\/tan-cuoc\">Tàn cuộc<\/a>.<\/p>",
+            "seo_title": "Trung Cuộc Cờ Tướng — Sát Pháp & Chiến Thuật Phối Hợp 2026",
+            "seo_description": "Học trung cuộc cờ tướng: các thế sát Song Xe, Pháo Mã, Xe Pháo, nhị quỷ gõ cửa; cách tính đòn tấn công và đổi quân. Bàn cờ tương tác đi từng nước.",
+            "og_image": null,
+            "faq": [
+                {
+                    "a": "Học thuộc các mô hình sát cơ bản (Song Xe, Pháo Mã, Xe Pháo, nhị quỷ gõ cửa) rồi xem thật nhiều ván mẫu. Khi đã quen hình, bạn sẽ tự động nhận ra khi Tướng đối phương thiếu Sĩ hoặc bị lộ và có quân của mình áp sát.",
+                    "q": "Làm sao để nhìn ra đòn sát trong cờ tướng?"
+                },
+                {
+                    "a": "Đổi khi bạn đang hơn quân (đơn giản hóa để dễ thắng), khi đổi được quân phòng thủ chủ chốt của đối phương, hoặc khi đổi giúp quân còn lại của bạn mạnh lên. Tránh đổi vô cớ quân tấn công lấy quân bị động.",
+                    "q": "Khi nào nên đổi quân trong trung cuộc?"
+                },
+                {
+                    "a": "Tương đối: Xe 9–10, Pháo 4,5–5, Mã 4–4,5, Tốt qua sông 2, Sĩ và Tượng mỗi quân khoảng 2. Con số chỉ để tham khảo — vị trí và sự phối hợp quan trọng hơn.",
+                    "q": "Giá trị các quân cờ tướng tính thế nào?"
+                },
+                {
+                    "a": "Khi một bên mất một Sĩ, cung Tướng có lỗ hổng mà hai Xe đối phương phối hợp chiếu rất dễ thành sát. Đây là lý do nên giữ đủ Sĩ khi đối phương còn cả hai Xe.",
+                    "q": "'Khuyết Sĩ sợ Song Xe' nghĩa là gì?"
+                }
+            ]
+        }
+    ]
+}
