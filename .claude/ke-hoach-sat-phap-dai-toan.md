@@ -460,3 +460,15 @@
   - **CHƯƠNG 3 "TÀN CUỘC ĐỊNH THỨC SÁT PHÁP" HOÀN TẤT** (Bài 1-15). Page 307 PDF = tiêu đề Chương 4 "PHÁ SĨ PHÁ TƯỢNG SÁT PHÁP".
   - **Nợ tổng cập nhật (làm sau, vòng xác thực cẩn thận từng ván)**: B5 vd16; B6 vd2,23,24,25; B7 vd6,13,15,16,20; B8 vd7; B9 vd7,8,9; B10 vd2; B12 vd4; B13 vd4,5,6,7. Chủ yếu là ván thực chiến "thắng thế"/"lệ thắng" dài hoặc sơ đồ dày khó đọc màu quân.
   - **Việc tiếp theo (nếu user muốn)**: Chương 4 "Phá Sĩ Phá Tượng Sát Pháp" (PDF tr.307+), hoặc quay lại làm nợ tổng.
+
+- **2026-09-11 — CHƯƠNG 4 "PHÁ SĨ PHÁ TƯỢNG SÁT PHÁP" (user: "chương 4 ít, làm luôn đi")**:
+  - **Khảo sát mục lục (PDF tr.414-418)**: Chương 4 THỰC RA không ngắn — Bài 1 "Phá Sĩ" có 22 ví dụ, Bài 2 "Phá Tượng" có 25 ví dụ = 47 ví dụ (PDF tr.309-347). Đã báo lại user để điều chỉnh kỳ vọng.
+  - **Đặc điểm khác biệt với Chương 3**: đây không phải tàn cuộc rút gọn mà là thế cờ TRUNG CUỘC gần như đầy đủ quân (~28-30 quân/sơ đồ, so với ~6-14 quân ở Chương 3), ván dài (12-48 nước + nhánh lớn). Đọc sơ đồ khó hơn hẳn — nhiều quân cùng loại/màu chen chúc, cột dễ lệch 1 ô, dẫn tới sai sót dây chuyền qua nhiều nước trước khi engine bắt được lỗi.
+  - **Bài 1 vd1 (Hình 4.1)**: ✅ validate 0 warnings sau nhiều vòng đọc lại cẩn thận. FEN `4ka3/4a4/9/p1PP1R2p/9/P2r5/1n1r5/3AB4/4AR3/2B1K4` (first=den). Song Xe Mã (Đen) đối Song Xe Song Binh (Trắng) — Đen thí Mã sát Sĩ rồi Song Xe khép sát, 17 nước.
+  - **Bài 1 vd2 (Hình 4.2)**: ❌ HOÃN sau debug sâu (~10+ vòng engine feedback) — Trung Pháo đối Phản Cung Mã, 33 nước, sơ đồ ~28 quân. Xác định chắc 1 lỗi (cột Pháo trung — phải ở cột giữa bàn, không lệch 1 cột) nhưng vẫn còn ≥1 lỗi khác (quân Mã Đen bị "vướng chân" bởi 2 Tốt Trắng hai bên khiến nước M4.6 không hợp lệ dù sách ghi rõ) — không chốt được trong thời gian hợp lý.
+  - **Xem trước vd3 (48 nước!), vd4 (22 nước, sơ đồ ~28 quân), vd5 (dài, tiếp tục qua nhiều trang)** — cùng mức độ dày/dài. → Báo lại user tỷ lệ hoãn sẽ cao, tốn công gấp nhiều lần Chương 3.
+  - **Quyết định của user (sau khi thấy thực tế)**: DỪNG đọc từng ví dụ cụ thể; chỉ hoàn thiện phần LÝ THUYẾT (2 bài giới thiệu) cho Chương 4, không số hóa 47 ván cụ thể.
+  - **Đã hoàn thành**: Bài 1 "Phá Sĩ Sát Pháp" — intro + ví dụ 1 (2 bài, order 41000-41001). Bài 2 "Phá Tượng Sát Pháp" — intro (1 bài, order 42000). Cả 3 bài ĐÃ PUSH.
+  - **Series ~= 380 bài** (tổng ~588).
+  - **Trạng thái Chương 4**: coi như ĐÃ ĐÓNG ở mức lý thuyết — 47 ví dụ cụ thể của Bài 1 (21 còn lại) và Bài 2 (25) KHÔNG làm, trừ khi user yêu cầu lại sau này với hiểu biết rõ về chi phí.
+  - **Việc tiếp theo (nếu user muốn)**: Chương 5 "'Thích Tình Nhã Thú' Kinh Điển Sát Pháp Tuyển Chọn" (43 cuộc, PDF tr.349-370) hoặc Chương 6 "Đề Kiểm Tra Sát Pháp" (PDF tr.373-398, có đáp án) — cả hai đều CHƯA khảo sát độ khó sơ đồ, nên khảo sát nhanh trước khi cam kết làm toàn bộ.
