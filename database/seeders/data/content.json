@@ -109340,6 +109340,162 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60018,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 18 — Xe Chiếu, Binh Đâm Sau Lưng Chiếu Bí",
+      "slug": "c6-de-kiem-tra-bai-18",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "c2k3C1/4aR3/4PN3/9/9/6N2/9/1r1p5/4p4/3K5",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 18: Trắng cầm Xe, Pháo, Mã và Binh, dùng hai nước chiếu liên tiếp (Xe rồi Binh) dồn Tướng Đen lên cao trước khi Pháo từ xa dứt điểm.",
+      "content": "<p>Trắng có Xe, Pháo, Mã, Binh. Hai nước chiếu liên tiếp buộc Tướng Đen phải thăng lên cao dần — hãy tìm nước Pháo cuối cùng khép lại thế cờ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 18 — Xe Chiếu, Binh Đâm Sau Lưng Chiếu Bí",
+      "seo_description": "Bài kiểm tra sát pháp số 18: Trắng cầm Xe Pháo Mã Binh, hai nước chiếu liên tiếp dồn Tướng Đen lên cao trước khi Pháo từ xa dứt điểm chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "c2k1R1C1/4a4/4PN3/9/9/6N2/9/1r1p5/4p4/3K5",
+          "move_notation_wxf": "Xe 4 tiến 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "c4R1C1/3ka4/4PN3/9/9/6N2/9/1r1p5/4p4/3K5",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "c4R1C1/3ka4/3P1N3/9/9/6N2/9/1r1p5/4p4/3K5",
+          "move_notation_wxf": "Tốt 5 bình 6",
+          "move_notation_iccs": "e7d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh sang lộ 6 chiếu tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "c4R1C1/4a4/3k1N3/9/9/6N2/9/1r1p5/4p4/3K5",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen buộc phải thăng Tướng lần nữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "c4R3/4a4/3k1N1C1/9/9/6N2/9/1r1p5/4p4/3K5",
+          "move_notation_wxf": "Pháo 2 thoái 2",
+          "move_notation_iccs": "h9h7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60019,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 19 — Mã Đảo Hai Vòng Chiếu Bí Góc Xa",
+      "slug": "c6-de-kiem-tra-bai-19",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "C4k3/1CN1a3c/9/9/9/9/9/7r1/4p4/4K4",
+      "variation_tree": null,
+      "move_count": 5,
+      "summary": "Bài kiểm tra số 19: Trắng chỉ còn Song Pháo và một Mã ở góc bàn xa xôi, nhưng quân Mã đảo đúng hai vòng là đủ mở khóa cho đòn Pháo chiếu bí.",
+      "content": "<p>Trắng có Song Pháo và một Mã. Quân Vua Đen đứng lẻ loi ở góc bàn — hãy tìm đường đi vòng của quân Mã để mở lối cho quân Pháo dứt điểm.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 19 — Mã Đảo Hai Vòng Chiếu Bí Góc Xa",
+      "seo_description": "Bài kiểm tra sát pháp số 19: Trắng chỉ còn Song Pháo và một Mã, quân Mã đảo hai vòng mở khóa cho đòn Pháo chiếu bí ở góc bàn.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "C3Nk3/1C2a3c/9/9/9/9/9/7r1/4p4/4K4",
+          "move_notation_wxf": "Mã 7 tiến 5",
+          "move_notation_iccs": "c8e9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "C2aNk3/1C6c/9/9/9/9/9/7r1/4p4/4K4",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "C2a1k3/1C6c/3N5/9/9/9/9/7r1/4p4/4K4",
+          "move_notation_wxf": "Mã 5 thoái 6",
+          "move_notation_iccs": "e9d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã sang lộ 6.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "C4k3/1C2a3c/3N5/9/9/9/9/7r1/4p4/4K4",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "d9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "CC3k3/4a3c/3N5/9/9/9/9/7r1/4p4/4K4",
+          "move_notation_wxf": "Pháo 8 tiến 1",
+          "move_notation_iccs": "b8b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
