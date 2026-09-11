@@ -109496,6 +109496,206 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60021,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 21 — Pháo Đâm Sĩ, Song Xe Mã Kết Liễu",
+      "slug": "c6-de-kiem-tra-bai-21",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1ka3/1C2a3C/rR2b4/1N2r4/9/9/9/3p5/4K4/9",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 21: mặc dù Đen có nhiều Xe hơn, Trắng vẫn tìm ra chuỗi bảy nước phối hợp Pháo, Xe, Mã để phá Tượng và chiếu bí ngay giữa vòng vây quân Đen.",
+      "content": "<p>Trắng có Pháo, Xe, Mã đối lại lực lượng Đen đông hơn (hai Xe, Sĩ Tượng, Tốt). Hãy tìm chuỗi bảy nước phối hợp cả ba quân để phá vỡ hàng thủ và chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 21 — Pháo Đâm Sĩ, Song Xe Mã Kết Liễu",
+      "seo_description": "Bài kiểm tra sát pháp số 21: dù Đen nhiều Xe hơn, Trắng phối hợp Pháo Xe Mã phá Tượng và chiếu bí ngay giữa vòng vây quân Đen.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1Cb1ka3/4a3C/rR2b4/1N2r4/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Pháo 8 tiến 1",
+          "move_notation_iccs": "b8b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1Cbaka3/8C/rR2b4/1N2r4/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1Cbaka3/8C/r3R4/1N2r4/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Xe 8 bình 5",
+          "move_notation_iccs": "b7e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe ăn Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1Cbaka3/8C/r3r4/1N7/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Xe 5 thoái 1",
+          "move_notation_iccs": "e6e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1Cbaka3/2N5C/r3r4/9/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "b6c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1Cba1a3/2N1k3C/r3r4/9/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2ba1a3/1CN1k3C/r3r4/9/9/9/9/3p5/4K4/9",
+          "move_notation_wxf": "Pháo 8 thoái 1",
+          "move_notation_iccs": "b9b8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60024,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 24 — Mã Dứt Điểm, Pháo Đóng Khung, Xe Khép Vòng",
+      "slug": "c6-de-kiem-tra-bai-24",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4R4/4a4/4kaN2/9/9/9/7C1/3np3r/9/5K3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 24: Trắng cầm Xe, Pháo, Mã tổ chức ba nước chiếu liên tiếp bằng ba quân khác nhau, dồn Tướng Đen vào góc không còn lối thoát.",
+      "content": "<p>Trắng có Xe, Pháo, Mã. Ba nước chiếu liên tiếp — mỗi nước một quân khác nhau — sẽ dồn Tướng Đen vào đúng ô để chiếu bí. Hãy tìm đúng thứ tự ba quân ra tay.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 24 — Mã Dứt Điểm, Pháo Đóng Khung, Xe Khép Vòng",
+      "seo_description": "Bài kiểm tra sát pháp số 24: Trắng cầm Xe Pháo Mã tổ chức ba nước chiếu liên tiếp bằng ba quân khác nhau, dồn Tướng Đen vào góc chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4RN3/4a4/4ka3/9/9/9/7C1/3np3r/9/5K3",
+          "move_notation_wxf": "Mã 3 tiến 4",
+          "move_notation_iccs": "g7f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã chiếu Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4RN3/4a4/3k1a3/9/9/9/7C1/3np3r/9/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e7d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4RN3/4a4/3k1a1C1/9/9/9/9/3np3r/9/5K3",
+          "move_notation_wxf": "Pháo 2 tiến 4",
+          "move_notation_iccs": "h3h7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo chiếu tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4RN3/3ka4/5a1C1/9/9/9/9/3np3r/9/5K3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d7d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3R1N3/3ka4/5a1C1/9/9/9/9/3np3r/9/5K3",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 6 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3k1N3/4a4/5a1C1/9/9/9/9/3np3r/9/5K3",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng lần nữa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3k1N1C1/4a4/5a3/9/9/9/9/3np3r/9/5K3",
+          "move_notation_wxf": "Pháo 2 tiến 2",
+          "move_notation_iccs": "h7h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
