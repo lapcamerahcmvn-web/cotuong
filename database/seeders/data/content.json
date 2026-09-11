@@ -108594,6 +108594,28 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 42000,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Trung Cuộc] Phá Tượng Sát Pháp — Tượng Là Bức Tường Ngoài, Ngự Trị Nửa Giang Sơn",
+      "slug": "c4-pha-tuong-gioi-thieu",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": null,
+      "variation_tree": null,
+      "move_count": 0,
+      "summary": "Bài 2 khép lại Chương 4, tìm hiểu vai trò của quân Tượng: hộ vệ ngoài cung của Tướng, đứng trấn giữ bên bờ sông thuộc phần sân nhà. Phá vỡ Tượng không chỉ mở một điểm yếu cục bộ mà còn nhường quyền khống chế cả nửa bàn cờ cho đối phương.",
+      "content": "<h2>Tượng — bức tường ngoài của cửu cung</h2><p>Nếu Sĩ là hộ vệ cận thân đứng ngay trong cửu cung, thì Tượng là hộ vệ ở lớp ngoài, mỗi bên một cặp trấn giữ hai bên gần bờ sông. Sách mô tả súc tích: Tượng \"trong thì bảo vệ cửu cung, ngoài thì ngự trị ven sông, tiếp xúc ảnh hưởng nửa phần giang sơn\". Không quân nào khác trong bộ phòng thủ (Sĩ, Tượng) lại vươn xa và bao quát một vùng rộng như vậy.</p><h2>Vì sao mất Tượng nguy hiểm hơn tưởng tượng</h2><p>Một quân Tượng còn nguyên vẹn khống chế các điểm chốt dọc theo bờ sông bên phía mình — đây thường là nơi quân Mã, Pháo đối phương cần đặt chân để tổ chức tấn công. Mất một Tượng, đối phương không chỉ có thêm một đường chiếu, mà còn giành được quyền kiểm soát cả một mảng lớn không gian mà trước đó Tượng vẫn án ngữ.</p><h2>Thủ đoạn phá Tượng thường gặp</h2><p>Các ví dụ trong Bài 2 cho thấy nhiều cách phá Tượng: xông Binh chiếm vị trí rồi đổi lấy Tượng, dùng Pháo/Mã phối hợp trực tiếp ăn Tượng, hoặc buộc đối phương phải tự bay Tượng vào thế kẹt rồi vây bắt. Có ván được sách khen là \"tay cầm hoa sen, từng bước phát sáng\" — ý nói một chuỗi đòn phối hợp liên hoàn, đẹp mắt và hiệu quả.</p><h2>Phá Sĩ, phá Tượng — hai mặt của một chiến lược</h2><p>Kết hợp với Bài 1, Chương 4 hoàn thiện một tư tưởng lớn của trung cuộc cờ tướng: hàng phòng ngự Sĩ Tượng không phải bất khả xâm phạm. Người tấn công giỏi luôn tìm cách định giá đúng: đôi khi thí một Xe, một Mã, hay một Pháo để đổi lấy việc phá vỡ Sĩ hoặc Tượng đối phương là một cuộc trao đổi hoàn toàn có lợi, vì nó mở đường cho toàn bộ lực lượng còn lại tràn vào kết thúc ván cờ.</p>",
+      "status": "published",
+      "decode_confidence": null,
+      "thumbnail": null,
+      "seo_title": "Phá Tượng Sát Pháp — Tượng Là Bức Tường Ngoài Cửu Cung, Ngự Trị Nửa Giang Sơn",
+      "seo_description": "Quân Tượng là hộ vệ ngoài cung, trấn giữ ven sông và ảnh hưởng nửa bàn cờ; phá vỡ Tượng bằng xông Binh, phối hợp Pháo Mã là chiến thuật trung cuộc mở đường vào cung.",
+      "is_featured": false,
+      "steps": []
     }
   ]
 }
