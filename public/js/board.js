@@ -71,6 +71,45 @@
     btn.addEventListener('click', function () { Sound.toggle(); render(); });
   }
 
+  // Sao chép FEN thế cờ đang hiển thị. `getFen` là closure riêng từng chế độ (view/tree lấy
+  // theo idx/cur hiện tại, static lấy initialFen cố định) — puzzle mode tự có copyFen() riêng.
+  function attachCopyFen(root, getFen) {
+    var btn = root.querySelector('[data-xq-copyfen]');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var fen = getFen();
+      if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+      navigator.clipboard.writeText(fen).then(function () {
+        var old = btn.textContent;
+        btn.textContent = '✓';
+        setTimeout(function () { btn.textContent = old; }, 1600);
+      });
+    });
+  }
+
+  // Lưu thế cờ đang hiển thị vào "Thư viện của tôi" (chỉ hiện nút khi đã đăng nhập — xem
+  // chess-board.blade.php @auth). Cùng closure `getFen` với attachCopyFen.
+  function attachSaveFen(root, getFen) {
+    var btn = root.querySelector('[data-xq-savefen]');
+    if (!btn) return;
+    var group = root.querySelector('[data-xq-source-lesson]');
+    var sourceLessonId = group ? group.getAttribute('data-xq-source-lesson') : null;
+    btn.addEventListener('click', function () {
+      var title = window.prompt('Đặt tên cho thế cờ này (không bắt buộc):', '') || '';
+      var tokenEl = document.querySelector('meta[name=csrf-token]');
+      if (!tokenEl) return;
+      fetch('/thu-vien', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': tokenEl.content, 'Accept': 'application/json' },
+        body: JSON.stringify({ fen: getFen(), title: title, source_lesson_id: sourceLessonId || null })
+      }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function () {
+        var old = btn.textContent;
+        btn.textContent = '✓';
+        setTimeout(function () { btn.textContent = old; }, 1800);
+      }).catch(function () { alert('Lưu thất bại, thử lại sau.'); });
+    });
+  }
+
   // So số quân sống trên FEN — chỉ dùng để suy ra "có ăn quân không" giữa 2 thế, không cần
   // backend gửi kèm captured_piece.
   function countPieces(fen) {
@@ -291,6 +330,9 @@
     }
 
     var idx = -1, flip = false;
+    var getCurFen = function () { return idx < 0 ? startFen : steps[idx].fen; };
+    attachCopyFen(root, getCurFen);
+    attachSaveFen(root, getCurFen);
 
     function draw() {
       var cur = idx < 0 ? { fen: startFen } : steps[idx];
@@ -380,6 +422,9 @@
       (node.children || []).forEach(function (c) { c.parent = node; c.depth = node.depth + 1; c.children = c.children || []; link(c); });
     })(rootNode);
     var cur = rootNode, flat = [], flip = false;
+    var getCurFen = function () { return cur.fen; };
+    attachCopyFen(root, getCurFen);
+    attachSaveFen(root, getCurFen);
 
     function setDisabled(name, v) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.disabled = v; }
     function notifyEnd() { if (!cur.children || !cur.children.length) document.dispatchEvent(new CustomEvent('xq:viewed-all-moves')); }
@@ -517,6 +562,7 @@
     var board = Rules.loadFen(startFen);
     var stepIdx = -1;
     var selected = -1;
+    attachSaveFen(root, function () { return Rules.toFen(board); });
     var solved = false;
 
     function curExpected() { return stepIdx + 1 < steps.length ? steps[stepIdx + 1] : null; }

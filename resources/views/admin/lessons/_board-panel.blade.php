@@ -12,6 +12,12 @@
     </div>
     <div data-be-msg style="min-height:20px;font-size:13px;font-weight:600;margin-bottom:8px;"></div>
 
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px;">
+        <input type="text" data-be-fen-input class="input" style="flex:1;min-width:220px;font-family:monospace;font-size:13px;" placeholder="Chuỗi FEN (phần xếp quân)…">
+        <button type="button" class="btn" data-be-fen-apply>Dán FEN vào bàn</button>
+        <button type="button" class="btn btn--ghost" data-be-fen-copy>Copy FEN</button>
+    </div>
+
     <div class="be-tools" data-be-setup-tools style="display:none;">
         <div class="be-palette" data-be-palette></div>
         <div class="be-tool-row">

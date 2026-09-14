@@ -6,6 +6,7 @@
     'caption' => null,   // chú thích tĩnh (bài minh hoạ không có nước đi)
     'mode' => 'view',    // 'view' (mặc định) | 'puzzle' (giải đố — tự đi quân, máy đáp trả)
     'puzzleSide' => null, // 'do' | 'den' — bên người dùng tự giải (bắt buộc khi mode=puzzle)
+    'sourceLessonId' => null, // id bài học (nếu có) — gắn kèm khi lưu FEN vào thư viện cá nhân
 ])
 
 @php
@@ -39,10 +40,14 @@
                     @else
                         <span></span>
                     @endif
-                    <span class="board-fab-group">
+                    <span class="board-fab-group" @if($sourceLessonId) data-xq-source-lesson="{{ $sourceLessonId }}" @endif>
                         @if(!$isStatic)
                             <button type="button" class="board-fab" data-xq-sound title="Bật/tắt âm thanh nước đi">🔊</button>
                         @endif
+                        <button type="button" class="board-fab" data-xq-copyfen title="Sao chép FEN thế cờ hiện tại">📋</button>
+                        @auth
+                            <button type="button" class="board-fab" data-xq-savefen title="Lưu thế cờ này vào thư viện">🔖</button>
+                        @endauth
                         <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
                     </span>
                 </div>
@@ -53,7 +58,6 @@
                 <div class="controls">
                     <button type="button" class="btn" data-xq-reset aria-label="Làm lại từ đầu">↺ Làm lại</button>
                     <button type="button" class="btn" data-xq-solution aria-label="Xem lời giải">Xem lời giải</button>
-                    <button type="button" class="btn btn--ghost" data-xq-copyfen aria-label="Sao chép FEN">Copy FEN</button>
                 </div>
             @elseif(!$isStatic)
                 <div class="controls controls--main">

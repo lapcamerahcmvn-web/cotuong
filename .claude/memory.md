@@ -5,6 +5,53 @@
 
 ---
 
+## 2026-09-15 — Copy/Dán FEN (Admin + công khai) + Thư viện thế cờ cá nhân
+
+Plan đầy đủ: `C:\Users\MinhTuyen\.claude\plans\pure-pondering-haven.md` (máy dev). Làm cả 3 pha
+P1/P2/P3 trong 1 phiên, đã test E2E bằng Puppeteer (đăng nhập admin, thao tác thật qua trình
+duyệt headless) trước khi commit.
+
+**P1 — Copy/Dán FEN**:
+- `board-editor.js` (Admin): thêm ô FEN + nút "Dán FEN vào bàn"/"Copy FEN" — code MỚI thêm cuối
+  file, KHÔNG sửa hàm nào có sẵn (đúng nguyên tắc không đụng core file này).
+- **Tiện thể vá 1 bug có sẵn**: `serializeTree()` crash `Cannot read properties of null (reading
+  'children')` khi `rootNode` là null — xảy ra ngay cả với nút "Xoá hết"/"Thế mở Cờ Tướng" GỐC
+  (không liên quan gì FEN mới), chỉ chưa ai bấm đúng lúc để lộ ra. Vá 1 dòng: `return rootNode ?
+  ser(rootNode) : [];`. Có thể admin từng bấm các nút đó ở thế trống và `variation_tree` không
+  được ghi (lỗi JS âm thầm) — nếu gặp bài nào có vẻ thiếu cây biến sau khi dùng các nút đó trước
+  đây, đây là nguyên nhân khả dĩ.
+- `board.js`: `attachCopyFen(root, getFen)` dùng chung cho view/tree/static (trước CHỈ có ở
+  puzzle mode). Nút 📋 chuyển vào `.board-fab-group` (cạnh 🔊/⛶), áp dụng MỌI chế độ.
+
+**P2 — Thư viện (bảng `saved_positions`)**:
+- Migration mẫu `user_learning_tables` (InnoDB + `foreignId()->constrained()->cascadeOnDelete()`).
+  `SavedPosition` (user_id, source_lesson_id nullable, fen, title, note). `User::library()`.
+- `LibraryController@store` (JSON, dùng chung cho nút 🔖 trên bàn cờ VÀ khối soạn cờ ở P3) +
+  `@destroy` (chỉ chủ sở hữu, 403 nếu không). Route trong khối `auth` sẵn có ở `routes/web.php`.
+- Nút "🔖 Lưu vào thư viện" trên MỌI chế độ bàn cờ công khai (view/tree/static/puzzle) — `@auth`.
+  Prop `sourceLessonId` mới cho `<x-chess-board>`, đã truyền từ `lessons/show.blade.php` (cả 3
+  instance: view/puzzle/static).
+
+**P3 — Trang `/tai-khoan/thu-vien`**:
+- `account/library.blade.php`: khối "Soạn thế cờ mới" (`<details>` gấp/mở) + danh sách đã lưu
+  (`<details><summary class="lesson-item">` — click hàng mở rộng thành `<x-chess-board>` tĩnh
+  ngay tại chỗ, KHÔNG cần route riêng để "xem"). Xoá = form DELETE thường + `confirm()`.
+- **Thumbnail thư viện = SVG SỐNG** (`window.XiangqiBoard.render(fen)`, JS chèn lúc load trang) —
+  KHÔNG sinh ảnh PNG như lesson OG. Không hạ tầng ảnh mới, sắc nét mọi kích thước.
+- `public/js/fen-composer.js` (MỚI, ~150 dòng): đặt quân đơn giản (không ghi nước/luật đi quân/
+  cây biến — chỉ cần 1 thế cờ tĩnh), dùng `window.XiangqiRules.loadFen/toFen` (KHÔNG viết lại FEN
+  logic). Board + 90 điểm bấm tự vẽ riêng (bản rút gọn từ setup-mode của `board-editor.js`,
+  KHÔNG đụng file đó). CSS namespace `.fc-*` thêm vào `app.css` (KHÔNG dùng `.be-*` — những class
+  đó chỉ định nghĩa trong `admin.css`, trang public không nạp file này — phát hiện lúc làm, xem
+  kỹ trước khi tái dùng class giữa admin/public).
+- `account/index.blade.php`: stat-grid 3→4 ô (2x2), ô mới "Thế cờ đã lưu" link sang thư viện.
+
+**Gotcha rút ra**: `admin.css` và `app.css` là 2 file RIÊNG — admin load cả 2, public CHỈ load
+`app.css`. Mọi class dùng ở view public phải định nghĩa trong `app.css`, dù nhìn "giống" 1 class
+đã có ở admin (`.be-palette` v.v.) — kiểm tra bằng `grep` trước khi giả định dùng chung được.
+
+---
+
 ## 2026-09-11 — Đợt SEO + ảnh thế cờ + giao diện bàn cờ hiện đại (đã push `5a77477`)
 
 User yêu cầu "làm hết kế hoạch rồi đẩy GitHub để đồng bộ". Đã push `origin/main` `5a77477`.

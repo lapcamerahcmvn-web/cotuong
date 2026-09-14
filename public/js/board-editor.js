@@ -228,7 +228,8 @@
         return { from: c.from, to: c.to, iccs: c.iccs, wxf: c.wxf, side: c.side, reveal: c.reveal || null, fen: toFen(c.board), caption: c.caption || '', children: ser(c) };
       });
     }
-    return ser(rootNode);
+    // rootNode có thể null (vừa "Xoá hết"/nạp thế mở/dán FEN, chưa vào "Soạn nước đi") — trả mảng rỗng.
+    return rootNode ? ser(rootNode) : [];
   }
   // Đường dẫn từ gốc tới node (để tô sáng dòng đang xem).
   function isOnPath(node) { var n = cur; while (n) { if (n === node) return true; n = n.parent; } return false; }
@@ -292,6 +293,9 @@
     holder.querySelectorAll('.be-hit').forEach(function (el) {
       el.addEventListener('click', function () { onSquare(+el.getAttribute('data-sq')); });
     });
+    // Ô FEN luôn phản ánh thế hiện tại (trừ khi admin đang gõ/dán vào đó).
+    var fenBox = root.querySelector('[data-be-fen-input]');
+    if (fenBox && document.activeElement !== fenBox) fenBox.value = toFen(board);
   }
 
   // ---- xử lý bấm ô ----
@@ -477,6 +481,27 @@
   var beCover = root.querySelector('[data-be-cover]');
   if (beCover) beCover.addEventListener('click', coverAll);
   root.querySelector('[data-be-undo]').addEventListener('click', function () { if (cur && cur.parent) { deleteNode(cur); render(); renderMoves(); } });
+
+  // ---- Dán / Copy FEN nhanh (soạn nhanh từ 1 chuỗi FEN có sẵn) ----
+  var beFenInput = root.querySelector('[data-be-fen-input]');
+  var beFenApply = root.querySelector('[data-be-fen-apply]');
+  var beFenCopy = root.querySelector('[data-be-fen-copy]');
+  if (beFenApply) beFenApply.addEventListener('click', function () {
+    var val = beFenInput && beFenInput.value.trim();
+    if (!val) { beMsg('Nhập chuỗi FEN trước.'); return; }
+    loadFen(val); hidden = new Array(90).fill(null); rootNode = null; cur = null;
+    enterSetup();
+    beMsg('Đã nạp FEN — kiểm tra lại quân rồi sang "Soạn nước đi".', true);
+  });
+  if (beFenCopy) beFenCopy.addEventListener('click', function () {
+    var fen = toFen(board);
+    if (beFenInput) beFenInput.value = fen;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(fen).then(function () { beMsg('Đã sao chép FEN: ' + fen, true); });
+    } else {
+      beMsg('FEN: ' + fen, true);
+    }
+  });
 
   // đổi loại cờ: Cờ Úp → vào xếp quân (xếp quân sáng đúng luật rồi đậy nắp); Cờ Tướng → soạn nước ngay
   var gm = document.getElementById('be-gamemode');

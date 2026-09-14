@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -28,14 +29,20 @@ class User extends Authenticatable
         return in_array($this->role, ['admin', 'bien_tap'], true);
     }
 
-    public function progress(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function progress(): HasMany
     {
         return $this->hasMany(LessonProgress::class);
     }
 
-    public function accessLogs(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function accessLogs(): HasMany
     {
         return $this->hasMany(AccessLog::class);
+    }
+
+    // "Thư viện" thế cờ cá nhân — xem SavedPosition.
+    public function library(): HasMany
+    {
+        return $this->hasMany(SavedPosition::class);
     }
 
     public function completedCount(): int
@@ -44,6 +51,7 @@ class User extends Authenticatable
     }
 
     protected ?array $_completedIds = null;
+
     protected ?array $_completedBySeries = null;
 
     /** ID các bài đã học (completed) — memoize trong 1 request. */
@@ -76,11 +84,14 @@ class User extends Authenticatable
             if ($recentLesson && $recentLesson->series_id) {
                 $n = Lesson::published()->where('series_id', $recentLesson->series_id)
                     ->whereNotIn('id', $done)->orderBy('order_in_series')->orderBy('id')->first();
-                if ($n) return $n;
+                if ($n) {
+                    return $n;
+                }
             }
         }
+
         return Lesson::published()->where('phase', 'nhap-mon')->whereNotIn('id', $done)
-                ->orderBy('order_in_series')->orderBy('id')->first()
+            ->orderBy('order_in_series')->orderBy('id')->first()
             ?? Lesson::published()->whereNotIn('id', $done)->orderBy('id')->first();
     }
 

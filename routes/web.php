@@ -1,35 +1,46 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\BoardEditorController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Admin\LessonSeriesController;
-use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\SourceAssetController;
+use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Middleware\LogAccess;
+use App\Http\Middleware\TrackVisit;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // SEO files — bỏ session/cookie/CSRF: đây là tài nguyên công khai cho bot, không cần state.
 // Giữ nguyên sẽ khiến StartSession gắn Set-Cookie + Cache-Control: private → GSC báo "không thể tìm nạp".
 Route::withoutMiddleware([
-    \Illuminate\Cookie\Middleware\EncryptCookies::class,
-    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-    \Illuminate\Session\Middleware\StartSession::class,
-    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-    \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
-    \Illuminate\Foundation\Http\Middleware\PreventRequestForgery::class,
-    \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
-    \App\Http\Middleware\LogAccess::class,
-    \App\Http\Middleware\TrackVisit::class,
+    EncryptCookies::class,
+    AddQueuedCookiesToResponse::class,
+    StartSession::class,
+    ShareErrorsFromSession::class,
+    ValidateCsrfToken::class,
+    PreventRequestForgery::class,
+    VerifyCsrfToken::class,
+    LogAccess::class,
+    TrackVisit::class,
 ])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
     Route::get('/sitemap-{section}.xml', [SitemapController::class, 'section'])
@@ -55,6 +66,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store');
     Route::post('/bai-hoc/{lesson:slug}/binh-luan', [CommentController::class, 'store'])->name('comment.store')->middleware('throttle:15,1');
     Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1');
+
+    // Thư viện thế cờ cá nhân.
+    Route::get('/tai-khoan/thu-vien', [LibraryController::class, 'index'])->name('account.library');
+    Route::post('/thu-vien', [LibraryController::class, 'store'])->name('library.store')->middleware('throttle:20,1');
+    Route::delete('/thu-vien/{position}', [LibraryController::class, 'destroy'])->name('library.destroy');
 });
 
 // ---- Admin ---- (chỉ nhân sự: admin/biên tập — học viên bị chặn 403)
@@ -62,8 +78,8 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('lessons', [AdminLessonController::class, 'index'])->name('lessons.index');
-    Route::get('lessons/board-editor', [\App\Http\Controllers\Admin\BoardEditorController::class, 'create'])->name('board-editor.create');
-    Route::post('lessons/board-editor', [\App\Http\Controllers\Admin\BoardEditorController::class, 'store'])->name('board-editor.store');
+    Route::get('lessons/board-editor', [BoardEditorController::class, 'create'])->name('board-editor.create');
+    Route::post('lessons/board-editor', [BoardEditorController::class, 'store'])->name('board-editor.store');
     Route::get('lessons/{lesson:id}/edit', [AdminLessonController::class, 'edit'])->name('lessons.edit');
     Route::put('lessons/{lesson:id}', [AdminLessonController::class, 'update'])->name('lessons.update');
     Route::post('lessons/{lesson:id}/toggle', [AdminLessonController::class, 'togglePublish'])->name('lessons.toggle');

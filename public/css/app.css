@@ -493,3 +493,23 @@ body.xq-fs-lock { overflow: hidden; }
   .controls--sub { gap: 4px; }
   .controls--sub .btn { flex: 1 1 44%; min-width: 0; }
 }
+
+/* ---- Soạn thế cờ công khai (/tai-khoan/thu-vien) — bảng chọn quân + FEN box.
+   Namespace "fc-" riêng (fen-composer.js), không phụ thuộc admin.css (trang public chỉ nạp file này). ---- */
+.fc-palette { display: flex; gap: 6px; flex-wrap: wrap; }
+.fc-pal { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font-size: 22px; font-family: "XiangqiKai", KaiTi, STKaiti, serif; cursor: pointer; display: grid; place-items: center; line-height: 1; }
+.fc-pal.on { border-color: var(--jade); box-shadow: 0 0 0 2px rgba(47, 107, 94, .28); }
+.fc-pal.fc-erase { font-size: 16px; color: var(--red); font-family: inherit; }
+.fc-fen-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 14px 0; }
+.fc-fen-row input { flex: 1; min-width: 220px; font-family: monospace; font-size: 13px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; }
+.fc-fen-row input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px var(--highlight); }
+.fc-msg { min-height: 20px; font-size: 13px; font-weight: 600; margin: 8px 0; }
+.fc-board-wrap { max-width: 420px; margin: 0 auto 14px; }
+
+/* Thư viện: thumbnail SVG sống — mượn kích thước .li-thumb có sẵn nhưng nội dung do JS chèn. */
+.li-thumb svg { display: block; }
+/* Dòng thư viện dùng <details><summary class="lesson-item"> thay vì <a> — bỏ tam giác mặc định
+   (đã có nút "Xem ▾" riêng), giữ nguyên layout/hover của .lesson-item. */
+.lesson-list summary.lesson-item::-webkit-details-marker { display: none; }
+.lesson-list summary.lesson-item { list-style: none; }
+.lesson-list summary.lesson-item:hover { cursor: pointer; }

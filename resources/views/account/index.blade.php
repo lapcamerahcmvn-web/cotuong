@@ -17,10 +17,13 @@
         <form method="POST" action="{{ route('logout') }}">@csrf<button class="btn">Đăng xuất</button></form>
     </div>
 
-    <div class="stat-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px;">
+    <div class="stat-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;">
         <div class="card" style="padding:16px 18px;"><div style="font-size:28px;font-weight:800;color:var(--jade);font-family:'Bricolage Grotesque',sans-serif;">{{ $completed->count() }}</div><div class="muted" style="font-size:13px;">Bài đã học</div></div>
         <div class="card" style="padding:16px 18px;"><div style="font-size:28px;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;">{{ $reading->count() }}</div><div class="muted" style="font-size:13px;">Đang học dở</div></div>
+    </div>
+    <div class="stat-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:30px;">
         <div class="card" style="padding:16px 18px;"><div style="font-size:28px;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;">{{ \App\Models\Lesson::published()->count() }}</div><div class="muted" style="font-size:13px;">Tổng bài học</div></div>
+        <a href="{{ route('account.library') }}" class="card" style="padding:16px 18px;display:block;color:inherit;"><div style="font-size:28px;font-weight:800;color:var(--red);font-family:'Bricolage Grotesque',sans-serif;">{{ auth()->user()->library()->count() }}</div><div class="muted" style="font-size:13px;">Thế cờ đã lưu — Thư viện của tôi →</div></a>
     </div>
 
     @if($completed->isNotEmpty())

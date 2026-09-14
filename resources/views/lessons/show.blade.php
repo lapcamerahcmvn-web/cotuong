@@ -92,14 +92,16 @@
                     :initial-fen="$lesson->initial_fen"
                     :steps="$lesson->steps"
                     :tree="$lesson->variation_tree"
-                    :show-list="$lesson->steps->isNotEmpty()" />
+                    :show-list="$lesson->steps->isNotEmpty()"
+                    :source-lesson-id="$lesson->id" />
             </div>
             <div id="lesson-board-puzzle" style="display:none;">
                 <x-chess-board
                     :initial-fen="$lesson->initial_fen"
                     :steps="$lesson->steps"
                     mode="puzzle"
-                    :puzzle-side="$lesson->puzzle_side" />
+                    :puzzle-side="$lesson->puzzle_side"
+                    :source-lesson-id="$lesson->id" />
             </div>
             <script>
             (function () {
@@ -121,7 +123,8 @@
                 :steps="$lesson->steps"
                 :tree="$lesson->variation_tree"
                 :show-list="$lesson->steps->isNotEmpty()"
-                :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật. Bấm ⛶ để phóng to.' : null" />
+                :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật. Bấm ⛶ để phóng to.' : null"
+                :source-lesson-id="$lesson->id" />
         @endif
     @endif
 
