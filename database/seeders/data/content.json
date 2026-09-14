@@ -110296,6 +110296,206 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60038,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 38 — Pháo Đổi Đường Hai Lần Rồi Xe Kết Thúc",
+      "slug": "c6-de-kiem-tra-bai-38",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1cb2k3/3R5/9/4pN3/9/9/7C1/5p3/4p2r1/5K3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 38: Trắng cầm Xe, Pháo, Mã; quân Pháo đổi đường hai lần dồn Tướng Đen qua lại trước khi quân Xe áp sát khép lại thế cờ.",
+      "content": "<p>Trắng có Xe, Pháo, Mã. Quân Pháo đổi đường hai lần liên tiếp buộc Tướng Đen chạy qua lại, sau đó quân Xe vào cuộc chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 38 — Pháo Đổi Đường Hai Lần Rồi Xe Kết Thúc",
+      "seo_description": "Bài kiểm tra sát pháp số 38: Trắng cầm Xe Pháo Mã, Pháo đổi đường hai lần dồn Tướng Đen qua lại trước khi Xe áp sát khép lại thế cờ chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1cb2k3/3R5/9/4pN3/9/9/5C3/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Pháo 2 bình 4",
+          "move_notation_iccs": "h3f3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang lộ 4.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1cb1k4/3R5/9/4pN3/9/9/5C3/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1cb1k4/3R5/9/4pN3/9/9/4C4/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Pháo 4 bình 5",
+          "move_notation_iccs": "f3e3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang lộ 5 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1cb2k3/3R5/9/4pN3/9/9/4C4/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1cb2k3/5R3/9/4pN3/9/9/4C4/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Xe 6 bình 4",
+          "move_notation_iccs": "d8f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 4 chiếu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1cb6/5k3/9/4pN3/9/9/4C4/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1cb6/5k3/9/4pN3/9/9/5C3/5p3/4p2r1/5K3",
+          "move_notation_wxf": "Pháo 5 bình 4",
+          "move_notation_iccs": "e3f3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang lộ 4 — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60039,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 39 — Mã Đi Vòng Ba Nước Rồi Pháo Lui Kết Liễu",
+      "slug": "c6-de-kiem-tra-bai-39",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3k1a3/4a4/4b4/9/9/3C1N3/9/3A2nc1/3p1p3/4K1p2",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 39: Trắng cầm Pháo và một Mã; quân Mã đi một vòng ba nước dồn Tướng Đen, rồi quân Pháo lui đúng ô để khép lại thế cờ.",
+      "content": "<p>Trắng có Pháo và một Mã. Quân Mã cần đi đúng một vòng ba nước để dồn Tướng và Sĩ Đen, sau đó Pháo lui về khép lại thế cờ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 39 — Mã Đi Vòng Ba Nước Rồi Pháo Lui Kết Liễu",
+      "seo_description": "Bài kiểm tra sát pháp số 39: Trắng cầm Pháo và Mã, quân Mã đi vòng ba nước dồn Tướng Đen, Pháo lui đúng ô khép lại thế cờ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3k1a3/4a4/4b4/9/3N5/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f4d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k1a3/9/3ab4/9/3N5/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k1a3/9/3ab4/5N3/9/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "d5f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Mã sang lộ 4.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k1a3/4a4/4b4/5N3/9/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k1a3/4a4/3Nb4/9/9/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã trở lại.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a3/3ka4/3Nb4/9/9/3C5/9/3A2nc1/3p1p3/4K1p2",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a3/3ka4/3Nb4/9/9/9/9/3A2nc1/3C1p3/4K1p2",
+          "move_notation_wxf": "Pháo 6 thoái 3",
+          "move_notation_iccs": "d4d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo — Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
