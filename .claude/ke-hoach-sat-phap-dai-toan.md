@@ -485,3 +485,12 @@
   - **Cấu trúc bài học**: 1 bài intro (order 60000, giải thích cách chấm điểm + mục đích tự luyện) + mỗi puzzle 1 bài riêng (slug `c6-de-kiem-tra-bai-N`, order `600NN`), field `content` ngắn gọn (chỉ 1 đoạn mô tả lực lượng, không phân tích dài như Chương 1-5 vì đây là dạng đố tự giải).
   - **Series ~= 393 bài** (tổng ~601). Đã push nhiều đợt lên origin/main.
   - **Việc tiếp theo**: còn 76 puzzle (25-100) của Chương 6 chưa làm. Có thể quay lại 10 bài đã hoãn với kỹ thuật đọc đã cải thiện (đặc biệt lỗi đếm FEN — nhiều bài hoãn trước 6.21 rất có thể sửa được ngay nếu soát lại theo lỗi #3 ở trên).
+
+- **2026-09-15 (đêm khuya, user để máy chạy qua đêm) — TIẾP TỤC CHƯƠNG 6, làm tới bài 50**:
+  - Tiếp tục làm việc theo đúng phương pháp đã đúc kết (đọc theo trang đầy đủ, đo tỉ lệ pixel, phân biệt màu qua chữ Hán, validate bằng engine + đáp án đã trích).
+  - **Xác nhận thêm**: Bài 27, 28, 29, 30, 31, 32, 38, 39, 44, 46, 49 (11 bài).
+  - **Hoãn thêm** (không chốt được cột/hàng dù cố gắng, thường do King đứng sát hàng 0 khiến các nước "thoái/lùi" về sau trở nên vô lý — hoặc quân xếp chồng dày gây nhầm cột): Bài 25 (đáp án sách bị LỖI IN THIẾU số ở nước cuối "M6/" — không thể phục hồi chắc chắn), 26, 33, 34, 35, 36, 37, 40, 41, 42, 43, 45, 47, 48, 50.
+  - **Bài học mới về lỗi thường gặp**: nhiều sơ đồ có Tướng đứng NGAY HÀNG 0 (sát biên) — khi đáp án yêu cầu Tướng "thoái" (lùi) ở nước sau, engine báo lỗi vì hàng 0 không còn chỗ lùi. Điều này cho thấy Tướng thực ra phải đứng hàng 1, và cụm quân Sĩ/Tượng phía trên tưởng như "tràn ra ngoài biên trên" (do vòng tròn quân vẽ đè lên viền bàn cờ) thực chất vẫn nằm ở hàng 0 hợp lệ — đây là điểm dễ nhầm lẫn cần soát kỹ bằng cách thử engine với Tướng ở cả hàng 0 và hàng 1.
+  - **Tổng kết Chương 6 tới bài 50**: Xác nhận 24/50 (1,2,3,4,7,10,12,13,14,18,19,21,24,27,28,29,30,31,32,38,39,44,46,49). Hoãn 26/50.
+  - **Series ~= 417 bài** (tổng ~625). Đã push liên tục lên origin/main sau mỗi 1-4 bài.
+  - **Việc tiếp theo**: còn bài 51-100 (50 bài) chưa làm. Tỷ lệ thành công đang giảm dần ở các bài sau (nhiều bài đòi hỏi đọc quân phức tạp hơn) — cân nhắc báo lại user về tỷ lệ hoãn cao khi họ quay lại, hoặc tiếp tục theo tinh thần "làm hết sách" đã được giao.
