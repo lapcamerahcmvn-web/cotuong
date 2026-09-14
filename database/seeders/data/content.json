@@ -110496,6 +110496,106 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60044,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 44 — Song Pháo Đổi Đường Bốn Nước Chiếu Bí",
+      "slug": "c6-de-kiem-tra-bai-44",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3akn3/3ca2n1/8C/9/9/9/9/9/9/4KC3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 44: Trắng chỉ còn Song Pháo, phải đổi đường bốn lần liên tiếp để tránh Pháo Đen cản đường trước khi khép lại thế cờ.",
+      "content": "<p>Trắng chỉ còn Song Pháo. Quân Pháo Đen tìm cách cản đường — hãy tìm chuỗi bốn nước đổi đường để né tránh và chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 44 — Song Pháo Đổi Đường Bốn Nước Chiếu Bí",
+      "seo_description": "Bài kiểm tra sát pháp số 44: Trắng chỉ còn Song Pháo, đổi đường bốn lần liên tiếp để né Pháo Đen cản đường rồi khép lại chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akn3/3ca2n1/2C6/9/9/9/9/9/9/4KC3",
+          "move_notation_wxf": "Pháo 1 bình 7",
+          "move_notation_iccs": "i7c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang lộ 7.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akn3/2c1a2n1/2C6/9/9/9/9/9/9/4KC3",
+          "move_notation_wxf": "Pháo 4 bình 3",
+          "move_notation_iccs": "d8c8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo sang lộ 3.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akn3/2c1aC1n1/2C6/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Pháo 4 tiến 8",
+          "move_notation_iccs": "f0f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo lên đáy.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2cakn3/4aC1n1/2C6/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Pháo 3 thoái 1",
+          "move_notation_iccs": "c8c9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2cakn3/4aC1n1/6C2/9/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Pháo 7 bình 3",
+          "move_notation_iccs": "c7g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo sang lộ 3.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2cakn3/4aC3/6C2/6n2/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Mã 8 tiến 7",
+          "move_notation_iccs": "h8g6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2caknC2/4aC3/9/6n2/9/9/9/9/9/4K4",
+          "move_notation_wxf": "Pháo 3 tiến 2",
+          "move_notation_iccs": "g7g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
