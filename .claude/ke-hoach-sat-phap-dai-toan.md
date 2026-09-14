@@ -498,3 +498,8 @@
 - **2026-09-15 (tiếp) — Bài 51-54: TOÀN BỘ HOÃN**. Đọc lại nhiều lần vẫn thiếu quân so với đáp án (đáp án đòi hỏi thêm 1 Xe hoặc Mã mà sơ đồ đọc được không khớp) — nghi ngờ có quân bị bỏ sót ở vùng crop hoặc nhầm loại quân (Xe/Mã ở độ phân giải thấp dễ nhầm). Cần đọc lại từ ảnh trang gốc chất lượng cao hơn nếu quay lại làm bài này.
   - Xác nhận thêm: (không có bài nào mới trong batch 51-54)
   - Tổng Chương 6 hiện tại: 24/54 xác nhận.
+
+- **2026-09-15 (tiếp) — Bài 55, 56, 57: HOÃN TOÀN BỘ**. Từ bài 51 trở đi tỷ lệ đọc đúng giảm mạnh — nhiều sơ đồ đọc thiếu hẳn 1-2 quân (thường là Xe hoặc Mã đỏ) so với yêu cầu của đáp án, không phải chỉ lệch cột/hàng như trước. Nghi ngờ độ phân giải/độ tương phản ảnh ở các trang này (387+) kém hơn, hoặc quân xếp compact hơn khiến khó phân biệt.
+  - **Tổng kết phiên làm việc đêm 2026-09-15**: Chương 6 xác nhận 24/57 đã thử (1,2,3,4,7,10,12,13,14,18,19,21,24,27,28,29,30,31,32,38,39,44,46,49). Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,51,52,53,54,55,56,57 (33 bài).
+  - **Khuyến nghị cho phiên sau**: (1) Với các bài đã hoãn do thiếu quân so đáp án (51-57), nên re-render trang ở độ phân giải cao hơn nữa (zoom > 1429px) hoặc dùng cropauto.py với ngưỡng darkfrac tinh chỉnh thay vì đọc mắt thường qua ảnh đã resize. (2) Việc tiếp tục làm 43 bài còn lại (58-100) nên đánh giá lại độ khó trước khi cam kết làm hết, vì xu hướng khó tăng dần theo số thứ tự bài.
+  - Series ~= 421 bài (tổng ~629, tính cả 33 bài chưa xong của Chương 6). Đã push toàn bộ nội dung đã xác nhận lên origin/main.
