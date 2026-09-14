@@ -110596,6 +110596,106 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60046,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 46 — Song Mã Đổi Vai, Xe Khép Lại Sau Cùng",
+      "slug": "c6-de-kiem-tra-bai-46",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4Rk3/5N3/5N3/9/9/9/9/1r2p4/9/3K5",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Bài kiểm tra số 46: Trắng cầm Xe và hai Mã đứng chồng nhau; hai quân Mã thay nhau ra tay dồn Tướng Đen lên xuống trước khi quân Xe khép lại thế cờ.",
+      "content": "<p>Trắng có Xe và hai Mã đứng gần nhau. Hai quân Mã cần thay nhau ra tay đúng thứ tự để dồn Tướng Đen, rồi quân Xe vào chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 46 — Song Mã Đổi Vai, Xe Khép Lại Sau Cùng",
+      "seo_description": "Bài kiểm tra sát pháp số 46: Trắng cầm Xe và hai Mã, hai quân Mã thay nhau dồn Tướng Đen lên xuống trước khi Xe khép lại chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4Rk3/3N1N3/9/9/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Mã sau tiến 6",
+          "move_notation_iccs": "f7d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "4R4/3N1k3/9/9/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "4R4/5k3/9/4N4/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Mã 6 thoái 5",
+          "move_notation_iccs": "d8e6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "4Rk3/9/9/4N4/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "4Rk3/9/6N2/9/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sang lộ 3.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "4R4/5k3/6N2/9/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5R3/5k3/6N2/9/9/9/9/1r2p4/9/3K5",
+          "move_notation_wxf": "Xe 5 bình 4",
+          "move_notation_iccs": "e9f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe sang lộ 4 — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
