@@ -494,3 +494,7 @@
   - **Tổng kết Chương 6 tới bài 50**: Xác nhận 24/50 (1,2,3,4,7,10,12,13,14,18,19,21,24,27,28,29,30,31,32,38,39,44,46,49). Hoãn 26/50.
   - **Series ~= 417 bài** (tổng ~625). Đã push liên tục lên origin/main sau mỗi 1-4 bài.
   - **Việc tiếp theo**: còn bài 51-100 (50 bài) chưa làm. Tỷ lệ thành công đang giảm dần ở các bài sau (nhiều bài đòi hỏi đọc quân phức tạp hơn) — cân nhắc báo lại user về tỷ lệ hoãn cao khi họ quay lại, hoặc tiếp tục theo tinh thần "làm hết sách" đã được giao.
+
+- **2026-09-15 (tiếp) — Bài 51-54: TOÀN BỘ HOÃN**. Đọc lại nhiều lần vẫn thiếu quân so với đáp án (đáp án đòi hỏi thêm 1 Xe hoặc Mã mà sơ đồ đọc được không khớp) — nghi ngờ có quân bị bỏ sót ở vùng crop hoặc nhầm loại quân (Xe/Mã ở độ phân giải thấp dễ nhầm). Cần đọc lại từ ảnh trang gốc chất lượng cao hơn nếu quay lại làm bài này.
+  - Xác nhận thêm: (không có bài nào mới trong batch 51-54)
+  - Tổng Chương 6 hiện tại: 24/54 xác nhận.
