@@ -119876,6 +119876,272 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50020,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 20 — Họa Bất Đơn Hành",
+      "slug": "c5-cuoc-20-hoa-bat-don-hanh",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "4k4/4a4/2P5n/5N3/9/5R3/9/9/2p2p2r/C3K4",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Cuộc thứ hai mươi: họa không đến một mình — Trắng thí Xe làm diệu thủ để lộ mặt Tướng trợ chiến, tạo thế lưỡng chiếu tuyệt sát khiến Đen trở tay không kịp.",
+      "content": "<p>“Họa bất đơn hành” nghĩa là tai họa không đến lẻ một lần mà dồn dập kéo tới liên tiếp, ý xuất phát từ câu cổ ngữ “phúc bất trùng chí, họa tất trùng lai”. Ván cờ này Trắng liên tiếp tung nước sát, đỉnh điểm là thí hẳn quân Xe để lộ mặt Tướng ra trợ chiến — một diệu thủ hy sinh chất lượng đổi lấy thế lưỡng chiếu tuyệt sát, khiến Đen đúng nghĩa họa dồn dập không kịp trở tay.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 20 — Họa Bất Đơn Hành",
+      "seo_description": "Cuộc cờ kinh điển Họa Bất Đơn Hành: Trắng thí Xe làm diệu thủ lộ mặt Tướng trợ công, tạo lưỡng chiếu tuyệt sát dồn dập không kịp trở tay.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "4k4/4a4/2PN4n/9/9/5R3/9/9/2p2p2r/C3K4",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3k5/4a4/2PN4n/9/9/5R3/9/9/2p2p2r/C3K4",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3k5/4a4/2PN4n/9/9/5R3/9/9/2p2p2r/3CK4",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a0d0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k5/4a4/2PN4n/9/9/5R3/9/9/3p1p2r/3CK4",
+          "move_notation_wxf": "Tốt 3 bình 4",
+          "move_notation_iccs": "c1d1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k1R3/4a4/2PN4n/9/9/9/9/9/3p1p2r/3CK4",
+          "move_notation_wxf": "Xe 4 tiến 5",
+          "move_notation_iccs": "f4f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng thí Xe, diệu thủ — lộ mặt Tướng trợ công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3k1a3/9/2PN4n/9/9/9/9/9/3p1p2r/3CK4",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3k1a3/5N3/2P5n/9/9/9/9/9/3p1p2r/3CK4",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "d7f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50021,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 21 — Ký Bất Xưng Lực",
+      "slug": "c5-cuoc-21-ky-bat-xung-luc",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak4/4aP2n/4R3N/8N/9/9/9/9/2rp1p3/4K4",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Cuộc thứ hai mươi mốt: sức một con Mã không đủ làm nên chuyện, nhưng khi song Mã cùng phối hợp lại đủ sức dồn ép Tướng Đen tới đường cùng — dù không phải chiếu bí trực tiếp nhưng thế cờ đã áp đảo tuyệt đối.",
+      "content": "<p>“Ký bất xưng lực” ví một con ngựa đơn độc không đủ sức gánh vác trọng trách. Ván cờ này Trắng trước tiên thí Xe lộ mặt Tướng để khống chế trung lộ, sau đó dùng song Mã thay nhau tiến lui phối hợp nhịp nhàng — một con Mã đơn lẻ không đủ sức, nhưng hai con hợp lại thì đủ sức dồn Tướng Đen vào thế bí, thắng cờ rõ ràng dù không cần chiếu bí trực tiếp.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 21 — Ký Bất Xưng Lực",
+      "seo_description": "Cuộc cờ kinh điển Ký Bất Xưng Lực: Trắng thí Xe khống chế trung lộ rồi dùng song Mã phối hợp dồn Tướng Đen vào thế bí, thắng áp đảo.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akP3/4a3n/4R3N/8N/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3a1k3/4a3n/4R3N/8N/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng ăn Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3a1k3/4a3n/5R2N/8N/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Xe 5 bình 4",
+          "move_notation_iccs": "e7f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng thí Xe, bình Xe lộ mặt Tướng khống chế trung lộ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a1k3/8n/5a2N/8N/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ ăn Xe, vừa cản Tướng Đen leo lên trên.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a1k3/8n/5aN1N/9/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã sau tiến 3",
+          "move_notation_iccs": "i6g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3a5/5k2n/5aN1N/9/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3a3N1/5k2n/5a2N/9/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "g7h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3a2nN1/5k3/5a2N/9/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã 9 thoái 7",
+          "move_notation_iccs": "i8g9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3a2nN1/5k3/5a3/6N2/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã 1 thoái 3",
+          "move_notation_iccs": "i7g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3a1knN1/9/5a3/6N2/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3a1kn2/9/5aN2/6N2/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã 2 thoái 3",
+          "move_notation_iccs": "h9g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3a2n2/5k3/5aN2/6N2/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3a2n2/5k2N/5a3/6N2/9/9/9/9/2rp1p3/4K4",
+          "move_notation_wxf": "Mã trước tiến 1",
+          "move_notation_iccs": "g7i8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã trước — song Mã hợp sức, thế cờ áp đảo, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }

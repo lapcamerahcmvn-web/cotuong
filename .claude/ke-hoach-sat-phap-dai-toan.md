@@ -673,3 +673,9 @@
   - **Cuộc 19 "Phiên Giang Đảo Hải"**: FEN `1rC2k3/9/n1R6/9/4N4/9/R3c4/4C4/4rn3/3K5`, **27 nước** (dài nhất Chương 5 tới giờ) — song Xe song Mã đổi vai liên tục không ngừng nghỉ. 0 warnings, isCheckmate=true xác nhận chiếu bí thật sự.
   - **Tổng Chương 5 hiện tại: 19/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~538 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 20-43 ("Họa Bất Đơn Hành", "Ký Bất Xưng Lực"...), PDF trang 358+.
+
+- **2026-09-15 (tiếp) — Cuộc 20, 21 xác nhận (21/43)**:
+  - **Cuộc 20 "Họa Bất Đơn Hành"**: FEN `4k4/4a4/2P5n/5N3/9/5R3/9/9/2p2p2r/C3K4`, 7 nước — thí Xe diệu thủ lộ mặt Tướng trợ công. 0 warnings, isCheckmate=true xác nhận chiếu bí thật sự.
+  - **Cuộc 21 "Ký Bất Xưng Lực"**: FEN `3ak4/4aP2n/4R3N/8N/9/9/9/9/2rp1p3/4K4`, 13 nước — thí Xe khống chế trung lộ rồi song Mã phối hợp. 0 warnings; kết thúc không phải chiếu bí trực tiếp (isCheckmate=false, inCheck=true) — khớp đúng lời sách chỉ ghi "Trắng thắng".
+  - **Tổng Chương 5 hiện tại: 21/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~540 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 22-43, PDF trang 359+.
