@@ -11,7 +11,8 @@ class PostController extends Controller
     public function index()
     {
         $featured = Post::featured()->with('category')->latest('published_at')->take(3)->get();
-        $posts = Post::published()->with('category')->latest('published_at')->paginate(12);
+        $posts = Post::published()->with('category')->whereNotIn('id', $featured->pluck('id'))
+            ->latest('published_at')->paginate(12);
         $categories = PostCategory::withCount(['posts' => fn ($q) => $q->published()])
             ->orderBy('sort_order')->get();
 

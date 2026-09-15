@@ -25,11 +25,16 @@
     <p class="sub">Video hướng dẫn, phân tích ván cờ có bàn cờ tương tác, tin cộng đồng và kiến thức cờ tướng.</p>
 
     @if($categories->isNotEmpty())
-        <div class="cluster mt-3" style="margin-bottom:28px;">
+        <nav class="news-cat-nav mt-3" aria-label="Chuyên mục Tin tức">
+            @php $_catIcons = ['video-huong-dan' => '🎥', 'phan-tich-van-co' => '♟️', 'tin-cong-dong-giai-dau' => '🏆', 'kien-thuc-co-tuong' => '📖']; @endphp
             @foreach($categories as $c)
-                <a href="{{ route('posts.category', $c->slug) }}" class="tag" style="background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--line);">{{ $c->name }} ({{ $c->posts_count }})</a>
+                <a href="{{ route('posts.category', $c->slug) }}" class="news-cat-item">
+                    <span class="nc-icon">{{ $_catIcons[$c->slug] ?? '📰' }}</span>
+                    <span class="nc-name">{{ $c->name }}</span>
+                    <span class="nc-count">{{ $c->posts_count }}</span>
+                </a>
             @endforeach
-        </div>
+        </nav>
     @endif
 
     @if($featured->isNotEmpty())
