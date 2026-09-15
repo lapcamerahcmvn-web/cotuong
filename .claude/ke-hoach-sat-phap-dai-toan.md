@@ -622,3 +622,15 @@
   - **Series `sat-phap-dai-toan` hiện có 65 bài Đề Kiểm Tra + các bài chương 1-5 trước đó ≈ 517 bài trong hệ thống**.
   - **Trạng thái dự án**: Chương 6 coi như HOÀN TẤT ở mức "đã thử hết" — 65/100 xuất bản, 35 bài hoãn cần công sức lớn hơn nếu muốn tiếp tục (tỷ lệ thành công giảm dần rõ rệt từ ~90% (bài 1-50) xuống ~60% (bài 51-100) do sơ đồ dày đặc hơn và lỗi in ấn tăng). Đã push toàn bộ lên origin/main sau mỗi lô nhỏ suốt phiên.
   - **Việc tiếp theo (nếu user muốn tiếp)**: (1) quay lại 34 bài hoãn còn cơ hội với kỹ thuật đọc hiện tại (loại trừ 58, 78 đã xác định là lỗi sách); (2) hoặc coi Chương 6 đã xong ở mức hợp lý và chuyển sang phần khác của sách nếu còn (đã khảo sát trước đó: Chương 5 "Thích Tình Nhã Thú" 43 cuộc PDF tr.349-370 chưa làm).
+
+- **2026-09-15 (tiếp, user "Làm chương 5 đi bạn") — BẮT ĐẦU CHƯƠNG 5 "THÍCH TÌNH NHÃ THÚ" KINH ĐIỂN SÁT PHÁP TUYỂN CHỌN**:
+  - **Khảo sát**: 43 cuộc, PDF tr.345-368 (trang sách in) / tr.347-370 (index PDF), có nhãn "Hình 5.1" đến "Hình 5.43". Đã trích toàn bộ text (moves + biến + lời dẫn) vào scratchpad `ch5_fulltext.txt`.
+  - **Phát hiện quan trọng: sơ đồ Chương 5 DÀY ĐẶC như Chương 4** (~28-30 quân/sơ đồ, thế trung cuộc gần đầy đủ), KHÔNG thưa như Chương 3. Đã báo lại user trước khi bắt đầu; user xác nhận tiếp tục.
+  - **Công cụ mới**: `gridtool5.py` (scratchpad) — bản điều chỉnh của kỹ thuật lưới pixel numpy đã dùng ở Chương 6, áp dụng cho khung tọa độ khác (bàn cờ ở bên phải mỗi trang, 1 sơ đồ/cuộc, đôi khi 2 sơ đồ/trang nếu cuộc ngắn).
+  - **Bài học quan trọng ngay từ cuộc 1**: với sơ đồ dày (nhiều quân đứng sát nhau), việc đọc màu quân (đặc/viền) bằng mắt qua ảnh đã resize rất dễ sai — đã sai 2 lần liên tiếp ở chính cuộc 1 (nhầm 炮 đặc thành rỗng, nhầm 車 rỗng thành đặc) trước khi zoom kỹ với lưới đè lên từng cụm quân mới xác nhận đúng. Quy trình bắt buộc từ nay cho Chương 5: LUÔN zoom riêng biệt 2-3 cụm quân (top/mid/bottom) với lưới số cột/hàng đè lên, KHÔNG đọc trực tiếp từ ảnh tổng thể dù đã có lưới.
+  - **Cuộc 1 "Khí Thôn Quan Hữu"**: FEN `2baka3/3P3N1/bN7/7nc/9/4C1P2/P5n1P/B3R3B/4Apr2/2RAK3c` (do đi trước), 11 nước — Xe thí đổi Tượng, Pháo + song Mã dồn Tướng. 0 warnings, chiếu bí xác nhận. (Chỉ làm mạch chính, KHÔNG làm biến phụ "Nếu Đen đi..." — theo đúng quyết định tốc độ như Chương 6.)
+  - **Cuộc 2 "Đê Dương Xúc Phiên"**: FEN `1rbckaP2/3PaP1r1/1P2b4/1R7/Nn7/CRBp2n2/4C4/9/4p1p1/1c3K3` (do đi trước), 17 nước — Trắng thí liên tiếp 2 Binh-Sĩ và đổi Xe, dồn Tướng vào thế bí. 0 warnings, chiếu bí xác nhận.
+  - **Order numbering**: dùng dải `500NN` (cuộc N → order `500NN`, ví dụ cuộc1=50001) — dải trống, không đụng Chương 1(1-111)/2(1101-1906)/3(20101-21703)/4(41000-42000)/6(60000+).
+  - **⚠️ Sự cố nhỏ đã tự sửa**: vô tình gọi Write đè trắng toàn bộ file nhật ký này bằng placeholder — phát hiện ngay, phục hồi bằng `git checkout --` (file đã commit trước đó nên không mất gì). Bài học: dùng Edit để nối thêm vào nhật ký, KHÔNG dùng Write.
+  - **Tổng Chương 5 hiện tại: 2/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~519 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 3-43, PDF trang 348+ (ảnh hires `ch5_pg347_hires.png` đã có, cần render thêm trang 348+).
