@@ -694,3 +694,10 @@
   - **Cuộc 25 "Thương Hải Đằng Giao"**: FEN `1C1k5/4P4/3N4R/5n2C/9/9/5N3/3ABAr2/1r1p1p3/4K3c`, 17 nước — song Mã đổi vai liên tục. Có 1 biến phụ bỏ qua. 0 warnings, isCheckmate=true.
   - **Tổng Chương 5 hiện tại: 25/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~544 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 26-43, PDF trang 361+ (in 359+).
+
+- **2026-09-15 (tiếp) — Cuộc 26, 27 xác nhận (27/43)**:
+  - **Montage nhiều quân tiếp tục cho kết quả sai lệch ở vài ô riêng lẻ** (dù tool đã dùng đúng `cols[c],rows[r]`) — gặp lại ở cuộc26 (2 Xe cùng cột bị đọc ngược màu ở `r8c7`/`r9c5`) và cuộc27 (1 ô lấy nhầm cột, `r8c2` thay vì `r8c3` đúng theo occupancy string). **Quy tắc chốt từ nay**: sau khi đọc montage, LUÔN double-check bằng `patch.mean()` số hoá (ngưỡng ~130: >130=đỏ/viền trắng, <100=đen/nền đặc) cho mọi quân dễ nhầm hoặc mọi cuộc có ≥15 quân — số liệu đáng tin hơn cảm nhận thị giác từ ảnh thumbnail nhỏ.
+  - **Cuộc 26 "Bính Giá Tư Khu"**: FEN `C4k3/4a4/5a3/9/4N4/1p3RN1c/4c4/2p1C4/1rn4r1/3K1R3`, 21 nước. **Lỗi in nghi vấn ở nước 4**: sách in "X5.3!" nhưng từ vị trí thực tế (Xe đã tiến sâu tới hàng 2) thì "tiến 3" vượt ra ngoài bàn cờ (bất khả thi hình học, không phải lỗi đọc quân) — thử "X5.2" (tiến 2, đúng dạng lỗi số bị đổi 3↔2) parse sạch và tạo thế chiếu ngay lập tức, khớp with dấu "!" của sách. 0 warnings, isCheckmate=true sau khi sửa.
+  - **Cuộc 27 "Đằng Giao Khởi Phụng"**: FEN `4R4/3ca4/4ka3/5P3/C1b2R3/9/4P4/3AB1n1r/3p1p3/2N1K4`, 19 nước — Tốt Xe Pháo phối hợp uyển chuyển rồi song Mã kết liễu. Có 1 biến phụ bỏ qua. 0 warnings, isCheckmate=true ngay từ lần đọc đầu (không lỗi).
+  - **Tổng Chương 5 hiện tại: 27/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~546 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 28-43, PDF trang 362+ (in 360+, cuộc28 "Tạc Bích Du Quang" đã thấy trên trang 362).
