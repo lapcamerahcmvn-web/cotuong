@@ -125810,6 +125810,216 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 41006,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Trung Cuộc] Phá Sĩ Sát Pháp — Thí Pháo Nổ Sĩ, Tranh Công Song Phương — Ví Dụ 6",
+      "slug": "c4-pha-si-vi-du-6",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2bak4/4a4/n3b4/N1pR4p/2P6/P3p4/1r2c3P/3CB4/4Ar3/2B1KA1R1",
+      "variation_tree": null,
+      "move_count": 17,
+      "summary": "Ví dụ thứ sáu của Bài Phá Sĩ, trích từ giải giao hữu Hắc Long Giang với Chiết Giang năm 1978: cả hai bên cùng đối công, bên Trắng thí Pháo nổ Sĩ mở màn tranh quyền chủ động rồi vận dụng Xe Mã Tốt để công phá song Sĩ, xác lập thế thắng chắc chắn.",
+      "content": "<p>Ván đấu này trích từ một giải giao hữu giữa hai tỉnh Hắc Long Giang và Chiết Giang năm 1978, mở đầu bằng thế cờ đối công quyết liệt khi cả hai bên đều chọn lối chơi tấn công. Ngay nước đầu, bên Trắng đã thí quân Pháo nổ thẳng vào Sĩ để giành quyền chủ động — một nước cờ tranh công đầy táo bạo. Sau đó, Xe Mã Tốt của Trắng phối hợp nhịp nhàng, từng bước công phá cả hai quân Sĩ bảo vệ Tướng Đen, đồng thời ăn lại được một quân. Khi quân Tốt biên vượt sông, thế thắng của Trắng đã được xác lập chắc chắn, phần còn lại của ván đấu không còn nhiều biến số nên được sách lược bỏ.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Trung Cuộc — Phá Sĩ Ví Dụ 6: Thí Pháo Nổ Sĩ Tranh Công",
+      "seo_description": "Ván Phá Sĩ ví dụ 6: hai bên đối công, Trắng thí Pháo nổ Sĩ rồi dùng Xe Mã Tốt công phá song Sĩ, xác lập thế thắng chắc chắn.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2bCk4/4a4/n3b4/N1pR4p/2P6/P3p4/1r2c3P/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Pháo 6 tiến 7",
+          "move_notation_iccs": "d2d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — thí Pháo nổ Sĩ, nước cờ hay tranh công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2bCk4/2n1a4/4b4/N1pR4p/2P6/P3p4/1r2c3P/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Mã 1 thoái 3",
+          "move_notation_iccs": "a7c8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2bCk4/2n1a4/2N1b4/2pR4p/2P6/P3p4/1r2c3P/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Mã 9 tiến 7",
+          "move_notation_iccs": "a6c7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2bCk4/2n1a4/2N1b4/2pR4p/2P6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Pháo 5 bình 8",
+          "move_notation_iccs": "e3h3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2bCk4/2nRa4/2N1b4/2p5p/2P6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Xe 6 tiến 2",
+          "move_notation_iccs": "d6d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2bak4/2nR5/2N1b4/2p5p/2P6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Sĩ 5 thoái 4",
+          "move_notation_iccs": "e8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2bak4/2R6/2N1b4/2p5p/2P6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Xe 6 bình 7",
+          "move_notation_iccs": "d8c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2bak4/2R6/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Tốt 3 tiến 1",
+          "move_notation_iccs": "c6c5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2bak4/3R5/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Xe 7 bình 6",
+          "move_notation_iccs": "c8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2ba1k3/3R5/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2bR1k3/9/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Xe 6 tiến 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2bR5/5k3/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f9f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2b4R1/5k3/2N1b4/8p/2p6/P3p4/1r5cP/4B4/4Ar3/2B1KA1R1",
+          "move_notation_wxf": "Xe 6 bình 2",
+          "move_notation_iccs": "d9h9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2b4R1/5k3/2N1b4/8p/2p6/P3p4/1r3r1cP/4B4/4A4/2B1KA1R1",
+          "move_notation_wxf": "Xe 6 thoái 2",
+          "move_notation_iccs": "f1f3",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2b6/5k3/2N1b4/7Rp/2p6/P3p4/1r3r1cP/4B4/4A4/2B1KA1R1",
+          "move_notation_wxf": "Xe trước thoái 3",
+          "move_notation_iccs": "h9h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "2b2k3/9/2N1b4/7Rp/2p6/P3p4/1r3r1cP/4B4/4A4/2B1KA1R1",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "2b2k3/9/2N1b4/7Rp/P1p6/4p4/1r3r1cP/4B4/4A4/2B1KA1R1",
+          "move_notation_wxf": "Tốt 9 tiến 1",
+          "move_notation_iccs": "a4a5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tốt — công phá đi song Sĩ, ăn lại một quân, Binh biên qua sông, thế thắng đã định.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
