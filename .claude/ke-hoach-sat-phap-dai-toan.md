@@ -528,3 +528,14 @@
   - **Tổng Chương 6 hiện tại: 31/60 xác nhận** (thêm 59, 60; KHÔNG tính 58). Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài, trong đó 58 là HOÃN VĨNH VIỄN do lỗi sách chứ không phải chờ đọc lại).
   - Series ~= 428 bài. Đã build-batch + chuẩn bị commit/push.
   - **Việc tiếp theo**: tiếp tục bài 61-100 (40 bài) bằng kỹ thuật lưới pixel chính xác mới — kỳ vọng tỷ lệ thành công cao hơn hẳn giai đoạn 51-57 vì loại bỏ được sai số đọc bằng mắt.
+
+- **2026-09-15 (tiếp) — Bài 61-64 XÁC NHẬN HẾT (100% thành công với kỹ thuật lưới pixel numpy)**:
+  - Áp dụng đúng quy trình: dò 9 cột + 10 hàng bằng numpy (tìm cột/hàng tối màu nhất trong dải sạch), tạo bảng occupancy tự động (`patch.mean()<200` quanh mỗi giao điểm) để phát hiện NHANH ô có quân trước khi đọc màu/loại quân bằng mắt qua ảnh zoom — giảm mạnh sai số so với ước lượng thuần bằng mắt.
+  - **Bài học mới nhỏ**: khi đếm ký tự chuỗi occupancy dài (VD `"..#.....#"`), dễ đếm nhầm vị trí cột — bài 64 ban đầu tưởng Pháo ở cột 7 nhưng đếm lại đúng là cột 8 (khớp hoàn toàn với đáp án `P1.6` sau khi soát lại). Bài học: khi occupancy + đáp án lệch đúng 1 cột, ưu tiên nghi ngờ LỖI ĐẾM CHUỖI của mình trước khi nghi ngờ đáp án sai.
+  - **Bài 61**: FEN `3a5/3Pak3/4b4/9/7C1/3R5/9/9/1r2r4/3K5` (do đi trước) — Xe Pháo Binh, Pháo đổi đường ép Sĩ chạy, Binh len vào giữa chiếu bí. 0 warnings.
+  - **Bài 62**: FEN `4k4/4arNR1/3a1r3/1R7/9/9/9/9/4p4/3K5` (do đi trước) — song Xe + Mã + Binh, 2 Xe thay nhau đâm sâu ăn quân đỡ. 0 warnings.
+  - **Bài 63**: FEN `2n5r/9/2rnk4/5PRC1/9/9/9/9/4p4/5K3` (do đi trước) — Xe Pháo Binh, Binh dụ Tướng chạy quanh cung rồi Pháo mở lối. 0 warnings.
+  - **Bài 64**: FEN `5k3/6R2/5a3/9/7N1/9/2r5C/9/3p1p3/4K4` (do đi trước) — Xe Mã Pháo, Mã dồn Tướng lên xuống rồi Pháo mượn đường chính quân Mã của mình (cách 1 quân) để chiếu bí từ xa. 0 warnings.
+  - **Tổng Chương 6 hiện tại: 35/64 xác nhận** (thêm 61,62,63,64). Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
+  - Series ~= 432 bài. Đã build-batch, chuẩn bị commit/push.
+  - **Việc tiếp theo**: tiếp tục bài 65-100 (36 bài) bằng đúng quy trình lưới pixel numpy này — đã chứng minh hiệu quả rõ rệt (4/4 thành công liên tiếp, không phải hoãn bài nào).
