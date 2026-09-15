@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Admin\LessonSeriesController;
+use App\Http\Controllers\Admin\PostCategoryController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\SourceAssetController;
 use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -14,6 +16,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
@@ -95,6 +98,23 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::put('series/{series}', [LessonSeriesController::class, 'update'])->name('series.update');
     Route::delete('series/{series}', [LessonSeriesController::class, 'destroy'])->name('series.destroy');
 
+    // Tin tức: bài viết + chuyên mục (thêm/sửa/xoá) — nhân sự (admin + biên tập).
+    Route::get('tin-tuc', [AdminPostController::class, 'index'])->name('posts.index');
+    Route::get('tin-tuc/tao', [AdminPostController::class, 'create'])->name('posts.create');
+    Route::post('tin-tuc', [AdminPostController::class, 'store'])->name('posts.store');
+    Route::post('tin-tuc/tai-anh', [AdminPostController::class, 'uploadImage'])->name('posts.upload-image');
+    Route::get('tin-tuc/{post}/sua', [AdminPostController::class, 'edit'])->name('posts.edit');
+    Route::put('tin-tuc/{post}', [AdminPostController::class, 'update'])->name('posts.update');
+    Route::post('tin-tuc/{post}/toggle', [AdminPostController::class, 'togglePublish'])->name('posts.toggle');
+    Route::delete('tin-tuc/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy');
+
+    Route::get('tin-tuc-danh-muc', [PostCategoryController::class, 'index'])->name('post-categories.index');
+    Route::get('tin-tuc-danh-muc/tao', [PostCategoryController::class, 'create'])->name('post-categories.create');
+    Route::post('tin-tuc-danh-muc', [PostCategoryController::class, 'store'])->name('post-categories.store');
+    Route::get('tin-tuc-danh-muc/{category}/sua', [PostCategoryController::class, 'edit'])->name('post-categories.edit');
+    Route::put('tin-tuc-danh-muc/{category}', [PostCategoryController::class, 'update'])->name('post-categories.update');
+    Route::delete('tin-tuc-danh-muc/{category}', [PostCategoryController::class, 'destroy'])->name('post-categories.destroy');
+
     // Duyệt bình luận + thống kê + quản lý người dùng/nguồn — CHỈ admin.
     Route::middleware('admin')->group(function () {
         Route::get('binh-luan', [AdminCommentController::class, 'index'])->name('comments.index');
@@ -114,6 +134,11 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
 // Chuỗi bài (Course) + bài học — prefix rõ ràng để KHÔNG đụng route giai đoạn /{phase}.
 Route::get('/chuong-trinh/{series:slug}', [LessonController::class, 'series'])->name('series');
 Route::get('/bai-hoc/{lesson:slug}', [LessonController::class, 'show'])->name('lessons.show');
+
+// Tin tức: bài viết có thể nhúng video + bàn cờ tương tác.
+Route::get('/tin-tuc', [PostController::class, 'index'])->name('posts.index');
+Route::get('/tin-tuc/{categorySlug}/{postSlug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/tin-tuc/{categorySlug}', [PostController::class, 'category'])->name('posts.category');
 
 // Trang giai đoạn: /{phase} — ĐẶT CUỐI CÙNG + ràng buộc whitelist để tránh nuốt route khác.
 Route::get('/{phase}', [LessonController::class, 'phase'])

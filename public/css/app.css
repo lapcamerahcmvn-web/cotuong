@@ -270,6 +270,10 @@ h1.title { font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin: 6px 0 8p
 .prose ul, .prose ol { color: var(--ink-soft); padding-left: 22px; margin: 0 0 14px; }
 .prose li { margin: 4px 0; }
 .prose strong { color: var(--ink); }
+/* Video nhúng qua TinyMCE (media plugin) có width/height cứng — ép responsive theo khung 16:9. */
+.prose iframe { max-width: 100%; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: 12px; margin: 10px 0; }
+/* Bàn cờ nhúng qua shortcode [co-tuong] không nên bị max-width:720px của .prose bó hẹp thêm nữa. */
+.prose .xqboard-root { max-width: none; }
 
 /* Pagination */
 .pager { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 8px; }

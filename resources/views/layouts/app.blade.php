@@ -85,6 +85,7 @@
                 @foreach($navLinks as $slug => $label)
                     <a href="{{ route('phase', $slug) }}" @class(['on' => request()->routeIs('phase') && request()->route('phase')===$slug])>{{ $label }}</a>
                 @endforeach
+                <a href="{{ route('posts.index') }}" @class(['on' => request()->routeIs('posts.*')])>Tin tức</a>
             </nav>
 
             <div class="nav-right">
@@ -112,6 +113,7 @@
                 @foreach($navLinks as $slug => $label)
                     <a href="{{ route('phase', $slug) }}">{{ $label }}</a>
                 @endforeach
+                <a href="{{ route('posts.index') }}">Tin tức</a>
                 <a href="{{ route('account.index') }}" class="drawer-account">{!! $userIcon !!} {{ auth()->check() ? 'Tài khoản của tôi' : 'Đăng nhập' }}</a>
             </nav>
         </div>

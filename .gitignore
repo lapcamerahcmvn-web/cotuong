@@ -21,3 +21,7 @@ yarn-error.log
 /.vscode
 /storage/*.key
 /public/build
+/public/storage
+
+# Ảnh upload người dùng (Tin tức: thumbnail bài viết + ảnh chèn TinyMCE) — không commit, mỗi máy tự có.
+/storage/app/public/posts
