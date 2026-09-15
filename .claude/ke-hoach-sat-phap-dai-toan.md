@@ -539,3 +539,16 @@
   - **Tổng Chương 6 hiện tại: 35/64 xác nhận** (thêm 61,62,63,64). Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
   - Series ~= 432 bài. Đã build-batch, chuẩn bị commit/push.
   - **Việc tiếp theo**: tiếp tục bài 65-100 (36 bài) bằng đúng quy trình lưới pixel numpy này — đã chứng minh hiệu quả rõ rệt (4/4 thành công liên tiếp, không phải hoãn bài nào).
+
+- **2026-09-15 (tiếp) — Bài 65-68 XÁC NHẬN HẾT (8/8 liên tiếp thành công với kỹ thuật lưới pixel)**:
+  - **2 bẫy màu quân mới phát hiện** (đọc nhầm outline/filled dù đã áp dụng lưới pixel đúng cột/hàng — CẦN zoom riêng từng quân nghi ngờ để xác nhận màu, không chỉ tin occupancy grid cho vị trí):
+    1. Bài 67: quân "車" ở góc dưới-phải ban đầu tưởng viền trắng (đỏ) nhưng zoom kỹ mới thấy là Ô ĐEN ĐẶC (quân Xe Đen) — nếu không phát hiện, đáp án "X8/1" (Xe Đen lui) sẽ không parse được vì tưởng không có Xe Đen nào trên bàn.
+    2. Bài 68: quân "馬" cạnh Xe ở hàng 2 ban đầu tưởng viền trắng (đỏ) nhưng thực ra là Ô ĐEN ĐẶC (quân Mã Đen) — nếu không phát hiện, nước "Xt-5" (Xe trước bình sang cột Mã) sẽ báo lỗi "phạm luật" vì tưởng đó là quân Mã ĐỎ của chính mình chặn đường.
+  - **Bài học quy trình mới**: khi nước đầu tiên báo lỗi "phạm luật" (không phải "không parse được"), nghĩa là quân đích ĐANG BỊ CHẶN bởi 1 quân khác cùng ô/cột — kiểm tra lại xem quân chặn đó có thực sự cùng phe hay là quân địch bị đọc nhầm màu (đặc biệt các quân đứng SÁT CẠNH quân đã xác nhận đúng màu, dễ bị "lây" nhầm màu theo cảm tính).
+  - **Bài 65**: FEN `3ckab2/4aP3/9/9/1r6C/6R2/9/9/3r5/4KA1Cc` (do đi trước) — song Xe/Pháo/Binh, đổi quân liên tiếp rồi Pháo chiếu bí xa. 0 warnings.
+  - **Bài 66**: FEN `4ka3/4aR3/4N4/4p4/9/9/4P4/4c4/c1nrAR2/4KA3` (do đi trước) — song Xe ăn sạch Sĩ rồi Mã+Xe kết liễu. 0 warnings.
+  - **Bài 67**: FEN `C4k3/1R2a4/3a5/2C6/9/9/3p5/5np2/9/3K2pr1` (do đi trước) — song Xe song Pháo, Pháo mở đường rồi Xe dồn Tướng. 0 warnings.
+  - **Bài 68**: FEN `2b1k4/2P6/3Rn1P1/9/9/9/9/3R5/2p1r1c1/3K1p3` (do đi trước) — song Xe song Binh, Xe trước ăn Mã rồi Binh đổi đường kết liễu. 0 warnings.
+  - **Tổng Chương 6 hiện tại: 39/68 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
+  - Series ~= 436 bài. Đã build-batch, chuẩn bị commit/push.
+  - **Việc tiếp theo**: tiếp tục bài 69-100 (32 bài), trang PDF tiếp theo (390+).
