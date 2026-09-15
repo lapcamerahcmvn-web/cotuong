@@ -792,3 +792,9 @@
   - **vd12 "Thí Xe Xảo Diệu Hóa Giải Nguy Khốn"** (Hình4.12, 19 quân): FEN `2b1kaR2/4a4/6c2/3N1R3/6r2/7r1/P3Nn2P/4B4/4A4/2BA1K3`, first=`do`, 25 nước — 0 warnings ngay lần đầu (sau khi sửa 1 lần đọc nhầm quân Xe đỏ thành đen ở góc trên-phải qua kiểm tra pixel-mean). Kết thúc **chiếu bí thật sự** (isCheckmate=true), khớp "Trắng thắng".
   - **Tổng Chương 4 hiện tại: Bài 1 — 11/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~572 bài.
   - **Việc tiếp theo**: Bài 1 vd13 (Hình4.13, trang in 316, đã có đủ text từ preview, cần lấy FEN) và vd14 đã thấy khởi đầu.
+
+- **2026-09-15 (tiếp) — Bài 1 vd13, vd14 xác nhận (13/22)**:
+  - **vd13** (Hình4.13, **30 quân — đồng dày nhất Chương 4 cùng vd7**): FEN `3akabr1/9/1cn1b2c1/p1p1pR2p/6p2/2P6/P1r3n1P/2N1CCN1/7R1/2BAKAB2`, first=`do`, 27 nước — 0 warnings ngay lần đầu dù cực dày. Thắng thế không chiếu tướng, khớp sách.
+  - **vd14** (Hình4.14, 28 quân): FEN `2bk1ab2/9/2nac3n/p1pr2p1p/9/4rNc2/P7P/2N1BR3/3CA1CR1/3AK1B2`, first=`do`, 19 nước — 0 warnings ngay lần đầu. Thắng thế không chiếu tướng, khớp sách.
+  - **Tổng Chương 4 hiện tại: Bài 1 — 13/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~574 bài.
+  - **Việc tiếp theo**: Bài 1 vd15 (Hình4.15, trang in 317, đã thấy khởi đầu "1. M3.4 Tg5-6 / 2. X8-4 X2.2" từ preview, cần lấy đủ text trang tiếp).
