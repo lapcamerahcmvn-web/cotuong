@@ -659,3 +659,17 @@
   - **Cuộc 13 "Cận Duyệt Viễn Lai"**: FEN `4ka3/3P1R3/5P2b/6P1N/1R4b1c/2n6/8C/5A3/4AK3/1r5r1`, 15 nước. Phát hiện lỗi đọc màu quân Xe thứ 2 (tưởng đen, thực ra đỏ outline) gây "Quá số Xe đen: 3" khi validate — cùng loại lỗi đã ghi nhận trước đây (nghi ngờ ngay khi thấy cảnh báo "Quá số"). 0 warnings.
   - **Tổng Chương 5 hiện tại: 13/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~532 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 14-43, PDF trang 355+ (Hình 5.14, 5.15 theo khảo sát ban đầu).
+
+- **2026-09-15 (tiếp) — Cuộc 14-17 xác nhận (17/43)**:
+  - **Cuộc 14 "Đam Tuyết Trấn Tĩnh"**: FEN `3ak3r/4a1R2/b1C1bc3/1N2C3N/9/4p4/2n6/4K4/9/r8`, 9 nước — Pháo Mã phối hợp, kết ngắn gọn. 0 warnings, chiếu bí.
+  - **Cuộc 15 "Trung Ngoại Nhị Thánh"**: FEN `4kab1r/4a4/4b4/CR2R4/8r/2C6/9/9/c3p4/5K3`, 11 nước — song Xe song Pháo phối hợp. 0 warnings, chiếu bí.
+  - **Cuộc 16 "Quần Hổ Tranh Ăn"**: FEN `2bk1a3/1R2a2N/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4`, 9 nước — lợi dụng điểm yếu "có Tượng không thể bay" của Đen. 0 warnings, chiếu bí.
+  - **Cuộc 17 "Phù La Ngư Võng"**: FEN `1n1ck3C/2PPa1R1/5a3/9/8N/9/9/3n5/4p2r1/5K3`, 11 nước — thí Binh dụ Tướng thăng cao, tính sâu xa. 0 warnings, chiếu bí.
+  - **Tổng Chương 5 hiện tại: 17/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~536 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 18-43, PDF trang 356+.
+
+- **2026-09-15 (tiếp) — Cuộc 18, 19 xác nhận (19/43)**:
+  - **Cuộc 18 "Xúc Mục Kinh Tâm"**: FEN `C3ka2r/3Ra4/9/5NR2/9/9/9/9/r2p1pc2/4K4`, 13 nước — song Mã đổi vai liên tục phối hợp Xe dồn Tướng chạy loạn khắp cung. 0 warnings; kết thúc KHÔNG phải chiếu bí trực tiếp (isCheckmate=false, inCheck=true) — khớp đúng lời sách chỉ ghi "Trắng thắng", không ghi "chiếu bí".
+  - **Cuộc 19 "Phiên Giang Đảo Hải"**: FEN `1rC2k3/9/n1R6/9/4N4/9/R3c4/4C4/4rn3/3K5`, **27 nước** (dài nhất Chương 5 tới giờ) — song Xe song Mã đổi vai liên tục không ngừng nghỉ. 0 warnings, isCheckmate=true xác nhận chiếu bí thật sự.
+  - **Tổng Chương 5 hiện tại: 19/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~538 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 20-43 ("Họa Bất Đơn Hành", "Ký Bất Xưng Lực"...), PDF trang 358+.
