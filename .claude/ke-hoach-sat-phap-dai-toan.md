@@ -651,3 +651,11 @@
   - **Cuộc 9 "Tứ Diện Sở Ca"**: FEN `2b1R1Nr1/1Nr2k3/9/C2R1P1n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5`, 21 nước. **Phát hiện lỗi in nghi vấn ở nước cuối**: sách in "B3-4" nhưng quân Binh duy nhất còn lại ở vị trí không khớp file 3 (chỉ khớp file 2) — đã thử "B2-3" và "B2.1" đều hợp lệ, chọn "B2.1" (tiến đơn giản) làm phỏng đoán hợp lý nhất, không chắc chắn 100% đúng nguyên bản nhưng đảm bảo 0 warnings và kết thúc ở thế thắng như mô tả.
   - **Tổng Chương 5 hiện tại: 9/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~528 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 10-43, PDF trang 352+ (Hình 5.10 đã render sẵn trong `ch5_pg352_hires.png`, cần đọc).
+
+- **2026-09-15 (tiếp, user "làm tiếp đi bạn") — Cuộc 10-13 xác nhận (13/43)**:
+  - **Cuộc 10 "Binh Quý Chuyết Tốc"**: FEN `4k1b2/r3aPRN1/2Rab1P1n/8p/6P2/8C/9/9/3p1p3/4K2c1`, 13 nước. Sửa lỗi in "S5/6"→"S6/5" (đúng dạng lỗi digit-transposition đã gặp nhiều lần). 0 warnings.
+  - **Cuộc 11 "Long Phiên Đàm Để"**: FEN `1Cbaka3/1R7/2n1b4/2N1p4/9/3R5/4P1r1/4C3B/4Ar1n1/2BAK3c`, 13 nước. Phát hiện lỗi đọc cột Xe (tưởng cột 4, thực ra cột 3) gây "phạm luật" ở nước đầu — soát lại bằng zoom xác nhận đúng. 0 warnings.
+  - **Cuộc 12 "Bác Vọng Thiêu Đồn"**: FEN `2bak1b2/4aR2C/6N1n/9/9/9/5c3/4BC3/3p1r1n1/4K2c1`, chỉ 7 nước (ván ngắn nhất tới giờ). 0 warnings.
+  - **Cuộc 13 "Cận Duyệt Viễn Lai"**: FEN `4ka3/3P1R3/5P2b/6P1N/1R4b1c/2n6/8C/5A3/4AK3/1r5r1`, 15 nước. Phát hiện lỗi đọc màu quân Xe thứ 2 (tưởng đen, thực ra đỏ outline) gây "Quá số Xe đen: 3" khi validate — cùng loại lỗi đã ghi nhận trước đây (nghi ngờ ngay khi thấy cảnh báo "Quá số"). 0 warnings.
+  - **Tổng Chương 5 hiện tại: 13/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~532 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 14-43, PDF trang 355+ (Hình 5.14, 5.15 theo khảo sát ban đầu).
