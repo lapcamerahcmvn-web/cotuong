@@ -47,7 +47,7 @@ Route::withoutMiddleware([
 ])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
     Route::get('/sitemap-{section}.xml', [SitemapController::class, 'section'])
-        ->where('section', 'pages|nhap-mon|khai-cuoc|trung-cuoc|tan-cuoc|co-up')->name('sitemap.section');
+        ->where('section', 'pages|nhap-mon|khai-cuoc|trung-cuoc|tan-cuoc|co-up|tin-tuc')->name('sitemap.section');
     Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
 });
 

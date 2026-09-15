@@ -44,7 +44,7 @@
             @foreach($posts as $p)
                 <a href="{{ route('posts.show', [$category->slug, $p->slug]) }}" class="lesson-item card has-thumb">
                     <span class="li-thumb">
-                        <img src="{{ $p->thumbnail ? \Illuminate\Support\Facades\Storage::url($p->thumbnail) : \App\Support\Seo::ogImage() }}" alt="" loading="lazy">
+                        <img src="{{ $p->thumbnail ? \Illuminate\Support\Facades\Storage::url($p->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $p->title }}" loading="lazy">
                     </span>
                     <span>
                         <span class="li-title">{{ $p->title }}</span>

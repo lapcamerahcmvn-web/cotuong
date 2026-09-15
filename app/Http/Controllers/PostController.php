@@ -10,8 +10,8 @@ class PostController extends Controller
     // /tin-tuc
     public function index()
     {
-        $featured = Post::featured()->latest('published_at')->take(3)->get();
-        $posts = Post::published()->latest('published_at')->paginate(12);
+        $featured = Post::featured()->with('category')->latest('published_at')->take(3)->get();
+        $posts = Post::published()->with('category')->latest('published_at')->paginate(12);
         $categories = PostCategory::withCount(['posts' => fn ($q) => $q->published()])
             ->orderBy('sort_order')->get();
 
@@ -42,7 +42,7 @@ class PostController extends Controller
 
         $post->increment('view_count');
 
-        $related = Post::published()->where('id', '!=', $post->id)
+        $related = Post::published()->with('category')->where('id', '!=', $post->id)
             ->where('post_category_id', $post->post_category_id)
             ->latest('published_at')->take(4)->get();
 

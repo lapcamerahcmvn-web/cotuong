@@ -74,7 +74,7 @@
             @foreach($related as $r)
                 <a href="{{ route('posts.show', [$r->category?->slug ?: 'tin-tuc', $r->slug]) }}" class="lesson-item card has-thumb">
                     <span class="li-thumb">
-                        <img src="{{ $r->thumbnail ? \Illuminate\Support\Facades\Storage::url($r->thumbnail) : \App\Support\Seo::ogImage() }}" alt="" loading="lazy">
+                        <img src="{{ $r->thumbnail ? \Illuminate\Support\Facades\Storage::url($r->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $r->title }}" loading="lazy">
                     </span>
                     <span>
                         <span class="li-title">{{ $r->title }}</span>

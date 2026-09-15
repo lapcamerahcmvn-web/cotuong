@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lesson;
 use App\Models\LessonSeries;
+use App\Models\Post;
 use Illuminate\Support\Carbon;
 
 // Sitemap dạng CHỈ MỤC (index) + sitemap con theo từng mục, tất cả động.
@@ -22,17 +23,21 @@ class SitemapController extends Controller
         if (Lesson::published()->mode('co-up')->exists()) {
             $out[] = 'co-up';
         }
+        if (Post::published()->exists()) {
+            $out[] = 'tin-tuc';
+        }
+
         return $out;
     }
 
     // /sitemap.xml — chỉ mục trỏ tới các sitemap con.
     public function index()
     {
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
         foreach ($this->sections() as $s) {
-            $xml .= '  <sitemap><loc>' . htmlspecialchars(url('/sitemap-' . $s . '.xml'), ENT_XML1)
-                . '</loc><lastmod>' . $this->sectionLastmod($s) . '</lastmod></sitemap>' . "\n";
+            $xml .= '  <sitemap><loc>'.htmlspecialchars(url('/sitemap-'.$s.'.xml'), ENT_XML1)
+                .'</loc><lastmod>'.$this->sectionLastmod($s).'</lastmod></sitemap>'."\n";
         }
         $xml .= '</sitemapindex>';
 
@@ -47,10 +52,10 @@ class SitemapController extends Controller
         $urls = [];
         $add = function (string $loc, $lastmod, string $freq, string $prio) use (&$urls) {
             $urls[] = [
-                'loc'     => $loc,
+                'loc' => $loc,
                 'lastmod' => ($lastmod instanceof Carbon ? $lastmod : Carbon::parse($lastmod ?? now()))->toAtomString(),
-                'freq'    => $freq,
-                'prio'    => $prio,
+                'freq' => $freq,
+                'prio' => $prio,
             ];
         };
 
@@ -73,6 +78,11 @@ class SitemapController extends Controller
             foreach (Lesson::published()->mode('co-up')->orderBy('id')->get(['slug', 'updated_at']) as $l) {
                 $add(route('lessons.show', $l->slug), $l->updated_at, 'monthly', '0.6');
             }
+        } elseif ($section === 'tin-tuc') {
+            $add(route('posts.index'), Post::published()->max('updated_at'), 'daily', '0.7');
+            foreach (Post::published()->with('category')->orderBy('id')->get(['id', 'post_category_id', 'slug', 'updated_at']) as $p) {
+                $add(route('posts.show', [$p->category?->slug ?: 'tin-tuc', $p->slug]), $p->updated_at, 'monthly', '0.6');
+            }
         } elseif (array_key_exists($section, Lesson::PHASES)) {
             foreach (Lesson::published()->mode('co-tuong')->where('phase', $section)->orderBy('id')->get(['slug', 'updated_at']) as $l) {
                 $add(route('lessons.show', $l->slug), $l->updated_at, 'monthly', '0.6');
@@ -81,14 +91,14 @@ class SitemapController extends Controller
             abort(404);
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
         foreach ($urls as $u) {
-            $xml .= '  <url><loc>' . htmlspecialchars($u['loc'], ENT_XML1)
-                . '</loc><lastmod>' . $u['lastmod']
-                . '</lastmod><changefreq>' . $u['freq']
-                . '</changefreq><priority>' . $u['prio']
-                . '</priority></url>' . "\n";
+            $xml .= '  <url><loc>'.htmlspecialchars($u['loc'], ENT_XML1)
+                .'</loc><lastmod>'.$u['lastmod']
+                .'</lastmod><changefreq>'.$u['freq']
+                .'</changefreq><priority>'.$u['prio']
+                .'</priority></url>'."\n";
         }
         $xml .= '</urlset>';
 
@@ -102,10 +112,16 @@ class SitemapController extends Controller
         if ($section === 'pages') {
             return now()->toAtomString();
         }
+        if ($section === 'tin-tuc') {
+            $max = Post::published()->max('updated_at');
+
+            return ($max ? Carbon::parse($max) : now())->toAtomString();
+        }
         $q = $section === 'co-up'
             ? Lesson::published()->mode('co-up')
             : Lesson::published()->mode('co-tuong')->where('phase', $section);
         $max = $q->max('updated_at');
+
         return ($max ? Carbon::parse($max) : now())->toAtomString();
     }
 
@@ -128,10 +144,10 @@ class SitemapController extends Controller
             $lines[] = 'Allow: /';
             $lines[] = '';
         }
-        $lines[] = 'Sitemap: ' . url('/sitemap.xml');
-        $lines[] = '# AI-readable site overview: ' . url('/llms.txt');
+        $lines[] = 'Sitemap: '.url('/sitemap.xml');
+        $lines[] = '# AI-readable site overview: '.url('/llms.txt');
 
-        return response(implode("\n", $lines) . "\n", 200)
+        return response(implode("\n", $lines)."\n", 200)
             ->header('Content-Type', 'text/plain; charset=UTF-8')
             ->header('Cache-Control', 'public, max-age=3600');
     }
