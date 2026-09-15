@@ -601,3 +601,13 @@
   - **Tổng Chương 6 hiện tại: 55/87 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78,81,83 (31 bài).
   - Series ~= 452 bài. Đã có sẵn đáp án trích cho bài 88 (một phần) — cần trích thêm cho 89+.
   - **Việc tiếp theo**: tiếp tục bài 88-100 (13 bài), trang PDF 395+.
+
+- **2026-09-15 (tiếp) — Bài 89-92 xác nhận (88 tạm hoãn)**:
+  - **Bài 88 — tạm hoãn**: chỉ có 1 Mã Đen trên bàn nhưng đáp án cần Mã đổi cột 4 lần khác nhau (6,3,5,7,9) — hình học bất khả thi cho 1 quân trong 1 loạt nước liên tiếp không xen kẽ hợp lý; chưa tìm ra cách đọc lại hợp lý.
+  - **Bài 89**: FEN `3k5/6R1C/8b/6N2/6b2/9/9/9/2r1p1p1/5K3` — Xe và Mã đổi vai bình liên tục ép Tướng (11 nước). 0 warnings.
+  - **Bài 90**: FEN `5a3/3ka4/2P6/9/2b6/r5N2/9/7C1/4p4/5K3` — Pháo Binh Mã, Binh chiếu mở đường rồi Mã đổi vai. 0 warnings.
+  - **Bài 91**: FEN `2b6/3ka4/9/3N5/6R2/9/9/3p5/r3p4/3K5` — chỉ Xe + Mã, Mã nhử Tướng rồi Xe đổi vai ăn Sĩ kết liễu (có nhánh phụ "Nếu đi..." bỏ qua, chỉ làm mạch chính). 0 warnings.
+  - **Bài 92**: FEN `1R1aka1R1/3c5/9/9/9/9/9/4p4/4p1r2/3K5` — chỉ song Xe, ăn sạch Sĩ và Xe Đen dồn Tướng lên xuống. 0 warnings.
+  - **Tổng Chương 6 hiện tại: 59/92 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78,81,83,88 (32 bài).
+  - Series ~= 456 bài. Đáp án bài 93+ chưa trích — cần trích thêm khi làm tới.
+  - **Việc tiếp theo**: tiếp tục bài 93-100 (8 bài cuối cùng!), trang PDF 396+.
