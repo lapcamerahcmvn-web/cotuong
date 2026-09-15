@@ -779,3 +779,9 @@
   - **vd8 "Đánh Tướng Nổ Sĩ, Khuếch Trương Thế Công"** (Hình4.8, trang in 312, giải toàn quốc 1983, 25 quân): FEN `2bak4/4a4/2c1n3b/2pc1n2p/4N4/2P3C2/P6RP/2N1BC3/4A1r2/2B1KA3`, first=`do`, 27 nước — 0 warnings ngay lần đầu. Kết thúc thắng thế không chiếu tướng (isCheckmate=false) — đã SỬA lại caption/content ban đầu lỡ ghi "chiếu bí" cho khớp đúng kết quả engine trước khi publish.
   - **Tổng Chương 4 hiện tại: Bài 1 — 7/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~568 bài.
   - **Việc tiếp theo**: Bài 1 vd9 (cần render trang in 313+).
+
+- **2026-09-15 (tiếp) — Bài 1 vd9, vd10 xác nhận (9/22)**:
+  - **vd9 "Nổ Sĩ Mở Lỗ Hổng"** (Hình4.9, trang in 313, "Thiên Long Bôi" lần 3, 22 quân): FEN `4k1b2/4a4/4b4/2pcR3p/1n3P3/2Pr4/7RP/pr2BN3/9/2BAKA3`, first=`den`, 27 nước — 0 warnings ngay lần đầu. Kết thúc "Tuyệt sát, Đen thắng" (chiếu nhưng không phải chiếu bí trực tiếp, khớp sách).
+  - **vd10 "Nổ Sĩ Nổ Tượng Thẳng Tiến"** (Hình4.10, trang in 313, giải mời danh thủ Châu Á lần 5 năm 1991, 22 quân): FEN `2bk1a1cC/2n1a4/4b4/5R3/p1n1C3P/1p4N2/P6r1/4B4/4A4/2BAK4`, first=`do`, **47 nước** — 0 warnings ngay lần đầu cho toàn bộ chuỗi dài. Kết thúc thắng thế không chiếu tướng, khớp "Trắng thắng".
+  - **Tổng Chương 4 hiện tại: Bài 1 — 9/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~570 bài.
+  - **Việc tiếp theo**: Bài 1 vd11 (Hình4.11, trang in 314, trích "Tam Cửu Bôi" năm 1986, đã thấy khởi đầu "1. M3.4 S4.5 / 2. M4/5!" từ preview, cần lấy đủ text trang tiếp).
