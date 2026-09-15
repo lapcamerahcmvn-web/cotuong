@@ -773,3 +773,9 @@
   - **vd6 "Thí Pháo Nổ Sĩ Tranh Công"** (Hình4.6, trang in 311, giao hữu Hắc Long Giang - Chiết Giang 1978): FEN `2bak4/4a4/n3b4/N1pR4p/2P6/P3p4/1r2c3P/3CB4/4Ar3/2B1KA1R1`, first=`do`, 17 nước — 0 warnings ngay lần đầu. Kết thúc đúng như sách tự ghi "thế thắng đã định, lược bỏ" (không chiếu tướng, sách chủ động cắt ngắn phần còn lại vì đã rõ thắng).
   - **Tổng Chương 4 hiện tại: Bài 1 — 5/22 xác nhận (bỏ qua vd5, có thể quay lại sau)**. Series `sat-phap-dai-toan` tổng ~566 bài.
   - **Việc tiếp theo**: Bài 1 vd7 (Hình 4.7, trang in 311, trích giải "Cao Liệu Bôi" năm 1994, "Bên Đen phòng thủ phản kích", đã thấy khởi đầu "1. ...... P6.5" từ preview, cần lấy đủ text trang tiếp).
+
+- **2026-09-15 (tiếp) — Bài 1 vd7, vd8 xác nhận (7/22)**:
+  - **vd7 "Tiên Thí Hậu Đoạt"** (Hình4.7, trang in 311, trích "Cao Liệu Bôi" 1994, **sơ đồ 30 quân — dày nhất Chương 4 từ đầu tới giờ**): FEN `1rbakr3/4a4/2ncb1n2/4p3p/p1p2c3/1C3N1R1/P1P1P3P/2N1B3C/9/1R1AKAB2`, first=`den`, 11 nước — 0 warnings ngay lần đầu dù sơ đồ cực dày. Kết thúc "bên Đen chiếm ưu" (không chiếu tướng, khớp sách).
+  - **vd8 "Đánh Tướng Nổ Sĩ, Khuếch Trương Thế Công"** (Hình4.8, trang in 312, giải toàn quốc 1983, 25 quân): FEN `2bak4/4a4/2c1n3b/2pc1n2p/4N4/2P3C2/P6RP/2N1BC3/4A1r2/2B1KA3`, first=`do`, 27 nước — 0 warnings ngay lần đầu. Kết thúc thắng thế không chiếu tướng (isCheckmate=false) — đã SỬA lại caption/content ban đầu lỡ ghi "chiếu bí" cho khớp đúng kết quả engine trước khi publish.
+  - **Tổng Chương 4 hiện tại: Bài 1 — 7/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~568 bài.
+  - **Việc tiếp theo**: Bài 1 vd9 (cần render trang in 313+).
