@@ -119124,6 +119124,272 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50016,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 16 — Quần Hổ Tranh Ăn",
+      "slug": "c5-cuoc-16-quan-ho-tranh-an",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2bk1a3/1R2a2N1/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4",
+      "variation_tree": null,
+      "move_count": 9,
+      "summary": "Cuộc thứ mười sáu: bầy hổ tranh nhau miếng ăn — Trắng lợi dụng điểm yếu \"có Tượng không thể bay\" của Đen, tổ chức Xe Mã thay nhau công kích, cuối cùng thành sát.",
+      "content": "<p>“Quần hổ tranh ăn” ví cảnh nhiều con hổ cùng tranh giành một miếng mồi. Ván cờ này Trắng lợi dụng đúng điểm yếu của Đen — thiếu Tượng che chắn — tổ chức Xe và Mã thay nhau công kích dồn dập như bầy hổ vây mồi, cuối cùng dẫn tới chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 16 — Quần Hổ Tranh Ăn",
+      "seo_description": "Cuộc cờ kinh điển Quần Hổ Tranh Ăn: Trắng lợi dụng điểm yếu thiếu Tượng của Đen, tổ chức Xe Mã công kích dồn dập tới chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2bk1a3/3Ra2N1/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4",
+          "move_notation_wxf": "Xe 8 bình 6",
+          "move_notation_iccs": "b8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b2a3/3ka2N1/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b2N3/3ka4/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4",
+          "move_notation_wxf": "Mã 2 tiến 4",
+          "move_notation_iccs": "h8f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b2a3/3k5/rCc1b4/9/9/9/9/4C2R1/3r1p3/4K4",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b2a3/3k3R1/rCc1b4/9/9/9/9/4C4/3r1p3/4K4",
+          "move_notation_wxf": "Xe 2 tiến 6",
+          "move_notation_iccs": "h2h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b6/3ka2R1/rCc1b4/9/9/9/9/4C4/3r1p3/4K4",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2b6/3kR4/rCc1b4/9/9/9/9/4C4/3r1p3/4K4",
+          "move_notation_wxf": "Xe 2 bình 5",
+          "move_notation_iccs": "h8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2bk5/4R4/rCc1b4/9/9/9/9/4C4/3r1p3/4K4",
+          "move_notation_wxf": "Tướng 4 thoái 1",
+          "move_notation_iccs": "d8d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1Cbk5/4R4/r1c1b4/9/9/9/9/4C4/3r1p3/4K4",
+          "move_notation_wxf": "Pháo 8 tiến 2",
+          "move_notation_iccs": "b7b9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50017,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 17 — Phù La Ngư Võng",
+      "slug": "c5-cuoc-17-phu-la-ngu-vong",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1n1ck3C/2PPa1R2/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Cuộc thứ mười bảy: ví lão Tướng Đen như con vịt trời sa vào lưới cá, không được yên ổn — Trắng thí Binh dụ Tướng thăng lên cao, tính toán sâu xa để cuối cùng dồn cả Tướng lẫn Mã vào tử địa.",
+      "content": "<p>“Phù la ngư võng” ví con vịt trời vốn tự do bay lượn bỗng sa vào lưới đánh cá, không còn đường thoát. Ván cờ này Trắng thí một quân Binh để dụ Tướng Đen thăng lên cao, tính toán sâu xa từng bước, cuối cùng khiến cả Tướng lẫn Mã của Đen đều hết đường chạy.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 17 — Phù La Ngư Võng",
+      "seo_description": "Cuộc cờ kinh điển Phù La Ngư Võng: Trắng thí Binh dụ Tướng Đen thăng cao, tính toán sâu xa dồn cả Tướng lẫn Mã vào tử địa.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1n1ck1R1C/2PPa4/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Xe 3 tiến 1",
+          "move_notation_iccs": "g8g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1n1ckaR1C/2PP5/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1n1ckaR1C/2P1P4/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Tốt 6 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1n1c1aR1C/2P1k4/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng ăn Binh — nước tính toán sâu xa.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1n1c1a2C/2P1k1R2/5a3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Xe 3 thoái 1",
+          "move_notation_iccs": "g9g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1n1c1a2C/2P3R2/4ka3/9/8N/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 5 tiến 1",
+          "move_notation_iccs": "e8e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1n1c1a2C/2P3R2/4ka3/6N2/9/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "i5g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1n1c1a2C/2P3R2/3k1a3/6N2/9/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e7d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1n1c1a2C/2PR5/3k1a3/6N2/9/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Xe 3 bình 6",
+          "move_notation_iccs": "g8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3c1a2C/2Pn5/3k1a3/6N2/9/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Mã 2 tiến 4",
+          "move_notation_iccs": "b9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3C1a3/2Pn5/3k1a3/6N2/9/9/9/3n5/4p2r1/5K3",
+          "move_notation_wxf": "Pháo 1 bình 6",
+          "move_notation_iccs": "i9d9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo ăn Pháo — Mã Đen hết đường chạy, chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
