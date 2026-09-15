@@ -562,3 +562,13 @@
   - **Tổng Chương 6 hiện tại: 43/72 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
   - Series ~= 440 bài. Đã build-batch, chuẩn bị commit/push.
   - **Việc tiếp theo**: tiếp tục bài 73-100 (28 bài), đã có sẵn đáp án trích cho bài 73,74,75 ở scratchpad `page408_words.txt`, cần đọc thêm sơ đồ trang 391.
+
+- **2026-09-15 (tiếp, user "Tiếp cho xong đi bạn") — Bài 73-76 XÁC NHẬN HẾT (4/4 liên tiếp)**:
+  - Tiếp tục dùng đúng quy trình: dò lưới numpy + occupancy grid + zoom xác nhận màu quân nghi vấn trước khi chốt FEN.
+  - **Bài 73**: FEN `9/3R4c/C4k3/2N6/2b6/9/9/6n1B/2r2r2/4K3C` — Xe Mã song Pháo, Mã và Xe đổi mạng liên tiếp nhưng vẫn dồn được chiếu bí. 0 warnings.
+  - **Bài 74**: FEN `4na3/4k4/3P1a3/4p4/9/9/1p7/1C7/1p3p3/3K5` — chỉ Pháo + Binh, Pháo đổi đường + Binh 2 lần tiến chiếu. 0 warnings.
+  - **Bài 75**: FEN `4kabr1/4a4/4b3c/1RC6/9/9/9/9/5p2r/4K4` — Xe + Pháo ăn sạch Sĩ và Xe Đen. 0 warnings.
+  - **Bài 76**: FEN `4ka1r1/4aP3/7N1/1R7/9/9/2C5n/9/4p4/5K3` — Xe Mã Binh, Binh đổi mạng mở cửa rồi Mã vòng 2 lượt. 0 warnings.
+  - **Tổng Chương 6 hiện tại: 47/76 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
+  - Series ~= 444 bài. Đã có sẵn đáp án trích cho bài 77-81 ở scratchpad `page409_words.txt`.
+  - **Việc tiếp theo**: tiếp tục bài 77-100 (24 bài), trang PDF 392+.
