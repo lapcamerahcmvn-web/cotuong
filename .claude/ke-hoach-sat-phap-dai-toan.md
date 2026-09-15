@@ -708,3 +708,10 @@
   - **Cuộc 29 "Tứ Diện Toàn Nhiễu"**: FEN `C2R4c/5k3/b2a1N2b/2R6/9/9/9/4p4/3nr1p2/c4K2C`, **27 nước** (đồng dài nhất Chương 5 cùng cuộc19) — song Mã đổi vai tiến lui liên tục vây khốn tứ phía. 0 warnings, isCheckmate=true.
   - **Tổng Chương 5 hiện tại: 29/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~548 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 30-43, PDF trang 363+ (in 361+).
+
+- **2026-09-15 (tiếp) — Cuộc 30, 31 xác nhận (31/43)**:
+  - Cả 2 cuộc đọc đúng ngay lần đầu. Lưu ý nhỏ: cuộc30 phát hiện 1 lần nữa lỗi đọc nhầm ký tự 卒(Tốt đen)/仕(Sĩ đỏ) khi hai ô liền kề nhau trong montage — sửa bằng crop riêng phóng to trước khi ghi FEN cuối cùng (không cần thử-sai với engine, bắt được ngay ở bước đọc).
+  - **Cuộc 30 "Đồng Công Bính Vị"**: FEN `2ba1k3/4a4/4b3R/9/8R/9/9/3A2n2/3pA1r2/4K2c1`, 15 nước — song Xe thay nhau đảm nhận vai trò tiến công. 0 warnings, isCheckmate=true.
+  - **Cuộc 31 "Tam Thỉnh Gia Cát"**: FEN `3ak1P1P/4a4/9/9/4p3C/c3C1R2/9/5p3/2rr5/4K1R2`, 17 nước — song Xe vờn Tướng Đen khắp bàn trước khi song Pháo kết liễu. 0 warnings, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 31/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~550 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 32-43, PDF trang 364+ (in 362+, cuộc32 "Sĩ Mã Như Vân" đã có FEN+text sẵn, chưa validate).
