@@ -686,3 +686,11 @@
   - **Cuộc 23 "Uy Trấn Tứ Hải"**: FEN `2b2k3/1R2a1P2/3a5/4p1N2/6b2/9/3NP4/4C1C2/3RAp3/c1nAK4`, 15 nước — đổi Tốt lấy Sĩ, Xe ăn Sĩ, Mã Pháo hợp sức kết liễu. Có 1 biến phụ "Nếu Đen Tg5-4 thì X8-6, Tg4.1, P5-6, Trắng thắng" bỏ qua (không đưa vào variation_tree, theo đúng pattern các cuộc trước chỉ ghi mạch chính). 0 warnings, isCheckmate=true.
   - **Tổng Chương 5 hiện tại: 23/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~542 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 24-43, PDF trang 360+ (đã biết cuộc24 bắt đầu ở đầu trang 360 = in 358).
+
+- **2026-09-15 (tiếp) — Cuộc 24, 25 xác nhận (25/43)**:
+  - **Phát hiện định dạng in 2 cột cho danh sách nước đi** (mới gặp lần đầu ở Chương 5, cuộc 25 "Thương Hải Đằng Giao"): khi cuộc cờ có nhiều nước nhưng sơ đồ không chiếm hết chiều cao trang, sách in nước theo 2 cột song song (ví dụ dòng in "6. M4.6 M5/4    8. S5.6 M2/4" nghĩa là cột trái=nước6, cột phải=nước8, đọc nối tiếp 6→7→8→9 chứ KHÔNG phải 2 biến song song). Nhận diện qua toạ độ x trong `words.txt` (cột phải bắt đầu ở x≈216+).
+  - **Lỗi đọc màu quân lặp lại đúng như cảnh báo cũ**: cuộc25 ban đầu đọc nhầm quân Mã ở hàng6 cột5 là ĐEN (n) trong khi thực tế là ĐỎ (N, outline) — gây lỗi "Không parse được nước M4.6" ở nước 6 (vì không còn Mã đỏ nào trên bàn theo cách đọc sai). Debug bằng cách tính `patch.mean()` từng quân nghi vấn (giá trị >150 = nền trắng/viền = quân đỏ, <100 = nền đen đặc = quân đen) xác nhận chắc chắn, sửa xong 0 warnings ngay.
+  - **Cuộc 24 "Địa Phú Binh Cường"**: FEN `4kabC1/4a4/4b2N1/5P3/9/9/9/6Cr1/R1pp4r/R3K4`, 17 nước — song Xe kết hợp Mã Pháo Tốt dồn ép. Có 2 biến phụ bỏ qua (chỉ ghi mạch chính). 0 warnings, isCheckmate=true.
+  - **Cuộc 25 "Thương Hải Đằng Giao"**: FEN `1C1k5/4P4/3N4R/5n2C/9/9/5N3/3ABAr2/1r1p1p3/4K3c`, 17 nước — song Mã đổi vai liên tục. Có 1 biến phụ bỏ qua. 0 warnings, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 25/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~544 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 26-43, PDF trang 361+ (in 359+).
