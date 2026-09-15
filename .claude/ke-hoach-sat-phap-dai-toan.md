@@ -740,3 +740,9 @@
   - **Cuộc 39 "Hổ Trướng Đàm Binh"**: FEN `3ak4/2PPa4/b3b4/2p1C1N2/3c5/1rB6/9/3p5/4p2p1/1CB2K3`, 11 nước — thí Mã diệu thủ, ba Tốt luân phiên siết vòng vây. 0 warnings, isCheckmate=true, đọc đúng ngay lần đầu.
   - **Tổng Chương 5 hiện tại: 39/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~558 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 40-43 (4 cuộc cuối cùng), PDF trang 368+ (in 366+, cuộc40 "Thủ Thám Nguyệt Quật" và cuộc41 "Kim Kê Bào Noãn" đã có text sẵn, chưa lấy FEN).
+
+- **2026-09-15 (tiếp) — Cuộc 40, 41 xác nhận (41/43)**:
+  - **Cuộc 40 "Thủ Thám Nguyệt Quật"**: FEN `4kabn1/R3a4/4b1P1r/p8/9/2P6/8P/1R1pBC3/2r3p2/3AKABc1`, 13 nước — song Xe cùng Tốt biên thăm dò. Sách có ghi chú đặc biệt: bản gốc không có Tốt/Binh biên, nhưng nếu vậy Đen có nước phản đòn X9.5 tróc Tượng cho Đen thắng ngược, nên tác giả CHỦ ĐỘNG thêm Tốt biên + Binh biên vào sơ đồ để giữ đúng cách đi như kỳ phổ — sơ đồ tôi đọc từ hình đã có sẵn các quân bổ sung này. 0 warnings; kết thúc có chiếu tướng nhưng không chiếu bí trực tiếp (isCheckmate=false, inCheck=true) — khớp đúng lời sách chỉ ghi "Trắng thắng".
+  - **Cuộc 41 "Kim Kê Bào Noãn"**: FEN `3k1ab2/2R1aP3/2n1b3r/9/5R3/9/3r5/B3B4/4AC2c/4K4`, 9 nước — đổi Tốt lấy Sĩ, Xe ăn Mã, dồn ép nhanh gọn. 0 warnings, isCheckmate=true, đọc đúng ngay lần đầu.
+  - **Tổng Chương 5 hiện tại: 41/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~560 bài.
+  - **Việc tiếp theo**: 2 cuộc cuối cùng của Chương 5 (cuộc42, cuộc43), cần đọc PDF trang 369+ (in 367+) để lấy tiêu đề+FEN+text.
