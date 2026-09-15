@@ -572,3 +572,13 @@
   - **Tổng Chương 6 hiện tại: 47/76 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
   - Series ~= 444 bài. Đã có sẵn đáp án trích cho bài 77-81 ở scratchpad `page409_words.txt`.
   - **Việc tiếp theo**: tiếp tục bài 77-100 (24 bài), trang PDF 392+.
+
+- **2026-09-15 (tiếp) — Bài 77,79,80 XÁC NHẬN (bài 78 HOÃN VĨNH VIỄN — lỗi sách)**:
+  - **Bài 77**: FEN `2b1k4/C8/b7c/4p4/4N4/9/6r2/3R5/4p4/3K3p1` — Xe + Mã, Xe đâm sâu ẩn mình rồi Mã vòng 2 lượt. 0 warnings.
+  - **Bài 78 — HOÃN VĨNH VIỄN**: đọc sơ đồ 3 lần độc lập (occupancy + 2 lần zoom trực tiếp, kể cả zoom sát để kiểm màu quân) đều xác nhận vị trí CHỈ có 3 quân đỏ (Pháo, Xe, Tướng) — không có bất kỳ quân Mã đỏ nào trên bàn. Đáp án in sẵn nước 3 và 4 dùng "M6/4" và "M4.2" (quân Mã đỏ) — không thể áp dụng cho bất kỳ quân nào trên bàn (kể cả 2 quân Mã Đen cũng không khớp số cột). Khác với bài 58/72 (chỉ 1 nước bị lỗi, phục hồi được), lỗi này chạm tới CHÍNH LOẠI QUÂN không tồn tại — không có cách sửa hợp lý bằng suy luận 1 nước. Bỏ qua vĩnh viễn, không dùng slot 78.
+  - **Bài 79**: FEN `C3k4/2P1a4/5a3/p1p5R/9/1n7/4P4/4B4/2r3p1/2B1K4` — Xe + Binh, Xe ẩn hiện ép Sĩ rồi Binh len vào giữa. 0 warnings.
+  - **Bài 80**: FEN `3a5/4ak3/6N1C/9/4c4/4N4/9/n8/4p4/c2K5` — CHỈ song Mã, ván DÀI NHẤT từ đầu chương (11 nước, không phải 9 như đa số bài khác) — 2 Mã đổi vai liên tục theo kiểu Ms/Mt (trước/sau) lặp lại 2 lần với 2 cặp Mã khác cột. 0 warnings.
+  - **Mốc quan trọng: 50/80 bài đã thử — vừa qua nửa chặng đường của Chương 6 (100 bài)**.
+  - **Tổng Chương 6 hiện tại: 50/80 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78 (29 bài, trong đó 58 và 78 là HOÃN VĨNH VIỄN do lỗi sách).
+  - Series ~= 447 bài. Đã có sẵn đáp án trích cho bài 81 ở scratchpad `page409_words.txt`.
+  - **Việc tiếp theo**: tiếp tục bài 81-100 (20 bài), trang PDF 393+.
