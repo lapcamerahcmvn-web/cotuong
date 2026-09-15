@@ -634,3 +634,12 @@
   - **⚠️ Sự cố nhỏ đã tự sửa**: vô tình gọi Write đè trắng toàn bộ file nhật ký này bằng placeholder — phát hiện ngay, phục hồi bằng `git checkout --` (file đã commit trước đó nên không mất gì). Bài học: dùng Edit để nối thêm vào nhật ký, KHÔNG dùng Write.
   - **Tổng Chương 5 hiện tại: 2/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~519 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 3-43, PDF trang 348+ (ảnh hires `ch5_pg347_hires.png` đã có, cần render thêm trang 348+).
+
+- **2026-09-15 (tiếp) — Cuộc 3, 4, 5 xác nhận (5/43)**:
+  - **Lỗi đọc màu quân tái diễn liên tục** (đúng như cảnh báo ở trên): cuộc3 nhầm cột elephant hàng 0 (đếm sai vị trí trong chuỗi occupancy `..##.##..`→ đọc nhầm cột 6,7 thay vì đúng 5,6), nhầm 1 quân Mã viền trắng (đỏ) thành đặc (đen) ở góc dưới-phải; cuộc4 nhầm CHÍNH quân Pháo đỏ (炮) thành đen dẫn tới lỗi "quá số Pháo đen: 3" khi validate — đây là lỗi rất dễ mắc vì nhầm lẫn giữa 炮(đỏ)/砲(đen) dù đã biết quy tắc, cần nhìn kỹ MẶT CHỮ chứ không chỉ màu nền mỗi khi thấy ký tự "炮".
+  - **Bài học quy trình mới quan trọng**: khi engine báo lỗi `Vị trí không hợp lệ: Quá số X` ở bước validate FEN ban đầu (không phải lỗi nước đi), đây là dấu hiệu CHẮC CHẮN có quân bị đọc nhầm loại/màu — đếm lại toàn bộ quân loại đó trong FEN để tìm quân thừa.
+  - **Cuộc 3 "Lương Tướng An Biên"**: FEN `2bk1ab2/4a4/9/p1P6/3NC4/4Pp3/P5n2/4B3N/4Ar3/1RBAK2cr` (do đi trước), 29 nước — song Mã đổi vai liên tục phối hợp Xe Pháo. 0 warnings.
+  - **Cuộc 4 "Hoài Dương Ngộ Hán"**: FEN `2ba1k3/4a1R2/9/1cp2N3/1Nb6/3n2P2/4C4/3AB4/3r1p1n1/2R1KAr1c` (do đi trước), 29 nước — Xe song Mã Pháo, đổi Tượng lấy Pháo. 0 warnings.
+  - **Cuộc 5 "Uyên Ương Hí Thủy"**: FEN `4kab1C/4a4/9/1R7/4P1N1/2N3B1/1n5r1/4n4/4A4/c1BAK4` (do đi trước), 15 nước — Xe Binh song Mã phối hợp nhịp nhàng. 0 warnings.
+  - **Tổng Chương 5 hiện tại: 5/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~522 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 6-43, PDF trang 350+ (Hình 5.6, 5.7 đã thấy trong ảnh trang 350 chụp trước đó khi khảo sát ban đầu).
