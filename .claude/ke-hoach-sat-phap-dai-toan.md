@@ -811,3 +811,9 @@
   - **vd19** (Hình4.19, 27 quân): FEN `1r2kab1c/4a1R2/4b4/pnp1C2rp/6p2/2P6/P3P1P1P/5RN2/9/2BAKAB2`, first=`do`, 17 nước — 0 warnings ngay lần đầu. Kết thúc khớp đúng câu sách "thắng cuộc đã định" (không chiếu, sách tự cắt ngắn vì đã rõ thắng).
   - **Tổng Chương 4 hiện tại: Bài 1 — 18/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~579 bài.
   - **Việc tiếp theo**: Bài 1 vd20 (Hình4.20, trang in 321, đã có 3/14 nước đầu từ preview "1. X8.9 X9-2 / 2. X8-7 X2.2...", cần lấy đủ text tiếp), rồi vd21, vd22 để HOÀN TẤT Bài 1.
+
+- **2026-09-16 — Bài 1 vd20, vd21 xác nhận (20/22)**:
+  - **vd20** (Hình4.20, **31 quân — đồng dày nhất Chương 4**): FEN `2bakab2/r7r/4c1n2/p1p1p3p/5np1c/2P2C3/P3P3P/C1N1B1N2/4A4/1RBAKR3`, first=`do`, 29 nước — 0 warnings ngay lần đầu dù cực dày. Thắng thế không chiếu tướng, khớp "Trắng thắng".
+  - **vd21** (Hình4.21, 24 quân): FEN `1C2kab2/4a1R2/4b4/p3p3p/3n2P2/6P2/Pr6P/B3C1N2/3cA4/4KAB2`, first=`do`, **37 nước** — 0 warnings ngay lần đầu cho chuỗi rất dài. Thắng thế không chiếu tướng, khớp "tranh tiên tạo sát mà thắng". Lưu ý nhỏ: 1 ký tự lạ "q" xuất hiện trong text trích xuất thô ở nước 16 (lỗi OCR/font vô hại, không ảnh hưởng notation thật, đã loại bỏ khi transcribe).
+  - **Tổng Chương 4 hiện tại: Bài 1 — 20/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~583 bài.
+  - **Việc tiếp theo**: Bài 1 vd22 (Hình4.22, trang in 323, đã có ~14 nước đầu từ preview "1. P4.7 S5/6 / 2. X2-4 X3/1 / ... / 14. S5.6" — cần lấy đủ text tiếp trang sau). **ĐÂY LÀ VÍ DỤ CUỐI CÙNG CỦA BÀI 1** — sau đó chuyển sang Bài 2 "Phá Tượng Sát Pháp" (25 ví dụ, order 42001-42025, order 42000=giới thiệu đã có).
