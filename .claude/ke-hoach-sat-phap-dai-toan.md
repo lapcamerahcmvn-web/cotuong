@@ -734,3 +734,9 @@
   - **Cuộc 37 "Hỏa Diễm Côn Cương"**: FEN `3ak1b1r/4a2Pn/4b4/4C4/9/9/cR7/n8/4A1p2/3AKC3`, 7 nước — nước Pháo mở màn tinh diệu. 0 warnings, isCheckmate=true.
   - **Tổng Chương 5 hiện tại: 37/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~556 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 38-43 (6 cuộc cuối cùng của Chương 5), PDF trang 366+ (in 364+, cuộc38 "Nhục Đàn Phụ Kinh" đã thấy tiêu đề+giới thiệu, chưa lấy FEN/text đầy đủ).
+
+- **2026-09-15 (tiếp) — Cuộc 38, 39 xác nhận (39/43)**:
+  - **Cuộc 38 "Nhục Đàn Phụ Kinh"**: FEN `4ka3/R3a4/b2rb4/4P2N1/9/9/9/3Ap4/4pp3/1R1K1A3`, **33 nước — cuộc DÀI NHẤT toàn Chương 5**. 0 warnings toàn bộ 33 ply; kết thúc KHÔNG chiếu tướng (isCheckmate=false, inCheck=false) — khớp đúng nguyên văn sách: "Tượng Đen bị ăn, Mã và Binh đáy bên Trắng tất thắng Đen đơn Sĩ" (thắng thế cờ tàn, không phải chiếu bí trực tiếp). Đọc đúng ngay lần đầu dù rất dài.
+  - **Cuộc 39 "Hổ Trướng Đàm Binh"**: FEN `3ak4/2PPa4/b3b4/2p1C1N2/3c5/1rB6/9/3p5/4p2p1/1CB2K3`, 11 nước — thí Mã diệu thủ, ba Tốt luân phiên siết vòng vây. 0 warnings, isCheckmate=true, đọc đúng ngay lần đầu.
+  - **Tổng Chương 5 hiện tại: 39/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~558 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 40-43 (4 cuộc cuối cùng), PDF trang 368+ (in 366+, cuộc40 "Thủ Thám Nguyệt Quật" và cuộc41 "Kim Kê Bào Noãn" đã có text sẵn, chưa lấy FEN).
