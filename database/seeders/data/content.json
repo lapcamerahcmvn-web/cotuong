@@ -115286,6 +115286,294 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60093,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 93 — Song Mã Đổi Vai Sáu Lượt Liên Hoàn",
+      "slug": "c6-de-kiem-tra-bai-93",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "C2a5/n2P5/4k4/4N4/4N4/9/9/9/2p1p4/3K5",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Bài kiểm tra số 93: Trắng chỉ còn hai quân Mã, phải đổi vai sáu lượt liên hoàn — dồn Tướng Đen chạy khắp cung theo hình chữ chi cho tới khi không còn ô nào để tránh.",
+      "content": "<p>Trắng chỉ còn hai quân Mã. Hai quân phải đổi vai sáu lượt liên hoàn, dồn Tướng Đen chạy khắp cung theo hình chữ chi cho tới khi không còn ô nào để tránh.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 93 — Song Mã Đổi Vai Sáu Lượt Liên Hoàn",
+      "seo_description": "Bài kiểm tra sát pháp số 93: Trắng chỉ còn hai Mã, đổi vai sáu lượt liên hoàn dồn Tướng Đen chạy khắp cung tới khi không còn ô để tránh.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "C2a5/n2P5/4k4/2N1N4/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã sau tiến 7",
+          "move_notation_iccs": "e5c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "C2a5/n2P5/5k3/2N1N4/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e7f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "C2a5/n2P5/5k3/2N6/6N2/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã 5 thoái 3",
+          "move_notation_iccs": "e6g5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "C2a5/n2P1k3/9/2N6/6N2/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f7f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "C2a5/n2P1k3/7N1/2N6/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "g5h7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "C2a5/n2P5/5k1N1/2N6/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "C2a5/n2P5/5k1N1/9/4N4/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "c6e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "C2a5/n2P5/4k2N1/9/4N4/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f7e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "C2a5/n2P5/4k2N1/6N2/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e5g6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "C2a5/n2P5/5k1N1/6N2/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e7f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "C2a2N2/n2P5/5k3/6N2/9/9/9/9/2p1p4/3K5",
+          "move_notation_wxf": "Mã 2 tiến 3",
+          "move_notation_iccs": "h7g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã kia — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60094,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 94 — Ba Mã Đổi Vai, Xe Pháo Ẩn Hiện Kết Liễu",
+      "slug": "c6-de-kiem-tra-bai-94",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3kn4/2N2R3/4b1n2/9/9/9/9/5p3/rr2p4/5KC2",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Bài kiểm tra số 94: Trắng cầm Xe, Pháo và Mã đối đầu ba quân Mã của Đen; Mã Trắng đổi mạng lấy Tượng ngay từ đầu, Pháo và Xe lần lượt ẩn hiện trong khi ba Mã Đen phải đổi vai liên tục chống đỡ tới khi hết đường.",
+      "content": "<p>Trắng có Xe, Pháo và Mã đối đầu ba quân Mã của Đen. Mã Trắng đổi mạng lấy Tượng ngay từ đầu, Pháo và Xe lần lượt ẩn hiện, buộc ba Mã Đen đổi vai liên tục chống đỡ cho tới khi hết đường.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 94 — Ba Mã Đổi Vai, Xe Pháo Ẩn Hiện Kết Liễu",
+      "seo_description": "Bài kiểm tra sát pháp số 94: Trắng cầm Xe Pháo Mã đối đầu ba Mã Đen, Mã đổi Tượng rồi Xe Pháo ẩn hiện buộc ba Mã Đen chống đỡ tới hết đường chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3kn4/5R3/4N1n2/9/9/9/9/5p3/rr2p4/5KC2",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "c8e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã ăn Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3kn4/4nR3/4N4/9/9/9/9/5p3/rr2p4/5KC2",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "g7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã đỡ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3kn1C2/4nR3/4N4/9/9/9/9/5p3/rr2p4/5K3",
+          "move_notation_wxf": "Pháo 3 tiến 9",
+          "move_notation_iccs": "g0g9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3k2C2/4nRn2/4N4/9/9/9/9/5p3/rr2p4/5K3",
+          "move_notation_wxf": "Mã sau tiến 7",
+          "move_notation_iccs": "e9g8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3k1RC2/4n1n2/4N4/9/9/9/9/5p3/rr2p4/5K3",
+          "move_notation_wxf": "Xe 4 tiến 1",
+          "move_notation_iccs": "f8f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3knRC2/4n4/4N4/9/9/9/9/5p3/rr2p4/5K3",
+          "move_notation_wxf": "Mã 7 thoái 5",
+          "move_notation_iccs": "g8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3kn1C2/4n4/4N4/9/9/9/9/5R3/rr2p4/5K3",
+          "move_notation_wxf": "Xe 4 thoái 7",
+          "move_notation_iccs": "f9f2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe ăn Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3k2C2/4n1n2/4N4/9/9/9/9/5R3/rr2p4/5K3",
+          "move_notation_wxf": "Mã sau tiến 7",
+          "move_notation_iccs": "e9g8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã sau tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3k2C2/4n1n2/4N4/9/9/9/9/3R5/rr2p4/5K3",
+          "move_notation_wxf": "Xe 4 bình 6",
+          "move_notation_iccs": "f2d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "4k1C2/4n1n2/4N4/9/9/9/9/3R5/rr2p4/5K3",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "4k1C2/4n1N2/9/9/9/9/9/3R5/rr2p4/5K3",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e7g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
