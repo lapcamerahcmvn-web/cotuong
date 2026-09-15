@@ -4,7 +4,8 @@
    toIccs/sideOf) cho MỌI logic luật+ký hiệu — KHÔNG viết lại. Vẽ bàn bằng window.XiangqiBoard.render
    (giống trang học) rồi chèn thêm lớp điểm bấm riêng (renderBoard là read-only, không tự có điểm
    bấm). KHÔNG đụng board-editor.js (trình soạn Admin) — file này độc lập, chấp nhận trùng một phần
-   ý tưởng (palette/cây biến) để tránh rủi ro hồi quy cho Admin. */
+   ý tưởng (palette/cây biến/quân úp) để tránh rủi ro hồi quy cho Admin.
+   Hỗ trợ Cờ Úp (quân X/x): mirror board-editor.js's coverAll/reveal/MAX_REVEAL logic 1:1. */
 (function () {
   'use strict';
   var root = document.querySelector('[data-fen-composer]');
@@ -16,20 +17,31 @@
     K: '帥', A: '仕', B: '相', N: '馬', R: '俥', C: '炮', P: '兵',
     k: '將', a: '士', b: '象', n: '馬', r: '車', c: '砲', p: '卒'
   };
-  var VI_FULL = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt' };
-  var ORDER = ['R', 'N', 'B', 'A', 'K', 'C', 'P', 'r', 'n', 'b', 'a', 'k', 'c', 'p'];
-  var LIMITS = { K: 1, A: 2, B: 2, N: 2, R: 2, C: 2, P: 5, k: 1, a: 2, b: 2, n: 2, r: 2, c: 2, p: 5 };
+  var VI_FULL = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt', X: 'quân úp', x: 'quân úp' };
+  var ORDER = ['R', 'N', 'B', 'A', 'K', 'C', 'P', 'r', 'n', 'b', 'a', 'k', 'c', 'p', 'X', 'x'];
+  var LIMITS = { K: 1, A: 2, B: 2, N: 2, R: 2, C: 2, P: 5, X: 15, k: 1, a: 2, b: 2, n: 2, r: 2, c: 2, p: 5, x: 15 };
   var START = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+  var START_UP = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
   var BRANCH_COLORS = ['#16a34a', '#e0632f', '#2563eb', '#7c3aed', '#c026d3', '#0891b2'];
   var M = 26, CW = 52, CH = 52;
+  // Cờ Úp: mỗi bên tối đa 2R,2N,2B,2A,2C,5P quân thật ẩn dưới nắp (Tướng để ngửa, không tính).
+  var MAX_REVEAL = { R: 2, N: 2, B: 2, A: 2, C: 2, P: 5 };
+  var REVEAL_MAP = { X: 'R', P: 'C', M: 'N', T: 'B', S: 'A', B: 'P' };
 
-  function pieceName(ch) { return (Rules.isRed(ch) ? 'Đỏ ' : 'Đen ') + (VI_FULL[ch.toUpperCase()] || ch); }
+  function pieceName(ch) {
+    var up = (ch === 'X' || ch === 'x');
+    return (up ? '' : (Rules.isRed(ch) ? 'Đỏ ' : 'Đen ')) + (VI_FULL[ch.toUpperCase()] || ch);
+  }
   function countPiece(b, ch) { var n = 0; for (var i = 0; i < 90; i++) if (b[i] === ch) n++; return n; }
 
-  // Vùng đặt hợp lệ (không có nhánh Cờ Úp — công cụ này chỉ soạn Cờ Tướng chuẩn).
+  // Vùng đặt hợp lệ. Quân úp (X/x): đặt đâu cũng được. Cờ Tướng chuẩn: giữ đúng cung/sông/phạm vi.
+  // Khi coUp=true (đang xếp quân sáng để đậy nắp): 15 quân/bên được xáo trộn tự do — chỉ Tướng giữ cung.
   function zoneOk(ch, r, c) {
+    if (ch === 'X' || ch === 'x') return true;
     var red = Rules.isRed(ch), t = ch.toUpperCase();
-    if (t === 'K' || t === 'A') { if (c < 3 || c > 5) return false; return red ? (r >= 7 && r <= 9) : (r >= 0 && r <= 2); }
+    if (t === 'K') { if (c < 3 || c > 5) return false; return red ? (r >= 7 && r <= 9) : (r >= 0 && r <= 2); }
+    if (coUp) return true;
+    if (t === 'A') { if (c < 3 || c > 5) return false; return red ? (r >= 7 && r <= 9) : (r >= 0 && r <= 2); }
     if (t === 'B') {
       var pts = red ? [[9, 2], [9, 6], [7, 0], [7, 4], [7, 8], [5, 2], [5, 6]] : [[0, 2], [0, 6], [2, 0], [2, 4], [2, 8], [4, 2], [4, 6]];
       for (var k = 0; k < pts.length; k++) if (pts[k][0] === r && pts[k][1] === c) return true;
@@ -40,10 +52,12 @@
   }
 
   var board = Rules.loadFen(START);
+  var hidden = new Array(90).fill(null); // binh chủng thật dưới nắp (tự lật khi đi, nếu đã biết)
+  var coUp = false;          // đang ở chế độ xếp quân cho Cờ Úp (nới lỏng vùng đặt A/B/P)
   var mode = 'setup';        // 'setup' | 'move'
   var palettePiece = null;
   var selected = -1;
-  // Cây biến: rootNode = thế gốc; mỗi node = 1 nước; node.board là snapshot bàn cờ SAU nước đó.
+  // Cây biến: rootNode = thế gốc; mỗi node = 1 nước; node.board/hidden là snapshot SAU nước đó.
   var rootNode = null;
   var cur = null;
 
@@ -62,21 +76,33 @@
   }
 
   function boardsEqual(a, b) { for (var i = 0; i < 90; i++) if ((a[i] || null) !== (b[i] || null)) return false; return true; }
-  function newRoot() { rootNode = { board: board.slice(), children: [], parent: null, depth: 0 }; cur = rootNode; }
-  function gotoNode(node) { cur = node; board = node.board.slice(); selected = -1; }
+  function newRoot() { rootNode = { board: board.slice(), hidden: hidden.slice(), children: [], parent: null, depth: 0 }; cur = rootNode; }
+  function gotoNode(node) { cur = node; board = node.board.slice(); hidden = node.hidden.slice(); selected = -1; }
 
-  function pushMove(from, to) {
-    var nb = cur.board.slice();
-    var p = nb[from];
-    var wxf = Rules.notation(nb, from, to);
+  // Số quân loại `pieceChar` đã LỘ: trên bàn hiện tại + đã lộ rồi bị ăn dọc đường tới cur.
+  function revealedUsed(pieceChar) {
+    var n = 0, i;
+    for (i = 0; i < 90; i++) if (board[i] === pieceChar) n++;
+    var node = cur;
+    while (node && node.parent) { if (node.parent.board[node.to] === pieceChar) n++; node = node.parent; }
+    return n;
+  }
+
+  function pushMove(from, to, reveal) {
+    var nb = cur.board.slice(), nh = cur.hidden.slice();
+    var p = nb[from], up = (p === 'X' || p === 'x'), moved = up ? reveal : p;
+    var wxf = up ? ('úp → ' + (VI_FULL[(reveal || '').toUpperCase()] || 'quân úp')) : Rules.notation(nb, from, to);
     var iccs = Rules.toIccs(from) + Rules.toIccs(to);
-    var side = Rules.sideOf(p);
-    nb[to] = p; nb[from] = null;
+    var side = Rules.sideOf(moved);
+    nb[to] = moved; nb[from] = null; nh[to] = null; nh[from] = null;
     for (var k = 0; k < cur.children.length; k++) {
       var c = cur.children[k];
-      if (c.from === from && c.to === to) { gotoNode(c); return; }
+      if (c.from === from && c.to === to && (c.reveal || null) === (reveal || null)) { gotoNode(c); return; }
     }
-    var node = { from: from, to: to, iccs: iccs, wxf: wxf, side: side, caption: '', board: nb, depth: cur.depth + 1, children: [], parent: cur };
+    var node = {
+      from: from, to: to, reveal: reveal || null, iccs: iccs, wxf: wxf, side: side, caption: '',
+      board: nb, hidden: nh, depth: cur.depth + 1, children: [], parent: cur
+    };
     cur.children.push(node);
     gotoNode(node);
   }
@@ -89,7 +115,19 @@
   }
 
   function descend(node) { if (node) { gotoNode(node); redraw(); } }
-  function backOne() { if (cur.parent) descend(cur.parent); }
+
+  // Đậy nắp mọi quân (trừ 2 Tướng) → tạo thế cờ úp; nhớ binh chủng thật để tự lật khi đi.
+  function coverAll() {
+    var n = 0;
+    for (var i = 0; i < 90; i++) {
+      var p = board[i];
+      if (!p || p === 'X' || p === 'x' || p === 'K' || p === 'k') continue;
+      hidden[i] = p; board[i] = Rules.isRed(p) ? 'X' : 'x'; n++;
+    }
+    rootNode = null; cur = null; selected = -1;
+    setMode('setup');
+    msg(n ? ('Đã đậy nắp ' + n + ' quân (2 Tướng để ngửa). Sang "2 · Soạn nước đi" — quân úp tự lật đúng binh chủng khi đi.') : 'Không có quân nào để đậy nắp.', n > 0 ? 'ok' : 'err');
+  }
 
   // Mạch chính (con đầu mỗi node) → dùng cho trình chơi tuyến tính + steps_json.
   function mainline() {
@@ -101,7 +139,7 @@
   function serializeTree() {
     function ser(node) {
       return node.children.map(function (c) {
-        return { from: c.from, to: c.to, iccs: c.iccs, wxf: c.wxf, side: c.side, reveal: null, fen: Rules.toFen(c.board), caption: c.caption || '', children: ser(c) };
+        return { from: c.from, to: c.to, iccs: c.iccs, wxf: c.wxf, side: c.side, reveal: c.reveal || null, fen: Rules.toFen(c.board), caption: c.caption || '', children: ser(c) };
       });
     }
     return rootNode ? ser(rootNode) : [];
@@ -214,7 +252,7 @@
 
   function onSquare(i) {
     if (mode === 'setup') {
-      if (palettePiece === 'erase') { board[i] = null; render(); return; }
+      if (palettePiece === 'erase') { board[i] = null; hidden[i] = null; render(); return; }
       if (!palettePiece) { msg('Chọn 1 quân ở bảng bên dưới trước.'); return; }
       var r = (i / 9) | 0, c = i % 9;
       if (!zoneOk(palettePiece, r, c)) { msg('Không hợp lệ: ' + pieceName(palettePiece) + ' không đặt được ở ô này.', 'err'); return; }
@@ -223,7 +261,7 @@
         msg('Vượt số lượng: tối đa ' + LIMITS[palettePiece] + ' ' + pieceName(palettePiece) + ' mỗi bên.', 'err');
         return;
       }
-      board[i] = palettePiece; render();
+      board[i] = palettePiece; hidden[i] = null; render();
       return;
     }
     // move mode
@@ -236,8 +274,24 @@
       selected = -1; render();
       return;
     }
+    var reveal = null;
+    if (piece === 'X' || piece === 'x') {
+      if (hidden[selected]) {
+        reveal = hidden[selected]; // tự lật theo quân đã đặt rồi đậy nắp
+      } else {
+        var rv = window.prompt('Quân úp này lật ra binh chủng gì? Nhập: X=Xe, P=Pháo, M=Mã, T=Tượng, S=Sĩ, B=Tốt', '');
+        var rc = rv ? REVEAL_MAP[rv.trim().toUpperCase()] : null;
+        if (!rc) { msg('Cần chọn binh chủng quân úp lật ra để ghi nước.', 'err'); return; }
+        var pieceChar = (piece === 'X') ? rc : rc.toLowerCase();
+        if (revealedUsed(pieceChar) >= MAX_REVEAL[rc]) {
+          msg('Đã lật đủ ' + MAX_REVEAL[rc] + ' ' + (VI_FULL[rc] || rc) + ' cho bên này (tính cả quân đã bị ăn) — không thể lật thêm.', 'err');
+          return;
+        }
+        reveal = pieceChar;
+      }
+    }
     var from = selected; selected = -1;
-    pushMove(from, i);
+    pushMove(from, i, reveal);
     redraw();
   }
 
@@ -246,8 +300,10 @@
     if (!pal) return;
     var html = '';
     ORDER.forEach(function (p) {
-      var red = Rules.isRed(p);
-      html += '<button type="button" class="fc-pal" data-p="' + p + '" title="' + (red ? 'Đỏ' : 'Đen') + ' ' + (VI_FULL[p.toUpperCase()] || '') + '" style="color:' + (red ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)') + '">' + PIECES[p] + '</button>';
+      var up = (p === 'X' || p === 'x');
+      var red = up ? (p === 'X') : Rules.isRed(p);
+      var label = up ? 'úp' : PIECES[p];
+      html += '<button type="button" class="fc-pal' + (up ? ' fc-pal-up' : '') + '" data-p="' + p + '" title="' + (up ? 'Quân úp ' : '') + (red ? 'Đỏ' : 'Đen') + ' ' + (VI_FULL[p.toUpperCase()] || '') + '" style="color:' + (red ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)') + '">' + label + '</button>';
     });
     html += '<button type="button" class="fc-pal fc-erase" data-p="erase" title="Xoá quân">✕</button>';
     pal.innerHTML = html;
@@ -270,16 +326,16 @@
     redraw();
   }
   function enterMove() {
-    if (!rootNode || !boardsEqual(rootNode.board, board)) newRoot();
+    if (!rootNode || !boardsEqual(rootNode.board, board) || !boardsEqual(rootNode.hidden, hidden)) newRoot();
     else gotoNode(rootNode);
     setMode('move');
   }
   function enterSetup() {
-    if (rootNode) { board = rootNode.board.slice(); selected = -1; }
+    if (rootNode) { board = rootNode.board.slice(); hidden = rootNode.hidden.slice(); selected = -1; }
     setMode('setup');
   }
   function resetAll(newBoard) {
-    board = newBoard; rootNode = null; cur = null; selected = -1;
+    board = newBoard; hidden = new Array(90).fill(null); rootNode = null; cur = null; selected = -1;
     setMode('setup');
   }
 
@@ -288,7 +344,16 @@
   root.querySelectorAll('[data-fc-mode]').forEach(function (b) {
     b.addEventListener('click', function () { (b.getAttribute('data-fc-mode') === 'move') ? enterMove() : enterSetup(); });
   });
+  root.querySelectorAll('[data-fc-game]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      coUp = (b.getAttribute('data-fc-game') === 'up');
+      root.querySelectorAll('[data-fc-game]').forEach(function (x) { x.classList.toggle('on', x === b); });
+      msg(coUp ? 'Cờ Úp: xếp quân sáng đúng vị trí mỗi bên (thoải mái vị trí) rồi bấm "Đậy nắp quân", hoặc bấm "Thế mở Cờ Úp" để soạn nước ngay.' : 'Cờ Tướng chuẩn: xếp quân đúng vùng luật.', 'ok');
+    });
+  });
   bind('[data-fc-start]', function () { resetAll(Rules.loadFen(START)); msg('Đã nạp thế mở chuẩn.', 'ok'); });
+  bind('[data-fc-start-up]', function () { resetAll(Rules.loadFen(START_UP)); msg('Đã nạp thế mở Cờ Úp — sang "2 · Soạn nước đi" để ghi nước (quân úp sẽ hỏi lật ra binh chủng gì).', 'ok'); });
+  bind('[data-fc-cover]', coverAll);
   bind('[data-fc-clear]', function () { resetAll(new Array(90).fill(null)); msg('Đã xoá bàn cờ — chọn quân rồi đặt lên bàn.', 'ok'); });
   bind('[data-fc-fen-apply]', function () {
     var val = fenInput && fenInput.value.trim();

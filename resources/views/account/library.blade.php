@@ -17,7 +17,7 @@
         <div class="notice" style="border-color:var(--jade);color:var(--jade);margin-top:16px;">{{ session('success') }}</div>
     @endif
 
-    <details class="card mt-5" style="padding:18px 20px;">
+    <details class="card mt-5 fc-panel">
         <summary style="cursor:pointer;font-weight:800;font-size:16px;">✚ Soạn thế cờ &amp; nước đi mới</summary>
         <div class="mt-5" data-fen-composer>
             <div class="cluster" style="margin-bottom:10px;">
@@ -27,6 +27,11 @@
 
             <div data-fc-setup-tools>
                 <p class="muted" style="font-size:13.5px;margin:0 0 12px;">Chọn quân ở bảng rồi bấm lên bàn cờ để đặt, hoặc dán sẵn 1 chuỗi FEN. Xong thì bấm "2 · Soạn nước đi" để bắt đầu ghi nước.</p>
+                <div class="cluster fc-game-toggle">
+                    <button type="button" class="btn fc-mode-btn on" data-fc-game="tuong">Cờ Tướng</button>
+                    <button type="button" class="btn fc-mode-btn" data-fc-game="up">Cờ Úp</button>
+                </div>
+                <p class="muted" style="font-size:12.5px;margin:6px 0 12px;">Cờ Úp: bấm "Thế mở Cờ Úp" để soạn ngay (lật quân khi đi), hoặc chọn "Cờ Úp" ở trên rồi xếp quân sáng đúng theo bên (vị trí thoải mái) và bấm "Đậy nắp quân".</p>
                 <div data-fc-palette class="fc-palette"></div>
             </div>
 
@@ -46,13 +51,15 @@
             </div>
             <div class="cluster mt-3" style="margin-bottom:6px;">
                 <button type="button" class="btn" data-fc-start>Thế mở Cờ Tướng</button>
+                <button type="button" class="btn" data-fc-start-up>Thế mở Cờ Úp</button>
+                <button type="button" class="btn" data-fc-cover title="Chuyển quân sáng hiện có (trừ 2 Tướng) thành quân úp">🁢 Đậy nắp quân</button>
                 <button type="button" class="btn" data-fc-clear>Xoá hết</button>
             </div>
             <div class="cluster mt-3" style="margin-bottom:6px;">
-                <input type="text" data-fc-title placeholder="Tên thế cờ / khai cuộc… (bắt buộc nếu gửi Admin)" style="flex:1;min-width:220px;">
+                <input type="text" data-fc-title class="fc-wide-input" placeholder="Tên thế cờ / khai cuộc… (bắt buộc nếu gửi Admin)">
             </div>
             <div class="cluster" style="margin-bottom:6px;">
-                <textarea data-fc-note placeholder="Ghi chú thêm cho Admin (tuỳ chọn)…" rows="2" style="flex:1;min-width:220px;"></textarea>
+                <textarea data-fc-note class="fc-wide-input" placeholder="Ghi chú thêm cho Admin (tuỳ chọn)…" rows="2"></textarea>
             </div>
             <div class="cluster mt-3" style="margin-bottom:6px;">
                 <button type="button" class="btn primary" data-fc-save>💾 Lưu vào thư viện</button>

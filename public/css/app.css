@@ -521,8 +521,31 @@ body.xq-fs-lock { overflow: hidden; }
 .fc-cap:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px var(--highlight); }
 [data-fc-branches] .branch-title { font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
 [data-fc-branches] .branch-row { display: flex; gap: 8px; flex-wrap: wrap; }
-[data-fen-composer] textarea[data-fc-note] { font-family: inherit; font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; resize: vertical; }
-[data-fen-composer] input[data-fc-title] { font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; }
+.fc-wide-input { flex: 1; min-width: 220px; width: 100%; font: inherit; font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; }
+.fc-wide-input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px var(--highlight); }
+textarea.fc-wide-input { resize: vertical; }
+
+/* Cờ Úp: quân "úp" (X/x) tô nền nhạt để phân biệt với quân thường trong bảng chọn. */
+.fc-pal-up { background: var(--bg); font-family: inherit; font-size: 13px; font-weight: 800; letter-spacing: .02em; }
+
+.fc-panel { padding: 18px 20px; }
+
+/* ---- Mobile (≤640px): gọn khoảng cách, input full-width, tap target lớn hơn cho khớp ngón tay ---- */
+@media (max-width: 640px) {
+  .fc-panel { padding: 14px 14px !important; }
+  .fc-panel summary { font-size: 15px !important; }
+  [data-fen-composer] .cluster { gap: 8px; }
+  [data-fen-composer] .btn { flex: 1 1 auto; min-width: 0; padding: 0 10px; font-size: 13.5px; }
+  .fc-pal { width: 38px; height: 38px; }
+  .fc-fen-row input { min-width: 0; width: 100%; flex-basis: 100%; }
+  .fc-wide-input { min-width: 0; }
+  .fc-board-wrap { max-width: 100%; }
+  .fc-move { padding: 8px 0; }
+  .fc-move-nav { font-size: 13px; flex: 1 1 auto; }
+  .fc-move-mini { width: 30px; height: 30px; font-size: 13px; }
+  .fc-cap { font-size: 13px; padding: 8px 10px; }
+  [data-fc-branches] .branch-row .branch-btn { flex: 1 1 auto; justify-content: center; }
+}
 
 /* Thư viện: thumbnail SVG sống — mượn kích thước .li-thumb có sẵn nhưng nội dung do JS chèn. */
 .li-thumb svg { display: block; }

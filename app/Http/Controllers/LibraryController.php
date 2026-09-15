@@ -57,6 +57,11 @@ class LibraryController extends Controller
             'summary' => ['nullable', 'string', 'max:2000'],
         ]);
 
+        // Không có field chọn Cờ Tướng/Cờ Úp trong công cụ công khai — suy ra từ FEN (quân úp
+        // luôn ký hiệu X/x, không trùng với bất kỳ quân thật nào khác).
+        $data['game_mode'] = str_contains($data['initial_fen'], 'X') || str_contains($data['initial_fen'], 'x')
+            ? 'co-up' : 'co-tuong';
+
         $lesson = LessonComposer::create($data, $data['steps'] ?? [], $data['variation_tree'] ?? [], $request->user()->id);
 
         return response()->json(['ok' => true, 'lesson_id' => $lesson->id]);
