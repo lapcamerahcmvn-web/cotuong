@@ -5,6 +5,65 @@
 
 ---
 
+## 2026-09-15 (2) — Thư viện: soạn NƯỚC ĐI + NHÁNH (không chỉ xếp quân) + Gửi Admin duyệt
+
+User gửi ảnh app cờ Trung Quốc có "棋谱编辑" (mũi tên nhánh 1/2 màu) làm ví dụ, yêu cầu nâng cấp
+công cụ soạn ở `/tai-khoan/thu-vien` (vừa xong ở mục bên dưới, lúc đó CHỈ xếp quân) thành ghi được
+nước đi + biến "tương tác như bàn cờ thật", và thêm nút gửi bài cho Admin duyệt/publish.
+
+**`saved_positions`**: thêm `steps_json`/`variation_tree` (json, nullable — tương thích ngược,
+các thế cờ đơn đã lưu trước đó không có 2 cột này vẫn hoạt động bình thường).
+
+**`LessonComposer` (mới, `app/Support/`)**: gom logic tạo `Lesson`+`LessonStep` DÙNG CHUNG giữa
+`Admin\BoardEditorController::store()` (đã refactor gọi vào đây) và `LibraryController::submit()`
+(mới) — tránh lặp code giữa "Admin tự soạn" và "người dùng gửi". `lessons.submitted_by_user_id`
+(FK nullable) đánh dấu bài user gửi; Admin thấy badge "📤 gửi bởi {tên}" + checkbox lọc riêng ở
+`admin/lessons/index.blade.php`. Route mới `POST /thu-vien/gui-admin` (throttle 10/phút, trong
+nhóm `auth` sẵn có) → tạo Lesson `status=draft`, Admin vào sửa/duyệt như bài tự soạn bình thường.
+
+**`public/js/fen-composer.js` viết lại hoàn toàn** (từ ~150 dòng đặt-quân-đơn-thuần lên full
+move-recording + cây biến, phỏng theo đúng kết cấu `board-editor.js`/`initTree` của `board.js`
+nhưng file RIÊNG — không đụng 2 file đó):
+- Dùng `window.XiangqiRules.legalNoSelfCheck/notation/toIccs/sideOf` cho MỌI luật+ký hiệu (không
+  viết lại) — xác nhận `notation(b,from,to)` cần gọi TRƯỚC khi mutate board (đọc `b[from]`).
+- Vẽ bàn bằng `window.XiangqiBoard.render(fen,lastMove,arrows,selected,flip)` (dùng chung với
+  trang học) rồi CHÈN THÊM 90 `<circle class="fc-hit" fill="transparent">` làm điểm bấm bằng
+  string-splice trước `</svg>` — render() vốn read-only nên phải làm vậy; toạ độ M=26/CW=52/CH=52
+  phải khớp y hệt `board.js` để hit-target thẳng hàng với quân vẽ.
+- Cây biến (`rootNode`/`cur`, `pushMove`/`descend`/`deleteNode`) + `mainline()` (steps_json) +
+  `serializeTree()` (variation_tree) — cùng shape JSON với `board-editor.js` nên
+  `<x-chess-board :tree>` hiển thị được ngay, không cần đổi component.
+- 2 chế độ UI: "1 · Xếp quân" (setup, palette đặt quân) / "2 · Soạn nước đi" (move, ghi nước +
+  nhánh) — chuyển qua lại giữ nguyên board hiện tại làm gốc cây khi vào mode 'move'.
+
+**⚠️ 2 bug thật phát hiện qua Puppeteer, đã vá**:
+1. `setMode()` reset `selected = null` thay vì `-1` → phá vỡ check `if (selected < 0)` trong
+   `onSquare` (null < 0 === false) → bấm quân không chọn được gì, không báo lỗi, im lặng không
+   làm gì cả. Bài học: khi có nhiều "giá trị rỗng" cho cùng 1 biến số (`-1` dùng làm sentinel
+   "chưa chọn" ở nơi khác trong file) phải dùng ĐÚNG sentinel đó ở mọi chỗ reset, không tự ý đổi
+   sang `null`.
+2. **Gotcha Puppeteer/SVG quan trọng** (tốn nhiều vòng debug nhất): `page.click(selector)` của
+   Puppeteer (click theo toạ độ thật qua CDP) liên tục thất bại VÔ THANH trên các phần tử SVG
+   `<circle fill="transparent">` VÀ trên nút thường nằm dưới `y` vượt viewport (không tự cuộn tới
+   nơi đúng) — không lỗi, không throw, chỉ đơn giản là không kích hoạt listener. `ElementHandle.click()`
+   cũng vậy (dùng cùng cơ chế toạ độ). Cách test tin cậy được: `page.evaluate(el =>
+   el.dispatchEvent(new MouseEvent('click',{bubbles:true})))` — bỏ qua hit-testing/toạ độ, gọi
+   thẳng listener. Áp dụng cho MỌI test Puppeteer sau này có bàn cờ SVG hoặc layout có phần tử
+   sticky/fixed — đừng dùng `page.click()`/`ElementHandle.click()` cho các case này, dùng
+   dispatchEvent qua evaluate ngay từ đầu để đỡ tốn vòng lặp debug.
+
+**Test E2E đầy đủ đã chạy qua** (Puppeteer thật, admin@cotuong.test): xếp quân → soạn nước đi →
+tạo nhánh (quay lại nước 1, đi nước 2 khác) → cây có đúng 3 node → lưu vào thư viện → mục đã lưu
+hiện lại đúng dưới dạng bàn cờ TƯƠNG TÁC ĐẦY ĐỦ (có nút Tiến/Lùi, không phải bàn tĩnh) → gửi Admin
+duyệt (có `confirm()`, dùng `page.on('dialog')` để accept trong test) → vào `/admin/lessons?submitted=1`
+xác nhận đúng badge 📤 + tên người gửi + status draft. Dữ liệu test đã dọn (tinker delete) sau khi
+xong, không còn rác trong DB local.
+
+**Deploy**: migration mới `2026_09_16_100001_extend_saved_positions_and_lessons` — nhắc
+`php artisan migrate --force` khi user deploy lần tới (kèm bước cache thường lệ).
+
+---
+
 ## 2026-09-15 — Copy/Dán FEN (Admin + công khai) + Thư viện thế cờ cá nhân
 
 Plan đầy đủ: `C:\Users\MinhTuyen\.claude\plans\pure-pondering-haven.md` (máy dev). Làm cả 3 pha
