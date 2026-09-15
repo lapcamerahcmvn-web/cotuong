@@ -5,6 +5,52 @@
 
 ---
 
+## 2026-09-15 (3) — Thư viện: hỗ trợ Cờ Úp + tối ưu mobile
+
+User: "Tối ưu giao diện trên mobile luôn nha bạn, soạn được cả cờ úp nữa nhé" — nối tiếp mục (2)
+bên dưới (lúc đó `fen-composer.js` mới ghi được nước đi Cờ Tướng chuẩn, chưa có quân úp).
+
+**Cờ Úp trong `fen-composer.js`**: port gần như 1:1 từ `board-editor.js` (đọc lại toàn bộ file đó
+để chắc chắn đúng luật/tránh lệch hành vi với Admin), KHÔNG đụng file gốc:
+- Thêm `X`/`x` vào `ORDER`/`LIMITS` (15 quân úp/bên), `hidden[90]` (binh chủng thật dưới nắp) đi
+  kèm `board[90]` ở MỌI nơi — snapshot theo từng node của cây biến (`node.hidden`), không chỉ
+  biến toàn cục, để lùi/tiến giữa các nước không làm mất thông tin đã lật.
+- 2 nút mới: "Thế mở Cờ Úp" (nạp FEN chuẩn `xxxxkxxxx/.../XXXXKXXXX` — vào soạn nước ngay, prompt
+  hỏi lật ra gì mỗi lần đi) và "Đậy nắp quân" (chuyển quân sáng đang xếp, trừ 2 Tướng, thành X/x +
+  nhớ `hidden[i]` → khi soạn nước sau đó tự lật đúng, KHÔNG hỏi lại).
+- Toggle "Cờ Tướng"/"Cờ Úp" chỉ nới lỏng `zoneOk` cho Sĩ/Tượng/Tốt (cho phép xếp quân sáng vào vị
+  trí "sai" luật cờ tướng chuẩn trước khi đậy nắp — vì quân úp thật sự bị xáo ngẫu nhiên khắp bàn).
+  Tướng LUÔN giữ đúng cung dù ở chế độ nào; X/x luôn đặt được mọi ô.
+- Luật đi quân/chiếu tướng của quân úp **tự động** qua `Rules.legalNoSelfCheck` — không cần
+  parameter `up` rời, vì `xiangqi-rules.js`'s `legalMove()` đã tự nhận diện `p==='X'||'x'`.
+- `revealedUsed()`/`MAX_REVEAL` (2 Xe/Mã/Tượng/Sĩ/Pháo, 5 Tốt mỗi bên) đếm CẢ quân đã lộ rồi bị ăn
+  dọc theo nhánh đang xem (không chỉ đếm trên bàn hiện tại) — copy nguyên logic đếm ngược lên cây
+  từ `board-editor.js`, tự kiểm chứng lại bằng Puppeteer (đặt quân → đậy nắp → đi 1 quân đã biết
+  danh tính → xác nhận KHÔNG hiện prompt, tự lật đúng "Tốt"; và thế mở Cờ Úp gốc → đi quân chưa
+  biết danh tính → prompt hiện đúng, chọn "X" → lật ra "Xe" đúng, FEN cập nhật đúng).
+- `LibraryController::submit`: không có field chọn chế độ chơi trong tool công khai → suy luận
+  `game_mode` từ chính chuỗi FEN (`str_contains($fen, 'X') || str_contains($fen, 'x')` → `co-up`,
+  ngược lại `co-tuong`) trước khi gọi `LessonComposer::create` — quyết định phase=null đúng cho
+  Lesson tạo ra (mirroring cách Admin's `#be-gamemode` select làm, nhưng tự động thay vì hỏi).
+
+**Tối ưu mobile**: test trực tiếp bằng Puppeteer viewport 390×844 (iPhone-cỡ), chụp ảnh full khối
+composer ở cả 2 chế độ (xếp quân + soạn nước có nhánh) — xác nhận `document.documentElement.
+scrollWidth === clientWidth` (không tràn ngang) ở cả 2. Thay đổi CSS chính:
+- `.fc-wide-input` (class mới, thay `style="min-width:220px"` inline cũ) + `@media (max-width:640px)`
+  ép `min-width:0` — input/textarea full-width thay vì bị kẹp min-width trên màn hẹp.
+- `[data-fen-composer] .btn { flex:1 1 auto }` ở mobile — các nút trong `.cluster` giãn đều lấp đầy
+  hàng thay vì co cụm 1 góc, dễ bấm hơn.
+- `.fc-move-mini` (nút +Biến/✕ trên mỗi nước) tăng 26px→30px trên mobile cho khớp ngón tay hơn.
+- `.fc-panel` (class mới thay `style="padding:18px 20px"` inline trên `<details class="card">`) —
+  giảm còn `14px 14px` ở mobile.
+
+**Bài học tái dùng cho lần sau**: khi 1 khối UI mới có nhiều `style="min-width:...px"` inline rải
+rác (như phase (2) để lại), rất khó áp override mobile gọn qua `!important` từng chỗ — nên đổi
+sang class ngay từ đầu (`.fc-wide-input`) để override qua `@media` 1 chỗ duy nhất. Ghi nhớ áp dụng
+sớm hơn cho các UI mới sau này, tránh phải dọn lại như lần này.
+
+---
+
 ## 2026-09-15 (2) — Thư viện: soạn NƯỚC ĐI + NHÁNH (không chỉ xếp quân) + Gửi Admin duyệt
 
 User gửi ảnh app cờ Trung Quốc có "棋谱编辑" (mũi tên nhánh 1/2 màu) làm ví dụ, yêu cầu nâng cấp
