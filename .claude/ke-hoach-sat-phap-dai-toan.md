@@ -715,3 +715,9 @@
   - **Cuộc 31 "Tam Thỉnh Gia Cát"**: FEN `3ak1P1P/4a4/9/9/4p3C/c3C1R2/9/5p3/2rr5/4K1R2`, 17 nước — song Xe vờn Tướng Đen khắp bàn trước khi song Pháo kết liễu. 0 warnings, isCheckmate=true.
   - **Tổng Chương 5 hiện tại: 31/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~550 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 32-43, PDF trang 364+ (in 362+, cuộc32 "Sĩ Mã Như Vân" đã có FEN+text sẵn, chưa validate).
+
+- **2026-09-15 (tiếp) — Cuộc 32, 33 xác nhận (33/43)**:
+  - **Cuộc 32 "Sĩ Mã Như Vân"**: FEN `Nr2kc3/4a3n/2R3n2/4RN3/9/9/7C1/9/3p1pr2/4K4`, 21 nước. **Lỗi in nghi vấn**: sách in nước Đen ở lượt 7 là "M5/6" nhưng không còn Mã nào ở tuyến 5 vào thời điểm đó (Mã vừa đi từ tuyến5→tuyến6 ở nước trước) — thử "M6/5" (đổi vị trí 2 số, cùng dạng lỗi đã gặp) parse sạch. 0 warnings sau sửa, isCheckmate=true.
+  - **Cuộc 33 "Dã Mã Vũ Phong"**: FEN `R4a1C1/3ka4/8b/7N1/6b2/1r7/9/2C6/4p3r/c4K3`, 19 nước. **2 lỗi in liên tiếp hiếm gặp** ở cặp nước Sĩ lượt 3-4: sách in "S5/6" (lui) nhưng cả 2 Sĩ Đen đều đã dồn lên hàng 0 (hàng trên cùng) nên KHÔNG THỂ lui thêm (không có hàng -1) — thử "S5/4" (đổi số đích 6→4, giữ nguyên hướng lui) parse sạch; tiếp theo sách in "S6/5" (lui) cũng rơi vào tình huống tương tự (Sĩ còn lại cũng đã ở hàng 0) — lần này đổi HƯỚNG thay vì số, dùng "S6.5" (tiến thay vì lui) mới hợp lệ. Quy tắc mới rút ra: khi thấy nước "lui" (`/`) mà quân đang đứng NGAY HÀNG BIÊN của phe mình (hàng 0 cho Đen, hàng 9 cho Trắng), đó là dấu hiệu chắc chắn cần xét cả khả năng đổi số ĐÍCH lẫn đổi HƯỚNG động từ, không chỉ thử đổi số như thường lệ. 0 warnings sau khi sửa cả 2, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 33/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~552 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 34-43, PDF trang 365+ (in 363+, cuộc34 "Dụng Xá Tương Ngại" và cuộc35 "Nhị Long Nhiễu Thất" đã có text sẵn, chưa lấy FEN).
