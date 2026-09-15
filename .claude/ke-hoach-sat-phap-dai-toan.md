@@ -552,3 +552,13 @@
   - **Tổng Chương 6 hiện tại: 39/68 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
   - Series ~= 436 bài. Đã build-batch, chuẩn bị commit/push.
   - **Việc tiếp theo**: tiếp tục bài 69-100 (32 bài), trang PDF tiếp theo (390+).
+
+- **2026-09-15 (tiếp) — Bài 69-72 XÁC NHẬN HẾT, phát hiện thêm 1 lỗi in (bài 72)**:
+  - **Bài 69**: FEN `4k4/7P1/2N1b2P1/5N1C1/9/9/1r7/3p5/4p4/3K5` — song Mã song Binh + Pháo, Mã ăn Tượng rồi Binh đổi hướng, Pháo chốt hạ. 0 warnings.
+  - **Bài 70**: FEN `4ka3/4a1C2/4b4/9/4p2r1/2R5C/9/5n3/4p4/3K2B2` — Xe song Pháo, Xe ăn Sĩ mở cửa. **Lưu ý kỹ thuật**: lần đầu build-batch báo lỗi vị trí Tượng đỏ không hợp lệ (đặt nhầm cột 7 thay vì cột 6 do cửa sổ occupancy 28px chồng lấn quân bên cạnh) — sửa bằng cách zoom trực tiếp đúng quân nghi vấn, xác nhận lại đúng cột 6. 0 warnings sau khi sửa.
+  - **Bài 71**: FEN `3k1ab1C/9/9/9/9/5N3/9/4R4/3r1p2c/4K1n2` — chỉ Xe + Mã, Xe đâm sâu ẩn mình rồi Mã vòng ba lượt chiếu bí. **Cùng loại lỗi cột lệch 1** phát hiện khi test đầu tiên báo "phạm luật" (quân Xe tưởng cột 3 thực ra cột 4, quân Mã tưởng cột 4 thực ra cột 5) — sửa bằng zoom xác nhận trực tiếp, sau đó 0 warnings.
+  - **Bài 72**: FEN `2b1ka3/3Ra4/4b4/3N5/n8/6R2/9/9/4p2r1/5K3` — song Xe + Mã. **Phát hiện LỖI IN THỨ HAI trong sách** (sau bài 58): nước cuối in "X5.2" không parse được hợp lệ (Xe đã ở hàng 0 không thể tiến thêm); xác định đúng là lỗi đánh máy 1 chữ số — nước thật là **"X6.2"** (Xe kia ăn Mã tại (3,3), chiếu bí đúng bằng cột) — xác nhận qua thử nghiệm trực tiếp trên engine, khớp hoàn hảo với toàn bộ 8 nước trước đó (đều 0 warnings) và tạo ra chiếu bí thật. Đã dùng nước đã sửa, không bỏ bài.
+  - **Bài học kỹ thuật đúc kết thêm**: (1) khi occupancy grid + đáp án lệch đúng 1 cột, LUÔN zoom trực tiếp vào đúng ô nghi vấn kèm vẽ đường lưới số thứ tự đè lên — đừng tin occupancy thô một mình vì cửa sổ 28px dễ "rỉ" sang cột bên cạnh khi 2 quân đứng gần nhau; (2) khi 8/9 nước hợp lệ hoàn hảo (0 warnings) và chỉ nước CUỐI báo lỗi hình học bất khả thi (VD "tiến" từ hàng 0), ưu tiên nghi ngờ lỗi đánh máy 1 chữ số ở đúng nước đó — thử các số lân cận (VD 5→6) trên CÙNG quân thay vì đổi hẳn cách hiểu cả ván.
+  - **Tổng Chương 6 hiện tại: 43/72 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58 (28 bài).
+  - Series ~= 440 bài. Đã build-batch, chuẩn bị commit/push.
+  - **Việc tiếp theo**: tiếp tục bài 73-100 (28 bài), đã có sẵn đáp án trích cho bài 73,74,75 ở scratchpad `page408_words.txt`, cần đọc thêm sơ đồ trang 391.
