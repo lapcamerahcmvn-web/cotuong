@@ -5,6 +5,51 @@
 
 ---
 
+## 2026-09-16 (3) — 10 bài Tin tức mẫu: video 4 kênh cờ tướng VN + bàn cờ nhúng
+
+User: "Bạn khảo sát và viết tầm 10 bài tin tức có nhúng video trên YouTube của các kênh như Thăng
+Long Kỳ Đạo, Trần Quyết Thắng, Hà Văn Tiến, Lại Lý Huynh... đưa bàn cờ link bài học mình nhé".
+
+**Quy trình xác minh video TRƯỚC khi dùng (quan trọng — đừng bịa URL)**: WebSearch tìm ứng viên →
+xác minh TỪNG video qua `https://www.youtube.com/oembed?url=...&format=json` (trả JSON title +
+author_name + author_url thật, 404 nếu video không tồn tại/riêng tư). Phát hiện qua thực tế: nhiều
+video tưởng đúng kênh hoá ra KHÔNG PHẢI (vd. 1 video "Thăng Long Kỳ Đạo" trong tiêu đề nhưng do
+kênh khác đăng) — 2/12 ứng viên ban đầu bị loại vì 404 hoặc sai kênh. Kết quả 10 video xác minh
+thật: 3 từ chính kênh Cờ Tướng – Kỳ Đạo, 2 từ chính kênh Trần Quyết Thắng, 1 từ chính kênh KTQG Hà
+Văn Tiến, còn lại là các trận đấu/video CÓ Lại Lý Huynh/Hà Văn Tiến tham gia do các kênh tường
+thuật khác đăng (Cờ Úp Danh Thủ, Co Tuong ba ria, Cờ Tướng Ngàn Nước, Cờ Tướng Hậu Giang, Sông Mã
+Ca) — bài viết ghi rõ đúng kênh đăng, không gán nhầm cho 1 trong 4 cái tên user nêu.
+
+**Fact-check 1 tin quan trọng trước khi viết**: Lại Lý Huynh vô địch cờ tướng thế giới — xác minh
+qua nhiều báo VN uy tín (VOV, VnExpress, Tuổi Trẻ, Thanh Niên, Tiền Phong) → đúng ngày 27/9/2025,
+thắng Doãn Thăng (Trung Quốc) tại Trung Quốc, kỳ thủ Việt Nam ĐẦU TIÊN đoạt danh hiệu này. Video
+nhúng trong bài (`p8diEdO-1aE`, vs Mạnh Thần) là trận KHÁC — bài viết ghi chú rõ ràng "không phải
+trận chung kết thế giới" để tránh gây hiểu nhầm/đưa tin sai.
+
+**Nhúng bàn cờ**: mỗi bài chọn 1 bài học có sẵn trên site liên quan chủ đề (khai cuộc/sát pháp/tàn
+cuộc phù hợp ngữ cảnh video) qua `[co-tuong lesson="slug"]` — xác minh cả 10 slug tồn tại + published
+qua tinker TRƯỚC khi viết nội dung tham chiếu tới chúng.
+
+**Hạ tầng mới (mirror `cotuong:export-pages`/`PagesSeeder`)**: `cotuong:export-posts` (xuất bảng
+`posts` → `database/seeders/data/posts.json`, khớp category qua `slug` không phải ID cứng) +
+`PostSeeder` (`updateOrCreate` theo slug bài viết, nạp category theo slug) — đưa nội dung Tin tức
+vào quy trình ship-qua-git đã có sẵn của dự án thay vì chỉ nằm trong DB local. Test round-trip
+(xoá hết → `db:seed --class=PostSeeder` → xác nhận khôi phục đúng 10 bài, đúng slug/category) trước
+khi commit.
+
+**Trạng thái**: cả 10 bài tạo ở `draft` — nhất quán với quy ước "nội dung AI cần Admin duyệt trước
+khi publish" (giống `CotuongContentService::generateLesson()` luôn để `status=review`). User cần vào
+`/admin/tin-tuc` đọc lại + bấm "Đăng" từng bài. Verify 1 bài (bài về Lại Lý Huynh, có gắn
+`is_featured`) bằng cách publish thử qua Puppeteer + chụp ảnh — video nhúng đúng (hiện thumbnail
+thật của YouTube), bàn cờ tương tác đủ nước đi + diễn giải, layout khớp theme site — rồi trả về
+draft trước khi commit (không để lại dữ liệu "published" ngoài ý muốn).
+
+**Deploy**: cần chạy thêm `cotuong:export-posts` mỗi khi sửa nội dung ở local rồi commit lại
+`posts.json`; production chạy `php artisan db:seed --class=PostSeeder --force` (SAU
+`PostCategorySeeder` nếu là lần đầu, vì cần category tồn tại để khớp slug).
+
+---
+
 ## 2026-09-16 (2) — Rà soát Tin tức: N+1, sitemap, mobile admin
 
 User: "Kiểm tra code tối ưu... cài đặt thông số SEO... quản lý được trong Admin. Tối ưu cả
