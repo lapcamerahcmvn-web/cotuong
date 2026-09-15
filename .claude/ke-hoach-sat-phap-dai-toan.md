@@ -582,3 +582,12 @@
   - **Tổng Chương 6 hiện tại: 50/80 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78 (29 bài, trong đó 58 và 78 là HOÃN VĨNH VIỄN do lỗi sách).
   - Series ~= 447 bài. Đã có sẵn đáp án trích cho bài 81 ở scratchpad `page409_words.txt`.
   - **Việc tiếp theo**: tiếp tục bài 81-100 (20 bài), trang PDF 393+.
+
+- **2026-09-15 (tiếp) — Bài 82,84 xác nhận; bài 81,83 HOÃN (nghi lỗi sách khác dạng)**:
+  - **Bài 81 — hoãn**: sơ đồ đọc chắc chắn (2 Mã đỏ, xác nhận qua zoom) nhưng chuỗi nước dẫn tới việc 1 quân Mã cần nhảy qua "chân" bị chính Binh đỏ của mình chặn (Binh đứng đúng ô chân Mã) — hình học đúng luật cờ nhưng không khớp đáp án in sẵn dù đã thử đổi thứ tự áp dụng cho 2 quân Mã.
+  - **Bài 83 — hoãn**: đáp án in nước đầu "Bg-5" — ký tự "g" không khớp bất kỳ quy ước nào (không phải marker trước/sau hợp lệ, không phải số cột). Đã thử cả 2 cách hiểu (Binh trước/Binh sau), cả hai đều dẫn tới nước 4 "Tg4.1" (Tướng tiến ăn Binh) bị chặn tự chiếu bởi chính Binh còn lại phía sau — xác nhận bằng engine 2 lần độc lập, không phải lỗi đọc sơ đồ (đã zoom xác nhận đúng 3 quân Binh cùng cột, đúng vị trí Tướng).
+  - **Bài 82**: FEN `5a3/3k2N2/1R3a2c/7C1/9/9/9/3p1K3/2r6/3n5` — Xe Mã Pháo, Pháo mở đường rồi Mã ép Sĩ, Xe ăn Xe Đen, Pháo chốt hạ (11 nước). 0 warnings.
+  - **Bài 84**: FEN `N2k1a3/5P3/3a5/9/9/9/9/1N3p1rr/4R2C1/3p1K3` — Xe Pháo song Mã, Xe ăn quân mở màn rồi song Mã đổi vai xuyên suốt (11 nước). 0 warnings.
+  - **Tổng Chương 6 hiện tại: 52/84 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78,81,83 (31 bài, trong đó 58,78 hoãn vĩnh viễn do lỗi sách rõ ràng; 81,83 tạm hoãn — có thể còn cách đọc khác chưa thử).
+  - Series ~= 449 bài. Đã có sẵn đáp án trích cho bài 85-87 ở scratchpad `page410_words.txt`.
+  - **Việc tiếp theo**: tiếp tục bài 85-100 (16 bài), trang PDF 394+.
