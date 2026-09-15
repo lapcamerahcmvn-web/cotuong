@@ -5,6 +5,72 @@
 
 ---
 
+## 2026-09-16 — Trang "Tin Tức" mới: bài viết nhúng video + bàn cờ tương tác
+
+User: "Xem web lapcamerahcm.vn để làm phần Tin tức cho web cờ tướng này. Có những video, thế cờ
+có bàn cờ trong bài học..." — site trước đây KHÔNG có blog/tin tức gì, dựng mới hoàn toàn.
+
+**Khảo sát trước khi code** (Explore agent + WebFetch site thật lapcamerahcm.vn/tin-tuc): tham khảo
+LAYOUT của blog `laravel13-shop` (nổi bật + lưới + sidebar category, breadcrumb→TOC→content→related
+→comment→share) nhưng **KHÔNG copy schema/hạ tầng** — project đó dùng ImageService riêng + TinyMCE
+đầy đủ plugin mà cotuong **chưa từng có upload file nào trước đây** (xác nhận: không
+`public/storage`, không route/controller nào gọi `Storage::`/`hasFile()`). Ngược lại cotuong **đã
+có sẵn** Spatie `HasSlug` (dùng ở `Lesson`) và TinyMCE 8 self-hosted GPL (dùng ở
+`admin/lessons/edit.blade.php`, trước chỉ bật `lists link autolink`) — tái dùng, chỉ mở rộng plugin.
+
+**Schema** (`posts`/`post_categories`, mẫu 1:1 theo `lessons`/`lesson_series`): status chỉ
+`draft`/`published` (KHÔNG theo 4 trạng thái review/needs_fix của Lesson — user chỉ cần công cụ
+đăng tin, không cần luồng duyệt phức tạp). 4 chuyên mục seed sẵn qua `PostCategorySeeder` (chạy
+riêng, KHÔNG tự động trong `DatabaseSeeder`, giống `PagesSeeder`): Video Hướng Dẫn, Phân Tích Ván
+Cờ, Tin Cộng Đồng & Giải Đấu, Kiến Thức Cờ Tướng.
+
+**Nhúng bàn cờ — vấn đề kỹ thuật cốt lõi**: nội dung bài viết là HTML thô lưu DB từ TinyMCE, KHÔNG
+compile lại nên không thể nhúng cú pháp Blade (`<x-chess-board>`) trực tiếp vào đó. Giải pháp:
+shortcode `[co-tuong fen="..."]` (1 thế cờ tĩnh) hoặc `[co-tuong lesson="slug-bai-hoc"]` (nhúng
+NGUYÊN 1 bài học có sẵn — đủ nước đi/nhánh, y hệt trang bài học gốc) — `App\Support\PostContent::
+render()` quét bằng `preg_replace_callback` và thay bằng `view('components.chess-board', [...])
+->render()` TRƯỚC KHI `{!! !!}` render ra view. Admin chèn qua nút tuỳ biến "♟ Bàn cờ" trên thanh
+TinyMCE (`editor.ui.registry.addButton`), dùng `prompt()` hỏi FEN hoặc slug — nhất quán với các chỗ
+khác trong site đã dùng `prompt()` (lật quân úp, đặt tên thế cờ khi lưu thư viện).
+
+**Video**: hoàn toàn miễn phí nhờ TinyMCE `media` plugin (dán URL YouTube tự nhúng iframe) — không
+cần field/code riêng. CSS mới DUY NHẤT: `.prose iframe { aspect-ratio:16/9; width:100%; height:auto }`
+để ép responsive (TinyMCE nhúng iframe với `width="560" height="314"` cứng, không tự co giãn).
+
+**Lần đầu tiên cotuong có file upload** (thumbnail bài viết + ảnh chèn TinyMCE) — cần
+`php artisan storage:link` là bước deploy MỚI (đã thêm `/public/storage` + `/storage/app/public/posts`
+vào `.gitignore` — symlink và ảnh upload không commit, mỗi máy/server tự tạo). Không có ImageService
+nào ở cotuong nên dùng thẳng `$request->file('thumbnail')->store('posts','public')` — đơn giản, đủ
+dùng cho quy mô hiện tại. **Bug đã bắt qua Puppeteer trước khi commit**: `update()` ban đầu overwrite
+`thumbnail` thành `null` mỗi lần sửa bài KHÔNG kèm upload ảnh mới, vì `$request->validate()` trả về
+cả field file rỗng — sửa bằng `unset($data['thumbnail'])` trước khi merge lại path thật (chỉ khi
+`$request->hasFile('thumbnail')`).
+
+**View public tái dùng gần như 100% CSS có sẵn** — `.lesson-list`/`.lesson-item.has-thumb`/`.li-thumb`/
+`.tag`/`.prose`/`.page-head`/`.section` y hệt trang bài học, không dựng hệ `.post-*` riêng. Route
+`/tin-tuc/{categorySlug}/{postSlug}` có redirect 301 nếu category slug lệch category thật của bài
+(giống pattern `laravel13-shop\PostController::show`).
+
+**Test E2E đầy đủ qua Puppeteer TRƯỚC khi commit** (không chỉ smoke test): đăng nhập admin → tạo bài
+qua form thật → set nội dung qua `tinymce.get('content').setContent(...)` (API thật, không phải gõ
+textarea thô) gồm 1 iframe YouTube + 2 shortcode (`fen=` và `lesson=`) → upload thumbnail thật →
+submit → xác nhận trang công khai: `hasShortcodeLeftover:false` (không còn `[co-tuong` thô nào),
+`boardCount:2` đúng, iframe render 720×405 (đúng tỉ lệ 16:9, không phải 560×314 cứng), bài học nhúng
+CÓ move-list + nút Tiến (`hasNext:true`) còn thế FEN tĩnh THÌ KHÔNG — đúng theo thiết kế 2 loại
+nhúng. Mobile 390×844 cả `/tin-tuc` và `/tin-tuc/{category}` không tràn ngang. Dữ liệu test đã dọn
+sau khi xong (tinker delete + xoá file thumbnail test).
+
+**Deploy** (⚠️ có bước MỚI so với mọi lần trước — lần đầu cần storage symlink):
+```bash
+git fetch origin && git reset --hard origin/main
+php artisan migrate --force
+php artisan storage:link
+php artisan db:seed --class=PostCategorySeeder --force
+php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
+```
+
+---
+
 ## 2026-09-15 (3) — Thư viện: hỗ trợ Cờ Úp + tối ưu mobile
 
 User: "Tối ưu giao diện trên mobile luôn nha bạn, soạn được cả cờ úp nữa nhé" — nối tiếp mục (2)
