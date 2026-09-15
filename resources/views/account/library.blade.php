@@ -18,10 +18,27 @@
     @endif
 
     <details class="card mt-5" style="padding:18px 20px;">
-        <summary style="cursor:pointer;font-weight:800;font-size:16px;">✚ Soạn thế cờ mới</summary>
+        <summary style="cursor:pointer;font-weight:800;font-size:16px;">✚ Soạn thế cờ &amp; nước đi mới</summary>
         <div class="mt-5" data-fen-composer>
-            <p class="muted" style="font-size:13.5px;margin:0 0 12px;">Chọn quân ở bảng rồi bấm lên bàn cờ để đặt, hoặc dán sẵn 1 chuỗi FEN.</p>
-            <div data-fc-palette class="fc-palette"></div>
+            <div class="cluster" style="margin-bottom:10px;">
+                <button type="button" class="btn fc-mode-btn on" data-fc-mode="setup">1 · Xếp quân</button>
+                <button type="button" class="btn fc-mode-btn" data-fc-mode="move">2 · Soạn nước đi</button>
+            </div>
+
+            <div data-fc-setup-tools>
+                <p class="muted" style="font-size:13.5px;margin:0 0 12px;">Chọn quân ở bảng rồi bấm lên bàn cờ để đặt, hoặc dán sẵn 1 chuỗi FEN. Xong thì bấm "2 · Soạn nước đi" để bắt đầu ghi nước.</p>
+                <div data-fc-palette class="fc-palette"></div>
+            </div>
+
+            <div data-fc-move-tools style="display:none;">
+                <p class="muted" style="font-size:13.5px;margin:0 0 12px;">Bấm 1 quân rồi bấm ô đích để đi — hợp lệ như bàn cờ thật. Đi lại từ 1 nước cũ để tạo nhánh (biến) song song.</p>
+                <div class="cluster" style="margin-bottom:10px;">
+                    <button type="button" class="btn btn--ghost" data-fc-undo disabled>↶ Lùi 1 nước</button>
+                </div>
+                <div data-fc-branches style="display:none;margin-bottom:10px;"></div>
+                <div data-fc-moves style="margin-bottom:10px;"></div>
+            </div>
+
             <div class="fc-fen-row">
                 <input type="text" data-fc-fen-input placeholder="Chuỗi FEN (phần xếp quân)…">
                 <button type="button" class="btn btn--ghost" data-fc-fen-apply>Dán FEN vào bàn</button>
@@ -30,7 +47,16 @@
             <div class="cluster mt-3" style="margin-bottom:6px;">
                 <button type="button" class="btn" data-fc-start>Thế mở Cờ Tướng</button>
                 <button type="button" class="btn" data-fc-clear>Xoá hết</button>
+            </div>
+            <div class="cluster mt-3" style="margin-bottom:6px;">
+                <input type="text" data-fc-title placeholder="Tên thế cờ / khai cuộc… (bắt buộc nếu gửi Admin)" style="flex:1;min-width:220px;">
+            </div>
+            <div class="cluster" style="margin-bottom:6px;">
+                <textarea data-fc-note placeholder="Ghi chú thêm cho Admin (tuỳ chọn)…" rows="2" style="flex:1;min-width:220px;"></textarea>
+            </div>
+            <div class="cluster mt-3" style="margin-bottom:6px;">
                 <button type="button" class="btn primary" data-fc-save>💾 Lưu vào thư viện</button>
+                <button type="button" class="btn" data-fc-submit>📤 Gửi cho Admin duyệt</button>
             </div>
             <div data-fc-msg class="fc-msg"></div>
             <div class="fc-board-wrap">
@@ -62,7 +88,7 @@
                             <span class="li-meta muted" style="font-size:13px;">Xem ▾</span>
                         </summary>
                         <div style="padding:0 18px 18px;">
-                            <x-chess-board :initial-fen="$item->fen" :steps="[]" :show-list="false" />
+                            <x-chess-board :initial-fen="$item->fen" :steps="$item->steps_json ?? []" :tree="$item->variation_tree" :show-list="false" />
                             <form method="POST" action="{{ route('library.destroy', $item) }}" onsubmit="return confirm('Xoá thế cờ này khỏi thư viện?');" class="mt-3">
                                 @csrf
                                 @method('DELETE')

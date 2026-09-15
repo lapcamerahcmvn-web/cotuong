@@ -21,6 +21,9 @@
             <option value="{{ $k }}" @selected(request('phase')===$k)>{{ $v }}</option>
         @endforeach
     </select>
+    <label class="check" style="align-self:center;">
+        <input type="checkbox" name="submitted" value="1" @checked(request('submitted'))> Chỉ bài người dùng gửi 📤
+    </label>
     <button class="btn primary" type="submit">Lọc</button>
     <a class="btn" href="{{ route('admin.lessons.index') }}">Xóa lọc</a>
 </form>
@@ -32,7 +35,12 @@
             <tbody>
             @forelse($lessons as $l)
                 <tr>
-                    <td class="t-title"><a href="{{ route('admin.lessons.edit', $l) }}">{{ \Illuminate\Support\Str::limit($l->title, 50) }}</a></td>
+                    <td class="t-title">
+                        <a href="{{ route('admin.lessons.edit', $l) }}">{{ \Illuminate\Support\Str::limit($l->title, 50) }}</a>
+                        @if($l->submittedBy)
+                            <span class="muted" style="font-size:12px;display:block;" title="Người dùng gửi từ Thư viện">📤 gửi bởi {{ $l->submittedBy->name }}</span>
+                        @endif
+                    </td>
                     <td style="color:var(--ink-soft);font-size:13px;">{{ \Illuminate\Support\Str::limit($l->series?->name, 24) ?: '—' }}</td>
                     <td>{{ $l->phase_label }}</td>
                     <td>{{ $l->move_count }}</td>

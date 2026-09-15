@@ -19,31 +19,32 @@ class Lesson extends Model
         'initial_fen', 'variation_tree', 'puzzle_side', 'move_count', 'summary', 'content', 'status',
         'decode_confidence', 'decode_warnings', 'thumbnail',
         'seo_title', 'seo_description', 'is_featured', 'view_count', 'published_at',
+        'submitted_by_user_id',
     ];
 
     protected $casts = [
         'decode_warnings' => 'array',
-        'variation_tree'  => 'array',
-        'is_featured'     => 'boolean',
-        'published_at'    => 'datetime',
+        'variation_tree' => 'array',
+        'is_featured' => 'boolean',
+        'published_at' => 'datetime',
     ];
 
     public const PHASES = [
-        'nhap-mon'   => 'Nhập môn',
-        'khai-cuoc'  => 'Khai cuộc',
+        'nhap-mon' => 'Nhập môn',
+        'khai-cuoc' => 'Khai cuộc',
         'trung-cuoc' => 'Trung cuộc',
-        'tan-cuoc'   => 'Tàn cuộc',
+        'tan-cuoc' => 'Tàn cuộc',
     ];
 
     public const LEVELS = [
-        'co-ban'    => 'Cơ bản',
+        'co-ban' => 'Cơ bản',
         'trung-cap' => 'Trung cấp',
-        'nang-cao'  => 'Nâng cao',
+        'nang-cao' => 'Nâng cao',
     ];
 
     public const GAME_MODES = [
         'co-tuong' => 'Cờ Tướng',
-        'co-up'    => 'Cờ Úp',
+        'co-up' => 'Cờ Úp',
     ];
 
     public function getSlugOptions(): SlugOptions
@@ -69,6 +70,12 @@ class Lesson extends Model
     public function steps(): HasMany
     {
         return $this->hasMany(LessonStep::class)->orderBy('step_order');
+    }
+
+    // Người dùng đã "Gửi cho Admin duyệt" từ Thư viện — null nghĩa là Admin tự soạn (như trước giờ).
+    public function submittedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'submitted_by_user_id');
     }
 
     public function scopePublished(Builder $q): Builder
@@ -103,7 +110,7 @@ class Lesson extends Model
 
     public function getSeoTitleFormattedAttribute(): string
     {
-        return $this->seo_title ?: ($this->title . ' — Học Cờ Tướng');
+        return $this->seo_title ?: ($this->title.' — Học Cờ Tướng');
     }
 
     // Nguồn sự thật index/noindex: chỉ bài published mới cho index.

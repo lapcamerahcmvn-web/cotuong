@@ -506,6 +506,24 @@ body.xq-fs-lock { overflow: hidden; }
 .fc-msg { min-height: 20px; font-size: 13px; font-weight: 600; margin: 8px 0; }
 .fc-board-wrap { max-width: 420px; margin: 0 auto 14px; }
 
+/* Soạn nước đi + nhánh (2 · Soạn nước đi) — tái dùng .branch-btn/.branch-badge có sẵn cho bàn cờ
+   công khai; chỉ thêm phần riêng của trình soạn: mode toggle, danh sách nước có ô ghi chú. */
+.fc-mode-btn.on { background: var(--red); color: #fff; border-color: var(--red); }
+.fc-move { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.fc-move:last-child { border-bottom: none; }
+.fc-move-nav { background: none; border: none; font: inherit; font-weight: 600; font-size: 13.5px; color: var(--ink); cursor: pointer; padding: 4px 6px; border-radius: 6px; }
+.fc-move-nav:hover { background: var(--bg); }
+.fc-move-actions { display: flex; gap: 4px; margin-left: auto; }
+.fc-move-mini { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); font-size: 12px; cursor: pointer; display: grid; place-items: center; color: var(--ink-soft); }
+.fc-move-mini:hover { background: var(--bg); }
+.fc-move-del:hover { color: var(--red); border-color: var(--red); }
+.fc-cap { width: 100%; font-size: 13px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 10px; }
+.fc-cap:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px var(--highlight); }
+[data-fc-branches] .branch-title { font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+[data-fc-branches] .branch-row { display: flex; gap: 8px; flex-wrap: wrap; }
+[data-fen-composer] textarea[data-fc-note] { font-family: inherit; font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; resize: vertical; }
+[data-fen-composer] input[data-fc-title] { font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px; padding: 9px 12px; }
+
 /* Thư viện: thumbnail SVG sống — mượn kích thước .li-thumb có sẵn nhưng nội dung do JS chèn. */
 .li-thumb svg { display: block; }
 /* Dòng thư viện dùng <details><summary class="lesson-item"> thay vì <a> — bỏ tam giác mặc định
