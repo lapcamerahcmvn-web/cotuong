@@ -798,3 +798,10 @@
   - **vd14** (Hình4.14, 28 quân): FEN `2bk1ab2/9/2nac3n/p1pr2p1p/9/4rNc2/P7P/2N1BR3/3CA1CR1/3AK1B2`, first=`do`, 19 nước — 0 warnings ngay lần đầu. Thắng thế không chiếu tướng, khớp sách.
   - **Tổng Chương 4 hiện tại: Bài 1 — 13/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~574 bài.
   - **Việc tiếp theo**: Bài 1 vd15 (Hình4.15, trang in 317, đã thấy khởi đầu "1. M3.4 Tg5-6 / 2. X8-4 X2.2" từ preview, cần lấy đủ text trang tiếp).
+
+- **2026-09-15 (tiếp) — Bài 1 vd15, vd16, vd17 xác nhận (16/22)**:
+  - **vd15** (Hình4.15, **31 quân — DÀY NHẤT TOÀN CHƯƠNG 4**): FEN `2b1kab1r/9/2n1caN1n/p3p1cCp/2p3p2/1r7/P3P1P1P/1C2B1N2/1R7/2BAKA1R1`, first=`do`, **35 nước** — 0 warnings ngay lần đầu dù cực dày và dài, kể cả với 2 khối 2-cột lồng nhau trong text. Thắng thế không chiếu tướng, khớp sách.
+  - **vd16** (Hình4.16, 25 quân): FEN `1rb1kab2/4a4/2n4Cc/p4R2p/2p1P1p2/3r5/P5P1P/3C1R3/4A4/2B2KB2`, first=`do`, 13 nước. **1 lỗi in nghi vấn**: nước cuối sách in "X4.2" (tiến 2) nhưng từ vị trí thực tế của Xe chỉ còn lại (đã lên rất cao), tiến 2 vượt ra ngoài bàn cờ → sửa thành "X4.1" (tiến 1, đổi số 2→1, cùng dạng lỗi đã gặp nhiều lần). Sách không khẳng định rõ "Trắng thắng" ở câu cuối (chỉ nói "hình thành sát thế"), nên giữ nguyên cách diễn đạt của sách, không tự thêm.
+  - **vd17** (Hình4.17, tàn cuộc thưa 16 quân, thế cờ do Dương Quan Lân đi thành): FEN `2b1ka3/4aP3/4bn3/8p/9/5RB2/4r4/4C4/9/3AKAB2`, first=`do`, 21 nước — 0 warnings ngay lần đầu. Thắng thế không chiếu tướng, khớp "Trắng thắng".
+  - **Tổng Chương 4 hiện tại: Bài 1 — 16/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~577 bài.
+  - **Việc tiếp theo**: Bài 1 vd18 (trang in 319, đã thấy tiêu đề "Cuộc ví dụ 18: Như hình 4-18, bên Trắng Xe Pháo Binh đã tấn công vào trận địa bên Đen..." từ preview, cần render trang tiếp để lấy đủ text+FEN). Còn 6 ví dụ nữa để hết Bài 1 (18-22, +19 nữa cho hết Bài 1's 22 ví dụ — thực ra còn vd18-22 = 5 ví dụ).
