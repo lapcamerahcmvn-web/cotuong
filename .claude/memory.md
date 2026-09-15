@@ -5,6 +5,28 @@
 
 ---
 
+## 2026-09-16 (5) — Fix menu nav: tên tài khoản dài vỡ layout desktop + mobile
+
+User gửi ảnh chụp: tên "Phước Nguy..." bị wrap 2 dòng trong nút tròn cao cố định 40px, vỡ layout
+cả desktop lẫn mobile top bar. **Nguyên nhân: `.account-btn`/`.ab-text` KHÔNG có `white-space:
+nowrap`** — chỉ dựa vào `Str::limit($user->name, 10)` ở PHP, nhưng tên 10 ký tự vẫn có thể dài hơn
+khoảng trống thực tế còn lại khi nav-links+search+account dồn cục ở desktop hẹp (~900-1300px, dưới
+mức full nhưng trên mức chuyển hamburger). **Bài học: `Str::limit()` giới hạn SỐ KÝ TỰ, không giới
+hạn CHIỀU RỘNG PIXEL — không thay được `white-space:nowrap`/CSS truncation khi không gian co giãn
+theo viewport.**
+
+Sửa: `white-space:nowrap` + `flex-shrink:0` trên `.account-btn`, `overflow:hidden;text-overflow:
+ellipsis` trên `.ab-text` làm lớp an toàn CSS. Đồng thời dời breakpoint ẩn tên tài khoản (icon-only)
+từ ≤460px lên ≤900px (khớp với breakpoint chuyển sang drawer) — vì drawer đã có sẵn link "Tài khoản
+của tôi" đầy đủ chữ, không cần lặp lại tên trong cụm chật hẹp (toggle + tài khoản + ☰). Thêm bậc
+trung gian ≤1140px thu hẹp ô tìm kiếm 168px→110px trước khi ẩn hẳn ở ≤900px, tránh dồn cục đột ngột.
+
+Verify: Puppeteer với tên tài khoản dài thật ("Phước Nguyễn Văn") ở 7 mức width 390–1300px — nút
+tài khoản luôn cao đúng 40px (baseline lúc lỗi, trước fix chắc chắn >40 do wrap 2 dòng), không tràn
+ngang; xác nhận drawer mobile vẫn giữ đủ "Tài khoản của tôi".
+
+---
+
 ## 2026-09-16 (4) — Xuất bản 10 bài mẫu + menu chuyên mục thật
 
 User gửi ảnh chụp production (hoccotuong.top/tin-tuc): "Chưa thấy tin tức... Tối ưu giao diện,
