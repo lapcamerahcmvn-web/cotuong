@@ -701,3 +701,10 @@
   - **Cuộc 27 "Đằng Giao Khởi Phụng"**: FEN `4R4/3ca4/4ka3/5P3/C1b2R3/9/4P4/3AB1n1r/3p1p3/2N1K4`, 19 nước — Tốt Xe Pháo phối hợp uyển chuyển rồi song Mã kết liễu. Có 1 biến phụ bỏ qua. 0 warnings, isCheckmate=true ngay từ lần đọc đầu (không lỗi).
   - **Tổng Chương 5 hiện tại: 27/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~546 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 28-43, PDF trang 362+ (in 360+, cuộc28 "Tạc Bích Du Quang" đã thấy trên trang 362).
+
+- **2026-09-15 (tiếp) — Cuộc 28, 29 xác nhận (29/43)**:
+  - Cả 2 cuộc đọc đúng ngay lần đầu, không lỗi digit/màu. **Cuộc 29 xác nhận thêm 1 trường hợp danh sách nước in 2 cột theo THỨ TỰ SỐ (không phải theo cột)**: nước 11,12 in cột trái rồi 13,14 in cột phải cùng dòng — đọc theo đúng số thứ tự 11→12→13→14 vẫn cho kết quả khớp hoàn hảo, củng cố quy tắc đã rút ra ở cuộc25.
+  - **Cuộc 28 "Tạc Bích Du Quang"**: FEN `3a1k3/2R1a4/3cb1n2/1C2N4/2b1C3R/9/9/9/r1r2p3/4K4`, 11 nước — thí Xe dẫn dụ Tướng lên cao rồi Pháo kết liễu. 0 warnings, isCheckmate=true.
+  - **Cuộc 29 "Tứ Diện Toàn Nhiễu"**: FEN `C2R4c/5k3/b2a1N2b/2R6/9/9/9/4p4/3nr1p2/c4K2C`, **27 nước** (đồng dài nhất Chương 5 cùng cuộc19) — song Mã đổi vai tiến lui liên tục vây khốn tứ phía. 0 warnings, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 29/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~548 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 30-43, PDF trang 363+ (in 361+).
