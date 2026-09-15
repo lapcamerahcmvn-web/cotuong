@@ -679,3 +679,10 @@
   - **Cuộc 21 "Ký Bất Xưng Lực"**: FEN `3ak4/4aP2n/4R3N/8N/9/9/9/9/2rp1p3/4K4`, 13 nước — thí Xe khống chế trung lộ rồi song Mã phối hợp. 0 warnings; kết thúc không phải chiếu bí trực tiếp (isCheckmate=false, inCheck=true) — khớp đúng lời sách chỉ ghi "Trắng thắng".
   - **Tổng Chương 5 hiện tại: 21/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~540 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 22-43, PDF trang 359+.
+
+- **2026-09-15 (tiếp) — Cuộc 22, 23 xác nhận (23/43)**:
+  - Hai cuộc này là sơ đồ ĐẶC ĐẶC (22 và 20 quân) — dày nhất Chương 5 từ đầu tới giờ. **Phát hiện + tự sửa lỗi montage**: khi ghép crop nhiều quân thành 1 ảnh lưới để soát màu hàng loạt, một ô (Mã ở hàng5 cột1, cuộc22) hiện SAI thành đen trong khi thực tế là đỏ (outline) — nguyên nhân do lỗi gõ toạ độ tay ở bước debug trước đó gây hoài nghi, nhưng khi dựng lại toàn bộ montage bằng đúng mảng `cols[c],rows[r]` (không gõ tay số), kết quả đúng khớp validate. **Bài học**: khi verify hàng loạt bằng montage, luôn lấy toạ độ từ mảng đã detect (biến `cols[c]`, `rows[r]`), không gõ số tay — tránh sai số do nhầm lẫn thủ công.
+  - **Cuộc 22 "Lục Quốc Kháng Tần"**: FEN `2b1kaR2/3Ra2n1/1n2b4/5N3/2p3p2/1NB3C2/9/4B4/1r1p1r3/C3KA3`, 15 nước — thí Xe ăn Sĩ mở đường, song Xe song Mã phối hợp. 0 warnings, isCheckmate=true.
+  - **Cuộc 23 "Uy Trấn Tứ Hải"**: FEN `2b2k3/1R2a1P2/3a5/4p1N2/6b2/9/3NP4/4C1C2/3RAp3/c1nAK4`, 15 nước — đổi Tốt lấy Sĩ, Xe ăn Sĩ, Mã Pháo hợp sức kết liễu. Có 1 biến phụ "Nếu Đen Tg5-4 thì X8-6, Tg4.1, P5-6, Trắng thắng" bỏ qua (không đưa vào variation_tree, theo đúng pattern các cuộc trước chỉ ghi mạch chính). 0 warnings, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 23/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~542 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 24-43, PDF trang 360+ (đã biết cuộc24 bắt đầu ở đầu trang 360 = in 358).
