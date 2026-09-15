@@ -5,6 +5,45 @@
 
 ---
 
+## 2026-09-16 (2) — Rà soát Tin tức: N+1, sitemap, mobile admin
+
+User: "Kiểm tra code tối ưu... cài đặt thông số SEO... quản lý được trong Admin. Tối ưu cả
+mobile" — tự review lại code Tin tức vừa dựng (mục trên), không phải feature mới.
+
+**Bắt được qua tự đọc lại code (không phải Puppeteer lần này)**:
+- **N+1**: `PostController@index`/`@show` (public) không `with('category')` dù view (`posts/index`,
+  `posts/show` phần related) truy cập `$p->category` NGAY TRONG VÒNG LẶP — mỗi bài 1 query riêng.
+  Admin's `PostController@index` đã đúng từ đầu (có `with('category')`), chỉ public bị sót.
+  `category()` method KHÔNG bị lỗi này vì view dùng `$category->slug` (đã biết sẵn), không đụng
+  `$p->category`.
+- **Gap SEO thật sự nghiêm trọng — bài published không có trong sitemap.xml**: quên hoàn toàn khi
+  dựng feature, Google sẽ không tự crawl bài mới. Đã thêm `sitemap-tin-tuc.xml` vào
+  `SitemapController` (chỉ xuất hiện trong sitemap index khi có ≥1 bài published — mẫu y hệt cách
+  `co-up`/từng giai đoạn được thêm có điều kiện) + route whitelist `where('section', '...|tin-tuc')`.
+  **Bài học: mỗi khi thêm 1 loại nội dung công khai mới (route `show` mới), PHẢI tự hỏi "đã vào
+  sitemap chưa?" — không có gì tự động nhắc, rất dễ quên vì trang vẫn chạy bình thường, chỉ là
+  không được Google phát hiện.**
+- `alt=""` trên thumbnail danh sách/bài liên quan (ảnh nội dung thật, không phải trang trí) → đổi
+  thành `alt="{{ $p->title }}"`.
+
+**Verify lại bằng thực nghiệm** (không chỉ đọc code): tạo/xoá post test qua tinker, `curl
+/sitemap.xml` xác nhận `sitemap-tin-tuc.xml` CHỈ xuất hiện khi có bài published (biến mất đúng khi
+xoá hết); `curl /sitemap-tin-tuc.xml` xác nhận URL + lastmod đúng. Puppeteer mobile 390×844 cho cả
+3 trang Admin Tin tức (danh sách/form soạn bài/chuyên mục) — không tràn ngang, bảng cuộn ngang đúng
+trong khung (`.tbl-wrap` 358px chứa `.admin-table` 720px, không tràn ra ngoài) — admin KHÔNG cần
+sửa gì thêm vì đã tái dùng đúng `.tbl-wrap`/`.admin-table`/`.form-grid` có sẵn từ Lesson admin (đã
+mobile-hoá từ trước). Chụp ảnh thật form soạn bài trên mobile — TinyMCE tự co toolbar vào nút "…"
+khi không đủ chỗ (hành vi mặc định của TinyMCE, không cần code thêm).
+
+**Phát hiện phụ**: cleanup dữ liệu test ở phiên trước (dựng feature Tin tức) SÓT 1 bài
+("Bài Test Nhúng Video Và Bàn Cờ", id=2) vì dùng `Post::where(...)->first()->delete()` thay vì
+`->get()->each(...)` khi có NHIỀU bản ghi trùng tên do slug tự tăng số (`-1`) ở lần chạy lại test.
+**Bài học: khi dọn dữ liệu test sau 1 phiên có RETRY (chạy lại script test do lỗi giữa chừng), luôn
+dùng `->get()->each()` hoặc `->delete()` trên cả query thay vì `->first()` — lần chạy trước có thể
+để lại nhiều bản ghi, không chỉ 1.**
+
+---
+
 ## 2026-09-16 — Trang "Tin Tức" mới: bài viết nhúng video + bàn cờ tương tác
 
 User: "Xem web lapcamerahcm.vn để làm phần Tin tức cho web cờ tướng này. Có những video, thế cờ
