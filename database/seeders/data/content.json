@@ -122772,6 +122772,294 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50034,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 34 — Dụng Xá Tương Ngại",
+      "slug": "c5-cuoc-34-dung-xa-tuong-ngai",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "5a3/3ka4/2Ncb4/9/9/C8/9/3R3r1/3pAp3/4K4",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Cuộc thứ ba mươi bốn: ví như đồ vật đặt sai chỗ lại thành vướng víu cho nhau — Trắng khéo léo dùng Mã Pháo Sĩ phối hợp trong không gian chật hẹp, biến chính sự vướng víu của Đen thành đòn chiếu bí.",
+      "content": "<p>“Dụng xá tương ngại” ví việc bày biện đồ đạc không đúng chỗ sẽ khiến chúng vướng víu cản trở lẫn nhau. Ván cờ này Trắng khéo léo dùng Mã, Pháo phối hợp cùng quân Sĩ của chính mình trong một không gian rất chật hẹp — tưởng chừng các quân sẽ cản đường nhau, nhưng Trắng lại biến chính sự chật chội của quân Đen thành cái bẫy dẫn tới chiếu bí.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 34 — Dụng Xá Tương Ngại",
+      "seo_description": "Cuộc cờ kinh điển Dụng Xá Tương Ngại: Trắng dùng Mã Pháo Sĩ phối hợp trong không gian chật hẹp, biến thế bí của Đen thành chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "5a3/3ka4/2Ncb4/9/9/3C5/9/3R3r1/3pAp3/4K4",
+          "move_notation_wxf": "Pháo 9 bình 6",
+          "move_notation_iccs": "a4d4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "5a3/3ka4/2N1b4/9/9/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Pháo 4 tiến 5",
+          "move_notation_iccs": "d7d2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "5a3/3ka4/4b4/9/3N5/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Mã 7 thoái 6",
+          "move_notation_iccs": "c7d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "5a3/3k5/3ab4/9/3N5/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 4",
+          "move_notation_iccs": "e8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "5a3/3k5/3ab4/5N3/9/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Mã 6 tiến 4",
+          "move_notation_iccs": "d5f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "5a3/3ka4/4b4/5N3/9/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Sĩ 4 thoái 5",
+          "move_notation_iccs": "d7e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "5a3/3ka4/3Nb4/9/9/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Mã 4 tiến 6",
+          "move_notation_iccs": "f6d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "5a3/4a4/3kb4/9/9/3C5/9/3c3r1/3pAp3/4K4",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "5a3/4a4/3kb4/9/9/9/9/3c3r1/3CAp3/4K4",
+          "move_notation_wxf": "Pháo 6 thoái 3",
+          "move_notation_iccs": "d4d1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "5a3/4a4/3kb4/9/9/9/9/4c2r1/3CAp3/4K4",
+          "move_notation_wxf": "Pháo 4 bình 5",
+          "move_notation_iccs": "d2e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "5a3/4a4/3kb4/9/9/9/9/3Ac2r1/3C1p3/4K4",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Sĩ — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50035,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 35 — Nhị Long Nhiễu Thất",
+      "slug": "c5-cuoc-35-nhi-long-nhieu-that",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3a1kb2/4a4/4b4/5NN2/9/9/9/8C/3r4c/4K1n2",
+      "variation_tree": null,
+      "move_count": 11,
+      "summary": "Cuộc thứ ba mươi lăm: ví hai con rồng cùng quấy nhiễu quanh tổ — song Mã của Trắng thay nhau múa lượn vòng quanh Tướng Đen theo một nhịp điệu tuần hoàn cho tới khi khép chặt vòng vây.",
+      "content": "<p>“Nhị long nhiễu thất” hình dung hai con rồng cùng quấy nhiễu quanh một cái tổ, không cho yên ổn. Ván cờ này song Mã của Trắng thay nhau tiến lui theo một nhịp điệu gần như tuần hoàn, múa lượn vòng quanh Tướng Đen hết bên này sang bên kia, cho tới khi vòng vây khép chặt hoàn toàn.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 35 — Nhị Long Nhiễu Thất",
+      "seo_description": "Cuộc cờ kinh điển Nhị Long Nhiễu Thất: song Mã thay nhau múa lượn quanh Tướng Đen theo nhịp tuần hoàn cho tới khi chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3a1kb2/4a2N1/4b4/5N3/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã 3 tiến 2",
+          "move_notation_iccs": "g6h8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3ak1b2/4a2N1/4b4/5N3/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3ak1b2/4a1NN1/4b4/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã 4 tiến 3",
+          "move_notation_iccs": "f6g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3a1kb2/4a1NN1/4b4/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3a1kb2/4a2N1/4N4/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã 3 thoái 5",
+          "move_notation_iccs": "g8e7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3ak1b2/4a2N1/4N4/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3ak1b2/4a1NN1/9/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã 5 tiến 3",
+          "move_notation_iccs": "e7g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3a1kb2/4a1NN1/9/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Tướng 5 bình 6",
+          "move_notation_iccs": "e9f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3a1kb2/4a2N1/9/7N1/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã 3 thoái 2",
+          "move_notation_iccs": "g8h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3ak1b2/4a2N1/9/7N1/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f9e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3ak1b2/4a2N1/5N3/9/9/9/9/8C/3r4c/4K1n2",
+          "move_notation_wxf": "Mã sau tiến 4",
+          "move_notation_iccs": "h6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã sau — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
