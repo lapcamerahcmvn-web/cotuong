@@ -591,3 +591,13 @@
   - **Tổng Chương 6 hiện tại: 52/84 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78,81,83 (31 bài, trong đó 58,78 hoãn vĩnh viễn do lỗi sách rõ ràng; 81,83 tạm hoãn — có thể còn cách đọc khác chưa thử).
   - Series ~= 449 bài. Đã có sẵn đáp án trích cho bài 85-87 ở scratchpad `page410_words.txt`.
   - **Việc tiếp theo**: tiếp tục bài 85-100 (16 bài), trang PDF 394+.
+
+- **2026-09-15 (tiếp) — Bài 85,86,87 XÁC NHẬN HẾT (3/3 liên tiếp)**:
+  - **Phát hiện lỗi TỰ GÂY quan trọng (bài 86)**: khi gõ FEN thủ công cho hàng có dạng "quân-số-quân", dễ đếm nhầm ô trống bắt đầu SAU quân đầu thay vì đúng vị trí — cụ thể viết "N2c1b3" (định đặt Tượng ở cột 4) nhưng thực tế chuỗi đặt Tượng ở cột 5, gây lỗi "Tượng ở ô không hợp lệ" ngay từ bước validate đầu tiên. Đây CHÍNH LÀ lỗi #3 đã ghi trong nhật ký từ phiên trước ("lỗi đếm ký tự rỗng trong chuỗi FEN") — tái diễn dù đã biết, cho thấy cần double-check kỹ hơn khi gõ FEN thủ công thay vì chỉ tin vào occupancy grid. Sửa: đếm lại chính xác thành "N2cb4".
+  - **Bài 86 cũng phát hiện lại lỗi đọc màu quân cạnh nhau**: 2 quân "馬" đứng gần nhau ban đầu tưởng 1 đỏ 1 đen, zoom kỹ xác nhận CẢ HAI đều viền trắng (đỏ) — khớp đúng với đáp án cần nhiều nước Mã đỏ liên tiếp.
+  - **Bài 85**: FEN `r1P2a3/2P1a1R1/3k5/6N2/9/9/6c2/3p5/4p4/3K5` — Xe Mã song Binh, Mã đổi vai + Binh đổi đường ép Tướng (11 nước). 0 warnings.
+  - **Bài 86**: FEN `4ka3/4a4/N2cb4/1N7/9/2R6/9/9/5p3/4KA1r1` — Xe song Mã, Xe thí đổi Tượng rồi song Mã vờn Tướng (11 nước). 0 warnings.
+  - **Bài 87**: FEN `9/4k4/4Nr3/9/2C1R4/9/9/2n6/3p5/4K4` — Xe Mã Pháo, Xe ẩn hiện rồi Pháo mượn đường Mã chiếu bí xa (11 nước). 0 warnings.
+  - **Tổng Chương 6 hiện tại: 55/87 xác nhận**. Hoãn: 5,6,9,11,15,16,17,20,22,23,25,26,33,34,35,36,37,40,41,42,43,45,47,48,50,53,56,58,78,81,83 (31 bài).
+  - Series ~= 452 bài. Đã có sẵn đáp án trích cho bài 88 (một phần) — cần trích thêm cho 89+.
+  - **Việc tiếp theo**: tiếp tục bài 88-100 (13 bài), trang PDF 395+.
