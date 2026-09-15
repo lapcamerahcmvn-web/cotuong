@@ -104,9 +104,10 @@ header.nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srg
 .nav-search input:focus { outline: none; }
 .nav-search input::placeholder { color: var(--ink-faint); }
 
-.account-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--red); color: #fff; font-size: 14.5px; font-weight: 600; height: 40px; padding: 0 16px; border-radius: 999px; transition: background .15s, transform .1s; }
+.account-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--red); color: #fff; font-size: 14.5px; font-weight: 600; height: 40px; padding: 0 16px; border-radius: 999px; transition: background .15s, transform .1s; flex-shrink: 0; white-space: nowrap; }
 .account-btn:hover { background: #a8371a; color: #fff; text-decoration: none; }
 .account-btn:active { transform: scale(.97); }
+.account-btn .ab-text { overflow: hidden; text-overflow: ellipsis; max-width: 110px; }
 
 /* Nút menu mobile (☰) */
 .nav-toggle { display: none; width: 42px; height: 40px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; align-items: center; justify-content: center; position: relative; }
@@ -134,14 +135,21 @@ header.nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srg
 .navcb:checked ~ .nav-inner .nav-toggle .nt-bars::before { transform: translateY(6px) rotate(45deg); }
 .navcb:checked ~ .nav-inner .nav-toggle .nt-bars::after { transform: translateY(-6px) rotate(-45deg); }
 
-/* Breakpoints: <900px chuyển sang menu drawer */
+/* Breakpoints: thu hẹp dần trước khi chuyển hẳn sang menu drawer ở <900px, tránh dồn cục
+   nav-links + search + tên tài khoản chèn nhau ở khoảng desktop hẹp/tablet ngang. */
+@media (max-width: 1140px) {
+  .nav-search input { width: 110px; }
+}
 @media (max-width: 900px) {
   .nav-links, .nav-search { display: none; }
   .nav-toggle { display: inline-flex; }
+  /* Icon-only ở đây — tên đầy đủ đã có sẵn trong drawer ("Tài khoản của tôi"), không cần lặp lại
+     trong cụm chật (toggle + tài khoản + ☰) khi đã ở chế độ mobile/tablet hẹp. */
+  .account-btn .ab-text { display: none; }
+  .account-btn { padding: 0 12px; gap: 0; }
 }
 @media (max-width: 460px) {
-  .account-btn .ab-text { display: none; }
-  .account-btn { padding: 0 12px; }
+  .account-btn { padding: 0 10px; }
 }
 
 /* Breadcrumb */
