@@ -727,3 +727,10 @@
   - **Cuộc 35 "Nhị Long Nhiễu Thất"**: FEN `3a1kb2/4a4/4b4/5NN2/9/9/9/8C/3r4c/4K1n2`. **Phát hiện đặc biệt**: sách cho SẴN 2 lời giải ("theo y như nguyên tác kỳ phổ" + "cách đi khác") — dòng "nguyên tác" (M3.2,Tg6-5,M4.3,Tg5-6,M3/2,Tg6-5,P1.7,S5/6,M2.4,Tg5.1,P1/1) qua engine 0 warnings (mọi nước hợp lệ) nhưng kết thúc KHÔNG chiếu tướng (isCheckmate=false, inCheck=false) — tức hợp lệ về luật nhưng không đạt mục tiêu "Trắng thắng" như sách khẳng định. Dòng "cách đi khác" (M3.2,Tg6-5,M4.3,Tg5-6,M3/5,Tg6-5,M5.3,Tg5-6,M3/2,Tg6-5,Ms.4) validate hoàn hảo: 0 warnings, isCheckmate=true. **Quyết định**: dùng dòng "cách đi khác" làm nội dung bài học chính thức (đã đạt chiếu bí thật sự), bỏ qua dòng "nguyên tác" dù đúng luật vì không đạt kết quả sát cục.
   - **Tổng Chương 5 hiện tại: 35/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~554 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 36-43, PDF trang 366+ (in 364+, cuộc36 "Lộ Xa Thặng Mã" và cuộc37 "Hỏa Diễm Côn Cương" đã có text sẵn, chưa lấy FEN).
+
+- **2026-09-15 (tiếp) — Cuộc 36, 37 xác nhận (37/43)**:
+  - Cả 2 cuộc ngắn gọn (7 nước mỗi cuộc), đọc đúng ngay lần đầu, không lỗi.
+  - **Cuộc 36 "Lộ Xa Thắng Mã"**: FEN `1c1k5/4R4/4N4/4rC3/9/6Rr1/9/6C2/4p4/5K3`, 7 nước — song Xe song Pháo dồn ép nhanh gọn. 0 warnings, isCheckmate=true.
+  - **Cuộc 37 "Hỏa Diễm Côn Cương"**: FEN `3ak1b1r/4a2Pn/4b4/4C4/9/9/cR7/n8/4A1p2/3AKC3`, 7 nước — nước Pháo mở màn tinh diệu. 0 warnings, isCheckmate=true.
+  - **Tổng Chương 5 hiện tại: 37/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~556 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 38-43 (6 cuộc cuối cùng của Chương 5), PDF trang 366+ (in 364+, cuộc38 "Nhục Đàn Phụ Kinh" đã thấy tiêu đề+giới thiệu, chưa lấy FEN/text đầy đủ).

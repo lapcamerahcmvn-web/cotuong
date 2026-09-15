@@ -123060,6 +123060,206 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50036,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 36 — Lộ Xa Thắng Mã",
+      "slug": "c5-cuoc-36-lo-xa-thang-ma",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1c1k5/4R4/4N4/4rC3/9/6Rr1/9/6C2/4p4/5K3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Cuộc thứ ba mươi sáu: ví con Xe lộ mặt thắng cả Mã — chỉ với song Xe và song Pháo, Trắng dồn ép Tướng Đen trong vỏn vẹn bảy nước ngắn gọn mà quyết liệt.",
+      "content": "<p>“Lộ xa thắng mã” khẳng định sức mạnh của quân Xe lộ mặt trực diện có thể áp đảo cả quân Mã linh hoạt. Ván cờ này Trắng chỉ cần dùng song Xe cùng song Pháo, không cần thêm quân yểm trợ nào khác, đã đủ dồn Tướng Đen vào chiếu bí trong vỏn vẹn bảy nước cờ ngắn gọn mà sắc bén.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 36 — Lộ Xa Thắng Mã",
+      "seo_description": "Cuộc cờ kinh điển Lộ Xa Thắng Mã: chỉ với song Xe và song Pháo, Trắng dồn Tướng Đen tới chiếu bí trong bảy nước ngắn gọn.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1c1k5/3R5/4N4/4rC3/9/6Rr1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e8d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1c7/3k5/4N4/4rC3/9/6Rr1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1c7/3k2R2/4N4/4rC3/9/7r1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Xe 3 tiến 4",
+          "move_notation_iccs": "g4g8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1c7/6R2/3kN4/4rC3/9/7r1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d8d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng tiếp.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1c7/6R2/3kNC3/4r4/9/7r1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Pháo 4 tiến 1",
+          "move_notation_iccs": "f6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1c7/6R2/4kC3/4r4/9/7r1/9/6C2/4p4/5K3",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d7e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1c7/6R2/4kCC2/4r4/9/7r1/9/9/4p4/5K3",
+          "move_notation_wxf": "Pháo 3 tiến 5",
+          "move_notation_iccs": "g2g7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo kia — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50037,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 37 — Hỏa Diễm Côn Cương",
+      "slug": "c5-cuoc-37-hoa-diem-con-cuong",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3ak1b1r/4a2Pn/4b4/4C4/9/9/cR7/n8/4A1p2/3AKC3",
+      "variation_tree": null,
+      "move_count": 7,
+      "summary": "Cuộc thứ ba mươi bảy: ví ngọn lửa cháy rực trên đỉnh núi — Trắng tung nước Pháo tinh diệu khiến Đen khó bề ứng phó, thế lửa lan nhanh cho tới khi Tướng Đen không còn đường thoát.",
+      "content": "<p>“Hỏa diễm côn cương” hình dung ngọn lửa cháy rực bùng lên trên đỉnh núi, lan nhanh và dữ dội. Ván cờ này Trắng mở màn bằng một nước Pháo tinh diệu khiến bên Đen lúng túng khó lòng ứng phó ngay từ đầu, thế trận sau đó lan nhanh như lửa cháy cho tới khi Tướng Đen hoàn toàn hết đường thoát.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 37 — Hỏa Diễm Côn Cương",
+      "seo_description": "Cuộc cờ kinh điển Hỏa Diễm Côn Cương: Trắng tung nước Pháo tinh diệu khiến Đen khó ứng phó, thế trận lan nhanh tới chiếu bí.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3akCb1r/4a2Pn/4b4/4C4/9/9/cR7/n8/4A1p2/3AK4",
+          "move_notation_wxf": "Pháo 4 tiến 9",
+          "move_notation_iccs": "f0f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo — nước đi tinh diệu, bên Đen khó lòng ứng phó.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3akCb1r/4a2Pn/4b4/4C4/9/9/cR7/9/2n1A1p2/3AK4",
+          "move_notation_wxf": "Mã 1 tiến 3",
+          "move_notation_iccs": "a2c1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3akCb1r/4a2Pn/4b4/4C4/9/9/cR7/9/2n1A1p2/3A1K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3akCb1r/4a2Pn/4b4/4C4/9/9/1R7/9/2n1A1p2/c2A1K3",
+          "move_notation_wxf": "Pháo 1 tiến 3",
+          "move_notation_iccs": "a3a0",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3akCb1r/4a2Pn/4b4/4C4/9/9/9/9/2n1A1p2/cR1A1K3",
+          "move_notation_wxf": "Xe 8 thoái 3",
+          "move_notation_iccs": "b3b0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3akCb1r/4a2P1/4b4/4C2n1/9/9/9/9/2n1A1p2/cR1A1K3",
+          "move_notation_wxf": "Mã 9 tiến 8",
+          "move_notation_iccs": "i8h6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3ak1b1C/4a2P1/4b4/4C2n1/9/9/9/9/2n1A1p2/cR1A1K3",
+          "move_notation_wxf": "Pháo 4 bình 1",
+          "move_notation_iccs": "f9i9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
