@@ -115984,6 +115984,172 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 60100,
+      "game_mode": "co-tuong",
+      "phase": "tan-cuoc",
+      "title": "[Đề Kiểm Tra Sát Pháp] Bài Số 100 — Xe Mã Đổi Vai Bảy Lượt, Bài Cuối Cùng",
+      "slug": "c6-de-kiem-tra-bai-100",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "1P7/5k3/9/5N3/5R1C1/9/7r1/5p3/6r2/5K3",
+      "variation_tree": null,
+      "move_count": 13,
+      "summary": "Bài kiểm tra số 100 — bài cuối cùng của chương: Trắng cầm Xe, Mã và Binh; Xe và Mã đổi vai suốt bảy lượt liên tiếp, dồn Tướng Đen chạy khắp cung cho tới nước chiếu bí khép lại toàn bộ chương Đề Kiểm Tra Sát Pháp.",
+      "content": "<p>Trắng có Xe, Mã và Binh. Xe và Mã đổi vai suốt bảy lượt liên tiếp, dồn Tướng Đen chạy khắp cung — đây là bài toán cuối cùng khép lại toàn bộ chương Đề Kiểm Tra Sát Pháp.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Đề Kiểm Tra Sát Pháp Bài 100 — Xe Mã Đổi Vai Bảy Lượt, Bài Cuối Cùng",
+      "seo_description": "Bài kiểm tra sát pháp số 100 (bài cuối): Trắng cầm Xe Mã Binh, Xe và Mã đổi vai bảy lượt liên tiếp dồn Tướng Đen tới nước chiếu bí khép lại chương.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "1P7/5k3/7N1/9/5R1C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Mã 4 tiến 2",
+          "move_notation_iccs": "f6h7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "1P7/4k4/7N1/9/5R1C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 6 bình 5",
+          "move_notation_iccs": "f8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "1P7/4k4/7N1/9/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Xe 4 bình 5",
+          "move_notation_iccs": "f5e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "1P7/3k5/7N1/9/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e8d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "1P7/3k5/7N1/9/3R3C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e5d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "1P7/4k4/7N1/9/3R3C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "1P7/4k4/9/5N3/3R3C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Mã 2 thoái 4",
+          "move_notation_iccs": "h7f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "1P2k4/9/9/5N3/3R3C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 5 thoái 1",
+          "move_notation_iccs": "e8e9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "1P2k4/9/9/5N3/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Xe 6 bình 5",
+          "move_notation_iccs": "d5e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "1P1k5/9/9/5N3/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e9d9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tướng tránh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2Pk5/9/9/5N3/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tốt 8 bình 7",
+          "move_notation_iccs": "b9c9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2P6/3k5/9/5N3/4R2C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Tướng 4 tiến 1",
+          "move_notation_iccs": "d9d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2P6/3k5/9/5N3/3R3C1/9/7r1/5p3/6r2/5K3",
+          "move_notation_wxf": "Xe 5 bình 6",
+          "move_notation_iccs": "e5d5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe — chiếu bí, Trắng thắng.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
