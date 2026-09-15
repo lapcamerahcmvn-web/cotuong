@@ -130402,6 +130402,326 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 41022,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Trung Cuộc] Phá Sĩ Sát Pháp — Thí Pháo Đánh Sĩ, Lợi Dụng Khuyết Sĩ Sợ Song Xe — Ví Dụ 22",
+      "slug": "c4-pha-si-vi-du-22",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "3rkab2/4a4/2R1b2R1/p3p3p/6c2/2P6/P3Ppc1P/2N1BC3/2r1A4/3CKAB2",
+      "variation_tree": null,
+      "move_count": 27,
+      "summary": "Ví dụ thứ hai mươi hai (cuối cùng của Bài Phá Sĩ): bên Trắng tuy nhiều hơn một quân nhưng Pháo cánh phải bị Tốt Đen uy hiếp, tình thế căng thẳng. Thông qua phân tích sâu, Trắng phát hiện điểm yếu khuyết Sĩ sợ song Xe của Đen, thí Pháo đánh Sĩ rồi hai lần liên tiếp vận Sĩ tinh diệu đánh Xe để hình thành thế sát.",
+      "content": "<p>Ván đấu cuối cùng của Bài Phá Sĩ đặt bên Trắng vào tình huống cân não: tuy có nhiều hơn một quân, nhưng Pháo bên cánh phải đang chịu sự uy hiếp trực tiếp từ Tốt của Đen, khiến hình thế trở nên vô cùng căng thẳng. Qua quá trình phân tích sâu, Trắng phát hiện ra điểm yếu cố hữu trong hệ thống phòng thủ của Đen: quy luật \"khuyết Sĩ sợ song Xe\" — khi thiếu quân Sĩ bảo vệ, Tướng sẽ trở nên vô cùng dễ tổn thương trước sức mạnh phối hợp của hai quân Xe. Trắng lập tức thí Pháo đánh thẳng vào Sĩ để khai thác điểm yếu này. Đặc sắc nhất của ván cờ là hai lần liên tiếp Trắng vận dụng quân Sĩ của chính mình một cách tinh diệu lạ thường để đánh vào Xe đối phương, mỗi lần đều tăng tốc độ tấn công, cuối cùng hình thành thế sát không thể cứu vãn.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Trung Cuộc — Phá Sĩ Ví Dụ 22: Thí Pháo Đánh Sĩ",
+      "seo_description": "Ván Phá Sĩ ví dụ 22 (cuối bài): Trắng thí Pháo đánh Sĩ, khai thác quy luật khuyết Sĩ sợ song Xe, hai lần vận Sĩ tinh diệu hình thành thế sát.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "3rkCb2/4a4/2R1b2R1/p3p3p/6c2/2P6/P3Ppc1P/2N1B4/2r1A4/3CKAB2",
+          "move_notation_wxf": "Pháo 4 tiến 7",
+          "move_notation_iccs": "f2f9",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Pháo đánh Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "3rkab2/9/2R1b2R1/p3p3p/6c2/2P6/P3Ppc1P/2N1B4/2r1A4/3CKAB2",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "3rkab2/9/2R1bR3/p3p3p/6c2/2P6/P3Ppc1P/2N1B4/2r1A4/3CKAB2",
+          "move_notation_wxf": "Xe 2 bình 4",
+          "move_notation_iccs": "h7f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "3rkab2/9/2R1bR3/p3p3p/6c2/2P6/P3Ppc1P/2r1B4/4A4/3CKAB2",
+          "move_notation_wxf": "Xe 3 thoái 1",
+          "move_notation_iccs": "c1c2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "3rkab2/9/2R1b4/p3p3p/6c2/2P6/P3PRc1P/2r1B4/4A4/3CKAB2",
+          "move_notation_wxf": "Xe 4 thoái 4",
+          "move_notation_iccs": "f7f3",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe — tróc Tốt thí Mã, nước đi công kích xảo diệu.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "3rkab2/9/2R1b4/p3p3p/6c2/2P6/P3PR2P/2r1B4/4A1c2/3CKAB2",
+          "move_notation_wxf": "Pháo trước tiến 2",
+          "move_notation_iccs": "g3g1",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo trước.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "3rkab2/5R3/2R1b4/p3p3p/6c2/2P6/P3P3P/2r1B4/4A1c2/3CKAB2",
+          "move_notation_wxf": "Xe 4 tiến 5",
+          "move_notation_iccs": "f3f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "3rkab2/5R3/2R1b4/p3p3p/4c4/2P6/P3P3P/2r1B4/4A1c2/3CKAB2",
+          "move_notation_wxf": "Pháo sau bình 5",
+          "move_notation_iccs": "g5e5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "3rkab2/5R3/2R1b4/p3p3p/4c4/2P1P4/P7P/2r1B4/4A1c2/3CKAB2",
+          "move_notation_wxf": "Tốt 5 tiến 1",
+          "move_notation_iccs": "e3e4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "3rkab2/5R3/2R1b1c2/p3p3p/4c4/2P1P4/P7P/2r1B4/4A4/3CKAB2",
+          "move_notation_wxf": "Pháo 7 thoái 6",
+          "move_notation_iccs": "g1g7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "3rkab2/9/2R1bRc2/p3p3p/4c4/2P1P4/P7P/2r1B4/4A4/3CKAB2",
+          "move_notation_wxf": "Xe 4 thoái 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "3rkab2/9/2R1bRc2/p3p3p/9/2P1P4/P7P/2r1c4/4A4/3CKAB2",
+          "move_notation_wxf": "Pháo 5 tiến 3",
+          "move_notation_iccs": "e5e2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "3rkab2/9/2R1bRc2/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Tượng 3 tiến 5",
+          "move_notation_iccs": "g0e2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "3rkab2/9/2R1bR2c/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Pháo 7 bình 9",
+          "move_notation_iccs": "g7i7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "3rkab2/2R6/4bR2c/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Xe 7 tiến 1",
+          "move_notation_iccs": "c7c8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "3rk1b2/2R1a4/4bR2c/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Sĩ 6 tiến 5",
+          "move_notation_iccs": "f9e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "3rk1b2/2R1aR3/4b3c/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Xe 4 tiến 1",
+          "move_notation_iccs": "f7f8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "3rkab2/2R2R3/4b3c/p3p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Sĩ 5 thoái 6",
+          "move_notation_iccs": "e8f9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "3rkab2/5R3/4b3c/p1R1p3p/9/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Xe 7 thoái 2",
+          "move_notation_iccs": "c8c6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "3rkab2/5R3/8c/p1R1p3p/6b2/2P1P4/P7P/2r1B4/4A4/3CKA3",
+          "move_notation_wxf": "Tượng 5 tiến 7",
+          "move_notation_iccs": "e7g5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "3rkab2/5R3/8c/p1R1p3p/6b2/2P1P4/P7P/2rAB4/9/3CKA3",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ — lên Sĩ đánh Xe, vận Sĩ tinh diệu lạ thường, tăng nhanh tốc độ tấn công.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 22,
+          "fen": "4kab2/5R3/8c/p1R1p3p/6b2/2P1P4/P7P/2rrB4/9/3CKA3",
+          "move_notation_wxf": "Xe 4 tiến 7",
+          "move_notation_iccs": "d9d2",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 23,
+          "fen": "4kab2/5R3/8c/p1R1p3p/6b2/2P1P4/P7P/2rrB4/4A4/3CK4",
+          "move_notation_wxf": "Sĩ 4 tiến 5",
+          "move_notation_iccs": "f0e1",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 24,
+          "fen": "4kab2/5R3/3r4c/p1R1p3p/6b2/2P1P4/P7P/2r1B4/4A4/3CK4",
+          "move_notation_wxf": "Xe 4 thoái 5",
+          "move_notation_iccs": "d2d7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 25,
+          "fen": "4kab2/5R3/3r4c/p1R1p3p/6b2/2P1P4/P7P/2r1B4/4A4/3C1K3",
+          "move_notation_wxf": "Tướng 5 bình 4",
+          "move_notation_iccs": "e0f0",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 26,
+          "fen": "4kab1c/5R3/3r5/p1R1p3p/6b2/2P1P4/P7P/2r1B4/4A4/3C1K3",
+          "move_notation_wxf": "Pháo 9 thoái 2",
+          "move_notation_iccs": "i7i9",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 27,
+          "fen": "4kab1c/5R3/3r5/p1R1p3p/6b2/2P1P4/P7P/2rAB4/9/3C1K3",
+          "move_notation_wxf": "Sĩ 5 tiến 6",
+          "move_notation_iccs": "e1d2",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Sĩ — lại lần nữa xảo diệu tiến Sĩ đánh Xe, hình thành thế sát.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
