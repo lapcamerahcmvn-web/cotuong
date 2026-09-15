@@ -643,3 +643,11 @@
   - **Cuộc 5 "Uyên Ương Hí Thủy"**: FEN `4kab1C/4a4/9/1R7/4P1N1/2N3B1/1n5r1/4n4/4A4/c1BAK4` (do đi trước), 15 nước — Xe Binh song Mã phối hợp nhịp nhàng. 0 warnings.
   - **Tổng Chương 5 hiện tại: 5/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~522 bài.
   - **Việc tiếp theo**: tiếp tục cuộc 6-43, PDF trang 350+ (Hình 5.6, 5.7 đã thấy trong ảnh trang 350 chụp trước đó khi khảo sát ban đầu).
+
+- **2026-09-15 (tiếp) — Cuộc 6,7,8,9 xác nhận (9/43)**:
+  - **Cuộc 6 "Độc Lộc Minh Trạch"**: FEN `C3k4/4a1r1/5a3/1N7/1Cp6/1R7/9/3p5/3p4r/3K5`, 15 nước, Mã thí thân + Xe song Pháo. 0 warnings.
+  - **Cuộc 7 "Thoái Tư Bổ Quá"**: FEN `3aka3/3P1n3/RR2b4/4p4/1Cb4C1/6B1r/9/4p4/3pp4/5K3`, 15 nước, đổi Xe Tượng Sĩ rồi song Pháo trùng sát. 0 warnings.
+  - **Cuộc 8 "Khắc Thiện Tận Chung"**: FEN `3ak4/3RaR2/4b3N/6N2/2b6/9/3pP4/B3C1n1B/2rp2r2/4K4`, 19 nước — kết thúc ở thế thắng rõ rệt (không phải chiếu bí trực tiếp, đúng như mô tả gốc "diệu thủ...phục thiểm chiếu tuyệt sát" chứ không viết "Trắng thắng" tường minh). 0 warnings.
+  - **Cuộc 9 "Tứ Diện Sở Ca"**: FEN `2b1R1Nr1/1Nr2k3/9/C2R1P1n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5`, 21 nước. **Phát hiện lỗi in nghi vấn ở nước cuối**: sách in "B3-4" nhưng quân Binh duy nhất còn lại ở vị trí không khớp file 3 (chỉ khớp file 2) — đã thử "B2-3" và "B2.1" đều hợp lệ, chọn "B2.1" (tiến đơn giản) làm phỏng đoán hợp lý nhất, không chắc chắn 100% đúng nguyên bản nhưng đảm bảo 0 warnings và kết thúc ở thế thắng như mô tả.
+  - **Tổng Chương 5 hiện tại: 9/43 xác nhận**. Series `sat-phap-dai-toan` tổng ~528 bài.
+  - **Việc tiếp theo**: tiếp tục cuộc 10-43, PDF trang 352+ (Hình 5.10 đã render sẵn trong `ch5_pg352_hires.png`, cần đọc).

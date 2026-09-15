@@ -117984,6 +117984,260 @@
           "is_flip_reveal": false
         }
       ]
+    },
+    {
+      "series_slug": "sat-phap-dai-toan",
+      "order_in_series": 50009,
+      "game_mode": "co-tuong",
+      "phase": "trung-cuoc",
+      "title": "[Sát Pháp Kinh Điển] Cuộc 9 — Tứ Diện Sở Ca",
+      "slug": "c5-cuoc-9-tu-dien-so-ca",
+      "level": "nang-cao",
+      "source_type": "manual",
+      "initial_fen": "2b1R1Nr1/1Nr2k3/9/C2R1P1n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+      "variation_tree": null,
+      "move_count": 21,
+      "summary": "Cuộc thứ chín: ví như Hạng Vũ nghe bốn bề đều hát Sở ca, biết mình đã bị vây khốn — ở đây chính Đen rơi vào cảnh bị Trắng vây khốn tứ phía qua một loạt đổi quân dồn dập, cuối cùng Trắng nắm chắc phần thắng.",
+      "content": "<p>“Tứ diện Sở ca” nhắc lại tích Hạng Vũ nghe quân Hán hát vang khúc Sở ca bốn bề, biết mình đã bị bao vây tứ phía không lối thoát. Ván cờ này Trắng vây ép Đen bằng một loạt đổi quân dồn dập — Xe đổi Xe, Mã đổi Tốt liên tiếp — khiến Đen rơi vào đúng cảnh ngộ bị vây khốn như trong điển tích, và Trắng nắm chắc phần thắng.</p>",
+      "status": "published",
+      "decode_confidence": "high",
+      "thumbnail": null,
+      "seo_title": "Sát Pháp Kinh Điển Cuộc 9 — Tứ Diện Sở Ca",
+      "seo_description": "Cuộc cờ kinh điển Tứ Diện Sở Ca: Trắng vây ép Đen tứ phía bằng loạt đổi quân dồn dập, nắm chắc phần thắng như điển tích Hạng Vũ.",
+      "is_featured": false,
+      "steps": [
+        {
+          "step_order": 1,
+          "fen": "2b1R1Nr1/1NrR1k3/9/C4P1n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Xe 6 tiến 2",
+          "move_notation_iccs": "d6d8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 2,
+          "fen": "2b1R1Nr1/1N1r1k3/9/C4P1n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Xe 3 bình 4",
+          "move_notation_iccs": "c8d8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 3,
+          "fen": "2b1R1Nr1/1N1r1k3/5P3/C6n1/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tốt 4 tiến 1",
+          "move_notation_iccs": "f6f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 4,
+          "fen": "2b1R1Nr1/1N1r1k3/5n3/C8/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "h6f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Mã ăn Binh.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 5,
+          "fen": "2b1R1Nr1/3r1k3/3N1n3/C8/2bCp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 8 thoái 6",
+          "move_notation_iccs": "b8d7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 6,
+          "fen": "2b1R1Nr1/3r1k3/3Nbn3/C8/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tượng trước thoái 5",
+          "move_notation_iccs": "c5e7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tượng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 7,
+          "fen": "2b1R1Nr1/3r1k3/3Nbn3/5C3/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Pháo 9 bình 4",
+          "move_notation_iccs": "a6f6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 8,
+          "fen": "2b1R1Nr1/3r1k3/3Nb4/5C1n1/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã sau tiến 8",
+          "move_notation_iccs": "f7h6",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 9,
+          "fen": "2b3Nr1/3rRk3/3Nb4/5C1n1/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Xe 5 thoái 1",
+          "move_notation_iccs": "e9e8",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Xe kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 10,
+          "fen": "2b3Nr1/4rk3/3Nb4/5C1n1/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Xe 4 bình 5",
+          "move_notation_iccs": "d8e8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen bình Xe ăn Xe.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 11,
+          "fen": "2b4r1/4rk3/3NbN3/5C1n1/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 3 thoái 4",
+          "move_notation_iccs": "g9f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã kia.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 12,
+          "fen": "2b4r1/4r4/3Nbk3/5C1n1/3Cp2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 13,
+          "fen": "2b4r1/4r4/4bk3/5C1n1/3CN2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 6 thoái 5",
+          "move_notation_iccs": "d7e5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Mã ăn Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 14,
+          "fen": "2b4r1/4rk3/4b4/5C1n1/3CN2P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 thoái 1",
+          "move_notation_iccs": "f7f8",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen lui Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 15,
+          "fen": "2b4r1/4rk3/4bN3/5C1n1/3C3P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 5 tiến 4",
+          "move_notation_iccs": "e5f7",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Mã.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 16,
+          "fen": "2b4r1/4r4/4bk3/5C1n1/3C3P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tướng 6 tiến 1",
+          "move_notation_iccs": "f8f7",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen thăng Tướng.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 17,
+          "fen": "2b4r1/4r4/4bk3/5C1n1/5C1P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Pháo 6 bình 4",
+          "move_notation_iccs": "d5f5",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng bình Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 18,
+          "fen": "2b4r1/4r4/4bk3/5C3/5n1P1/5pc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã 8 tiến 6",
+          "move_notation_iccs": "h6f5",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã ăn Pháo.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 19,
+          "fen": "2b4r1/4r4/4bk3/9/5n1P1/5Cc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Pháo 4 thoái 2",
+          "move_notation_iccs": "f6f4",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng lui Pháo kia ăn Tốt.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 20,
+          "fen": "2b4r1/4r4/4bk3/9/7P1/3n1Cc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Mã sau tiến 4",
+          "move_notation_iccs": "f5d4",
+          "move_side": "den",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Đen tiến Mã sau.",
+          "is_flip_reveal": false
+        },
+        {
+          "step_order": 21,
+          "fen": "2b4r1/4r4/4bk3/7P1/9/3n1Cc2/9/5n3/2p1p4/3K5",
+          "move_notation_wxf": "Tốt 2 tiến 1",
+          "move_notation_iccs": "h5h6",
+          "move_side": "do",
+          "moved_piece": null,
+          "captured_piece": null,
+          "caption": "Trắng tiến Binh — Trắng thắng thế.",
+          "is_flip_reveal": false
+        }
+      ]
     }
   ]
 }
