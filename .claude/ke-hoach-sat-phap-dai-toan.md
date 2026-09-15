@@ -805,3 +805,9 @@
   - **vd17** (Hình4.17, tàn cuộc thưa 16 quân, thế cờ do Dương Quan Lân đi thành): FEN `2b1ka3/4aP3/4bn3/8p/9/5RB2/4r4/4C4/9/3AKAB2`, first=`do`, 21 nước — 0 warnings ngay lần đầu. Thắng thế không chiếu tướng, khớp "Trắng thắng".
   - **Tổng Chương 4 hiện tại: Bài 1 — 16/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~577 bài.
   - **Việc tiếp theo**: Bài 1 vd18 (trang in 319, đã thấy tiêu đề "Cuộc ví dụ 18: Như hình 4-18, bên Trắng Xe Pháo Binh đã tấn công vào trận địa bên Đen..." từ preview, cần render trang tiếp để lấy đủ text+FEN). Còn 6 ví dụ nữa để hết Bài 1 (18-22, +19 nữa cho hết Bài 1's 22 ví dụ — thực ra còn vd18-22 = 5 ví dụ).
+
+- **2026-09-15 (tiếp) — Bài 1 vd18, vd19 xác nhận (18/22)**:
+  - **vd18** (Hình4.18, 15 quân): FEN `3k1abC1/1CP1aR3/4b4/r8/9/r5p2/9/9/9/3AKA3`, first=`do`, 19 nước. **2 lỗi tự chép tay phát hiện qua đối chiếu `words.txt` gốc** (không phải lỗi in sách): (1) nước 3 tôi chép "B7.6" (tiến) nhưng bản gốc là "B7-6" (bình); (2) nước 6 tôi chép "Tg4-1" — nhưng đây LÀ lỗi in thật của sách (Tướng không thể bình 3 cột từ file4→file1, vi phạm luật tuyệt đối) → sửa thành "Tg4.1" (đổi verb bình→tiến, giữ số 1, đây là sửa lỗi in chứ không phải lỗi tôi). Sau khi sửa cả 2: 0 warnings, kết thúc có chiếu (inCheck=true) nhưng không chiếu bí, khớp "Trắng thắng".
+  - **vd19** (Hình4.19, 27 quân): FEN `1r2kab1c/4a1R2/4b4/pnp1C2rp/6p2/2P6/P3P1P1P/5RN2/9/2BAKAB2`, first=`do`, 17 nước — 0 warnings ngay lần đầu. Kết thúc khớp đúng câu sách "thắng cuộc đã định" (không chiếu, sách tự cắt ngắn vì đã rõ thắng).
+  - **Tổng Chương 4 hiện tại: Bài 1 — 18/22 xác nhận**. Series `sat-phap-dai-toan` tổng ~579 bài.
+  - **Việc tiếp theo**: Bài 1 vd20 (Hình4.20, trang in 321, đã có 3/14 nước đầu từ preview "1. X8.9 X9-2 / 2. X8-7 X2.2...", cần lấy đủ text tiếp), rồi vd21, vd22 để HOÀN TẤT Bài 1.
