@@ -5,6 +5,39 @@
 
 ---
 
+## 2026-09-16 (4) — Xuất bản 10 bài mẫu + menu chuyên mục thật
+
+User gửi ảnh chụp production (hoccotuong.top/tin-tuc): "Chưa thấy tin tức... Tối ưu giao diện,
+Menu" + "bàn cờ cần có nước đi như bên Bài học". Nguyên nhân: 10 bài ở đợt trước để `draft` (đúng
+quy ước AI-content cần duyệt), nên dù deploy đúng vẫn KHÔNG hiện công khai — production đã seed
+đúng `post_categories` (ảnh cho thấy 4 tên chuyên mục đúng) nhưng 0 bài published.
+
+**Xử lý**: chuyển cả 10 bài `draft`→`published` (đã xem trước kỹ qua Puppeteer ở đợt tạo, chấp nhận
+được) + `cotuong:export-posts` lại để `posts.json` phản ánh đúng trạng thái publish cho lần deploy
+tới. Bàn cờ "có nước đi như bài học" THỰC RA đã đúng từ đầu (mỗi bài nhúng `[co-tuong lesson=...]`
+= y hệt component bài học, có move-list) — vấn đề chỉ là user chưa thấy được VÌ bài chưa publish.
+
+**Menu chuyên mục**: đổi từ hàng `.tag` phẳng sang `.news-cat-nav`/`.news-cat-item` (icon + tên +
+badge số bài, trạng thái active tô đỏ) — giống 1 dải điều hướng thật. Mobile ≤560px: lưới 2 cột
+thay vì xếp chồng dọc 4 hàng đầy màn hình.
+
+**Bug CSS thật bắt qua ảnh chụp mobile** (không phải chỉ đọc code): item lưới bị CẮT CHỮ ở viền
+phải dù `document.documentElement.scrollWidth` báo KHÔNG tràn ngang — vì `overflow-x:hidden` trên
+`body` (đã có sẵn toàn site) chỉ CLIP nội dung tràn tại viền body chứ không cho nó đẩy rộng
+`<html>`, nên phép đo scrollWidth "sạch" trong khi mắt thường vẫn thấy chữ bị cắt. Nguyên nhân gốc:
+`white-space:nowrap` trên `.nc-name` tạo kích thước nội tại (intrinsic width) rộng hơn cột `1fr`,
+và grid item mặc định có `min-width:auto` (không tự co) nên đẩy tràn khỏi ô lưới của nó. **Bài học:
+`document.documentElement.scrollWidth` KHÔNG phát hiện được kiểu tràn bị `overflow-x:hidden` của
+1 ancestor che giấu — phải NHÌN ẢNH CHỤP THẬT (không chỉ dựa vào phép đo số liệu) mới bắt được lớp
+lỗi này. Fix chuẩn: `min-width:0` trên chính grid/flex item (không phải chỉ trên phần tử con) mỗi
+khi item chứa text `white-space:nowrap`.**
+
+**Tiện thể sửa 1 lỗi UX nhỏ phát hiện qua ảnh chụp**: bài đánh dấu `is_featured` bị hiện TRÙNG 2 lần
+(1 lần ở khối "Nổi bật", 1 lần lặp lại trong "Tất cả bài viết" bên dưới) — `PostController@index`
+thêm `whereNotIn('id', $featured->pluck('id'))` cho query danh sách chính.
+
+---
+
 ## 2026-09-16 (3) — 10 bài Tin tức mẫu: video 4 kênh cờ tướng VN + bàn cờ nhúng
 
 User: "Bạn khảo sát và viết tầm 10 bài tin tức có nhúng video trên YouTube của các kênh như Thăng
