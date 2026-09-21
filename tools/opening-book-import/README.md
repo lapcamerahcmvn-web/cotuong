@@ -46,7 +46,8 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 17 | 137 | |
 | 18 | 145 | Rất dài (page 145→159), nhiều ví dụ tranh đoạt đường sườn |
 | 20 | 160 | Sai lầm khi xuất Xe — CỰC DÀI (page 160→176, ~17 trang), nhiều ví dụ Song chính Mã |
-| 22 | 177 | Phối hợp chính Mã và Mã biên — điểm yếu Song chính Mã |
+| 22 | 177 | Phối hợp chính Mã và Mã biên — điểm yếu Song chính Mã — dài (177→192) |
+| 24 | 193 | Ái hận tình thù với quải giác Mã — Tào Nham Lỗi thắng Vương Thiên Nhất |
 | 28 | 222 | |
 | 29 | 233 | |
 | 30 | 244 | |
@@ -72,9 +73,10 @@ BÀI 10 (trang 74) kéo dài liên tục ~29 trang rồi nhảy thẳng sang BÀ
 bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm các chương này nữa — coi như
 đã xử lý xong toàn bộ số trang tương ứng (thuộc về chương liền kề).
 
-**Đã xử lý thêm Bài 15, 22** (trang 118 và 177). Xác nhận thêm **Bài 21 KHÔNG tồn tại** — Bài 20
-(trang 160) kéo dài liên tục tới trang 176 rồi nhảy thẳng sang Bài 22 (trang 177), không có khoảng
-trống cho header riêng.
+**Đã xử lý thêm Bài 15, 22, 24** (trang 118, 177, 193). Xác nhận thêm **Bài 21 và Bài 23 KHÔNG tồn
+tại** — Bài 20 (trang 160) kéo dài liên tục tới trang 176 rồi nhảy thẳng sang Bài 22 (trang 177);
+Bài 22 kéo dài tới trang 192 rồi nhảy thẳng sang Bài 24 (trang 193) — không có khoảng trống cho
+header riêng ở cả hai vị trí.
 
-**Chưa xử lý**: Bài 23–27, 31, 34–36, 38, 42, 44 (12 chương thật sự còn thiếu — nằm rải rác trong
-khoảng trang 177–349).
+**Chưa xử lý**: Bài 25–27, 31, 34–36, 38, 42, 44 (10 chương thật sự còn thiếu — nằm rải rác trong
+khoảng trang 193–349).

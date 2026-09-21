@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T21:28:21+00:00",
+    "exported_at": "2026-09-21T21:32:24+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -122354,6 +122354,162 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 6 tiến 5 — Trắng cho Xe vượt sông ngay lập tức, khai thác đúng khoảng trống mà Song chính Mã của Đen để hở.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 36,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Ái Hận Tình Thù Với Quải Giác Mã — Ván Tào Nham Lỗi Thắng Vương Thiên Nhất",
+            "slug": "ai-han-tinh-thu-voi-quai-giac-ma-van-tao-nham-loi-thang-vuong-thien-nhat",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 12,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Đối Binh cuộc dẫn tới quải giác Mã — thế cờ vừa linh hoạt vừa dễ bị khai thác. Đen chọn xuyên cung Mã thay vì đổi Chốt theo lẽ thường, minh hoạ nguồn lực cơ động bất ngờ mà vị trí này có thể mang lại khi biết vận dụng đúng lúc.",
+            "content": "<h2>Một quan hệ \"vừa yêu vừa ghét\" với quải giác Mã<\/h2>\n<p>Cái tên gợi hình của bài học này phản ánh đúng bản chất mâu thuẫn của quải giác Mã — đưa Mã nhảy chếch vào vị trí góc thay vì lối phát triển chính diện quen thuộc. Người chơi thích nó vì tạo được thế trận linh hoạt, khó đoán; nhưng cũng dè chừng nó vì, như một bài học trước đã chỉ ra, quân Mã đứng ở vị trí này thường thiếu sự che chắn và dễ trở thành mục tiêu bị khai thác.<\/p>\n<h2>Đối Binh cuộc — sân khấu quen thuộc cho quải giác Mã<\/h2>\n<p>Ván đấu thật minh hoạ ở đây bắt đầu từ Đối Binh cuộc — cả hai bên cùng thúc Tốt biên, phát triển đối xứng gần như tuyệt đối. Đây chính là kiểu bố cuộc đã gặp nhiều lần trong chuỗi bài học này, và cũng là môi trường tự nhiên nhất để quải giác Mã xuất hiện: khi cả hai bên đều phát triển thận trọng, không ai vội tạo áp lực trực diện, quải giác Mã có đủ thời gian để tìm chỗ đứng phù hợp mà không bị trừng phạt ngay lập tức.<\/p>\n<h2>Một lối thoát không theo lẽ thường<\/h2>\n<p>Điểm thú vị nhất của ván đấu nằm ở phản ứng của Đen trước nước mời đổi Chốt của Trắng. Thay vì chấp nhận trao đổi theo lẽ thường — điều nhìn qua có vẻ an toàn nhưng thực chất chịu chút thiệt thòi — Đen chọn một giải pháp táo bạo hơn: đưa thẳng quân Mã quải giác xuyên qua khu vực cung điện. Đây là minh chứng rằng vị trí quải giác, dù mang tiếng dễ bị khai thác, vẫn ẩn chứa những khả năng cơ động bất ngờ mà lối phát triển Mã chính diện thông thường không có được.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Quải giác Mã không tốt cũng không xấu một cách tuyệt đối — giá trị thực sự của nó phụ thuộc vào việc người chơi có tìm được đúng nguồn lực chiến thuật để bù đắp cho điểm yếu cấu trúc hay không. Một bài học trước đã chỉ ra cách khắc phục bằng phối hợp với Mã chính; ván đấu này bổ sung thêm một hướng khác — đôi khi chính sự linh hoạt bất ngờ của quải giác Mã, như nước xuyên cung Mã ở đây, lại là lời giải hiệu quả nhất cho chính điểm yếu của nó.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Ái Hận Tình Thù Với Quải Giác Mã Trong Khai Cuộc",
+            "seo_description": "Khai cuộc Đối Binh cuộc: quải giác Mã và nước xuyên cung Mã kinh điển, phân tích ván đấu thật. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C5C1\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c3c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng mở màn bằng Đối Binh cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1C5C1\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen đối xứng lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN4C1\/R8\/2BAKABNR",
+                    "move_notation_wxf": "Xe 9 tiến 1",
+                    "move_notation_iccs": "a0a1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 tiến 1 — Trắng nhấc Xe lên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "rn1akab1r\/9\/1c2b1nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN4C1\/R8\/2BAKABNR",
+                    "move_notation_wxf": "Tượng 3 tiến 5",
+                    "move_notation_iccs": "c9e7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 3 tiến 5 — Đen phi Tượng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "rn1akab1r\/9\/1c2b1nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1B2C1\/R8\/2BAKA1NR",
+                    "move_notation_wxf": "Tượng 3 tiến 5",
+                    "move_notation_iccs": "g0e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 3 tiến 5 — Trắng cũng phi Tượng, hai bên gần như đối xứng tuyệt đối.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "rn1akab2\/8r\/1c2b1nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1B2C1\/R8\/2BAKA1NR",
+                    "move_notation_wxf": "Xe 9 tiến 1",
+                    "move_notation_iccs": "i9i8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 tiến 1 — Đen cũng nhấc Xe lên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "rn1akab2\/8r\/1c2b1nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1B2C1\/6R2\/2BAKA1NR",
+                    "move_notation_wxf": "Xe 9 bình 3",
+                    "move_notation_iccs": "a1g1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 3 — Trắng chuyển Xe sang cột 3.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "r2akab2\/3n4r\/1c2b1nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1B2C1\/6R2\/2BAKA1NR",
+                    "move_notation_wxf": "Mã 2 tiến 4",
+                    "move_notation_iccs": "b9d8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 4 — Đen nhảy Mã vào vị trí quải giác — đúng chủ đề trung tâm mà bài học này xoay quanh: quan hệ vừa lợi vừa hại của thế cờ này.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "r2akab2\/3n4r\/1c2b1nc1\/p1p1p3p\/6p2\/2P3P2\/P3P3P\/1CN1B2C1\/6R2\/2BAKA1NR",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "g3g4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Trắng mời đổi Chốt, một thủ pháp mang tính ép buộc, thăm dò phản ứng của Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 12,
+                    "fen": "r2akab2\/8r\/1c2bnnc1\/p1p1p3p\/6p2\/2P3P2\/P3P3P\/1CN1B2C1\/6R2\/2BAKA1NR",
+                    "move_notation_wxf": "Mã 4 tiến 6",
+                    "move_notation_iccs": "d8f7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 4 tiến 6 — Đen không chấp nhận đổi Chốt theo lẽ thường mà chọn xuyên cung Mã — đưa quân Mã quải giác xuyên thẳng qua khu vực cung điện, một thao tác kinh điển giúp xử lý gọn vấn đề vừa nảy sinh.",
                     "is_flip_reveal": false
                 }
             ]
