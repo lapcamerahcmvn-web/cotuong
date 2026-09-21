@@ -48,6 +48,9 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 20 | 160 | Sai lầm khi xuất Xe — CỰC DÀI (page 160→176, ~17 trang), nhiều ví dụ Song chính Mã |
 | 22 | 177 | Phối hợp chính Mã và Mã biên — điểm yếu Song chính Mã — dài (177→192) |
 | 24 | 193 | Ái hận tình thù với quải giác Mã — Tào Nham Lỗi thắng Vương Thiên Nhất |
+| 25 | 198 | Bàn Mã tam chùy — Ngũ thất Pháo Binh 7 |
+| 26 | 205 | Tả Mã bàn hà |
+| 27 | 212 | Bảng xếp hạng công Mã — đường sườn tấn công quải giác Mã |
 | 28 | 222 | |
 | 29 | 233 | |
 | 30 | 244 | |
@@ -78,5 +81,8 @@ tại** — Bài 20 (trang 160) kéo dài liên tục tới trang 176 rồi nh�
 Bài 22 kéo dài tới trang 192 rồi nhảy thẳng sang Bài 24 (trang 193) — không có khoảng trống cho
 header riêng ở cả hai vị trí.
 
-**Chưa xử lý**: Bài 25–27, 31, 34–36, 38, 42, 44 (10 chương thật sự còn thiếu — nằm rải rác trong
-khoảng trang 193–349).
+**Đã xử lý thêm Bài 25, 26, 27** (trang 198, 205, 212) — cả 3 chương đều tồn tại đầy đủ, không có
+khoảng trống nào giữa 24→25→26→27→28.
+
+**Chưa xử lý**: Bài 31, 34–36, 38, 42, 44 (7 chương thật sự còn thiếu — nằm rải rác trong khoảng
+trang 222–349).
