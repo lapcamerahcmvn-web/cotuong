@@ -36,9 +36,12 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 3 | 17 | Trực Xe/Hoành Xe — rất dài (~19 trang), mới lấy 1 ví dụ |
 | 5 | 38 | |
 | 6 | 46 | Hoành Xe thất lộ Mã — nhiều nhánh phụ, mới lấy 1 ví dụ |
+| 7 | 52 | Trực Xe trong Tiên nhân chỉ lộ |
 | 8 | 62 | |
-| 10 | 74 | |
+| 9 | 67 | Trực Xe trong cờ tán thủ |
+| 10 | 74 | Hoành Xe trong cờ tán thủ — CỰC DÀI (page 74→102, ~29 trang), nhiều ví dụ phụ chưa khai thác hết |
 | 13 | 103 | |
+| 14 | 112 | Chậm ra Xe — trì hoãn có tính toán |
 | 16 | 127 | |
 | 17 | 137 | |
 | 18 | 145 | |
@@ -61,6 +64,11 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 **Đã chạm hết 410 trang / tới Bài 48 (chương cuối)** — nhưng vẫn còn nhiều chương ở giữa sách CHƯA
 xử lý vì trước đó ưu tiên "lấy rộng" theo chuỗi nước sạch, dễ tìm trước:
 
-**Chưa xử lý**: Bài 1, 4, 7, 9, 11, 12, 14, 15, 19, 21–27, 31, 34–36, 38, 42, 44 (23 chương — nằm
-rải rác trong khoảng trang 5–349, cần quay lại dò từng đoạn vì đã nhảy cóc nhiều lần khi xử lý
-Bài 41–48).
+⚠️ **Sách KHÔNG có đủ 48 chương liên tục 1-48** — xác nhận qua khảo sát trực tiếp: đi thẳng từ
+"Lời giới thiệu" sang BÀI 2 (không có BÀI 1), từ cuối BÀI 3 sang thẳng BÀI 5 (không có BÀI 4), và
+BÀI 10 (trang 74) kéo dài liên tục ~29 trang rồi nhảy thẳng sang BÀI 13 (trang 103) — không có BÀI
+11/12. Đánh số "48 bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm 4 chương
+này nữa — coi như đã xử lý xong toàn bộ số trang tương ứng (thuộc về Bài 2/3/5/10 lân cận).
+
+**Chưa xử lý**: Bài 15, 19, 21–27, 31, 34–36, 38, 42, 44 (16 chương thật sự còn thiếu — nằm rải
+rác trong khoảng trang 112–349).
