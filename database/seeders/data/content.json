@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T21:24:02+00:00",
+    "exported_at": "2026-09-21T21:28:21+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -122209,6 +122209,151 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Pháo 8 bình 9 — Trắng dịch chuyển nốt quân Pháo còn lại, vẫn chưa hề đả động gì đến Xe sau sáu nước liên tiếp.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 35,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Thuận Pháo Hoành Xe Đối Trực Xe — Điểm Yếu Của Song Chính Mã Và Hướng Khắc Phục",
+            "slug": "thuan-phao-hoanh-xe-doi-truc-xe-diem-yeu-cua-song-chinh-ma-va-huong-khac-phuc",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 11,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Song chính Mã kiểm soát trung tâm mạnh nhưng để lộ điểm yếu: cả hai Mã đứng đơn độc không được che chắn — Trắng khai thác ngay bằng hoành Xe rồi vượt sông. Gợi mở hướng khắc phục: phối hợp chính Mã và Mã biên.",
+            "content": "<h2>Nhìn lại điểm yếu của Song chính Mã<\/h2>\n<p>Bài học trước đã chỉ ra Song chính Mã — cả hai quân Mã cùng đứng ở vị trí chính giữa — mang lại khả năng khống chế khu vực trung tâm rất mạnh. Nhưng mạnh ở trung lộ không có nghĩa là an toàn tuyệt đối. Ván cờ này phơi bày rõ mặt trái của cấu trúc đó: đứng một mình giữa bàn cờ, quân Mã hoàn toàn không có gì che chắn ở hai bên, trở thành mục tiêu lộ liễu cho bất kỳ đòn tấn công tập trung nào.<\/p>\n<h2>Khai thác điểm yếu trong thực chiến<\/h2>\n<p>Trắng không hoành Xe một cách ngẫu nhiên. Nước hoành Xe sang cánh phải (nước 7) được tính toán để nhắm thẳng vào đúng vị trí trống trải của quân Mã chính bên Đen. Chỉ vài nước sau, Xe Trắng đã vượt sông thẳng vào khu vực đó — một minh chứng cụ thể cho thấy điểm yếu lý thuyết của Song chính Mã hoàn toàn có thể bị khai thác thành áp lực thực tế trên bàn cờ, không chỉ là một nhận xét suông.<\/p>\n<h2>Hướng khắc phục: phối hợp chính Mã và Mã biên<\/h2>\n<p>Nếu Song chính Mã để lộ đúng điểm yếu này, câu hỏi tự nhiên là làm sao vá lại. Một hướng đáng cân nhắc là không nhất thiết phải đưa cả hai Mã vào vị trí chính giữa — kết hợp một Mã chính với một Mã biên ở cánh còn lại giúp quân Mã biên đứng gần góc bàn cờ, khó bị Xe đối phương áp sát trực diện như Mã chính, đồng thời vẫn giữ được một phần khả năng khống chế trung lộ từ quân Mã chính còn lại. Đây chính là hướng đi được gợi mở ngay từ tên gọi của bài học này.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Không có cấu trúc phát triển quân nào là hoàn hảo tuyệt đối — Song chính Mã mạnh về kiểm soát trung tâm nhưng đánh đổi bằng sự trống trải ở hai bên. Nhận diện được đúng điểm yếu tiềm ẩn của một cấu trúc quen thuộc, thay vì áp dụng nó một cách máy móc, mới là điều giúp người chơi biết khi nào nên giữ nguyên và khi nào nên điều chỉnh sang một phối hợp cân bằng hơn.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Điểm Yếu Của Song Chính Mã Trong Khai Cuộc Cờ Tướng",
+            "seo_description": "Khai cuộc Thuận Pháo hoành Xe đối Trực Xe: điểm yếu Song chính Mã bị khai thác, hướng khắc phục phối hợp chính Mã và Mã biên. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 5",
+                    "move_notation_iccs": "h2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 5 — Trắng mở màn Trung Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 8 bình 5",
+                    "move_notation_iccs": "h7e7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 5 — Đen đáp lại bằng Thuận Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã vào đúng vị trí chính giữa.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakab1r\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen cũng phát triển Mã chính — cả hai bên đều chọn Song chính Mã, cấu trúc khống chế trung lộ rất mạnh nhưng lại để hai quân Mã đứng đơn độc, không quân nào che chắn hai bên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakab1r\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/8R\/RNBAKAB2",
+                    "move_notation_wxf": "Xe 1 tiến 1",
+                    "move_notation_iccs": "i0i1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 tiến 1 — Trắng nhấc Xe lên, chuẩn bị hoành ngang.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "rnbakabr1\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/8R\/RNBAKAB2",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "rnbakabr1\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/3R5\/RNBAKAB2",
+                    "move_notation_wxf": "Xe 1 bình 6",
+                    "move_notation_iccs": "i1d1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 6 — Trắng hoàn tất hoành Xe, đưa hẳn sang cánh phải — nhắm thẳng vào đúng vị trí trống trải của quân Mã chính bên Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn1c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/3R5\/RNBAKAB2",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "r1bakabr1\/9\/1cn1c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CN1C1N2\/3R5\/R1BAKAB2",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "r1bakab2\/9\/1cn1c1n2\/p1p1p1p1p\/7r1\/9\/P1P1P1P1P\/1CN1C1N2\/3R5\/R1BAKAB2",
+                    "move_notation_wxf": "Xe 8 tiến 4",
+                    "move_notation_iccs": "h9h5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 8 tiến 4 — Đen đẩy Xe tiến lên, tranh chiếm không gian.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "r1bakab2\/9\/1cn1c1n2\/p1pRp1p1p\/7r1\/9\/P1P1P1P1P\/1CN1C1N2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Xe 6 tiến 5",
+                    "move_notation_iccs": "d1d6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 6 tiến 5 — Trắng cho Xe vượt sông ngay lập tức, khai thác đúng khoảng trống mà Song chính Mã của Đen để hở.",
                     "is_flip_reveal": false
                 }
             ]
