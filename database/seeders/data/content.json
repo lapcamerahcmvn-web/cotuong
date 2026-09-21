@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-25T11:02:48+00:00",
+    "exported_at": "2026-09-21T20:43:32+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -120660,6 +120660,162 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Pháo 2 bình 7 — Đen chuyển Pháo sang cột 7, tiếp tục duy trì áp lực lên vị trí mà Trắng đã bộc lộ điểm yếu ngay từ khai cuộc.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 25,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Song Pháo Quá Hà — Áp Lực Kép Từ Cả Hai Quân Pháo Vượt Sông",
+            "slug": "song-phao-qua-ha-ap-luc-kep-tu-ca-hai-quan-phao-vuot-song",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 12,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Song Pháo quá hà: cả hai quân Pháo cùng lần lượt vượt sông tạo áp lực kép — một chiến thuật linh hoạt áp dụng được vào nhiều khai cuộc, nhưng cần tính đúng thời điểm.",
+            "content": "<h2>Khi cả hai Pháo cùng vượt sông<\/h2>\n<p>Nhiều bài trước đã nói về việc đưa một quân Pháo tiến sâu để gây áp lực. Bài này đẩy ý tưởng đó lên một bậc: <strong>Song Pháo quá hà<\/strong> — cả hai quân Pháo cùng lần lượt vượt sông (nước 9 và nước 12), thay vì chỉ một quân đơn lẻ.<\/p>\n<h2>Một chiến thuật hơn là một khai cuộc cố định<\/h2>\n<p>Điều thú vị là Song Pháo quá hà không gắn chặt với riêng một khai cuộc nào — nó là một ý tưởng chiến thuật có thể xuất hiện ở nhiều bối cảnh khác nhau, miễn là thời cơ phù hợp. Trong ván này, nó xuất hiện tự nhiên từ nền Trung Pháo đối Bình Phong Mã quen thuộc, cho thấy cùng một ý tưởng cốt lõi có thể áp dụng linh hoạt vào nhiều cấu trúc khai cuộc khác nhau.<\/p>\n<h2>Sức mạnh kép đi kèm rủi ro kép<\/h2>\n<p>Đưa cả hai Pháo cùng tiến sâu tạo áp lực rất lớn — đối phương phải đồng thời đối phó hai hướng tấn công thay vì một. Nhưng đây cũng là con dao hai lưỡi: nếu cả hai Pháo đều rời xa vị trí an toàn cùng lúc, phần hậu phương phía sau (nơi Xe và Mã đứng) sẽ tạm thời thiếu người bảo vệ. Thời điểm quyết định tung cả hai Pháo cùng lúc, vì vậy, quan trọng không kém bản thân ý tưởng chiến thuật.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Một chiến thuật mạnh không có nghĩa nên dùng bừa bãi. Song Pháo quá hà chỉ thực sự hiệu quả khi người chơi tính toán đúng thời điểm — đủ tự tin rằng phần quân còn lại phía sau có thể tự vệ trong lúc cả hai \"mũi nhọn\" đang mải tấn công ở tiền tuyến.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Song Pháo Quá Hà — Áp Lực Kép Trong Khai Cuộc",
+            "seo_description": "Chiến thuật Song Pháo quá hà: cả hai Pháo cùng vượt sông tạo áp lực kép. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 5",
+                    "move_notation_iccs": "h2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 5 — Trắng mở màn Trung Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen đáp lại bằng Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "i0h0",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Trắng đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen hoàn tất Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c3c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng nhích Tốt biên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen đối xứng lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1C1N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển nốt Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "r1bakabr1\/9\/2n3nc1\/p1p1p3p\/6p2\/2P6\/Pc2P1P1P\/1CN1C1N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Pháo 2 tiến 4",
+                    "move_notation_iccs": "b7b3",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 tiến 4 — Đen đẩy Pháo tiến sâu, bước đầu của chiến thuật \"Song Pháo quá hà\": không chỉ một mà cả hai quân Pháo sẽ lần lượt vượt sông, tạo áp lực kép lên đối phương thay vì chỉ đơn thuần phát triển quân.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "r1bakabr1\/9\/2n3nc1\/p1p1p3p\/6p2\/2P1P4\/Pc4P1P\/1CN1C1N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Tốt 5 tiến 1",
+                    "move_notation_iccs": "e3e4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 5 tiến 1 — Trắng thúc Tốt giữa, chuẩn bị đối phó áp lực sắp tới.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 12,
+                    "fen": "r1bakabr1\/9\/2n3n2\/p1p1p3p\/6p2\/2P1P4\/Pc4PcP\/1CN1C1N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Pháo 8 tiến 4",
+                    "move_notation_iccs": "h7h3",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 tiến 4 — Đen tiếp tục đẩy quân Pháo còn lại tiến sâu, hoàn tất thế \"Song Pháo quá hà\" — cả hai quân Pháo cùng lúc gây sức ép trên hai cánh.",
                     "is_flip_reveal": false
                 }
             ]
