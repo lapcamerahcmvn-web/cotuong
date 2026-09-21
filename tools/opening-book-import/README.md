@@ -52,6 +52,15 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 39 | 320 | |
 | 40 | 329 | |
 | 41 | 337 | Song Pháo quá hà |
+| 43 | 357 | Lưỡng đầu xà đối Tam bộ hổ |
+| 45 | 374 | Phi Tượng cũng có thể thúc Chốt giữa (Đối Binh cuộc) |
+| 46 | 382 | Cờ xấu phi Tượng loạn — Du ly Tượng |
+| 47 | ~386 | Vấn đề bổ Sĩ (thời cơ) — ví dụ dùng: Trung Pháo đối Phản Cung Mã (Hình361, tr.394) |
+| 48 | 400 | Bản chất của bố cuộc (chương cuối sách) — Ngũ cửu Pháo quá hà Xe, Song Xe áp chế (Hình366, tr.401) |
 
-**Chưa xử lý**: Bài 1, 4, 7, 9, 11, 12, 14, 15, 19, 21–27, 31, 34–36, 38, 42–48 (trang PDF ~345
-trở đi cho các bài cuối).
+**Đã chạm hết 410 trang / tới Bài 48 (chương cuối)** — nhưng vẫn còn nhiều chương ở giữa sách CHƯA
+xử lý vì trước đó ưu tiên "lấy rộng" theo chuỗi nước sạch, dễ tìm trước:
+
+**Chưa xử lý**: Bài 1, 4, 7, 9, 11, 12, 14, 15, 19, 21–27, 31, 34–36, 38, 42, 44 (23 chương — nằm
+rải rác trong khoảng trang 5–349, cần quay lại dò từng đoạn vì đã nhảy cóc nhiều lần khi xử lý
+Bài 41–48).
