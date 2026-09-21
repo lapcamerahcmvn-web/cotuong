@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T22:48:24+00:00",
+    "exported_at": "2026-09-21T22:55:44+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -123558,6 +123558,208 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 9 tiến 2 — Đen đáp lại đối xứng, cũng nhấc Xe lên bảo vệ Pháo của mình — cả hai bên cùng hình thành thế Uyên ương Pháo.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 44,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Lưỡng Đầu Xà — Cách Xuất Động Chốt Nổi Tiếng Nhất",
+            "slug": "luong-dau-xa-cach-xuat-dong-chot-noi-tieng-nhat",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 10,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Trung Pháo trực hoành Xe đối Bình phong Mã lưỡng đầu xà: Đen thúc cả hai Tốt biên để đối phó Xe Trắng áp sát nhanh — mở đầu chuỗi bài học về cách vận dụng các quân Tốt, Sĩ, Tượng sau khi đã hiểu kỹ Xe Pháo Mã.",
+            "content": "<h2>Mở ra một chương mới: từ ba chủ lực đến các quân nhỏ<\/h2>\n<p>Sau một chuỗi dài các bài học xoay quanh Xe, Pháo, Mã — ba chủ lực quan trọng nhất — đã đến lúc chuyển hướng sang những quân cờ nhỏ hơn: Tốt, Sĩ, Tượng. Mở đầu cho hướng đi mới này chính là Lưỡng đầu xà — được giới thiệu như cách xuất động Tốt nổi tiếng nhất trong toàn bộ lý thuyết khai cuộc. Một quân Tốt tưởng chừng chậm chạp, hoá ra cũng có những kỹ thuật vận dụng đáng để nghiên cứu kỹ lưỡng không kém gì các chủ lực.<\/p>\n<h2>Một cấu trúc quen thuộc — nhưng lần này từ phía bên kia<\/h2>\n<p>Người chơi đã theo dõi kỹ chuỗi bài học này hẳn sẽ nhận ra Lưỡng đầu xà không hoàn toàn xa lạ — một bài học trước đã từng phân tích chính cấu trúc này, nhưng khi đó là Trắng chủ động thúc cả hai Tốt biên. Ván này cho thấy góc nhìn ngược lại: đến lượt Đen, phía đang chơi Bình phong Mã, chọn Lưỡng đầu xà để đối phó với thế Trực hoành Xe áp sát rất nhanh của Trắng. Cùng một ý tưởng nhưng xuất hiện từ cả hai phía chứng tỏ đây không phải một mánh khoé ngẫu nhiên mà là một lựa chọn cấu trúc đã được kiểm chứng kỹ.<\/p>\n<h2>Thúc cả hai Tốt biên cùng lúc — cái giá và cái được<\/h2>\n<p>Thông thường, mỗi bên chỉ thúc một Tốt biên để phối hợp linh hoạt cùng Mã, còn Tốt biên phía còn lại giữ nguyên hỗ trợ phòng thủ. Lưỡng đầu xà phá vỡ sự cân bằng đó, đưa cả hai Tốt biên tiến lên đồng thời. Cái giá phải trả là tạm thời giảm bớt sự hỗ trợ tại cả hai cánh; cái được lại là khả năng vươn xa và linh hoạt ở cả hai phía cùng lúc — đặc biệt hữu ích khi đối phương đã dồn lực tấn công quyết liệt như Trắng trong ván này.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Một kỹ thuật được xem là \"nổi tiếng nhất\" không có nghĩa là luôn luôn cần áp dụng, mà là đáng để hiểu thấu đáo vì tính lặp lại và độ tin cậy của nó qua nhiều tình huống khác nhau — như đã thấy, ý tưởng tương tự có thể xuất hiện từ cả hai phía bàn cờ. Biết khi nào nên dồn lực cả hai cánh cùng lúc, thay vì luôn giữ một bên dự phòng, là một kỹ năng cần rèn luyện từ hiểu biết thực sự, không phải áp dụng máy móc theo công thức cố định.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Lưỡng Đầu Xà — Kỹ Thuật Xuất Tốt Nổi Tiếng Nhất",
+            "seo_description": "Khai cuộc Trung Pháo trực hoành Xe đối Bình phong Mã lưỡng đầu xà: kỹ thuật xuất động Tốt nổi tiếng nhất. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 5",
+                    "move_notation_iccs": "h2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 5 — Trắng mở màn Trung Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen đáp lại bằng Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "i0h0",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Trắng đưa Xe vào cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p3p\/6p2\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen nhích Tốt lộ 7.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p2Rp\/6p2\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB2",
+                    "move_notation_wxf": "Xe 2 tiến 6",
+                    "move_notation_iccs": "h0h6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 2 tiến 6 — Trắng cho Xe vượt sông ngay, áp chế mạnh mẽ hình trận Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p2Rp\/6p2\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB2",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p2Rp\/6p2\/9\/P1P1P1P1P\/1CN1C1N2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p3p2Rp\/2p3p2\/9\/P1P1P1P1P\/1CN1C1N2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "c6c5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Đen thúc nốt Tốt lộ 3 — hoàn tất Lưỡng đầu xà: cả hai Tốt biên của Đen đều đã tiến lên, đúng chủ đề chính của bài học này.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 45,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Lưỡng Đầu Xà Trong Cờ Tán Thủ — Khống Chế Cả Hai Mã Cùng Lúc",
+            "slug": "luong-dau-xa-trong-co-tan-thu-khong-che-ca-hai-ma-cung-luc",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 4,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Khởi Mã cuộc dẫn tới Song chính Mã của Trắng chỉ sau hai nước — Đen lập tức đáp trả bằng Lưỡng đầu xà, khống chế cả hai quân Mã cùng lúc, một cục diện hiếm gặp. Khép lại chuỗi ba bài học nhìn Lưỡng đầu xà từ ba bối cảnh khác nhau.",
+            "content": "<h2>Khép lại một chủ đề — nhìn từ góc độ thứ ba<\/h2>\n<p>Hai bài học trước đã xem xét Lưỡng đầu xà trong bối cảnh Trung Pháo — nơi mọi thứ diễn ra kịch liệt, đầy tính đối kháng ngay từ đầu. Bài học này đưa cùng một ý tưởng vào một môi trường hoàn toàn khác: cờ tán thủ, nơi cả hai bên đều phát triển thong thả, không vội tranh chấp. Đây là dịp để kiểm chứng xem Lưỡng đầu xà có còn giữ nguyên giá trị khi bối cảnh xung quanh nó thay đổi hẳn hay không.<\/p>\n<h2>Một cục diện hiếm gặp: khống chế cả hai Mã cùng lúc<\/h2>\n<p>Trong phần lớn các ván cờ tán thủ, một bên thường chỉ phát triển một Mã chính và một Mã biên, nên Lưỡng đầu xà thông thường chỉ đủ sức gây áp lực lên một quân Mã duy nhất. Nhưng ở đây, vì Trắng chọn hình thành Song chính Mã ngay từ hai nước đầu tiên, Đen bất ngờ có cơ hội dùng Lưỡng đầu xà khống chế cả hai quân Mã cùng lúc — một tình huống được xem là lý tưởng và không dễ gặp trong thực chiến.<\/p>\n<h2>Tốc độ hình thành là chìa khoá<\/h2>\n<p>Điều đáng chú ý nhất có lẽ là tốc độ: trong khi các phiên bản Lưỡng đầu xà ở bối cảnh Trung Pháo cần nhiều nước chuẩn bị và luôn đi kèm hàng loạt biến hoá chiến thuật phức tạp, ở đây cấu trúc này hình thành chỉ sau đúng hai nước mỗi bên. Chính vì cờ tán thủ không tạo áp lực buộc phải phản ứng ngay, cả hai bên đều rảnh tay theo đuổi kế hoạch riêng — và đó là điều kiện lý tưởng để một cấu trúc như Lưỡng đầu xà hình thành nhanh và trọn vẹn.<\/p>\n<h2>Bài học khép lại: cùng một ý tưởng, ba bối cảnh khác nhau<\/h2>\n<p>Ba bài học liên tiếp đã cùng nhìn vào một ý tưởng duy nhất — Lưỡng đầu xà — từ ba góc độ khác nhau: như vũ khí của Trắng trước Tam bộ hổ, như phương án phòng thủ của Đen trước một thế Trực hoành Xe áp sát nhanh, và giờ đây như một lựa chọn cấu trúc sớm trong không khí điềm tĩnh của cờ tán thủ. Nhìn một ý tưởng qua nhiều bối cảnh khác nhau, thay vì chỉ gặp nó đúng một lần, chính là cách biến một mẹo cờ đơn lẻ thành hiểu biết thực sự có thể vận dụng linh hoạt.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Lưỡng Đầu Xà Trong Cờ Tán Thủ — Khai Cuộc Cờ Tướng",
+            "seo_description": "Khai cuộc Khởi Mã cuộc: Lưỡng đầu xà trong cờ tán thủ khống chế cả hai Mã cùng lúc, cục diện hiếm gặp. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng mở màn bằng Khởi Mã cuộc, thay vì đưa Pháo vào giữa như phần lớn ván đã gặp trước đó.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "c6c5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Đen nhích Tốt lộ 3.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN3NC1\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển nốt Mã còn lại, hình thành Song chính Mã ngay từ những nước rất sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p3p\/2p3p2\/9\/P1P1P1P1P\/1CN3NC1\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen thúc nốt Tốt lộ 7, hoàn tất Lưỡng đầu xà chỉ sau vỏn vẹn hai nước — một cục diện hiếm gặp, khống chế cùng lúc cả hai quân Mã của Trắng ngay từ giai đoạn rất sớm của ván cờ.",
                     "is_flip_reveal": false
                 }
             ]

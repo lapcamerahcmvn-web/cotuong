@@ -64,35 +64,26 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 39 | 320 | |
 | 40 | 329 | |
 | 41 | 337 | Song Pháo quá hà |
+| 42 | 347 | Lưỡng đầu xà — cách xuất động Chốt nổi tiếng nhất |
 | 43 | 357 | Lưỡng đầu xà đối Tam bộ hổ |
+| 44 | 366 | Lưỡng đầu xà trong cờ tán thủ |
 | 45 | 374 | Phi Tượng cũng có thể thúc Chốt giữa (Đối Binh cuộc) |
 | 46 | 382 | Cờ xấu phi Tượng loạn — Du ly Tượng |
 | 47 | ~386 | Vấn đề bổ Sĩ (thời cơ) — ví dụ dùng: Trung Pháo đối Phản Cung Mã (Hình361, tr.394) |
 | 48 | 400 | Bản chất của bố cuộc (chương cuối sách) — Ngũ cửu Pháo quá hà Xe, Song Xe áp chế (Hình366, tr.401) |
 
-**Đã chạm hết 410 trang / tới Bài 48 (chương cuối)** — nhưng vẫn còn nhiều chương ở giữa sách CHƯA
-xử lý vì trước đó ưu tiên "lấy rộng" theo chuỗi nước sạch, dễ tìm trước:
+## ✅ HOÀN TẤT — đã xử lý toàn bộ sách (2026-09-22)
 
-⚠️ **Sách KHÔNG có đủ 48 chương liên tục 1-48** — xác nhận qua khảo sát trực tiếp: đi thẳng từ
-"Lời giới thiệu" sang BÀI 2 (không có BÀI 1), từ cuối BÀI 3 sang thẳng BÀI 5 (không có BÀI 4),
-BÀI 10 (trang 74) kéo dài liên tục ~29 trang rồi nhảy thẳng sang BÀI 13 (trang 103) — không có BÀI
-11/12, và cuối BÀI 18 (trang 159) nhảy thẳng sang BÀI 20 (trang 160) — không có BÀI 19. Đánh số "48
-bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm các chương này nữa — coi như
-đã xử lý xong toàn bộ số trang tương ứng (thuộc về chương liền kề).
+Đã đọc hết 410 trang, xử lý toàn bộ 40 chương thật sự tồn tại trong sách (thành 45 bài học, vì một
+số chương có 2 ví dụ tách biệt). Series "Nền Tảng Nguyên Lý Khai Cuộc" (LessonSeries id=11) hiện có
+**45 bài, order 1–45, tất cả đã published**.
 
-**Đã xử lý thêm Bài 15, 22, 24, 25, 26, 27, 31** (trang 118, 177, 193, 198, 205, 212, 251). Xác
-nhận thêm **Bài 21 và Bài 23 KHÔNG tồn tại** — Bài 20 (trang 160) kéo dài liên tục tới trang 176
-rồi nhảy thẳng sang Bài 22 (trang 177); Bài 22 kéo dài tới trang 192 rồi nhảy thẳng sang Bài 24
-(trang 193) — không có khoảng trống cho header riêng ở cả hai vị trí. Bài 24→25→26→27→28→...→31
-đều tồn tại liên tục, không có gián đoạn nào thêm trong khoảng này.
+⚠️ **Sách KHÔNG có đủ 48 chương liên tục 1-48** — xác nhận qua khảo sát trực tiếp, sách chỉ có
+**40 chương thật sự tồn tại**, thiếu 8 số: **Bài 1, 4, 11, 12, 19, 21, 23, 38** — mỗi lần đều là
+chương liền trước kéo dài hết trang rồi nhảy thẳng sang chương liền sau, không có header riêng nào
+bị bỏ sót. Đánh số "48 bài giảng" trong tên sách chỉ là số danh nghĩa/tiếp thị, không phản ánh đúng
+số chương thật.
 
-**Đã xử lý thêm Bài 34, 35, 36** (trang 275, 285, 296) — cả 3 chương đều tồn tại đầy đủ.
-
-**Chưa xử lý**: Bài 38, 42, 44 (3 chương thật sự còn thiếu — nằm rải rác trong khoảng trang
-305–349).
-
-**Đã xử lý thêm Bài 25, 26, 27** (trang 198, 205, 212) — cả 3 chương đều tồn tại đầy đủ, không có
-khoảng trống nào giữa 24→25→26→27→28.
-
-**Chưa xử lý**: Bài 31, 34–36, 38, 42, 44 (7 chương thật sự còn thiếu — nằm rải rác trong khoảng
-trang 222–349).
+Nếu có phiên bản sách khác hoặc bản in bổ sung xuất hiện sau này với đúng 8 chương còn thiếu, có
+thể áp dụng lại đúng quy trình 6 bước ở trên để bổ sung. Còn lại, xem như dự án trích xuất nội dung
+từ tài liệu tham khảo này đã hoàn tất.
