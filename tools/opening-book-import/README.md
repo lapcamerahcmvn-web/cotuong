@@ -57,6 +57,9 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 31 | 251 | Ngũ bát Pháo — bí mật của Pháo quá hà |
 | 32 | 259 | |
 | 33 | 265 | |
+| 34 | 275 | Lôi công Pháo — Hoàng Hải Lâm thắng Triệu Quốc Vinh |
+| 35 | 285 | Thuận Pháo và Nghịch Pháo |
+| 36 | 296 | Lãnh môn Pháo — Uyên ương Pháo, Quy bối Pháo |
 | 37 | 305 | |
 | 39 | 320 | |
 | 40 | 329 | |
@@ -83,8 +86,10 @@ rồi nhảy thẳng sang Bài 22 (trang 177); Bài 22 kéo dài tới trang 192
 (trang 193) — không có khoảng trống cho header riêng ở cả hai vị trí. Bài 24→25→26→27→28→...→31
 đều tồn tại liên tục, không có gián đoạn nào thêm trong khoảng này.
 
-**Chưa xử lý**: Bài 34–36, 38, 42, 44 (6 chương thật sự còn thiếu — nằm rải rác trong khoảng trang
-259–349).
+**Đã xử lý thêm Bài 34, 35, 36** (trang 275, 285, 296) — cả 3 chương đều tồn tại đầy đủ.
+
+**Chưa xử lý**: Bài 38, 42, 44 (3 chương thật sự còn thiếu — nằm rải rác trong khoảng trang
+305–349).
 
 **Đã xử lý thêm Bài 25, 26, 27** (trang 198, 205, 212) — cả 3 chương đều tồn tại đầy đủ, không có
 khoảng trống nào giữa 24→25→26→27→28.
