@@ -9,7 +9,9 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 1. Render vài trang PDF bằng Python (`pymupdf`) rồi đọc bằng mắt để tìm tiêu đề chương + chuỗi
    nước "1. X Y  2. ...". Ưu tiên lấy ví dụ đầu tiên/chính của mỗi chương, không cần đào hết mọi
    nhánh phụ ("Biến hóa...").
-2. Dùng `notation-parser.js` ở thư mục này: `applyGame(['P2-5','M8.7',...])` → parse ký hiệu sách
+2. Dùng `notation-parser.cjs` ở thư mục này (đuôi `.cjs` bắt buộc — repo gốc có
+   `"type": "module"` trong `package.json`, `.js` thường sẽ bị nạp nhầm qua ESM loader):
+   `applyGame(['P2-5','M8.7',...])` → parse ký hiệu sách
    thành `{from,to}`, validate qua đúng engine luật (`public/js/xiangqi-rules.js`) — **tự ném lỗi
    nếu gõ sai/thiếu nước**, đây là lưới an toàn quan trọng nhất.
 3. Verify bằng mắt: dùng `tools/og-image/render-board.cjs` (`renderBoardStatic(fen)`) +

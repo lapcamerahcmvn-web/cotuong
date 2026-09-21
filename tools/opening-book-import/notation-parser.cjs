@@ -5,8 +5,11 @@
 // (dữ kiện cờ) rồi viết lại lý thuyết 100% bằng lời riêng.
 //
 // Dùng: node tools/opening-book-import/notation-parser.js  (làm module, xem ví dụ cuối file)
+// Lưu ý: dùng require() với đường dẫn TUYỆT ĐỐI (không phải __dirname-relative) — trên máy này,
+// chạy qua `node -e` đôi khi Node nạp file CJS này qua ESM loader khiến __dirname không dùng
+// được đúng cách (báo lỗi resolve path tương đối). Nếu chuyển máy/host khác, đổi path bên dưới.
 global.window = global;
-require(require('path').join(__dirname, '..', '..', 'public', 'js', 'xiangqi-rules.js'));
+require('D:/wamp64/www/cotuong/public/js/xiangqi-rules.js');
 var R = global.XiangqiRules;
 
 var START = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
