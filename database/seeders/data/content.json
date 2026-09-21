@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T21:18:49+00:00",
+    "exported_at": "2026-09-21T21:24:02+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -122064,6 +122064,151 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Pháo 2 tiến 4 — Đen tiến hẳn Pháo sâu vào trận địa Trắng, để lộ ý đồ thật sự phía sau việc trì hoãn xuất Xe từ đầu.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 34,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Trường Hợp Cực Đoan Của Chậm Ra Xe — Sáu Nước Không Đụng Đến Xe",
+            "slug": "truong-hop-cuc-doan-cua-cham-ra-xe-sau-nuoc-khong-dung-den-xe",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 11,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Trắng đẩy cùng một quân Mã tiến sâu ba nước liên tiếp, hoàn toàn không đụng đến Xe suốt sáu nước — trường hợp cực đoan kiểm chứng giới hạn của nguyên tắc \"xuất động chủ lực nhanh\" đã học từ bài đầu chuỗi bài học.",
+            "content": "<h2>Bài kiểm tra cuối cùng cho một nguyên tắc<\/h2>\n<p>Bài học trước đã giới thiệu khái niệm \"chậm ra Xe\" ở mức độ vừa phải — trì hoãn một vài nước để chuẩn bị một kế hoạch cụ thể. Ván cờ này đẩy ý tưởng đó lên mức cực đoan hơn hẳn: đúng như tên gọi của bài học, đây là \"thách thức cuối cùng\" đối với nguyên tắc xuất động chủ lực nhanh — trường hợp giới hạn để xem nguyên tắc này có thể bị kéo dãn tới đâu trước khi thật sự trở thành sai lầm.<\/p>\n<h2>Sáu nước không hề đụng đến Xe<\/h2>\n<p>Nhìn lại toàn bộ chuỗi nước của Trắng: Tốt biên, phi Tượng, nhảy Mã, rồi đẩy đúng quân Mã đó tiến sâu thêm hai lần liên tiếp, sau đó dịch chuyển Pháo — trọn vẹn sáu nước mà quân Xe vẫn đứng nguyên tại vị trí ban đầu. Bài học khép lại chuỗi bài này từng khẳng định Xe là quân được ưu tiên hàng đầu trong toàn bộ 48 chương của cuốn sách gốc mà loạt bài học này dựa theo tinh thần; ván cờ này gần như đi ngược hoàn toàn với kết luận đó, ít nhất là về mặt số nước đi.<\/p>\n<h2>Khi một quân khác tạm thời \"thế chỗ\" vai trò chủ lực<\/h2>\n<p>Nhưng đây không phải sự lãng quên vô cớ. Quân Mã của Trắng không đứng yên mà liên tục tiến sâu, tạo áp lực thực sự buộc Pháo Đen phải lùi lại phòng thủ (nước 10). Nói cách khác, trong quãng thời gian Xe \"vắng mặt\", quân Mã đã tạm thời gánh vác một phần vai trò tạo áp lực mà lẽ ra thuộc về chủ lực chính — đủ để bù đắp phần nào cho sự chậm trễ, miễn là áp lực đó thực sự buộc đối phương phải phản ứng.<\/p>\n<h2>Giới hạn nào là chấp nhận được<\/h2>\n<p>Chính vì đây là trường hợp cực đoan, ván cờ này nên được nhìn nhận như một ranh giới cần hiểu rõ chứ không phải một khuôn mẫu nên áp dụng thường xuyên. Nguyên tắc \"xuất động chủ lực nhanh\" không sụp đổ vì ví dụ này — nó chỉ cho thấy nguyên tắc tồn tại được là nhờ người chơi luôn ý thức được cái giá của sự trì hoãn và có phương án bù đắp cụ thể, được kiểm chứng bằng áp lực thực tế trên bàn cờ. Ngay khi phương án bù đắp đó không còn hiệu quả, nguyên tắc ban đầu sẽ lập tức đòi lại vị trí ưu tiên của nó.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Trường Hợp Cực Đoan Của Chậm Ra Xe Trong Khai Cuộc",
+            "seo_description": "Khai cuộc Tiên nhân chỉ lộ đối Tốt để Pháo: trường hợp cực đoan Trắng trì hoãn Xe sáu nước, kiểm chứng giới hạn nguyên tắc khai cuộc. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C5C1\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c3c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng mở màn bằng Tiên nhân chỉ lộ.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/2c4c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C5C1\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 3",
+                    "move_notation_iccs": "b7c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 3 — Đen đáp lại bằng Tốt để Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/2c4c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C2B2C1\/9\/RNBAKA1NR",
+                    "move_notation_wxf": "Tượng 3 tiến 5",
+                    "move_notation_iccs": "g0e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 3 tiến 5 — Trắng phi Tượng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "r1bakabnr\/9\/n1c4c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1C2B2C1\/9\/RNBAKA1NR",
+                    "move_notation_wxf": "Mã 2 tiến 1",
+                    "move_notation_iccs": "b9a7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 1 — Đen đưa Mã ra vị trí biên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "r1bakabnr\/9\/n1c4c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1CN1B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "1rbakabnr\/9\/n1c4c1\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1CN1B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "a9b9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Đen đưa Xe vào cuộc đúng lúc, không có gì bất thường ở phía Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "1rbakabnr\/9\/n1c4c1\/p1p1p1p1p\/9\/2PN5\/P3P1P1P\/1C2B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Mã 7 tiến 6",
+                    "move_notation_iccs": "c2d4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 7 tiến 6 — Trắng đẩy quân Mã này tiến sâu thêm một bước, hướng thẳng vào khu vực trung tâm đối phương — trong khi quân Xe của Trắng vẫn chưa hề nhúc nhích sau bốn nước.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "1rbakabnr\/9\/n1c1c4\/p1p1p1p1p\/9\/2PN5\/P3P1P1P\/1C2B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Pháo 8 bình 5",
+                    "move_notation_iccs": "h7e7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 5 — Đen đưa Pháo vào giữa.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "1rbakabnr\/9\/n1c1c4\/p1p1N1p1p\/9\/2P6\/P3P1P1P\/1C2B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Mã 6 tiến 5",
+                    "move_notation_iccs": "d4e6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 6 tiến 5 — Trắng tiếp tục đẩy đúng quân Mã này tiến sâu thêm lần nữa, áp sát ngay khu vực trung tâm đối phương. Đây là nước thứ ba liên tiếp của cùng một quân Mã, trong khi Xe vẫn hoàn toàn \"án binh bất động\".",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "1rbakabnr\/2c6\/n3c4\/p1p1N1p1p\/9\/2P6\/P3P1P1P\/1C2B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Pháo 3 thoái 1",
+                    "move_notation_iccs": "c7c8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 3 thoái 1 — Đen buộc phải lùi Pháo, phòng ngừa trước sức ép bất ngờ từ quân Mã đang tiến sâu.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "1rbakabnr\/2c6\/n3c4\/p1p1N1p1p\/9\/2P6\/P3P1P1P\/C3B2C1\/9\/R1BAKA1NR",
+                    "move_notation_wxf": "Pháo 8 bình 9",
+                    "move_notation_iccs": "b2a2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 9 — Trắng dịch chuyển nốt quân Pháo còn lại, vẫn chưa hề đả động gì đến Xe sau sáu nước liên tiếp.",
                     "is_flip_reveal": false
                 }
             ]

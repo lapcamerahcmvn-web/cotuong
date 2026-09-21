@@ -44,8 +44,8 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 14 | 112 | Chậm ra Xe — trì hoãn có tính toán |
 | 16 | 127 | |
 | 17 | 137 | |
-| 18 | 145 | |
-| 20 | 162 | |
+| 18 | 145 | Rất dài (page 145→159), nhiều ví dụ tranh đoạt đường sườn |
+| 20 | 160 | |
 | 28 | 222 | |
 | 29 | 233 | |
 | 30 | 244 | |
@@ -65,10 +65,13 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 xử lý vì trước đó ưu tiên "lấy rộng" theo chuỗi nước sạch, dễ tìm trước:
 
 ⚠️ **Sách KHÔNG có đủ 48 chương liên tục 1-48** — xác nhận qua khảo sát trực tiếp: đi thẳng từ
-"Lời giới thiệu" sang BÀI 2 (không có BÀI 1), từ cuối BÀI 3 sang thẳng BÀI 5 (không có BÀI 4), và
+"Lời giới thiệu" sang BÀI 2 (không có BÀI 1), từ cuối BÀI 3 sang thẳng BÀI 5 (không có BÀI 4),
 BÀI 10 (trang 74) kéo dài liên tục ~29 trang rồi nhảy thẳng sang BÀI 13 (trang 103) — không có BÀI
-11/12. Đánh số "48 bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm 4 chương
-này nữa — coi như đã xử lý xong toàn bộ số trang tương ứng (thuộc về Bài 2/3/5/10 lân cận).
+11/12, và cuối BÀI 18 (trang 159) nhảy thẳng sang BÀI 20 (trang 160) — không có BÀI 19. Đánh số "48
+bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm các chương này nữa — coi như
+đã xử lý xong toàn bộ số trang tương ứng (thuộc về chương liền kề).
 
-**Chưa xử lý**: Bài 15, 19, 21–27, 31, 34–36, 38, 42, 44 (16 chương thật sự còn thiếu — nằm rải
-rác trong khoảng trang 112–349).
+**Đã xử lý thêm Bài 15** (trang 118, "Trường hợp cực đoan của chậm ra Xe").
+
+**Chưa xử lý**: Bài 21–27, 31, 34–36, 38, 42, 44 (14 chương thật sự còn thiếu — nằm rải rác trong
+khoảng trang 160–349).
