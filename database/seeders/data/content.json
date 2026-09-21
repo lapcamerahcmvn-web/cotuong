@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T21:42:11+00:00",
+    "exported_at": "2026-09-21T21:45:40+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -122912,6 +122912,129 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Mã 2 tiến 4 — Đen nhảy Mã vào vị trí quải giác — đúng loại quân mà bài học này xếp vào nhóm mục tiêu tấn công đáng chú ý nhất.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 40,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Ngũ Bát Pháo — Bí Mật Của Pháo Quá Hà",
+            "slug": "ngu-bat-phao-bi-mat-cua-phao-qua-ha",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 9,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Trực Xe Ngũ bát Pháo đối Bình phong Mã: quân Pháo còn lại tiến sâu bốn bước qua sông ngay từ khai cuộc — phá vỡ nguyên tắc \"Pháo không nên khinh suất tiến sâu\" một cách có tính toán, vũ khí thứ ba bên cạnh Ngũ lục Pháo và Ngũ thất Pháo.",
+            "content": "<h2>Ba món \"vũ khí\" cùng một họ Pháo<\/h2>\n<p>Những bài học trước đã lần lượt giới thiệu Ngũ lục Pháo — hữu hiệu khi đối phương định xuất Xe quá nhanh — và Ngũ thất Pháo với chiến thuật phế Song Chốt khó lường. Nhưng không có \"vũ khí\" nào là hoàn hảo tuyệt đối cho mọi tình huống. Ván này giới thiệu lựa chọn thứ ba: Ngũ bát Pháo, nơi quân Pháo còn lại không chỉ dịch chuyển mà còn tiến hẳn sâu qua sông ngay trong giai đoạn khai cuộc.<\/p>\n<h2>Một sự phá cách táo bạo: đưa Pháo vượt sâu qua sông<\/h2>\n<p>Thông thường, nguyên tắc sử dụng Pháo trong khai cuộc là giữ nó ở nhà, đóng vai trò uy hiếp từ xa — một khi Pháo đã vượt sông, nó mất đi sự linh hoạt vốn có và dễ trở thành mục tiêu bị phản công trực diện. Ngũ bát Pháo đi ngược lại hoàn toàn nguyên tắc thận trọng đó: chủ động đưa Pháo tiến sâu bốn bước qua sông, chấp nhận rủi ro để đổi lấy áp lực tức thời lên trận địa đối phương.<\/p>\n<h2>\"Bí mật\" nằm ở đâu<\/h2>\n<p>Tên gọi bài học gợi ý đúng bản chất vấn đề: đây không phải một sự liều lĩnh vô căn cứ, mà là một sự đánh đổi có tính toán. Khi một nguyên tắc chung — Pháo không nên khinh suất tiến quá sâu — bị phá vỡ có chủ đích, luôn cần một lý do cụ thể đủ mạnh để bù đắp rủi ro. Đây chính là tinh thần đã lặp lại nhiều lần trong chuỗi bài học này: một ngoại lệ chỉ hợp lý khi đi kèm kế hoạch rõ ràng, chứ không phải sự tuỳ tiện.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Sở hữu nhiều phương án tấn công khác nhau trước cùng một cấu trúc Bình Phong Mã của đối phương — Ngũ lục Pháo, Ngũ thất Pháo, Ngũ bát Pháo — không phải để dùng tuỳ hứng, mà để chọn đúng vũ khí phù hợp với từng tình huống cụ thể. Người chơi chỉ biết một cách tấn công duy nhất sẽ dễ bị bắt bài; hiểu được vì sao mỗi phương án tồn tại, kể cả những phương án phá cách như đưa Pháo vượt sâu qua sông, mới là nền tảng của một tư duy khai cuộc linh hoạt thực sự.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Ngũ Bát Pháo — Bí Mật Của Pháo Quá Hà Trong Khai Cuộc",
+            "seo_description": "Khai cuộc Trực Xe Ngũ bát Pháo đối Bình phong Mã: Pháo tiến sâu qua sông, vũ khí thứ ba sau Ngũ lục và Ngũ thất Pháo. Có bàn cờ tương tác đi từng nước, diễn giải.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 5",
+                    "move_notation_iccs": "h2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 5 — Trắng mở màn Trung Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen đáp lại bằng Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "i0h0",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Trắng đưa thẳng Xe vào cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p1p1p\/9\/6P2\/P1P1P3P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "g3g4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Trắng thúc Tốt.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1C2C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "c6c5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Đen đối xứng lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/pC2p1p1p\/2p6\/6P2\/P1P1P3P\/4C1N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Pháo 8 tiến 4",
+                    "move_notation_iccs": "b2b6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 tiến 4 — Trắng đưa hẳn quân Pháo còn lại vượt sâu qua sông, hoàn tất thế trận Ngũ bát Pháo — \"vũ khí\" thứ ba bên cạnh Ngũ lục Pháo và Ngũ thất Pháo đã học.",
                     "is_flip_reveal": false
                 }
             ]

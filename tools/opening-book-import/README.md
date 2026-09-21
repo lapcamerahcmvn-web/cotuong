@@ -54,6 +54,7 @@ kiện, viết lại lý thuyết 100% bằng lời riêng).
 | 28 | 222 | |
 | 29 | 233 | |
 | 30 | 244 | |
+| 31 | 251 | Ngũ bát Pháo — bí mật của Pháo quá hà |
 | 32 | 259 | |
 | 33 | 265 | |
 | 37 | 305 | |
@@ -76,10 +77,14 @@ BÀI 10 (trang 74) kéo dài liên tục ~29 trang rồi nhảy thẳng sang BÀ
 bài giảng" trong tên sách có thể chỉ là số danh nghĩa. Không cần tìm các chương này nữa — coi như
 đã xử lý xong toàn bộ số trang tương ứng (thuộc về chương liền kề).
 
-**Đã xử lý thêm Bài 15, 22, 24** (trang 118, 177, 193). Xác nhận thêm **Bài 21 và Bài 23 KHÔNG tồn
-tại** — Bài 20 (trang 160) kéo dài liên tục tới trang 176 rồi nhảy thẳng sang Bài 22 (trang 177);
-Bài 22 kéo dài tới trang 192 rồi nhảy thẳng sang Bài 24 (trang 193) — không có khoảng trống cho
-header riêng ở cả hai vị trí.
+**Đã xử lý thêm Bài 15, 22, 24, 25, 26, 27, 31** (trang 118, 177, 193, 198, 205, 212, 251). Xác
+nhận thêm **Bài 21 và Bài 23 KHÔNG tồn tại** — Bài 20 (trang 160) kéo dài liên tục tới trang 176
+rồi nhảy thẳng sang Bài 22 (trang 177); Bài 22 kéo dài tới trang 192 rồi nhảy thẳng sang Bài 24
+(trang 193) — không có khoảng trống cho header riêng ở cả hai vị trí. Bài 24→25→26→27→28→...→31
+đều tồn tại liên tục, không có gián đoạn nào thêm trong khoảng này.
+
+**Chưa xử lý**: Bài 34–36, 38, 42, 44 (6 chương thật sự còn thiếu — nằm rải rác trong khoảng trang
+259–349).
 
 **Đã xử lý thêm Bài 25, 26, 27** (trang 198, 205, 212) — cả 3 chương đều tồn tại đầy đủ, không có
 khoảng trống nào giữa 24→25→26→27→28.
