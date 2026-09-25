@@ -1,0 +1,68 @@
+# Midgame book import — quy trình chuyển tài liệu trung cuộc thành Lesson
+
+Dùng khi biên soạn bài trung cuộc từ tài liệu tham khảo nội bộ (file scan PDF, không có lớp text —
+xem `CLAUDE.md` mục bản quyền: KHÔNG public tên nguồn/tác giả, chỉ trích ký hiệu nước đi + thế cờ
+làm dữ kiện, viết lại lý thuyết 100% bằng lời riêng).
+
+Series đích: **LessonSeries id=12**, slug `nen-tang-nguyen-ly-trung-cuoc`, phase=`trung-cuoc`.
+
+## Khác biệt quan trọng so với sách khai cuộc
+
+Sách khai cuộc (`tools/opening-book-import/`) luôn bắt đầu từ thế cờ mặc định — chỉ cần chuỗi ký
+hiệu nước đi. **Sách trung cuộc thì KHÔNG** — mỗi bài bắt đầu từ 1 thế cờ tuỳ ý (đã đi được vài
+chục nước), thể hiện qua 1 hình vẽ bàn cờ ở đầu bài. Phải tự dựng FEN từ hình vẽ đó trước khi áp
+được chuỗi nước tiếp theo.
+
+## Quy trình 6 bước
+
+1. **Tìm bài + hình bắt đầu**: render trang PDF bằng Python (`pymupdf`) ở DPI thường (150) để đọc
+   chữ, tìm tiêu đề "BÀI N" + hình vẽ đầu tiên (thường "Hình 1" của bài đó — SỐ HÌNH LẶP LẠI mỗi
+   bài, không phải số hình toàn sách).
+2. **Crop hình ở DPI cao (300) để đọc chính xác**: dùng Python/PIL crop đúng vùng hình vẽ (xem ví
+   dụ code bên dưới). Đọc quân theo nhãn cột: nhãn TRÊN "1..9 trái→phải" = cột sách phía Đen = cột
+   vật lý luôn; nhãn DƯỚI "9..1 trái→phải" = cột sách phía Trắng, cột vật lý = 10 − nhãn.
+3. **Dựng FEN tay**: 10 hàng cách nhau `/`, hàng 0 = trên/Đen → hàng 9 = dưới/Trắng. Dùng
+   `checkPieceCounts(fen)` trong `midgame-parser.cjs` để bắt lỗi đọc nhầm quân (Tướng phải đúng 1
+   mỗi bên, Sĩ/Tượng/Xe/Pháo/Mã ≤2, Tốt ≤5).
+4. **Parse chuỗi nước + validate**: `applyGameFromFen(fen, ['X2-5','Tg5-6',...], 'do'|'den')` —
+   tham số cuối là bên đi nước ĐẦU TIÊN trong chuỗi (sách luôn ghi rõ ai đi trước, không mặc định
+   là Trắng như sách khai cuộc). Tự ném lỗi nếu gõ sai/thiếu nước.
+5. **Verify bằng mắt**: render FEN bắt đầu (và các mốc "Hình N" giữa bài nếu có) bằng
+   `tools/og-image/render-board.cjs` + `@resvg/resvg-js`, so với ảnh crop gốc trước khi ghi DB.
+6. **Viết + ghi + đồng bộ**: viết nội dung 100% bằng lời riêng → `LessonComposer::create()` với
+   `initial_fen` = FEN tự dựng (KHÔNG phải thế cờ mặc định) → publish → `cotuong:export-content` →
+   commit + push.
+
+## Ký hiệu sách (khác 1 điểm so với sách khai cuộc)
+
+Giống hệt `../opening-book-import/README.md` (P/M/X/B/S/V, verb `-` `.` `/`) **cộng thêm**:
+- `Tg` = Tướng (2 ký tự, ví dụ `Tg5-6`) — sách khai cuộc gần như không cần vì Tướng ít khi di
+  chuyển ở giai đoạn khai cuộc. `midgame-parser.cjs` tự chuẩn hoá `Tg` → `T` trước khi parse.
+- ⚠️ **Chưa gặp nhưng cần chú ý**: sách có thể dùng ký hiệu phân biệt "trước/sau" (ví dụ `Xs` =
+  Xe sau) khi 2 quân cùng loại đứng cùng cột — lúc đó số cột không đủ phân biệt. Nếu gặp, cần mở
+  rộng `parseOne()` trong `midgame-parser.cjs` để nhận diện quân theo vị trí hàng (trước/sau) thay
+  vì cột gốc.
+
+## Code mẫu — crop hình ở DPI cao
+
+```python
+import fitz
+from PIL import Image
+doc = fitz.open(r'E:\sach-co-tuong\...trung cục....pdf')
+pix = doc[PAGE_INDEX].get_pixmap(dpi=300)
+pix.save('full-page.png')
+img = Image.open('full-page.png')
+crop = img.crop((left, top, right, bottom))  # ước lượng vùng hình rồi crop thử, chỉnh lại nếu cắt thiếu cột 1-2
+crop.save('crop.png')
+```
+
+## Ví dụ đã dùng (Bài 1)
+
+FEN dựng tay: `2b1k4/3R3R1/4b4/9/9/9/9/9/1r3r3/3AKA3` — khớp `checkPieceCounts` (không lỗi), khớp
+render trực quan với Hình 1 gốc.
+
+## Bảng tra vị trí chương (cập nhật dần khi xử lý)
+
+| Bài | Trang PDF bắt đầu | Ghi chú |
+|---|---|---|
+| 1 | 7 | Khuyết Sĩ sợ Song Xe |

@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-21T22:55:44+00:00",
+    "exported_at": "2026-09-25T23:39:54+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -97,6 +97,15 @@
             "game_mode": "co-tuong",
             "phase": "khai-cuoc",
             "description": "Chuỗi bài xây dựng tư duy khai cuộc từ gốc: ba nguyên tắc bày binh, bốn kiểu bố cuộc thường gặp, và các định thức thực chiến minh hoạ cho từng kiểu — viết lại theo lối hiểu riêng, có bàn cờ tương tác từng ví dụ.",
+            "planned_total": null,
+            "sort_order": 20
+        },
+        {
+            "name": "Nền Tảng Nguyên Lý Trung Cuộc",
+            "slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "Chuỗi bài xây dựng tư duy trung cuộc từ gốc: quan hệ khắc chế giữa các binh chủng, cách đánh giá thế trận, chiến thuật phối hợp — qua các ván đấu thực chiến điển hình.",
             "planned_total": null,
             "sort_order": 20
         }
@@ -123760,6 +123769,63 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Tốt 7 tiến 1 — Đen thúc nốt Tốt lộ 7, hoàn tất Lưỡng đầu xà chỉ sau vỏn vẹn hai nước — một cục diện hiếm gặp, khống chế cùng lúc cả hai quân Mã của Trắng ngay từ giai đoạn rất sớm của ván cờ.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 1,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Khuyết Sĩ Sợ Song Xe",
+            "slug": "khuyet-si-so-song-xe",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "2b1k4\/3R3R1\/4b4\/9\/9\/9\/9\/9\/1r3r3\/3AKA3",
+            "move_count": 3,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Đen khuyết cả hai Sĩ đối diện Song Xe của Trắng: dù phòng thủ cách nào cũng không cứu vãn được — minh chứng mở đầu chuỗi bài trung cuộc về quan hệ khắc chế giữa Xe và phòng tuyến Sĩ Tượng.",
+            "content": "<h2>Một thế cờ đặt vấn đề, không phải một ván đấu<\/h2>\n<p>Mở đầu chuỗi bài học trung cuộc, thế cờ này không đến từ một ván đấu dài mà được dựng riêng để làm nổi bật đúng một mối quan hệ: điều gì xảy ra khi Xe — quân uy lực bậc nhất trên bàn cờ — đối diện với một phòng tuyến khuyết Sĩ. Chỉ với đúng ba nước, toàn bộ vấn đề đã được phơi bày rõ ràng.<\/p>\n<h2>Vì sao Tượng không thể thay thế vai trò của Sĩ<\/h2>\n<p>Về mặt lý thuyết, Sĩ và Tượng thường được xem có giá trị phòng thủ tương đương nhau. Nhưng trước một quân Xe của đối phương — đặc biệt là khi đối phương có cả hai Xe — sự khác biệt giữa hai quân này lộ rõ. Sĩ đứng ngay trong cung, trực tiếp che chắn đường chiếu thẳng hàng của Xe và thu hẹp các ô thoát của Tướng. Tượng đứng ngoài cung, dù còn nguyên vẹn bao nhiêu quân cũng không thể đảm nhận vai trò che chắn đó.<\/p>\n<h2>\"Bất kỳ cách phòng thủ nào cũng vô ích\" — vì sao tuyệt đối đến vậy<\/h2>\n<p>Điều đáng chú ý nhất của thế cờ này không phải là chuỗi nước đi, mà là thực tế: ngay từ vị trí ban đầu, dù Đen chọn ứng phó theo cách nào, kết cục cũng không đổi. Đây không phải hệ quả của một nước đi sai lầm nào đó trong ván đấu, mà là vì phòng tuyến quanh Tướng Đen đã trở nên trống rỗng về mặt cấu trúc từ trước khi ván đấu bắt đầu. Nhận diện được thời điểm một điểm yếu phòng thủ đã trở thành tử huyệt — chứ không phải chỉ là một bất lợi có thể xoay chuyển — là kỹ năng quan trọng đầu tiên cần có khi bước vào trung cuộc.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Mở đầu cho cả chuỗi bài học trung cuộc, thế cờ này thiết lập một thứ bậc quan hệ cơ bản nhất giữa các binh chủng: trước khi học các chiến thuật phối hợp cụ thể, người chơi cần nhận ra những khiếm khuyết cấu trúc nào — như khuyết cả hai Sĩ trước Song Xe đối phương — đã coi như định đoạt kết cục. Từ đó, công sức nên dồn vào việc tránh rơi vào khiếm khuyết đó ngay từ đầu, thay vì tìm cách xoay xở khi nó đã xảy ra.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Khuyết Sĩ Sợ Song Xe — Trung Cuộc Cờ Tướng",
+            "seo_description": "Trung cuộc cờ tướng: vì sao khuyết Sĩ trước Song Xe đối phương gần như vô phương cứu vãn. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "2b1k4\/3RR4\/4b4\/9\/9\/9\/9\/9\/1r3r3\/3AKA3",
+                    "move_notation_wxf": "Xe 2 bình 5",
+                    "move_notation_iccs": "h8e8",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 2 bình 5 — Trắng chuyển Xe sang cột giữa, áp sát ngay cạnh Tướng Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "2b2k3\/3RR4\/4b4\/9\/9\/9\/9\/9\/1r3r3\/3AKA3",
+                    "move_notation_wxf": "Tướng 5 bình 6",
+                    "move_notation_iccs": "e9f9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tướng 5 bình 6 — Đen buộc phải tự đưa Tướng ra khỏi vị trí trung tâm để tránh bị chiếu ngay, nhưng đây chỉ là phản xạ tất yếu, không giải quyết được vấn đề gốc rễ.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "2bR1k3\/4R4\/4b4\/9\/9\/9\/9\/9\/1r3r3\/3AKA3",
+                    "move_notation_wxf": "Xe 6 tiến 1",
+                    "move_notation_iccs": "d8d9",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 6 tiến 1 — Trắng đưa nốt quân Xe còn lại lên đúng hàng ngang chứa Tướng Đen. Vì Đen hoàn toàn không có Sĩ để che chắn, quân Xe này chiếu thẳng hàng — Đen không còn nước nào cứu vãn, chiếu bí.",
                     "is_flip_reveal": false
                 }
             ]
