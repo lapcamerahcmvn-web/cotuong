@@ -133,7 +133,9 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
 
 // Chuỗi bài (Course) + bài học — prefix rõ ràng để KHÔNG đụng route giai đoạn /{phase}.
 Route::get('/chuong-trinh/{series:slug}', [LessonController::class, 'series'])->name('series');
-Route::get('/bai-hoc/{lesson:slug}', [LessonController::class, 'show'])->name('lessons.show');
+// Không dùng implicit binding {lesson:slug} — cần tự xử lý 404 để tra bảng url_redirects
+// (301 khi slug cũ đã đổi, xem UrlRedirect::record()).
+Route::get('/bai-hoc/{slug}', [LessonController::class, 'show'])->name('lessons.show');
 
 // Tin tức: bài viết có thể nhúng video + bàn cờ tương tác.
 Route::get('/tin-tuc', [PostController::class, 'index'])->name('posts.index');

@@ -39,7 +39,11 @@ class OrganizeSeries extends Command
                 if ($changed) {
                     $this->line("  #{$l->id} → [{$order}] {$newTitle}");
                     if (! $this->option('dry-run')) {
+                        $oldSlug = $l->slug;
                         $l->forceFill($changed)->saveQuietly();
+                        if (isset($changed['slug']) && $l->slug !== $oldSlug) {
+                            \App\Models\UrlRedirect::record('/bai-hoc/'.$oldSlug, '/bai-hoc/'.$l->slug);
+                        }
                     }
                 }
             }

@@ -41,11 +41,15 @@ class CleanTitles extends Command
             $this->line(sprintf('  → %s', $new));
 
             if (! $this->option('dry-run')) {
+                $oldSlug = $lesson->slug;
                 $lesson->title = $new;
                 if ($this->option('reslug')) {
                     $lesson->slug = Str::slug($new);
                 }
                 $lesson->saveQuietly();
+                if ($lesson->slug !== $oldSlug) {
+                    \App\Models\UrlRedirect::record('/bai-hoc/'.$oldSlug, '/bai-hoc/'.$lesson->slug);
+                }
             }
             $changed++;
         }

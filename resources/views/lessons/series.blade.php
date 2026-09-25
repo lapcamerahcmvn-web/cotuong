@@ -90,7 +90,7 @@
                 @endif
                 <span>
                     <span class="li-title">{{ $lesson->title }}</span>
-                    <span class="li-sub">{{ $lesson->move_count }} nước đi · {{ $lesson->level_label }}@if($isDone) · <span style="color:var(--jade);">đã học</span>@endif</span>
+                    <span class="li-sub">{{ $lesson->move_count_label }} · {{ $lesson->level_label }}@if($isDone) · <span style="color:var(--jade);">đã học</span>@endif</span>
                 </span>
                 <span class="li-meta">→</span>
             </a>

@@ -88,13 +88,18 @@ class LessonController extends Controller
             $lesson->published_at = now();
         }
 
-        // Tùy chọn tạo lại slug từ tiêu đề mới (chỉ nên dùng TRƯỚC khi launch — đổi slug làm
-        // vỡ URL cũ nếu đã được index).
+        // Tùy chọn tạo lại slug từ tiêu đề mới — ghi kèm redirect 301 (từ URL cũ) để không vỡ
+        // link đã được Google index.
+        $oldSlug = $lesson->slug;
         if ($request->boolean('reslug')) {
             $lesson->slug = Str::slug($data['title']);
         }
 
         $lesson->save();
+
+        if ($lesson->slug !== $oldSlug) {
+            \App\Models\UrlRedirect::record('/bai-hoc/'.$oldSlug, '/bai-hoc/'.$lesson->slug);
+        }
 
         // Nước đi + cây biến từ trình soạn bàn cờ. CHỈ dựng lại khi board editor có chạy
         // (initial_fen được JS đồng bộ) — tránh xoá nhầm nước đi nếu JS lỗi/không tải.

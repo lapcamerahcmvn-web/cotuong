@@ -377,6 +377,7 @@
 
     if (list) {
       var fullMode = list.classList.contains('move-list--full');
+      list.innerHTML = ''; // xoá danh sách render sẵn server-side (SEO) trước khi JS dựng lại có gắn sự kiện
       steps.forEach(function (st, i) {
         var row = document.createElement('button');
         row.type = 'button';

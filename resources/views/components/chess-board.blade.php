@@ -92,7 +92,22 @@
     @if($hasList)
         <div class="side-card card">
             <div class="side-head"><span>Diễn giải từng nước</span><span class="muted" style="font-weight:600;">{{ $payload->count() }} nước</span></div>
-            <div class="move-list move-list--full" data-xq-list></div>
+            {{-- Render sẵn trong HTML (không đợi JS) để Google/trình đọc thấy được lời bình từng
+                 nước ngay từ view-source. board.js sẽ xoá và dựng lại y hệt (kèm sự kiện bấm) khi
+                 chạy — xem initBoard()/buildList() trong public/js/board.js. --}}
+            <div class="move-list move-list--full" data-xq-list>
+                @foreach($payload as $i => $step)
+                    @php $_side = $step['side'] === 'den' ? 'Đen' : 'Đỏ'; @endphp
+                    <button type="button" class="move-row">
+                        <span class="num">{{ $i + 1 }}.</span>
+                        <span class="mv">
+                            <span class="side-dot {{ $step['side'] === 'den' ? 'den' : 'do' }}"></span>
+                            <span class="mv-label">{{ $step['wxf'] ?: $_side }}</span>
+                            @if($step['caption'])<span class="cap-inline">{{ $step['caption'] }}</span>@endif
+                        </span>
+                    </button>
+                @endforeach
+            </div>
         </div>
     @endif
 

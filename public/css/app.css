@@ -177,6 +177,15 @@ header.nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srg
 .tag.draft { background: #fef3c7; color: #92400e; }
 .tag.review { background: #dbeafe; color: #1e40af; }
 
+/* Bộ lọc trang danh sách (cấp độ / độ dài / đã học) */
+.filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 22px; }
+.filter-label { font-size: 13px; color: var(--ink-soft); margin-right: 2px; }
+.filter-sep { width: 1px; height: 18px; background: var(--line); margin: 0 2px; }
+.tag-filter { display: inline-flex; align-items: center; font-size: 13px; font-weight: 600; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); transition: all .15s; }
+.tag-filter:hover { border-color: var(--red); color: var(--red); text-decoration: none; }
+.tag-filter.on { background: var(--red-soft); border-color: var(--red); color: var(--red); }
+.tag-filter.clear { background: transparent; border-style: dashed; color: var(--ink-faint); }
+
 /* ---- Home hero ---- */
 .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 48px 0 40px; }
 @media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 28px; padding: 32px 0; } }

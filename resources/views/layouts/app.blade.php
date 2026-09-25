@@ -17,19 +17,27 @@
         $__ogImage    = trim($__env->yieldContent('og_image')) ?: e($ogImageDefault);
         $__ogImageAlt = trim($__env->yieldContent('og_image_alt')) ?: e($siteName . ' — học cờ qua bàn cờ tương tác');
         $__ogType     = trim($__env->yieldContent('og_type')) ?: 'website';
+        // Canonical tự trỏ theo trang: giữ ?page=N (N>1) để không "gộp" các trang phân trang
+        // về trang 1 — Google vẫn cần thấy /trung-cuoc?page=2 là URL riêng để thu thập tiếp.
+        // Các query string khác (utm_*, ...) vẫn bị bỏ như trước.
+        $__pageNum = (int) request('page', 1);
+        $__canonical = url()->current() . ($__pageNum > 1 ? '?page='.$__pageNum : '');
     @endphp
 
     <title>{!! $__title !!}</title>
     <meta name="description" content="{!! $__desc !!}">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="{{ $__canonical }}">
     <meta name="robots" content="@yield('robots', 'index, follow')">
+    @if(config('site.gsc_verification'))
+    <meta name="google-site-verification" content="{{ config('site.gsc_verification') }}">
+    @endif
 
     {{-- Open Graph --}}
     <meta property="og:type" content="{{ $__ogType }}">
     <meta property="og:site_name" content="{{ $siteName }}">
     <meta property="og:title" content="{!! $__ogTitle !!}">
     <meta property="og:description" content="{!! $__desc !!}">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="{{ $__canonical }}">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:image" content="{!! $__ogImage !!}">
     <meta property="og:image:width" content="1200">
@@ -63,6 +71,18 @@
     {{-- JSON-LD toàn site: Organization + WebSite (kèm SearchAction). Trang con tham chiếu @id. --}}
     {!! \App\Support\Seo::ld($orgLd) !!}
     {!! \App\Support\Seo::ld($websiteLd) !!}
+
+    {{-- Google Analytics 4 — chỉ chèn khi đã cấu hình SITE_GA4_ID trong .env (chưa gắn thì bỏ qua,
+         không lỗi). async nên không chặn render. --}}
+    @if(config('site.ga4_id'))
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('site.ga4_id') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ config('site.ga4_id') }}');
+    </script>
+    @endif
 
     @stack('head')
 </head>
@@ -137,26 +157,41 @@
         </div>
     </footer>
 
-    {{-- Guest-gate: sau ~2 phút, nhắc khách đăng nhập để học có lộ trình (không chặn cứng) --}}
+    {{-- Guest-gate: thanh trượt góc dưới (KHÔNG che nội dung, không phải modal chặn) — chỉ hiện
+         sau khi khách đã thật sự đọc ≥2 bài học trong phiên, không hiện ở lượt xem đầu từ Google. --}}
     @guest
-    <div id="guest-gate" role="dialog" aria-modal="true" aria-labelledby="gg-title"
-         style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(20,18,16,.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px;">
-        <div class="card" style="max-width:420px;padding:28px;text-align:center;">
-            <div style="font-size:34px;font-family:'XiangqiKai','KaiTi',serif;color:var(--red);line-height:1;">將</div>
-            <h2 id="gg-title" style="font-size:21px;font-weight:800;margin:12px 0 8px;">Đăng nhập để học có lộ trình</h2>
-            <p class="muted" style="font-size:14.5px;margin:0 0 20px;">Miễn phí. Lưu tiến độ, đánh dấu bài đã học và gợi ý bài tiếp theo phù hợp với bạn.</p>
-            <a href="{{ route('login') }}" class="btn primary lg" style="width:100%;margin-bottom:10px;">Đăng nhập miễn phí</a>
-            <button type="button" class="btn" style="width:100%;" onclick="document.getElementById('guest-gate').style.display='none';sessionStorage.setItem('gg_dismissed','1');">Để sau, xem tiếp</button>
+    <div id="guest-gate" role="complementary" aria-label="Gợi ý đăng nhập"
+         style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9998;max-width:440px;margin:0 auto;">
+        <div class="card" style="padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 32px rgba(20,18,16,.22);">
+            <div style="font-size:26px;font-family:'XiangqiKai','KaiTi',serif;color:var(--red);line-height:1;flex-shrink:0;">將</div>
+            <div style="flex:1;min-width:0;">
+                <div style="font-weight:800;font-size:14.5px;margin-bottom:2px;">Đăng nhập để học có lộ trình</div>
+                <div class="muted" style="font-size:12.5px;">Lưu tiến độ, đánh dấu bài đã học, gợi ý bài tiếp theo.</div>
+            </div>
+            <a href="{{ route('login') }}" class="btn primary" style="flex-shrink:0;white-space:nowrap;">Đăng nhập</a>
+            <button type="button" aria-label="Đóng"
+                    onclick="document.getElementById('guest-gate').style.display='none';sessionStorage.setItem('gg_dismissed','1');"
+                    style="flex-shrink:0;background:none;border:none;font-size:17px;line-height:1;cursor:pointer;color:var(--ink-faint);padding:4px;">✕</button>
         </div>
     </div>
     <script>
     (function(){
         if (sessionStorage.getItem('gg_dismissed')) return;
-        setTimeout(function(){
+        // Chỉ đếm lượt xem TRANG BÀI HỌC — không hiện ở lượt xem đầu tiên (khách mới vào từ Google),
+        // chỉ nhắc sau khi đã đọc ít nhất bài thứ 2 trong phiên.
+        var isLesson = location.pathname.indexOf('/bai-hoc/') === 0;
+        var seen = 0;
+        try { seen = parseInt(sessionStorage.getItem('gg_lessons_seen') || '0', 10); } catch (e) {}
+        if (isLesson) {
+            seen += 1;
+            try { sessionStorage.setItem('gg_lessons_seen', String(seen)); } catch (e) {}
+        }
+        if (seen < 2) return;
+        setTimeout(function () {
             if (sessionStorage.getItem('gg_dismissed')) return;
             var g = document.getElementById('guest-gate');
-            if (g) g.style.display = 'flex';
-        }, 120000); // 2 phút
+            if (g) g.style.display = 'block';
+        }, 15000);
     })();
     </script>
     @endguest

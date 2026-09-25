@@ -6,7 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Intervention\Image\Encoders\WebpEncoder;
+use Intervention\Image\Laravel\Facades\Image;
 
 class PostController extends Controller
 {
@@ -44,7 +48,7 @@ class PostController extends Controller
         unset($data['thumbnail']); // file object từ validate() — chỉ set lại nếu THẬT SỰ có upload
         $data['is_featured'] = $request->boolean('is_featured');
         if ($request->hasFile('thumbnail')) {
-            $data['thumbnail'] = $request->file('thumbnail')->store('posts', 'public');
+            $data['thumbnail'] = $this->storeThumbnail($request->file('thumbnail'));
         }
         if ($data['status'] === 'published') {
             $data['published_at'] = now();
@@ -69,7 +73,7 @@ class PostController extends Controller
         unset($data['thumbnail']); // giữ nguyên ảnh cũ trừ khi có upload ảnh mới
         $data['is_featured'] = $request->boolean('is_featured');
         if ($request->hasFile('thumbnail')) {
-            $data['thumbnail'] = $request->file('thumbnail')->store('posts', 'public');
+            $data['thumbnail'] = $this->storeThumbnail($request->file('thumbnail'));
         }
         if ($data['status'] === 'published' && ! $post->published_at) {
             $data['published_at'] = now();
@@ -107,6 +111,19 @@ class PostController extends Controller
         $path = $request->file('file')->store('posts/editor', 'public');
 
         return response()->json(['location' => Storage::url($path)]);
+    }
+
+    // Resize (max 1200px width, giữ tỉ lệ) + nén WebP — ảnh upload tay thường quá khổ/nặng,
+    // ảnh hưởng LCP các trang Tin tức (checklist Core Web Vitals: chưa có ảnh WebP nào trước đây).
+    private function storeThumbnail(UploadedFile $file): string
+    {
+        $image = Image::decode($file)->scaleDown(width: 1200);
+        $encoded = $image->encode(new WebpEncoder(quality: 82));
+
+        $path = 'posts/'.Str::random(20).'.webp';
+        Storage::disk('public')->put($path, (string) $encoded);
+
+        return $path;
     }
 
     private function validated(Request $request): array

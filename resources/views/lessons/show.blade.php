@@ -22,6 +22,7 @@
         'inLanguage' => 'vi-VN',
         'learningResourceType' => 'lesson',
         'educationalLevel' => $lesson->level_label,
+        'timeRequired' => $lesson->time_required_iso,
         'image' => $_ogImage,
         'author' => ['@id' => url('/#org')],
         'publisher' => ['@id' => url('/#org')],
@@ -77,7 +78,7 @@
     <div class="meta-row">
         <span class="tag level">{{ $lesson->level_label }}</span>
         @if($lesson->series)<span class="tag series">{{ \Illuminate\Support\Str::limit($lesson->series->name, 34) }}</span>@endif
-        <span class="tag count">{{ $lesson->move_count }} nước đi</span>
+        <span class="tag count">{{ $lesson->move_count_badge }}</span>
         <span id="lesson-done-badge" class="tag tag--done" style="{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
     </div>
 
@@ -163,11 +164,11 @@
             @foreach($related as $r)
                 <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card has-thumb">
                     <span class="li-thumb">
-                        <img src="{{ \App\Support\Seo::ogThumb($r) }}" alt="" loading="lazy">
+                        <img src="{{ \App\Support\Seo::ogThumb($r) }}" alt="{{ $r->title }} - Học Cờ Tướng" loading="lazy">
                     </span>
                     <span>
                         <span class="li-title">{{ $r->title }}</span>
-                        <span class="li-sub">{{ $r->move_count }} nước đi · {{ $r->level_label }}</span>
+                        <span class="li-sub">{{ $r->move_count_label }} · {{ $r->level_label }}</span>
                     </span>
                     <span class="li-meta">→</span>
                 </a>

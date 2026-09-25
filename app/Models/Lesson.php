@@ -108,6 +108,27 @@ class Lesson extends Model
         return self::GAME_MODES[$this->game_mode] ?? 'Cờ Tướng';
     }
 
+    // "X nước đi" chỉ khi thật sự có nước — tránh nhãn gây hiểu lầm "0 nước đi" ở bài lý thuyết
+    // (chủ yếu bài Cờ úp nhập môn chưa có ván minh hoạ).
+    public function getMoveCountLabelAttribute(): string
+    {
+        return $this->move_count > 0 ? $this->move_count.' nước đi' : 'Bài lý thuyết';
+    }
+
+    public function getMoveCountBadgeAttribute(): string
+    {
+        return $this->move_count > 0 ? $this->move_count.' nước' : 'Lý thuyết';
+    }
+
+    // ISO 8601 duration cho schema.org timeRequired — ước lượng theo số nước (đọc + suy nghĩ mỗi nước ~12s),
+    // tối thiểu 2 phút cho bài lý thuyết không có nước đi.
+    public function getTimeRequiredIsoAttribute(): string
+    {
+        $minutes = $this->move_count > 0 ? max(2, (int) ceil($this->move_count * 12 / 60)) : 3;
+
+        return 'PT'.$minutes.'M';
+    }
+
     public function getSeoTitleFormattedAttribute(): string
     {
         return $this->seo_title ?: ($this->title.' — Học Cờ Tướng');

@@ -30,4 +30,4 @@ for d in DIRS:
         after += a
         n += 1
 
-print(f"{n} ảnh: {before/1e6:.1f}MB -> {after/1e6:.1f}MB")
+print(f"{n} anh: {before/1e6:.1f}MB -> {after/1e6:.1f}MB")

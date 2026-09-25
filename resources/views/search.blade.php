@@ -41,9 +41,9 @@
                             <span class="li-num">{{ $lesson->game_mode === 'co-up' ? '揭' : '棋' }}</span>
                             <span>
                                 <span class="li-title">{{ $lesson->title }}</span>
-                                <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count }} nước đi · {{ $lesson->level_label }}</span>
+                                <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count_label }} · {{ $lesson->level_label }}</span>
                             </span>
-                            <span class="li-meta"><span class="tag count">{{ $lesson->move_count }} nước</span></span>
+                            <span class="li-meta"><span class="tag count">{{ $lesson->move_count_badge }}</span></span>
                         </a>
                     @endforeach
                 </div>

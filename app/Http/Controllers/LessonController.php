@@ -50,25 +50,68 @@ class LessonController extends Controller
         ],
     ];
 
+    // Bộ lọc dùng chung cho trang giai đoạn: cấp độ / độ dài (số nước) / đã học-chưa học.
+    // Query string đơn giản (?level=...&length=...&done=1|0) — không cần JS, chỉ là link GET.
+    public const LENGTH_FILTERS = [
+        'short'  => ['label' => 'Ngắn (< 10 nước)', 'min' => 0, 'max' => 9],
+        'medium' => ['label' => 'Vừa (10–30 nước)', 'min' => 10, 'max' => 30],
+        'long'   => ['label' => 'Dài (> 30 nước)', 'min' => 31, 'max' => null],
+    ];
+
     // Trang giai đoạn: /nhap-mon, /khai-cuoc, /trung-cuoc, /tan-cuoc, /co-up (landing SEO diện rộng).
-    public function phase(string $phase)
+    public function phase(string $phase, \Illuminate\Http\Request $request)
     {
         abort_unless(array_key_exists($phase, self::PHASE_META), 404);
         $meta = self::PHASE_META[$phase];
         $page = Page::firstWhere('slug', "phase:{$phase}");
 
-        // Cờ úp là game_mode riêng, không phải phase — điều hướng theo game_mode.
+        $filters = [
+            'level'  => $request->get('level'),
+            'length' => $request->get('length'),
+            'done'   => $request->get('done'),
+        ];
+
+        $query = ($phase === 'co-up')
+            ? Lesson::published()->mode('co-up')
+            : Lesson::published()->mode('co-tuong')->where('phase', $phase);
+
+        if ($filters['level'] && array_key_exists($filters['level'], Lesson::LEVELS)) {
+            $query->where('level', $filters['level']);
+        }
+        if ($filters['length'] && isset(self::LENGTH_FILTERS[$filters['length']])) {
+            $range = self::LENGTH_FILTERS[$filters['length']];
+            $query->where('move_count', '>=', $range['min']);
+            if ($range['max'] !== null) {
+                $query->where('move_count', '<=', $range['max']);
+            }
+        }
+        if (in_array($filters['done'], ['1', '0'], true) && auth()->check()) {
+            $doneIds = LessonProgress::where('user_id', auth()->id())->where('status', 'completed')->pluck('lesson_id');
+            $filters['done'] === '1' ? $query->whereIn('id', $doneIds) : $query->whereNotIn('id', $doneIds);
+        }
+
+        $lessons = $query->latest('published_at')->paginate(24)->withQueryString();
+
+        $completedIds = auth()->check()
+            ? LessonProgress::where('user_id', auth()->id())->where('status', 'completed')
+                ->whereIn('lesson_id', $lessons->pluck('id'))->pluck('lesson_id')->all()
+            : [];
+
         if ($phase === 'co-up') {
-            $lessons = Lesson::published()->mode('co-up')->latest('published_at')->paginate(24);
             $seriesList = LessonSeries::where('game_mode', 'co-up')->withCount('publishedLessons')
                 ->orderBy('sort_order')->get();
         } else {
-            $lessons = Lesson::published()->mode('co-tuong')->where('phase', $phase)->latest('published_at')->paginate(24);
             $seriesList = LessonSeries::where('game_mode', 'co-tuong')->where('phase', $phase)
                 ->withCount('publishedLessons')->orderBy('sort_order')->get();
         }
 
-        return view('lessons.phase', compact('phase', 'lessons', 'meta', 'seriesList', 'page'));
+        // Chỉ hiện khối lọc khi trang có đủ bài để lọc mới có ích (tránh rối mắt ở mục ít bài).
+        $showFilters = ! $filters['level'] && ! $filters['length'] && ! $filters['done']
+            ? Lesson::published()->mode($phase === 'co-up' ? 'co-up' : 'co-tuong')
+                ->when($phase !== 'co-up', fn ($q) => $q->where('phase', $phase))->count() > 12
+            : true;
+
+        return view('lessons.phase', compact('phase', 'lessons', 'meta', 'seriesList', 'page', 'filters', 'showFilters', 'completedIds'));
     }
 
     // Trang chuỗi bài (Course): /chuong-trinh/{series}
@@ -89,9 +132,16 @@ class LessonController extends Controller
         return view('lessons.series', compact('series', 'lessons', 'completedIds'));
     }
 
-    // Trang bài học có bàn cờ tương tác: /bai-hoc/{lesson}
-    public function show(Lesson $lesson)
+    // Trang bài học có bàn cờ tương tác: /bai-hoc/{slug}
+    public function show(string $slug)
     {
+        $lesson = Lesson::where('slug', $slug)->first();
+        if (! $lesson) {
+            if ($to = \App\Models\UrlRedirect::lookup('/bai-hoc/'.$slug)) {
+                return redirect($to, 301);
+            }
+            abort(404);
+        }
         abort_unless($lesson->isIndexable(), 404);
 
         $lesson->load('steps', 'series');

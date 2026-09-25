@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $category->name . ' — Tin tức Học Cờ Tướng')
+@section('title', $category->name . ' — Tin tức Học Cờ Tướng' . ($posts->currentPage() > 1 ? ' — Trang '.$posts->currentPage() : ''))
 @section('description', $category->description ?: ($category->name . ' — tin tức, video và phân tích cờ tướng.'))
 @section('og_image', \App\Support\Seo::ogImage())
 
@@ -14,6 +14,12 @@
         ['@type' => 'ListItem', 'position' => 3, 'name' => $category->name],
     ],
 ]) !!}
+@if($posts->currentPage() > 1)
+<link rel="prev" href="{{ $posts->previousPageUrl() }}">
+@endif
+@if($posts->hasMorePages())
+<link rel="next" href="{{ $posts->nextPageUrl() }}">
+@endif
 @endpush
 
 @section('content')

@@ -99,12 +99,12 @@
         @foreach($featured as $i => $lesson)
             <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card has-thumb">
                 <span class="li-thumb">
-                    <img src="{{ \App\Support\Seo::ogThumb($lesson) }}" alt="" loading="{{ $i < 4 ? 'eager' : 'lazy' }}">
+                    <img src="{{ \App\Support\Seo::ogThumb($lesson) }}" alt="{{ $lesson->title }} - Học Cờ Tướng" loading="{{ $i < 4 ? 'eager' : 'lazy' }}">
                     <span class="li-rank">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
                 </span>
                 <span>
                     <span class="li-title">{{ $lesson->title }}</span>
-                    <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count }} nước đi</span>
+                    <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count_label }}</span>
                 </span>
                 <span class="li-meta"><span class="tag level">{{ $lesson->level_label }}</span></span>
             </a>
@@ -143,7 +143,7 @@
         @foreach($series as $i => $s)
             <a href="{{ route('series', $s->slug) }}" class="lesson-item card has-thumb">
                 <span class="li-thumb">
-                    <img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="" loading="{{ $i < 2 ? 'eager' : 'lazy' }}">
+                    <img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="{{ $s->name }} - Học Cờ Tướng" loading="{{ $i < 2 ? 'eager' : 'lazy' }}">
                 </span>
                 <span class="li-body">
                     <span class="li-title">{{ $s->name }}</span>

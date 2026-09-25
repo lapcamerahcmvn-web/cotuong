@@ -74,7 +74,7 @@
             @foreach($suggested as $lesson)
                 <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card">
                     <span class="li-num">{{ $lesson->order_in_series ?? '•' }}</span>
-                    <span><span class="li-title">{{ $lesson->title }}</span><span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count }} nước đi</span></span>
+                    <span><span class="li-title">{{ $lesson->title }}</span><span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count_label }}</span></span>
                     <span class="li-meta">→</span>
                 </a>
             @endforeach
