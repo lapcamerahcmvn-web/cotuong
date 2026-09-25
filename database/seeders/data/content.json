@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-25T07:06:03+00:00",
+    "exported_at": "2026-09-25T07:38:03+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -120058,6 +120058,129 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 9 bình 8 — Trắng hoàn thiện đội hình, các quân chủ lực đều đã vào đúng vị trí, sẵn sàng cho giai đoạn tranh chấp tiếp theo.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 21,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Pháo Đầu Đối Bình Phong Mã — Tuần Hà Pháo, Vị Trí Kiên Cố Bên Bờ Sông",
+            "slug": "phao-dau-doi-binh-phong-ma-tuan-ha-phao-vi-tri-kien-co-ben-bo-song",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 9,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Tuần hà Pháo: quân Pháo dừng lại đúng bờ sông, không cam kết hẳn tấn công hay phòng thủ — một vị trí bền vững, linh hoạt chuyển hướng tuỳ tình huống.",
+            "content": "<h2>Một vị trí không hẳn tấn công, không hẳn phòng thủ<\/h2>\n<p>Các bài trước đã đi qua nhiều cách sắp xếp Pháo theo chiều ngang: Ngũ lục, Ngũ thất, Ngũ cửu. Bài này chuyển sang một hướng khác — vị trí Pháo theo chiều dọc, cụ thể là <strong>Tuần hà Pháo<\/strong>: quân Pháo dừng lại đúng ngay bờ sông (Pháo 8 tiến 2) thay vì tiến hẳn qua sông hay lùi về hàng ngang quen thuộc.<\/p>\n<h2>Ý nghĩa của việc \"đóng quân\" ở biên giới<\/h2>\n<p>Đứng ngay bờ sông, quân Pháo này chưa thật sự tấn công ai, nhưng cũng không hoàn toàn ở thế phòng thủ. Nó đóng vai trò như một chốt canh: nếu đối phương sơ hở ở cánh nào, Pháo có thể lập tức chuyển hướng khai thác; nếu chưa có cơ hội, nó vẫn đứng vững, không dễ bị bắt bài.<\/p>\n<h2>Vì sao gọi là \"lô cốt xây dựng kiên cố\"<\/h2>\n<p>Khác với một số chiến thuật thời thượng chỉ hiệu quả trong giai đoạn ngắn rồi lỗi thời, vị trí tuần hà của Pháo gắn liền với một nguyên lý bền vững: kiểm soát đúng lằn ranh giữa hai bên luôn có giá trị, bất kể xu hướng chiến thuật thay đổi thế nào qua từng giai đoạn. Đây là lý do lối bố trí này vẫn giữ vai trò quan trọng trong hệ thống khai cuộc dù đã tồn tại rất lâu.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Không phải quân cờ nào cũng cần chọn dứt khoát giữa tấn công và phòng thủ ngay từ đầu. Đôi khi, một vị trí \"trung lập có kiểm soát\" — sẵn sàng cho cả hai hướng — lại mang tính bền vững cao hơn một cam kết quá sớm vào một kế hoạch cụ thể.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Pháo Đầu Đối Bình Phong Mã — Tuần Hà Pháo",
+            "seo_description": "Khai cuộc Tuần hà Pháo: vị trí Pháo bên bờ sông, linh hoạt chuyển hướng công thủ. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 5",
+                    "move_notation_iccs": "h2e2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 5 — Trắng mở màn Trung Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen đáp lại bằng Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p3p\/6p2\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen nhích Tốt biên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c3c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng đối xứng lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen đưa Xe ra.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1C1N2\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển nốt Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p3p\/6p2\/2P6\/P3P1P1P\/1CN1C1N2\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen hoàn tất Bình Phong Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "r1bakabr1\/9\/1cn3nc1\/p1p1p3p\/6p2\/1CP6\/P3P1P1P\/2N1C1N2\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Pháo 8 tiến 2",
+                    "move_notation_iccs": "b2b4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 tiến 2 — thay vì đưa Pháo vào giữa hay ra biên như các bài trước, Trắng chọn cho Pháo dừng lại ngay sát bờ sông. Đây gọi là \"Tuần hà Pháo\": quân Pháo đóng vai trò tuần tra dọc bờ sông, sẵn sàng phản ứng ở cả hai hướng mà không cam kết hẳn vào một kế hoạch cụ thể.",
                     "is_flip_reveal": false
                 }
             ]
