@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-25T06:33:53+00:00",
+    "exported_at": "2026-09-25T06:40:33+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -118023,6 +118023,283 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 2 tiến 4 — Trắng đưa nốt Xe còn lại lên tiếp sức, hoàn thiện thế bao vây cánh phải của Đen — sau chuỗi nước hoành Xe chính xác, Trắng đã giành ưu thế rõ rệt trên toàn bàn cờ.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 10,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Khởi Mã Cuộc — Song Hoành Xe Trong Cờ Tán Thủ, Ván Hồng Trí Thắng Vu Ấu Hoa",
+            "slug": "khoi-ma-cuoc-song-hoanh-xe-trong-co-tan-thu-van-hong-tri-thang-vu-au-hoa",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 23,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Khởi Mã cuộc dẫn tới thế \"song hoành Xe\" hiếm gặp trong cờ tán thủ — cả hai bên cùng chuẩn bị hoành Xe trước khi lộ ý đồ, minh hoạ qua ván đấu thật năm 2012.",
+            "content": "<h2>Khi cả hai bên cùng hoành Xe<\/h2>\n<p>Ván này mở đầu khác hẳn phần lớn các bài trước: Trắng chọn \"Khởi Mã cuộc\" — đưa Mã ra trước Pháo, một cách vào cuộc kín đáo. Cả hai bên sau đó đều nhấc Xe chuẩn bị hoành (nước 3 và nước 4 của Đen, nước 4 và nước 5 của Trắng), tạo nên thế \"song hoành Xe\" hiếm gặp: không bên nào lộ hướng tấn công, đúng tinh thần cờ tán thủ đã nói ở các bài trước.<\/p>\n<h2>Một nước đi từng xuất hiện ở đấu trường thật<\/h2>\n<p>Đến nước 5, Đen chọn đưa Mã lên vị trí quải giác (Mã 8 tiến 6) — đây chính là nước đi thật từng được dùng trong một giải đấu mời cấp quốc gia năm 2012, ván Hồng Trí cầm Đỏ thắng Vu Ấu Hoa. Trắng đáp lại bằng đúng vũ khí quen thuộc đã thấy ở các bài trước: hoành Xe nhắm thẳng vào quân Mã vừa lộ diện.<\/p>\n<h2>Bề ngoài lấn lướt, bên trong chưa chắc<\/h2>\n<p>Theo dõi các nước cuối, có thể thấy Đen liên tục tạo áp lực: đổi Pháo, đột phá Tốt biên, ép Xe và Mã Trắng phải lùi bước nhiều lần. Nhìn qua tưởng Đen đang chiếm ưu thế rõ rệt. Nhưng đây chính là điểm đặc trưng của cờ tán thủ đã nhắc ở bài trước: ai tiến quân nhiều hơn trên bề mặt không quan trọng bằng kết cấu hình trận có vững chắc hay không. Trắng tuy lùi vài quân nhưng không hề mất chất lượng thế cờ.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Cờ tán thủ đòi hỏi cách nhìn khác với các khai cuộc tấn công rõ ràng: đừng vội đánh giá ai đang thắng thế chỉ vì thấy một bên liên tục tiến quân. Muốn hiểu đúng thế cờ dạng này, cần nhìn vào toàn bộ kết cấu — quân nào che chắn quân nào, cánh nào còn trống — chứ không chỉ đếm số nước tấn công bề mặt.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Khởi Mã Cuộc — Song Hoành Xe Trong Cờ Tán Thủ",
+            "seo_description": "Khai cuộc Khởi Mã cuộc dẫn tới song hoành Xe trong cờ tán thủ, phân tích ván đấu thật Hồng Trí thắng Vu Ấu Hoa. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — thay vì mở màn bằng Pháo, Trắng chọn \"Khởi Mã cuộc\": đưa Mã ra trước tiên, một lối vào cuộc kín đáo, khó đoán hướng tấn công ngay từ đầu.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "c6c5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Đen đối xứng lại, cũng chưa vội định hình.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "g3g4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Trắng tiếp tục giữ nhịp thăm dò.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "r1bakabnr\/9\/1cn4c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "r1bakabnr\/9\/1cn4c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng hoàn tất cả hai Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "2bakabnr\/r8\/1cn4c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Xe 1 tiến 1",
+                    "move_notation_iccs": "a9a8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 tiến 1 — Đen nhấc Xe lên, chuẩn bị hoành Xe.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "2bakabnr\/r8\/1cn4c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/R8\/2BAKAB1R",
+                    "move_notation_wxf": "Xe 9 tiến 1",
+                    "move_notation_iccs": "a0a1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 tiến 1 — Trắng cũng nhấc Xe bên kia — cả hai bên cùng chuẩn bị hoành Xe, thế cờ mang đúng tinh thần \"cờ tán thủ\": chưa ai lộ ý đồ tấn công rõ ràng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "2baka1nr\/r8\/1cn1b2c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/R8\/2BAKAB1R",
+                    "move_notation_wxf": "Tượng 7 tiến 5",
+                    "move_notation_iccs": "g9e7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 7 tiến 5 — Đen củng cố khung phòng thủ.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "2baka1nr\/r8\/1cn1b2c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/R7R\/2BAKAB2",
+                    "move_notation_wxf": "Xe 1 tiến 1",
+                    "move_notation_iccs": "i0i1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 tiến 1 — Trắng tiếp tục nhấc thêm quân Xe còn lại, hoàn thiện thế \"song hoành Xe\" — cả hai Xe đều đã rời khỏi hàng cuối, sẵn sàng chuyển hướng bất kỳ lúc nào tuỳ theo động thái đối phương.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "2baka2r\/r4n3\/1cn1b2c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/R7R\/2BAKAB2",
+                    "move_notation_wxf": "Mã 8 tiến 6",
+                    "move_notation_iccs": "h9f8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 6 — Đen chọn đưa Mã lên vị trí quải giác. Đây là nước đi thật đã từng xuất hiện ở một giải đấu mời cấp quốc gia năm 2012, trong ván Hồng Trí (Đỏ) thắng Vu Ấu Hoa.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "2baka2r\/r4n3\/1cn1b2c1\/p3p1p1p\/2p6\/6P2\/P1P1P3P\/1CN3NC1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Xe 1 bình 4",
+                    "move_notation_iccs": "i1f1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 4 — Trắng lập tức hoành Xe sang cột 4, nhắm thẳng vào quân Mã quải giác vừa xuất hiện — vị trí này tuy chưa tấn công ngay nhưng chắc chắn sẽ gây khó dễ về sau.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 12,
+                    "fen": "2baka2r\/r4n3\/1c2b2c1\/p3p1p1p\/1np6\/6P2\/P1P1P3P\/1CN3NC1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Mã 3 tiến 2",
+                    "move_notation_iccs": "c7b5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 3 tiến 2 — Đen tranh thủ đưa Mã còn lại vào vị trí phối hợp, đối phó nguy cơ vừa xuất hiện.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 13,
+                    "fen": "2baka2r\/r4n3\/1C2b2c1\/p3p1p1p\/1np6\/6P2\/P1P1P3P\/2N3NC1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Pháo 8 tiến 5",
+                    "move_notation_iccs": "b2b7",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 tiến 5 — Trắng đẩy Pháo lên sâu, chuẩn bị đổi quân theo ý mình.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 14,
+                    "fen": "2baka2r\/r4n3\/1c2b4\/p3p1p1p\/1np6\/6P2\/P1P1P3P\/2N3NC1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Pháo 8 bình 2",
+                    "move_notation_iccs": "h7b7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 2 — Đen buộc phải đổi Pháo, tránh để mất quân oan uổng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 15,
+                    "fen": "2baka2r\/r4n3\/1c2b4\/p3p1p1p\/1np6\/6PN1\/P1P1P3P\/2N4C1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Mã 3 tiến 2",
+                    "move_notation_iccs": "g2h4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 3 tiến 2 — Trắng nhảy Mã ra ngoài phong toả Xe đối phương — một nước đi cần thiết dù nhìn qua có vẻ chỉ là phát triển bình thường.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 16,
+                    "fen": "2baka2r\/r4n3\/1c2b4\/p3p1p2\/1np5p\/6PN1\/P1P1P3P\/2N4C1\/R4R3\/2BAKAB2",
+                    "move_notation_wxf": "Tốt 9 tiến 1",
+                    "move_notation_iccs": "i6i5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 9 tiến 1 — Đen chọn cách phản công bằng cách đột phá Tốt biên, khai thác đúng cánh mà Trắng vừa để hở.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 17,
+                    "fen": "2baka2r\/r4n3\/1c2b4\/p3pRp2\/1np5p\/6PN1\/P1P1P3P\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Xe 4 tiến 5",
+                    "move_notation_iccs": "f1f6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 4 tiến 5 — Trắng tính toán rằng nếu Đen mở thông đường biên thì mình sẽ có cơ hội đạp Chốt — một nước cờ ẩn ý sâu xa hơn vẻ ngoài đơn giản của nó.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 18,
+                    "fen": "2baka2r\/r4n3\/4b4\/pc2pRp2\/1np5p\/6PN1\/P1P1P3P\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Pháo 2 tiến 1",
+                    "move_notation_iccs": "b7b6",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 tiến 1 — Đen tiếp tục điều quân, dồn sức chuẩn bị cho ý đồ đổi Chốt biên sắp tới.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 19,
+                    "fen": "2baka2r\/r4n3\/4b4\/pc2p1p2\/1np5p\/5RPN1\/P1P1P3P\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Xe 4 thoái 2",
+                    "move_notation_iccs": "f6f4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 4 thoái 2 — Đen thuận lợi ép Xe Trắng phải lùi bước, giành lại chút chủ động.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 20,
+                    "fen": "2baka2r\/r4n3\/4b4\/pc2p1p2\/1np6\/5RPNp\/P1P1P3P\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Tốt 9 tiến 1",
+                    "move_notation_iccs": "i5i4",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 9 tiến 1 — Đen tiếp tục đẩy Tốt biên, quyết tâm đổi quân ở cánh này.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 21,
+                    "fen": "2baka2r\/r4n3\/4b4\/pc2p1p2\/1np6\/5RPNP\/P1P1P4\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Tốt 1 tiến 1",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 1 tiến 1 — Trắng đáp trả bằng Tốt biên của mình, giữ thế đối xứng trong pha đổi quân.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 22,
+                    "fen": "2baka3\/r4n3\/4b4\/pc2p1p2\/1np6\/5RPNr\/P1P1P4\/2N4C1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Xe 9 tiến 5",
+                    "move_notation_iccs": "i9i4",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 tiến 5 — Đen tranh thủ đưa Xe còn lại tiến sâu, ép Mã Trắng phải lùi bước.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 23,
+                    "fen": "2baka3\/r4n3\/4b4\/pc2p1p2\/1np6\/5RP1r\/P1P1P4\/2N3NC1\/R8\/2BAKAB2",
+                    "move_notation_wxf": "Mã 2 thoái 3",
+                    "move_notation_iccs": "h4g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 thoái 3 — Trắng buộc lùi Mã. Nhìn bề ngoài như Đen đang lấn lướt, nhưng đây chính là điểm mấu chốt cờ tán thủ: kết cấu hình trận mới là điều quyết định, không phải ai đang tiến quân nhiều hơn ở bề mặt.",
                     "is_flip_reveal": false
                 }
             ]
