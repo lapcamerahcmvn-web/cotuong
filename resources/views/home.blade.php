@@ -48,6 +48,19 @@
     </div>
 </section>
 
+@if($dailyPuzzle)
+<section class="section" style="padding-top:8px;padding-bottom:0;">
+    <div class="continue-card card">
+        <div class="continue-info">
+            <span class="continue-eyebrow">♟ Thế cờ hôm nay</span>
+            <span class="continue-title">{{ $dailyPuzzle->title }}</span>
+            <span class="muted" style="font-size:13.5px;">{{ $dailyPuzzle->level_label }} · {{ $dailyPuzzle->move_count_label }} — tự tìm nước đi đúng, sai thì thử lại</span>
+        </div>
+        <a href="{{ route('lessons.show', $dailyPuzzle->slug) }}#giai-do" class="btn primary">Giải ngay →</a>
+    </div>
+</section>
+@endif
+
 @auth
     @php $continueLesson = auth()->user()->nextLesson(); @endphp
     @if($continueLesson)

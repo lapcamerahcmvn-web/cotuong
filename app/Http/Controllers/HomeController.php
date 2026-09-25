@@ -43,6 +43,15 @@ class HomeController extends Controller
             : collect();
         $heroTree = $heroLesson?->variation_tree;
 
-        return view('home', compact('phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree'));
+        // Thế cờ hôm nay: chọn xoay vòng theo NGÀY (giống nhau cho mọi khách trong ngày, đổi lúc
+        // 0h UTC = 7h VN) — chỉ trong các bài đã có chế độ "Đoán nước" (puzzle_side khác null).
+        $puzzlePool = Lesson::published()->whereNotNull('puzzle_side')->orderBy('id')->pluck('id');
+        $dailyPuzzle = null;
+        if ($puzzlePool->isNotEmpty()) {
+            $idx = crc32(now()->format('Y-m-d')) % $puzzlePool->count();
+            $dailyPuzzle = Lesson::find($puzzlePool[$idx]);
+        }
+
+        return view('home', compact('phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree', 'dailyPuzzle'));
     }
 }

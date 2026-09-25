@@ -99,6 +99,9 @@ Thứ tự khối đề xuất:
 > - ✅ Bộ lọc trang danh sách (`/khai-cuoc`, `/trung-cuoc`...): cấp độ, độ dài (ngắn/vừa/dài),
 >   đã học/chưa học (đăng nhập) — dùng link GET thuần (không cần JS), canonical tự bỏ query lọc
 >   để không tạo trang trùng lặp, chỉ hiện khi mục có > 12 bài. Card danh sách giờ có dấu ✓ đã học.
+> - ✅ **"Thế cờ hôm nay"** (mục 4.2 #2) — thẻ trên trang chủ, chọn xoay vòng theo ngày (đổi lúc
+>   0h UTC = 7h VN) trong 571 bài có "Đoán nước", link kèm `#giai-do` tự mở sẵn chế độ giải khi
+>   vào bài. Không cache riêng (query nhẹ, đã đủ nhanh).
 > - ⏸️ **Chưa làm** (cần xác nhận trực quan, phiên này không có công cụ chụp màn hình/trình duyệt):
 >   gộp nút phụ (📋 ⛶ ⟲ ▶) vào menu "⋯" trên mobile. Đây là thay đổi thuần thị giác — nên làm ở
 >   phiên có thể xem trực tiếp trên trình duyệt để tránh sửa mù.

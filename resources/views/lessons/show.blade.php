@@ -116,6 +116,8 @@
                 }
                 vBtn.addEventListener('click', function () { setMode(false); });
                 pBtn.addEventListener('click', function () { setMode(true); });
+                // Link "Thế cờ hôm nay" ở trang chủ trỏ tới #giai-do → mở sẵn chế độ giải đố.
+                if (location.hash === '#giai-do') setMode(true);
             })();
             </script>
         @else
