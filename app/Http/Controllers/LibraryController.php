@@ -67,6 +67,31 @@ class LibraryController extends Controller
         return response()->json(['ok' => true, 'lesson_id' => $lesson->id]);
     }
 
+    // PUT /thu-vien/{position} (AJAX, JSON) — sửa lại thế cờ đã lưu (cả Cờ Tướng lẫn Cờ Úp, vì
+    // FEN đã tự mang ký hiệu X/x cho quân úp — không cần phân biệt riêng). Chỉ chủ sở hữu được sửa.
+    public function update(Request $request, SavedPosition $position)
+    {
+        abort_unless($position->user_id === auth()->id(), 403);
+
+        $data = $request->validate([
+            'fen' => ['required', 'string', 'max:120', 'regex:/^[0-9a-zA-Z\/]+$/'],
+            'title' => ['nullable', 'string', 'max:120'],
+            'note' => ['nullable', 'string', 'max:2000'],
+            'steps' => ['nullable', 'array'],
+            'variation_tree' => ['nullable', 'array'],
+        ]);
+
+        $position->update([
+            'fen' => $data['fen'],
+            'title' => $data['title'] ?? null,
+            'note' => $data['note'] ?? null,
+            'steps_json' => $data['steps'] ?? null,
+            'variation_tree' => $data['variation_tree'] ?? null,
+        ]);
+
+        return response()->json(['ok' => true, 'id' => $position->id]);
+    }
+
     // DELETE /thu-vien/{position} — form POST thường (không AJAX), chỉ chủ sở hữu được xoá.
     public function destroy(SavedPosition $position)
     {

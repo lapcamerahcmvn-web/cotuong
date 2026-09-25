@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
     // Thư viện thế cờ cá nhân.
     Route::get('/tai-khoan/thu-vien', [LibraryController::class, 'index'])->name('account.library');
     Route::post('/thu-vien', [LibraryController::class, 'store'])->name('library.store')->middleware('throttle:20,1');
+    Route::put('/thu-vien/{position}', [LibraryController::class, 'update'])->name('library.update')->middleware('throttle:20,1');
     Route::post('/thu-vien/gui-admin', [LibraryController::class, 'submit'])->name('library.submit')->middleware('throttle:10,1');
     Route::delete('/thu-vien/{position}', [LibraryController::class, 'destroy'])->name('library.destroy');
 });

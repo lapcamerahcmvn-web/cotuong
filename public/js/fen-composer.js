@@ -68,6 +68,7 @@
   var msgEl = root.querySelector('[data-fc-msg]');
   var movesBox = root.querySelector('[data-fc-moves]');
   var branchesBox = root.querySelector('[data-fc-branches]');
+  var editingId = null; // null = đang soạn thế MỚI; số = đang SỬA bản đã lưu (id trong bảng saved_positions)
 
   function msg(text, kind) {
     if (!msgEl) return;
@@ -143,6 +144,22 @@
       });
     }
     return rootNode ? ser(rootNode) : [];
+  }
+  // Dựng lại cây node nội bộ (board/hidden mỗi node) từ variation_tree đã lưu — dùng khi SỬA lại
+  // 1 thế cờ đã lưu. Lấy thẳng `fen` đã lưu sẵn ở mỗi node (round-trip qua loadFen) thay vì replay
+  // nước đi thủ công, để không lệch nếu logic pushMove() đổi khác về sau.
+  function deserializeTree(children, parent) {
+    (children || []).forEach(function (c) {
+      var nb = Rules.loadFen(c.fen);
+      var nh = parent.hidden.slice();
+      nh[c.to] = null; nh[c.from] = null;
+      var node = {
+        from: c.from, to: c.to, reveal: c.reveal || null, iccs: c.iccs, wxf: c.wxf, side: c.side,
+        caption: c.caption || '', board: nb, hidden: nh, depth: parent.depth + 1, children: [], parent: parent
+      };
+      parent.children.push(node);
+      deserializeTree(c.children, node);
+    });
   }
 
   function hitOverlay() {
@@ -339,6 +356,65 @@
     setMode('setup');
   }
 
+  // Nạp 1 thế cờ đã lưu (từ danh sách "Đã lưu" bên dưới) vào trình soạn để SỬA lại — dùng chung
+  // 1 trình soạn cho cả Cờ Tướng lẫn Cờ Úp vì FEN đã tự mang ký hiệu X/x, không cần khối riêng.
+  function loadForEdit(data) {
+    editingId = data.id;
+    coUp = /[Xx]/.test(data.fen);
+    root.querySelectorAll('[data-fc-game]').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-fc-game') === (coUp ? 'up' : 'tuong'));
+    });
+
+    board = Rules.loadFen(data.fen);
+    hidden = new Array(90).fill(null);
+    newRoot();
+    var tree = (data.tree && data.tree.length) ? data.tree : null;
+    if (tree) {
+      deserializeTree(tree, rootNode);
+    } else if (data.steps && data.steps.length) {
+      // Chỉ có mạch chính phẳng (không cây biến) — vd lưu từ nút 🔖 trên bài học công khai.
+      var node = rootNode;
+      data.steps.forEach(function (s) {
+        var ic = Rules.fromIccs(s.iccs);
+        if (!ic) return;
+        var nh = node.hidden.slice(); nh[ic.to] = null; nh[ic.from] = null;
+        var n2 = {
+          from: ic.from, to: ic.to, reveal: null, iccs: s.iccs, wxf: s.wxf, side: s.side,
+          caption: s.caption || '', board: Rules.loadFen(s.fen), hidden: nh, depth: node.depth + 1, children: [], parent: node
+        };
+        node.children.push(n2);
+        node = n2;
+      });
+    }
+
+    if (titleInput) titleInput.value = data.title || '';
+    if (noteInput) noteInput.value = data.note || '';
+    var banner = root.querySelector('[data-fc-editing-banner]');
+    var titleEl = root.querySelector('[data-fc-editing-title]');
+    if (titleEl) titleEl.textContent = data.title || 'thế cờ đã lưu';
+    if (banner) banner.style.display = '';
+    var saveLabel = root.querySelector('[data-fc-save-label]');
+    if (saveLabel) saveLabel.textContent = 'Cập nhật thế cờ';
+
+    gotoNode(rootNode);
+    setMode(rootNode.children.length ? 'move' : 'setup');
+
+    var panel = document.querySelector('[data-fc-panel]');
+    if (panel) { panel.open = true; panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    msg('Đang sửa "' + (data.title || 'thế cờ đã lưu') + '" — chỉnh xong bấm "Cập nhật thế cờ".', 'ok');
+  }
+
+  function exitEdit() {
+    editingId = null;
+    var banner = root.querySelector('[data-fc-editing-banner]');
+    if (banner) banner.style.display = 'none';
+    var saveLabel = root.querySelector('[data-fc-save-label]');
+    if (saveLabel) saveLabel.textContent = 'Lưu vào thư viện';
+    if (titleInput) titleInput.value = '';
+    if (noteInput) noteInput.value = '';
+    resetAll(Rules.loadFen(START));
+  }
+
   function bind(sel, fn) { var el = root.querySelector(sel); if (el) el.addEventListener('click', fn); }
 
   root.querySelectorAll('[data-fc-mode]').forEach(function (b) {
@@ -367,11 +443,11 @@
   });
   bind('[data-fc-undo]', function () { if (cur && cur.parent) deleteNode(cur); });
 
-  function postJSON(url, body, onOk, onErr) {
+  function postJSON(url, body, onOk, onErr, method) {
     var tokenEl = document.querySelector('meta[name=csrf-token]');
     if (!tokenEl) return;
     fetch(url, {
-      method: 'POST',
+      method: method || 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': tokenEl.content, 'Accept': 'application/json' },
       body: JSON.stringify(body)
     }).then(function (r) {
@@ -382,13 +458,30 @@
 
   bind('[data-fc-save]', function () {
     var title = (titleInput && titleInput.value.trim()) || window.prompt('Đặt tên cho thế cờ này (không bắt buộc):', '') || '';
-    postJSON('/thu-vien', {
+    var payload = {
       fen: rootNode ? Rules.toFen(rootNode.board) : Rules.toFen(board),
       title: title,
+      note: noteInput ? noteInput.value : null,
       steps: mainline(),
       variation_tree: serializeTree()
-    }, function () { window.location.reload(); }, function () { msg('Lưu thất bại — thử lại sau.', 'err'); });
+    };
+    if (editingId) {
+      postJSON('/thu-vien/' + editingId, payload, function () { window.location.reload(); },
+        function () { msg('Cập nhật thất bại — thử lại sau.', 'err'); }, 'PUT');
+    } else {
+      postJSON('/thu-vien', payload, function () { window.location.reload(); },
+        function () { msg('Lưu thất bại — thử lại sau.', 'err'); });
+    }
   });
+
+  document.querySelectorAll('[data-fc-edit-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var raw = btn.getAttribute('data-edit');
+      if (!raw) return;
+      try { loadForEdit(JSON.parse(raw)); } catch (e) { msg('Không đọc được dữ liệu để sửa.', 'err'); }
+    });
+  });
+  bind('[data-fc-cancel-edit]', exitEdit);
 
   bind('[data-fc-submit]', function () {
     var title = titleInput && titleInput.value.trim();

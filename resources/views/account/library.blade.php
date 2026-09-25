@@ -17,9 +17,13 @@
         <div class="notice" style="border-color:var(--jade);color:var(--jade);margin-top:16px;">{{ session('success') }}</div>
     @endif
 
-    <details class="card mt-5 fc-panel">
-        <summary style="cursor:pointer;font-weight:800;font-size:16px;">✚ Soạn thế cờ &amp; nước đi mới</summary>
+    <details class="card mt-5 fc-panel" data-fc-panel>
+        <summary style="cursor:pointer;font-weight:800;font-size:16px;" data-fc-summary>✚ Soạn thế cờ &amp; nước đi mới</summary>
         <div class="mt-5" data-fen-composer>
+            <div data-fc-editing-banner class="notice" style="display:none;border-color:var(--jade);color:var(--jade);margin-bottom:14px;">
+                ✏️ Đang sửa <strong data-fc-editing-title></strong> —
+                <button type="button" class="btn btn--ghost" data-fc-cancel-edit style="padding:2px 10px;min-height:0;">Huỷ, soạn mới</button>
+            </div>
             <div class="cluster" style="margin-bottom:10px;">
                 <button type="button" class="btn fc-mode-btn on" data-fc-mode="setup">1 · Xếp quân</button>
                 <button type="button" class="btn fc-mode-btn" data-fc-mode="move">2 · Soạn nước đi</button>
@@ -62,7 +66,7 @@
                 <textarea data-fc-note class="fc-wide-input" placeholder="Ghi chú thêm cho Admin (tuỳ chọn)…" rows="2"></textarea>
             </div>
             <div class="cluster mt-3" style="margin-bottom:6px;">
-                <button type="button" class="btn primary" data-fc-save>💾 Lưu vào thư viện</button>
+                <button type="button" class="btn primary" data-fc-save>💾 <span data-fc-save-label>Lưu vào thư viện</span></button>
                 <button type="button" class="btn" data-fc-submit>📤 Gửi cho Admin duyệt</button>
             </div>
             <div data-fc-msg class="fc-msg"></div>
@@ -96,11 +100,15 @@
                         </summary>
                         <div style="padding:0 18px 18px;">
                             <x-chess-board :initial-fen="$item->fen" :steps="$item->steps_json ?? []" :tree="$item->variation_tree" :show-list="false" />
-                            <form method="POST" action="{{ route('library.destroy', $item) }}" onsubmit="return confirm('Xoá thế cờ này khỏi thư viện?');" class="mt-3">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn--ghost" style="color:var(--red);">🗑 Xoá khỏi thư viện</button>
-                            </form>
+                            <div class="cluster mt-3">
+                                <button type="button" class="btn" data-fc-edit-btn
+                                    data-edit="{{ json_encode(['id' => $item->id, 'title' => $item->title, 'note' => $item->note, 'fen' => $item->fen, 'steps' => $item->steps_json ?? [], 'tree' => $item->variation_tree ?? []], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}">✏️ Sửa</button>
+                                <form method="POST" action="{{ route('library.destroy', $item) }}" onsubmit="return confirm('Xoá thế cờ này khỏi thư viện?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn--ghost" style="color:var(--red);">🗑 Xoá khỏi thư viện</button>
+                                </form>
+                            </div>
                         </div>
                     </details>
                 </div>
