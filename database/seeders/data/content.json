@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-25T07:38:03+00:00",
+    "exported_at": "2026-09-25T07:58:16+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -120181,6 +120181,285 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Pháo 8 tiến 2 — thay vì đưa Pháo vào giữa hay ra biên như các bài trước, Trắng chọn cho Pháo dừng lại ngay sát bờ sông. Đây gọi là \"Tuần hà Pháo\": quân Pháo đóng vai trò tuần tra dọc bờ sông, sẵn sàng phản ứng ở cả hai hướng mà không cam kết hẳn vào một kế hoạch cụ thể.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 22,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Khởi Mã Cuộc Chuyển Sĩ Giác Pháo — Ván Chung Kết Triệu Kim Thành Thắng Võ Tuấn Cường",
+            "slug": "khoi-ma-cuoc-chuyen-si-giac-phao-van-chung-ket-trieu-kim-thanh-thang-vo-tuan-cuong",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 8,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Sĩ giác Pháo — vị trí Pháo được đánh giá hài hoà nhất trong cờ tán thủ, minh hoạ qua ván chung kết thật năm 2020 giữa Triệu Kim Thành và Võ Tuấn Cường.",
+            "content": "<h2>Vị trí Pháo được đánh giá cao nhất trong cờ tán thủ<\/h2>\n<p>Ván này trích từ một trận đấu thật — chung kết một giải đấu năm 2020, Triệu Kim Thành cầm Đỏ thắng Võ Tuấn Cường. Mở đầu bằng Khởi Mã cuộc quen thuộc, nhưng điểm đáng chú ý nằm ở nước thứ hai: Trắng đặt Pháo vào đúng vị trí góc Sĩ (Pháo 2 bình 4) — thế trận gọi là <strong>Sĩ giác Pháo<\/strong>.<\/p>\n<h2>Vì sao vị trí này được xem là hài hoà nhất<\/h2>\n<p>Trong cờ tán thủ — nơi không bên nào vội tranh chấp ngay từ đầu — việc chọn đúng vị trí cho từng quân quan trọng hơn hẳn so với các lối chơi tấn công nhanh. Pháo đặt ở góc Sĩ vừa được bảo vệ tốt, vừa giữ khả năng linh hoạt chuyển hướng về sau, không bị \"khoá cứng\" vào một kế hoạch duy nhất như khi đặt ở vị trí khác.<\/p>\n<h2>Một trận đấu cấp cao xác nhận giá trị lý thuyết<\/h2>\n<p>Không phải mọi ý tưởng lý thuyết đều được kiểm chứng tốt trong thực chiến đỉnh cao, nhưng ván này là một minh chứng: ở một trận chung kết thật sự, kỳ thủ cầm Đỏ đã tin tưởng chọn đúng cấu trúc Sĩ giác Pháo này và giành chiến thắng. Điều đó cho thấy giá trị của vị trí Pháo không chỉ nằm trên lý thuyết mà còn đứng vững được ở cấp độ thi đấu cao.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Trong khai cuộc kiểu tán thủ, việc chọn đúng vị trí cho từng quân — dù chỉ là một khác biệt nhỏ về ô đặt quân — có thể ảnh hưởng lớn tới toàn bộ chất lượng thế trận về sau. Không nhất thiết phải nhớ nhiều biến hoá phức tạp; đôi khi nắm vững một vị trí nền tảng tốt đã là một lợi thế đáng kể.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Khởi Mã Cuộc Chuyển Sĩ Giác Pháo — Vị Trí Pháo Tốt Nhất",
+            "seo_description": "Khai cuộc Khởi Mã cuộc chuyển Sĩ giác Pháo, vị trí Pháo tốt nhất trong cờ tán thủ, phân tích ván chung kết thật 2020. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng chọn Khởi Mã cuộc, đưa Mã ra trước Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN4C1\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Tốt 3 tiến 1",
+                    "move_notation_iccs": "c6c5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 3 tiến 1 — Đen đối xứng lại, chưa vội định hướng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2C3\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 4",
+                    "move_notation_iccs": "h2f2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 4 — Trắng đặt Pháo vào vị trí góc Sĩ. Đây là \"Sĩ giác Pháo\" — theo nhiều đánh giá là vị trí đặt Pháo hài hoà nhất trong lối chơi cờ tán thủ: vừa yểm trợ tốt cho các quân xung quanh, vừa không lộ rõ hướng tấn công quá sớm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "r1bakabnr\/9\/1cn4c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2C3\/9\/R1BAKABNR",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "r1bakabnr\/9\/1cn4c1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2CN2\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "r1bakab1r\/9\/1cn4cn\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2CN2\/9\/R1BAKAB1R",
+                    "move_notation_wxf": "Mã 8 tiến 9",
+                    "move_notation_iccs": "h9i7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 9 — Đen chọn Mã biên, giữ thế ổn định.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "r1bakab1r\/9\/1cn4cn\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2CN2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "i0h0",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Trắng đưa Xe vào cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "r1bakabr1\/9\/1cn4cn\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1CN2CN2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Xe 9 bình 8",
+                    "move_notation_iccs": "i9h9",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 8 — Đen cũng đưa Xe ra, hoàn thiện đội hình đối xứng.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "order_in_series": 23,
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "title": "Quá Cung Pháo — Trái Mạnh Phải Yếu, Và Điểm Yếu Mã Kẹp Giữa Song Pháo",
+            "slug": "qua-cung-phao-trai-manh-phai-yeu-va-diem-yeu-ma-kep-giua-song-phao",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+            "move_count": 13,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Quá cung Pháo: đưa Pháo lệch trung lộ tạo thế \"trái mạnh phải yếu\", nhưng dễ hình thành điểm yếu Mã kẹp giữa Song Pháo — biết trước để chủ động điều chỉnh kịp thời.",
+            "content": "<h2>Khi Pháo không đứng chính giữa<\/h2>\n<p>Phần lớn các bài trước đều mở đầu bằng Trung Pháo — đưa Pháo thẳng vào giữa bàn cờ. Bài này giới thiệu một cách khác: <strong>Quá cung Pháo<\/strong>, đưa Pháo xuyên qua trung lộ nhưng lệch hẳn về một bên. Cái tên \"trái mạnh phải yếu\" phản ánh đúng hệ quả trực tiếp: quân lực dồn về một cánh, cánh còn lại tạm thời mỏng hơn.<\/p>\n<h2>Điểm yếu điển hình cần biết trước<\/h2>\n<p>Một cấu trúc thường gặp khi chơi Quá cung Pháo là quân Mã đứng kẹp giữa hai Pháo. Nhìn qua có vẻ được bảo vệ chặt, nhưng thực chất đây lại là mục tiêu quen thuộc mà đối phương có thể khai thác — đúng như những gì Đen làm trong ván này khi liên tục điều Xe áp sát đúng vị trí đó.<\/p>\n<h2>Một nhịp điều chỉnh đáng giá<\/h2>\n<p>Nhận ra nguy cơ, Trắng không cố chấp giữ nguyên đội hình ban đầu mà chủ động dịch chuyển Pháo (nước 13), chấp nhận mất một nhịp tiên thủ để đổi lấy một thế trận không còn điểm yếu rõ ràng. Đây là minh hoạ tốt cho một nguyên tắc đã nhắc nhiều lần trong chuỗi bài này: đôi khi lùi lại đúng lúc còn có giá trị hơn cố chấp tiến tới.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Quá cung Pháo không sai về lý thuyết — thực chất khá gần với Trung Pháo — nhưng người chơi cần ý thức được điểm yếu tiềm ẩn của cấu trúc \"Mã kẹp giữa Song Pháo\" mà nó dễ tạo ra. Biết trước điểm yếu của chính mình quan trọng không kém việc tìm điểm yếu của đối phương.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Quá Cung Pháo — Trái Mạnh Phải Yếu Trong Khai Cuộc",
+            "seo_description": "Khai cuộc Quá cung Pháo: thế trận trái mạnh phải yếu và điểm yếu Mã kẹp giữa Song Pháo cần lưu ý. Có bàn cờ tương tác đi từng nước, diễn giải.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C5\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 2 bình 6",
+                    "move_notation_iccs": "h2d2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 2 bình 6 — Trắng đưa Pháo lệch sang trái so với vị trí Trung Pháo quen thuộc. Đây gọi là \"Quá cung Pháo\": Pháo xuyên qua trung lộ, chếch hẳn về một bên, tạo ra thế trận có xu hướng bên trái mạnh, bên phải yếu.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C5\/9\/RNBAKABNR",
+                    "move_notation_wxf": "Pháo 8 bình 5",
+                    "move_notation_iccs": "h7e7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 5 — Đen đáp trả bằng cách đưa thẳng Pháo vào giữa — chọn tấn công thay vì phòng thủ, một cách ứng phó rất tự nhiên khi đối phương không chiếm ngay vị trí trung tâm.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C2N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "h0g2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "rnbakab1r\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C2N2\/9\/RNBAKAB1R",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "h9g7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Đen phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "rnbakab1r\/9\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C2N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Xe 1 bình 2",
+                    "move_notation_iccs": "i0h0",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 2 — Trắng đưa Xe vào cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "rnbakab2\/8r\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C1C2N2\/9\/RNBAKABR1",
+                    "move_notation_wxf": "Xe 9 tiến 1",
+                    "move_notation_iccs": "i9i8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 tiến 1 — Đen nhấc Xe lên, chuẩn bị phương án riêng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "rnbakab2\/8r\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CNC2N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Mã 8 tiến 7",
+                    "move_notation_iccs": "b0c2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 8 tiến 7 — Trắng phát triển nốt quân Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "rnbakab2\/3r5\/1c2c1n2\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1CNC2N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Xe 9 bình 4",
+                    "move_notation_iccs": "i8d8",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 9 bình 4 — Đen hoành Xe sang cột 4, nhắm thẳng vào quân Mã đứng giữa hai Pháo Trắng — điểm yếu điển hình khi đội hình có Mã kẹp giữa Song Pháo.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "rnbakab2\/3r5\/1c2c1n2\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1CNC2N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c3c4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng nhích Tốt biên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 10,
+                    "fen": "r1bakab2\/3r5\/1cn1c1n2\/p1p1p1p1p\/9\/2P6\/P3P1P1P\/1CNC2N2\/9\/R1BAKABR1",
+                    "move_notation_wxf": "Mã 2 tiến 3",
+                    "move_notation_iccs": "b9c7",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 2 tiến 3 — Đen phát triển nốt Mã còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 11,
+                    "fen": "r1bakab2\/3r5\/1cn1c1n2\/p1p1p1p1p\/9\/2P4R1\/P3P1P1P\/1CNC2N2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Xe 2 tiến 4",
+                    "move_notation_iccs": "h0h4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 2 tiến 4 — Trắng đẩy Xe lên, chuẩn bị đối phó áp lực sắp tới.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 12,
+                    "fen": "r1bakab2\/9\/1cn1c1n2\/p1p1p1p1p\/9\/2P4R1\/P2rP1P1P\/1CNC2N2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Xe 4 tiến 5",
+                    "move_notation_iccs": "d8d3",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 4 tiến 5 — Đen tiếp tục đưa Xe áp sát, rõ ràng nhắm vào mục tiêu đã định từ trước.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 13,
+                    "fen": "r1bakab2\/9\/1cn1c1n2\/p1p1p1p1p\/9\/2P4R1\/P2rP1P1P\/1CN2CN2\/9\/R1BAKAB2",
+                    "move_notation_wxf": "Pháo 6 bình 4",
+                    "move_notation_iccs": "d2f2",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 6 bình 4 — Trắng chủ động điều chỉnh đội hình, chấp nhận mất một nhịp tiên thủ để đổi lấy thế trận vững chắc hơn — tránh đúng điểm yếu \"Mã kẹp giữa Song Pháo\" mà Đen đang nhắm tới.",
                     "is_flip_reveal": false
                 }
             ]
