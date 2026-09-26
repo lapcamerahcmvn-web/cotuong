@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T01:36:57+00:00",
+    "exported_at": "2026-09-26T06:22:33+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -124146,6 +124146,63 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Tốt 1 tiến 1 — Giữa lúc cả hai bên đều đã bố trí quân vào đúng vị trí tối ưu, không còn gì cần điều chỉnh, Trắng vẫn tìm ra một nước đi: đẩy nhẹ quân Tốt biên vốn chưa hề tham gia cuộc chiến. Đây chính là \"vô sự thúc Chốt biên\" — nước cờ tưởng chừng không cần thiết lại chính là chìa khoá phá vỡ thế giằng co.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 8,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Mỗi Bên Công Một Cánh, Binh Quý Thần Tốc — Ván Vương Gia Lương Thắng Mạnh Lập Quốc",
+            "slug": "moi-ben-cong-mot-canh-binh-quy-than-toc-van-vuong-gia-luong-thang-manh-lap-quoc",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "r1bakab2\/4nR3\/2n4rc\/p1p1p3p\/2P3p2\/9\/P3P1c1P\/2C1C1N2\/9\/RNBAKAB2",
+            "move_count": 3,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Cả hai bên cùng lúc dồn lực tấn công ở hai cánh khác nhau, phớt lờ nước đi của đối phương — cục diện đối công thuần tuý, nơi so sánh quân số không còn ý nghĩa, chỉ tốc độ mới quyết định thắng thua. Phân tích ván đấu thật giải cá nhân toàn quốc 1964.",
+            "content": "<h2>Một cục diện hiếm gặp hơn cả thế giằng co<\/h2>\n<p>Bài học trước đã bàn về cục diện giằng co — khi cả hai bên đều án binh, chờ thời cơ đột phá. Bài học này đưa ra một tình huống còn đặc biệt hơn: thay vì một bên tấn công, một bên phòng thủ như thông lệ, cả hai bên cùng lúc dồn lực tấn công ở hai cánh hoàn toàn khác nhau, gần như phớt lờ những gì đối phương đang làm ở cánh còn lại. Đây là ván đấu thật từ một giải cá nhân toàn quốc, giữa hai kỳ thủ nổi tiếng với lối chơi sắc bén.<\/p>\n<h2>Từ chối một lối thoát an toàn<\/h2>\n<p>Đến thời điểm này, Trắng hoàn toàn có một lựa chọn ổn thoả: rút Tượng về, hai bên có thể nhẹ nhàng hạ nhiệt. Nhưng trong một cuộc đối công tốc độ, sự \"ổn thoả\" đó lại đồng nghĩa với việc mất đi nhịp độ tấn công quý giá. Trắng chọn tiếp tục dấn tới, chấp nhận để Đen ăn luôn quân Tượng ngay sau đó — một cái giá được trả một cách có tính toán, không phải sơ suất.<\/p>\n<h2>Đánh giá công bằng: mất quân không đồng nghĩa với thua thiệt<\/h2>\n<p>Nhìn thuần tuý về quân số, Đen đang hơn Trắng một Tượng. Nhưng đánh giá như vậy là chưa đủ: quân Mã của Trắng ở cánh này tuy có vẻ yếu thế lại đang đóng vai trò phòng thủ quan trọng, trong khi quân Tốt vừa mất của Trắng đổi lại giúp gia tăng đáng kể sức ép ở đúng cánh mà Trắng đang tấn công. Trong một cục diện đối công như thế này, so sánh số lượng quân đơn thuần gần như vô nghĩa — điều thực sự quyết định nằm ở vị trí và tốc độ triển khai của từng cánh.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Khi một ván cờ đã bước vào trạng thái mỗi bên tấn công một cánh thực sự, tiêu chuẩn đánh giá quen thuộc — bên nào hơn quân, bên nào giữ thế cân bằng — không còn nhiều ý nghĩa. Yếu tố duy nhất thực sự quyết định là tốc độ: bên nào bắt được Tướng đối phương nhanh hơn dù chỉ một nước, bên đó chiến thắng. Nhận ra đúng thời điểm một ván cờ đã chuyển từ \"tấn công đối phòng thủ\" sang \"đối công thuần tuý\" — để chuyển hẳn cách đánh giá thế trận theo đó — là bài học cốt lõi mà ví dụ này muốn truyền đạt.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Mỗi Bên Công Một Cánh — Binh Quý Thần Tốc, Trung Cuộc",
+            "seo_description": "Trung cuộc cờ tướng: cục diện mỗi bên công một cánh, đối công thuần tuý, tốc độ quyết định thắng thua. Phân tích ván đấu thật 1964. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "r1bakab2\/4nR3\/2n4rc\/p1P1p3p\/6p2\/9\/P3P1c1P\/2C1C1N2\/9\/RNBAKAB2",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "c5c6",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Trắng không hề do dự, tiếp tục dấn tới thay vì rút Tượng về phòng thủ — đúng tinh thần của một cuộc đối công: chậm một nhịp là thua.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "r1bakab2\/4nR3\/2n4rc\/p1P1p3p\/6p2\/9\/P3P3P\/2C1C1N2\/9\/RNBAKAc2",
+                    "move_notation_wxf": "Pháo 7 tiến 3",
+                    "move_notation_iccs": "g3g0",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 7 tiến 3 — Đen lập tức ăn luôn quân Tượng vừa bị bỏ lại, đúng như tính toán từ trước.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "r1bakab2\/4nR3\/2n4rc\/p1P1p3p\/6p2\/9\/P3P3P\/2C1C1N2\/4A4\/RNBAK1c2",
+                    "move_notation_wxf": "Sĩ 4 tiến 5",
+                    "move_notation_iccs": "f0e1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Sĩ 4 tiến 5 — Trắng không màng việc vừa mất một quân Tượng, tiếp tục củng cố đội hình tấn công phía cánh mình, chấp nhận đánh đổi để giữ vững nhịp độ.",
                     "is_flip_reveal": false
                 }
             ]

@@ -127,3 +127,4 @@ render trực quan với Hình 1 gốc.
 | 5 | 45 | Sách lược khi hơn quân — rất dài (45→60), nhiều cuộc đấu thật |
 | 6 | 62 | Chiến thuật cản trở kinh điển — nối lại chủ đề Mã ngọa tào (Bài 3) — rất dài (62→74), 2 cuộc đấu thật |
 | 7 | 75 | Điểm đột phá trong cục diện giằng co — "vô sự thúc Chốt biên" |
+| 8 | 87 | Mỗi bên công một cánh, binh quý thần tốc — Vương Gia Lương thắng Mạnh Lập Quốc 1964 |
