@@ -133,3 +133,4 @@ render trực quan với Hình 1 gốc.
 | 7 | 75 | Điểm đột phá trong cục diện giằng co — "vô sự thúc Chốt biên" |
 | 8 | 87 | Mỗi bên công một cánh, binh quý thần tốc — Vương Gia Lương thắng Mạnh Lập Quốc 1964 — rất dài (87→96), nhiều cuộc đấu thật |
 | 9 | 97 | Máy ủi đất trung lộ — vì sao trung lộ quan trọng nhất, Trung Pháo — 1960 |
+| 10 | 106 | Phế quân mãnh công trung lộ — Trịnh Duy Đồng bại Lưu Tuấn Đạt 2016 |

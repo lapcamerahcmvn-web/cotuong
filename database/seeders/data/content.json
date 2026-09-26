@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T06:48:09+00:00",
+    "exported_at": "2026-09-26T07:57:52+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -124238,6 +124238,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Tốt 5 tiến 1 — Điều kiện tấn công đã chín muồi, Trắng xông thẳng Chốt giữa, mở toang lỗ hổng ngay trung tâm bàn cờ — đúng hình ảnh \"máy ủi đất\" mà tên bài học nhắc tới.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 10,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Phế Quân Mãnh Công Trung Lộ — Ván Trịnh Duy Đồng Bại Lưu Tuấn Đạt",
+            "slug": "phe-quan-manh-cong-trung-lo-van-trinh-duy-dong-bai-luu-tuan-dat",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "2r1kab2\/4a1c2\/2n1b1n2\/p1R5p\/2pNp1p2\/2P6\/P5P1P\/R3CC3\/2r6\/2BAKAB2",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Một Mã đạp Song Tượng, kỳ thế tất anh hùng — nhưng có cơ hội phế quân không đồng nghĩa với nên làm ngay. Ván đấu thật 2016 minh hoạ áp lực từ quân Mã tiến sâu buộc đối phương phản ứng gần như bắt buộc, trước khi bất kỳ cuộc đổi quân nào thực sự diễn ra.",
+            "content": "<h2>Một câu tục ngữ táo bạo<\/h2>\n<p>Giới cờ tướng có câu: \"Một Mã đạp Song Tượng, kỳ thế tất anh hùng\" — một quân Mã dám xông vào bắt liên tiếp cả hai Tượng đối phương, khí phách ấy chắc chắn thuộc về người anh hùng. Thế cờ minh hoạ ở đây, trích từ một ván đấu thật, mở đầu đúng bằng viễn cảnh đó: quân Mã Trắng đã nhảy sâu vào trận địa Đen, tạo áp lực buộc đối phương phải phản ứng ngay từ những nước đầu tiên của giai đoạn trung cuộc.<\/p>\n<h2>Táo bạo không có nghĩa là liều lĩnh<\/h2>\n<p>Nhưng có cơ hội đổi Mã lấy cả hai Tượng không đồng nghĩa với việc nên làm điều đó ngay lập tức. Câu hỏi thực sự cần trả lời là: sau khi hoàn tất cuộc đổi chác đó, liệu quân lực còn lại có đủ sức tiếp tục gây áp lực hay không? Nếu chủ lực không theo kịp để tận dụng đà tấn công, một khi đối phương phản kích lại, tình trạng kém quân sẽ trở thành gánh nặng nghiêm trọng chứ không còn là lợi thế nữa.<\/p>\n<h2>Áp lực trước khi có sự lựa chọn thực sự<\/h2>\n<p>Ở thế cờ này, Đen thậm chí chưa cần đối mặt với quyết định đổi quân đã phải hành động: quân Mã đang bị Trắng nhắm tới buộc phải di chuyển ngay, gần như không còn phương án nào khác hợp lý hơn. Đây là minh chứng rõ ràng cho việc một sự cam kết quân lực đúng lúc — dù chưa hề đổi quân — đã có thể tước đi quyền tự do lựa chọn của đối phương từ rất sớm.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Phế quân để tấn công trung lộ không phải lúc nào cũng là nước cờ xuất sắc, cũng không phải lúc nào cũng là hành động liều lĩnh — giá trị thực sự của nó phụ thuộc hoàn toàn vào việc bên tấn công có sẵn đủ lực lượng để biến điểm yếu vừa tạo ra thành mối đe doạ cụ thể hay không. Phân biệt được đâu là một chuỗi phản ứng thực sự bị ép buộc — như nước đi của Đen ở đây — với đâu chỉ là một phương án phế quân hấp dẫn nhưng thiếu chắc chắn, chính là kỹ năng mà bài học này muốn xây dựng.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Phế Quân Mãnh Công Trung Lộ — Trung Cuộc Cờ Tướng",
+            "seo_description": "Trung cuộc cờ tướng: khi nào phế quân tấn công trung lộ là hợp lý, phân tích ván đấu thật 2016. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "2r1kab2\/4a1c2\/4b1n2\/p1R1n3p\/2pNp1p2\/2P6\/P5P1P\/R3CC3\/2r6\/2BAKAB2",
+                    "move_notation_wxf": "Mã 3 tiến 5",
+                    "move_notation_iccs": "c7e6",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 3 tiến 5 — Bị Mã Trắng uy hiếp ngay từ đầu, Đen buộc phải di chuyển quân Mã đang bị đe doạ sang vị trí trung tâm — bước đầu tiên trong chuỗi phản ứng gần như bắt buộc trước sức ép của Trắng.",
                     "is_flip_reveal": false
                 }
             ]
