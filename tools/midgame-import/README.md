@@ -120,6 +120,14 @@ crop.save('crop.png')
 FEN dựng tay: `2b1k4/3R3R1/4b4/9/9/9/9/9/1r3r3/3AKA3` — khớp `checkPieceCounts` (không lỗi), khớp
 render trực quan với Hình 1 gốc.
 
+## ⚠️ Lưu ý — lệch số trang PDF từ khoảng trang in 258 trở đi
+
+Từ Bài 25 trở đi phát hiện `doc[N]` (0-indexed, pymupdf) KHÔNG còn bằng `số trang in - 1` như
+trước nữa — lệch thêm 1 (có 1 trang chia phần không đánh số, "PHẦN 2 — MƯU ĐIỀU QUÂN", chen vào
+đâu đó trước trang in 259). Ví dụ: trang in **259** thực tế nằm ở `doc[257]`, không phải `doc[258]`.
+**Luôn xác nhận lại bằng số trang in thật hiện ở cuối ảnh render** trước khi tin vào công thức
+`doc[trang_in - 1]`, đặc biệt sau khi lướt qua một ranh giới "PHẦN" mới trong sách.
+
 ## Bảng tra vị trí chương (cập nhật dần khi xử lý)
 
 | Bài | Trang PDF bắt đầu | Ghi chú |
@@ -144,3 +152,8 @@ render trực quan với Hình 1 gốc.
 | 18 | 184 | Kềm chế tuyến đỉnh cung (row2, khác hoành lộ 2 ở cách phối hợp) — Vương Thiên Nhất thắng Hoàng Hải Lâm, giải giáp cấp 2019 |
 | 19 | 192 | Tầm quan trọng tuyến Chốt — Hứa Ngân Xuyên thắng Hồng Trí, giải cờ nhanh 2013 (ví dụ Hình173 minh hoạ 3 tác dụng Xe quá hà bỏ qua, dùng thẳng Cuộc thứ nhất Hình174→176, 21 nước, cross-verify khớp 100%) |
 | 20 | 201 | Khống chế tuyến kỵ hà (ranh giới sông, khác tuyến Chốt ở bài trước) — Triệu Quốc Vinh thắng Liễu Đại Hoa, giải cá nhân toàn quốc 1981 (Hình183→184 cross-verify khớp 100%) |
+| 21 | 213 | Tranh đoạt đường 3 7 (Tượng + chính Mã trú ngụ) — Tưởng Xuyên thắng Hứa Ngân Xuyên, giải quán quân toàn quốc 2015 |
+| 22 | 221 | Phong tỏa lộ Xe và phản phong tỏa (đường 2 8, sân Pháo nhưng Xe thường trực) — Hứa Ngân Xuyên thắng Vu Ấu Hoa, giải BGN 2001 (Hình198→199 cross-verify khớp 100%) |
+| 23 | 232 | Tập kích đường biên (tuyến kém giá trị nhất nhưng "dĩ chính hợp, dĩ kỳ thắng") — Hồ Vinh Hoa thắng Vương Gia Lương, giải toàn quốc 1960 |
+| 24 | 242 | Nguyên lý trọng tâm mưu đoạt thế — không ngừng chỉnh hình để tối ưu hoá (ví dụ minh hoạ Hình216, không phải ván thật) — cuối "Phần 1: Mưu đoạt thế" |
+| 25 | ⚠️259 | Tổ hợp 2 quân bá đạo Song Xe — Lữ Khâm thắng Vu Ấu Hoa, giải "Cao Tân Bôi" 2013 (Hình229→230 cross-verify khớp 100%) — mở đầu "Phần 2: Mưu điều quân" |
