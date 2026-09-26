@@ -93,10 +93,14 @@ cho cả hai bên, PHẢI phân biệt bằng tô đen/viền trắng (không c�
 Giống hệt `../opening-book-import/README.md` (P/M/X/B/S/V, verb `-` `.` `/`) **cộng thêm**:
 - `Tg` = Tướng (2 ký tự, ví dụ `Tg5-6`) — sách khai cuộc gần như không cần vì Tướng ít khi di
   chuyển ở giai đoạn khai cuộc. `midgame-parser.cjs` tự chuẩn hoá `Tg` → `T` trước khi parse.
-- ⚠️ **Chưa gặp nhưng cần chú ý**: sách có thể dùng ký hiệu phân biệt "trước/sau" (ví dụ `Xs` =
-  Xe sau) khi 2 quân cùng loại đứng cùng cột — lúc đó số cột không đủ phân biệt. Nếu gặp, cần mở
-  rộng `parseOne()` trong `midgame-parser.cjs` để nhận diện quân theo vị trí hàng (trước/sau) thay
-  vì cột gốc.
+- ⚠️ **Đã gặp ở Bài 9**: sách dùng ký hiệu "trước/sau" kiểu `Ps/2` (Pháo sau, KHÔNG kèm số cột) khi
+  cần phân biệt quân — nhưng thực tế 2 quân cùng loại không nhất thiết cùng cột trong sách này, nên
+  ký hiệu này còn mơ hồ hơn cả dự tính ban đầu (thử nghiệm cho thấy áp cả 2 khả năng đều không khớp
+  luật hợp lệ ở Bài 9). `midgame-parser.cjs` CHƯA hỗ trợ ký hiệu này. **Cách xử lý tạm**: nếu gặp,
+  ưu tiên tìm 1 nước khác trong cùng đoạn văn (thường sách có nhiều nước rõ ràng hơn xen kẽ) thay vì
+  cố giải mã `Ps`/`Xs`/`Ms` — đã áp dụng thành công ở Bài 9 (chọn nước "15.B5.1" rõ ràng thay vì
+  "17...Ps/2"). Nếu cần làm hẳn, phải mở rộng `parseOne()` nhận diện theo vị trí hàng thực tế của
+  từng quân cùng loại trên bàn (không chỉ dựa vào cột gốc).
 
 ## Code mẫu — crop hình ở DPI cao
 
@@ -127,4 +131,5 @@ render trực quan với Hình 1 gốc.
 | 5 | 45 | Sách lược khi hơn quân — rất dài (45→60), nhiều cuộc đấu thật |
 | 6 | 62 | Chiến thuật cản trở kinh điển — nối lại chủ đề Mã ngọa tào (Bài 3) — rất dài (62→74), 2 cuộc đấu thật |
 | 7 | 75 | Điểm đột phá trong cục diện giằng co — "vô sự thúc Chốt biên" |
-| 8 | 87 | Mỗi bên công một cánh, binh quý thần tốc — Vương Gia Lương thắng Mạnh Lập Quốc 1964 |
+| 8 | 87 | Mỗi bên công một cánh, binh quý thần tốc — Vương Gia Lương thắng Mạnh Lập Quốc 1964 — rất dài (87→96), nhiều cuộc đấu thật |
+| 9 | 97 | Máy ủi đất trung lộ — vì sao trung lộ quan trọng nhất, Trung Pháo — 1960 |

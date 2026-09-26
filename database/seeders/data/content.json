@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T06:22:33+00:00",
+    "exported_at": "2026-09-26T06:48:09+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -124203,6 +124203,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Sĩ 4 tiến 5 — Trắng không màng việc vừa mất một quân Tượng, tiếp tục củng cố đội hình tấn công phía cánh mình, chấp nhận đánh đổi để giữ vững nhịp độ.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 9,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Máy Ủi Đất Trung Lộ — Chiến Thuật Đè Bẹp",
+            "slug": "may-ui-dat-trung-lo-chien-thuat-de-bep",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "3akab2\/r8\/1Cn1b3c\/p1p1p3p\/5R1p1\/2P1P4\/P5c1P\/4C1N2\/7r1\/R1BAKAB2",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Vì sao đường trung tâm luôn là đường quan trọng nhất trên bàn cờ, và vì sao Trung Pháo thống trị lý thuyết khai cuộc suốt lịch sử cờ tướng. Ván đấu thật 1960 minh hoạ khi điều kiện chín muồi, một nước thúc Chốt giữa có thể trở thành \"máy ủi\" san phẳng trung lộ đối phương.",
+            "content": "<h2>Câu hỏi tưởng chừng ngây thơ nhưng lại rất sâu sắc<\/h2>\n<p>Sau tám bài học xoay quanh những cục diện và chiến thuật cụ thể, bài học này quay lại một câu hỏi nền tảng mà ngay cả người chơi lâu năm cũng ít khi tự đặt ra: trong 9 đường dọc và 10 đường ngang của bàn cờ, đường nào thực sự quan trọng nhất? Câu trả lời, khi đã nói ra, lại đơn giản đến bất ngờ: đường trung tâm — bởi đó là nơi Tướng đứng, và đường ngắn nhất dẫn tới mục tiêu cuối cùng của ván cờ luôn đi qua đó.<\/p>\n<h2>Trung Pháo — hệ quả tự nhiên của câu trả lời đó<\/h2>\n<p>Chính vì lẽ đó, kể từ khi cờ tướng hình thành, Trung Pháo luôn giữ vị trí là bố cuộc được nghiên cứu nhiều nhất: đưa thẳng Pháo vào cột trung tâm là cách trực diện nhất để đe doạ đúng con đường ngắn nhất tới Tướng đối phương. Cũng chính áp lực này đã buộc phía phòng thủ phải phát triển hẳn những hệ thống chuyên biệt — như Bình Phong Mã hay Phản Cung Mã — chỉ để đối phó với đúng mối đe doạ trung lộ đó.<\/p>\n<h2>Từ mối đe doạ ban đầu đến \"máy ủi\" giữa trung cuộc<\/h2>\n<p>Ván đấu thật từ một giải cá nhân toàn quốc năm 1960 cho thấy tinh thần đó không dừng lại ở khai cuộc. Sau khi đã vượt qua giai đoạn thăm dò ban đầu, một khi điều kiện đã chín muồi, chính quân Tốt trung lộ trở thành hiện thân trực tiếp của cùng triết lý gây áp lực trung tâm ấy — tiến thẳng lên, mở toang khoảng trống ngay giữa bàn cờ, đúng như hình ảnh một chiếc máy ủi san phẳng mọi thứ cản đường khi đã đến đúng thời điểm.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Thỉnh thoảng quay lại những câu hỏi tưởng chừng cơ bản nhất — đường nào trên bàn cờ thực sự quan trọng — vẫn có giá trị ngay cả với người chơi đã có kinh nghiệm. Câu trả lời \"trung tâm\" không chỉ giải thích vì sao Trung Pháo giữ vị trí thống trị suốt lịch sử lý thuyết khai cuộc, mà còn giải thích vì sao một nước thúc Chốt giữa đúng thời điểm vẫn luôn là một trong những cách đáng tin cậy nhất để biến lợi thế đã tích luỹ thành kết quả cụ thể ở giai đoạn trung cuộc.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Máy Ủi Đất Trung Lộ — Chiến Thuật Đè Bẹp, Trung Cuộc",
+            "seo_description": "Trung cuộc cờ tướng: vì sao trung lộ quan trọng nhất bàn cờ, chiến thuật đè bẹp bằng Chốt giữa. Phân tích ván đấu thật 1960. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "3akab2\/r8\/1Cn1b3c\/p1p1p3p\/4PR1p1\/2P6\/P5c1P\/4C1N2\/7r1\/R1BAKAB2",
+                    "move_notation_wxf": "Tốt 5 tiến 1",
+                    "move_notation_iccs": "e4e5",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 5 tiến 1 — Điều kiện tấn công đã chín muồi, Trắng xông thẳng Chốt giữa, mở toang lỗ hổng ngay trung tâm bàn cờ — đúng hình ảnh \"máy ủi đất\" mà tên bài học nhắc tới.",
                     "is_flip_reveal": false
                 }
             ]
