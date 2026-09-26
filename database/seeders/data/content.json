@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T00:28:04+00:00",
+    "exported_at": "2026-09-26T00:39:19+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -124076,6 +124076,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Tốt 7 tiến 1 — Đen tiếp tục thúc Tốt, duy trì sức ép liên tục dù đang ở thế kém quân.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 6,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Rút Đao Chém Nước Nước Không Chảy — Chiến Thuật Cản Trở Kinh Điển",
+            "slug": "rut-dao-chem-nuoc-nuoc-khong-chay-chien-thuat-can-tro-kinh-dien",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "2bak4\/3Pa4\/4b4\/5R1N1\/9\/9\/1n4r2\/4B4\/3pA4\/2B1KA3",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Cả hai bên chỉ còn Xe Mã Chốt tưởng chừng khó phân thắng bại — Trắng tìm ra lời giải bằng một nước Tượng cản đúng đường Xe Đen, mở lối cho Mã nhảy vào vị trí ngọa tào không còn bị quấy nhiễu. Ví dụ kinh điển nhập môn cho chiến thuật cản trở.",
+            "content": "<h2>Một hình ảnh gợi tả cho chiến thuật cản trở<\/h2>\n<p>Tên gọi của bài học này mượn một hình ảnh giàu chất thơ: rút đao chém xuống nước, nhưng nước không hề bị chém đứt hay bắn tung toé — nó chỉ lặng lẽ khép lại. Đó chính xác là tinh thần của chiến thuật cản trở: không dùng vũ lực trực diện, mà chỉ cần đặt đúng một quân vào đúng vị trí để chặn đường đối phương, hiệu quả mang lại có thể còn lớn hơn cả một đòn tấn công ồ ạt.<\/p>\n<h2>Một thế cờ tưởng chừng không thể thắng<\/h2>\n<p>Thế cờ minh hoạ đưa cả hai bên về trạng thái tối giản: mỗi bên chỉ còn đúng một Xe, một Mã và một Tốt làm lực lượng tấn công, bên cạnh đội hình phòng thủ tiêu chuẩn. Xét thuần tuý theo lý thuyết cân bằng quân lực, đây gần như là một thế hoà — không bên nào đủ sức áp đảo bên kia. Vậy mà Trắng vẫn tìm ra được cách thắng, chỉ nhờ đúng một nước cờ.<\/p>\n<h2>Tượng — quân phòng thủ bất ngờ đảm nhận vai trò tấn công<\/h2>\n<p>Nước Tượng 5 tiến 3 không hề nhắm tới việc củng cố phòng thủ như thường lệ. Mục đích thực sự của nó là chặn đúng đường di chuyển mà Xe Đen cần dùng để can thiệp. Một khi con đường đó đã bị khoá, quân Mã Trắng lập tức có cơ hội nhảy vào đúng vị trí ngọa tào đã quen thuộc — chính là thuật dùng Mã mạnh nhất từng được phân tích ở một bài học trước. Khác với những lần khác, Xe Đen lần này hoàn toàn không còn khả năng can thiệp để phá vỡ thế trận đó, vì đường đi của nó đã bị quân Tượng án ngữ từ trước.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Đây được xem là ví dụ kinh điển nhất, mang tính nhập môn cho toàn bộ nhóm chiến thuật cản trở trong trung cuộc — một kỹ thuật sẽ còn xuất hiện lặp đi lặp lại ở nhiều cấp độ khác nhau của thực chiến. Cốt lõi của bài học nằm ở chỗ: một quân cờ vốn không gắn liền với vai trò tấn công vẫn có thể quyết định cả ván đấu, chỉ cần nó đứng đúng vào ô cần đứng, vào đúng thời điểm cần thiết, cắt đứt đường lui tới của quân mạnh nhất bên đối phương.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Chiến Thuật Cản Trở Kinh Điển — Trung Cuộc Cờ Tướng",
+            "seo_description": "Trung cuộc cờ tướng: chiến thuật cản trở kinh điển, dùng Tượng chặn đường Xe mở lối cho Mã ngọa tào. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "2bak4\/3Pa4\/4b4\/5R1N1\/9\/6B2\/1n4r2\/9\/3pA4\/2B1KA3",
+                    "move_notation_wxf": "Tượng 5 tiến 3",
+                    "move_notation_iccs": "e2g4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tượng 5 tiến 3 — Trắng bất ngờ phi Tượng, không phải để phòng thủ mà để cản đúng đường tiến của Xe Đen. Nước tưởng chừng nhỏ nhặt này lại mở đường cho một đòn quyết định ngay sau đó.",
                     "is_flip_reveal": false
                 }
             ]

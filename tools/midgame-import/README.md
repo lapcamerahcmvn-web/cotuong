@@ -122,3 +122,5 @@ render trực quan với Hình 1 gốc.
 | 2 | 15 | Khuyết Tượng sợ Pháo |
 | 3 | 25 | Mã ngọa tào — thuật dùng Mã mạnh nhất |
 | 4 | 35 | Mã oa tâm — Mã xấu nhất |
+| 5 | 45 | Sách lược khi hơn quân — rất dài (45→60), nhiều cuộc đấu thật |
+| 6 | 62 | Chiến thuật cản trở kinh điển — nối lại chủ đề Mã ngọa tào (Bài 3) |
