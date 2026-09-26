@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T00:39:19+00:00",
+    "exported_at": "2026-09-26T01:36:57+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -124111,6 +124111,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Tượng 5 tiến 3 — Trắng bất ngờ phi Tượng, không phải để phòng thủ mà để cản đúng đường tiến của Xe Đen. Nước tưởng chừng nhỏ nhặt này lại mở đường cho một đòn quyết định ngay sau đó.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 7,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Điểm Đột Phá Trong Cục Diện Giằng Co",
+            "slug": "diem-dot-pha-trong-cuc-dien-giang-co",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "4kab1C\/4a4\/4bcN2\/4p4\/p1R3p1r\/9\/P3P1P1P\/4B1c2\/4A4\/2BAK4",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Cả hai bên đều đã bố trí quân vào đúng vị trí tối ưu — trạng thái \"vô sự\" hiếm gặp. Đột phá đến từ chính quân bị lãng quên: đẩy nhẹ Tốt biên chưa từng tham chiến, không tốn kém gì nhưng lặng lẽ nghiêng cán cân thế trận.",
+            "content": "<h2>Một loại \"cân bằng\" khác hẳn cân bằng thông thường<\/h2>\n<p>Khi đánh giá thế trận trung cuộc, người chơi thường quen với những nhận định như \"bên nào đó chiếm ưu\" hay \"hai bên cân bằng\". Nhưng \"cân bằng\" là một khái niệm khá mơ hồ, có thể dùng để mô tả rất nhiều tình huống khác nhau. Bài học này tách riêng ra một trường hợp đặc biệt và hiếm gặp hơn hẳn: cục diện giằng co — thời điểm cả hai bên đều đã đưa quân vào đúng vị trí tối ưu, không bên nào còn nước đi chủ động nào thực sự tốt hơn.<\/p>\n<h2>Thế nào là \"vô sự\" thực sự<\/h2>\n<p>Thế cờ minh hoạ mô tả chính xác trạng thái đó: Xe, Pháo, Mã của Trắng đều đã đứng đúng chỗ, không cần di chuyển thêm — một trạng thái được gọi là \"vô sự\". Bản thân sách cũng thừa nhận đây là điều cực kỳ hiếm gặp trong thực chiến, bởi lẽ đánh cờ vốn là quá trình liên tục tính toán và điều chỉnh; hiếm khi nào một bên lại có đầy đủ toàn bộ quân chủ lực cùng lúc ở trạng thái hoàn hảo như vậy.<\/p>\n<h2>Một Tốt biên \"vô dụng\" trở thành lời giải<\/h2>\n<p>Chính vì mọi quân chủ lực khác đều đã yên vị, quân duy nhất còn dư năng lượng để sử dụng lại là quân Tốt biên chưa hề động đến từ đầu ván. Đẩy quân Tốt này lên gần như không tốn kém gì — không cần điều chỉnh bất kỳ quân nào khác, không để lộ điểm yếu mới — nhưng lại lặng lẽ nghiêng cán cân về phía Trắng, mà Đen không có gì cụ thể để phản ứng ngay lập tức.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Đột phá trong một thế cờ giằng co thực sự thường không đến từ những quân đã và đang hoạt động hết công suất — mà đến từ việc nhận ra quân nào vẫn còn chưa được huy động, rồi tìm cách kích hoạt nó một cách an toàn, không phải trả giá. Khi mọi quân khác đã ở đúng vị trí tối ưu, chính quân bị bỏ quên đó mới là nơi ẩn chứa tiềm năng đột phá thực sự.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Điểm Đột Phá Trong Cục Diện Giằng Co — Trung Cuộc",
+            "seo_description": "Trung cuộc cờ tướng: đột phá thế giằng co bằng cách kích hoạt quân Tốt biên chưa tham chiến khi mọi quân khác đã tối ưu. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4kab1C\/4a4\/4bcN2\/4p4\/p1R3p1r\/8P\/P3P1P2\/4B1c2\/4A4\/2BAK4",
+                    "move_notation_wxf": "Tốt 1 tiến 1",
+                    "move_notation_iccs": "i3i4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 1 tiến 1 — Giữa lúc cả hai bên đều đã bố trí quân vào đúng vị trí tối ưu, không còn gì cần điều chỉnh, Trắng vẫn tìm ra một nước đi: đẩy nhẹ quân Tốt biên vốn chưa hề tham gia cuộc chiến. Đây chính là \"vô sự thúc Chốt biên\" — nước cờ tưởng chừng không cần thiết lại chính là chìa khoá phá vỡ thế giằng co.",
                     "is_flip_reveal": false
                 }
             ]

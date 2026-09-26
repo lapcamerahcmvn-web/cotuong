@@ -77,14 +77,16 @@ Sách này dùng **CHỮ KHÁC NHAU cho Pháo mỗi bên** (giống hệt quy ư
 đọc nhầm 2 quân từ "quân Trắng" thành "quân Đen" và ngược lại, phải dò lại nhiều lần mới ra). Kiểm
 tra CHỮ trước, nếu vẫn nghi ngờ mới crop zoom to để xem viền tô đen hay để trắng.
 
-Các cặp chữ phân biệt màu đã biết trong sách (Xe/Mã/Sĩ/Tượng dùng CHUNG 1 chữ cho cả hai bên, chỉ
-phân biệt được bằng tô màu — không có mẹo chữ cho các quân này):
+**Cập nhật (Bài 7): Sĩ và Tượng CŨNG có chữ riêng theo phe** — chỉ Xe và Mã là dùng chung 1 chữ
+cho cả hai bên, PHẢI phân biệt bằng tô đen/viền trắng (không có mẹo chữ):
 | Quân | Bên Đen | Bên Trắng |
 |---|---|---|
 | Tướng | 將 | 帥 |
 | Tốt | 卒 | 兵 |
 | Pháo | 砲 | 炮 |
-| Xe/Mã/Sĩ/Tượng | (chữ giống nhau, chỉ phân biệt bằng tô đen/viền trắng) |
+| Sĩ | 士 | 仕 |
+| Tượng | 象 | 相 |
+| Xe/Mã | (chữ giống nhau, chỉ phân biệt bằng tô đen/viền trắng — bắt buộc crop kỹ) |
 
 ## Ký hiệu sách (khác 1 điểm so với sách khai cuộc)
 
@@ -123,4 +125,5 @@ render trực quan với Hình 1 gốc.
 | 3 | 25 | Mã ngọa tào — thuật dùng Mã mạnh nhất |
 | 4 | 35 | Mã oa tâm — Mã xấu nhất |
 | 5 | 45 | Sách lược khi hơn quân — rất dài (45→60), nhiều cuộc đấu thật |
-| 6 | 62 | Chiến thuật cản trở kinh điển — nối lại chủ đề Mã ngọa tào (Bài 3) |
+| 6 | 62 | Chiến thuật cản trở kinh điển — nối lại chủ đề Mã ngọa tào (Bài 3) — rất dài (62→74), 2 cuộc đấu thật |
+| 7 | 75 | Điểm đột phá trong cục diện giằng co — "vô sự thúc Chốt biên" |
