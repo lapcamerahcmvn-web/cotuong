@@ -139,3 +139,8 @@ render trực quan với Hình 1 gốc.
 | 13 | 136 | Pháo chìm đáy — Không môn rút sát (phối hợp Xe) |
 | 14 | 145 | Pháo chìm đáy — kềm chế trợ công (mở đường cho Xe tấn công) |
 | 15 | 161 | Pháo chìm đáy — phong tỏa Xe — Trịnh Duy Đồng thắng Vương Thiên Nhất, giải chuyên nghiệp 2018 (Cuộc thứ hai; dùng Hình149 làm thế bắt đầu để né ký hiệu Pt/Ps mơ hồ ở Hình148 — xem mục ký hiệu bên trên) |
+| 16 | 166 | Mãnh công đường sườn (lộ 4, lộ 6) — cuộc ví dụ minh hoạ (không tên thật), phát hiện: mỗi bên đọc cột theo đúng nhãn PHÍA MÌNH (trên=Đen, dưới=Trắng) — vd "Tg5-4" của Trắng là cột vật lý 6 chứ không phải cột 5 |
+| 17 | 176 | Mãnh công hoành lộ 2 — Trịnh Duy Đồng thắng Thân Bằng, giải cờ nhanh 2013 (Hình160→161 cross-verify khớp 100%) |
+| 18 | 184 | Kềm chế tuyến đỉnh cung (row2, khác hoành lộ 2 ở cách phối hợp) — Vương Thiên Nhất thắng Hoàng Hải Lâm, giải giáp cấp 2019 |
+| 19 | 192 | Tầm quan trọng tuyến Chốt — Hứa Ngân Xuyên thắng Hồng Trí, giải cờ nhanh 2013 (ví dụ Hình173 minh hoạ 3 tác dụng Xe quá hà bỏ qua, dùng thẳng Cuộc thứ nhất Hình174→176, 21 nước, cross-verify khớp 100%) |
+| 20 | 201 | Khống chế tuyến kỵ hà (ranh giới sông, khác tuyến Chốt ở bài trước) — Triệu Quốc Vinh thắng Liễu Đại Hoa, giải cá nhân toàn quốc 1981 (Hình183→184 cross-verify khớp 100%) |
