@@ -134,3 +134,8 @@ render trực quan với Hình 1 gốc.
 | 8 | 87 | Mỗi bên công một cánh, binh quý thần tốc — Vương Gia Lương thắng Mạnh Lập Quốc 1964 — rất dài (87→96), nhiều cuộc đấu thật |
 | 9 | 97 | Máy ủi đất trung lộ — vì sao trung lộ quan trọng nhất, Trung Pháo — 1960 |
 | 10 | 106 | Phế quân mãnh công trung lộ — Trịnh Duy Đồng bại Lưu Tuấn Đạt 2016 |
+| 11 | 117 | Chiến thuật đoạt trung Binh — Vương Gia Lương thắng Mạnh Lập Quốc 1964 (rất dài, nhiều cuộc đấu thật) |
+| 12 | 127 | Khi nào có thể để đối phương thí Không đầu Pháo — giải cá nhân toàn quốc 1960 (nhiều cuộc đấu thật) |
+| 13 | 136 | Pháo chìm đáy — Không môn rút sát (phối hợp Xe) |
+| 14 | 145 | Pháo chìm đáy — kềm chế trợ công (mở đường cho Xe tấn công) |
+| 15 | 161 | Pháo chìm đáy — phong tỏa Xe — Trịnh Duy Đồng thắng Vương Thiên Nhất, giải chuyên nghiệp 2018 (Cuộc thứ hai; dùng Hình149 làm thế bắt đầu để né ký hiệu Pt/Ps mơ hồ ở Hình148 — xem mục ký hiệu bên trên) |
