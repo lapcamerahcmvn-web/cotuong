@@ -42,6 +42,18 @@ chục nước), thể hiện qua 1 hình vẽ bàn cờ ở đầu bài. Phải
    ```
    Sau đó vẽ `ImageDraw.line` đè lên ảnh tại các `centers` này (kèm ảnh gốc, DPI cao) rồi `Read` lại
    để so — làm bước này TRƯỚC khi dựng FEN, không làm sau, tiết kiệm rất nhiều lần dựng lại.
+
+   **Áp dụng tương tự cho HÀNG** (dễ nhầm hàng hơn cả cột vì không phải hàng nào cũng có nhãn số) —
+   dò đường kẻ ngang bằng cách quét 1 CỘT dọc (ở vị trí chắc chắn không có quân, ví dụ giữa cột 1
+   và 2) rồi tìm các đoạn tối liên tục (đường kẻ bàn cờ luôn hiện, không bị quân che ở cột trống):
+   ```python
+   col = arr[Y1:Y2, X_EMPTY]  # 1 cột dọc, X_EMPTY = toạ độ x của 1 cột chắc chắn trống quân
+   dark = np.where(col < 150)[0]
+   # gom nhóm liên tiếp (cách nhau <=4px) -> tâm mỗi nhóm = 1 đường kẻ hàng, đúng 10 đường (hàng 0-9)
+   ```
+   Vẽ đè cả 9 đường dọc (cột) VÀ 10 đường ngang (hàng), có nhãn số, lên 1 ảnh rồi so — đây là cách
+   nhanh và chắc chắn nhất, đã dùng thành công cho Bài 4 (thế cờ dày đặc quân vẫn đọc đúng ngay lần
+   đầu nhờ cách này, không phải dựng lại nhiều lần như Bài 2).
 3. **Dựng FEN tay**: 10 hàng cách nhau `/`, hàng 0 = trên/Đen → hàng 9 = dưới/Trắng. Dùng
    `checkPieceCounts(fen)` trong `midgame-parser.cjs` để bắt lỗi đọc nhầm quân (Tướng phải đúng 1
    mỗi bên, Sĩ/Tượng/Xe/Pháo/Mã ≤2, Tốt ≤5).
@@ -89,3 +101,4 @@ render trực quan với Hình 1 gốc.
 | 1 | 7 | Khuyết Sĩ sợ Song Xe |
 | 2 | 15 | Khuyết Tượng sợ Pháo |
 | 3 | 25 | Mã ngọa tào — thuật dùng Mã mạnh nhất |
+| 4 | 35 | Mã oa tâm — Mã xấu nhất |

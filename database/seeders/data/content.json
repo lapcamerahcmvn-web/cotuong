@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T00:14:31+00:00",
+    "exported_at": "2026-09-26T00:19:38+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -123918,6 +123918,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 8 tiến 4 — Trắng đưa Xe tiến sâu, phối hợp cùng quân Mã đã án ngữ sẵn ở vị trí \"ngọa tào\". Hai chủ lực cùng lúc khép chặt hàng ngang sát ngay sau lưng Tướng Đen — không còn đường thoát.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 4,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Mã Xấu Nhất — Mã Oa Tâm",
+            "slug": "ma-xau-nhat-ma-oa-tam",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "3k5\/9\/9\/3r5\/9\/7c1\/1n2c4\/4B4\/4N4\/3AKAB2",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Mã đứng ngay sát Tướng tưởng chừng an toàn nhất lại vô tình khoá chặt đường xoay xở của Sĩ — vị trí \"oa tâm\" bị xem là tệ nhất trong mọi cách bố trí Mã. Ba con đường độc lập đều dẫn tới chiếu bí minh chứng mức độ nghiêm trọng của điểm yếu này.",
+            "content": "<h2>Đối lập hoàn toàn với bài học trước<\/h2>\n<p>Bài học trước đã giới thiệu Mã ngọa tào — thuật dùng Mã mạnh nhất. Theo đúng lẽ tự nhiên, sẽ có một vị trí ngược lại: Mã oa tâm, quân Mã đứng ngay sát cạnh Tướng của chính mình, bị coi là vị trí tệ nhất trong mọi cách bố trí Mã. Thế cờ minh hoạ ở đây cho thấy vì sao một vị trí tưởng chừng \"an toàn nhất\" — nằm sát ngay bên cạnh Tướng — lại trở thành gánh nặng chết người.<\/p>\n<h2>Cái giá của một quân Mã \"an toàn quá mức\"<\/h2>\n<p>Trực giác thường mách bảo rằng đặt quân Mã sát cạnh Tướng sẽ được bảo vệ tốt hơn. Nhưng thực tế hoàn toàn ngược lại: đứng ngay vị trí đó, quân Mã vô tình chặn mất đường chéo duy nhất mà Sĩ có thể dùng để di chuyển trong cung. Hậu quả là khi thế trận gặp áp lực, Tướng chỉ còn rất ít ô để lánh nạn — một tầng phòng thủ tưởng chừng luôn có sẵn (Sĩ tự do xê dịch trong cung) đã bị chính quân Mã của mình khoá chặt.<\/p>\n<h2>Một điểm yếu, ba cách khai thác<\/h2>\n<p>Thế cờ này không chỉ có một cách duy nhất để khai thác điểm yếu — Đen có tới ba lựa chọn đều dẫn tới chiếu bí ngay lập tức: tự thân quân Mã Đen nhảy vào đúng vị trí ngọa tào, hoặc nhảy sang thế quải giác, hoặc như minh hoạ ở đây, đưa thẳng Xe tiến sâu tận dụng đúng việc Sĩ Trắng đã mất khả năng xoay xở để áp sát chiếu bí. Khi một điểm yếu duy nhất mở ra tới ba con đường dẫn tới thắng lợi độc lập với nhau, đó hiếm khi là sự trùng hợp — nó phản ánh mức độ nghiêm trọng thực sự của điểm yếu đó.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Giới cờ có câu tục ngữ: Mã nhập oa tâm, không chết cũng hôn mê — ý nói một khi quân Mã rơi vào đúng vị trí này, dù chưa bị bắt ngay, cả thế trận cũng đã lâm vào tình trạng tê liệt. Một cách bố trí quân tưởng chừng thận trọng — dồn quân về sát bảo vệ Tướng — hoàn toàn có thể âm thầm phá hỏng chính những quân lẽ ra đang làm nhiệm vụ bảo vệ đó. Trước khi đặt bất kỳ quân nào vào vị trí \"an toàn\", luôn cần tự hỏi: nó có đang vô tình khoá mất đường lui của quân khác hay không?<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Mã Oa Tâm — Vị Trí Mã Tệ Nhất Trong Trung Cuộc",
+            "seo_description": "Trung cuộc cờ tướng: Mã oa tâm, vị trí Mã tệ nhất vì khoá chặt đường xoay xở của Sĩ, khiến Tướng hết đường thoát. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "3k5\/9\/9\/9\/9\/7c1\/1n2c4\/4B4\/4N4\/3rKAB2",
+                    "move_notation_wxf": "Xe 4 tiến 6",
+                    "move_notation_iccs": "d6d0",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 4 tiến 6 — Đen đưa thẳng Xe tiến sâu, ăn luôn quân Sĩ cản đường rồi áp sát ngay cạnh Tướng Trắng. Vì quân Mã oa tâm đã khiến Sĩ còn lại và các quân xung quanh không còn chỗ xoay xở, Tướng Trắng hoàn toàn hết đường thoát — chiếu bí.",
                     "is_flip_reveal": false
                 }
             ]
