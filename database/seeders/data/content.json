@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T00:19:38+00:00",
+    "exported_at": "2026-09-26T00:28:04+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -123953,6 +123953,129 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 4 tiến 6 — Đen đưa thẳng Xe tiến sâu, ăn luôn quân Sĩ cản đường rồi áp sát ngay cạnh Tướng Trắng. Vì quân Mã oa tâm đã khiến Sĩ còn lại và các quân xung quanh không còn chỗ xoay xở, Tướng Trắng hoàn toàn hết đường thoát — chiếu bí.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 5,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Sách Lược Xử Lý Trong Hình Thế Hơn Quân — Ván Hứa Ngân Xuyên Thắng Triệu Quốc Vinh",
+            "slug": "sach-luoc-xu-ly-trong-hinh-the-hon-quan-van-hua-ngan-xuyen-thang-trieu-quoc-vinh",
+            "level": "nang-cao",
+            "source_type": "manual",
+            "initial_fen": "2bak2r1\/4aR3\/4b1n2\/1c2p1p1p\/2p4c1\/r3P1PR1\/n1P5P\/N3C1N2\/C8\/2BAKAB2",
+            "move_count": 9,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Trắng hơn quân nhưng Đen bù lại bằng nhiều Tốt và thế trận hoạt bát — minh chứng nguyên tắc cốt lõi khi hơn quân: chủ động tìm cách đơn giản hoá cục diện, vì mỗi lần đổi quân đều bất lợi bất cân xứng cho bên đang kém quân.",
+            "content": "<h2>Một tình huống quen thuộc: hơn quân nhưng chưa hẳn đã dễ thắng<\/h2>\n<p>Sau ba bài học xoay quanh những vị trí cụ thể của quân Mã, bài học này chuyển sang một câu hỏi mang tính chiến lược rộng hơn: khi đã hơn quân đối phương, nên theo đuổi kế hoạch gì? Thế cờ minh hoạ trích từ một ván đấu thật ở giải đấu cấp quốc gia năm 1994, cho thấy rõ một tình huống quen thuộc — bên hơn quân (Trắng) không hề áp đảo tuyệt đối, vì bên kém quân (Đen) bù lại bằng nhiều Tốt hơn và thế trận Xe, Mã khá hoạt bát. Hơn quân, vì vậy, chỉ là điểm khởi đầu thuận lợi, không phải sự đảm bảo chiến thắng.<\/p>\n<h2>Nguyên tắc cốt lõi: hơn quân thì nên đơn giản hoá<\/h2>\n<p>Quan điểm chủ đạo của bài học này rất rõ ràng: bên đang hơn quân nên chủ động tìm cách đơn giản hoá cục diện, thay vì để thế cờ càng lúc càng phức tạp. Có thể minh hoạ bằng một phép so sánh cụ thể: giả sử một bên đang sở hữu Xe Pháo Song Mã, còn đối phương chỉ có Xe Pháo Mã. Nếu hai bên cùng đổi đi một quân Mã, bên hơn quân vẫn còn nguyên vẹn Xe Pháo Mã — vẫn đủ sức phát động tấn công mạnh mẽ. Nhưng bên kém quân, sau khi mất quân Mã duy nhất, chỉ còn lại Xe Pháo — sức sát thương giảm sút rõ rệt, dù trên danh nghĩa cả hai bên đều \"chỉ\" đổi một quân.<\/p>\n<h2>Vì sao đơn giản hoá lại bất cân xứng đến vậy<\/h2>\n<p>Bí quyết nằm ở chỗ: quân dư ra của bên hơn quân không phải là quân thiết yếu cho một đội hình tấn công cân bằng, nên khi đổi đi, sức mạnh phối hợp còn lại hầu như không suy giảm. Ngược lại, đối phương buộc phải đổi đi đúng một quân mà họ không hề dư dả — mỗi lần đổi quân đều cắt giảm trực tiếp khả năng tạo ra mối đe doạ thực sự. Càng về sau, khi bàn cờ càng vơi bớt quân, khoảng cách sức mạnh giữa hai bên càng lộ rõ, đúng như thế cờ minh hoạ cho thấy: Trắng tuy không vội tấn công ồ ạt nhưng liên tục tránh những cuộc đối đầu không cần thiết (như nước Xe 4 bình 2), giữ vững lợi thế đã tích luỹ được.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Sở hữu nhiều quân hơn đối phương là một lợi thế khởi điểm, không phải một chiến thắng đã định sẵn. Biến lợi thế vật chất ấy thành kết quả cụ thể đòi hỏi một chiến lược chủ động — ưu tiên tìm cơ hội đổi quân hợp lý, đặc biệt là những quân đang gây khó chịu nhất cho mình — thay vì chỉ thụ động giữ thế và chờ đợi. Đây chính là tinh thần cốt lõi mà bài học mở đầu chuỗi chủ đề \"hơn quân\" này muốn truyền đạt.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Sách Lược Xử Lý Khi Hơn Quân — Trung Cuộc Cờ Tướng",
+            "seo_description": "Trung cuộc cờ tướng: chiến lược khi hơn quân là chủ động đơn giản hoá cục diện, phân tích ván đấu thật 1994. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "2bak2r1\/4aR3\/4b1n2\/1c2p1p1p\/2p4c1\/4r1PR1\/n1P5P\/N3C1N2\/C8\/2BAKAB2",
+                    "move_notation_wxf": "Xe 1 bình 5",
+                    "move_notation_iccs": "a4e4",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 1 bình 5 — Đen đưa Xe sang cột giữa.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "2bak2r1\/4aR3\/4b1n2\/1c2p1p1p\/2p4c1\/4r1PR1\/C1P5P\/N3C1N2\/9\/2BAKAB2",
+                    "move_notation_wxf": "Pháo 9 tiến 2",
+                    "move_notation_iccs": "a1a3",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 9 tiến 2 — Trắng đẩy Pháo tiến lên.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "2bak2r1\/4aR3\/4b1n2\/1c2p1p1p\/2p1c4\/4r1PR1\/C1P5P\/N3C1N2\/9\/2BAKAB2",
+                    "move_notation_wxf": "Pháo 8 bình 5",
+                    "move_notation_iccs": "h5e5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 8 bình 5 — Đen cũng đưa Pháo vào giữa, đối đầu trực diện với Pháo Trắng.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 4,
+                    "fen": "2bak2r1\/4aR3\/4b1n2\/1c2p1p1p\/2p1c4\/4r1PR1\/C1P5P\/N3C1N2\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Sĩ 6 tiến 5",
+                    "move_notation_iccs": "d0e1",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Sĩ 6 tiến 5 — Trắng bổ Sĩ, củng cố trung lộ.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 5,
+                    "fen": "2bak4\/4aR3\/4b1n2\/1c2p1p1p\/2p1c4\/4r1Pr1\/C1P5P\/N3C1N2\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Xe 8 tiến 5",
+                    "move_notation_iccs": "h9h4",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 8 tiến 5 — Đen đưa nốt Xe còn lại tiến sâu, cả hai Xe Đen đều đã nhập cuộc.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 6,
+                    "fen": "2bak4\/4aR3\/4b1n2\/1c2p1p1p\/2p1c4\/4r1PN1\/C1P5P\/N3C4\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Mã 3 tiến 2",
+                    "move_notation_iccs": "g2h4",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Mã 3 tiến 2 — Trắng phát triển Mã.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 7,
+                    "fen": "2bak4\/4aR3\/4b1n2\/1c2p1p1p\/2p1c4\/6rN1\/C1P5P\/N3C4\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Xe 5 bình 7",
+                    "move_notation_iccs": "e4g4",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 5 bình 7 — Đen dịch chuyển Xe, tìm hướng gây sức ép mới.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 8,
+                    "fen": "2bak4\/4a2R1\/4b1n2\/1c2p1p1p\/2p1c4\/6rN1\/C1P5P\/N3C4\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Xe 4 bình 2",
+                    "move_notation_iccs": "f8h8",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 4 bình 2 — Trắng cũng dịch chuyển Xe sang cột khác, tránh đối đầu trực diện không cần thiết.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 9,
+                    "fen": "2bak4\/4a2R1\/4b1n2\/1c2p3p\/2p1c1p2\/6rN1\/C1P5P\/N3C4\/4A4\/2B1KAB2",
+                    "move_notation_wxf": "Tốt 7 tiến 1",
+                    "move_notation_iccs": "g6g5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Tốt 7 tiến 1 — Đen tiếp tục thúc Tốt, duy trì sức ép liên tục dù đang ở thế kém quân.",
                     "is_flip_reveal": false
                 }
             ]

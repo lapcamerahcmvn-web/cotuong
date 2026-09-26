@@ -66,6 +66,26 @@ chục nước), thể hiện qua 1 hình vẽ bàn cờ ở đầu bài. Phải
    `initial_fen` = FEN tự dựng (KHÔNG phải thế cờ mặc định) → publish → `cotuong:export-content` →
    commit + push.
 
+## ⭐ Phát hiện quan trọng nhất (từ Bài 5) — phân biệt màu quân bằng CHỮ, không phải bằng mắt tô đen/trắng
+
+Sách này dùng **CHỮ KHÁC NHAU cho Pháo mỗi bên** (giống hệt quy ước Tốt/Chốt và Tướng/Soái đã biết):
+- **`砲` = quân Pháo bên ĐEN** (quân đen/filled trong hình)
+- **`炮` = quân Pháo bên TRẮNG** (quân đỏ/outline trong hình)
+
+Đây là cách phân biệt màu quân **chắc chắn hơn nhiều** so với nhìn tô đen/trắng — ở thế cờ dày
+đặc quân (như Bài 5, ~28-30 quân), nhìn màu qua nhiều lần crop/zoom rất dễ nhầm (đã xảy ra ở Bài 5:
+đọc nhầm 2 quân từ "quân Trắng" thành "quân Đen" và ngược lại, phải dò lại nhiều lần mới ra). Kiểm
+tra CHỮ trước, nếu vẫn nghi ngờ mới crop zoom to để xem viền tô đen hay để trắng.
+
+Các cặp chữ phân biệt màu đã biết trong sách (Xe/Mã/Sĩ/Tượng dùng CHUNG 1 chữ cho cả hai bên, chỉ
+phân biệt được bằng tô màu — không có mẹo chữ cho các quân này):
+| Quân | Bên Đen | Bên Trắng |
+|---|---|---|
+| Tướng | 將 | 帥 |
+| Tốt | 卒 | 兵 |
+| Pháo | 砲 | 炮 |
+| Xe/Mã/Sĩ/Tượng | (chữ giống nhau, chỉ phân biệt bằng tô đen/viền trắng) |
+
 ## Ký hiệu sách (khác 1 điểm so với sách khai cuộc)
 
 Giống hệt `../opening-book-import/README.md` (P/M/X/B/S/V, verb `-` `.` `/`) **cộng thêm**:
