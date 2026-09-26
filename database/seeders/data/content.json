@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-26T00:06:09+00:00",
+    "exported_at": "2026-09-26T00:14:31+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -123883,6 +123883,41 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Pháo 3 tiến 1 — Trắng hoàn tất đòn quyết định: quân Pháo còn lại tiến lên đúng vị trí sát ngay cửa cung, khép chặt toàn bộ không gian phòng thủ của Đen — giành thắng lợi.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 3,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Thuật Dùng Mã Mạnh Nhất — Mã Ngọa Tào",
+            "slug": "thuat-dung-ma-manh-nhat-ma-ngoa-tao",
+            "level": "trung-cap",
+            "source_type": "manual",
+            "initial_fen": "2bakab2\/6N2\/9\/7C1\/9\/rR5n1\/9\/4B4\/4A4\/4KAB2",
+            "move_count": 1,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Mã đứng đúng giao điểm cột 3\/7 và hàng thứ hai tính từ đối phương — vị trí \"ngọa tào\" được xem là thuật dùng Mã mạnh nhất trong cờ tướng. Phối hợp cùng Xe tiến vào khép hàng, tạo thế áp chế Tướng không lối thoát.",
+            "content": "<h2>Vị trí đặc biệt mang tên \"ngọa tào\"<\/h2>\n<p>Bước sang chủ đề Mã sau khi đã bàn kỹ về Xe và Pháo, bài học này giới thiệu một vị trí đặc biệt: Mã đứng đúng giao điểm giữa cột 3 hoặc cột 7 và hàng thứ hai tính từ hàng cuối của đối phương. Vị trí này được đặt tên \"Mã ngọa tào\" — Mã nằm ở máng ăn — và trong thế cờ minh hoạ, quân Mã Trắng đã sẵn sàng ở đúng vị trí đó, áp sát ngay cạnh sườn cung điện của Tướng Đen.<\/p>\n<h2>Vì sao gọi đây là \"thuật dùng Mã mạnh nhất\"<\/h2>\n<p>Cờ tướng có rất nhiều cách bố trí Mã mang tên riêng — quải giác Mã, điếu ngư Mã, cao điếu Mã, bát giác Mã, bạt hoàng Mã, Song Mã ẩm tuyền và còn nhiều nữa. Nhưng trong tất cả những cách đó, Mã ngọa tào được xem là mạnh nhất, bởi nó không đòi hỏi ghi nhớ một tình huống cụ thể nào — chỉ cần một quy tắc định vị đơn giản, dễ nhận ra ngay giữa ván đấu: đúng cột 3 hoặc 7, đúng hàng thứ hai. Từ vị trí này, Mã áp sát trực tiếp các ô thoát quan trọng nhất quanh Tướng đối phương.<\/p>\n<h2>Không đơn độc mà luôn cần một trợ thủ<\/h2>\n<p>Dù được ca ngợi là thuật dùng Mã mạnh nhất, bản thân quân Mã ngọa tào hiếm khi tự mình hoàn tất được đòn quyết định. Thế cờ minh hoạ cho thấy điều đó rõ ràng: phải đợi thêm quân Xe tiến vào phối hợp, khép chặt cùng hàng với Mã, thế trận mới thực sự trở thành một cái bẫy không lối thoát cho Tướng Đen. Vai trò của Mã ngọa tào là chuẩn bị sẵn nền tảng áp chế; quân đến sau — có thể là Xe, cũng có thể là Pháo tuỳ tình huống — mới là người khép lại đòn kết thúc.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Giữa vô số cách đặt tên hoa mỹ cho các thế Mã trong cờ tướng, Mã ngọa tào được ưu ái gọi là mạnh nhất chính vì tính đơn giản và dễ nhận diện của nó — một quy tắc định vị rõ ràng, áp dụng được trong nhiều tình huống thực chiến khác nhau, thay vì một mẹo chỉ đúng trong một hoàn cảnh hiếm gặp. Nhận ra đúng thời điểm có thể đưa Mã vào vị trí này, rồi chủ động tìm quân phối hợp phù hợp để hoàn tất đòn tấn công, là kỹ năng cốt lõi mà bài học này muốn truyền đạt.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Mã Ngọa Tào — Thuật Dùng Mã Mạnh Nhất Trong Trung Cuộc",
+            "seo_description": "Trung cuộc cờ tướng: Mã ngọa tào, vị trí Mã mạnh nhất, phối hợp Xe khép sát Tướng đối phương. Có bàn cờ tương tác đi từng nước, diễn giải chi tiết.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "2bakab2\/1R4N2\/9\/7C1\/9\/r6n1\/9\/4B4\/4A4\/4KAB2",
+                    "move_notation_wxf": "Xe 8 tiến 4",
+                    "move_notation_iccs": "b4b8",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Xe 8 tiến 4 — Trắng đưa Xe tiến sâu, phối hợp cùng quân Mã đã án ngữ sẵn ở vị trí \"ngọa tào\". Hai chủ lực cùng lúc khép chặt hàng ngang sát ngay sau lưng Tướng Đen — không còn đường thoát.",
                     "is_flip_reveal": false
                 }
             ]

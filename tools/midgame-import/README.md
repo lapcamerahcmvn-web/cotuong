@@ -87,3 +87,5 @@ render trực quan với Hình 1 gốc.
 | Bài | Trang PDF bắt đầu | Ghi chú |
 |---|---|---|
 | 1 | 7 | Khuyết Sĩ sợ Song Xe |
+| 2 | 15 | Khuyết Tượng sợ Pháo |
+| 3 | 25 | Mã ngọa tào — thuật dùng Mã mạnh nhất |
