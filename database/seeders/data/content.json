@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-09-25T23:39:54+00:00",
+    "exported_at": "2026-09-26T00:06:09+00:00",
     "series": [
         {
             "name": "48 Bài Nguyên Lý Khai Cuộc",
@@ -123826,6 +123826,63 @@
                     "moved_piece": null,
                     "captured_piece": null,
                     "caption": "Xe 6 tiến 1 — Trắng đưa nốt quân Xe còn lại lên đúng hàng ngang chứa Tướng Đen. Vì Đen hoàn toàn không có Sĩ để che chắn, quân Xe này chiếu thẳng hàng — Đen không còn nước nào cứu vãn, chiếu bí.",
+                    "is_flip_reveal": false
+                }
+            ]
+        },
+        {
+            "series_slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "order_in_series": 2,
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "title": "Khuyết Tượng Sợ Pháo",
+            "slug": "khuyet-tuong-so-phao",
+            "level": "co-ban",
+            "source_type": "manual",
+            "initial_fen": "4ka3\/4a4\/9\/4c4\/6c2\/6C2\/4C4\/4B4\/9\/2BK5",
+            "move_count": 3,
+            "variation_tree": null,
+            "puzzle_side": null,
+            "summary": "Quân lực hai bên cân bằng tuyệt đối, chỉ khác Đen giữ Song Sĩ còn Trắng giữ Song Tượng — vậy mà Trắng thắng dễ dàng. Bài học tiếp nối \"Khuyết Sĩ Sợ Song Xe\": mỗi khiếm khuyết phòng thủ sợ đúng một loại quân tấn công cụ thể.",
+            "content": "<h2>Một thế cờ cân bằng trên lý thuyết<\/h2>\n<p>Khác với bài học trước — nơi Đen đã thiệt hẳn cả hai Sĩ — thế cờ này xuất phát điểm hoàn toàn cân bằng về quân số: mỗi bên chỉ còn Tướng, hai quân phòng thủ và hai Pháo, không hơn không kém. Khác biệt duy nhất nằm ở loại quân phòng thủ: Đen giữ Song Sĩ, Trắng giữ Song Tượng. Về mặt lý thuyết, Sĩ và Tượng vẫn thường được xem có giá trị ngang nhau. Vậy mà kết cục ván này lại nghiêng hẳn về Trắng.<\/p>\n<h2>Vì sao Tượng lại \"sợ\" đúng quân Pháo<\/h2>\n<p>Trong ba chủ lực Xe, Pháo, Mã, hiếm khi một quân đơn độc đủ sức tạo thành thế chiếu bí — ngay cả Xe, quân mạnh nhất, cũng thường cần thêm quân phối hợp. Nhưng Pháo lại là ngoại lệ: chỉ cần đứng đúng vị trí sát cửa cung, một mình nó đã có thể khép lại toàn bộ đường thoát của Tướng đối phương. Sĩ đứng ngay trong cung có thể ngăn cản kiểu tấn công này; Tượng đứng ngoài cung thì không đảm nhận được vai trò chắn đường tương tự, dù vẫn còn nguyên vẹn cả hai quân.<\/p>\n<h2>Kiểm soát trung lộ — nguyên nhân thứ hai<\/h2>\n<p>Không chỉ vậy, khi thiếu Tượng, khu vực trung lộ của Đen chỉ còn trông cậy vào một quân Sĩ duy nhất che chắn — một lớp phòng thủ mỏng hơn hẳn. Đây chính là kẽ hở khiến Trắng có thể từng bước siết chặt không gian, buộc Đen phải liên tục nhượng bộ cho đến khi không còn nước đi nào khác ngoài lùi Pháo ra biên, mở đường cho đòn kết thúc.<\/p>\n<h2>Bài học rút ra<\/h2>\n<p>Nối tiếp trực tiếp bài học trước, ví dụ này làm rõ thêm cùng một nguyên lý từ một góc độ khác: mỗi khiếm khuyết phòng thủ thường \"sợ\" đúng một loại quân tấn công cụ thể. Khuyết Sĩ dễ bị Xe khai thác nhờ sức mạnh áp đảo theo đường thẳng; khuyết Tượng lại dễ bị Pháo khai thác nhờ khả năng tạo sát cục gần như đơn độc. Nhận ra đúng cặp quan hệ khắc chế này — chứ không chỉ đơn thuần đếm số quân còn lại — là nền tảng đầu tiên cần nắm khi bước vào trung cuộc.<\/p>",
+            "status": "published",
+            "decode_confidence": null,
+            "thumbnail": null,
+            "seo_title": "Khuyết Tượng Sợ Pháo — Trung Cuộc Cờ Tướng",
+            "seo_description": "Trung cuộc cờ tướng: vì sao khuyết Tượng trước Pháo đối phương nguy hiểm hơn tưởng, dù Sĩ Tượng giá trị lý thuyết ngang nhau. Có bàn cờ tương tác đi từng nước.",
+            "is_featured": false,
+            "steps": [
+                {
+                    "step_order": 1,
+                    "fen": "4ka3\/4a4\/9\/4c4\/4C1c2\/6C2\/9\/4B4\/9\/2BK5",
+                    "move_notation_wxf": "Pháo 5 tiến 2",
+                    "move_notation_iccs": "e3e5",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 5 tiến 2 — Trắng đẩy quân Pháo trung lộ tiến lên, thu hẹp thêm không gian hoạt động vốn đã rất chật hẹp của Đen.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 2,
+                    "fen": "4ka3\/4a4\/9\/4c4\/4C2c1\/6C2\/9\/4B4\/9\/2BK5",
+                    "move_notation_wxf": "Pháo 7 bình 8",
+                    "move_notation_iccs": "g5h5",
+                    "move_side": "den",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 7 bình 8 — Bị dồn ép, Đen buộc phải dịch chuyển quân Pháo lộ 7 sang biên — gần như là nước đi duy nhất còn lại.",
+                    "is_flip_reveal": false
+                },
+                {
+                    "step_order": 3,
+                    "fen": "4ka3\/4a4\/9\/4c4\/4C1Cc1\/9\/9\/4B4\/9\/2BK5",
+                    "move_notation_wxf": "Pháo 3 tiến 1",
+                    "move_notation_iccs": "g4g5",
+                    "move_side": "do",
+                    "moved_piece": null,
+                    "captured_piece": null,
+                    "caption": "Pháo 3 tiến 1 — Trắng hoàn tất đòn quyết định: quân Pháo còn lại tiến lên đúng vị trí sát ngay cửa cung, khép chặt toàn bộ không gian phòng thủ của Đen — giành thắng lợi.",
                     "is_flip_reveal": false
                 }
             ]

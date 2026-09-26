@@ -21,6 +21,27 @@ chục nước), thể hiện qua 1 hình vẽ bàn cờ ở đầu bài. Phải
 2. **Crop hình ở DPI cao (300) để đọc chính xác**: dùng Python/PIL crop đúng vùng hình vẽ (xem ví
    dụ code bên dưới). Đọc quân theo nhãn cột: nhãn TRÊN "1..9 trái→phải" = cột sách phía Đen = cột
    vật lý luôn; nhãn DƯỚI "9..1 trái→phải" = cột sách phía Trắng, cột vật lý = 10 − nhãn.
+   ⚠️ **QUAN TRỌNG — bài học từ Bài 2 (tốn rất nhiều thời gian mới rút ra)**: đọc bằng mắt qua nhiều
+   lần crop khác nhau RẤT DỄ lệch cột (crop khác biên → mắt nhìn "gần đúng" nhưng sai 1 cột, nhất
+   là 2 quân cùng loại đứng gần nhau). **Cách chắc chắn nhất**: dùng code dò tâm pixel của CHÍNH
+   CHỮ SỐ nhãn cột (không phải đường kẻ bàn cờ — đường kẻ dễ bị quân cờ che khuất gây lệch), rồi vẽ
+   đè 9 đường dọc màu đỏ tại đúng toạ độ đó lên ảnh gốc để so bằng mắt — quân nào không nằm khớp
+   ngay trên 1 đường là đọc sai, sửa lại ngay. Code mẫu dò tâm nhãn cột:
+   ```python
+   import numpy as np
+   from PIL import Image
+   arr = np.array(Image.open('full-page.png').convert('L'))
+   band = arr[Y1:Y2, X1:X2]  # dải ngang chứa hàng nhãn cột (1..9 hoặc 9..1), Y1:Y2 ôm sát chữ số
+   colsum = (band < 150).sum(axis=0)
+   xs = np.where(colsum > 0)[0]
+   groups, cur = [], [xs[0]]
+   for x in xs[1:]:
+       (cur.append(x) if x - cur[-1] <= 5 else (groups.append(cur), cur := [x]))
+   groups.append(cur)
+   centers = [(g[0] + g[-1]) / 2 + X1 for g in groups]  # 9 toạ độ x, đúng tâm từng chữ số nhãn
+   ```
+   Sau đó vẽ `ImageDraw.line` đè lên ảnh tại các `centers` này (kèm ảnh gốc, DPI cao) rồi `Read` lại
+   để so — làm bước này TRƯỚC khi dựng FEN, không làm sau, tiết kiệm rất nhiều lần dựng lại.
 3. **Dựng FEN tay**: 10 hàng cách nhau `/`, hàng 0 = trên/Đen → hàng 9 = dưới/Trắng. Dùng
    `checkPieceCounts(fen)` trong `midgame-parser.cjs` để bắt lỗi đọc nhầm quân (Tướng phải đúng 1
    mỗi bên, Sĩ/Tượng/Xe/Pháo/Mã ≤2, Tốt ≤5).
