@@ -141,6 +141,20 @@ riêng theo dòng (labeled row-strip) khi có bất kỳ mâu thuẫn nào giữ
 đừng chỉ tin vào 1 lần nhìn tổng thể lúc ban đầu — lỗi này có thể xảy ra ở BẤT KỲ quân nào, không
 riêng Tướng.
 
+## ⚠️ Lưu ý — luôn kiểm chứng cột bằng LABEL TRÊN (top), không suy luận ngược từ label dưới (bottom)
+
+Phát hiện ở Bài 36: khi dò tâm nhãn cột bằng code, nếu vô tình bắt được dải nhãn DƯỚI bàn cờ (đọc
+"9 8 7 6 5 4 3 2 1" trái→phải) rồi chỉ ĐẢO NGƯỢC MẢNG mà không tự tay kiểm tra lại bằng ảnh, rất dễ
+gán sai cột vật lý (nhầm cột 1↔9, 2↔8, 3↔7, 4↔6, cột 5 giữ nguyên nên dễ đánh lừa). Hậu quả: FEN
+dựng ra bị lật ngang trái↔phải toàn bộ, nhưng vẫn có thể "trông hợp lý" ở một số hàng đối xứng gần
+tình cờ. **Cách phát hiện**: nếu 1 nước đi cụ thể báo lỗi "không tìm thấy quân ở cột N" một cách
+khó hiểu (nhất là quân hiếm/đặc trưng như Mã biên), đừng vội "sửa" bằng cách lật ngược chuỗi FEN
+theo suy luận — hãy **dò lại từ đầu bằng LABEL TRÊN** (dải "1 2 3 4 5 6 7 8 9" ngay sát hàng quân
+đầu tiên, không phải label dưới) và generate lại toàn bộ ảnh crop theo hàng để đọc lại bằng mắt,
+đối chiếu với ảnh gốc — đây là cách duy nhất chắc chắn, việc "vá" bằng suy luận đảo ngược dễ chồng
+thêm lỗi mới (đã xảy ra ở Bài 36: lần vá đầu tiên bằng cách đảo ngược chuỗi ký tự FEN thất bại,
+phải dò lại từ đầu bằng ảnh mới thành công).
+
 ## Bảng tra vị trí chương (cập nhật dần khi xử lý)
 
 | Bài | Trang PDF bắt đầu | Ghi chú |
@@ -180,3 +194,8 @@ riêng Tướng.
 | 33 | 333 | Phế quân phá Sĩ Tượng (chủ động trả giá, khác khéo phá ở bài trước) — Vương Thiên Nhất thắng Trịnh Duy Đồng, giải toàn quốc 2019 — Hình296→297 cross-verify khớp 100% |
 | 34 | 344 | Vây Xe không lập hiểm địa (Hình306 minh hoạ ngắn bỏ qua, dùng thẳng Cuộc thứ nhất Hình310→311) — Vương Lão Cát/Hứa Ngân Xuyên thắng Trương Cường, giải 2005 — mở đầu chương "Vây Khốn Cô Quân" |
 | 35 | 354 | Vây khốn cô quân thâm nhập (Vây Pháo — nhưng đối tượng vây đổi thành Mã qua đổi quân) — Lữ Khâm bại Vương Thiên Nhất, giải Bích Quế Viên 2018 — Hình317 cross-verify khớp 100% |
+| 36 | 368 | Vây khốn Mã biên thùy tất vong — Hứa Ngân Xuyên thắng Hồ Vinh Hoa, giải toàn quốc 2000 — ⚠️ phát hiện lỗi dò nhầm dải nhãn (bắt label DƯỚI rồi suy luận ngược thay vì dò lại bằng label TRÊN), phải dò lại từ đầu mới đúng — xem mục cảnh báo mới |
+| 37 | 368 | Vây đánh quải giác Mã (Mã oa giác) — Vương Thiên Nhất thắng Trần Phú Kiệt, giải giáp cấp 2019 — chỉ 1 nước thật (X9.1), phần còn lại sách chỉ phân tích lý thuyết/giả định |
+| 38 | 377 | Vũ khí tầm ngắn thắng vũ khí tầm xa (Mã Chốt thắng Xe Pháo) — Triệu Hâm Hâm (chính tác giả) thắng Thôi Nham, giải đồng đội 2016 — Hình341 cross-verify khớp 100% |
+| 39 | 388 | Vũ khí tầm xa thắng vũ khí tầm ngắn (chiều ngược Bài 38) — Ngô Da Hoa bại Hồng Trí, giải cá nhân Châu Á 2013 |
+| 40 | 399 | Ưu kém của 1 Xe đối 2 (đổi 1 Xe lấy Song Pháo) — Hứa Ngân Xuyên bại Trương Minh Trung, giải đồng đội 1992 — chỉ 1 nước thật do gặp ký hiệu "Ps" mơ hồ ngay sau, phần còn lại tường thuật bằng lời văn sách |
