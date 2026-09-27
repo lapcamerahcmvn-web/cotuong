@@ -123,10 +123,23 @@ render trực quan với Hình 1 gốc.
 ## ⚠️ Lưu ý — lệch số trang PDF từ khoảng trang in 258 trở đi
 
 Từ Bài 25 trở đi phát hiện `doc[N]` (0-indexed, pymupdf) KHÔNG còn bằng `số trang in - 1` như
-trước nữa — lệch thêm 1 (có 1 trang chia phần không đánh số, "PHẦN 2 — MƯU ĐIỀU QUÂN", chen vào
-đâu đó trước trang in 259). Ví dụ: trang in **259** thực tế nằm ở `doc[257]`, không phải `doc[258]`.
-**Luôn xác nhận lại bằng số trang in thật hiện ở cuối ảnh render** trước khi tin vào công thức
-`doc[trang_in - 1]`, đặc biệt sau khi lướt qua một ranh giới "PHẦN" mới trong sách.
+trước nữa — công thức mới đã xác nhận ổn định xuyên suốt Bài 25-30: **`doc_index = trang_in - 2`**
+(lệch thêm 1 so với công thức cũ, do có 1 trang chia phần không đánh số, "PHẦN 2 — MƯU ĐIỀU QUÂN",
+chen vào đâu đó trước trang in 259). Ví dụ: trang in **259** nằm ở `doc[257]`, trang in **310** nằm
+ở `doc[308]`. **Vẫn luôn xác nhận lại bằng số trang in thật hiện ở cuối ảnh render** trước khi tin
+vào công thức, phòng trường hợp có thêm trang chia phần không đánh số khác ở các chương sau.
+
+## ⚠️ Lưu ý — dùng chính lỗi engine ném ra để bắt lỗi đọc cột (phát hiện ở Bài 30)
+
+Khi validate 1 chuỗi nước mà gặp lỗi kiểu "Không tìm thấy quân T (K) ở cột N" cho 1 nước Tướng
+(`Tg`) tưởng chừng đơn giản — ĐỪNG vội nghi ngờ công thức quy đổi cột theo phe (đã đúng, đã kiểm
+chứng nhiều lần) — nghi ngờ trước tiên khả năng TỰ ĐỌC NHẦM CỘT của quân Tướng trên ảnh gốc. Ở Bài
+30 (Hình275), đọc nhanh qua ảnh tổng thể đã lầm Tướng đứng ở cột 5 (giữa) trong khi thực tế Tướng
+đã đứng sẵn ở cột 6 ngay từ đầu — chỉ phát hiện ra nhờ nước "Tg4.1" (dùng số cột riêng của Trắng,
+quy đổi ra cột 6 vật lý) không khớp với FEN đã dựng. Bài học: **luôn dò lại đúng ô Tướng bằng crop
+riêng theo dòng (labeled row-strip) khi có bất kỳ mâu thuẫn nào giữa ký hiệu sách và FEN đã dựng**,
+đừng chỉ tin vào 1 lần nhìn tổng thể lúc ban đầu — lỗi này có thể xảy ra ở BẤT KỲ quân nào, không
+riêng Tướng.
 
 ## Bảng tra vị trí chương (cập nhật dần khi xử lý)
 
@@ -157,3 +170,8 @@ trước nữa — lệch thêm 1 (có 1 trang chia phần không đánh số, "
 | 23 | 232 | Tập kích đường biên (tuyến kém giá trị nhất nhưng "dĩ chính hợp, dĩ kỳ thắng") — Hồ Vinh Hoa thắng Vương Gia Lương, giải toàn quốc 1960 |
 | 24 | 242 | Nguyên lý trọng tâm mưu đoạt thế — không ngừng chỉnh hình để tối ưu hoá (ví dụ minh hoạ Hình216, không phải ván thật) — cuối "Phần 1: Mưu đoạt thế" |
 | 25 | ⚠️259 | Tổ hợp 2 quân bá đạo Song Xe — Lữ Khâm thắng Vu Ấu Hoa, giải "Cao Tân Bôi" 2013 (Hình229→230 cross-verify khớp 100%) — mở đầu "Phần 2: Mưu điều quân" |
+| 26 | 280 | Pháo gánh phòng thủ mạnh nhất — Hứa Ngân Xuyên thắng Hồ Vinh Hoa (không rõ năm) |
+| 27 | 280 | Liên hoàn Mã khống chế mạnh nhất — Trương Thân Hoằng bại Triệu Hâm Hâm (chính tác giả sách!), giải Ba Nhị Trục Thừa Bôi 2005 |
+| 28 | 289 | Tổ hợp mạnh nhất Xe Pháo Mã — Vu Ấu Hoa thắng Lữ Khâm (Hòa Xa Đầu, không rõ năm) — Hình256 cross-verify khớp 100% |
+| 29 | 301 | Xe Song Mã khống chế mạnh nhất — Vương Định Trung thắng Lữ Khâm, giải đồng đội toàn quốc 1984 — Hình267 cross-verify khớp 100% |
+| 30 | 310 | Xe Song Pháo hỏa lực mạnh nhất — Hồ Vinh Hoa thắng Vương Bân, giải đồng đội toàn quốc 2006 — ⚠️ phát hiện lỗi tự đọc nhầm cột (Tướng cột 6 tưởng cột 5) nhờ mâu thuẫn ký hiệu "Tg4.1" phát hiện ra và tự sửa kịp thời, xem mục cảnh báo mới bên dưới |
