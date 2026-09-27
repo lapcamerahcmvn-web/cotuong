@@ -175,3 +175,8 @@ riêng Tướng.
 | 28 | 289 | Tổ hợp mạnh nhất Xe Pháo Mã — Vu Ấu Hoa thắng Lữ Khâm (Hòa Xa Đầu, không rõ năm) — Hình256 cross-verify khớp 100% |
 | 29 | 301 | Xe Song Mã khống chế mạnh nhất — Vương Định Trung thắng Lữ Khâm, giải đồng đội toàn quốc 1984 — Hình267 cross-verify khớp 100% |
 | 30 | 310 | Xe Song Pháo hỏa lực mạnh nhất — Hồ Vinh Hoa thắng Vương Bân, giải đồng đội toàn quốc 2006 — ⚠️ phát hiện lỗi tự đọc nhầm cột (Tướng cột 6 tưởng cột 5) nhờ mâu thuẫn ký hiệu "Tg4.1" phát hiện ra và tự sửa kịp thời, xem mục cảnh báo mới bên dưới |
+| 31 | 321 | Xe Mã lãnh trước trảm Tướng — Triệu Hâm Hâm (chính tác giả sách) thắng Lục Tranh Vanh, giải toàn quốc 2002 — mở đầu chương "Khéo Phá/Phế Quân Phá Sĩ Tượng" |
+| 32 | 328 | Khéo phá Sĩ Tượng (ăn không, không tốn quân) — Hồ Vinh Hoa thắng Trịnh Phúc Thân, Đại hội TDTT toàn quốc 1979 |
+| 33 | 333 | Phế quân phá Sĩ Tượng (chủ động trả giá, khác khéo phá ở bài trước) — Vương Thiên Nhất thắng Trịnh Duy Đồng, giải toàn quốc 2019 — Hình296→297 cross-verify khớp 100% |
+| 34 | 344 | Vây Xe không lập hiểm địa (Hình306 minh hoạ ngắn bỏ qua, dùng thẳng Cuộc thứ nhất Hình310→311) — Vương Lão Cát/Hứa Ngân Xuyên thắng Trương Cường, giải 2005 — mở đầu chương "Vây Khốn Cô Quân" |
+| 35 | 354 | Vây khốn cô quân thâm nhập (Vây Pháo — nhưng đối tượng vây đổi thành Mã qua đổi quân) — Lữ Khâm bại Vương Thiên Nhất, giải Bích Quế Viên 2018 — Hình317 cross-verify khớp 100% |
