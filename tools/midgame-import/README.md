@@ -199,3 +199,8 @@ phải dò lại từ đầu bằng ảnh mới thành công).
 | 38 | 377 | Vũ khí tầm ngắn thắng vũ khí tầm xa (Mã Chốt thắng Xe Pháo) — Triệu Hâm Hâm (chính tác giả) thắng Thôi Nham, giải đồng đội 2016 — Hình341 cross-verify khớp 100% |
 | 39 | 388 | Vũ khí tầm xa thắng vũ khí tầm ngắn (chiều ngược Bài 38) — Ngô Da Hoa bại Hồng Trí, giải cá nhân Châu Á 2013 |
 | 40 | 399 | Ưu kém của 1 Xe đối 2 (đổi 1 Xe lấy Song Pháo) — Hứa Ngân Xuyên bại Trương Minh Trung, giải đồng đội 1992 — chỉ 1 nước thật do gặp ký hiệu "Ps" mơ hồ ngay sau, phần còn lại tường thuật bằng lời văn sách |
+| 41 | 406 | Một Xe đối ba thì như thế nào (nối tiếp Bài 40, đắc quân rõ ràng) — Vạn Xuân Lâm thắng Lý Lai Quần, giải cá nhân toàn quốc 1991 |
+| 42 | 412 | Tinh diệu vận quân — vận Mã như rồng (5 đặc điểm của Mã) — Hồ Vinh Hoa bại Lưu Điện Trung, giải Nam Bắc quốc thủ 1987 — mở đầu chuỗi "Tinh Diệu Vận Quân" 4 bài (Mã/Xe/Pháo/Chốt) |
+| 43 | 422 | Tinh diệu vận quân — Xe tung hoành ngang dọc (5 đặc điểm của Xe) — Trịnh Duy Đồng thắng Trịnh Nhất Hoằng, giải đồng đội 2016 |
+| 44 | 430 | Tinh diệu vận quân — Pháo nhanh như sấm (kiểm soát tuyến đường linh hoạt hơn Xe) — Tôn Dũng Chinh thắng Tưởng Xuyên, giải cờ nhanh Tài Thần Bôi 2015 |
+| 45 | 441 | Tiểu binh kiến công lập nghiệp (giá trị Chốt tích luỹ cho tàn cuộc, khép chuỗi Tinh Diệu Vận Quân) — Liễu Đại Hoa bại Hồ Vinh Hoa, giải cờ nhanh CCTV 1985 — ⚠️ phát hiện+tự sửa 2 lỗi đọc quân (Mã lộ 3 tưởng Đen hoá Trắng; Xe lộ 6 tưởng lộ 4) nhờ piece-count/engine báo lỗi |
