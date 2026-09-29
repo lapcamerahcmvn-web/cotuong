@@ -6,7 +6,7 @@
 
 ## Trạng thái tổng quan
 
-- **9 chương trình học / 191 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
+- **12 chương trình học / 720 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
 - Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to + quân úp), đăng nhập Google + email/mật khẩu,
   đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap XML + HTML.
 
@@ -18,9 +18,18 @@
 | **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 48 | ✅ Đạt đủ 48 (10→48) từ thế tàn cuộc XQF |
 | **E – Cờ Úp** (ưu tiên #2) | Nhập Môn + Sơ Cấp 1/2 + Nâng Cao Đặc Biệt + Đặc Biệt 2 | 41 | ✅ Xong cả 4 khóa của thầy (soạn từ phụ đề) + Nhập môn |
 | **F – So sánh/công cụ** | — | 0 | ⬜ Chưa làm (web/app học cờ, bàn cờ tương tác online) |
+| **G – Sát pháp mở rộng** | Tượng Kỳ Kinh Điển Sát Pháp Đại Toàn | 435 | ✅ Series lớn nhất site (`LessonSeries` id=10) |
+| **B2 – Khai cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Khai Cuộc | 45 | ✅ HẾT — id=11, soạn từ sách khai cuộc nội bộ tham khảo (PDF scan, KHÔNG public tên sách/tác giả) |
+| **C2 – Trung cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Trung Cuộc | 48 | ✅ **HẾT 48/48 CHƯƠNG** — id=12, cùng nguồn sách trung cuộc nội bộ tham khảo. Quy trình: `tools/midgame-import/README.md` |
 
-> Khai cuộc dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14 bài cũ; các "bài" còn lại
-> trong folder là clip thầy giảng bằng lời (0 nước) — muốn đủ 48 phải tự biên soạn hoặc lấy phụ đề video.
+> Khai cuộc (chương trình B, id=1) dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14
+> bài cũ; các "bài" còn lại trong folder là clip thầy giảng bằng lời (0 nước) — muốn đủ 48 phải tự
+> biên soạn hoặc lấy phụ đề video. **Khoảng trống này sau đó đã được lấp bằng series B2/C2 riêng**
+> (id=11/12), soạn từ 2 cuốn sách lý thuyết khai/trung cuộc khác (nguồn PDF scan nội bộ, không có
+> lớp text — phải đọc bằng ảnh qua nhiều phiên làm việc, dùng kỹ thuật dò pixel chính xác cột/hàng
+> để dựng FEN từ hình vẽ sách). Quy trình đầy đủ + các bài học kỹ thuật (gotcha đọc cột, offset
+> trang PDF...) nằm trong `tools/opening-book-import/README.md` (id=11) và
+> `tools/midgame-import/README.md` (id=12) — đọc kỹ trước khi xử lý thêm sách tương tự.
 
 ## Đã làm (chi tiết)
 
