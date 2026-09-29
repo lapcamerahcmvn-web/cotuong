@@ -204,3 +204,24 @@ phải dò lại từ đầu bằng ảnh mới thành công).
 | 43 | 422 | Tinh diệu vận quân — Xe tung hoành ngang dọc (5 đặc điểm của Xe) — Trịnh Duy Đồng thắng Trịnh Nhất Hoằng, giải đồng đội 2016 |
 | 44 | 430 | Tinh diệu vận quân — Pháo nhanh như sấm (kiểm soát tuyến đường linh hoạt hơn Xe) — Tôn Dũng Chinh thắng Tưởng Xuyên, giải cờ nhanh Tài Thần Bôi 2015 |
 | 45 | 441 | Tiểu binh kiến công lập nghiệp (giá trị Chốt tích luỹ cho tàn cuộc, khép chuỗi Tinh Diệu Vận Quân) — Liễu Đại Hoa bại Hồ Vinh Hoa, giải cờ nhanh CCTV 1985 — ⚠️ phát hiện+tự sửa 2 lỗi đọc quân (Mã lộ 3 tưởng Đen hoá Trắng; Xe lộ 6 tưởng lộ 4) nhờ piece-count/engine báo lỗi |
+| 46 | 451 | Phế Chốt phản kích (chủ động hy sinh Chốt để tạo phản công) — Lâm Hoằng Mẫn bại Hứa Ngân Xuyên, giải đặc cấp đại sư toàn quốc 2004 |
+| 47 | 461 | Hàn Tín điểm binh, càng nhiều càng tốt (đối lập Bài 46 — tích luỹ Chốt thay vì hy sinh) — Lữ Khâm thắng Phó Quang Minh, giải đồng đội toàn quốc 2001 — chuỗi nước dài 22 nửa-nước, "B9.1" lặp lại 2 lần validate sạch |
+| 48 | 469 | **[BÀI CUỐI CÙNG — HẾT SÁCH]** Nguyên tắc trọng tâm mưu điều quân cục bộ lấy nhiều đánh ít — Triệu Quốc Vinh thắng Hồng Trí, giải mời tượng kỳ quán quân toàn quốc 2010 — ví dụ kinh điển: Đen phế gần hết quân (4 Chốt+2 Tượng+1 Pháo ≈ 1 Xe) đổi lấy Song Xe Mã áp đảo cục bộ quanh Tướng Trắng |
+
+## 🎉 HOÀN THÀNH TOÀN BỘ SÁCH (48/48 bài) — [ngày hoàn thành: xem lịch sử git]
+
+Series "Nền Tảng Nguyên Lý Trung Cuộc" (LessonSeries id=12) đã có đủ **48/48 bài**, khớp chính
+xác với 48 chương của sách nguồn. Cấu trúc sách hoàn chỉnh:
+- **Phần 1 — Mưu Đoạt Thế** (Bài 1-24): các tuyến đường tấn công (trung lộ, tuyến đáy, đường
+  sườn, hoành lộ 2, tuyến đỉnh cung, tuyến Chốt, tuyến kỵ hà, đường 3/7, lộ 2/8, đường biên),
+  chỉnh hình tối ưu hoá.
+- **Phần 2 — Mưu Điều Quân** (Bài 25-48): tổ hợp 2 quân (Pháo gánh, liên hoàn Mã, Xe Pháo Mã,
+  Xe Song Mã, Xe Song Pháo), phá Sĩ Tượng (khéo phá/phế quân), vây khốn cô quân (Xe/Pháo/Mã),
+  quải giác Mã, vũ khí tầm ngắn/xa, so sánh tỉ lệ đổi quân (1 Xe đối 2/3), Tinh Diệu Vận Quân
+  (Mã/Xe/Pháo/Chốt), phế Chốt vs tích luỹ Chốt, và bài cuối cùng tổng kết nguyên tắc lấy nhiều
+  đánh ít cục bộ.
+
+Nếu cần xử lý cuốn sách khác theo cùng quy trình, đọc kỹ toàn bộ các mục cảnh báo (⚠️) trong file
+này trước — đặc biệt: công thức lệch trang PDF theo từng đoạn sách, cách dò nhãn cột TRÊN (không
+phải dưới) để tránh lật ngược FEN, và luôn tin vào lỗi engine/piece-count hơn là trực giác khi có
+mâu thuẫn.
