@@ -2,7 +2,18 @@
 
 > Bảng điều khiển chính, cập nhật liên tục. Đối chiếu với `ke-hoach-seo-tong-the-hoccotuong.md`
 > (nghiên cứu từ khóa + chiến lược) — file này theo dõi *đã làm gì* và *làm tiếp gì*.
-> Cập nhật gần nhất: **2026-08-27**.
+> Cập nhật gần nhất: **2026-10-01**.
+
+## Cập nhật 01/10/2026 — Redesign + Gamification + Luyện tập (nhánh `redesign`, chưa deploy)
+
+- Giao diện mới toàn site (Vite 8 + Tailwind 4, giữ bản sắc chu sa/giấy/gỗ, sáng-tối, bottom nav mobile).
+- `/lo-trinh` 5 chặng có tiến độ + độ thông thạo; onboarding "Tôi mới học / Tôi đã biết chơi".
+- XP, cấp độ, chuỗi ngày (thẻ giữ chuỗi), mục tiêu ngày, 24 huy hiệu, `/xep-hang` (tuần/tháng/mọi lúc, ẩn được).
+- `/luyen-tap`: thế cờ hôm nay, 60 giây, 3 mạng, 7 chủ đề, luyện lỗi sai (Leitner), kiểm tra trình độ —
+  861 thế cờ dựng từ bài sát pháp/tàn cuộc bằng `cotuong:build-puzzles`.
+- Chi tiết kỹ thuật: `redesign-gamification.md`. Deploy: `04-deploy.md` mục "Đợt Redesign".
+- Việc tiếp theo gợi ý: sửa FEN 17 bài sát pháp bị loại khỏi kho (Tướng Đỏ đang bị chiếu sẵn), trang SEO
+  `/bai-tap-sat-phap/...` từ bảng puzzles, chơi với máy (Web Worker), đấu bạn (polling), AI Coach gợi ý theo tầng.
 
 ## Trạng thái tổng quan
 

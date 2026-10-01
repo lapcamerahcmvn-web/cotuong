@@ -48,6 +48,33 @@ php artisan db:seed --class=PagesSeeder --force     # nếu pages.json đổi (i
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
 
+## Đợt Redesign + Gamification + Luyện tập (10/2026) — BẮT BUỘC đọc trước khi deploy
+
+**Ở máy local (trước khi push):**
+```bash
+npm run build          # = vite build + lưu manifest vào public/build/manifests/ (KHÔNG xoá asset cũ)
+git add public/build   # hosting KHÔNG build — public/build phải nằm trong commit
+test ! -f public/hot   # file hot (npm run dev) mà lọt lên hosting → toàn site mất CSS
+```
+- `vite.config.js` đặt `emptyOutDir: false` → asset hash cũ còn lại, HTML đã cache vẫn tải được
+  (tránh "bão 404" kiểu vụ 503 bên shop). Dọn thủ công khi build/ phình to: `npm run build:prune`
+  (chỉ xoá asset không thuộc 5 manifest gần nhất). Không dùng service worker.
+- Root `.htaccess` đã trả 404 tĩnh cho asset thiếu (không đánh thức Laravel).
+
+**Trên hosting (sau `git reset --hard`):**
+```bash
+composer install --no-dev --optimize-autoloader
+php artisan migrate --force                       # 2 migration mới: gamification + puzzles
+php artisan db:seed --class=ContentSeeder --force # nếu content.json đổi (KHÔNG đụng bảng mới)
+php artisan cotuong:build-puzzles                 # dựng/cập nhật kho thế cờ — chạy SAU ContentSeeder
+php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
+```
+- `cotuong:build-puzzles` thuần PHP (không cần Node/shell_exec), idempotent; mỗi lần nạp nội dung mới
+  đều chạy lại. Bài bị gỡ publish → thế cờ chuyển `archived` (không xoá vì có lượt thử).
+- Kiểm tra sau deploy: `/`, 1 bài học, `/luyen-tap`, `/luyen-tap/hom-nay`, `/lo-trinh`, `/xep-hang`,
+  `/admin` (admin vẫn dùng `public/css/app.css` + `public/js/board.js` tĩnh — KHÔNG xoá 2 file này).
+- Không cần cron/queue/websocket: chuỗi ngày tính "lười" khi đọc, xếp hạng cache 10 phút.
+
 ## Đợt SEO/UI (từ 09/2026) — lưu ý deploy
 
 - **`view:clear` bắt buộc** trong bước cache ở trên (`optimize:clear` đã bao gồm) — nhiều blade

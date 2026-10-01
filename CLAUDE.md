@@ -23,9 +23,14 @@ Google Fonts (Bricolage Grotesque + Be Vietnam Pro).
 tính sẵn server-side (decode.js). KHÔNG dùng `xiangqi.js`/`xiangqiboard.js` (không có trên
 npm + cần jQuery); thư viện đó để dành cho tính năng "người học tự thử nước đi" sau này.
 
-**Frontend Phase 1 dùng CSS/JS tĩnh trong `public/`** (`public/css/app.css`, `public/js/board.js`)
-— KHÔNG qua Vite/Tailwind build, để site chạy ngay với `php artisan serve`. Tailwind 4/Vite 8/
-TinyMCE 8 là bước nâng cấp sau (đặc biệt cần TinyMCE cho admin editor Phase 1.5).
+**Frontend (từ 10/2026): Vite 8 + Tailwind 4** — design system ở `resources/css/*.css` (token
+màu bản sắc chu sa/mực/giấy/ngọc trên `:root` + `[data-theme=dark]`), JS dùng chung vanilla ở
+`resources/js/` (bàn cờ + luyện tập nạp động khi trang cần). `public/build` **được commit** (hosting
+không build) — xem `.claude/04-deploy.md`. **Admin KHÔNG dùng Vite**: vẫn nạp `public/css/app.css`
++ `admin.css` + `public/js/board.js` tĩnh → không xoá/đổi tên các file này. `board.js` dùng chung
+cho site và admin (icon: sprite SVG nếu trang có, không thì ký tự).
+
+**Gamification + Luyện tập** — xem `.claude/redesign-gamification.md` (kiến trúc, quy tắc XP, lệnh).
 
 ### Chạy local
 ```bash
@@ -84,7 +89,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 
 ---
 
-## Trạng Thái Dự Án (2026-08-23)
+## Trạng Thái Dự Án (2026-10-01)
 
 ### ✅ Hoàn Thành
 - **Phase 0 — Spike giải mã XQF**: GO. `tools/xqf-decoder/decode.js` giải mã đủ 4 version,
@@ -127,8 +132,13 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
   Nút "✦ Sinh nội dung AI" trong admin (gọi `CotuongContentService`) vẫn dùng được khi CÓ
   `ANTHROPIC_API_KEY` — là con đường thay thế, không bắt buộc.
 
+- **Redesign + Lộ trình + Gamification + Luyện tập** (XONG 01/10/2026, nhánh `redesign`):
+  giao diện mới Vite/Tailwind, `/lo-trinh`, `/luyen-tap` (thế cờ hôm nay, 60 giây, 3 mạng, chủ đề,
+  lỗi sai, kiểm tra trình độ), XP/cấp/chuỗi ngày/huy hiệu/`/xep-hang`, hồ sơ + cài đặt mới.
+  Chi tiết: `.claude/redesign-gamification.md`.
+
 ### 🔄 Đang Làm / Việc Tiếp Theo
-1. **Nâng cấp Tailwind 4 + Vite 8** (hiện CSS/JS tĩnh) — không bắt buộc.
+1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).
 2. Mở rộng `config/xiangqi-terms.php` cho các cụm còn sót (Thực Chốt, một vài mã trận hiếm).
 3. Viết nội dung cho các bài draft còn lại (dùng quy trình lesson-source → lesson-fill).
 4. Các phase tiếp theo (PGN, video Whisper, PDF/OCR, Cờ Úp) — xem `.claude/03-ke-hoach-trien-khai.md`.
@@ -140,6 +150,11 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 ```bash
 # Dev server (dùng port riêng 8010 — xem gotcha multi-listen ở trên)
 php artisan serve --host=127.0.0.1 --port=8010
+npm run dev            # hoặc npm run build trước khi commit (public/build được commit)
+
+# Kho thế cờ luyện tập (chạy lại sau mỗi lần nạp nội dung)
+php artisan cotuong:build-puzzles [--dry-run]
+php artisan test       # 13 test gamification/luyện tập (sqlite memory)
 
 # Import bài học từ .xqf (giải mã qua node decode.js)
 php artisan cotuong:import-xqf "storage/app/private/cotuong-sources/khai-cuoc/48-bai-nguyen-ly" \

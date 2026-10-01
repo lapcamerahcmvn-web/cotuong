@@ -766,3 +766,17 @@ dừng vì monthly spend limit) + 3 khóa cờ úp còn lại (chờ user dán U
 
 **Tổng: 9 chuỗi / 191 bài.** Cụm SEO còn lại: Nhập môn cờ úp mở rộng, cụm F (landing thương hiệu), FAQPage
 on-page từng bài. Xem `.claude/tien-do-va-ke-hoach.md`.
+
+
+---
+
+## Cập nhật 2026-10-01 — Redesign + Gamification + Luyện tập (nhánh `redesign`)
+
+Xem `.claude/redesign-gamification.md`. Bài học kỹ thuật rút ra:
+- Admin dùng CHUNG `public/css/app.css` + `public/js/board.js` → không được gỡ khi chuyển site sang Vite.
+- Cast `date` trên cột ngày-VN làm lưu kèm giờ → so sánh chuỗi ngày sai (sqlite test lộ ra). Đừng cast.
+- `->having('x_count', ...)` không kèm groupBy chạy được MySQL nhưng vỡ sqlite → dùng `->has('relation')`.
+- `lessons.updated_at` đổi mỗi lượt xem (increment view_count) → KHÔNG dùng làm khoá cache.
+- Chrome headless không cho cửa sổ < ~500px: chụp mobile phải dùng iframe 390px hoặc puppeteer setViewport.
+- 17 bài sát pháp có FEN "Tướng Đỏ đang bị chiếu" (dữ liệu sách) → luật chặn mọi nước → loại khỏi kho thế cờ.
+- Font Google `display=swap` gây CLS 0.107 ở hero → đổi `display=optional`.
