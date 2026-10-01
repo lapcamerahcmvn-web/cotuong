@@ -142,14 +142,14 @@ class PuzzleService
         return ['user' => $newU, 'delta' => $newU - $ur];
     }
 
-    /** Leitner: sai → về hộp 0 (ôn ngày mai); đúng trong chế độ ôn → lên hộp, giãn lịch. */
+    /** Leitner: sai → về hộp 0 (ôn được ngay hôm nay); đúng trong chế độ ôn → lên hộp, giãn lịch. */
     private function updateReview(User $u, Puzzle $p, bool $ok, string $mode): void
     {
         $row = UserPuzzleReview::where('user_id', $u->id)->where('puzzle_id', $p->id)->first();
         if (! $ok) {
             UserPuzzleReview::updateOrCreate(
                 ['user_id' => $u->id, 'puzzle_id' => $p->id],
-                ['box' => 0, 'due_at' => Vn::daysAgo(-1), 'lapses' => ($row->lapses ?? 0) + 1, 'last_result' => 'failed'],
+                ['box' => 0, 'due_at' => Vn::today(), 'lapses' => ($row->lapses ?? 0) + 1, 'last_result' => 'failed'],
             );
 
             return;

@@ -23,7 +23,7 @@ Triển khai Phase 0–4 của `.claude/hoccotuong-redesign-plan.md`. PvP / chơ
   onboarding_level, puzzle_rating/games, rush_best, survival_best.
 - `xp_transactions` (sổ cái, unique user+idem_key, local_date = ngày VN), `user_daily_activity` (xp/bài/thế theo
   ngày VN), `user_achievements` (định nghĩa ở `config/achievements.php`).
-- `puzzles` (FK lessons.id + start_ply), `puzzle_attempts`, `user_puzzle_reviews` (Leitner 1/3/7/14/30 ngày),
+- `puzzles` (FK lessons.id + start_ply), `puzzle_attempts`, `user_puzzle_reviews` (Leitner: sai → ôn ngay trong ngày, đúng → giãn 1/3/7/14/30 ngày),
   `practice_sessions` (60 giây / 3 mạng).
 - ⚠️ Cột ngày-VN (`user_daily_activity.date`, `xp_transactions.local_date`, `user_puzzle_reviews.due_at`) KHÔNG cast
   `date` — cast làm lưu `Y-m-d H:i:s`, so sánh chuỗi ngày lệch (lộ ra trên sqlite test).
@@ -57,3 +57,36 @@ Triển khai Phase 0–4 của `.claude/hoccotuong-redesign-plan.md`. PvP / chơ
 - E2E thủ công 01/10 bằng puppeteer-core + Chrome có sẵn: giải thế hôm nay (khách + đăng nhập), luyện chủ đề cố
   tình sai, 60 giây (trừ 5s đúng), hoàn thành bài → sheet +XP; admin không lỗi JS.
 - Lighthouse mobile local: SEO 100, Accessibility 96–98, Best Practices 100, CLS ≈ 0.
+
+## Đợt 2 (02/10/2026) — Chơi với máy, Thách đấu bạn bè, Chia sẻ kết quả
+
+### Chơi với máy — `/choi-voi-may` (index, có FAQ schema)
+- Engine tự viết `resources/js/engine/engine.js` (chạy trong Web Worker `worker.js`): sinh nước hợp lệ, đánh giá
+  vật chất + vị trí, negamax alpha-beta + quiescence + iterative deepening + killer moves.
+  **Perft chuẩn: 44 / 1.920 / 79.666** (đã kiểm — từng sai 46 do Sĩ ra ngoài bàn, đã sửa giới hạn cung).
+- 4 cấp: Tập sự (đi bừa 35%), Dễ (sâu 2), Vừa (sâu 3), Khó (≤ 6, 2,5s). Hoà khi lặp thế 3 lần / quá 150 nước.
+- `resources/js/play-bot.js`: lưu ván dở trong localStorage `xq.bot.game`, đi lại, gợi ý (mũi tên vàng), lật bàn, xin thua.
+- `POST /choi-voi-may/ket-qua`: XP thắng 10/20/40/80 theo cấp, dùng gợi ý/đi lại → nửa XP, ván < 10 nước hoặc
+  < 20 giây không tính, tối đa 5 ván/ngày (server không thẩm định được ván nên giới hạn).
+- `board.js` có thêm `XiangqiBoard.mountGame(el, {fen, red, onMove})` — bàn cờ ván đấu tự do (bấm/kéo, chấm nước).
+
+### Thách đấu bạn bè — `/dau-ban` (sảnh), `/dau-ban/{code}` (phòng, noindex)
+- Bảng `games` (mã 6 ký tự, Đỏ/Đen, moves JSON, đồng hồ ms mỗi bên, draw_offer, version). `App\Services\GameService`
+  thẩm định từng nước bằng `Rules` PHP trong transaction `lockForUpdate`; chiếu hết/hết nước → thắng, lặp 3 lần hoặc
+  300 nửa nước → hoà, hết giờ → thua (tính lười khi đọc trạng thái, không cron).
+- Đồng bộ bằng **polling** (`GET /dau-ban/{code}/trang-thai?v=` trả `{same:true}` nếu chưa đổi): 1s khi chờ đối thủ,
+  1,8s bình thường, 4s khi tab ẩn. Không cần websocket → chạy được trên hosting chia sẻ.
+- XP sau khi ván kết thúc (≥ 10 nước): thắng 30, hoà 10, thua 5; tối đa 10 ván/ngày. Huy hiệu pvp-1, pvp-10.
+
+### Chia sẻ kết quả (`resources/js/share.js`)
+- Thế cờ hôm nay, 60 giây/3 mạng (ô 🟩🟥 kiểu Wordle), ván với máy, lời mời phòng đấu. Web Share trên mobile, còn lại copy.
+
+### ⚠️ Gotcha throttle (đã sửa 02/10)
+`throttle:N,1` của Laravel đếm **chung 1 bộ đếm cho mọi route** của cùng user/IP → polling ván đấu làm cạn hạn mức
+nút "Đề nghị hoà" (429), khách luyện tập nhiều có thể bị chặn đăng nhập. Luôn thêm tiền tố: `throttle:20,1,pvp-draw`.
+
+### Khác
+- Thế giải sai vào hàng "Luyện lỗi sai" ngay trong ngày (trước đó hẹn sang hôm sau).
+- Điều hướng: header thêm menu **Chơi**; thanh dưới mobile: Trang chủ · Học · Luyện · Chơi · Tôi (Xếp hạng chuyển vào
+  menu tài khoản + trang chủ).
+- Test: `tests/Feature/PlayTest.php` (6 test: lượt/luật, hoà + XP, lặp 3 lần, xin thua/hết giờ, XP thắng máy, render).

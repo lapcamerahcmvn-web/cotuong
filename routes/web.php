@@ -13,12 +13,14 @@ use App\Http\Controllers\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PlayController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
@@ -59,9 +61,9 @@ Route::get('/tim-kiem', [SearchController::class, 'index'])->name('search');
 
 // ---- Đăng nhập thống nhất (Google cho người học + email/mật khẩu cho admin) ----
 Route::get('/dang-nhap', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/dang-nhap', [AuthController::class, 'loginPassword'])->middleware('throttle:10,1');
+Route::post('/dang-nhap', [AuthController::class, 'loginPassword'])->middleware('throttle:10,1,login');
 Route::get('/dang-ky', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/dang-ky', [AuthController::class, 'register'])->middleware('throttle:5,1');
+Route::post('/dang-ky', [AuthController::class, 'register'])->middleware('throttle:5,1,register');
 Route::get('/dang-nhap/google', [AuthController::class, 'googleRedirect'])->name('login.google');
 Route::get('/dang-nhap/google/callback', [AuthController::class, 'googleCallback']);
 Route::post('/dang-xuat', [AuthController::class, 'logout'])->name('logout');
@@ -69,15 +71,15 @@ Route::post('/dang-xuat', [AuthController::class, 'logout'])->name('logout');
 // ---- Tài khoản người học ----
 Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan', [AccountController::class, 'index'])->name('account.index');
-    Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store')->middleware('throttle:30,1');
-    Route::post('/bai-hoc/{lesson:slug}/binh-luan', [CommentController::class, 'store'])->name('comment.store')->middleware('throttle:15,1');
-    Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1');
+    Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store')->middleware('throttle:30,1,progress');
+    Route::post('/bai-hoc/{lesson:slug}/binh-luan', [CommentController::class, 'store'])->name('comment.store')->middleware('throttle:15,1,comment');
+    Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1,like');
 
     // Thư viện thế cờ cá nhân.
     Route::get('/tai-khoan/thu-vien', [LibraryController::class, 'index'])->name('account.library');
-    Route::post('/thu-vien', [LibraryController::class, 'store'])->name('library.store')->middleware('throttle:20,1');
-    Route::put('/thu-vien/{position}', [LibraryController::class, 'update'])->name('library.update')->middleware('throttle:20,1');
-    Route::post('/thu-vien/gui-admin', [LibraryController::class, 'submit'])->name('library.submit')->middleware('throttle:10,1');
+    Route::post('/thu-vien', [LibraryController::class, 'store'])->name('library.store')->middleware('throttle:20,1,lib');
+    Route::put('/thu-vien/{position}', [LibraryController::class, 'update'])->name('library.update')->middleware('throttle:20,1,lib');
+    Route::post('/thu-vien/gui-admin', [LibraryController::class, 'submit'])->name('library.submit')->middleware('throttle:10,1,lib-submit');
     Route::delete('/thu-vien/{position}', [LibraryController::class, 'destroy'])->name('library.destroy');
 });
 
@@ -135,6 +137,23 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     });
 });
 
+// ---- Chơi: với máy ----
+Route::get('/choi-voi-may', [PlayController::class, 'bot'])->name('play.bot');
+Route::post('/choi-voi-may/ket-qua', [PlayController::class, 'botResult'])->name('play.bot.result')->middleware(['auth', 'throttle:20,1,bot']);
+
+// ---- Chơi: thách đấu bạn bè qua link (polling) ----
+Route::get('/dau-ban', [GameController::class, 'lobby'])->name('pvp.lobby');
+Route::get('/dau-ban/{code}', [GameController::class, 'show'])->name('pvp.show')->where('code', '[A-Za-z0-9]{6,8}');
+Route::get('/dau-ban/{code}/trang-thai', [GameController::class, 'state'])->name('pvp.state')->middleware('throttle:150,1,pvp-state');
+Route::middleware('auth')->group(function () {
+    Route::post('/dau-ban', [GameController::class, 'store'])->name('pvp.store')->middleware('throttle:10,1,pvp-new');
+    Route::post('/dau-ban/vao', [GameController::class, 'joinByCode'])->name('pvp.join');
+    Route::post('/dau-ban/{code}/nhan', [GameController::class, 'accept'])->name('pvp.accept');
+    Route::post('/dau-ban/{code}/nuoc', [GameController::class, 'move'])->name('pvp.move')->middleware('throttle:60,1,pvp-move');
+    Route::post('/dau-ban/{code}/xin-thua', [GameController::class, 'resign'])->name('pvp.resign');
+    Route::post('/dau-ban/{code}/hoa', [GameController::class, 'draw'])->name('pvp.draw')->middleware('throttle:20,1,pvp-draw');
+});
+
 // ---- Lộ trình + Luyện tập + Xếp hạng ----
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
@@ -147,18 +166,18 @@ Route::prefix('luyen-tap')->name('practice.')->group(function () {
     Route::get('/kiem-tra', [PracticeController::class, 'placement'])->name('placement');
     Route::get('/chu-de/{skill}', [PracticeController::class, 'topic'])->name('topic');
     Route::get('/loi-sai', [PracticeController::class, 'review'])->name('review')->middleware('auth');
-    Route::get('/the-co/tiep', [PracticeController::class, 'next'])->name('next')->middleware('throttle:90,1');
-    Route::post('/the-co/{puzzle}/thu', [PracticeController::class, 'attempt'])->name('attempt')->middleware('throttle:60,1');
-    Route::post('/phien', [PracticeController::class, 'sessionStart'])->name('session.start')->middleware('throttle:20,1');
-    Route::post('/phien/{uuid}/nuoc', [PracticeController::class, 'sessionAnswer'])->name('session.answer')->middleware('throttle:150,1');
-    Route::post('/phien/{uuid}/ket-thuc', [PracticeController::class, 'sessionFinish'])->name('session.finish')->middleware('throttle:30,1');
+    Route::get('/the-co/tiep', [PracticeController::class, 'next'])->name('next')->middleware('throttle:90,1,pz-next');
+    Route::post('/the-co/{puzzle}/thu', [PracticeController::class, 'attempt'])->name('attempt')->middleware('throttle:60,1,pz-attempt');
+    Route::post('/phien', [PracticeController::class, 'sessionStart'])->name('session.start')->middleware('throttle:20,1,pz-session');
+    Route::post('/phien/{uuid}/nuoc', [PracticeController::class, 'sessionAnswer'])->name('session.answer')->middleware('throttle:150,1,pz-answer');
+    Route::post('/phien/{uuid}/ket-thuc', [PracticeController::class, 'sessionFinish'])->name('session.finish')->middleware('throttle:30,1,pz-finish');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan/cai-dat', [AccountController::class, 'settings'])->name('account.settings');
     Route::post('/tai-khoan/cai-dat', [AccountController::class, 'saveSettings'])->name('account.settings.save');
     Route::post('/tai-khoan/bat-dau', [AccountController::class, 'onboarding'])->name('account.onboarding');
-    Route::post('/tien-do/gop', [ProgressController::class, 'merge'])->name('progress.merge')->middleware('throttle:5,1');
+    Route::post('/tien-do/gop', [ProgressController::class, 'merge'])->name('progress.merge')->middleware('throttle:5,1,merge');
 });
 
 // Chuỗi bài (Course) + bài học — prefix rõ ràng để KHÔNG đụng route giai đoạn /{phase}.

@@ -46,6 +46,10 @@
             <span class="mode-card__meta">{{ $dueCount ? $dueCount . ' thế cần ôn hôm nay' : 'Chưa có thế cần ôn' }}</span></span>
     </a>
     @endif
+    <a href="{{ route('play.bot') }}" class="card mode-card">
+        <span class="mode-card__icon tone-ink"><x-icon name="shield" /></span>
+        <span><h3>Chơi với máy</h3><p>Áp dụng thế cờ vào ván thật — 4 cấp độ, có gợi ý.</p></span>
+    </a>
     <a href="{{ route('practice.placement') }}" class="card mode-card">
         <span class="mode-card__icon tone-ink"><x-icon name="target" /></span>
         <span><h3>Kiểm tra trình độ</h3><p>5 thế từ dễ đến khó — gợi ý bạn nên bắt đầu học từ đâu.</p></span>

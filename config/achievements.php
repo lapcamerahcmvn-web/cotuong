@@ -28,6 +28,11 @@ return [
     'survival-15'    => ['name' => 'Kiên cường', 'desc' => 'Giải 15 thế liên tiếp ở chế độ 3 mạng', 'icon' => 'heart', 'type' => 'survival', 'value' => 15],
     'daily-7'        => ['name' => 'Thói quen tốt', 'desc' => 'Giải 7 "Thế cờ hôm nay"', 'icon' => 'calendar', 'type' => 'daily', 'value' => 7],
 
+    'bot-2'          => ['name' => 'Thắng máy', 'desc' => 'Thắng máy từ cấp Dễ trở lên', 'icon' => 'shield', 'type' => 'bot', 'value' => 2],
+    'bot-3'          => ['name' => 'Vượt mặt máy', 'desc' => 'Thắng máy cấp Vừa', 'icon' => 'shield', 'type' => 'bot', 'value' => 3],
+    'bot-4'          => ['name' => 'Hạ máy cấp Khó', 'desc' => 'Thắng máy cấp Khó', 'icon' => 'trophy', 'type' => 'bot', 'value' => 4],
+    'pvp-1'          => ['name' => 'Chiến thắng đầu tay', 'desc' => 'Thắng ván đấu bạn đầu tiên', 'icon' => 'sword', 'type' => 'pvp', 'value' => 1],
+    'pvp-10'         => ['name' => 'Kỳ thủ giao lưu', 'desc' => 'Chơi 10 ván đấu bạn', 'icon' => 'user', 'type' => 'pvp_games', 'value' => 10],
     'phase-nhap-mon'   => ['name' => 'Tốt nghiệp Nhập môn', 'desc' => 'Hoàn thành toàn bộ Nhập môn', 'icon' => 'graduation', 'type' => 'phase', 'value' => 'nhap-mon'],
     'phase-khai-cuoc'  => ['name' => 'Chủ khai cuộc', 'desc' => 'Hoàn thành toàn bộ Khai cuộc', 'icon' => '車', 'type' => 'phase', 'value' => 'khai-cuoc'],
     'series-13-doi-hinh' => ['name' => '13 đội hình sát', 'desc' => 'Hoàn thành Sát Pháp 13 Đội Hình', 'icon' => 'sword', 'type' => 'series', 'value' => 'sat-phap-13-doi-hinh'],

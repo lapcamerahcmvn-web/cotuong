@@ -93,10 +93,17 @@ function initPlay(root) {
               ${mode === 'daily' ? `<a href="/luyen-tap/60-giay" class="btn btn--primary">${icon('zap')} Thử thách 60 giây</a>` : ''}
               ${!ok ? `<button type="button" class="btn" data-retry>${icon('reset')} Thử lại</button>` : ''}
               ${puzzle.lessonUrl ? `<a href="${escapeHtml(puzzle.lessonUrl)}" class="btn btn--ghost">${icon('book')} Xem bài học gốc</a>` : ''}
+              ${mode === 'daily' ? `<button type="button" class="btn btn--ghost" data-share-daily>${icon('share')} Chia sẻ</button>` : ''}
             </div>`;
         result.hidden = false;
         result.querySelector('[data-retry]')?.addEventListener('click', () => { result.hidden = true; engine.reset(); });
         result.querySelector('[data-next]')?.addEventListener('click', next);
+        result.querySelector('[data-share-daily]')?.addEventListener('click', () => {
+            const d = new Date().toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit' });
+            const streak = res?.gamification?.streak;
+            import('./share').then((m) => m.share(`♟ Thế cờ hôm nay ${d}: ${ok ? '✅ giải đúng ngay lần đầu' : '❌ chưa giải được'}${streak > 1 ? ` · 🔥 ${streak} ngày liên tiếp` : ''}
+Bạn thử xem giải được không?`, location.origin + '/luyen-tap/hom-nay'));
+        });
         if (!more && rounds) summary();
     }
 
@@ -247,10 +254,17 @@ function initSession(root) {
             ${!window.__xq?.auth ? '<p class="text-[13.5px] text-ink-soft">Đăng nhập để lưu kỷ lục, nhận XP và lên bảng xếp hạng.</p>' : ''}
             <div class="celebrate__actions mt-3">
                 <button type="button" class="btn btn--primary btn--lg" data-again>${icon('repeat')} Chơi lại</button>
-                <a class="btn" href="/xep-hang?loai=rush">${icon('trophy')} Bảng xếp hạng</a>
+                <button type="button" class="btn" data-share-run>${icon('share')} Chia sẻ</button>
+                <a class="btn btn--ghost" href="/xep-hang?loai=rush">${icon('trophy')} Bảng xếp hạng</a>
             </div></div>`;
         endBox.hidden = false;
         endBox.querySelector('[data-again]')?.addEventListener('click', start);
+        endBox.querySelector('[data-share-run]')?.addEventListener('click', () => {
+            const grid = (st.log || []).map((l) => (l.ok ? '🟩' : '🟥')).join('');
+            const title = mode === 'rush' ? `⚡ Thử thách 60 giây: ${st.score} thế đúng` : `❤️ Chế độ 3 mạng: ${st.score} thế liên tiếp`;
+            import('./share').then((m) => m.share(`${title}
+${grid}`, location.origin + location.pathname));
+        });
         if (isRecord) confetti(endBox.querySelector('.celebrate'));
         handleGamification(st.gamification);
         track(mode === 'rush' ? 'rush_finish' : 'survival_finish', { score: st.score });

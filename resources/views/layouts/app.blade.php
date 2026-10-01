@@ -100,6 +100,7 @@
     $isLearn = request()->routeIs('phase', 'series', 'lessons.show', 'path');
     $isPractice = request()->routeIs('practice.*');
     $isBoard = request()->routeIs('leaderboard');
+    $isPlay = request()->routeIs('play.*', 'pvp.*');
     $isMe = request()->routeIs('account.*', 'login', 'register');
 @endphp
 <body data-auth="{{ $u ? '1' : '0' }}" class="has-bottom-nav">
@@ -133,6 +134,15 @@
                     </div>
                 </div>
                 <a href="{{ route('practice.hub') }}" class="main-nav__link {{ $isPractice ? 'is-active' : '' }}"><x-icon name="puzzle" /> Luyện tập</a>
+                <div class="dropdown" data-dropdown>
+                    <button type="button" class="main-nav__trigger {{ $isPlay ? 'is-active' : '' }}" aria-expanded="false" aria-haspopup="true" data-dropdown-trigger>
+                        <x-icon name="sword" /> Chơi <x-icon name="chev-down" class="!w-4 !h-4 opacity-60" />
+                    </button>
+                    <div class="dropdown__panel" data-dropdown-panel>
+                        <a href="{{ route('play.bot') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="shield" /></span><span>Chơi với máy<small>4 cấp độ, có gợi ý nước đi</small></span></a>
+                        <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Thách đấu bạn bè<small>Gửi link, chơi theo lượt có đồng hồ</small></span></a>
+                    </div>
+                </div>
                 <a href="{{ route('posts.index') }}" class="main-nav__link {{ request()->routeIs('posts.*') ? 'is-active' : '' }}"><x-icon name="news" /> Tin tức</a>
                 <a href="{{ route('leaderboard') }}" class="main-nav__link {{ $isBoard ? 'is-active' : '' }}"><x-icon name="trophy" /> Xếp hạng</a>
             </nav>
@@ -167,6 +177,8 @@
                             <a href="{{ route('account.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Hồ sơ của tôi<small>Cấp {{ $hud['level']['level'] ?? 1 }} · {{ $hud['level']['title'] ?? '' }}</small></span></a>
                             <a href="{{ route('account.library') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="bookmark" /></span><span>Thư viện thế cờ</span></a>
                             <a href="{{ route('practice.review') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="repeat" /></span><span>Luyện lỗi sai</span></a>
+                            <a href="{{ route('leaderboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="trophy" /></span><span>Bảng xếp hạng</span></a>
+                            <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Ván đấu của tôi</span></a>
                             <a href="{{ route('account.settings') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="settings" /></span><span>Cài đặt</span></a>
                             @if($u->isStaff())
                                 <a href="{{ route('admin.dashboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="shield" /></span><span>Quản trị</span></a>
@@ -221,6 +233,11 @@
                         <li><a href="{{ route('practice.hub') }}">Luyện theo chủ đề</a></li>
                         <li><a href="{{ route('leaderboard') }}">Bảng xếp hạng</a></li>
                     </ul>
+                    <h3 class="mt-5">Chơi</h3>
+                    <ul>
+                        <li><a href="{{ route('play.bot') }}">Chơi cờ tướng với máy</a></li>
+                        <li><a href="{{ route('pvp.lobby') }}">Thách đấu bạn bè</a></li>
+                    </ul>
                 </div>
                 <div>
                     <h3>Khám phá</h3>
@@ -242,7 +259,7 @@
         <a href="{{ route('home') }}" class="bottom-nav__item {{ request()->routeIs('home') ? 'is-active' : '' }}"><x-icon name="home" /><span>Trang chủ</span></a>
         <a href="{{ route('path') }}" class="bottom-nav__item {{ $isLearn ? 'is-active' : '' }}"><x-icon name="book" /><span>Học</span></a>
         <a href="{{ route('practice.hub') }}" class="bottom-nav__item {{ $isPractice ? 'is-active' : '' }}"><x-icon name="puzzle" /><span>Luyện</span></a>
-        <a href="{{ route('leaderboard') }}" class="bottom-nav__item {{ $isBoard ? 'is-active' : '' }}"><x-icon name="trophy" /><span>Xếp hạng</span></a>
+        <a href="{{ route('play.bot') }}" class="bottom-nav__item {{ $isPlay || $isBoard ? 'is-active' : '' }}"><x-icon name="sword" /><span>Chơi</span></a>
         <a href="{{ $u ? route('account.index') : route('login') }}" class="bottom-nav__item {{ $isMe ? 'is-active' : '' }}">
             <x-icon name="user" /><span>{{ $u ? 'Tôi' : 'Đăng nhập' }}</span>
             @if($u && $hud && $hud['streak'] > 0)<span class="bottom-nav__badge" aria-label="{{ $hud['streak'] }} ngày liên tiếp">{{ $hud['streak'] }}</span>@endif

@@ -19,12 +19,19 @@ return [
         'series_complete'  => 200,
         'phase_complete'   => 500,
         'streak_milestones' => [7 => 100, 30 => 300, 100 => 1000],
+        // Thắng máy theo cấp (1 Tập sự · 2 Dễ · 3 Vừa · 4 Khó). Dùng gợi ý/đi lại → nửa XP.
+        'bot_win'          => [1 => 10, 2 => 20, 3 => 40, 4 => 80],
+        // Đấu bạn: thắng / hoà.
+        'pvp_win'          => 30,
+        'pvp_draw'         => 10,
     ],
 
     'caps' => [
         'puzzle_xp_daily'   => 400,  // trần XP từ thế cờ mỗi ngày (chống cày)
         'lessons_xp_daily'  => 30,   // tối đa số bài được cộng XP hoàn thành mỗi ngày
         'guest_merge_xp'    => 150,  // trần XP gộp từ hoạt động khách khi đăng nhập
+        'bot_wins_daily'    => 5,    // số ván thắng máy được tính XP mỗi ngày
+        'pvp_games_daily'   => 10,   // số ván đấu bạn được tính XP mỗi ngày
     ],
 
     'daily_goals' => [20 => 'Thư thả', 50 => 'Vừa phải', 100 => 'Nghiêm túc', 200 => 'Cao độ'],

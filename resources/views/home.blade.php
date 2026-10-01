@@ -174,13 +174,15 @@
 {{-- ================= LUYỆN TẬP NHANH ================= --}}
 <section class="section pt-0">
     <div class="section-head">
-        <div><h2>Luyện tập như chơi game</h2><p>Thế cờ lấy từ chính bài học — đúng là có XP, sai được ôn lại.</p></div>
+        <div><h2>Luyện tập & chơi</h2><p>Thế cờ lấy từ chính bài học, chơi với máy hoặc thách đấu bạn bè — đều có XP.</p></div>
         <a href="{{ route('practice.hub') }}" class="section-head__link">Tất cả chế độ <x-icon name="arrow-right" /></a>
     </div>
     <div class="mode-grid">
         <a href="{{ route('practice.rush') }}" class="card mode-card"><span class="mode-card__icon tone-gold"><x-icon name="zap" /></span><span><h3>60 giây</h3><p>Giải nhanh nhất có thể trước khi hết giờ.</p></span></a>
         <a href="{{ route('practice.survival') }}" class="card mode-card"><span class="mode-card__icon tone-primary"><x-icon name="heart" /></span><span><h3>3 mạng</h3><p>Khó dần, sai 3 lần là kết thúc.</p></span></a>
-        <a href="{{ route('practice.topic', 'song-xe') }}" class="card mode-card"><span class="mode-card__icon tone-jade"><x-icon name="sword" /></span><span><h3>Sát pháp Song Xe</h3><p>Chủ đề được luyện nhiều nhất — 10 thế mỗi lượt.</p></span></a>
+        <a href="{{ route('practice.topic', 'song-xe') }}" class="card mode-card"><span class="mode-card__icon tone-jade"><x-icon name="puzzle" /></span><span><h3>Sát pháp Song Xe</h3><p>Chủ đề được luyện nhiều nhất — 10 thế mỗi lượt.</p></span></a>
+        <a href="{{ route('play.bot') }}" class="card mode-card"><span class="mode-card__icon tone-ink"><x-icon name="shield" /></span><span><h3>Chơi với máy</h3><p>4 cấp độ từ Tập sự đến Khó, có gợi ý và đi lại.</p></span></a>
+        <a href="{{ route('pvp.lobby') }}" class="card mode-card"><span class="mode-card__icon tone-primary"><x-icon name="sword" /></span><span><h3>Thách đấu bạn bè</h3><p>Tạo phòng, gửi link qua Zalo — chơi theo lượt có đồng hồ.</p></span></a>
     </div>
 </section>
 

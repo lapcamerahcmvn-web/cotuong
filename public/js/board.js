@@ -867,6 +867,106 @@
     }, cfg);
   }
 
+  /* ======================================================================
+     Bàn cờ VÁN ĐẤU tự do (chơi với máy / đấu bạn). Bàn chỉ lo hiển thị + nhận nước đi hợp lệ
+     của người chơi; luật thắng/thua, lượt đi, đồng hồ do nơi gọi quản lý.
+     cfg: { fen, red:boolean (người chơi cầm Đỏ), onMove(iccs) }
+     API: set(fen, lastIccs, {arrows}) · lock(bool) · setFlip(bool) · flip() · fen()
+     ====================================================================== */
+  function mountGame(el, cfg) {
+    var Rules = window.XiangqiRules;
+    var holder = el.querySelector('[data-xq-holder]');
+    var st = { board: Rules.loadFen(cfg.fen), last: null, selected: -1, dots: [], locked: false, flip: !cfg.red, arrows: null, hint: -1 };
+
+    function draw(opts) {
+      opts = opts || {};
+      var lm = st.last ? iccsToSquares(st.last) : null;
+      var check = -1;
+      [true, false].forEach(function (red) { if (Rules.inCheck(st.board, red)) check = Rules.findKing(st.board, red); });
+      holder.innerHTML = renderBoard(Rules.toFen(st.board), lm, st.arrows, st.selected, st.flip, { dots: st.dots, check: check, hint: st.hint, hide: opts.hide });
+      if (!opts.noAnim) playAnim(holder);
+      holder.classList.toggle('is-interactive', !st.locked);
+    }
+    function isOwn(sq) { var p = st.board[sq]; return !!p && Rules.isRed(p) === cfg.red; }
+    function select(sq) {
+      st.selected = sq; st.dots = [];
+      if (sq >= 0) for (var t = 0; t < 90; t++) if (Rules.legalNoSelfCheck(st.board, sq, t)) st.dots.push(t);
+      draw({ noAnim: true });
+    }
+    function attempt(from, to) {
+      if (st.locked) return;
+      var ok = Rules.legalNoSelfCheck(st.board, from, to);
+      st.selected = -1; st.dots = [];
+      if (!ok) { draw({ noAnim: true }); return; }
+      var iccs = Rules.toIccs(from) + Rules.toIccs(to);
+      st.arrows = null; st.hint = -1;
+      if (cfg.onMove) cfg.onMove(iccs);
+    }
+    function squareAt(x, y) {
+      var svg = holder.querySelector('svg'); if (!svg) return -1;
+      var pt = svg.createSVGPoint(); pt.x = x; pt.y = y;
+      var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+      var f = Math.round((loc.x - M) / CW), r = Math.round((loc.y - M) / CH);
+      if (f < 0 || f > 8 || r < 0 || r > 9) return -1;
+      if (st.flip) { f = 8 - f; r = 9 - r; }
+      return r * 9 + f;
+    }
+    var drag = null;
+    holder.addEventListener('pointerdown', function (e) {
+      if (st.locked || (e.button !== undefined && e.button !== 0)) return;
+      var sq = squareAt(e.clientX, e.clientY); if (sq < 0) return;
+      if (isOwn(sq)) {
+        drag = { sq: sq, x: e.clientX, y: e.clientY, moved: false, was: st.selected === sq, id: e.pointerId };
+        if (st.selected !== sq) select(sq);
+        try { holder.setPointerCapture(e.pointerId); } catch (err) {}
+        e.preventDefault();
+      } else if (st.selected >= 0) attempt(st.selected, sq);
+    });
+    holder.addEventListener('pointermove', function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.moved && Math.hypot(e.clientX - drag.x, e.clientY - drag.y) < 8) return;
+      if (!drag.moved) {
+        drag.moved = true;
+        var size = holder.getBoundingClientRect().width / BW * 52;
+        drag.ghost = document.createElement('div');
+        drag.ghost.className = 'xq-ghost';
+        drag.ghost.style.width = drag.ghost.style.height = size + 'px';
+        drag.ghost.innerHTML = '<svg viewBox="-26 -26 52 52" width="100%" height="100%">' + pieceSvg(PIECES[st.board[drag.sq]], 0, 0) + '</svg>';
+        document.body.appendChild(drag.ghost);
+        draw({ noAnim: true, hide: drag.sq });
+      }
+      drag.ghost.style.left = e.clientX + 'px'; drag.ghost.style.top = e.clientY + 'px';
+    });
+    holder.addEventListener('pointerup', function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var d = drag; drag = null;
+      if (d.ghost) d.ghost.remove();
+      if (d.moved) { var to = squareAt(e.clientX, e.clientY); if (to >= 0 && to !== d.sq) attempt(d.sq, to); else draw({ noAnim: true }); }
+      else if (d.was) select(-1);
+    });
+    holder.addEventListener('pointercancel', function () { if (drag && drag.ghost) drag.ghost.remove(); drag = null; draw({ noAnim: true }); });
+
+    draw();
+    return {
+      set: function (fen, lastIccs, o) {
+        var before = Rules.toFen(st.board);
+        st.board = Rules.loadFen(fen); st.last = lastIccs || null; st.selected = -1; st.dots = [];
+        st.arrows = (o && o.arrows) || null; st.hint = -1;
+        draw(o && o.noAnim ? { noAnim: true } : null);
+        if (lastIccs && !(o && o.silent)) Sound.move(countPieces(before) !== countPieces(fen));
+      },
+      showArrow: function (iccs, color) {
+        var m = iccsToIdx(iccs); if (!m) return;
+        st.arrows = [{ from: m.from, to: m.to, color: color || '#2f6b5e' }]; st.hint = m.from;
+        draw({ noAnim: true });
+      },
+      lock: function (v) { st.locked = !!v; if (v) { st.selected = -1; st.dots = []; } draw({ noAnim: true }); },
+      setFlip: function (v) { st.flip = !!v; draw({ noAnim: true }); },
+      flip: function () { st.flip = !st.flip; draw({ noAnim: true }); },
+      fen: function () { return Rules.toFen(st.board); }
+    };
+  }
+
   function escapeHtml(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
@@ -879,5 +979,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
   else initAll();
 
-  window.XiangqiBoard = { render: renderBoard, mountPuzzle: mountPuzzle, init: initBoard, initAll: initAll, sound: Sound };
+  window.XiangqiBoard = { render: renderBoard, mountPuzzle: mountPuzzle, mountGame: mountGame, init: initBoard, initAll: initAll, sound: Sound };
 })();

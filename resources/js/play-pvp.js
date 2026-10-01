@@ -1,0 +1,183 @@
+// Phòng đấu bạn bè: polling trạng thái (1,5s; 4s khi tab ẩn), đồng hồ đếm cục bộ, gửi nước đi.
+import { loadBoard, postJson, getJson, track, icon, escapeHtml, toast } from './core';
+import { openSheet, confetti } from './gamification';
+
+const START = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+
+export function init() {
+    const root = document.querySelector('[data-pvp]');
+    if (!root) return;
+    loadBoard().then(() => run(root));
+}
+
+function run(root) {
+    const $ = (s) => root.querySelector(s);
+    const code = root.dataset.code;
+    let s = JSON.parse($('script[data-pvp-state]').textContent);
+    let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false;
+    const R = window.XiangqiRules;
+
+    const youRed = () => s.you !== 'den';
+    const el = $('[data-pvp-board]');
+    el.innerHTML = '<div class="board-holder" data-xq-holder></div>';
+    const board = window.XiangqiBoard.mountGame(el, { fen: s.fen, red: youRed(), onMove: send });
+    board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
+    render(true);
+    poll();
+    setInterval(tickClocks, 250);
+
+    async function send(iccs) {
+        if (sending) return;
+        sending = true;
+        board.lock(true);
+        try {
+            const res = await postJson(`/dau-ban/${code}/nuoc`, { move: iccs });
+            apply(res);
+            track('pvp_move');
+        } catch (e) {
+            status('Nước đi không được chấp nhận — thử lại.', 'err');
+            board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
+            render();
+        }
+        sending = false;
+    }
+
+    function apply(n) {
+        if (!n || n.same) {
+            if (n && n.clocks) { s.clocks = n.clocks; clockAt = Date.now(); }
+            return;
+        }
+        const wasWaiting = s.status === 'waiting';
+        const moved = n.moves.length !== s.moves.length;
+        s = n;
+        clockAt = Date.now();
+        if (wasWaiting && s.status !== 'waiting') { location.reload(); return; }
+        if (moved) board.set(s.fen, s.moves[s.moves.length - 1] || null);
+        render();
+    }
+
+    function act(url, body) {
+        return postJson(url, body).then(apply).catch(() => toast('Không gửi được — kiểm tra mạng rồi thử lại.', { kind: 'err', iconName: 'x-circle' }));
+    }
+
+    async function poll() {
+        if (s.status !== 'finished' && s.status !== 'aborted') {
+            try { apply(await getJson(`/dau-ban/${code}/trang-thai`, { v: s.version })); } catch (e) { /* mạng chập chờn: thử lại lần sau */ }
+        }
+        const waitingOpp = s.status === 'playing' && s.you && s.turn !== s.you;
+        setTimeout(poll, document.hidden ? 4000 : (waitingOpp ? 1000 : 1800));
+    }
+
+    function player(side) {
+        const p = side === 'do' ? s.red : s.black;
+        const name = p ? escapeHtml(p.name) : '<span class="text-ink-faint">Đang chờ…</span>';
+        const lvl = p ? `<span class="text-[12px] text-ink-faint font-semibold">Cấp ${p.level}</span>` : '';
+        const turn = s.status === 'playing' && s.turn === side;
+        return `<span class="flex items-center gap-2 min-w-0"><span class="side-dot ${side}"></span><span class="font-bold truncate">${name}</span>${lvl}${side === s.you ? '<span class="tag !py-0">Bạn</span>' : ''}</span>
+            ${s.clocks ? `<span class="step-pill ${turn ? '!bg-primary !text-white !border-primary' : ''}" data-clock="${side}">--:--</span>` : (turn ? '<span class="tag tag--done">Đang đi</span>' : '')}`;
+    }
+
+    function render(first) {
+        const bottom = flipped ? (youRed() ? 'den' : 'do') : (youRed() ? 'do' : 'den');
+        const top = bottom === 'do' ? 'den' : 'do';
+        $('[data-pvp-top]').innerHTML = player(top);
+        $('[data-pvp-bottom]').innerHTML = player(bottom);
+        tickClocks();
+
+        const myTurn = s.status === 'playing' && s.you && s.turn === s.you;
+        board.lock(!myTurn || sending);
+        if (s.status === 'waiting') status('Đang chờ đối thủ vào phòng…', null);
+        else if (s.status === 'aborted') status('Phòng đã huỷ.', null);
+        else if (s.status === 'finished') status(endText(), s.result === 'hoa' ? null : (s.result === s.you ? 'ok' : 'err'));
+        else if (!s.you) status(`Đang xem · tới lượt ${s.turn === 'do' ? 'Đỏ' : 'Đen'}`, null);
+        else {
+            const check = R.inCheck(R.loadFen(s.fen), s.turn === 'do');
+            status(myTurn ? (check ? 'Bạn đang bị chiếu!' : 'Tới lượt bạn') : 'Chờ đối thủ đi…', myTurn ? (check ? 'err' : 'ok') : null);
+        }
+        renderDraw();
+        renderMoves();
+        const acts = $('[data-pvp-actions]');
+        if (acts) acts.hidden = s.status !== 'playing';
+        if (s.status === 'finished' && !lastShownEnd && !first) { lastShownEnd = true; showEnd(); }
+        if (s.status === 'finished') lastShownEnd = true;
+    }
+
+    function endText() {
+        const who = s.result === 'do' ? 'Đỏ' : 'Đen';
+        const base = s.result === 'hoa' ? 'Ván cờ hoà' : (s.you ? (s.result === s.you ? 'Bạn thắng!' : 'Bạn thua') : who + ' thắng');
+        return base + ' · ' + (s.reason || '');
+    }
+
+    function status(text, kind) {
+        const box = $('[data-pvp-status]');
+        box.className = 'card card--pad font-bold ' + (kind === 'ok' ? '!bg-jade-soft !text-jade-ink' : kind === 'err' ? '!bg-danger-soft !text-danger' : '');
+        box.textContent = text;
+    }
+
+    function renderDraw() {
+        const box = $('[data-pvp-draw]');
+        if (s.status !== 'playing' || !s.draw_offer || !s.you) { box.hidden = true; return; }
+        box.hidden = false;
+        if (s.draw_offer === s.you) { box.innerHTML = '<span class="text-ink-soft">Bạn đã đề nghị hoà — chờ đối thủ trả lời.</span>'; return; }
+        box.innerHTML = `<div class="font-bold mb-2">Đối thủ đề nghị hoà</div><div class="flex gap-2">
+            <button type="button" class="btn btn--primary btn--sm" data-acc>${icon('check')} Đồng ý</button>
+            <button type="button" class="btn btn--sm" data-dec>Từ chối</button></div>`;
+        box.querySelector('[data-acc]').onclick = () => act(`/dau-ban/${code}/hoa`);
+        box.querySelector('[data-dec]').onclick = () => act(`/dau-ban/${code}/hoa`, { decline: true });
+    }
+
+    function renderMoves() {
+        const b = R.loadFen(START);
+        const notes = s.moves.map((m) => {
+            const f = R.fromIccs(m);
+            const n = R.notation(b, f.from, f.to);
+            b[f.to] = b[f.from]; b[f.from] = null;
+            return n;
+        });
+        let h = '';
+        for (let i = 0; i < notes.length; i += 2) {
+            h += `<div class="flex gap-2 py-1.5 border-b border-line text-[14px]"><span class="w-7 text-ink-faint font-bold">${i / 2 + 1}.</span>
+                <span class="flex-1"><span class="side-dot do"></span>${escapeHtml(notes[i])}</span>
+                <span class="flex-1">${notes[i + 1] ? '<span class="side-dot den"></span>' + escapeHtml(notes[i + 1]) : ''}</span></div>`;
+        }
+        const list = $('[data-pvp-moves]');
+        list.innerHTML = h || '<p class="text-ink-faint text-[14px] m-0">Chưa có nước nào.</p>';
+        list.scrollTop = list.scrollHeight;
+        $('[data-pvp-count]').textContent = notes.length ? Math.ceil(notes.length / 2) + ' nước' : '';
+    }
+
+    function tickClocks() {
+        if (!s.clocks) return;
+        ['do', 'den'].forEach((side) => {
+            let ms = s.clocks[side];
+            if (s.status === 'playing' && s.turn === side) ms -= Date.now() - clockAt;
+            ms = Math.max(0, ms);
+            const elc = root.querySelector(`[data-clock="${side}"]`);
+            if (elc) {
+                const t = Math.ceil(ms / 1000);
+                elc.textContent = String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0');
+                elc.classList.toggle('!bg-danger', ms < 20000 && s.status === 'playing' && s.turn === side);
+            }
+        });
+    }
+
+    function showEnd() {
+        const win = s.you && s.result === s.you;
+        const dlg = openSheet(`<div class="celebrate">
+            <div class="celebrate__burst">${icon(s.result === 'hoa' ? 'repeat' : (win ? 'trophy' : 'shield'))}</div>
+            <h2>${escapeHtml(endText().split(' · ')[0])}</h2>
+            <p class="muted">${escapeHtml(s.reason || '')} · ${Math.ceil(s.moves.length / 2)} nước</p>
+            <div class="celebrate__actions mt-3">
+                <a class="btn btn--primary btn--lg" href="/dau-ban">${icon('sword')} Ván mới</a>
+                <button type="button" class="btn" data-close>Xem lại bàn cờ</button>
+            </div></div>`);
+        if (win) confetti(dlg.querySelector('.celebrate'));
+        track('pvp_finish', { result: s.result === 'hoa' ? 'draw' : (win ? 'win' : 'loss') });
+    }
+
+    $('[data-pvp-resign]')?.addEventListener('click', () => {
+        if (confirm('Xin thua ván này?')) act(`/dau-ban/${code}/xin-thua`);
+    });
+    $('[data-pvp-offer]')?.addEventListener('click', () => act(`/dau-ban/${code}/hoa`));
+    $('[data-pvp-flip]')?.addEventListener('click', () => { flipped = !flipped; board.flip(); render(); });
+}

@@ -780,3 +780,7 @@ Xem `.claude/redesign-gamification.md`. Bài học kỹ thuật rút ra:
 - Chrome headless không cho cửa sổ < ~500px: chụp mobile phải dùng iframe 390px hoặc puppeteer setViewport.
 - 17 bài sát pháp có FEN "Tướng Đỏ đang bị chiếu" (dữ liệu sách) → luật chặn mọi nước → loại khỏi kho thế cờ.
 - Font Google `display=swap` gây CLS 0.107 ở hero → đổi `display=optional`.
+
+- 02/10: `throttle:N,1` không kèm tiền tố → mọi route throttle của 1 user/IP dùng CHUNG bộ đếm (polling làm 429 nút khác).
+  Luôn viết `throttle:N,1,ten-rieng`.
+- 02/10: engine JS phải qua perft chuẩn (44/1920/79666) trước khi dùng — bản đầu sai 46 vì Sĩ đi ra ngoài bàn.

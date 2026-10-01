@@ -136,6 +136,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
   giao diện mới Vite/Tailwind, `/lo-trinh`, `/luyen-tap` (thế cờ hôm nay, 60 giây, 3 mạng, chủ đề,
   lỗi sai, kiểm tra trình độ), XP/cấp/chuỗi ngày/huy hiệu/`/xep-hang`, hồ sơ + cài đặt mới.
   Chi tiết: `.claude/redesign-gamification.md`.
+- **Chơi với máy (engine Web Worker) + Thách đấu bạn bè qua link (polling) + Chia sẻ kết quả** (02/10/2026).
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).
@@ -154,7 +155,7 @@ npm run dev            # hoặc npm run build trước khi commit (public/build 
 
 # Kho thế cờ luyện tập (chạy lại sau mỗi lần nạp nội dung)
 php artisan cotuong:build-puzzles [--dry-run]
-php artisan test       # 13 test gamification/luyện tập (sqlite memory)
+php artisan test       # 19 test gamification/luyện tập/chơi (sqlite memory)
 
 # Import bài học từ .xqf (giải mã qua node decode.js)
 php artisan cotuong:import-xqf "storage/app/private/cotuong-sources/khai-cuoc/48-bai-nguyen-ly" \

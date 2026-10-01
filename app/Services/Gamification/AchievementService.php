@@ -21,6 +21,10 @@ class AchievementService
         'daily_puzzle'    => ['daily', 'puzzles', 'level', 'streak'],
         'rush_run'        => ['rush', 'level', 'streak'],
         'survival_run'    => ['survival', 'level', 'streak'],
+        'bot_win'         => ['bot', 'level', 'streak'],
+        'pvp_win'         => ['pvp', 'pvp_games', 'level', 'streak'],
+        'pvp_draw'        => ['pvp_games', 'level', 'streak'],
+        'pvp_play'        => ['pvp_games', 'level', 'streak'],
     ];
 
     /** @return list<array{key:string,name:string,desc:string,icon:string}> huy hiệu mới mở */
@@ -56,6 +60,10 @@ class AchievementService
             'rush'     => (int) $u->rush_best >= $v,
             'survival' => (int) $u->survival_best >= $v,
             'daily'    => ($m['daily'] ??= XpTransaction::where('user_id', $u->id)->where('reason', 'daily_puzzle')->count()) >= $v,
+            'bot'      => XpTransaction::where('user_id', $u->id)->where('reason', 'bot_win')
+                ->where(fn ($q) => collect(range((int) $v, 4))->each(fn ($l) => $q->orWhere('idem_key', 'like', 'bot:L'.$l.':%')))->exists(),
+            'pvp'      => ($m['pvp'] ??= XpTransaction::where('user_id', $u->id)->where('reason', 'pvp_win')->count()) >= $v,
+            'pvp_games' => ($m['pvpg'] ??= XpTransaction::where('user_id', $u->id)->whereIn('reason', ['pvp_win', 'pvp_draw', 'pvp_play'])->count()) >= $v,
             'series'   => $this->seriesDone($u, (string) $v),
             'phase'    => $this->phaseDone($u, (string) $v),
             default    => false,
