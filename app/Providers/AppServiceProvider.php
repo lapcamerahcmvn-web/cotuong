@@ -52,6 +52,8 @@ class AppServiceProvider extends ServiceProvider
                 'siteTwitter' => config('site.twitter'),
                 'orgLd' => Seo::organizationLd(),
                 'websiteLd' => Seo::websiteLd(),
+                // Chip chuỗi ngày / XP / mục tiêu ngày trên header (chỉ khi đăng nhập).
+                'hud' => auth()->check() ? app(\App\Services\Gamification\GamificationService::class)->snapshot(auth()->user()) : null,
             ]);
         });
     }

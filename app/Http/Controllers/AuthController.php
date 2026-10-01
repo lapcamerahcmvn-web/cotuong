@@ -32,6 +32,7 @@ class AuthController extends Controller
         if (Auth::attempt($data, $request->boolean('remember'))) {
             $request->session()->regenerate();
             Auth::user()->forceFill(['last_login_at' => now()])->saveQuietly();
+            session()->flash('ga_event', 'login');
             return redirect()->intended(Auth::user()->isAdmin() ? route('admin.dashboard') : route('account.index'));
         }
 
@@ -71,8 +72,10 @@ class AuthController extends Controller
 
         Auth::login($user, true);
         $request->session()->regenerate();
+        session()->flash('ga_event', 'sign_up');
 
-        return redirect()->intended(route('account.index'));
+        // Người mới về trang chủ — nơi có thẻ "Bạn muốn bắt đầu từ đâu?" (onboarding).
+        return redirect()->intended(route('home'));
     }
 
     public function googleRedirect()
@@ -99,7 +102,9 @@ class AuthController extends Controller
                 'avatar'        => $g->getAvatar(),
                 'last_login_at' => now(),
             ])->save();
+            session()->flash('ga_event', 'login');
         } else {
+            session()->flash('ga_event', 'sign_up');
             $user = User::create([
                 'name'          => $g->getName() ?: 'Người học',
                 'email'         => $g->getEmail(),
@@ -112,7 +117,7 @@ class AuthController extends Controller
         }
 
         Auth::login($user, true);
-        return redirect()->intended(route('account.index'));
+        return redirect()->intended($user->onboarding_level ? route('account.index') : route('home'));
     }
 
     public function logout(Request $request)

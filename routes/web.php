@@ -14,9 +14,12 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
@@ -66,7 +69,7 @@ Route::post('/dang-xuat', [AuthController::class, 'logout'])->name('logout');
 // ---- Tài khoản người học ----
 Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan', [AccountController::class, 'index'])->name('account.index');
-    Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store');
+    Route::post('/tien-do/{lesson:id}', [ProgressController::class, 'store'])->name('progress.store')->middleware('throttle:30,1');
     Route::post('/bai-hoc/{lesson:slug}/binh-luan', [CommentController::class, 'store'])->name('comment.store')->middleware('throttle:15,1');
     Route::post('/binh-luan/{comment}/thich', [CommentController::class, 'like'])->name('comment.like')->middleware('throttle:60,1');
 
@@ -130,6 +133,32 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
         Route::get('nguon', [SourceAssetController::class, 'index'])->name('source-assets.index');
         Route::get('nguon/{sourceAsset}', [SourceAssetController::class, 'show'])->name('source-assets.show');
     });
+});
+
+// ---- Lộ trình + Luyện tập + Xếp hạng ----
+Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
+Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
+
+Route::prefix('luyen-tap')->name('practice.')->group(function () {
+    Route::get('/', [PracticeController::class, 'hub'])->name('hub');
+    Route::get('/hom-nay', [PracticeController::class, 'daily'])->name('daily');
+    Route::get('/60-giay', [PracticeController::class, 'rush'])->name('rush');
+    Route::get('/3-mang', [PracticeController::class, 'survival'])->name('survival');
+    Route::get('/kiem-tra', [PracticeController::class, 'placement'])->name('placement');
+    Route::get('/chu-de/{skill}', [PracticeController::class, 'topic'])->name('topic');
+    Route::get('/loi-sai', [PracticeController::class, 'review'])->name('review')->middleware('auth');
+    Route::get('/the-co/tiep', [PracticeController::class, 'next'])->name('next')->middleware('throttle:90,1');
+    Route::post('/the-co/{puzzle}/thu', [PracticeController::class, 'attempt'])->name('attempt')->middleware('throttle:60,1');
+    Route::post('/phien', [PracticeController::class, 'sessionStart'])->name('session.start')->middleware('throttle:20,1');
+    Route::post('/phien/{uuid}/nuoc', [PracticeController::class, 'sessionAnswer'])->name('session.answer')->middleware('throttle:150,1');
+    Route::post('/phien/{uuid}/ket-thuc', [PracticeController::class, 'sessionFinish'])->name('session.finish')->middleware('throttle:30,1');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/tai-khoan/cai-dat', [AccountController::class, 'settings'])->name('account.settings');
+    Route::post('/tai-khoan/cai-dat', [AccountController::class, 'saveSettings'])->name('account.settings.save');
+    Route::post('/tai-khoan/bat-dau', [AccountController::class, 'onboarding'])->name('account.onboarding');
+    Route::post('/tien-do/gop', [ProgressController::class, 'merge'])->name('progress.merge')->middleware('throttle:5,1');
 });
 
 // Chuỗi bài (Course) + bài học — prefix rõ ràng để KHÔNG đụng route giai đoạn /{phase}.

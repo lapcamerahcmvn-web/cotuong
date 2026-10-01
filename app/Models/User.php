@@ -11,7 +11,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password', 'role', 'google_id', 'avatar', 'last_login_at'])]
+#[Fillable([
+    'name', 'email', 'password', 'role', 'google_id', 'avatar', 'last_login_at',
+    'daily_goal_xp', 'leaderboard_opt_out', 'onboarding_level',
+])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -105,6 +108,34 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'streak_last_date' => 'date',
+            'leaderboard_opt_out' => 'boolean',
         ];
+    }
+
+    public function achievements(): HasMany
+    {
+        return $this->hasMany(UserAchievement::class);
+    }
+
+    public function dailyActivity(): HasMany
+    {
+        return $this->hasMany(UserDailyActivity::class);
+    }
+
+    public function puzzleAttempts(): HasMany
+    {
+        return $this->hasMany(PuzzleAttempt::class);
+    }
+
+    public function levelTitle(): string
+    {
+        return \App\Services\Gamification\LevelService::title($this->level ?: 1);
+    }
+
+    /** Chuỗi ngày đang "sống" (đã học hôm nay hoặc hôm qua) — đứt chuỗi tính lười khi đọc, không cần cron. */
+    public function liveStreak(): int
+    {
+        return app(\App\Services\Gamification\StreakService::class)->current($this);
     }
 }

@@ -26,7 +26,7 @@ class SearchController extends Controller
 
             $series = LessonSeries::where('name', 'like', "%{$q}%")
                 ->withCount('publishedLessons')
-                ->having('published_lessons_count', '>', 0)
+                ->has('publishedLessons')
                 ->limit(10)->get();
         }
 

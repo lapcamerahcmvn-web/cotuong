@@ -62,6 +62,8 @@ class SitemapController extends Controller
         if ($section === 'pages') {
             $add(route('home'), now(), 'daily', '1.0');
             $add(route('sitemap.page'), now(), 'weekly', '0.4');
+            $add(route('path'), now(), 'weekly', '0.8');
+            $add(route('practice.hub'), now(), 'daily', '0.8');
             foreach ($this->sections() as $s) {
                 if ($s === 'pages') {
                     continue;

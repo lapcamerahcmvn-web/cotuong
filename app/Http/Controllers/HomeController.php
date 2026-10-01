@@ -23,7 +23,7 @@ class HomeController extends Controller
         }
 
         $series = LessonSeries::withCount(['publishedLessons'])
-            ->having('published_lessons_count', '>', 0)
+            ->has('publishedLessons')
             ->orderBy('sort_order')->take(4)->get();
 
         $totalLessons = Lesson::published()->count();
@@ -43,15 +43,28 @@ class HomeController extends Controller
             : collect();
         $heroTree = $heroLesson?->variation_tree;
 
-        // Thế cờ hôm nay: chọn xoay vòng theo NGÀY (giống nhau cho mọi khách trong ngày, đổi lúc
-        // 0h UTC = 7h VN) — chỉ trong các bài đã có chế độ "Đoán nước" (puzzle_side khác null).
-        $puzzlePool = Lesson::published()->whereNotNull('puzzle_side')->orderBy('id')->pluck('id');
-        $dailyPuzzle = null;
-        if ($puzzlePool->isNotEmpty()) {
-            $idx = crc32(now()->format('Y-m-d')) % $puzzlePool->count();
-            $dailyPuzzle = Lesson::find($puzzlePool[$idx]);
-        }
+        // Thế cờ hôm nay (theo ngày giờ VN, chung cho mọi người) — kho puzzles; chưa dựng kho thì dùng bài học.
+        $dailySvc = app(\App\Services\DailyPuzzleService::class);
+        $dailyPuzzle = $dailySvc->forDate();
+        $dailyLesson = $dailyPuzzle ? null : $dailySvc->fallbackLesson();
+        $secondsLeft = \App\Support\Vn::secondsToMidnight();
 
-        return view('home', compact('phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree', 'dailyPuzzle'));
+        $user = auth()->user();
+        $paths = app(\App\Services\LearningPathService::class)->summary($user);
+        $snap = $user ? app(\App\Services\Gamification\GamificationService::class)->snapshot($user) : null;
+        $continue = $user?->nextLesson();
+        $continueSeries = null;
+        if ($continue && $continue->series_id) {
+            $tot = Lesson::published()->where('series_id', $continue->series_id)->count();
+            $done = $user->completedCountBySeries()[$continue->series_id] ?? 0;
+            $continueSeries = ['total' => $tot, 'done' => $done, 'pct' => $tot ? (int) round(100 * $done / $tot) : 0];
+        }
+        $weak = $user ? app(\App\Services\PuzzleService::class)->weakSkills($user) : [];
+        $topWeek = array_slice(app(\App\Services\Gamification\LeaderboardService::class)->top('xp', 'week'), 0, 5);
+
+        return view('home', compact(
+            'phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree',
+            'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'continue', 'continueSeries', 'weak', 'topWeek',
+        ));
     }
 }

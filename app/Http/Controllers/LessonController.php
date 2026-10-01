@@ -196,6 +196,23 @@ class LessonController extends Controller
             $suggestNext = null;
         }
 
-        return view('lessons.show', compact('lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related', 'suggestNext'));
+        // Vị trí trong chương trình ("Bài 12/48") + tiến độ chương trình của người học.
+        $seriesTotal = $seriesPos = $seriesDone = 0;
+        if ($lesson->series_id) {
+            $seriesTotal = Lesson::published()->where('series_id', $lesson->series_id)->count();
+            $seriesPos = Lesson::published()->where('series_id', $lesson->series_id)
+                ->where('order_in_series', '<', $lesson->order_in_series)->count() + 1;
+            $seriesDone = auth()->check() ? (auth()->user()->completedCountBySeries()[$lesson->series_id] ?? 0) : 0;
+        }
+
+        // Thế cờ luyện tập dựng từ bài này (nếu có) — ghi kết quả "Thử tự giải" + gợi ý luyện cùng chủ đề.
+        $lessonPuzzles = \App\Models\Puzzle::published()->where('lesson_id', $lesson->id)->orderBy('start_ply')->get(['id', 'start_ply', 'skill_tags']);
+        $lessonPuzzleId = $lessonPuzzles->firstWhere('start_ply', 0)?->id;
+        $practiceSkill = collect($lessonPuzzles->first()?->skill_tags ?? [])->first();
+
+        return view('lessons.show', compact(
+            'lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related', 'suggestNext',
+            'seriesTotal', 'seriesPos', 'seriesDone', 'lessonPuzzleId', 'practiceSkill',
+        ));
     }
 }
