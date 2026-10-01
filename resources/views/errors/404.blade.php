@@ -5,7 +5,7 @@
 @section('robots', 'noindex, follow')
 
 @section('content')
-<section class="err-page">
+<section>
     <div class="err-card card">
         <div class="err-code">404</div>
         <h1>Không tìm thấy trang</h1>
@@ -13,11 +13,11 @@
 
         <form method="GET" action="{{ route('search') }}" class="err-search" role="search">
             <input type="search" name="q" placeholder="Tìm bài học (VD: pháo đầu, tàn cuộc mã…)" aria-label="Tìm kiếm bài học">
-            <button class="btn primary" type="submit">Tìm</button>
+            <button class="btn btn--primary" type="submit">Tìm</button>
         </form>
 
         <div class="err-links">
-            <a class="btn" href="{{ route('home') }}">🏠 Trang chủ</a>
+            <a class="btn" href="{{ route('home') }}">Trang chủ</a>
             <a class="btn" href="{{ route('phase', 'nhap-mon') }}">Nhập môn</a>
             <a class="btn" href="{{ route('phase', 'khai-cuoc') }}">Khai cuộc</a>
             <a class="btn" href="{{ route('phase', 'trung-cuoc') }}">Trung cuộc</a>

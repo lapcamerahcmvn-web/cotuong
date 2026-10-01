@@ -22,64 +22,26 @@
 @endpush
 
 @section('content')
-<nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> › <span>Tin tức</span>
-</nav>
+<nav class="crumbs" aria-label="breadcrumb"><a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" /><span>Tin tức</span></nav>
+<h1 class="page-title">Tin tức cờ tướng</h1>
+<p class="page-lede mb-5">Video hướng dẫn, phân tích ván cờ có bàn cờ tương tác, tin cộng đồng và kiến thức cờ tướng.</p>
 
-<section class="section page-head">
-    <h1>Tin tức</h1>
-    <p class="sub">Video hướng dẫn, phân tích ván cờ có bàn cờ tương tác, tin cộng đồng và kiến thức cờ tướng.</p>
+@include('posts._cats', ['current' => null])
 
-    @if($categories->isNotEmpty())
-        <nav class="news-cat-nav mt-3" aria-label="Chuyên mục Tin tức">
-            @php $_catIcons = ['video-huong-dan' => '🎥', 'phan-tich-van-co' => '♟️', 'tin-cong-dong-giai-dau' => '🏆', 'kien-thuc-co-tuong' => '📖']; @endphp
-            @foreach($categories as $c)
-                <a href="{{ route('posts.category', $c->slug) }}" class="news-cat-item">
-                    <span class="nc-icon">{{ $_catIcons[$c->slug] ?? '📰' }}</span>
-                    <span class="nc-name">{{ $c->name }}</span>
-                    <span class="nc-count">{{ $c->posts_count }}</span>
-                </a>
-            @endforeach
-        </nav>
-    @endif
+@if($featured->isNotEmpty())
+    <div class="section-head"><div><h2>Nổi bật</h2></div></div>
+    <div class="news-grid mb-10">
+        @foreach($featured as $p) @include('posts._card', ['p' => $p]) @endforeach
+    </div>
+@endif
 
-    @if($featured->isNotEmpty())
-        <h2 class="phase-sec-title">Nổi bật</h2>
-        <div class="lesson-list mt-3" style="margin-bottom:28px;">
-            @foreach($featured as $p)
-                <a href="{{ route('posts.show', [$p->category?->slug ?: 'tin-tuc', $p->slug]) }}" class="lesson-item card has-thumb">
-                    <span class="li-thumb">
-                        <img src="{{ $p->thumbnail ? \Illuminate\Support\Facades\Storage::url($p->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $p->title }}" loading="lazy">
-                    </span>
-                    <span>
-                        <span class="li-title">{{ $p->title }}</span>
-                        <span class="li-sub">{{ $p->category?->name ?? 'Tin tức' }} · {{ $p->published_at?->format('d/m/Y') }}</span>
-                    </span>
-                    <span class="li-meta"><span class="tag count">★ Nổi bật</span></span>
-                </a>
-            @endforeach
-        </div>
-    @endif
-
-    <h2 class="phase-sec-title">Tất cả bài viết</h2>
-    @if($posts->isEmpty())
-        <div class="notice">Chưa có bài viết nào — quay lại sau nhé.</div>
-    @else
-        <div class="lesson-list">
-            @foreach($posts as $p)
-                <a href="{{ route('posts.show', [$p->category?->slug ?: 'tin-tuc', $p->slug]) }}" class="lesson-item card has-thumb">
-                    <span class="li-thumb">
-                        <img src="{{ $p->thumbnail ? \Illuminate\Support\Facades\Storage::url($p->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $p->title }}" loading="lazy">
-                    </span>
-                    <span>
-                        <span class="li-title">{{ $p->title }}</span>
-                        <span class="li-sub">{{ $p->category?->name ?? 'Tin tức' }} · {{ $p->published_at?->format('d/m/Y') }} · {{ $p->view_count }} lượt xem</span>
-                    </span>
-                    <span class="li-meta">→</span>
-                </a>
-            @endforeach
-        </div>
-        <div class="mt-5">{{ $posts->links() }}</div>
-    @endif
-</section>
+<div class="section-head"><div><h2>Tất cả bài viết</h2></div></div>
+@if($posts->isEmpty())
+    <div class="notice">Chưa có bài viết nào — quay lại sau nhé.</div>
+@else
+    <div class="news-grid">
+        @foreach($posts as $p) @include('posts._card', ['p' => $p]) @endforeach
+    </div>
+    {{ $posts->links() }}
+@endif
 @endsection

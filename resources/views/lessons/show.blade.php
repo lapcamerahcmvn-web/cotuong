@@ -66,170 +66,148 @@
 @endpush
 
 @section('content')
-<nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> ›
-    @if($lesson->phase)<a href="{{ route('phase', $lesson->phase) }}">{{ $lesson->phase_label }}</a> ›@endif
-    @if($lesson->series)<a href="{{ route('series', $lesson->series->slug) }}">{{ \Illuminate\Support\Str::limit($lesson->series->name, 30) }}</a> ›@endif
-    <span>{{ \Illuminate\Support\Str::limit($lesson->title, 40) }}</span>
-</nav>
+@php
+    $hasBoard = $lesson->initial_fen || $lesson->steps->isNotEmpty();
+    $canPuzzle = $lesson->puzzle_side && $lesson->steps->isNotEmpty();
+    $practiceUrl = $practiceSkill ? route('practice.topic', $practiceSkill) : ($canPuzzle ? route('practice.hub') : null);
+@endphp
+<div data-lesson-page
+     data-lesson-id="{{ $lesson->id }}"
+     data-phase="{{ $lesson->phase }}"
+     data-is-text="{{ $lesson->steps->isEmpty() ? '1' : '0' }}"
+     data-completed="{{ $completed ? '1' : '0' }}"
+     data-progress-url="{{ route('progress.store', $lesson->id) }}"
+     data-puzzle-id="{{ $lessonPuzzleId }}"
+     data-next-url="{{ $suggestNext ? route('lessons.show', $suggestNext->slug) : '' }}"
+     data-practice-url="{{ $practiceUrl }}">
 
-<div class="lesson">
-    <h1 class="title">{{ $lesson->title }}</h1>
-    <div class="meta-row">
-        <span class="tag level">{{ $lesson->level_label }}</span>
-        @if($lesson->series)<span class="tag series">{{ \Illuminate\Support\Str::limit($lesson->series->name, 34) }}</span>@endif
-        <span class="tag count">{{ $lesson->move_count_badge }}</span>
-        <span id="lesson-done-badge" class="tag tag--done" style="{{ $completed ? '' : 'display:none;' }}">✓ Đã học</span>
-    </div>
+    <nav class="crumbs" aria-label="breadcrumb">
+        <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
+        @if($lesson->phase)<a href="{{ route('phase', $lesson->phase) }}">{{ $lesson->phase_label }}</a><x-icon name="chev-right" />@endif
+        @if($lesson->series)<a href="{{ route('series', $lesson->series->slug) }}">{{ \Illuminate\Support\Str::limit($lesson->series->name, 30) }}</a><x-icon name="chev-right" />@endif
+        <span>{{ \Illuminate\Support\Str::limit($lesson->title, 40) }}</span>
+    </nav>
 
-    @if($lesson->initial_fen || $lesson->steps->isNotEmpty())
-        @if($lesson->puzzle_side && $lesson->steps->isNotEmpty())
-            <div class="board-mode-toggle">
-                <button type="button" class="btn primary" id="lesson-mode-view">📖 Xem lời giảng</button>
-                <button type="button" class="btn" id="lesson-mode-puzzle">🧩 Thử tự giải</button>
+    <header class="lesson-head">
+        <h1 class="title">{{ $lesson->title }}</h1>
+        <div class="meta-row">
+            <span class="tag tag--level-{{ $lesson->level }}">{{ $lesson->level_label }}</span>
+            <span class="tag count">{{ $lesson->move_count_badge }}</span>
+            @if($canPuzzle)<span class="tag"><x-icon name="puzzle" /> Có thể tự giải</span>@endif
+            <span id="lesson-done-badge" class="tag tag--done" @unless($completed) hidden @endunless><x-icon name="check" /> Đã học</span>
+        </div>
+        @if($lesson->series && $seriesTotal)
+            <div class="lesson-progress">
+                <span>Bài {{ $seriesPos }}/{{ $seriesTotal }}</span>
+                <div class="progress progress--sm"><div class="progress__bar" style="width: {{ round(100 * ($seriesDone ?: $seriesPos - 1) / $seriesTotal) }}%"></div></div>
+                @auth<span>{{ $seriesDone }} đã học</span>@endauth
+            </div>
+        @endif
+    </header>
+
+    @if($hasBoard)
+        @if($canPuzzle)
+            <div class="seg" role="tablist" aria-label="Chế độ bàn cờ">
+                <button type="button" class="seg__btn is-on" data-board-mode="view" role="tab" aria-selected="true"><x-icon name="book" /> Xem lời giảng</button>
+                <button type="button" class="seg__btn" data-board-mode="puzzle" role="tab" aria-selected="false"><x-icon name="puzzle" /> Thử tự giải</button>
             </div>
             <div id="lesson-board-view">
-                <x-chess-board
-                    :initial-fen="$lesson->initial_fen"
-                    :steps="$lesson->steps"
-                    :tree="$lesson->variation_tree"
-                    :show-list="$lesson->steps->isNotEmpty()"
-                    :source-lesson-id="$lesson->id" />
+                <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" :tree="$lesson->variation_tree"
+                    :show-list="true" :source-lesson-id="$lesson->id" />
             </div>
-            <div id="lesson-board-puzzle" style="display:none;">
-                <x-chess-board
-                    :initial-fen="$lesson->initial_fen"
-                    :steps="$lesson->steps"
-                    mode="puzzle"
-                    :puzzle-side="$lesson->puzzle_side"
-                    :source-lesson-id="$lesson->id" />
+            <div id="lesson-board-puzzle" hidden>
+                <div class="max-w-xl">
+                    <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" mode="puzzle"
+                        :puzzle-side="$lesson->puzzle_side" :source-lesson-id="$lesson->id" />
+                </div>
             </div>
-            <script>
-            (function () {
-                var vBtn = document.getElementById('lesson-mode-view'), pBtn = document.getElementById('lesson-mode-puzzle');
-                var vBox = document.getElementById('lesson-board-view'), pBox = document.getElementById('lesson-board-puzzle');
-                function setMode(puzzle) {
-                    vBox.style.display = puzzle ? 'none' : '';
-                    pBox.style.display = puzzle ? '' : 'none';
-                    vBtn.classList.toggle('primary', !puzzle);
-                    pBtn.classList.toggle('primary', puzzle);
-                }
-                vBtn.addEventListener('click', function () { setMode(false); });
-                pBtn.addEventListener('click', function () { setMode(true); });
-                // Link "Thế cờ hôm nay" ở trang chủ trỏ tới #giai-do → mở sẵn chế độ giải đố.
-                if (location.hash === '#giai-do') setMode(true);
-            })();
-            </script>
         @else
-            <x-chess-board
-                :initial-fen="$lesson->initial_fen"
-                :steps="$lesson->steps"
-                :tree="$lesson->variation_tree"
+            <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" :tree="$lesson->variation_tree"
                 :show-list="$lesson->steps->isNotEmpty()"
-                :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật. Bấm ⛶ để phóng to.' : null"
+                :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật.' : null"
                 :source-lesson-id="$lesson->id" />
         @endif
     @endif
 
-    @if($lesson->content)
-        <article class="prose">{!! $lesson->content !!}</article>
-    @elseif($lesson->summary)
-        <article class="prose"><p>{{ $lesson->summary }}</p></article>
-    @else
-        <div class="notice wrap-720 mt-7">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
-    @endif
+    <div class="lesson-body">
+        <div class="min-w-0">
+            @if($lesson->content)
+                <article class="prose">{!! $lesson->content !!}</article>
+            @elseif($lesson->summary)
+                <article class="prose"><p>{{ $lesson->summary }}</p></article>
+            @else
+                <div class="notice max-w-[740px]">Phần diễn giải chi tiết đang được biên soạn. Bạn vẫn có thể đi lại từng nước trên bàn cờ ở trên để theo dõi thế trận.</div>
+            @endif
 
-    <div class="lesson__share">
-        <x-share-buttons :url="url()->current()" :title="$lesson->title" :image="\App\Support\Seo::ogImage($lesson)" />
-    </div>
+            <div class="mt-8 max-w-[740px]">
+                <x-share-buttons :url="url()->current()" :title="$lesson->title" :image="\App\Support\Seo::ogImage($lesson)" />
+            </div>
 
-    <nav class="lesson__nav">
-        @if($prev)<a href="{{ route('lessons.show', $prev->slug) }}" class="btn">‹ {{ \Illuminate\Support\Str::limit($prev->title, 26) }}</a>@else<span></span>@endif
-        @if($next)<a href="{{ route('lessons.show', $next->slug) }}" class="btn primary">{{ \Illuminate\Support\Str::limit($next->title, 26) }} ›</a>@endif
-    </nav>
+            @if($prev || $next)
+            <nav class="lesson-nav mt-6 max-w-[740px]" aria-label="Bài trước / bài sau">
+                @if($prev)
+                    <a href="{{ route('lessons.show', $prev->slug) }}" class="card"><small><x-icon name="chev-left" /> Bài trước</small><span>{{ $prev->title }}</span></a>
+                @else<span></span>@endif
+                @if($next)
+                    <a href="{{ route('lessons.show', $next->slug) }}" class="card is-next"><small>Bài tiếp <x-icon name="chev-right" /></small><span>{{ $next->title }}</span></a>
+                @endif
+            </nav>
+            @endif
 
-    @if(!empty($suggestNext))
-    <div class="continue-card card wrap-720 mt-5">
-        <div class="continue-info">
-            <span class="continue-eyebrow">▸ Gợi ý học tiếp</span>
-            <span class="continue-title">{{ $suggestNext->title }}</span>
-            <span class="muted" style="font-size:13px;">{{ $suggestNext->series?->name ?? (\App\Models\Lesson::PHASES[$suggestNext->phase] ?? 'Bài học') }}</span>
+            @if($related->isNotEmpty())
+            <section class="mt-10 max-w-[740px]">
+                <h2 class="text-xl font-extrabold mb-3">Bài liên quan</h2>
+                <div class="lesson-list">
+                    @foreach($related as $r)
+                        <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card has-thumb">
+                            <span class="li-thumb"><img src="{{ \App\Support\Seo::ogThumb($r) }}" alt="{{ $r->title }} - Học Cờ Tướng" loading="lazy" width="56" height="56"></span>
+                            <span><span class="li-title">{{ $r->title }}</span><span class="li-sub">{{ $r->move_count_label }} · {{ $r->level_label }}</span></span>
+                            <span class="li-meta"><x-icon name="chev-right" /></span>
+                        </a>
+                    @endforeach
+                </div>
+            </section>
+            @endif
+
+            @include('lessons._comments')
         </div>
-        <a href="{{ route('lessons.show', $suggestNext->slug) }}" class="btn primary">Học bài này →</a>
+
+        <aside class="lesson-aside" aria-label="Học tiếp">
+            @if(!empty($suggestNext))
+            <div class="card card--pad">
+                <div class="eyebrow"><x-icon name="arrow-right" /> Học tiếp</div>
+                <div class="font-display font-extrabold text-[17px] leading-snug mt-2">{{ $suggestNext->title }}</div>
+                <div class="text-[13px] text-ink-soft mt-1">{{ $suggestNext->series?->name ?? (\App\Models\Lesson::PHASES[$suggestNext->phase] ?? 'Bài học') }}</div>
+                <a href="{{ route('lessons.show', $suggestNext->slug) }}" class="btn btn--primary btn--block mt-4">Học bài này</a>
+            </div>
+            @endif
+
+            @if($practiceUrl)
+            <a href="{{ $practiceUrl }}" class="card card--pad flex gap-3 items-center">
+                <span class="stat__icon tone-jade"><x-icon name="puzzle" /></span>
+                <span><span class="block font-bold">Luyện thế cờ cùng chủ đề</span><span class="block text-[13px] text-ink-soft">Củng cố ngay điều vừa học — có tính XP.</span></span>
+            </a>
+            @endif
+
+            @if($lesson->series)
+            <a href="{{ route('series', $lesson->series->slug) }}" class="card card--pad block">
+                <div class="eyebrow"><x-icon name="layers" /> Chương trình</div>
+                <div class="font-bold mt-2 leading-snug">{{ $lesson->series->name }}</div>
+                @if($seriesTotal)
+                    <div class="progress progress--sm mt-3"><div class="progress__bar" style="width: {{ round(100 * $seriesDone / $seriesTotal) }}%"></div></div>
+                    <div class="text-[12.5px] text-ink-soft mt-1.5">{{ $seriesDone }}/{{ $seriesTotal }} bài đã học</div>
+                @endif
+            </a>
+            @endif
+
+            @guest
+            <div class="card card--pad card--hero">
+                <div class="font-bold">Lưu tiến độ của bạn</div>
+                <p class="text-[13.5px] text-ink-soft mt-1 mb-3">Đăng nhập để nhận XP, giữ chuỗi ngày học và mở huy hiệu.</p>
+                <a href="{{ route('login') }}" class="btn btn--primary btn--block">Đăng nhập miễn phí</a>
+            </div>
+            @endguest
+        </aside>
     </div>
-    @endif
-
-    @if($related->isNotEmpty())
-    <section class="lesson__related">
-        <h2>Bài liên quan</h2>
-        <div class="lesson-list">
-            @foreach($related as $r)
-                <a href="{{ route('lessons.show', $r->slug) }}" class="lesson-item card has-thumb">
-                    <span class="li-thumb">
-                        <img src="{{ \App\Support\Seo::ogThumb($r) }}" alt="{{ $r->title }} - Học Cờ Tướng" loading="lazy">
-                    </span>
-                    <span>
-                        <span class="li-title">{{ $r->title }}</span>
-                        <span class="li-sub">{{ $r->move_count_label }} · {{ $r->level_label }}</span>
-                    </span>
-                    <span class="li-meta">→</span>
-                </a>
-            @endforeach
-        </div>
-    </section>
-    @endif
-
-    @include('lessons._comments')
 </div>
-
-@auth
-@push('scripts')
-<script>
-// Theo dõi tiến độ học (chỉ user đăng nhập): đọc ≥5 phút + xem hết nước → đánh dấu đã học.
-(function(){
-    var lessonId = {{ $lesson->id }};
-    var url = "{{ route('progress.store', $lesson->id) }}";
-    var token = document.querySelector('meta[name=csrf-token]').content;
-    var isText = {{ $lesson->steps->count() === 0 ? 'true' : 'false' }};
-    var seconds = 0, viewedAll = isText, done = {{ $completed ? 'true' : 'false' }}, dirty = true, finishedReading = false;
-
-    // Xem hết các nước → gửi NGAY (không đợi tick) để đánh dấu đã học liền, khỏi phải reload.
-    document.addEventListener('xq:viewed-all-moves', function(){ viewedAll = true; dirty = true; send(); });
-
-    // Bài lý thuyết (không bàn cờ): cuộn hết bài = đã đọc xong.
-    if (isText) {
-        var checkEnd = function(){
-            if (finishedReading) return;
-            var docH = document.documentElement.scrollHeight, winH = window.innerHeight;
-            if (docH <= winH + 120 || (window.scrollY + winH >= docH - 120)) { finishedReading = true; dirty = true; send(); }
-        };
-        window.addEventListener('scroll', checkEnd, { passive: true });
-        window.addEventListener('load', checkEnd);
-        checkEnd();
-    }
-
-    setInterval(function(){ if(!document.hidden){ seconds += 10; dirty = true; send(); } }, 10000);
-
-    function send(){
-        if (done || !dirty) return;
-        dirty = false;
-        fetch(url, {
-            method:'POST', keepalive: true,
-            headers:{'Content-Type':'application/json','X-CSRF-TOKEN':token,'Accept':'application/json'},
-            body: JSON.stringify({ read_seconds: seconds, viewed_all_moves: viewedAll, finished_reading: finishedReading })
-        }).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
-            if (d && d.completed) { done = true; showBadge(); }
-        }).catch(function(){});
-    }
-    window.addEventListener('pagehide', send);
-    document.addEventListener('visibilitychange', function(){ if(document.hidden) send(); });
-
-    function showBadge(){
-        var el = document.getElementById('lesson-done-badge');
-        if (el) el.style.display = 'inline-flex';
-    }
-})();
-</script>
-@endpush
-@endauth
 @endsection

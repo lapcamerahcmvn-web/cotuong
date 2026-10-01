@@ -1,18 +1,32 @@
-/* Học Cờ Tướng — bàn cờ tương tác (vanilla JS, không phụ thuộc jQuery/Alpine).
-   Render FEN từng bước đã tính sẵn server-side. Auto-init mọi [data-xqboard] chứa 1
-   <script type="application/json"> cấu hình: { initialFen, steps: [{fen,caption,side,iccs}] }.
+/* Học Cờ Tướng — bàn cờ tương tác (vanilla JS, không phụ thuộc thư viện).
+   File TĨNH dùng chung cho trang học (nạp động từ resources/js/app.js) và admin (thẻ <script>).
+   Auto-init mọi [data-xqboard] chứa 1 <script type="application/json">:
+     { initialFen, steps: [{fen,caption,side,iccs,wxf}], tree, mode, puzzleSide }
 
-   Chế độ: view (mạch chính tuyến tính) · tree (cây biến, mũi tên A/B) · puzzle (tự đi quân).
-   Tương tác chung (view/tree): nút Tiến/Lùi, vuốt trái–phải trên bàn, phím ←/→, lật bàn,
-   tự chạy, phóng to. Quân trượt mượt khi đổi bước (tắt nếu prefers-reduced-motion). */
+   Chế độ: view (mạch chính) · tree (cây biến, mũi tên A/B) · puzzle (tự đi quân).
+   API: window.XiangqiBoard.render(fen, lastMove, arrows, selected, flip, opts)
+        window.XiangqiBoard.mountPuzzle(el, cfg) → { reset, reveal, hint, load, destroy }
+   Sự kiện (bubble lên document): xq:viewed-all-moves · xq:userstep · xq:puzzle-move {ok,ply,move,expected}
+        · xq:puzzle-solved {moves,ms,mistakes,revealed} · xq:puzzle-failed {moves,ms,wrongPly,userMove,expected} */
 (function () {
   'use strict';
 
   var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Âm thanh nước đi — tổng hợp bằng Web Audio API (không cần file audio): tiếng "tốc" gỗ trầm
-  // cho nước đi thường, thêm tiếng "sực" (noise ngắn) khi ăn quân. Nhớ trạng thái tắt/mở qua
-  // localStorage, dùng chung 1 AudioContext cho mọi bàn cờ trên trang.
+  // Icon: dùng sprite SVG nếu trang có (site chính), không thì rơi về ký tự (admin).
+  var EMOJI = { volume: '🔊', 'volume-x': '🔇', copy: '📋', bookmark: '🔖', expand: '⛶', x: '✕', check: '✓', play: '▶', pause: '⏸', more: '⋯', flip: '⟲', reset: '↺', bulb: '💡', eye: '👁' };
+  function ico(name) {
+    if (document.getElementById('i-' + name)) {
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-' + name + '"/></svg>';
+    }
+    return EMOJI[name] || '';
+  }
+  function setBtn(btn, name, text) {
+    if (!btn) return;
+    btn.innerHTML = ico(name) + (text ? '<span>' + text + '</span>' : '');
+  }
+
+  // Âm thanh nước đi — tổng hợp bằng Web Audio API (không cần file audio).
   var Sound = (function () {
     var muted = false;
     try { muted = localStorage.getItem('xq_muted') === '1'; } catch (e) {}
@@ -51,19 +65,21 @@
       tone(isCapture ? 95 : 115, 0.12, 'sine', 0.16, 0.006);
       if (isCapture) noiseBurst(0.05, 0.14, 0.012);
     }
+    function good() { if (!muted) { tone(660, 0.12, 'sine', 0.12, 0); tone(880, 0.18, 'sine', 0.12, 0.09); } }
+    function bad() { if (!muted) { tone(220, 0.16, 'square', 0.06, 0); tone(165, 0.22, 'square', 0.06, 0.1); } }
     function toggle() {
       muted = !muted;
       try { localStorage.setItem('xq_muted', muted ? '1' : '0'); } catch (e) {}
       return muted;
     }
-    return { move: move, toggle: toggle, isMuted: function () { return muted; } };
+    return { move: move, good: good, bad: bad, toggle: toggle, isMuted: function () { return muted; } };
   })();
 
   function attachSound(root) {
     var btn = root.querySelector('[data-xq-sound]');
     if (!btn) return;
     function render() {
-      btn.textContent = Sound.isMuted() ? '🔇' : '🔊';
+      setBtn(btn, Sound.isMuted() ? 'volume-x' : 'volume');
       btn.setAttribute('aria-pressed', Sound.isMuted() ? 'true' : 'false');
       btn.setAttribute('aria-label', Sound.isMuted() ? 'Bật âm thanh nước đi' : 'Tắt âm thanh nước đi');
     }
@@ -71,27 +87,39 @@
     btn.addEventListener('click', function () { Sound.toggle(); render(); });
   }
 
-  // Sao chép FEN thế cờ đang hiển thị. `getFen` là closure riêng từng chế độ (view/tree lấy
-  // theo idx/cur hiện tại, static lấy initialFen cố định) — puzzle mode tự có copyFen() riêng.
+  // Menu "⋯" trên thanh bàn cờ (sao chép FEN, lưu thư viện…).
+  function attachMenu(root) {
+    var tg = root.querySelector('[data-xq-menu-toggle]'), menu = root.querySelector('[data-xq-menu]');
+    if (!tg || !menu) return;
+    setBtn(tg, 'more');
+    tg.addEventListener('click', function (e) { e.stopPropagation(); menu.hidden = !menu.hidden; tg.setAttribute('aria-expanded', menu.hidden ? 'false' : 'true'); });
+    document.addEventListener('click', function (e) { if (!menu.hidden && !menu.contains(e.target)) menu.hidden = true; });
+  }
+
+  function flash(btn, ok) {
+    if (!btn) return;
+    btn.classList.add('is-ok');
+    var label = btn.querySelector('span');
+    var old = label ? label.textContent : null;
+    if (label) label.textContent = ok;
+    setTimeout(function () { btn.classList.remove('is-ok'); if (label) label.textContent = old; }, 1600);
+  }
+
   function attachCopyFen(root, getFen) {
     var btn = root.querySelector('[data-xq-copyfen]');
     if (!btn) return;
+    if (!btn.innerHTML.trim()) setBtn(btn, 'copy');
     btn.addEventListener('click', function () {
       var fen = getFen();
       if (!navigator.clipboard || !navigator.clipboard.writeText) return;
-      navigator.clipboard.writeText(fen).then(function () {
-        var old = btn.textContent;
-        btn.textContent = '✓';
-        setTimeout(function () { btn.textContent = old; }, 1600);
-      });
+      navigator.clipboard.writeText(fen).then(function () { flash(btn, 'Đã sao chép'); });
     });
   }
 
-  // Lưu thế cờ đang hiển thị vào "Thư viện của tôi" (chỉ hiện nút khi đã đăng nhập — xem
-  // chess-board.blade.php @auth). Cùng closure `getFen` với attachCopyFen.
   function attachSaveFen(root, getFen) {
     var btn = root.querySelector('[data-xq-savefen]');
     if (!btn) return;
+    if (!btn.innerHTML.trim()) setBtn(btn, 'bookmark');
     var group = root.querySelector('[data-xq-source-lesson]');
     var sourceLessonId = group ? group.getAttribute('data-xq-source-lesson') : null;
     btn.addEventListener('click', function () {
@@ -103,15 +131,11 @@
         headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': tokenEl.content, 'Accept': 'application/json' },
         body: JSON.stringify({ fen: getFen(), title: title, source_lesson_id: sourceLessonId || null })
       }).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function () {
-        var old = btn.textContent;
-        btn.textContent = '✓';
-        setTimeout(function () { btn.textContent = old; }, 1800);
+        flash(btn, 'Đã lưu');
       }).catch(function () { alert('Lưu thất bại, thử lại sau.'); });
     });
   }
 
-  // So số quân sống trên FEN — chỉ dùng để suy ra "có ăn quân không" giữa 2 thế, không cần
-  // backend gửi kèm captured_piece.
   function countPieces(fen) {
     var m = (fen || '').split(' ')[0].match(/[A-Za-z]/g);
     return m ? m.length : 0;
@@ -122,7 +146,6 @@
     K: { c: '帥', red: true }, A: { c: '仕', red: true }, B: { c: '相', red: true },
     N: { c: '馬', red: true }, R: { c: '俥', red: true }, C: { c: '炮', red: true }, P: { c: '兵', red: true },
     k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' },
-    // Quân ÚP (cờ úp): mặt sấp, chưa lộ binh chủng. X = Đỏ úp, x = Đen úp.
     X: { up: true, red: true }, x: { up: true }
   };
   var PIECE_FONT = 'XiangqiKai,KaiTi,STKaiti,serif';
@@ -144,21 +167,38 @@
   // iccs "h2e2" -> {from:[file,rank], to:[file,rank]} theo hệ toạ độ hiển thị (rank 0 = trên).
   function iccsToSquares(iccs) {
     if (!iccs || iccs.length < 4) return null;
-    function sq(a, b) {
-      var f = a.charCodeAt(0) - 97;        // a-i -> 0-8
-      var r = 9 - (b.charCodeAt(0) - 48);  // '9'->0 (top) ... '0'->9 (bottom)
-      return [f, r];
-    }
+    function sq(a, b) { return [a.charCodeAt(0) - 97, 9 - (b.charCodeAt(0) - 48)]; }
     return { from: sq(iccs[0], iccs[1]), to: sq(iccs[2], iccs[3]) };
+  }
+  function iccsToIdx(iccs) {
+    var s = iccsToSquares(iccs); if (!s) return null;
+    return { from: s.from[1] * 9 + s.from[0], to: s.to[1] * 9 + s.to[0] };
   }
 
   var M = 26, CW = 52, CH = 52;
   var BW = M * 2 + CW * 8, BH = M * 2 + CH * 9;
 
-  // arrows: [{from,to,color,label}] — from/to là chỉ số ô 0..89. Vẽ mũi tên chọn biến.
-  // selected: chỉ số ô đang chọn (chế độ giải đố).
-  // flip: true → nhìn từ phía Đen (xoay bàn 180°).
-  function renderBoard(fen, lastMove, arrows, selected, flip) {
+  function pieceSvg(p, cx, cy) {
+    var col = p.red ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)';
+    var s = '';
+    if (p.up) {
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="' + col + '"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="16.5" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".85"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="9" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".6"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="2.6" fill="var(--xq-disc,#f6ecd6)" opacity=".9"/>';
+    } else {
+      s += '<circle cx="' + cx + '" cy="' + (cy + 1.5) + '" r="21" fill="rgba(60,35,5,.22)"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="var(--xq-disc,#f6ecd6)" stroke="' + col + '" stroke-width="2"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
+      s += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" font-size="24" font-family="' + PIECE_FONT + '" fill="' + col + '">' + p.c + '</text>';
+    }
+    return s;
+  }
+
+  // arrows: [{from,to,color,label}] (ô 0..89) · selected: ô đang chọn · flip: nhìn từ phía Đen.
+  // opts: { dots:[ô], check: ô tướng bị chiếu, hint: ô gợi ý, hide: ô ẩn quân (đang kéo) }
+  function renderBoard(fen, lastMove, arrows, selected, flip, opts) {
+    opts = opts || {};
     function fx(f) { return flip ? 8 - f : f; }
     function ry(r) { return flip ? 9 - r : r; }
     function X(f) { return M + fx(f) * CW; }
@@ -174,41 +214,39 @@
     s += line(X(3), Y(0), X(5), Y(2)) + line(X(5), Y(0), X(3), Y(2));
     s += line(X(3), Y(7), X(5), Y(9)) + line(X(5), Y(7), X(3), Y(9));
     var midY = (M + 4 * CH + M + 5 * CH) / 2 + 6;
-    s += '<text x="' + (M + 2 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">楚河</text>';
-    s += '<text x="' + (M + 6 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">漢界</text>';
+    s += '<text x="' + (M + 2 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">' + (flip ? '漢界' : '楚河') + '</text>';
+    s += '<text x="' + (M + 6 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">' + (flip ? '楚河' : '漢界') + '</text>';
     if (lastMove) {
       [lastMove.from, lastMove.to].forEach(function (sq) {
         if (sq) s += '<circle cx="' + X(sq[0]) + '" cy="' + Y(sq[1]) + '" r="22" fill="var(--xq-hl,rgba(200,69,31,.30))"/>';
       });
-      if (lastMove.to) {
-        s += '<circle class="xq-pulse" cx="' + X(lastMove.to[0]) + '" cy="' + Y(lastMove.to[1]) + '" r="22" fill="none" stroke="var(--xq-red,#c0392b)" stroke-width="2.5" opacity="0"/>';
-      }
+      if (lastMove.to) s += '<circle class="xq-pulse" cx="' + X(lastMove.to[0]) + '" cy="' + Y(lastMove.to[1]) + '" r="22" fill="none" stroke="var(--xq-red,#c0392b)" stroke-width="2.5" opacity="0"/>';
+    }
+    if (typeof opts.check === 'number' && opts.check >= 0) {
+      s += '<circle cx="' + X(opts.check % 9) + '" cy="' + Y((opts.check / 9) | 0) + '" r="25" fill="rgba(220,38,38,.28)" stroke="#dc2626" stroke-width="2"/>';
     }
     for (var i = 0; i < 90; i++) {
-      var chr = board[i]; if (!chr) continue;
+      var chr = board[i]; if (!chr || i === opts.hide) continue;
       var p = PIECES[chr]; if (!p) continue;
       var ff = i % 9, rr = Math.floor(i / 9);
-      var col = p.red ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)';
       var cx = X(ff), cy = Y(rr);
       var moved = lastMove && lastMove.to && lastMove.to[0] === ff && lastMove.to[1] === rr;
       var dx = 0, dy = 0;
       if (moved && lastMove.from) { dx = X(lastMove.from[0]) - cx; dy = Y(lastMove.from[1]) - cy; }
-      s += '<g class="xq-pc' + (moved ? ' xq-pc-moved' : '') + '"' + (moved ? ' style="--fx:' + dx + 'px;--fy:' + dy + 'px"' : '') + '>';
-      if (p.up) {
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="' + col + '"/>';
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="16.5" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".85"/>';
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="9" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".6"/>';
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="2.6" fill="var(--xq-disc,#f6ecd6)" opacity=".9"/>';
-      } else {
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="var(--xq-disc,#f6ecd6)" stroke="' + col + '" stroke-width="2"/>';
-        s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
-        s += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" font-size="24" font-family="' + PIECE_FONT + '" fill="' + col + '">' + p.c + '</text>';
-      }
-      s += '</g>';
+      s += '<g class="xq-pc' + (moved ? ' xq-pc-moved' : '') + '"' + (moved ? ' style="--fx:' + dx + 'px;--fy:' + dy + 'px"' : '') + '>' + pieceSvg(p, cx, cy) + '</g>';
     }
     if (typeof selected === 'number' && selected >= 0) {
-      s += '<circle cx="' + X(selected % 9) + '" cy="' + Y((selected / 9) | 0) + '" r="23" fill="none" stroke="#2563eb" stroke-width="3"/>';
+      s += '<circle cx="' + X(selected % 9) + '" cy="' + Y((selected / 9) | 0) + '" r="23.5" fill="none" stroke="var(--xq-select,#2563eb)" stroke-width="3"/>';
     }
+    if (typeof opts.hint === 'number' && opts.hint >= 0) {
+      s += '<circle cx="' + X(opts.hint % 9) + '" cy="' + Y((opts.hint / 9) | 0) + '" r="24" fill="none" stroke="#d99a1e" stroke-width="3.5" stroke-dasharray="6 4"/>';
+    }
+    (opts.dots || []).forEach(function (d) {
+      var occupied = !!board[d];
+      s += occupied
+        ? '<circle cx="' + X(d % 9) + '" cy="' + Y((d / 9) | 0) + '" r="23" fill="none" stroke="var(--xq-dot,rgba(47,107,94,.55))" stroke-width="4"/>'
+        : '<circle cx="' + X(d % 9) + '" cy="' + Y((d / 9) | 0) + '" r="8" fill="var(--xq-dot,rgba(47,107,94,.55))"/>';
+    });
     if (arrows && arrows.length) {
       arrows.forEach(function (a, k) {
         var fxp = X(a.from % 9), fyp = Y((a.from / 9) | 0), tx = X(a.to % 9), ty = Y((a.to / 9) | 0);
@@ -218,10 +256,12 @@
         s += '<line x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="' + a.color + '" stroke-width="5" stroke-linecap="round" opacity=".92"/>';
         var ah = 14, aw = 8.5, bx = ex - ux * ah, by = ey - uy * ah;
         s += '<polygon points="' + ex + ',' + ey + ' ' + (bx + px * aw) + ',' + (by + py * aw) + ' ' + (bx - px * aw) + ',' + (by - py * aw) + '" fill="' + a.color + '"/>';
-        var lx = fxp + px * 16, ly = fyp + py * 16;
-        s += '<circle cx="' + lx + '" cy="' + ly + '" r="11.5" fill="' + a.color + '" stroke="#fff" stroke-width="1.5"/>';
-        s += '<text x="' + lx + '" y="' + (ly + 5) + '" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="system-ui,sans-serif">' + a.label + '</text>';
-        s += '<line class="xq-brhit" data-br="' + k + '" x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="transparent" stroke-width="26" style="cursor:pointer"/>';
+        if (a.label) {
+          var lx = fxp + px * 16, ly = fyp + py * 16;
+          s += '<circle cx="' + lx + '" cy="' + ly + '" r="11.5" fill="' + a.color + '" stroke="#fff" stroke-width="1.5"/>';
+          s += '<text x="' + lx + '" y="' + (ly + 5) + '" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="system-ui,sans-serif">' + a.label + '</text>';
+          s += '<line class="xq-brhit" data-br="' + k + '" x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="transparent" stroke-width="26" style="cursor:pointer"/>';
+        }
       });
     }
     s += '</svg>';
@@ -231,7 +271,6 @@
     return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--xq-line,#7c5a2c)" stroke-width="1.4"/>';
   }
 
-  // Sau khi thay innerHTML: chạy hiệu ứng trượt quân + nhấp nháy ô đích (tôn trọng reduced-motion).
   function playAnim(holder) {
     if (REDUCE) return;
     var mv = holder.querySelector('.xq-pc-moved');
@@ -244,14 +283,11 @@
     }
     var pulse = holder.querySelector('.xq-pulse');
     if (pulse && pulse.animate) {
-      pulse.animate(
-        [{ opacity: .55, transform: 'scale(.72)' }, { opacity: 0, transform: 'scale(1.15)' }],
-        { duration: 620, easing: 'ease-out', transformOrigin: 'center' }
-      );
+      pulse.animate([{ opacity: .55, transform: 'scale(.72)' }, { opacity: 0, transform: 'scale(1.15)' }],
+        { duration: 620, easing: 'ease-out', transformOrigin: 'center' });
     }
   }
 
-  // Vuốt trái/phải trên bàn cờ → tiến/lùi (view & tree). Bỏ qua đa chạm.
   function attachSwipe(holder, onPrev, onNext) {
     var sx = 0, sy = 0, t = 0;
     holder.addEventListener('touchstart', function (e) {
@@ -262,25 +298,23 @@
       if (!t) return;
       var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
       t = 0;
-      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-        (dx < 0 ? onNext : onPrev)();
-      }
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.5) (dx < 0 ? onNext : onPrev)();
     }, { passive: true });
   }
 
-  // Nút Lật + Tự chạy dùng chung cho view/tree.
   function attachControls(root, api) {
     var flipBtn = root.querySelector('[data-xq-flip]');
     if (flipBtn) flipBtn.addEventListener('click', function () { api.toggleFlip(); });
-
     var autoBtn = root.querySelector('[data-xq-autoplay]');
     if (autoBtn) {
       var timer = null;
-      var stop = function () { if (timer) { clearInterval(timer); timer = null; autoBtn.classList.remove('is-on'); autoBtn.textContent = '▶ Tự chạy'; } };
+      var label = function (on) { setBtn(autoBtn, on ? 'pause' : 'play', on ? 'Dừng' : 'Tự chạy'); };
+      var stop = function () { if (timer) { clearInterval(timer); timer = null; autoBtn.classList.remove('is-on'); label(false); } };
       var start = function () {
-        api.first(); autoBtn.classList.add('is-on'); autoBtn.textContent = '⏸ Dừng';
+        api.first(); autoBtn.classList.add('is-on'); label(true);
         timer = setInterval(function () { if (!api.next()) stop(); }, 1400);
       };
+      label(false);
       autoBtn.addEventListener('click', function () { timer ? stop() : start(); });
       root.addEventListener('xq:userstep', stop);
     }
@@ -293,14 +327,21 @@
     function setFs(on) {
       boardCard.classList.toggle('xq-fs', on);
       document.body.classList.toggle('xq-fs-lock', on);
-      fsBtn.textContent = on ? '✕' : '⛶';
+      setBtn(fsBtn, on ? 'x' : 'expand');
       fsBtn.setAttribute('aria-label', on ? 'Thoát phóng to' : 'Phóng to toàn màn hình');
     }
+    setBtn(fsBtn, 'expand');
     fsBtn.addEventListener('click', function () { setFs(!boardCard.classList.contains('xq-fs')); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && boardCard.classList.contains('xq-fs')) setFs(false); });
   }
 
+  function emit(root, name, detail) {
+    (root || document).dispatchEvent(new CustomEvent(name, { detail: detail || {}, bubbles: true }));
+  }
+
   function initBoard(root) {
+    if (root.__xqInit) return;
+    root.__xqInit = true;
     var cfgEl = root.querySelector('script[type="application/json"]');
     if (!cfgEl) return;
     var cfg;
@@ -316,9 +357,27 @@
 
     bindFullscreen(root);
     attachSound(root);
+    attachMenu(root);
+    root.querySelectorAll('[data-xq-icon]').forEach(function (b) { setBtn(b, b.getAttribute('data-xq-icon'), b.getAttribute('data-xq-label') || ''); });
 
+    if (cfg.mode === 'puzzle' && cfg.puzzleSide && steps.length && !window.XiangqiRules) {
+      holder.innerHTML = renderBoard(startFen, null);
+      return;
+    }
     if (cfg.mode === 'puzzle' && cfg.puzzleSide && steps.length) {
-      initPuzzle(root, startFen, steps, { holder: holder, capStep: capStep, capText: capText, pill: pill }, cfg.puzzleSide);
+      var dom = { holder: holder, capStep: capStep, capText: capText, pill: pill, capBox: root.querySelector('.caption-box') };
+      var engine = createPuzzle(root, dom, {
+        fen: startFen,
+        solution: steps.map(function (s) { return s.iccs; }),
+        side: cfg.puzzleSide,
+        failOnWrong: false
+      });
+      attachSaveFen(root, engine.fen);
+      attachCopyFen(root, engine.fen);
+      bind(root, 'reset', engine.reset);
+      bind(root, 'solution', engine.reveal);
+      bind(root, 'hint', engine.hint);
+      root.__xqPuzzle = engine;
       return;
     }
     if (Array.isArray(cfg.tree) && cfg.tree.length) {
@@ -342,7 +401,7 @@
       if (idx < 0) {
         if (capStep) capStep.textContent = 'Thế cờ mở đầu';
         if (capText) capText.textContent = steps.length ? 'Bấm “Tiến”, dùng phím ←/→ hoặc vuốt trên bàn cờ.' : 'Bài học này chưa có nước đi minh hoạ.';
-        if (pill) pill.textContent = 'Thế mở';
+        if (pill) pill.textContent = 'Thế mở · ' + steps.length + ' nước';
       } else {
         var sideLabel = cur.side === 'den' ? 'Đen' : (cur.side === 'do' ? 'Đỏ' : '');
         var mv = cur.wxf ? (' · ' + cur.wxf) : '';
@@ -352,6 +411,9 @@
       }
       setDisabled('first', idx < 0); setDisabled('prev', idx < 0);
       setDisabled('next', idx >= steps.length - 1); setDisabled('last', idx >= steps.length - 1);
+      root.style.setProperty('--xq-progress', steps.length ? ((idx + 1) / steps.length * 100) + '%' : '0%');
+      var bar = root.querySelector('[data-xq-progress]');
+      if (bar) bar.style.width = steps.length ? ((idx + 1) / steps.length * 100) + '%' : '0%';
       if (list) Array.prototype.forEach.call(list.children, function (el, i) {
         var on = i === idx;
         el.classList.toggle('active', on);
@@ -370,8 +432,8 @@
       idx = clamped;
       draw();
       if (idx >= 0) Sound.move(countPieces(beforeFen) !== countPieces(steps[idx].fen));
-      if (userAction) root.dispatchEvent(new CustomEvent('xq:userstep'));
-      if (steps.length > 0 && idx === steps.length - 1) document.dispatchEvent(new CustomEvent('xq:viewed-all-moves'));
+      if (userAction) emit(root, 'xq:userstep');
+      if (steps.length > 0 && idx === steps.length - 1) emit(root, 'xq:viewed-all-moves');
       return true;
     }
 
@@ -385,7 +447,7 @@
         var sideLabel = st.side === 'den' ? 'Đen' : (st.side === 'do' ? 'Đỏ' : '');
         var dot = st.side === 'den' ? '<span class="side-dot den"></span>' : '<span class="side-dot do"></span>';
         var label = st.wxf ? escapeHtml(st.wxf) : sideLabel;
-        var cap = st.caption || '';
+        var cap = (st.caption && st.caption.trim() !== (st.wxf || '').trim()) ? st.caption : '';
         if (!fullMode && cap.length > 40) cap = cap.slice(0, 40) + '…';
         row.innerHTML = '<span class="num">' + (i + 1) + '.</span><span class="mv">' + dot + '<span class="mv-label">' + label + '</span>' +
           (cap ? '<span class="cap-inline">' + escapeHtml(cap) + '</span>' : '') + '</span>';
@@ -394,11 +456,10 @@
         list.appendChild(row);
       });
     }
-    bind('first', function () { go(-1, true); });
-    bind('prev', function () { go(idx - 1, true); });
-    bind('next', function () { go(idx + 1, true); });
-    bind('last', function () { go(steps.length - 1, true); });
-    function bind(name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
+    bind(root, 'first', function () { go(-1, true); });
+    bind(root, 'prev', function () { go(idx - 1, true); });
+    bind(root, 'next', function () { go(idx + 1, true); });
+    bind(root, 'last', function () { go(steps.length - 1, true); });
 
     attachSwipe(holder, function () { go(idx - 1, true); }, function () { go(idx + 1, true); });
     attachControls(root, {
@@ -408,11 +469,16 @@
     });
 
     root.addEventListener('keydown', function (e) {
+      if (e.target.closest && e.target.closest('input,textarea')) return;
       if (e.key === 'ArrowRight') { go(idx + 1, true); e.preventDefault(); }
       if (e.key === 'ArrowLeft') { go(idx - 1, true); e.preventDefault(); }
+      if (e.key === 'Home') { go(-1, true); e.preventDefault(); }
+      if (e.key === 'End') { go(steps.length - 1, true); e.preventDefault(); }
     });
     draw();
   }
+
+  function bind(root, name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
 
   var BRANCH_COLORS = ['#16a34a', '#e0632f', '#2563eb', '#7c3aed', '#c026d3', '#0891b2'];
 
@@ -428,7 +494,7 @@
     attachSaveFen(root, getCurFen);
 
     function setDisabled(name, v) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.disabled = v; }
-    function notifyEnd() { if (!cur.children || !cur.children.length) document.dispatchEvent(new CustomEvent('xq:viewed-all-moves')); }
+    function notifyEnd() { if (!cur.children || !cur.children.length) emit(root, 'xq:viewed-all-moves'); }
 
     function draw() {
       var kids = cur.children || [];
@@ -518,14 +584,14 @@
       flat.forEach(function (row, k) {
         var m = row.node, sideLabel = m.side === 'den' ? 'Đen' : (m.side === 'do' ? 'Đỏ' : '');
         var dot = m.side === 'den' ? '<span class="side-dot den"></span>' : '<span class="side-dot do"></span>';
-        var cap = m.caption ? '<span class="cap-inline">' + escapeHtml(m.caption) + '</span>' : '';
-        h += '<button type="button" class="move-row" data-k="' + k + '" style="margin-left:' + (row.indent * 14) + 'px">'
+        var cap = (m.caption && m.caption.trim() !== (m.wxf || '').trim()) ? '<span class="cap-inline">' + escapeHtml(m.caption) + '</span>' : '';
+        h += '<button type="button" class="move-row" data-k="' + k + '" style="padding-left:' + (16 + row.indent * 14) + 'px">'
           + '<span class="num">' + m.depth + (row.letter || '') + '.</span>'
           + '<span class="mv">' + dot + '<span class="mv-label">' + (m.wxf ? escapeHtml(m.wxf) : sideLabel) + '</span>' + cap + '</span></button>';
       });
       dom.list.innerHTML = h;
       dom.list.querySelectorAll('[data-k]').forEach(function (el) {
-        el.addEventListener('click', function () { cur = flat[+el.getAttribute('data-k')].node; draw(); notifyEnd(); root.dispatchEvent(new CustomEvent('xq:userstep')); });
+        el.addEventListener('click', function () { cur = flat[+el.getAttribute('data-k')].node; draw(); notifyEnd(); emit(root, 'xq:userstep'); });
       });
     }
     function highlightList() {
@@ -536,142 +602,269 @@
       });
     }
 
-    (function bindAll() {
-      [['first', toStart], ['prev', back], ['next', next], ['last', toEnd]].forEach(function (p) {
-        var b = root.querySelector('[data-xq-' + p[0] + ']');
-        if (b) b.addEventListener('click', function () { p[1](); root.dispatchEvent(new CustomEvent('xq:userstep')); });
-      });
-      root.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowRight') { next(); root.dispatchEvent(new CustomEvent('xq:userstep')); e.preventDefault(); }
-        if (e.key === 'ArrowLeft') { back(); root.dispatchEvent(new CustomEvent('xq:userstep')); e.preventDefault(); }
-      });
-      attachSwipe(dom.holder, function () { back(); }, function () { next(); });
-      attachControls(root, {
-        toggleFlip: function () { flip = !flip; draw(); },
-        first: function () { toStart(); },
-        next: function () { return next(); }
-      });
-    })();
+    [['first', toStart], ['prev', back], ['next', next], ['last', toEnd]].forEach(function (p) {
+      var b = root.querySelector('[data-xq-' + p[0] + ']');
+      if (b) b.addEventListener('click', function () { p[1](); emit(root, 'xq:userstep'); });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { next(); emit(root, 'xq:userstep'); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { back(); emit(root, 'xq:userstep'); e.preventDefault(); }
+    });
+    attachSwipe(dom.holder, function () { back(); }, function () { next(); });
+    attachControls(root, {
+      toggleFlip: function () { flip = !flip; draw(); },
+      first: function () { toStart(); },
+      next: function () { return next(); }
+    });
     buildList();
     draw();
   }
 
-  // Chế độ GIẢI ĐỐ: người dùng bấm quân mình rồi bấm ô đích; so khớp với `steps`.
-  function initPuzzle(root, startFen, steps, dom, puzzleSide) {
+  /* ======================================================================
+     Bộ máy GIẢI ĐỐ dùng chung (bài học "Thử tự giải" + khu Luyện tập).
+     cfg: { fen, solution:[iccs…] (bắt đầu bằng nước bên giải), side:'do'|'den',
+            failOnWrong:boolean, onMove(info), onSolved(info), onFail(info) }
+     ====================================================================== */
+  function createPuzzle(root, dom, cfg) {
     var Rules = window.XiangqiRules;
-    if (!Rules) { dom.holder.innerHTML = renderBoard(startFen, null); return; }
-    var board = Rules.loadFen(startFen);
-    var stepIdx = -1;
-    var selected = -1;
-    attachSaveFen(root, function () { return Rules.toFen(board); });
-    var solved = false;
+    var state;
+    var flip = cfg.side === 'den';
+    var reply = null;
 
-    function curExpected() { return stepIdx + 1 < steps.length ? steps[stepIdx + 1] : null; }
-    function isSolverTurn() { var e = curExpected(); return !solved && !!e && e.side === puzzleSide; }
+    function initState(c) {
+      cfg = Object.assign(cfg, c || {});
+      flip = cfg.side === 'den';
+      state = {
+        board: Rules.loadFen(cfg.fen), ply: 0, selected: -1, dots: [], solved: false, failed: false, locked: false,
+        moves: [], mistakes: 0, revealed: false, hint: -1, t0: Date.now(), last: null, arrows: null
+      };
+    }
 
-    function squareFromEvent(evt) {
+    function solverRed() { return cfg.side === 'do'; }
+    function expected() { return cfg.solution[state.ply] || null; }
+    function isSolverTurn() { return !state.solved && !state.failed && !state.locked && state.ply < cfg.solution.length && state.ply % 2 === 0; }
+    function fen() { return Rules.toFen(state.board); }
+
+    function setCaption(step, text, kind) {
+      if (dom.capStep) dom.capStep.textContent = step;
+      if (dom.capText) dom.capText.textContent = text;
+      if (dom.capBox) { dom.capBox.classList.toggle('is-ok', kind === 'ok'); dom.capBox.classList.toggle('is-err', kind === 'err'); }
+    }
+
+    function draw(opts) {
+      opts = opts || {};
+      var lm = state.last ? iccsToSquares(state.last) : null;
+      var toMoveRed = state.ply % 2 === 0 ? solverRed() : !solverRed();
+      var check = Rules.inCheck(state.board, toMoveRed) ? Rules.findKing(state.board, toMoveRed) : -1;
+      dom.holder.innerHTML = renderBoard(fen(), lm, state.arrows, state.selected, flip, { dots: state.dots, check: check, hint: state.hint, hide: opts.hide });
+      if (!opts.noAnim) playAnim(dom.holder);
+      dom.holder.classList.toggle('is-interactive', isSolverTurn());
+      var total = Math.ceil(cfg.solution.length / 2), done = Math.ceil(state.ply / 2);
+      if (dom.pill) dom.pill.textContent = state.solved ? 'Đã giải xong!' : ('Nước ' + Math.min(done + 1, total) + '/' + total + ' · ' + (solverRed() ? 'Đỏ' : 'Đen') + ' đi');
+    }
+
+    function legalTargets(from) {
+      var out = [];
+      for (var to = 0; to < 90; to++) if (Rules.legalNoSelfCheck(state.board, from, to)) out.push(to);
+      return out;
+    }
+
+    function select(sq) {
+      state.selected = sq;
+      state.dots = sq >= 0 ? legalTargets(sq) : [];
+      draw({ noAnim: true });
+    }
+
+    function applyIccs(iccs) {
+      var m = iccsToIdx(iccs); if (!m) return false;
+      var captured = !!state.board[m.to];
+      state.board[m.to] = state.board[m.from]; state.board[m.from] = null;
+      state.last = iccs; state.ply++;
+      Sound.move(captured);
+      return true;
+    }
+
+    function hasAnyMove(red) {
+      for (var f = 0; f < 90; f++) {
+        var p = state.board[f]; if (!p || Rules.isRed(p) !== red) continue;
+        for (var t = 0; t < 90; t++) if (Rules.legalNoSelfCheck(state.board, f, t)) return true;
+      }
+      return false;
+    }
+
+    function finishSolved() {
+      state.solved = true;
+      Sound.good();
+      var info = { moves: state.moves.slice(), ms: Date.now() - state.t0, mistakes: state.mistakes, revealed: state.revealed };
+      setCaption(state.revealed ? 'Đã xem lời giải' : 'Chính xác!', state.revealed ? 'Thử lại thế này sau để ghi nhớ nhé.' : (state.mistakes ? 'Bạn đã giải xong (có ' + state.mistakes + ' lần đi sai).' : 'Xuất sắc — bạn đã giải đúng ngay từ đầu.'), 'ok');
+      draw({ noAnim: true });
+      emit(root, 'xq:puzzle-solved', info);
+      if (cfg.onSolved) cfg.onSolved(info);
+    }
+
+    function attempt(from, to) {
+      if (!isSolverTurn()) return;
+      var got = Rules.toIccs(from) + Rules.toIccs(to);
+      var exp = expected();
+      state.selected = -1; state.dots = []; state.hint = -1;
+      if (!Rules.legalNoSelfCheck(state.board, from, to)) { draw({ noAnim: true }); return; }
+
+      var isFinal = state.ply === cfg.solution.length - 1;
+      var ok = got === exp;
+      if (!ok && isFinal) {
+        // Nước cuối khác đáp án nhưng vẫn chiếu hết → tính đúng.
+        var snap = state.board.slice();
+        state.board[to] = state.board[from]; state.board[from] = null;
+        ok = !hasAnyMove(!solverRed());
+        state.board = snap;
+      }
+      var info = { ok: ok, ply: state.ply, move: got, expected: exp };
+      emit(root, 'xq:puzzle-move', info);
+      if (cfg.onMove) cfg.onMove(info);
+
+      if (!ok) {
+        state.mistakes++;
+        Sound.bad();
+        if (dom.holder.animate && !REDUCE) dom.holder.classList.remove('xq-shake'), void dom.holder.offsetWidth, dom.holder.classList.add('xq-shake');
+        if (cfg.failOnWrong) {
+          state.failed = true;
+          var em = iccsToIdx(exp);
+          state.arrows = em ? [{ from: em.from, to: em.to, color: '#2f6b5e' }] : null;
+          setCaption('Chưa đúng', 'Nước đúng được chỉ bằng mũi tên xanh.', 'err');
+          draw({ noAnim: true });
+          var fail = { moves: state.moves.concat([got]), ms: Date.now() - state.t0, wrongPly: info.ply, userMove: got, expected: exp };
+          emit(root, 'xq:puzzle-failed', fail);
+          if (cfg.onFail) cfg.onFail(fail);
+        } else {
+          setCaption('Chưa đúng', 'Nước này chưa phải nước hay nhất — thử lại nhé.', 'err');
+          draw({ noAnim: true });
+        }
+        return;
+      }
+
+      state.moves.push(got);
+      applyIccs(got);
+      if (state.ply >= cfg.solution.length) { draw(); finishSolved(); return; }
+      setCaption('Đúng rồi!', 'Đối phương đang đáp trả…', 'ok');
+      draw();
+      state.locked = true;
+      reply = setTimeout(function () {
+        state.locked = false;
+        applyIccs(cfg.solution[state.ply]);
+        if (state.ply >= cfg.solution.length) { draw(); finishSolved(); return; }
+        setCaption('Đến lượt bạn', 'Tìm nước tiếp theo.', null);
+        draw();
+      }, 520);
+    }
+
+    // ---- Đầu vào: bấm-bấm + kéo-thả (Pointer Events), gắn 1 lần trên holder ----
+    function squareAt(clientX, clientY) {
       var svg = dom.holder.querySelector('svg'); if (!svg) return -1;
-      var pt = svg.createSVGPoint();
-      var t = (evt.touches && evt.touches[0]) || evt;
-      pt.x = t.clientX; pt.y = t.clientY;
+      var pt = svg.createSVGPoint(); pt.x = clientX; pt.y = clientY;
       var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
       var f = Math.round((loc.x - M) / CW), r = Math.round((loc.y - M) / CH);
       if (f < 0 || f > 8 || r < 0 || r > 9) return -1;
+      if (flip) { f = 8 - f; r = 9 - r; }
       return r * 9 + f;
     }
+    function isOwn(sq) { var p = state.board[sq]; return !!p && Rules.isRed(p) === solverRed(); }
 
-    function setMsg(text, kind) {
-      if (!dom.capText) return;
-      dom.capText.textContent = text;
-      dom.capText.style.color = kind === 'err' ? 'var(--red,#c0392b)' : (kind === 'ok' ? 'var(--jade,#16a34a)' : '');
-    }
-
-    function applyStep() {
-      stepIdx++;
-      var ic = iccsToSquares(steps[stepIdx].iccs);
-      if (!ic) return;
-      var fromIdx = ic.from[1] * 9 + ic.from[0], toIdx = ic.to[1] * 9 + ic.to[0];
-      var captured = !!board[toIdx];
-      board[toIdx] = board[fromIdx]; board[fromIdx] = null;
-      if (stepIdx + 1 >= steps.length) solved = true;
-      Sound.move(captured);
-    }
-
-    function draw() {
-      var lm = stepIdx >= 0 ? iccsToSquares(steps[stepIdx].iccs) : null;
-      dom.holder.innerHTML = renderBoard(Rules.toFen(board), lm, null, selected);
-      playAnim(dom.holder);
-      bindClicks();
-      var e = curExpected(), turnLabel = e ? (e.side === 'den' ? 'Đen' : 'Đỏ') : '';
-      if (dom.pill) dom.pill.textContent = solved ? 'Đã giải xong!' : ('Nước ' + (stepIdx + 2) + ' — bên ' + turnLabel + ' đi');
-      if (dom.capStep) dom.capStep.textContent = solved ? 'Hoàn thành! 🎉' : (isSolverTurn() ? 'Đến lượt bạn' : 'Đối phương đang đi…');
-      if (solved) {
-        setMsg('Chính xác! Bạn đã giải xong bài tập này.', 'ok');
-        document.dispatchEvent(new CustomEvent('xq:puzzle-solved'));
-      } else if (isSolverTurn()) {
-        setMsg('Bấm quân của bạn rồi bấm ô muốn đi.', null);
-      } else {
-        setMsg('Đối phương đang đi…', null);
+    var drag = null;
+    function onDown(e) {
+      if (!isSolverTurn() || (e.button !== undefined && e.button !== 0)) return;
+      var sq = squareAt(e.clientX, e.clientY); if (sq < 0) return;
+      if (isOwn(sq)) {
+        drag = { sq: sq, x: e.clientX, y: e.clientY, moved: false, wasSelected: state.selected === sq, id: e.pointerId };
+        if (state.selected !== sq) select(sq);
+        try { dom.holder.setPointerCapture(e.pointerId); } catch (err) {}
+        e.preventDefault();
+      } else if (state.selected >= 0) {
+        attempt(state.selected, sq);
       }
     }
-
-    function bindClicks() {
-      var svg = dom.holder.querySelector('svg'); if (!svg) return;
-      svg.style.cursor = isSolverTurn() ? 'pointer' : 'default';
-      svg.addEventListener('click', onClick);
-    }
-
-    function onClick(evt) {
-      if (!isSolverTurn()) return;
-      var sq = squareFromEvent(evt); if (sq < 0) return;
-      var piece = board[sq];
-      var isOwn = piece && Rules.isRed(piece) === (puzzleSide === 'do');
-      if (selected < 0) { if (isOwn) { selected = sq; draw(); } return; }
-      if (sq === selected) { selected = -1; draw(); return; }
-      if (isOwn) { selected = sq; draw(); return; }
-      attemptMove(selected, sq);
-    }
-
-    function attemptMove(from, to) {
-      var expect = curExpected();
-      var got = Rules.toIccs(from) + Rules.toIccs(to);
-      selected = -1;
-      if (!expect || got !== expect.iccs) {
-        draw();
-        setMsg('Nước sai rồi — thử lại nhé.', 'err');
-        return;
+    function onMove(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.moved && Math.hypot(e.clientX - drag.x, e.clientY - drag.y) < 8) return;
+      if (!drag.moved) {
+        drag.moved = true;
+        var p = PIECES[state.board[drag.sq]];
+        var size = dom.holder.getBoundingClientRect().width / BW * 52;
+        drag.ghost = document.createElement('div');
+        drag.ghost.className = 'xq-ghost';
+        drag.ghost.style.width = drag.ghost.style.height = size + 'px';
+        drag.ghost.innerHTML = '<svg viewBox="-26 -26 52 52" width="100%" height="100%">' + pieceSvg(p, 0, 0) + '</svg>';
+        document.body.appendChild(drag.ghost);
+        dom.holder.classList.add('is-dragging');
+        draw({ noAnim: true, hide: drag.sq });
       }
-      applyStep();
+      drag.ghost.style.left = e.clientX + 'px';
+      drag.ghost.style.top = e.clientY + 'px';
+    }
+    function onUp(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var d = drag; drag = null;
+      dom.holder.classList.remove('is-dragging');
+      if (d.ghost) d.ghost.remove();
+      if (d.moved) {
+        var to = squareAt(e.clientX, e.clientY);
+        if (to >= 0 && to !== d.sq) attempt(d.sq, to); else draw({ noAnim: true });
+      } else if (d.wasSelected) {
+        select(-1);
+      }
+    }
+    dom.holder.addEventListener('pointerdown', onDown);
+    dom.holder.addEventListener('pointermove', onMove);
+    dom.holder.addEventListener('pointerup', onUp);
+    dom.holder.addEventListener('pointercancel', function () { if (drag && drag.ghost) drag.ghost.remove(); drag = null; draw({ noAnim: true }); });
+
+    function start(c) {
+      if (reply) clearTimeout(reply);
+      initState(c);
+      setCaption('Đến lượt bạn', 'Tìm nước đi mạnh nhất cho bên ' + (solverRed() ? 'Đỏ' : 'Đen') + '. Bấm hoặc kéo quân để đi.', null);
       draw();
-      var nx = curExpected();
-      if (nx && nx.side !== puzzleSide) {
-        setMsg('Đối phương đang đi…', null);
-        setTimeout(function () { applyStep(); draw(); }, 550);
-      }
     }
 
-    function reset() { board = Rules.loadFen(startFen); stepIdx = -1; selected = -1; solved = false; draw(); }
-    function showSolution() {
-      reset();
-      var i = 0;
-      (function step() {
-        if (i >= steps.length) { solved = true; draw(); return; }
-        applyStep(); draw(); i++;
-        setTimeout(step, 750);
-      })();
-    }
-    function copyFen() {
-      var fen = Rules.toFen(board);
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(fen).then(function () { setMsg('Đã sao chép FEN vào bộ nhớ tạm.', 'ok'); });
-      } else {
-        setMsg('FEN: ' + fen, null);
-      }
-    }
+    var api = {
+      fen: fen,
+      reset: function () { start(); },
+      load: function (c) { start(c); },
+      hint: function () {
+        if (!isSolverTurn()) return;
+        var m = iccsToIdx(expected()); if (!m) return;
+        state.revealed = true; state.hint = m.from;
+        setCaption('Gợi ý', 'Hãy để ý quân được khoanh vàng.', null);
+        draw({ noAnim: true });
+      },
+      reveal: function () {
+        if (reply) clearTimeout(reply);
+        var keepT0 = state.t0;
+        initState(); state.revealed = true; state.locked = true; state.t0 = keepT0;
+        setCaption('Lời giải', 'Xem lần lượt các nước của lời giải…', null);
+        draw();
+        (function step() {
+          if (state.ply >= cfg.solution.length) { state.locked = false; draw(); finishSolved(); return; }
+          applyIccs(cfg.solution[state.ply]);
+          draw();
+          reply = setTimeout(step, 750);
+        })();
+      },
+      destroy: function () { if (reply) clearTimeout(reply); dom.holder.innerHTML = ''; },
+      state: function () { return state; }
+    };
+    start();
+    return api;
+  }
 
-    function bind(name, fn) { var b = root.querySelector('[data-xq-' + name + ']'); if (b) b.addEventListener('click', fn); }
-    bind('reset', reset); bind('solution', showSolution); bind('copyfen', copyFen);
-    draw();
+  /** Gắn 1 bộ giải đố vào phần tử bất kỳ (khu Luyện tập). el cần chứa [data-xq-holder]
+      và tuỳ chọn [data-xq-capstep]/[data-xq-captext]/[data-xq-pill]/.caption-box. */
+  function mountPuzzle(el, cfg) {
+    return createPuzzle(el, {
+      holder: el.querySelector('[data-xq-holder]'),
+      capStep: el.querySelector('[data-xq-capstep]'),
+      capText: el.querySelector('[data-xq-captext]'),
+      pill: el.querySelector('[data-xq-pill]'),
+      capBox: el.querySelector('.caption-box')
+    }, cfg);
   }
 
   function escapeHtml(s) {
@@ -686,5 +879,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
   else initAll();
 
-  window.XiangqiBoard = { render: renderBoard };
+  window.XiangqiBoard = { render: renderBoard, mountPuzzle: mountPuzzle, init: initBoard, initAll: initAll, sound: Sound };
 })();

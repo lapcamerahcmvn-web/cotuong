@@ -1,9 +1,55 @@
-@import 'tailwindcss';
+/* Học Cờ Tướng — design system (Tailwind 4 + Vite).
+   Bản sắc: chu sa (朱砂) · mực · giấy dó · gỗ bàn cờ · ngọc bích — hiện đại hoá kiểu app học.
+   Token là CSS var trên :root / [data-theme=dark]; Tailwind đọc qua @theme inline nên mọi
+   utility (bg-surface, text-ink-soft…) tự đổi theo theme.
+   ⚠️ Admin KHÔNG dùng file này — admin vẫn nạp public/css/app.css + admin.css (tĩnh). */
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@source "../views";
+@source "../js";
+@source "../../app";
+@source "../../public/js/board.js";
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@import "./base.css";
+@import "./layout.css";
+@import "./ui.css";
+@import "./board.css";
+@import "./content.css";
+@import "./game.css";
+
+@theme inline {
+    --color-bg: var(--bg);
+    --color-surface: var(--surface);
+    --color-surface-2: var(--surface-2);
+    --color-surface-3: var(--surface-3);
+    --color-ink: var(--ink);
+    --color-ink-soft: var(--ink-soft);
+    --color-ink-faint: var(--ink-faint);
+    --color-line: var(--line);
+    --color-line-strong: var(--line-strong);
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+    --color-primary-ink: var(--primary-ink);
+    --color-primary-soft: var(--primary-soft);
+    --color-jade: var(--jade);
+    --color-jade-ink: var(--jade-ink);
+    --color-jade-soft: var(--jade-soft);
+    --color-gold: var(--gold);
+    --color-gold-ink: var(--gold-ink);
+    --color-gold-soft: var(--gold-soft);
+    --color-flame: var(--flame);
+    --color-danger: var(--danger);
+    --color-danger-soft: var(--danger-soft);
+    --color-wood: var(--xq-wood);
+
+    --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif;
+    --font-piece: "XiangqiKai", KaiTi, STKaiti, serif;
+
+    --radius-card: 18px;
+    --radius-btn: 12px;
+    --shadow-card: var(--shadow);
+    --shadow-pop: var(--shadow-lg);
 }

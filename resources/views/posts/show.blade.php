@@ -43,48 +43,39 @@
 
 @section('content')
 <nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> ›
-    <a href="{{ route('posts.index') }}">Tin tức</a> ›
-    @if($post->category)<a href="{{ route('posts.category', $post->category->slug) }}">{{ $post->category->name }}</a> ›@endif
+    <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
+    <a href="{{ route('posts.index') }}">Tin tức</a><x-icon name="chev-right" />
+    @if($post->category)<a href="{{ route('posts.category', $post->category->slug) }}">{{ $post->category->name }}</a><x-icon name="chev-right" />@endif
     <span>{{ \Illuminate\Support\Str::limit($post->title, 40) }}</span>
 </nav>
 
-<div class="lesson">
-    <h1 class="title">{{ $post->title }}</h1>
-    <div class="meta-row">
-        @if($post->category)<span class="tag level">{{ $post->category->name }}</span>@endif
-        <span class="tag count">{{ $post->published_at?->format('d/m/Y') }}</span>
-        <span class="tag count">{{ $post->view_count }} lượt xem</span>
-    </div>
+<article class="max-w-[780px] mx-auto">
+    <header class="lesson-head">
+        @if($post->category)<span class="eyebrow">{{ $post->category->name }}</span>@endif
+        <h1 class="title mt-2">{{ $post->title }}</h1>
+        <div class="meta-row">
+            <span class="tag"><x-icon name="calendar" /> {{ $post->published_at?->format('d/m/Y') }}</span>
+            <span class="tag"><x-icon name="eye" /> {{ $post->view_count }} lượt xem</span>
+        </div>
+    </header>
 
     @if($post->thumbnail)
-        <img src="{{ \Illuminate\Support\Facades\Storage::url($post->thumbnail) }}" alt="{{ $post->title }}" style="width:100%;border-radius:var(--radius);margin:18px 0;">
+        <img src="{{ \Illuminate\Support\Facades\Storage::url($post->thumbnail) }}" alt="{{ $post->title }}" class="w-full rounded-[18px] my-5">
     @endif
 
-    <article class="prose">{!! \App\Support\PostContent::render($post->content) !!}</article>
+    <div class="prose !max-w-none">{!! \App\Support\PostContent::render($post->content) !!}</div>
 
-    <div class="lesson__share">
+    <div class="mt-8">
         <x-share-buttons :url="url()->current()" :title="$post->title" :image="$_ogImage" />
     </div>
+</article>
 
-    @if($related->isNotEmpty())
-    <section class="lesson__related">
-        <h2>Bài liên quan</h2>
-        <div class="lesson-list">
-            @foreach($related as $r)
-                <a href="{{ route('posts.show', [$r->category?->slug ?: 'tin-tuc', $r->slug]) }}" class="lesson-item card has-thumb">
-                    <span class="li-thumb">
-                        <img src="{{ $r->thumbnail ? \Illuminate\Support\Facades\Storage::url($r->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $r->title }}" loading="lazy">
-                    </span>
-                    <span>
-                        <span class="li-title">{{ $r->title }}</span>
-                        <span class="li-sub">{{ $r->published_at?->format('d/m/Y') }}</span>
-                    </span>
-                    <span class="li-meta">→</span>
-                </a>
-            @endforeach
-        </div>
-    </section>
-    @endif
-</div>
+@if($related->isNotEmpty())
+<section class="section">
+    <div class="section-head"><div><h2>Bài liên quan</h2></div></div>
+    <div class="news-grid">
+        @foreach($related as $r) @include('posts._card', ['p' => $r]) @endforeach
+    </div>
+</section>
+@endif
 @endsection

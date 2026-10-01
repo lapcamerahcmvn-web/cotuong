@@ -2,10 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#c8451f">
-    {{-- Áp theme đã lưu TRƯỚC khi tải CSS để tránh nháy sáng/tối (FOUC). --}}
-    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+    {{-- Áp theme + giao diện bàn cờ đã lưu TRƯỚC khi tải CSS (chống nháy sáng/tối). Không lưu → theo HĐH. --}}
+    <script>(function(){try{var d=document.documentElement,t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;var b=localStorage.getItem('board_theme');if(b)d.dataset.boardTheme=b;if(localStorage.getItem('reduce_fx')==='1')d.classList.add('reduce-fx');}catch(e){}})();</script>
 
     @php
         // Blade escape sẵn nội dung @section(...) truyền theo tham số (e()). Các giá trị lấy từ
@@ -60,20 +60,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('fonts/xiangqi-kai.woff2') }}" crossorigin>
-    {{-- Font tải BẤT ĐỒNG BỘ (không chặn render) — trang hiện ngay bằng font hệ thống rồi swap.
-         Bricolage rút về 2 weight cố định (bỏ trục opsz variable) để giảm số file tải. --}}
-    @php $_fontHref = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap'; @endphp
+    {{-- Font tải BẤT ĐỒNG BỘ (không chặn render) — trang hiện ngay bằng font hệ thống rồi swap. --}}
+    @php $_fontHref = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=optional'; @endphp
     <link rel="stylesheet" href="{{ $_fontHref }}" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="{{ $_fontHref }}"></noscript>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ @filemtime(public_path('css/app.css')) }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>window.__xq={rules:"{{ asset('js/xiangqi-rules.js') }}?v={{ @filemtime(public_path('js/xiangqi-rules.js')) }}",board:"{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}",auth:{{ auth()->check() ? 'true' : 'false' }},ga:{{ config('site.ga4_id') ? 'true' : 'false' }}};</script>
 
     {{-- JSON-LD toàn site: Organization + WebSite (kèm SearchAction). Trang con tham chiếu @id. --}}
     {!! \App\Support\Seo::ld($orgLd) !!}
     {!! \App\Support\Seo::ld($websiteLd) !!}
 
-    {{-- Google Analytics 4 — chỉ chèn khi đã cấu hình SITE_GA4_ID trong .env (chưa gắn thì bỏ qua,
-         không lỗi). async nên không chặn render. --}}
+    {{-- Google Analytics 4 — chỉ chèn khi đã cấu hình SITE_GA4_ID trong .env. --}}
     @if(config('site.ga4_id'))
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('site.ga4_id') }}"></script>
     <script>
@@ -84,147 +83,190 @@
     </script>
     @endif
 
+    @if(session('ga_event') && config('site.ga4_id'))
+    <script>gtag('event', @json(session('ga_event')), { method: 'site' });</script>
+    @endif
     @stack('head')
 </head>
-<body data-auth="{{ auth()->check() ? '1' : '0' }}">
-    @php
-        $navLinks = [
-            'nhap-mon' => 'Nhập môn', 'khai-cuoc' => 'Khai cuộc', 'trung-cuoc' => 'Trung cuộc',
-            'tan-cuoc' => 'Tàn cuộc', 'co-up' => 'Cờ úp',
-        ];
-        $magnifier = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
-        $userIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
-        $themeIcons = '<svg class="ic-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="ic-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    @endphp
-    <header class="nav">
-        <input type="checkbox" id="navcb" class="navcb" hidden>
-        <div class="wrap nav-inner">
-            <a href="{{ route('home') }}" class="brand"><span class="logo">車</span> Học Cờ Tướng</a>
+@php
+    $u = auth()->user();
+    $phaseNav = [
+        'nhap-mon'   => ['Nhập môn', '兵', 'Luật chơi, cách đi từng quân'],
+        'khai-cuoc'  => ['Khai cuộc', '車', 'Bố trí quân, tranh tiên'],
+        'trung-cuoc' => ['Trung cuộc', '炮', 'Sát pháp, phối hợp tấn công'],
+        'tan-cuoc'   => ['Tàn cuộc', '將', 'Kỹ thuật thắng thế ít quân'],
+        'co-up'      => ['Cờ úp', '卒', 'Lật quân, chiến thuật cờ úp'],
+    ];
+    $isLearn = request()->routeIs('phase', 'series', 'lessons.show', 'path');
+    $isPractice = request()->routeIs('practice.*');
+    $isBoard = request()->routeIs('leaderboard');
+    $isMe = request()->routeIs('account.*', 'login', 'register');
+@endphp
+<body data-auth="{{ $u ? '1' : '0' }}" class="has-bottom-nav">
+    @include('partials.icons')
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] btn btn--primary btn--sm">Bỏ qua tới nội dung</a>
 
-            <nav class="nav-links" aria-label="Điều hướng chính">
-                @foreach($navLinks as $slug => $label)
-                    <a href="{{ route('phase', $slug) }}" @class(['on' => request()->routeIs('phase') && request()->route('phase')===$slug])>{{ $label }}</a>
-                @endforeach
-                <a href="{{ route('posts.index') }}" @class(['on' => request()->routeIs('posts.*')])>Tin tức</a>
+    <header class="site-header" data-header>
+        <div class="wrap site-header__inner">
+            <a href="{{ route('home') }}" class="brand" aria-label="Học Cờ Tướng — trang chủ">
+                <span class="brand__logo">車</span>
+                <span class="brand__text">Học Cờ Tướng<small class="hidden sm:block">Mỗi ngày một nước cờ</small></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Điều hướng chính">
+                <div class="dropdown" data-dropdown>
+                    <button type="button" class="main-nav__trigger {{ $isLearn ? 'is-active' : '' }}" aria-expanded="false" aria-haspopup="true" data-dropdown-trigger>
+                        <x-icon name="book" /> Học <x-icon name="chev-down" class="!w-4 !h-4 opacity-60" />
+                    </button>
+                    <div class="dropdown__panel" data-dropdown-panel>
+                        <a href="{{ route('path') }}" class="dropdown__item">
+                            <span class="dropdown__glyph"><x-icon name="map" /></span>
+                            <span>Lộ trình học<small>Học theo thứ tự, biết bước tiếp theo</small></span>
+                        </a>
+                        <div class="dropdown__sep"></div>
+                        @foreach($phaseNav as $slug => [$label, $glyph, $hint])
+                            <a href="{{ route('phase', $slug) }}" class="dropdown__item">
+                                <span class="dropdown__glyph">{{ $glyph }}</span>
+                                <span>{{ $label }}<small>{{ $hint }}</small></span>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <a href="{{ route('practice.hub') }}" class="main-nav__link {{ $isPractice ? 'is-active' : '' }}"><x-icon name="puzzle" /> Luyện tập</a>
+                <a href="{{ route('posts.index') }}" class="main-nav__link {{ request()->routeIs('posts.*') ? 'is-active' : '' }}"><x-icon name="news" /> Tin tức</a>
+                <a href="{{ route('leaderboard') }}" class="main-nav__link {{ $isBoard ? 'is-active' : '' }}"><x-icon name="trophy" /> Xếp hạng</a>
             </nav>
 
-            <div class="nav-right">
-                <form method="GET" action="{{ route('search') }}" class="nav-search" role="search">
-                    <span class="ns-icon">{!! $magnifier !!}</span>
-                    <input type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học…" aria-label="Tìm kiếm">
+            <div class="header-actions">
+                <form method="GET" action="{{ route('search') }}" class="header-search" role="search">
+                    <x-icon name="search" />
+                    <input type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học, khai cuộc…" aria-label="Tìm kiếm">
                 </form>
-                <button type="button" class="theme-toggle" data-theme-toggle title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện sáng/tối">{!! $themeIcons !!}</button>
-                <a href="{{ route('account.index') }}" class="account-btn" title="Tài khoản">
-                    {!! $userIcon !!}<span class="ab-text">{{ auth()->check() ? \Illuminate\Support\Str::limit(auth()->user()->name, 10) : 'Tài khoản' }}</span>
-                </a>
-                <label for="navcb" class="nav-toggle" aria-label="Mở menu">
-                    <span class="nt-bars"></span>
-                </label>
+                <button type="button" class="icon-btn icon-btn--search" data-search-toggle aria-label="Tìm kiếm" aria-expanded="false"><x-icon name="search" /></button>
+
+                @if($u && $hud)
+                    <a href="{{ route('account.index') }}" class="hud-chip hud-chip--flame {{ $hud['streak_today'] ? '' : 'is-cold' }}" title="{{ $hud['streak'] }} ngày học liên tiếp{{ $hud['streak_today'] ? '' : ' — học hôm nay để giữ chuỗi' }}" data-hud-streak>
+                        <x-icon name="flame" /><span>{{ $hud['streak'] }}</span>
+                    </a>
+                    <a href="{{ route('account.index') }}" class="hud-chip hud-chip--xp" title="Tổng XP — cấp {{ $hud['level']['level'] }} {{ $hud['level']['title'] }}" data-hud-xp>
+                        <x-icon name="star" /><span data-hud-xp-value>{{ number_format($hud['xp'], 0, ',', '.') }}</span>
+                    </a>
+                @endif
+
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Đổi giao diện sáng/tối">
+                    <x-icon name="sun" class="theme-icon-light" /><x-icon name="moon" class="theme-icon-dark" />
+                </button>
+
+                @if($u)
+                    <div class="dropdown" data-dropdown>
+                        <button type="button" class="avatar-btn" aria-expanded="false" aria-haspopup="true" data-dropdown-trigger aria-label="Tài khoản">
+                            <span class="avatar avatar--sm">@if($u->avatar)<img src="{{ $u->avatar }}" alt="" referrerpolicy="no-referrer">@else{{ mb_strtoupper(mb_substr($u->name, 0, 1)) }}@endif</span>
+                            <span class="avatar-btn__name">{{ $u->name }}</span>
+                        </button>
+                        <div class="dropdown__panel dropdown__panel--right" data-dropdown-panel>
+                            <a href="{{ route('account.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Hồ sơ của tôi<small>Cấp {{ $hud['level']['level'] ?? 1 }} · {{ $hud['level']['title'] ?? '' }}</small></span></a>
+                            <a href="{{ route('account.library') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="bookmark" /></span><span>Thư viện thế cờ</span></a>
+                            <a href="{{ route('practice.review') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="repeat" /></span><span>Luyện lỗi sai</span></a>
+                            <a href="{{ route('account.settings') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="settings" /></span><span>Cài đặt</span></a>
+                            @if($u->isStaff())
+                                <a href="{{ route('admin.dashboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="shield" /></span><span>Quản trị</span></a>
+                            @endif
+                            <div class="dropdown__sep"></div>
+                            <form method="POST" action="{{ route('logout') }}">@csrf
+                                <button type="submit" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="logout" /></span><span>Đăng xuất</span></button>
+                            </form>
+                        </div>
+                    </div>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn--primary btn--sm hidden sm:inline-flex">Đăng nhập</a>
+                @endif
             </div>
         </div>
-
-        {{-- Menu mobile (drawer) — hiện khi bấm ☰ (checkbox-hack, không cần JS) --}}
-        <div class="nav-drawer">
-            <form method="GET" action="{{ route('search') }}" class="drawer-search" role="search">
-                <span class="ns-icon">{!! $magnifier !!}</span>
-                <input type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học…" aria-label="Tìm kiếm">
-            </form>
-            <nav class="drawer-links" aria-label="Menu">
-                @foreach($navLinks as $slug => $label)
-                    <a href="{{ route('phase', $slug) }}">{{ $label }}</a>
-                @endforeach
-                <a href="{{ route('posts.index') }}">Tin tức</a>
-                <a href="{{ route('account.index') }}" class="drawer-account">{!! $userIcon !!} {{ auth()->check() ? 'Tài khoản của tôi' : 'Đăng nhập' }}</a>
-            </nav>
+        <div class="search-overlay" data-search-panel hidden>
+            <div class="wrap">
+                <form method="GET" action="{{ route('search') }}" role="search">
+                    <input class="input" type="search" name="q" value="{{ request('q') }}" placeholder="Tìm bài học, khai cuộc, thế sát…" aria-label="Tìm kiếm">
+                    <button class="btn btn--primary" type="submit" aria-label="Tìm"><x-icon name="search" /></button>
+                </form>
+            </div>
         </div>
     </header>
 
-    <main class="wrap">
+    <main id="main" class="wrap page">
         @yield('content')
     </main>
 
-    <footer class="foot">
-        <div class="wrap foot-inner">
-            <div>© {{ date('Y') }} Học Cờ Tướng — bàn cờ tương tác, diễn giải từng nước.</div>
-            <nav class="foot-links" aria-label="Liên kết chân trang">
-                <a href="{{ route('phase', 'nhap-mon') }}">Nhập môn</a>
-                <a href="{{ route('phase', 'khai-cuoc') }}">Khai cuộc</a>
-                <a href="{{ route('phase', 'trung-cuoc') }}">Trung cuộc</a>
-                <a href="{{ route('phase', 'tan-cuoc') }}">Tàn cuộc</a>
-                <a href="{{ route('phase', 'co-up') }}">Cờ úp</a>
-                <a href="{{ route('sitemap.page') }}">Sơ đồ trang</a>
-            </nav>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="site-footer__grid">
+                <div>
+                    <a href="{{ route('home') }}" class="brand"><span class="brand__logo">車</span><span class="brand__text">Học Cờ Tướng</span></a>
+                    <p class="mt-3 max-w-sm">Học cờ tướng và cờ úp bằng bàn cờ tương tác: bài học có lộ trình, thế cờ mỗi ngày, luyện tập như chơi game. Miễn phí.</p>
+                </div>
+                <div>
+                    <h3>Học</h3>
+                    <ul>
+                        <li><a href="{{ route('path') }}">Lộ trình học</a></li>
+                        @foreach($phaseNav as $slug => [$label])
+                            <li><a href="{{ route('phase', $slug) }}">{{ $label }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div>
+                    <h3>Luyện tập</h3>
+                    <ul>
+                        <li><a href="{{ route('practice.daily') }}">Thế cờ hôm nay</a></li>
+                        <li><a href="{{ route('practice.rush') }}">Thử thách 60 giây</a></li>
+                        <li><a href="{{ route('practice.survival') }}">Chế độ 3 mạng</a></li>
+                        <li><a href="{{ route('practice.hub') }}">Luyện theo chủ đề</a></li>
+                        <li><a href="{{ route('leaderboard') }}">Bảng xếp hạng</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Khám phá</h3>
+                    <ul>
+                        <li><a href="{{ route('posts.index') }}">Tin tức cờ tướng</a></li>
+                        <li><a href="{{ route('search') }}">Tìm kiếm</a></li>
+                        <li><a href="{{ route('sitemap.page') }}">Sơ đồ trang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <span>© {{ date('Y') }} Học Cờ Tướng — bàn cờ tương tác, diễn giải từng nước.</span>
+                <span>Cấp độ & XP chỉ để tạo động lực, không phải đẳng cấp cờ chính thức.</span>
+            </div>
         </div>
     </footer>
 
-    {{-- Guest-gate: thanh trượt góc dưới (KHÔNG che nội dung, không phải modal chặn) — chỉ hiện
-         sau khi khách đã thật sự đọc ≥2 bài học trong phiên, không hiện ở lượt xem đầu từ Google. --}}
+    <nav class="bottom-nav" aria-label="Điều hướng nhanh">
+        <a href="{{ route('home') }}" class="bottom-nav__item {{ request()->routeIs('home') ? 'is-active' : '' }}"><x-icon name="home" /><span>Trang chủ</span></a>
+        <a href="{{ route('path') }}" class="bottom-nav__item {{ $isLearn ? 'is-active' : '' }}"><x-icon name="book" /><span>Học</span></a>
+        <a href="{{ route('practice.hub') }}" class="bottom-nav__item {{ $isPractice ? 'is-active' : '' }}"><x-icon name="puzzle" /><span>Luyện</span></a>
+        <a href="{{ route('leaderboard') }}" class="bottom-nav__item {{ $isBoard ? 'is-active' : '' }}"><x-icon name="trophy" /><span>Xếp hạng</span></a>
+        <a href="{{ $u ? route('account.index') : route('login') }}" class="bottom-nav__item {{ $isMe ? 'is-active' : '' }}">
+            <x-icon name="user" /><span>{{ $u ? 'Tôi' : 'Đăng nhập' }}</span>
+            @if($u && $hud && $hud['streak'] > 0)<span class="bottom-nav__badge" aria-label="{{ $hud['streak'] }} ngày liên tiếp">{{ $hud['streak'] }}</span>@endif
+        </a>
+    </nav>
+
+    <div class="toast-region" data-toasts aria-live="polite" aria-atomic="false"></div>
+
+    {{-- Gợi ý đăng nhập: thanh trượt KHÔNG che nội dung, chỉ hiện từ bài học thứ 2 trong phiên (sau 15s). --}}
     @guest
-    <div id="guest-gate" role="complementary" aria-label="Gợi ý đăng nhập"
-         style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9998;max-width:440px;margin:0 auto;">
-        <div class="card" style="padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 32px rgba(20,18,16,.22);">
-            <div style="font-size:26px;font-family:'XiangqiKai','KaiTi',serif;color:var(--red);line-height:1;flex-shrink:0;">將</div>
-            <div style="flex:1;min-width:0;">
-                <div style="font-weight:800;font-size:14.5px;margin-bottom:2px;">Đăng nhập để học có lộ trình</div>
-                <div class="muted" style="font-size:12.5px;">Lưu tiến độ, đánh dấu bài đã học, gợi ý bài tiếp theo.</div>
+    <div id="guest-gate" class="fixed inset-x-4 z-[70] mx-auto max-w-md bottom-[calc(var(--bottomnav-h)+12px+env(safe-area-inset-bottom))] lg:bottom-4" role="complementary" aria-label="Gợi ý đăng nhập" hidden>
+        <div class="card flex items-center gap-3 p-4 shadow-[var(--shadow-lg)]">
+            <div class="font-piece text-3xl leading-none text-primary shrink-0">將</div>
+            <div class="flex-1 min-w-0">
+                <div class="font-bold text-[14.5px]">Lưu tiến độ & chuỗi ngày học</div>
+                <div class="text-[13px] text-ink-soft">Đăng nhập miễn phí để nhận XP, huy hiệu và gợi ý bài tiếp theo.</div>
             </div>
-            <a href="{{ route('login') }}" class="btn primary" style="flex-shrink:0;white-space:nowrap;">Đăng nhập</a>
-            <button type="button" aria-label="Đóng"
-                    onclick="document.getElementById('guest-gate').style.display='none';sessionStorage.setItem('gg_dismissed','1');"
-                    style="flex-shrink:0;background:none;border:none;font-size:17px;line-height:1;cursor:pointer;color:var(--ink-faint);padding:4px;">✕</button>
+            <a href="{{ route('login') }}" class="btn btn--primary btn--sm shrink-0">Đăng nhập</a>
+            <button type="button" class="icon-btn !w-9 !h-9 !border-0 shrink-0" data-guest-gate-close aria-label="Đóng"><x-icon name="x" /></button>
         </div>
     </div>
-    <script>
-    (function(){
-        if (sessionStorage.getItem('gg_dismissed')) return;
-        // Chỉ đếm lượt xem TRANG BÀI HỌC — không hiện ở lượt xem đầu tiên (khách mới vào từ Google),
-        // chỉ nhắc sau khi đã đọc ít nhất bài thứ 2 trong phiên.
-        var isLesson = location.pathname.indexOf('/bai-hoc/') === 0;
-        var seen = 0;
-        try { seen = parseInt(sessionStorage.getItem('gg_lessons_seen') || '0', 10); } catch (e) {}
-        if (isLesson) {
-            seen += 1;
-            try { sessionStorage.setItem('gg_lessons_seen', String(seen)); } catch (e) {}
-        }
-        if (seen < 2) return;
-        setTimeout(function () {
-            if (sessionStorage.getItem('gg_dismissed')) return;
-            var g = document.getElementById('guest-gate');
-            if (g) g.style.display = 'block';
-        }, 15000);
-    })();
-    </script>
     @endguest
 
-    {{-- Chuyển giao diện: auto (theo HĐH) → sáng → tối → auto. Lưu localStorage. --}}
-    <script>
-    (function () {
-        var mq = window.matchMedia('(prefers-color-scheme: dark)');
-        function stored() { try { return localStorage.getItem('theme'); } catch (e) { return null; } }
-        function effective() { var t = stored(); return t || (mq.matches ? 'dark' : 'light'); }
-        function apply() {
-            var t = stored();
-            if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
-            var m = document.querySelector('meta[name=theme-color]');
-            if (m) m.setAttribute('content', effective() === 'dark' ? '#1e1a15' : '#c8451f');
-            document.querySelectorAll('[data-theme-toggle]').forEach(function (b) { b.setAttribute('aria-pressed', t === 'dark'); });
-        }
-        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var order = ['light', 'dark'];
-                var cur = stored();
-                var next = cur === 'light' ? 'dark' : (cur === 'dark' ? null : (mq.matches ? 'light' : 'dark'));
-                try { next ? localStorage.setItem('theme', next) : localStorage.removeItem('theme'); } catch (e) {}
-                apply();
-            });
-        });
-        mq.addEventListener && mq.addEventListener('change', apply);
-        apply();
-    })();
-    </script>
-
-    <script src="{{ asset('js/xiangqi-rules.js') }}?v={{ @filemtime(public_path('js/xiangqi-rules.js')) }}" defer></script>
-    <script src="{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}" defer></script>
+    @stack('sheets')
     @stack('scripts')
 </body>
 </html>

@@ -63,36 +63,53 @@
 @endpush
 
 @section('content')
+@php
+    $doneIds = $completedIds ?? [];
+    $tot = $lessons->count();
+    $doneN = count($doneIds);
+    $nextUp = $lessons->first(fn ($l) => ! in_array($l->id, $doneIds));
+    $pct = $tot ? (int) round(100 * $doneN / $tot) : 0;
+@endphp
 <nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> ›
-    @if($series->phase)<a href="{{ route('phase', $series->phase) }}">{{ \App\Models\Lesson::PHASES[$series->phase] ?? '' }}</a> ›@endif
+    <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
+    @if($series->phase)<a href="{{ route('phase', $series->phase) }}">{{ \App\Models\Lesson::PHASES[$series->phase] ?? '' }}</a><x-icon name="chev-right" />@endif
     <span>{{ $series->name }}</span>
 </nav>
 
-<section class="section page-head">
-    <h1>{{ $series->name }}</h1>
-    @if($series->description)<p class="sub">{{ $series->description }}</p>@endif
-    <p class="muted mt-3" style="font-size:14px;">{{ $lessons->count() }} bài học @if($series->planned_total) / {{ $series->planned_total }} dự kiến @endif
-        @auth
-            @php $doneN = count($completedIds ?? []); $tot = $lessons->count(); @endphp
-            <span class="series-prog {{ $doneN >= $tot ? 'is-done' : '' }}" style="margin-left:8px;">{{ $doneN >= $tot ? '✓ Đã hoàn thành' : 'Hoàn thành '.$doneN.'/'.$tot }}</span>
-        @endauth
-    </p>
+<section class="card card--pad card--hero grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
+    <div class="min-w-0">
+        <div class="eyebrow"><x-icon name="layers" /> Chương trình · {{ $tot }} bài @if($series->planned_total) / {{ $series->planned_total }} dự kiến @endif</div>
+        <h1 class="page-title mt-1">{{ $series->name }}</h1>
+        @if($series->description)<p class="page-lede">{{ $series->description }}</p>@endif
+        @if($nextUp)
+            <a href="{{ route('lessons.show', $nextUp->slug) }}" class="btn btn--primary btn--lg mt-4">
+                <x-icon name="play" /> {{ $doneN ? 'Học tiếp' : 'Bắt đầu' }}: bài {{ $lessons->search(fn ($l) => $l->id === $nextUp->id) + 1 }}
+            </a>
+        @else
+            <span class="tag tag--done mt-4"><x-icon name="check" /> Bạn đã hoàn thành chương trình này</span>
+        @endif
+    </div>
+    @auth
+        <div class="text-center">
+            <span class="ring" style="--p: {{ $pct }}; --size: 96px; --w: 9px"><span class="!text-xl">{{ $pct }}%</span></span>
+            <div class="text-[13px] font-bold text-ink-soft mt-2">{{ $doneN }}/{{ $tot }} bài đã học</div>
+        </div>
+    @endauth
+</section>
 
-    <div class="lesson-list mt-5">
+<section class="section">
+    <div class="lesson-list">
         @foreach($lessons as $lesson)
-            @php $isDone = in_array($lesson->id, $completedIds ?? []); @endphp
-            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card{{ $isDone ? ' is-done' : '' }}">
-                @if($isDone)
-                    <span class="li-num" style="color:var(--jade);" title="Đã học">✓</span>
-                @else
-                    <span class="li-num">{{ str_pad($lesson->order_in_series ?? $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
-                @endif
+            @php $isDone = in_array($lesson->id, $doneIds); $isNext = $nextUp && $nextUp->id === $lesson->id; @endphp
+            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card {{ $isDone ? 'is-done' : '' }} {{ $isNext ? '!border-primary' : '' }}">
+                <span class="node {{ $isDone ? 'is-done' : ($isNext ? 'is-next' : '') }} !w-10 !h-10 !text-[13px] !animate-none">
+                    @if($isDone)<x-icon name="check" />@else{{ $loop->iteration }}@endif
+                </span>
                 <span>
                     <span class="li-title">{{ $lesson->title }}</span>
-                    <span class="li-sub">{{ $lesson->move_count_label }} · {{ $lesson->level_label }}@if($isDone) · <span style="color:var(--jade);">đã học</span>@endif</span>
+                    <span class="li-sub">{{ $lesson->move_count_label }} · {{ $lesson->level_label }}@if($isNext) · <span class="text-primary-ink font-bold">học tiếp</span>@endif</span>
                 </span>
-                <span class="li-meta">→</span>
+                <span class="li-meta"><x-icon name="chev-right" /></span>
             </a>
         @endforeach
     </div>

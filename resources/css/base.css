@@ -1,0 +1,134 @@
+/* ---- Token màu (một lần cho sáng, một lần cho tối) ---- */
+:root {
+    color-scheme: light;
+    --bg: #f4efe4;            /* giấy dó */
+    --surface: #fffdf8;
+    --surface-2: #f8f2e6;
+    --surface-3: #efe6d4;
+    --ink: #1f1a14;           /* mực */
+    --ink-soft: #5a5244;
+    --ink-faint: #877d6c;
+    --line: #e6decd;
+    --line-strong: #d4c8b1;
+
+    --primary: #c8451f;       /* chu sa */
+    --primary-hover: #a8371a;
+    --primary-ink: #9a3416;   /* chữ đỏ trên nền sáng — tương phản ≥ 4.5:1 */
+    --primary-soft: #f9e5dc;
+    --jade: #2f6b5e;          /* ngọc bích — đúng / hoàn thành */
+    --jade-ink: #24574c;
+    --jade-soft: #dfeee8;
+    --gold: #d99a1e;          /* XP */
+    --gold-ink: #8a5a06;
+    --gold-soft: #fbefd2;
+    --flame: #e8590c;         /* chuỗi ngày */
+    --danger: #b42318;
+    --danger-soft: #fde4e0;
+
+    --shadow-sm: 0 1px 2px rgb(33 29 23 / .06);
+    --shadow: 0 1px 2px rgb(33 29 23 / .05), 0 8px 24px rgb(33 29 23 / .07);
+    --shadow-lg: 0 2px 6px rgb(33 29 23 / .08), 0 24px 48px rgb(33 29 23 / .16);
+    --focus: 0 0 0 3px rgb(200 69 31 / .28);
+    --header-h: 64px;
+    --bottomnav-h: 64px;
+    --maxw: 1200px;
+
+    /* Bàn cờ + quân: CỐ ĐỊNH ở mọi theme (gỗ sáng dễ nhìn, nhất là mobile). */
+    --xq-wood: #e9cf9c;
+    --xq-wood-edge: #dcb97e;
+    --xq-line: #7c5a2c;
+    --xq-disc: #f6ecd6;
+    --xq-red: #c0392b;
+    --xq-black: #24333f;
+    --xq-hl: rgb(200 69 31 / .30);
+    --xq-select: #2563eb;
+    --xq-dot: rgb(47 107 94 / .55);
+
+    /* Tên cũ — board.js / fen-composer.js / nội dung DB còn tham chiếu. */
+    --red: var(--primary);
+    --red-soft: var(--primary-soft);
+    --accent: var(--primary);
+    --accent-ink: var(--primary-ink);
+    --black-pc: #2c4a52;
+    --black-soft: #e2ebea;
+    --highlight: rgb(200 69 31 / .22);
+    --radius: 18px;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #13110e;
+    --surface: #1c1915;
+    --surface-2: #24201b;
+    --surface-3: #2e2922;
+    --ink: #f3ede2;
+    --ink-soft: #c5bba9;
+    --ink-faint: #918775;
+    --line: #332d25;
+    --line-strong: #4a4135;
+
+    --primary: #e5663f;
+    --primary-hover: #f07b56;
+    --primary-ink: #f4a283;
+    --primary-soft: #3b2219;
+    --jade: #5fb39e;
+    --jade-ink: #8fd3c1;
+    --jade-soft: #16291f;
+    --gold: #f2b134;
+    --gold-ink: #f6c766;
+    --gold-soft: #3a2e14;
+    --flame: #ff8a3d;
+    --danger: #f26d5b;
+    --danger-soft: #3c1d18;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
+    --shadow: 0 1px 2px rgb(0 0 0 / .35), 0 8px 24px rgb(0 0 0 / .45);
+    --shadow-lg: 0 2px 6px rgb(0 0 0 / .4), 0 24px 48px rgb(0 0 0 / .6);
+    --focus: 0 0 0 3px rgb(229 102 63 / .35);
+    --black-pc: #7fb3ad;
+    --black-soft: #1c2b2c;
+    --highlight: rgb(229 106 66 / .26);
+}
+
+/* Font quân cờ tự host (subset Noto Serif TC, SIL OFL — public/fonts/README.md). */
+@font-face {
+    font-family: "XiangqiKai";
+    src: url("/fonts/xiangqi-kai.woff2") format("woff2"), url("/fonts/xiangqi-kai.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@layer base {
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html, body { overflow-x: clip; }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, h4, .font-display {
+        font-family: var(--font-display);
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        text-wrap: balance;
+        color: var(--ink);
+    }
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+    a { color: var(--primary-ink); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img { max-width: 100%; height: auto; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
+    ::selection { background: var(--primary-soft); color: var(--ink); }
+    button { font: inherit; color: inherit; }
+    [hidden] { display: none !important; }
+    code { font-size: .9em; background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 1px 5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

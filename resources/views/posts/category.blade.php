@@ -24,48 +24,21 @@
 
 @section('content')
 <nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> ›
-    <a href="{{ route('posts.index') }}">Tin tức</a> ›
+    <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
+    <a href="{{ route('posts.index') }}">Tin tức</a><x-icon name="chev-right" />
     <span>{{ $category->name }}</span>
 </nav>
+<h1 class="page-title">{{ $category->name }}</h1>
+@if($category->description)<p class="page-lede mb-5">{{ $category->description }}</p>@endif
 
-<section class="section page-head">
-    <h1>{{ $category->name }}</h1>
-    @if($category->description)
-        <p class="sub">{{ $category->description }}</p>
-    @endif
+@include('posts._cats', ['current' => $category->id])
 
-    @if($categories->isNotEmpty())
-        <nav class="news-cat-nav mt-3" aria-label="Chuyên mục Tin tức">
-            @php $_catIcons = ['video-huong-dan' => '🎥', 'phan-tich-van-co' => '♟️', 'tin-cong-dong-giai-dau' => '🏆', 'kien-thuc-co-tuong' => '📖']; @endphp
-            @foreach($categories as $c)
-                <a href="{{ route('posts.category', $c->slug) }}" @class(['news-cat-item', 'on' => $c->id === $category->id])>
-                    <span class="nc-icon">{{ $_catIcons[$c->slug] ?? '📰' }}</span>
-                    <span class="nc-name">{{ $c->name }}</span>
-                    <span class="nc-count">{{ $c->posts_count }}</span>
-                </a>
-            @endforeach
-        </nav>
-    @endif
-
-    @if($posts->isEmpty())
-        <div class="notice">Chuyên mục này chưa có bài viết nào.</div>
-    @else
-        <div class="lesson-list">
-            @foreach($posts as $p)
-                <a href="{{ route('posts.show', [$category->slug, $p->slug]) }}" class="lesson-item card has-thumb">
-                    <span class="li-thumb">
-                        <img src="{{ $p->thumbnail ? \Illuminate\Support\Facades\Storage::url($p->thumbnail) : \App\Support\Seo::ogImage() }}" alt="{{ $p->title }}" loading="lazy">
-                    </span>
-                    <span>
-                        <span class="li-title">{{ $p->title }}</span>
-                        <span class="li-sub">{{ $p->published_at?->format('d/m/Y') }} · {{ $p->view_count }} lượt xem</span>
-                    </span>
-                    <span class="li-meta">→</span>
-                </a>
-            @endforeach
-        </div>
-        <div class="mt-5">{{ $posts->links() }}</div>
-    @endif
-</section>
+@if($posts->isEmpty())
+    <div class="notice">Chuyên mục này chưa có bài viết nào.</div>
+@else
+    <div class="news-grid">
+        @foreach($posts as $p) @include('posts._card', ['p' => $p, 'catSlug' => $category->slug]) @endforeach
+    </div>
+    {{ $posts->links() }}
+@endif
 @endsection

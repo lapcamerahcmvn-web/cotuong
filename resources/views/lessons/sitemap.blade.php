@@ -4,14 +4,14 @@
 
 @section('content')
 <nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> › <span>Sơ đồ trang</span>
+    <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" /><span>Sơ đồ trang</span>
 </nav>
 
-<section class="section" style="padding-top:12px;">
-    <h1 style="font-size:clamp(24px,4vw,32px);font-weight:800;margin:0 0 8px;">Sơ đồ trang</h1>
-    <p class="sub" style="max-width:44em;">Toàn bộ chuyên mục và bài học trên Học Cờ Tướng. Bấm để tới trang bạn cần.</p>
+<section>
+    <h1 class="page-title">Sơ đồ trang</h1>
+    <p class="page-lede mb-6">Toàn bộ chuyên mục và bài học trên Học Cờ Tướng. Bấm để tới trang bạn cần.</p>
 
-    <div class="sitemap-sec">
+    <div class="sitemap-sec card card--pad">
         <h2>Chuyên mục chính</h2>
         <div class="sitemap-links">
             <a href="{{ route('home') }}">Trang chủ</a>
@@ -24,9 +24,9 @@
     </div>
 
     @foreach($series as $s)
-        <div class="sitemap-sec">
-            <h2><a href="{{ route('series', $s->slug) }}" style="color:inherit;">{{ $s->name }}</a>
-                <span class="sm-sub" style="font-weight:400;">({{ $s->publishedLessons->count() }} bài)</span></h2>
+        <div class="sitemap-sec card card--pad">
+            <h2><a href="{{ route('series', $s->slug) }}" class="text-ink">{{ $s->name }}</a>
+                <span class="sm-sub">({{ $s->publishedLessons->count() }} bài)</span></h2>
             <div class="sitemap-links">
                 @foreach($s->publishedLessons as $l)
                     <a href="{{ route('lessons.show', $l->slug) }}">{{ $l->title }}</a>

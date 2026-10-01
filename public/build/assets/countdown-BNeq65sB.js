@@ -1,0 +1,1 @@
+function e(){document.querySelectorAll(`[data-countdown]`).forEach(e=>{let t=parseInt(e.dataset.countdown,10)||0,n=()=>{e.textContent=[Math.floor(t/3600),Math.floor(t%3600/60),t%60].map(e=>String(e).padStart(2,`0`)).join(`:`),t>0&&t--};n(),setInterval(n,1e3)})}export{e as init};

@@ -1,0 +1,46 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DyPjoovB.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BtPloHWk.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/lesson.js",
+      "resources/js/practice.js",
+      "resources/js/countdown.js"
+    ]
+  },
+  "resources/js/countdown.js": {
+    "file": "assets/countdown-BNeq65sB.js",
+    "name": "countdown",
+    "src": "resources/js/countdown.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/lesson.js": {
+    "file": "assets/lesson-B5AFyP6N.js",
+    "name": "lesson",
+    "src": "resources/js/lesson.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/practice.js": {
+    "file": "assets/practice-CBhQaeai.js",
+    "name": "practice",
+    "src": "resources/js/practice.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  }
+}

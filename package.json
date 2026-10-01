@@ -3,7 +3,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && node tools/build-keep.mjs",
+        "build:prune": "node tools/build-keep.mjs --prune",
         "dev": "vite"
     },
     "devDependencies": {

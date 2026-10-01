@@ -5,52 +5,54 @@
 @section('robots', 'noindex, follow')
 
 @section('content')
-<section class="section" style="padding-top:20px;">
-    <h1 style="font-size:clamp(24px,4vw,32px);font-weight:800;margin:0 0 14px;">Tìm kiếm bài học</h1>
-
-    <form method="GET" action="{{ route('search') }}" style="display:flex;gap:10px;max-width:560px;margin-bottom:26px;">
-        <input class="input search-input" type="search" name="q" value="{{ $q }}" placeholder="VD: Bình Phong Mã, Pháo Đầu, tàn cuộc…" autofocus
-               style="flex:1;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:11px 14px;font-size:15px;">
-        <button class="btn primary" type="submit">Tìm</button>
+<div class="max-w-4xl">
+    <h1 class="page-title">Tìm kiếm bài học</h1>
+    <form method="GET" action="{{ route('search') }}" class="flex gap-2 max-w-2xl mt-4 mb-6" role="search">
+        <input class="input !min-h-[52px] !text-[16px]" type="search" name="q" value="{{ $q }}" placeholder="VD: Bình Phong Mã, Pháo Đầu, tàn cuộc…" autofocus aria-label="Từ khoá">
+        <button class="btn btn--primary btn--lg" type="submit"><x-icon name="search" /> Tìm</button>
     </form>
 
     @if($q && mb_strlen($q) < 2)
         <div class="notice">Nhập ít nhất 2 ký tự để tìm.</div>
     @elseif($q)
         @if($lessons->isEmpty() && $series->isEmpty())
-            <div class="notice">Không tìm thấy kết quả cho “{{ $q }}”. Thử từ khóa khác như tên khai cuộc hoặc quân cờ.</div>
+            <div class="empty card"><div class="empty__glyph">?</div><h3>Không tìm thấy “{{ $q }}”</h3><p>Thử tên khai cuộc, quân cờ hoặc thế sát khác.</p></div>
         @else
             @if($series->isNotEmpty())
-                <div style="font-weight:700;margin:0 0 10px;">Chương trình ({{ $series->count() }})</div>
-                <div class="lesson-list" style="margin-bottom:26px;">
+                <h2 class="text-lg font-extrabold mb-3">Chương trình <span class="text-ink-faint font-semibold">({{ $series->count() }})</span></h2>
+                <div class="lesson-list mb-8">
                     @foreach($series as $s)
                         <a href="{{ route('series', $s->slug) }}" class="lesson-item card">
-                            <span class="li-num">課</span>
+                            <span class="li-num font-piece">課</span>
                             <span><span class="li-title">{{ $s->name }}</span><span class="li-sub">{{ $s->published_lessons_count }} bài</span></span>
-                            <span class="li-meta">→</span>
+                            <span class="li-meta"><x-icon name="chev-right" /></span>
                         </a>
                     @endforeach
                 </div>
             @endif
 
             @if($lessons->isNotEmpty())
-                <div style="font-weight:700;margin:0 0 10px;">Bài học ({{ $lessons->count() }})</div>
+                <h2 class="text-lg font-extrabold mb-3">Bài học <span class="text-ink-faint font-semibold">({{ $lessons->count() }})</span></h2>
                 <div class="lesson-list">
                     @foreach($lessons as $lesson)
                         <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card">
-                            <span class="li-num">{{ $lesson->game_mode === 'co-up' ? '揭' : '棋' }}</span>
+                            <span class="li-num font-piece">{{ $lesson->game_mode === 'co-up' ? '揭' : '棋' }}</span>
                             <span>
                                 <span class="li-title">{{ $lesson->title }}</span>
                                 <span class="li-sub">{{ $lesson->phase_label }} · {{ $lesson->move_count_label }} · {{ $lesson->level_label }}</span>
                             </span>
-                            <span class="li-meta"><span class="tag count">{{ $lesson->move_count_badge }}</span></span>
+                            <span class="li-meta"><span class="tag tag--level-{{ $lesson->level }}">{{ $lesson->level_label }}</span></span>
                         </a>
                     @endforeach
                 </div>
             @endif
         @endif
     @else
-        <div class="notice">Nhập từ khóa để tìm bài học theo tên thế trận, khai cuộc hay chiến thuật.</div>
+        <div class="grid gap-3 sm:grid-cols-3">
+            @foreach(['Pháo đầu', 'Bình phong mã', 'Song xe', 'Mã hậu pháo', 'Tàn cuộc', 'Cờ úp'] as $kw)
+                <a href="{{ route('search', ['q' => $kw]) }}" class="chip justify-center !h-12">{{ $kw }}</a>
+            @endforeach
+        </div>
     @endif
-</section>
+</div>
 @endsection

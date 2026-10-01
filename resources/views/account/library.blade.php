@@ -4,17 +4,17 @@
 
 @section('content')
 <nav class="crumbs" aria-label="breadcrumb">
-    <a href="{{ route('home') }}">Trang chủ</a> ›
-    <a href="{{ route('account.index') }}">Tài khoản</a> ›
+    <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
+    <a href="{{ route('account.index') }}">Hồ sơ</a><x-icon name="chev-right" />
     <span>Thư viện của tôi</span>
 </nav>
 
-<section class="section page-head">
-    <h1>Thư viện của tôi</h1>
-    <p class="sub">Thế cờ bạn đã sao chép từ bài học, hoặc tự soạn — lưu lại để xem hay chia sẻ sau.</p>
+<section data-needs-board>
+    <h1 class="page-title">Thư viện của tôi</h1>
+    <p class="page-lede">Thế cờ bạn đã sao chép từ bài học, hoặc tự soạn — lưu lại để xem hay chia sẻ sau.</p>
 
     @if(session('success'))
-        <div class="notice" style="border-color:var(--jade);color:var(--jade);margin-top:16px;">{{ session('success') }}</div>
+        <div class="alert alert--ok mt-4"><x-icon name="check-circle" />{{ session('success') }}</div>
     @endif
 
     <details class="card mt-5 fc-panel" data-fc-panel>
@@ -106,7 +106,7 @@
                                 <form method="POST" action="{{ route('library.destroy', $item) }}" onsubmit="return confirm('Xoá thế cờ này khỏi thư viện?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn--ghost" style="color:var(--red);">🗑 Xoá khỏi thư viện</button>
+                                    <button type="submit" class="btn btn--ghost" style="color:var(--red);">Xoá khỏi thư viện</button>
                                 </form>
                             </div>
                         </div>
@@ -119,12 +119,12 @@
 </section>
 
 @push('scripts')
-<script src="{{ asset('js/fen-composer.js') }}?v={{ @filemtime(public_path('js/fen-composer.js')) }}" defer></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('[data-fen-thumb]').forEach(function (el) {
-        if (window.XiangqiBoard) el.innerHTML = window.XiangqiBoard.render(el.getAttribute('data-fen-thumb'));
-    });
+// fen-composer.js cần XiangqiRules + XiangqiBoard có sẵn lúc nạp → chờ app.js nạp bàn cờ xong.
+document.addEventListener('xq:board-ready', function () {
+    var s = document.createElement('script');
+    s.src = "{{ asset('js/fen-composer.js') }}?v={{ @filemtime(public_path('js/fen-composer.js')) }}";
+    document.head.appendChild(s);
 });
 </script>
 @endpush

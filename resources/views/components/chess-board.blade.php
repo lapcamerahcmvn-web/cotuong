@@ -7,6 +7,7 @@
     'mode' => 'view',    // 'view' (mặc định) | 'puzzle' (giải đố — tự đi quân, máy đáp trả)
     'puzzleSide' => null, // 'do' | 'den' — bên người dùng tự giải (bắt buộc khi mode=puzzle)
     'sourceLessonId' => null, // id bài học (nếu có) — gắn kèm khi lưu FEN vào thư viện cá nhân
+    'compact' => false,  // ẩn hàng nút phụ (dùng cho bàn cờ minh hoạ nhỏ ở trang chủ)
 ])
 
 @php
@@ -36,18 +37,21 @@
             <div class="board-stage">
                 <div class="board-bar">
                     @if(!$isStatic)
-                        <span class="step-pill" data-xq-pill>{{ $isPuzzle ? 'Đang giải…' : 'Thế mở' }}</span>
+                        <span class="step-pill" data-xq-pill>{{ $isPuzzle ? 'Đang giải…' : 'Thế mở · '.$payload->count().' nước' }}</span>
                     @else
-                        <span></span>
+                        <span class="step-pill">Thế cờ minh hoạ</span>
                     @endif
                     <span class="board-fab-group" @if($sourceLessonId) data-xq-source-lesson="{{ $sourceLessonId }}" @endif>
                         @if(!$isStatic)
-                            <button type="button" class="board-fab" data-xq-sound title="Bật/tắt âm thanh nước đi">🔊</button>
+                            <button type="button" class="board-fab" data-xq-sound title="Bật/tắt âm thanh">🔊</button>
                         @endif
-                        <button type="button" class="board-fab" data-xq-copyfen title="Sao chép FEN thế cờ hiện tại">📋</button>
-                        @auth
-                            <button type="button" class="board-fab" data-xq-savefen title="Lưu thế cờ này vào thư viện">🔖</button>
-                        @endauth
+                        <button type="button" class="board-fab" data-xq-menu-toggle aria-haspopup="true" aria-expanded="false" title="Thêm thao tác" aria-label="Thêm thao tác">⋯</button>
+                        <div class="board-menu" data-xq-menu hidden>
+                            <button type="button" data-xq-copyfen data-xq-icon="copy" data-xq-label="Sao chép FEN">📋 Sao chép FEN</button>
+                            @auth
+                                <button type="button" data-xq-savefen data-xq-icon="bookmark" data-xq-label="Lưu vào thư viện">🔖 Lưu vào thư viện</button>
+                            @endauth
+                        </div>
                         <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
                     </span>
                 </div>
@@ -56,29 +60,33 @@
 
             @if($isPuzzle)
                 <div class="controls">
-                    <button type="button" class="btn" data-xq-reset aria-label="Làm lại từ đầu">↺ Làm lại</button>
-                    <button type="button" class="btn" data-xq-solution aria-label="Xem lời giải">Xem lời giải</button>
+                    <button type="button" class="btn btn--ghost" data-xq-hint data-xq-icon="bulb" data-xq-label="Gợi ý">Gợi ý</button>
+                    <button type="button" class="btn" data-xq-reset data-xq-icon="reset" data-xq-label="Làm lại" aria-label="Làm lại từ đầu">↺ Làm lại</button>
+                    <button type="button" class="btn" data-xq-solution data-xq-icon="eye" data-xq-label="Lời giải" aria-label="Xem lời giải">Xem lời giải</button>
                 </div>
             @elseif(!$isStatic)
+                <div class="progress progress--sm mt-3" aria-hidden="true"><div class="progress__bar" data-xq-progress style="width:0"></div></div>
                 <div class="controls controls--main">
-                    <button type="button" class="btn" data-xq-prev aria-label="Lùi một nước">‹ Lùi</button>
-                    <button type="button" class="btn primary" data-xq-next aria-label="Tiến một nước">Tiến ›</button>
+                    <button type="button" class="btn btn--icon" data-xq-first data-xq-icon="first" aria-label="Về thế mở">⏮</button>
+                    <button type="button" class="btn" data-xq-prev data-xq-icon="chev-left" data-xq-label="Lùi" aria-label="Lùi một nước">‹ Lùi</button>
+                    <button type="button" class="btn primary" data-xq-next aria-label="Tiến một nước"><span>Tiến</span> ›</button>
+                    <button type="button" class="btn btn--icon" data-xq-last data-xq-icon="last" aria-label="Đến nước cuối">⏭</button>
                 </div>
+                @unless($compact)
                 <div class="controls controls--sub">
-                    <button type="button" class="btn btn--ghost" data-xq-first aria-label="Về thế mở">⏮ Đầu</button>
-                    <button type="button" class="btn btn--ghost" data-xq-last aria-label="Đến nước cuối">Cuối ⏭</button>
-                    <button type="button" class="btn btn--ghost" data-xq-flip aria-label="Lật bàn cờ">⟲ Lật bàn</button>
+                    <button type="button" class="btn btn--ghost" data-xq-flip data-xq-icon="flip" data-xq-label="Lật bàn" aria-label="Lật bàn cờ">⟲ Lật bàn</button>
                     <button type="button" class="btn btn--ghost" data-xq-autoplay aria-label="Tự chạy các nước">▶ Tự chạy</button>
                 </div>
+                @endunless
             @endif
 
             @if($isPuzzle)
-            <div class="caption-box">
+            <div class="caption-box" aria-live="polite">
                 <div class="cap-step" data-xq-capstep>Đang giải…</div>
-                <div class="cap-text" data-xq-captext>Bấm quân của bạn rồi bấm ô muốn đi.</div>
+                <div class="cap-text" data-xq-captext>Bấm hoặc kéo quân của bạn để đi.</div>
             </div>
             @elseif(!$isStatic)
-            <div class="caption-box">
+            <div class="caption-box" aria-live="polite">
                 <div class="cap-step" data-xq-capstep>Thế cờ mở đầu</div>
                 <div class="cap-text" data-xq-captext>Bấm “Tiến”, dùng phím ←/→ hoặc vuốt trên bàn cờ.</div>
             </div>
@@ -91,10 +99,9 @@
 
     @if($hasList)
         <div class="side-card card">
-            <div class="side-head"><span>Diễn giải từng nước</span><span class="muted" style="font-weight:600;">{{ $payload->count() }} nước</span></div>
+            <div class="side-head"><span>Diễn giải từng nước</span><span class="muted">{{ $payload->count() }} nước</span></div>
             {{-- Render sẵn trong HTML (không đợi JS) để Google/trình đọc thấy được lời bình từng
-                 nước ngay từ view-source. board.js sẽ xoá và dựng lại y hệt (kèm sự kiện bấm) khi
-                 chạy — xem initBoard()/buildList() trong public/js/board.js. --}}
+                 nước ngay từ view-source. board.js sẽ xoá và dựng lại y hệt (kèm sự kiện bấm) khi chạy. --}}
             <div class="move-list move-list--full" data-xq-list>
                 @foreach($payload as $i => $step)
                     @php $_side = $step['side'] === 'den' ? 'Đen' : 'Đỏ'; @endphp
@@ -103,7 +110,7 @@
                         <span class="mv">
                             <span class="side-dot {{ $step['side'] === 'den' ? 'den' : 'do' }}"></span>
                             <span class="mv-label">{{ $step['wxf'] ?: $_side }}</span>
-                            @if($step['caption'])<span class="cap-inline">{{ $step['caption'] }}</span>@endif
+                            @if($step['caption'] && trim($step['caption']) !== trim((string) $step['wxf']))<span class="cap-inline">{{ $step['caption'] }}</span>@endif
                         </span>
                     </button>
                 @endforeach
