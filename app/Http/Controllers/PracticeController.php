@@ -33,6 +33,7 @@ class PracticeController extends Controller
             'skills' => $skills,
             'total' => Puzzle::published()->count(),
             'dueCount' => $u ? $this->puzzles->dueCount($u) : 0,
+            'mistakesDue' => $u ? app(\App\Services\MistakeService::class)->dueCount($u) : 0,
             'weak' => $u ? $this->puzzles->weakSkills($u) : [],
             'secondsLeft' => Vn::secondsToMidnight(),
         ]);

@@ -48,7 +48,7 @@ class WeeklyService
     public function quests(?string $week = null): array
     {
         $week ??= $this->week();
-        $pool = config('weekly.quests');
+        $pool = array_map(fn ($items) => array_filter($items, fn ($q) => ($q['since'] ?? '0000') <= $week), config('weekly.quests'));
         $seed = crc32('weekly:' . $week);
         $picked = [];
         $metrics = [];
@@ -100,6 +100,7 @@ class WeeklyService
             'xp' => $days()->sum('xp'),
             'puzzles' => $days()->sum('puzzles'),
             'daily' => XpTransaction::where('user_id', $u->id)->where('reason', 'daily_puzzle')->whereBetween('local_date', [$from, $to])->count(),
+            'mistakes' => XpTransaction::where('user_id', $u->id)->where('reason', 'mistake_fix')->whereBetween('local_date', [$from, $to])->count(),
             'rush', 'survival' => PracticeSession::where('user_id', $u->id)->where('mode', $metric)
                 ->whereBetween('finished_at', [$utcFrom, $utcTo])->max('score') ?? 0,
             'bot_win' => $botWins()->count(),

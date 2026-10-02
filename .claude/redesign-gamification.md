@@ -236,3 +236,15 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - UI: khung căn lưới vừa 72% chiều cao màn hình (ảnh dọc điện thoại thấy đủ 4 góc), **kính lúp** khi kéo chấm,
   hướng dẫn "góc bị quân che → đặt chấm vào tâm quân". Ảnh mẫu mới `ban-that.jpg`, `co-up-that.jpg`.
 - Đo: `tools/scan-bench` — ván thật 90.9%, cờ úp thật 87.4% (trước ~0%), ảnh màn hình giữ 98.9%.
+
+## Đợt 11 (02/10/2026) — "Sai lầm của tôi": học từ sai lầm trong ván của chính mình
+- Bảng `game_mistakes` (migration 2026_10_06_100001): mỗi nước Sai lầm / Sai lầm nghiêm trọng CỦA NGƯỜI CHƠI tìm ra khi
+  "Phân tích ván" → thế cờ trước nước sai, nước đã đi, nước máy đề xuất, `alts` (điểm các nước ứng viên — chỉ ở server),
+  hộp Leitner 0..4, `due_on` (chuỗi Y-m-d, không cast date). `MistakeService::syncFromRecord()` gọi khi lưu phân tích
+  (idempotent, unique record+ply) + đồng bộ bù 30 ván đã phân tích gần nhất khi mở trang.
+- `/luyen-tap/sai-lam-cua-toi` (auth, `MistakeController`, `resources/js/mistakes.js`): 20 thế đến hạn, bàn cờ cho bên
+  phải đi, POST nước → server chấm: đạt nếu điểm ≥ điểm tốt nhất − 60 (0.6 Tốt); đúng → hộp+1, gặp lại sau 1/3/7/21 ngày,
+  hộp 4 = đã thuộc; sai / "Xem đáp án" → hộp 0, ôn lại ngày mai. Đúng +8 XP (`mistake_fix`, tính vào trần XP thế cờ/ngày).
+- Lối vào: thẻ ở `/luyen-tap`, nút "Luyện lại N sai lầm của bạn" + toast ngay sau khi phân tích xong.
+- Huy hiệu `mistakes-10/50`; nhiệm vụ tuần `mistakes-5` với `since: 2026-10-12` — config weekly hỗ trợ `since` để thêm
+  nhiệm vụ mới KHÔNG làm đổi bộ nhiệm vụ của tuần đang diễn ra. Test: `tests/Feature/MistakeTest.php`.

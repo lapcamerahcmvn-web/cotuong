@@ -22,6 +22,7 @@ use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MistakeController;
 use App\Http\Controllers\PlayController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PracticeController;
@@ -183,6 +184,8 @@ Route::prefix('luyen-tap')->name('practice.')->group(function () {
     Route::get('/kiem-tra', [PracticeController::class, 'placement'])->name('placement');
     Route::get('/chu-de/{skill}', [PracticeController::class, 'topic'])->name('topic');
     Route::get('/loi-sai', [PracticeController::class, 'review'])->name('review')->middleware('auth');
+    Route::get('/sai-lam-cua-toi', [MistakeController::class, 'index'])->name('mistakes')->middleware('auth');
+    Route::post('/sai-lam-cua-toi/{mistake}', [MistakeController::class, 'answer'])->name('mistakes.answer')->middleware(['auth', 'throttle:60,1,mistake']);
     Route::get('/the-co/tiep', [PracticeController::class, 'next'])->name('next')->middleware('throttle:90,1,pz-next');
     Route::post('/the-co/{puzzle}/thu', [PracticeController::class, 'attempt'])->name('attempt')->middleware('throttle:60,1,pz-attempt');
     Route::post('/phien', [PracticeController::class, 'sessionStart'])->name('session.start')->middleware('throttle:20,1,pz-session');

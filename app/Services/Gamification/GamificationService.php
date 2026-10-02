@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 class GamificationService
 {
     /** Lý do tính vào trần XP thế cờ mỗi ngày. */
-    private const PUZZLE_REASONS = ['puzzle_solve', 'puzzle_repeat', 'review_solve', 'rush_run', 'survival_run'];
+    private const PUZZLE_REASONS = ['puzzle_solve', 'puzzle_repeat', 'review_solve', 'rush_run', 'survival_run', 'mistake_fix'];
 
     public function __construct(
         private StreakService $streaks,

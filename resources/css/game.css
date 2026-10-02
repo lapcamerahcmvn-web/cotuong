@@ -323,3 +323,6 @@
     .scan .board-bar { flex-wrap: wrap; gap: 6px; }
     .scan .board-bar .step-pill { white-space: normal; }
 }
+@layer components {
+    [data-mk-info] svg, [data-mk-feedback] svg { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; }
+}

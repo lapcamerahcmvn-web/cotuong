@@ -2,6 +2,7 @@
 
 // Thử thách tuần + giải thưởng bảng xếp hạng tuần. Tuần = thứ 2 → chủ nhật theo giờ VN.
 // Mỗi tuần chọn cố định (theo ngày đầu tuần) 1 nhiệm vụ mỗi nhóm + 1 nhiệm vụ thêm → mọi người cùng thử thách.
+// since: tuần bắt đầu có nhiệm vụ này (thêm nhiệm vụ mới KHÔNG được làm đổi bộ nhiệm vụ của tuần đang diễn ra).
 // metric: lessons | days | xp | puzzles | daily | rush | survival | bot_win | bot_win_l3 | pvp | coup | games | review
 return [
     'quests' => [
@@ -18,6 +19,7 @@ return [
             'puzzles-50' => ['title' => 'Giải 50 thế cờ', 'desc' => 'Giải đúng 50 thế cờ ở bất kỳ chế độ luyện tập nào', 'metric' => 'puzzles', 'target' => 50, 'xp' => 120, 'icon' => 'puzzle'],
             'daily-3'    => ['title' => 'Thế cờ hôm nay ×3', 'desc' => 'Giải "Thế cờ hôm nay" trong 3 ngày', 'metric' => 'daily', 'target' => 3, 'xp' => 80, 'icon' => 'calendar'],
             'rush-10'    => ['title' => 'Tia chớp 60 giây', 'desc' => 'Đạt 10 điểm trong một lượt chơi 60 giây', 'metric' => 'rush', 'target' => 10, 'xp' => 90, 'icon' => 'zap'],
+            'mistakes-5' => ['title' => 'Sửa 5 sai lầm', 'desc' => 'Giải đúng 5 thế ở "Sai lầm của tôi" (từ các ván đã phân tích)', 'metric' => 'mistakes', 'target' => 5, 'xp' => 90, 'icon' => 'repeat', 'since' => '2026-10-12'],
             'survival-8' => ['title' => 'Sống sót 3 mạng', 'desc' => 'Giải 8 thế liên tiếp trong một lượt 3 mạng', 'metric' => 'survival', 'target' => 8, 'xp' => 90, 'icon' => 'heart'],
         ],
         'choi' => [

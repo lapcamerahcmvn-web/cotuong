@@ -334,7 +334,15 @@ function setup(root) {
         running = false;
         renderList(); renderSummary(); go(idx);
         track('review_done', { plies: n, secs: Math.round((Date.now() - t0) / 1000) });
-        if (cfg.saveUrl) postJson(cfg.saveUrl, { analysis: an }).catch(() => toast('Không lưu được kết quả phân tích — sẽ cần phân tích lại lần sau.', { kind: 'err' }));
+        if (cfg.saveUrl) {
+            postJson(cfg.saveUrl, { analysis: an }).then((res) => {
+                if (res?.mistakes) {
+                    const box = $('[data-rv-summary]');
+                    box.insertAdjacentHTML('beforeend', `<a class="btn btn--primary w-full mt-3" href="${escapeHtml(res.mistakesUrl)}">${icon('target')} Luyện lại ${res.mistakes} sai lầm của bạn</a>`);
+                    toast(`Đã thêm ${res.mistakes} thế vào "Sai lầm của tôi" để luyện lại.`, { kind: 'xp', iconName: 'target', timeout: 4500 });
+                }
+            }).catch(() => toast('Không lưu được kết quả phân tích — sẽ cần phân tích lại lần sau.', { kind: 'err' }));
+        }
     }
 
     function build(res) {

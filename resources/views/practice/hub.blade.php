@@ -46,6 +46,13 @@
             <span class="mode-card__meta">{{ $dueCount ? $dueCount . ' thế cần ôn hôm nay' : 'Chưa có thế cần ôn' }}</span></span>
     </a>
     @endif
+    @if($u)
+    <a href="{{ route('practice.mistakes') }}" class="card mode-card">
+        <span class="mode-card__icon tone-primary"><x-icon name="target" /></span>
+        <span><h3>Sai lầm của tôi</h3><p>Luyện lại đúng các nước bạn từng đi sai trong ván của chính mình (từ "Phân tích ván").</p>
+            <span class="mode-card__meta">{{ $mistakesDue ? $mistakesDue . ' thế cần ôn hôm nay' : 'Phân tích 1 ván để có thế luyện' }}</span></span>
+    </a>
+    @endif
     <a href="{{ route('play.bot') }}" class="card mode-card">
         <span class="mode-card__icon tone-ink"><x-icon name="shield" /></span>
         <span><h3>Chơi với máy</h3><p>Áp dụng thế cờ vào ván thật — 4 cấp độ, có gợi ý.</p></span>

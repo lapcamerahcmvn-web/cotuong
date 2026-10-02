@@ -35,6 +35,8 @@ return [
     'coup-pvp'       => ['name' => 'Úp mà thắng', 'desc' => 'Thắng bạn bè ván cờ úp', 'icon' => 'layers', 'type' => 'coup_pvp', 'value' => 1],
     'pvp-1'          => ['name' => 'Chiến thắng đầu tay', 'desc' => 'Thắng ván đấu bạn đầu tiên', 'icon' => 'sword', 'type' => 'pvp', 'value' => 1],
     'pvp-10'         => ['name' => 'Kỳ thủ giao lưu', 'desc' => 'Chơi 10 ván đấu bạn', 'icon' => 'user', 'type' => 'pvp_games', 'value' => 10],
+    'mistakes-10'    => ['name' => 'Biết sai biết sửa', 'desc' => 'Giải đúng 10 thế từ sai lầm trong ván của chính mình', 'icon' => 'repeat', 'type' => 'mistakes', 'value' => 10],
+    'mistakes-50'    => ['name' => 'Không vấp lại hòn đá cũ', 'desc' => 'Giải đúng 50 thế từ sai lầm của chính mình', 'icon' => 'repeat', 'type' => 'mistakes', 'value' => 50],
     'weekly-1'       => ['name' => 'Mở rương đầu tiên', 'desc' => 'Hoàn thành mọi thử thách trong 1 tuần', 'icon' => 'gift', 'type' => 'weekly_chest', 'value' => 1],
     'weekly-4'       => ['name' => 'Thợ săn thử thách', 'desc' => 'Mở rương thử thách tuần 4 lần', 'icon' => 'gift', 'type' => 'weekly_chest', 'value' => 4],
     'weekly-top10'   => ['name' => 'Góp mặt Top 10', 'desc' => 'Lọt top 10 bảng xếp hạng tuần', 'icon' => 'medal', 'type' => 'weekly_rank', 'value' => 10],

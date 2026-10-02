@@ -56,8 +56,9 @@ class HistoryController extends Controller
         $clean = $svc->cleanAnalysis($data['analysis'], (int) $record->plies);
         abort_if($clean === null, 422, 'Dữ liệu phân tích không khớp ván.');
         $record->update(['analysis' => $clean]);
+        $added = app(\App\Services\MistakeService::class)->syncFromRecord($record);
 
-        return response()->json(['ok' => true, 'accuracy' => $record->accuracy()]);
+        return response()->json(['ok' => true, 'accuracy' => $record->accuracy(), 'mistakes' => $added, 'mistakesUrl' => route('practice.mistakes')]);
     }
 
     /** Bật / tắt link chia sẻ công khai. */

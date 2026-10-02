@@ -11,6 +11,7 @@ return [
         'puzzle_repeat'    => 5,    // giải lại thế đã giải (mỗi ngày 1 lần/thế)
         'daily_puzzle'     => 50,
         'review_solve'     => 5,
+        'mistake_fix'      => 8,    // giải đúng lại 1 thế từ sai lầm trong ván của chính mình
         'rush_per'         => 2,
         'rush_cap'         => 60,
         'survival_per'     => 3,
