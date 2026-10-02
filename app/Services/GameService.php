@@ -6,6 +6,7 @@ use App\Models\Game;
 use App\Models\User;
 use App\Models\XpTransaction;
 use App\Services\Gamification\GamificationService;
+use App\Services\GameRecordService;
 use App\Support\Vn;
 use App\Support\Xiangqi\Rules;
 use Illuminate\Support\Facades\DB;
@@ -239,10 +240,12 @@ class GameService
         $g->reason = $reason;
         $g->draw_offer = null;
         $g->version++;
+        $gid = $g->id;
+        // Lưu lịch sử ván cho cả 2 người (sau commit để đọc đúng trạng thái cuối).
+        DB::afterCommit(fn () => app(GameRecordService::class)->storePvp(Game::with(['red', 'black'])->find($gid)));
         if (count($g->moves ?? []) < 10) {
             return;   // ván quá ngắn không tính XP (chặn tạo ván ảo để cày)
         }
-        $gid = $g->id;
         DB::afterCommit(function () use ($gid, $result) {
             $g = Game::find($gid);
             foreach (['do' => $g->red_user_id, 'den' => $g->black_user_id] as $side => $uid) {

@@ -379,7 +379,7 @@
         if (!ic) return;
         var nh = node.hidden.slice(); nh[ic.to] = null; nh[ic.from] = null;
         var n2 = {
-          from: ic.from, to: ic.to, reveal: null, iccs: s.iccs, wxf: s.wxf, side: s.side,
+          from: ic.from, to: ic.to, reveal: s.reveal || null, iccs: s.iccs, wxf: s.wxf, side: s.side,
           caption: s.caption || '', board: Rules.loadFen(s.fen), hidden: nh, depth: node.depth + 1, children: [], parent: node
         };
         node.children.push(n2);

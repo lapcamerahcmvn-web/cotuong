@@ -83,6 +83,12 @@
                 @endforeach
             </section>
         @endif
+        @if($u)
+            <a href="{{ route('history.index') }}" class="card mode-card">
+                <span class="mode-card__icon tone-gold"><x-icon name="clock" /></span>
+                <span><h3>Lịch sử ván đấu</h3><p>Xem lại từng nước các ván đã chơi, chép vào thư viện để sửa và thêm biến.</p></span>
+            </a>
+        @endif
     </aside>
 </div>
 @endsection

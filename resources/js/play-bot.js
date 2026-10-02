@@ -227,6 +227,8 @@ function setup(root) {
         if (window.__xq?.auth) {
             res = await postJson('/choi-voi-may/ket-qua', {
                 level: g.level, result: outcome, plies: g.moves.length, hints: g.hints, undos: g.undos, ms: Date.now() - g.t0, variant: g.variant,
+                side: g.human, reason: String(r.reason || '').slice(0, 60), moves: g.moves,
+                reveals: coup() ? view.reveals : [], captured: coup() ? view.captured : [],
             }).catch(() => null);
         }
         const kind = coup() ? 'cờ úp' : 'cờ tướng';
@@ -243,8 +245,10 @@ function setup(root) {
             <div class="celebrate__actions mt-3">
                 ${canUp ? `<button type="button" class="btn btn--primary btn--lg" data-again="${g.level + 1}">${icon('zap')} Thử cấp ${escapeHtml(LEVELS[g.level + 1].name)}</button>` : ''}
                 <button type="button" class="btn ${canUp ? '' : 'btn--primary'} btn--lg" data-again="${g.level}">${icon('repeat')} Chơi lại</button>
+                ${res?.record_url ? `<a class="btn btn--ghost" href="${escapeHtml(res.record_url)}">${icon('eye')} Xem lại ván · thêm biến</a>` : ''}
                 <button type="button" class="btn btn--ghost" data-share>${icon('share')} Chia sẻ kết quả</button>
-            </div></div>`);
+            </div>
+            ${!window.__xq?.auth ? '<p class="text-[13px] text-ink-soft mt-2">Đăng nhập để tự lưu lịch sử ván đấu và xem lại.</p>' : ''}</div>`);
         if (outcome === 'win') confetti(dlg.querySelector('.celebrate'));
         dlg.querySelectorAll('[data-again]').forEach((b) => b.addEventListener('click', () => {
             dlg.close();

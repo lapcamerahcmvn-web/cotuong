@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\LearningPathController;
@@ -177,6 +178,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan/cai-dat', [AccountController::class, 'settings'])->name('account.settings');
     Route::post('/tai-khoan/cai-dat', [AccountController::class, 'saveSettings'])->name('account.settings.save');
     Route::post('/tai-khoan/bat-dau', [AccountController::class, 'onboarding'])->name('account.onboarding');
+    Route::get('/tai-khoan/lich-su-van-dau', [HistoryController::class, 'index'])->name('history.index');
+    Route::get('/tai-khoan/lich-su-van-dau/{record}', [HistoryController::class, 'show'])->name('history.show');
+    Route::post('/tai-khoan/lich-su-van-dau/{record}/thu-vien', [HistoryController::class, 'toLibrary'])->name('history.library')->middleware('throttle:20,1,hist-lib');
+    Route::delete('/tai-khoan/lich-su-van-dau/{record}', [HistoryController::class, 'destroy'])->name('history.destroy');
     Route::post('/tien-do/gop', [ProgressController::class, 'merge'])->name('progress.merge')->middleware('throttle:5,1,merge');
 });
 

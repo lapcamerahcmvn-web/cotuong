@@ -235,6 +235,44 @@ final class Rules
         return ! self::hasLegalMove($b, $red);
     }
 
+    /**
+     * Ký hiệu nước đi kiểu Việt ("Pháo 2 bình 5", "Xe trước tiến 1") — bản PHP của
+     * XiangqiRules.notation (public/js/xiangqi-rules.js). Quân úp: ghi theo binh chủng ô xuất phát.
+     */
+    public static function notation(array $b, int $from, int $to): string
+    {
+        $p = $b[$from] ?? null;
+        if ($p === null) return '';
+        if ($p === 'X' || $p === 'x') {
+            $role = self::role($from) ?? 'P';
+            $b[$from] = $p === 'X' ? $role : strtolower($role);
+            $p = $b[$from];
+        }
+        $names = ['R' => 'Xe', 'N' => 'Mã', 'B' => 'Tượng', 'A' => 'Sĩ', 'K' => 'Tướng', 'C' => 'Pháo', 'P' => 'Tốt'];
+        $red = self::isRed($p);
+        $file = fn (int $x) => (string) ($red ? 9 - $x : $x + 1);
+        $fx = $from % 9; $fr = intdiv($from, 9); $tx = $to % 9; $tr = intdiv($to, 9);
+        $mates = [];
+        for ($r = 0; $r < 10; $r++) {
+            if ($b[$r * 9 + $fx] === $p) $mates[] = $r;
+        }
+        if (count($mates) >= 2) {
+            $front = $red ? min($mates) : max($mates);
+            $col = $fr === $front ? 'trước' : 'sau';
+        } else {
+            $col = $file($fx);
+        }
+        if ($fr === $tr) {
+            $verb = 'bình';
+            $target = $file($tx);
+        } else {
+            $verb = ($red ? $tr < $fr : $tr > $fr) ? 'tiến' : 'thoái';
+            $target = str_contains('RCPK', strtoupper($p)) ? (string) abs($tr - $fr) : $file($tx);
+        }
+
+        return $names[strtoupper($p)] . ' ' . $col . ' ' . $verb . ' ' . $target;
+    }
+
     /** @return list<array{0:int,1:int}> mọi nước hợp lệ của 1 bên */
     public static function legalMoves(array $b, bool $red): array
     {

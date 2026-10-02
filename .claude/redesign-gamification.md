@@ -129,3 +129,20 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Khay: chip nắp viền vàng + nhãn "úp", đếm "N nắp", chip vừa bị ăn nhấp nháy; mục "Quân úp còn lại" có số lượng và
   % xác suất lật ra từng loại (thông tin công khai, dùng được cả 2 bên). Biên bản ghi "… ăn nắp: Xe".
 - Thông báo tức thì: "Bạn ăn nắp: Xe!" / "Máy (Đối thủ) ăn nắp của bạn: Tượng" (play-bot.js, play-pvp.js).
+
+## Đợt 6 (02/10/2026) — Lịch sử ván đấu, xem lại, chép vào thư viện để sửa / thêm biến
+- Bảng `game_records` (migration 2026_10_03_100001): 1 dòng/người/ván — mode bot|pvp, variant, level, game_id
+  (unique user+game, nullOnDelete), side, opponent, result win|loss|draw, reason, start_fen, moves/reveals/captured
+  (JSON phẳng), plies. Model `GameRecord`, service `GameRecordService`.
+- Ghi tự động: chơi với máy → `play-bot.js finish()` gửi kèm `moves/reveals/captured/side/reason` lên
+  `/choi-voi-may/ket-qua` (MỌI kết quả, cả ván thua/hoà), server `storeBot()` kiểm lại luật TỪNG nước
+  (`steps()` dùng `Rules::legalNoSelfCheck` + coup), sai luật thì bỏ qua; trả `record_url` → nút "Xem lại ván ·
+  thêm biến" ở sheet kết thúc. Đấu bạn → `GameService::finish()` gọi `storePvp()` qua `DB::afterCommit` cho cả 2 người.
+- Trang (auth, chỉ chủ ván, noindex): `/tai-khoan/lich-su-van-dau` (lọc loai/bien-the/ket-qua + thống kê),
+  `/tai-khoan/lich-su-van-dau/{record}` (x-chess-board + diễn giải tiếng Việt `Rules::notation()` + lật quân/ăn nắp +
+  khay quân bị ăn), POST `…/thu-vien` chép sang Thư viện (steps phẳng có `reveal` + cây biến lồng nếu ≤ 200 nước) rồi
+  redirect `/tai-khoan/thu-vien?sua={id}` → library.blade tự bấm nút Sửa → fen-composer mở sẵn chế độ soạn nước,
+  đi lại từ 1 nước cũ là tạo nhánh biến. DELETE xoá ván.
+- ⚠️ Gotcha MySQL: cột kiểu JSON giới hạn độ sâu lồng 100 → cây biến (2 tầng/nước) của ván > ~49 nước bị từ chối
+  (lỗi 3157). Migration 2026_10_03_100002 đổi `saved_positions.variation_tree` sang longText (model vẫn cast array).
+- Link: dropdown tài khoản, hồ sơ, sảnh đấu bạn, trang chơi với máy, sheet kết thúc PvP. Test: `tests/Feature/HistoryTest.php`.

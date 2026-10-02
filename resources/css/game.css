@@ -176,3 +176,12 @@
     .note-cap { color: var(--primary-ink); font-weight: 700; }
     html.reduce-fx .cap-chip.is-new { animation: none; }
 }
+
+@layer components {
+    /* Lịch sử ván đấu */
+    .tag--loss { background: var(--primary-soft); color: var(--primary-ink); border-color: transparent; }
+    .lesson-item .hist-res--win { background: var(--jade-soft); color: var(--jade-ink); }
+    .lesson-item .hist-res--loss { background: var(--primary-soft); color: var(--primary-ink); }
+    .lesson-item .hist-res--draw { background: var(--gold-soft); color: var(--gold-ink); }
+}
+@layer components { .lesson-item .hist-res svg { width: 20px; height: 20px; } }

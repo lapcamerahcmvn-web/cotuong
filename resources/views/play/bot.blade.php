@@ -22,7 +22,8 @@
             <div>
                 <div class="eyebrow"><x-icon name="sword" /> Chơi</div>
                 <h1 class="page-title mt-1">Chơi cờ tướng & cờ úp với máy</h1>
-                <p class="page-lede">Luyện thực chiến với máy ngay trên trình duyệt — không cần cài đặt. Chọn biến thể, cấp độ, bên và bắt đầu.</p>
+                <p class="page-lede">Luyện thực chiến với máy ngay trên trình duyệt — không cần cài đặt. Chọn biến thể, cấp độ, bên và bắt đầu.
+                    @auth Mọi ván được tự lưu vào <a href="{{ route('history.index') }}">lịch sử ván đấu</a> để xem lại. @endauth</p>
 
                 <div class="card card--pad mt-5" data-bot-resume hidden>
                     <div class="flex items-center justify-between gap-3 flex-wrap">

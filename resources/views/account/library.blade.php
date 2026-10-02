@@ -124,6 +124,15 @@
 document.addEventListener('xq:board-ready', function () {
     var s = document.createElement('script');
     s.src = "{{ asset('js/fen-composer.js') }}?v={{ @filemtime(public_path('js/fen-composer.js')) }}";
+    // ?sua=ID (vd vừa chép 1 ván từ Lịch sử ván đấu) → mở sẵn thế cờ đó trong trình soạn.
+    s.onload = function () {
+        var id = new URLSearchParams(location.search).get('sua');
+        if (!id) return;
+        var btn = Array.prototype.find.call(document.querySelectorAll('[data-fc-edit-btn]'), function (b) {
+            try { return String(JSON.parse(b.getAttribute('data-edit')).id) === id; } catch (e) { return false; }
+        });
+        if (btn) btn.click();
+    };
     document.head.appendChild(s);
 });
 </script>

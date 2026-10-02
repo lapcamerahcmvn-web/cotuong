@@ -138,6 +138,8 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
   Chi tiết: `.claude/redesign-gamification.md`.
 - **Chơi với máy (engine Web Worker) + Thách đấu bạn bè qua link (polling) + Chia sẻ kết quả** (02/10/2026),
   **hỗ trợ cả Cờ úp** (quân úp giữ bí mật trên server, máy không nhìn trộm).
+- **Lịch sử ván đấu** `/tai-khoan/lich-su-van-dau` (02/10/2026): tự lưu mọi ván (máy + bạn), xem lại từng nước,
+  chép vào Thư viện để sửa / thêm nhánh biến. Chi tiết: Đợt 6 trong `.claude/redesign-gamification.md`.
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).

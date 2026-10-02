@@ -169,6 +169,7 @@ function run(root) {
             <div class="celebrate__actions mt-3">
                 <a class="btn btn--primary btn--lg" href="/dau-ban">${icon('sword')} Ván mới</a>
                 <button type="button" class="btn" data-close>Xem lại bàn cờ</button>
+                ${s.you ? `<a class="btn btn--ghost" href="/tai-khoan/lich-su-van-dau?loai=pvp">${icon('eye')} Lịch sử ván · thêm biến</a>` : ''}
             </div></div>`);
         if (win) confetti(dlg.querySelector('.celebrate'));
         track('pvp_finish', { result: s.result === 'hoa' ? 'draw' : (win ? 'win' : 'loss') });

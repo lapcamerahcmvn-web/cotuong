@@ -56,6 +56,7 @@ class AccountController extends Controller
             'weak' => $puzzles->weakSkills($user, 4),
             'dueCount' => $puzzles->dueCount($user),
             'libraryCount' => $user->library()->count(),
+            'gameCount' => \App\Models\GameRecord::where('user_id', $user->id)->count(),
         ]);
     }
 
