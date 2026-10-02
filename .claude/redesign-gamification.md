@@ -195,3 +195,28 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - PWA KHÔNG service worker: manifest thêm `id`, `shortcuts` (Thế cờ hôm nay / Chơi với máy / Thử thách tuần);
   nút "Cài ứng dụng" trong dropdown chỉ hiện khi trình duyệt bắn `beforeinstallprompt`.
 - Test: `tests/Feature/SocialTest.php` (3 test).
+
+## Đợt 10 (02/10/2026) — Nhận diện bàn cờ từ ảnh (cả cờ úp) `/nhan-dien-ban-co`
+- Chạy HOÀN TOÀN trên trình duyệt (`resources/js/scan/recognize.js`, ảnh không tải lên server):
+  1. `detectGrid()` — ảnh màn hình/ảnh chụp thẳng: đếm điểm "đường kẻ" theo hàng/cột (tổng tiền tố, chỉ tính
+     trong phạm vi lưới ứng viên), chọn 10 hàng + 9 cột cách đều, tinh chỉnh bằng trọng tâm + hồi quy. Điểm < 1.0
+     → coi như không thấy (ảnh chụp nghiêng) → người dùng kéo 4 chấm vào 4 góc lưới.
+  2. `rectify()` — homography 4 điểm → ảnh nắn phẳng S=40px/ô.
+  3. `classify()` — nền cục bộ (lấy mẫu LỆCH tâm ô vì đường chéo cung đi qua tâm); có quân = độ phủ theo 36 cung
+     góc (giao điểm trống chỉ khác nền dọc đường kẻ); căn tâm lại theo trọng tâm đĩa quân; màu mặt quân = màu
+     chiếm diện tích lớn nhất; cắt vòng viền theo bán kính (mực phủ > 50% chu vi) + bỏ cung tròn mỏng (thành phần
+     liên thông); quân úp = gần như không có mực; màu Đỏ/Đen = độ đỏ của mực/mặt quân (2 cụm Otsu).
+     Chữ → binh chủng: so khớp mật độ phủ 20×20 với mẫu từ 4 font OFL subset `public/fonts/scan/*.woff2`
+     (Noto Serif TC, Noto Sans TC, Noto Serif SC, LXGW WenKai TC — đủ phồn/giản thể 帥帅將将 車俥车 炮砲包…),
+     góc 0/180° (ảnh chụp: 24 góc khi quality < 0.76). Gán tối ưu bằng Hungarian theo luật (số lượng, ô hợp lệ
+     Tướng/Sĩ/Tượng/Tốt — cờ úp nới Sĩ/Tượng/Tốt), thử cả 2 chiều bàn chọn tổng điểm cao hơn.
+- Trang (`ScanController`, view `scan.blade.php`, JS `resources/js/board-scan.js`): chọn/chụp/kéo thả/Ctrl+V ảnh,
+  3 ảnh mẫu `public/images/scan-mau/`; bước căn lưới (canvas + lưới xanh xem trước); kết quả: ô kém chắc có viền
+  vàng, bấm ô → bảng chọn quân để THẨM; kiểm tra luật (đủ Tướng, thừa quân, bên không đi đang bị chiếu); chọn bên đi;
+  Máy đánh giá (engine `review` trong worker, gợi ý nước + mũi tên); Chơi tiếp với máy (`?tu-the=&luot=&tui=`);
+  Mở trình soạn (`/tai-khoan/thu-vien?fen=` → library tự nạp FEN, tự bật Cờ Úp nếu có X/x); Lưu thư viện.
+- AI tuỳ chọn: chỉ hiện khi hosting có `ANTHROPIC_API_KEY` — `BoardVisionAgent` (structured output 10 chuỗi × 9 ký tự)
+  nhận ảnh ĐÃ NẮN, server `rowsToFen()` kiểm định dạng; 15 lượt/người/ngày + throttle.
+- Đo độ chính xác: `tools/scan-bench` (sinh 66 ảnh có đáp án + chấm trong Chrome headless): ảnh màn hình 98.9% ô
+  đúng, cờ úp 97.3%, ảnh chụp mô phỏng (góc kéo tay) 91.7%. Ảnh thật đa dạng hơn → luôn cần bước thẩm.
+- Test: `tests/Feature/ScanTest.php` (agent AI giả lập bằng `BoardVisionAgent::fake`).

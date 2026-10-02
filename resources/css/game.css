@@ -293,3 +293,33 @@
     .feed-item__icon svg { width: 18px; height: 18px; }
     a.lb-name:hover { color: var(--primary); text-decoration: none; }
 }
+
+@layer components {
+    /* ---------- Nhận diện bàn cờ từ ảnh ---------- */
+    .scan-drop { display: grid; justify-items: center; gap: 8px; text-align: center; padding: 36px 20px; border: 2px dashed var(--line-strong); cursor: pointer; transition: border-color .15s, background .15s; }
+    .scan-drop.is-over, .scan-drop:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary-soft) 40%, var(--surface)); }
+    .scan-drop__icon { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary-ink); }
+    .scan-drop__icon svg { width: 28px; height: 28px; }
+    .scan-stage { display: grid; place-items: center; background: var(--surface-2); border-radius: 14px; padding: 8px; overflow: hidden; }
+    .scan-stage canvas { max-width: 100%; height: auto; touch-action: none; cursor: crosshair; border-radius: 8px; }
+    .scan-hint { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
+    .scan-hint.is-ok { background: var(--jade-soft); color: var(--jade-ink); }
+    .scan-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-soft); }
+    .scan-chip svg { width: 14px; height: 14px; }
+    .scan-chip.is-ok { background: var(--jade-soft); color: var(--jade-ink); }
+    .scan-chip.is-warn { background: var(--gold-soft); color: var(--gold-ink); }
+    .scan-chip.is-err { background: var(--primary-soft); color: var(--primary-ink); }
+    .scan-board { --xq-dot: rgba(212, 160, 23, .95); cursor: pointer; }
+    .scan-palette { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; }
+    .scan-pc { aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-piece); font-size: 18px; background: var(--xq-disc, #fbf3df); box-shadow: inset 0 0 0 2px currentColor; color: var(--ink-faint); min-width: 0; }
+    .scan-pc svg { width: 16px; height: 16px; }
+    .scan-pc.is-red { color: var(--xq-red, #b3261e); }
+    .scan-pc.is-black { color: var(--xq-black, #1d1b18); }
+    .scan-pc.is-on { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .scan-preview { width: 100%; height: auto; border-radius: 10px; display: block; }
+}
+@layer components {
+    .scan .practice > * { min-width: 0; }
+    .scan .board-bar { flex-wrap: wrap; gap: 6px; }
+    .scan .board-bar .step-pill { white-space: normal; }
+}

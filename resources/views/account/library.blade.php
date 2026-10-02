@@ -11,7 +11,8 @@
 
 <section data-needs-board>
     <h1 class="page-title">Thư viện của tôi</h1>
-    <p class="page-lede">Thế cờ bạn đã sao chép từ bài học, hoặc tự soạn — lưu lại để xem hay chia sẻ sau.</p>
+    <p class="page-lede">Thế cờ bạn đã sao chép từ bài học, hoặc tự soạn — lưu lại để xem hay chia sẻ sau.
+        Có ảnh bàn cờ? <a href="{{ route('scan') }}" class="font-bold">Nhận diện thế cờ từ ảnh</a>.</p>
 
     @if(session('success'))
         <div class="alert alert--ok mt-4"><x-icon name="check-circle" />{{ session('success') }}</div>
@@ -127,6 +128,18 @@ document.addEventListener('xq:board-ready', function () {
     s.src = "{{ asset('js/fen-composer.js') }}?v={{ @filemtime(public_path('js/fen-composer.js')) }}";
     // ?sua=ID (vd vừa chép 1 ván từ Lịch sử ván đấu) → mở sẵn thế cờ đó trong trình soạn.
     s.onload = function () {
+        // ?fen=… (vd từ trang Nhận diện bàn cờ từ ảnh) → nạp sẵn thế cờ vào trình soạn để ghi nước / lưu.
+        var fen = new URLSearchParams(location.search).get('fen');
+        if (fen && /^[0-9a-zA-Z\/]{8,100}$/.test(fen)) {
+            var game = document.querySelector('[data-fc-game="' + (/[Xx]/.test(fen) ? 'up' : 'tuong') + '"]');
+            if (game) game.click();
+            var inp = document.querySelector('[data-fc-fen-input]');
+            var apply = document.querySelector('[data-fc-fen-apply]');
+            if (inp && apply) { inp.value = fen; apply.click(); }
+            var panel = document.querySelector('[data-fc-panel]');
+            if (panel) { panel.open = true; panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            return;
+        }
         var id = new URLSearchParams(location.search).get('sua');
         if (!id) return;
         var btn = Array.prototype.find.call(document.querySelectorAll('[data-fc-edit-btn]'), function (b) {

@@ -143,6 +143,7 @@
                         <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Thách đấu bạn bè<small>Gửi link, chơi theo lượt có đồng hồ</small></span></a>
                         <div class="dropdown__sep"></div>
                         <a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}" class="dropdown__item"><span class="dropdown__glyph">卒</span><span>Cờ úp với máy<small>Quân úp tráo ngẫu nhiên, lật khi đi</small></span></a>
+                        <a href="{{ route('scan') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="eye" /></span><span>Nhận diện bàn cờ từ ảnh<small>Chụp bàn cờ / màn hình → ra thế cờ</small></span></a>
                         <a href="{{ route('pvp.lobby', ['bien-the' => 'co-up']) }}" class="dropdown__item"><span class="dropdown__glyph">卒</span><span>Thách đấu cờ úp<small>Quân úp được giữ bí mật trên server</small></span></a>
                     </div>
                 </div>
@@ -245,6 +246,7 @@
                         <li><a href="{{ route('play.bot') }}">Chơi cờ tướng với máy</a></li>
                         <li><a href="{{ route('pvp.lobby') }}">Thách đấu bạn bè</a></li>
                         <li><a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}">Chơi cờ úp với máy</a></li>
+                        <li><a href="{{ route('scan') }}">Nhận diện bàn cờ từ ảnh</a></li>
                     </ul>
                 </div>
                 <div>

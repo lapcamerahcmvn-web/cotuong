@@ -144,6 +144,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
   máy từ thế bất kỳ** + **link chia sẻ ván** `/van-co/{token}` (02/10/2026) — Đợt 7 cùng file.
 - **Thử thách tuần + giải thưởng bảng xếp hạng tuần** `/thu-thach-tuan` (02/10/2026) — Đợt 8 cùng file.
 - **Hồ sơ kỳ thủ công khai** `/ky-thu/{id}-{slug}` + **theo dõi bạn bè** `/ban-be` + PWA shortcuts (02/10/2026) — Đợt 9.
+- **Nhận diện bàn cờ từ ảnh** `/nhan-dien-ban-co` (ảnh chụp thật / màn hình phần mềm khác, cả cờ úp; chạy trên trình duyệt, AI tuỳ chọn) — Đợt 10.
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).

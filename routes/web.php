@@ -26,6 +26,7 @@ use App\Http\Controllers\PlayController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\ScanController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Middleware\LogAccess;
@@ -162,6 +163,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');
+Route::get('/nhan-dien-ban-co', [ScanController::class, 'show'])->name('scan');
+Route::post('/nhan-dien-ban-co/ai', [ScanController::class, 'ai'])->name('scan.ai')->middleware(['auth', 'throttle:6,1,scan-ai']);
 Route::get('/ky-thu/{ref}', [ProfileController::class, 'show'])->name('profile.show')->where('ref', '[0-9]+(-[a-z0-9-]*)?');
 Route::middleware('auth')->group(function () {
     Route::post('/ky-thu/{ref}/theo-doi', [ProfileController::class, 'follow'])->name('profile.follow')->where('ref', '[0-9]+(-[a-z0-9-]*)?')->middleware('throttle:30,1,follow');
