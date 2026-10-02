@@ -2,7 +2,7 @@
 // BẮT BUỘC chạy lại sau mỗi lần sửa engine — sai luật/sai điểm rất khó thấy khi chỉ chơi thử.
 import {
     loadFen, legalMoves, legalMovesSt, stateFrom, toIccs, search, thinkCoup, gameOver,
-    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs,
+    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review,
 } from '../resources/js/engine/engine.js';
 import { LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
 
@@ -51,6 +51,11 @@ const full = { red: COUP_SET, black: COUP_SET };
 let rush = 0;
 for (let i = 0; i < 6; i++) if (['b2b9', 'h2h9'].includes(thinkCoup(COUP_FEN, full, true, 3).move)) rush++;
 ok(rush <= 1, `máy vật Pháo giả ở nước đầu ${rush}/6 lần`);
+// Không "biết trước" quân lật ra trong cây tìm kiếm → thế đầu cân bằng, 2 nước đối xứng điểm gần bằng nhau.
+const rv = review(COUP_FEN, true, { pools: full, timeMs: 1200 });
+ok(Math.abs(rv.score) < 150, `phân tích thế đầu cờ úp gần cân bằng (${rv.score})`);
+ok(Math.abs(rv.scores.b2b9 - rv.scores.h2h9) < 120 && Math.abs(rv.scores.a3a4 - rv.scores.i3i4) < 120, 'nước đối xứng được chấm gần bằng nhau');
+ok(rv.score - rv.scores.b2b9 >= 150, `phân tích chấm Pháo giả vật nắp kém hơn nước tốt nhất (${rv.score - rv.scores.b2b9})`);
 
 console.log('Book khai cuộc cờ tướng');
 let bad = 0;

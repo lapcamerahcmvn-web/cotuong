@@ -364,7 +364,9 @@ function setup(root) {
             if ((bestSc >= 1500 && played >= 1200) || bestSc <= -1500) loss = Math.min(loss, 40);
             // Nước nằm trong book khai cuộc (cờ tướng, thế mở chuẩn) = "Nước sách", không chấm theo độ sâu tìm ngắn.
             const inBook = !coup && bookMoves(fens[i], redAt(i)).some((x) => x.move === s.iccs);
-            const c = inBook ? 'book' : (best === s.iccs || loss <= 15) ? 'best' : loss < 60 ? 'good' : loss < 150 ? 'inacc' : loss < 350 ? 'mistake' : 'blunder';
+            // Cờ úp: điểm là trung bình qua vài cách xếp quân úp (sai số ±50) → ngưỡng rộng hơn để không gắn nhãn oan.
+            const [tBest, tGood, tInacc, tMist] = coup ? [30, 90, 200, 400] : [15, 60, 150, 350];
+            const c = inBook ? 'book' : (best === s.iccs || loss <= tBest) ? 'best' : loss < tGood ? 'good' : loss < tInacc ? 'inacc' : loss < tMist ? 'mistake' : 'blunder';
             if (inBook) loss = 0;
             moves.push({ b: best, l: Math.round(loss), c });
             const side = redAt(i) ? 'do' : 'den';

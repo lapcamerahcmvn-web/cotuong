@@ -278,3 +278,9 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   theo trọng số (tôn trọng `avoid`). Phân tích ván: nước trong book = **"≡ Nước sách"** (class `book`, độ chính xác 100,
   không gợi ý "nước tốt hơn"); `GameRecordService::cleanAnalysis` nhận class `book`.
 - Test: `node tools/engine-test.mjs` thêm kiểm prior cờ úp + tính hợp lệ từng nước sách. Không cần migrate.
+- **Bổ sung 02/10 (sau deploy) — bỏ "biết trước" quân lật trong cây tìm kiếm:** đo phân tích ở thời gian thật (1,2s,
+  4 mẫu) thấy thế đầu bị chấm ≈ −300 và nước tốt thường bị "mất" 200–470 ngẫu nhiên — vì trong mỗi mẫu, nước lật quân
+  được tính theo quân THẬT nên tìm kiếm chọn đúng nước "lật trúng Xe" (strategy fusion ở nút trong). Sửa: `st.rv[i]=1`
+  cho quân lật trong lúc tìm kiếm (make/unmake giữ), `evaluate` tính vật chất của nó = kỳ vọng túi quân (vị trí vẫn theo
+  quân thật). Kết quả: thế đầu ≈ 0, nước đối xứng điểm bằng nhau, sai số ±50; đấu cặp cấp Vừa vs bản 184f757:
+  **21–11** (32 ván). Phân tích cờ úp dùng ngưỡng rộng hơn (tốt nhất ≤30 · tốt <90 · thiếu chính xác <200 · sai lầm <400).

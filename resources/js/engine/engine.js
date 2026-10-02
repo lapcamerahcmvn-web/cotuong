@@ -69,6 +69,8 @@ export function stateFrom(board, coup = false) {
 export function withKings(st) {
     st.kR = st.b.indexOf('K');
     st.kB = st.b.indexOf('k');
+    // Cờ úp: rv[i]=1 → quân ở ô i được LẬT TRONG LÚC TÌM KIẾM (chưa ai thấy thật) — lượng giá theo kỳ vọng túi quân.
+    if (st.coup && !st.rv) st.rv = new Uint8Array(90);
     return st;
 }
 
@@ -208,6 +210,7 @@ export function inCheckSt(st, red) {
 function make(st, m) {
     const p = st.b[m[0]];
     const u = [st.b[m[1]], st.h[m[1]], st.h[m[0]]];
+    if (st.rv) { u.push(st.rv[m[1]], st.rv[m[0]]); st.rv[m[1]] = st.h[m[0]] ? 1 : st.rv[m[0]]; st.rv[m[0]] = 0; }
     st.b[m[1]] = p; st.h[m[1]] = 0;
     st.b[m[0]] = null; st.h[m[0]] = 0;
     if (p === 'K') st.kR = m[1]; else if (p === 'k') st.kB = m[1];
@@ -218,6 +221,7 @@ function unmake(st, m, u) {
     const p = st.b[m[1]];
     st.b[m[0]] = p; st.h[m[0]] = u[2];
     st.b[m[1]] = u[0]; st.h[m[1]] = u[1];
+    if (st.rv) { st.rv[m[1]] = u[3]; st.rv[m[0]] = u[4]; }
     if (p === 'K') st.kR = m[0]; else if (p === 'k') st.kB = m[0];
     if (u[0] === 'K') st.kR = m[1]; else if (u[0] === 'k') st.kB = m[1];
 }
@@ -292,7 +296,8 @@ function evaluate(st, red) {
             if (st.coup && role) v += SLOT[role] + (MOB[role] ? MOB[role] * mobility(st, i, role) : 0);
         } else {
             const t = p.toUpperCase();
-            v = VAL[t] + pst(t, (i / 9) | 0, i % 9, pr);
+            // Quân vừa lật trong cây tìm kiếm: vật chất = kỳ vọng túi quân (không "biết trước" lật ra Xe hay Tốt).
+            v = (st.rv && st.rv[i] ? (pr ? st.hvR : st.hvB) ?? HIDDEN_VAL : VAL[t]) + pst(t, (i / 9) | 0, i % 9, pr);
             if (st.coup) {
                 if (t === 'A' || t === 'B') v += 40;                              // Sĩ/Tượng tự do trong cờ úp
                 if (MOB[t]) v += MOB[t] * mobility(st, i, t);
