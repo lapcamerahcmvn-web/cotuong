@@ -1,7 +1,7 @@
 // Phòng đấu bạn bè: polling trạng thái (1,5s; 4s khi tab ẩn), đồng hồ đếm cục bộ, gửi nước đi.
 import { loadBoard, postJson, getJson, track, icon, escapeHtml, toast } from './core';
 import { openSheet, confetti } from './gamification';
-import { buildNotes, renderNotes, renderCaptured } from './notation';
+import { analyse, renderNotes, renderCaptured, lastNap, NAME } from './notation';
 
 const START = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
 const COUP_START = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
@@ -17,6 +17,7 @@ function run(root) {
     const code = root.dataset.code;
     let s = JSON.parse($('script[data-pvp-state]').textContent);
     let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false;
+    let seenPlies = s.moves.length;   // để chỉ báo "ăn nắp" cho nước MỚI, không báo lại khi tải trang
     const R = window.XiangqiRules;
 
     const youRed = () => s.you !== 'den';
@@ -130,12 +131,18 @@ function run(root) {
     }
 
     function renderMoves() {
-        const notes = buildNotes(coup ? COUP_START : START, s.moves, s.reveals || []);
-        renderNotes($('[data-pvp-moves]'), notes);
-        $('[data-pvp-count]').textContent = notes.length ? Math.ceil(notes.length / 2) + ' nước' : '';
-        const fen = s.fen.split(' ')[0];
-        renderCaptured($('[data-pvp-captured]'), (s.captured || []).slice(),
-            coup ? { red: (fen.match(/X/g) || []).length, black: (fen.match(/x/g) || []).length } : null);
+        const a = analyse(coup ? COUP_START : START, s.moves, s.reveals || [], s.captured || []);
+        renderNotes($('[data-pvp-moves]'), a.notes);
+        $('[data-pvp-count]').textContent = a.notes.length ? Math.ceil(a.notes.length / 2) + ' nước' : '';
+        renderCaptured($('[data-pvp-captured]'), a, s.you);
+        if (s.moves.length > seenPlies) {
+            const nap = lastNap(a, s.moves.length);
+            if (nap) {
+                const who = s.you ? (nap.by === s.you ? 'Bạn' : 'Đối thủ') : (nap.by === 'do' ? 'Đỏ' : 'Đen');
+                toast(`${who} ăn nắp: ${NAME[nap.p.toUpperCase()]}!`, { kind: s.you && nap.by !== s.you ? 'err' : 'xp', iconName: 'sparkles', timeout: 3500 });
+            }
+        }
+        seenPlies = s.moves.length;
     }
 
     function tickClocks() {

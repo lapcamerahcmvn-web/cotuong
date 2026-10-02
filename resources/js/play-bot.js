@@ -1,10 +1,10 @@
 // Chơi với máy (cờ tướng + cờ úp): engine chạy trong Web Worker; ván đang chơi lưu localStorage.
 // Cờ úp: ván giữ `layout` (danh tính 30 quân úp) để lật quân; máy CHỈ nhận "túi quân chưa lộ" của
 // mỗi bên (không biết quân nào ở ô nào) → không nhìn trộm.
-import { loadBoard, postJson, track, icon, escapeHtml, store, save } from './core';
+import { loadBoard, postJson, track, icon, escapeHtml, store, save, toast } from './core';
 import { handleGamification, openSheet, confetti } from './gamification';
 import { START_FEN, COUP_FEN, COUP_SET, loadFen, toFen, fromIccs, gameOver, stateFrom, inCheckSt, LEVELS } from './engine/engine';
-import { buildNotes, renderNotes, renderCaptured } from './notation';
+import { analyse, renderNotes, renderCaptured, lastNap, NAME } from './notation';
 
 const KEY = 'xq.bot.game';
 const MAX_PLIES = 300;
@@ -98,10 +98,15 @@ function setup(root) {
     function refresh(animateLast) {
         view = replay(g);
         board.set(fen(), g.moves[g.moves.length - 1] || null, animateLast ? undefined : { noAnim: true, silent: true });
-        const startFen = coup() ? COUP_FEN : START_FEN;
-        renderNotes(listEl, buildNotes(startFen, g.moves, view.reveals));
-        const hidden = coup() ? { red: view.board.filter((p) => p === 'X').length, black: view.board.filter((p) => p === 'x').length } : null;
-        renderCaptured($('[data-bot-captured]'), view.captured.slice(), hidden);
+        const a = analyse(coup() ? COUP_FEN : START_FEN, g.moves, view.reveals, view.captured);
+        renderNotes(listEl, a.notes);
+        renderCaptured($('[data-bot-captured]'), a, g.human);
+        const nap = animateLast && lastNap(a, g.moves.length);
+        if (nap) {
+            const mine = nap.by === g.human;
+            toast(mine ? `Bạn ăn nắp: ${NAME[nap.p.toUpperCase()]}!` : `Máy ăn nắp của bạn: ${NAME[nap.p.toUpperCase()]}`,
+                { kind: mine ? 'xp' : 'err', iconName: mine ? 'sparkles' : 'x-circle', timeout: 3500 });
+        }
     }
 
     function start(game) {

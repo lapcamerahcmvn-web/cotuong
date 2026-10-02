@@ -121,3 +121,11 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   (2,6–4,6× nút/giây), bảng chuyển vị Zobrist dạng typed array 2^18 ô (độ sâu 5 khai cuộc: 6,9s → 3,8s).
 - **Đo**: engine mới cấp Vừa thắng 6/6 trước người đi ngẫu nhiên; cấp Khó thắng cấp Vừa 3-2-1.
 - **Kiểm tra bắt buộc sau mỗi lần sửa engine**: `node tools/engine-test.mjs` (perft, luật cờ úp, ăn Xe treo).
+
+## Đợt 5 (02/10/2026) — Hiển thị "ăn nắp" trong cờ úp
+- `resources/js/notation.js` → `analyse(startFen, moves, reveals, captured)`: biên bản + danh sách quân bị ăn có cờ
+  `hidden` (lúc bị ăn còn úp = "nắp", suy ra bằng cách dựng lại bàn công khai; danh tính lấy từ `captured` theo thứ tự
+  nước — KHÔNG cần đổi DB/server) + túi quân úp còn lại mỗi bên (bộ 15 quân − đã lật − nắp bị ăn).
+- Khay: chip nắp viền vàng + nhãn "úp", đếm "N nắp", chip vừa bị ăn nhấp nháy; mục "Quân úp còn lại" có số lượng và
+  % xác suất lật ra từng loại (thông tin công khai, dùng được cả 2 bên). Biên bản ghi "… ăn nắp: Xe".
+- Thông báo tức thì: "Bạn ăn nắp: Xe!" / "Máy (Đối thủ) ăn nắp của bạn: Tượng" (play-bot.js, play-pvp.js).
