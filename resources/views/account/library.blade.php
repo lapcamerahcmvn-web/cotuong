@@ -103,6 +103,7 @@
                             <div class="cluster mt-3">
                                 <button type="button" class="btn" data-fc-edit-btn
                                     data-edit="{{ json_encode(['id' => $item->id, 'title' => $item->title, 'note' => $item->note, 'fen' => $item->fen, 'steps' => $item->steps_json ?? [], 'tree' => $item->variation_tree ?? []], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}">✏️ Sửa</button>
+                                <a class="btn" href="{{ route('play.bot', ['tu-the' => $item->fen, 'luot' => 'do']) }}"><x-icon name="play" /> Chơi với máy từ thế này</a>
                                 <form method="POST" action="{{ route('library.destroy', $item) }}" onsubmit="return confirm('Xoá thế cờ này khỏi thư viện?');">
                                     @csrf
                                     @method('DELETE')

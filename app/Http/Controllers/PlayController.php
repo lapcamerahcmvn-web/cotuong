@@ -14,9 +14,23 @@ use Illuminate\Support\Facades\Auth;
 // để cộng XP — không thẩm định được ván cờ nên giới hạn số ván tính XP mỗi ngày.
 class PlayController extends Controller
 {
-    public function bot()
+    public function bot(Request $request, GameRecordService $records)
     {
-        return view('play.bot');
+        // "Chơi tiếp với máy từ thế này" (từ lịch sử ván / thư viện): ?tu-the=FEN&luot=do|den[&tui=RRC..-rrc..]
+        $custom = null;
+        $fen = (string) $request->query('tu-the', '');
+        if ($fen !== '') {
+            $redFirst = $request->query('luot') !== 'den';
+            if ($records->validStart($fen, $redFirst)) {
+                $tui = (string) $request->query('tui', '');
+                $pool = preg_match('/^([RNBACP]{0,15})-([rnbacp]{0,15})$/', $tui, $m) ? ['red' => str_split($m[1]), 'black' => str_split(strtoupper($m[2]))] : null;
+                $custom = ['fen' => $fen, 'redFirst' => $redFirst, 'pool' => $pool];
+            } else {
+                $custom = ['invalid' => true];
+            }
+        }
+
+        return view('play.bot', compact('custom'));
     }
 
     public function botResult(Request $request, GamificationService $gami, GameRecordService $records): JsonResponse
@@ -35,13 +49,17 @@ class PlayController extends Controller
             'moves.*' => ['string', 'regex:/^[a-i]\d[a-i]\d$/'],
             'reveals' => ['nullable', 'array', 'max:400'],
             'captured' => ['nullable', 'array', 'max:40'],
+            'start_fen' => ['nullable', 'string', 'max:100'],
+            'first_side' => ['nullable', 'in:do,den'],
         ]);
         $u = Auth::user();
         // Lưu lịch sử ván (mọi kết quả) — server kiểm tra lại luật từng nước, ván sai luật thì bỏ qua.
         $record = ! empty($data['moves']) ? $records->storeBot($u, $data) : null;
         $recordUrl = $record ? route('history.show', $record) : null;
         // Ván thắng hợp lệ cần ít nhất vài nước và thời gian chơi tối thiểu (chặn gửi tay).
-        if ($data['result'] !== 'win' || $data['plies'] < 10 || ($data['ms'] ?? 0) < 20000) {
+        // Ván chơi tiếp từ 1 thế tuỳ chọn không tính XP (có thể chọn sẵn thế thắng).
+        $custom = ! empty($data['start_fen']);
+        if ($custom || $data['result'] !== 'win' || $data['plies'] < 10 || ($data['ms'] ?? 0) < 20000) {
             return response()->json(['gamification' => null, 'record_url' => $recordUrl]);
         }
         $today = Vn::today();

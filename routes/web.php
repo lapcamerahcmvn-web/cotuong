@@ -140,6 +140,7 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
 
 // ---- Chơi: với máy ----
 Route::get('/choi-voi-may', [PlayController::class, 'bot'])->name('play.bot');
+Route::get('/van-co/{token}', [HistoryController::class, 'publicShow'])->name('history.public')->where('token', '[A-Za-z0-9]{16}');
 Route::post('/choi-voi-may/ket-qua', [PlayController::class, 'botResult'])->name('play.bot.result')->middleware(['auth', 'throttle:20,1,bot']);
 
 // ---- Chơi: thách đấu bạn bè qua link (polling) ----
@@ -182,6 +183,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/tai-khoan/lich-su-van-dau/{record}', [HistoryController::class, 'show'])->name('history.show');
     Route::post('/tai-khoan/lich-su-van-dau/{record}/thu-vien', [HistoryController::class, 'toLibrary'])->name('history.library')->middleware('throttle:20,1,hist-lib');
     Route::delete('/tai-khoan/lich-su-van-dau/{record}', [HistoryController::class, 'destroy'])->name('history.destroy');
+    Route::post('/tai-khoan/lich-su-van-dau/{record}/phan-tich', [HistoryController::class, 'saveAnalysis'])->name('history.analysis')->middleware('throttle:30,1,hist-an');
+    Route::post('/tai-khoan/lich-su-van-dau/{record}/chia-se', [HistoryController::class, 'share'])->name('history.share')->middleware('throttle:20,1,hist-share');
     Route::post('/tien-do/gop', [ProgressController::class, 'merge'])->name('progress.merge')->middleware('throttle:5,1,merge');
 });
 

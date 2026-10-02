@@ -185,3 +185,52 @@
     .lesson-item .hist-res--draw { background: var(--gold-soft); color: var(--gold-ink); }
 }
 @layer components { .lesson-item .hist-res svg { width: 20px; height: 20px; } }
+
+@layer components {
+    /* ---------- Phân tích ván (Game Review) ---------- */
+    .rv-evalbar { position: relative; height: 22px; border-radius: 999px; overflow: hidden; margin-bottom: 10px; background: var(--xq-black, #2b2b2b); border: 1px solid var(--line); }
+    .rv-evalbar__fill { position: absolute; inset: 0 auto 0 0; width: 50%; background: linear-gradient(90deg, #c8451f, #e0663f); transition: width .35s ease; }
+    .rv-evalbar b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 12px; font-weight: 800; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / .5); font-variant-numeric: tabular-nums; }
+    .rv-coach { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); font-size: 14.5px; }
+    .rv-coach p { margin: 6px 0 0; }
+    .rv-coach__head { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; }
+    .rv-coach__head svg { width: 16px; height: 16px; }
+    .rv-verdict b { font-weight: 800; }
+    .rv-mark { display: inline-grid; place-items: center; min-width: 22px; height: 20px; padding: 0 4px; border-radius: 6px; font-size: 11.5px; font-weight: 900; color: #fff; line-height: 1; }
+    .rv-best.rv-mark, .rv-dot.rv-best { background: var(--jade); fill: var(--jade); }
+    .rv-good.rv-mark { background: var(--surface-3); color: var(--ink-soft); }
+    .rv-inacc.rv-mark { background: #d4a017; }
+    .rv-mistake.rv-mark { background: #e07b2f; }
+    .rv-blunder.rv-mark { background: #c62f2f; }
+    .rv-dot.rv-inacc { fill: #d4a017; } .rv-dot.rv-mistake { fill: #e07b2f; } .rv-dot.rv-blunder { fill: #c62f2f; }
+    .rv-verdict.rv-best b, p.rv-best { color: var(--jade-ink); }
+    .rv-verdict.rv-inacc b { color: #a87b05; }
+    .rv-verdict.rv-mistake b, p.rv-mistake { color: #c2581a; }
+    .rv-verdict.rv-blunder b { color: #c62f2f; }
+    .rv-svg { width: 100%; height: 120px; display: block; cursor: pointer; border-radius: 10px; background: var(--xq-black, #2b2b2b); }
+    .rv-area { fill: #e0663f; opacity: .9; }
+    .rv-mid { stroke: rgb(255 255 255 / .35); stroke-width: 1; stroke-dasharray: 4 4; }
+    .rv-cur { stroke: var(--gold); stroke-width: 2; }
+    .rv-dot { stroke: #fff; stroke-width: 1.5; }
+    .rv-sum__head { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+    .rv-sum__head svg { width: 18px; height: 18px; color: var(--primary); }
+    .rv-accs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .rv-acc { padding: 10px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); font-size: 13px; }
+    .rv-acc__num { display: block; font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1.1; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .rv-acc small { color: var(--ink-faint); font-weight: 600; }
+    .rv-acc ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
+    .rv-acc li { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-soft); }
+    .rv-acc li b { margin-left: auto; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .rv-moment { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 9px 4px; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 14px; }
+    .rv-moment:last-child { border-bottom: 0; }
+    .rv-moment:hover { background: var(--surface-2); }
+    .rv-moment > svg { width: 16px; height: 16px; color: var(--ink-faint); flex-shrink: 0; }
+    .rv-moves { max-height: 46vh; overflow-y: auto; padding: 4px 8px; }
+    .rv-row { display: grid; grid-template-columns: 30px 1fr 1fr; gap: 4px; align-items: center; border-bottom: 1px solid var(--line); padding: 2px 0; }
+    .rv-num { font-size: 12.5px; font-weight: 800; color: var(--ink-faint); text-align: right; padding-right: 4px; }
+    .rv-mv { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; min-height: 36px; padding: 4px 8px; border-radius: 8px; text-align: left; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+    .rv-mv small { font-size: 11px; color: var(--ink-faint); font-weight: 600; }
+    .rv-mv .rv-mark { margin-left: auto; }
+    .rv-mv:hover { background: var(--surface-2); }
+    .rv-mv.is-on { background: var(--primary-soft); color: var(--primary-ink); }
+}

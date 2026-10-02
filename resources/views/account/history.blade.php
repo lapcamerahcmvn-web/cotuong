@@ -60,6 +60,7 @@
                     <span class="li-sub">
                         {{ $r->created_at->format('d/m/Y H:i') }} · {{ (int) ceil($r->plies / 2) }} nước
                         @if($r->reason) · {{ $r->reason }} @endif
+                        @if(($acc = $r->accuracy()) !== null) · <b class="text-jade-ink">chính xác {{ $acc }}%</b> @endif
                     </span>
                 </span>
                 <span class="li-meta"><span class="tag {{ $tone[$r->result] ?? '' }}">{{ \App\Models\GameRecord::RESULTS[$r->result] }}</span></span>

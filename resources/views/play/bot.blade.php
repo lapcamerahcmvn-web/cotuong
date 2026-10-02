@@ -16,7 +16,8 @@
 @endpush
 
 @section('content')
-<div data-bot data-needs-board data-default-variant="{{ request('bien-the') === 'co-up' ? 'co-up' : 'co-tuong' }}">
+<div data-bot data-needs-board data-default-variant="{{ request('bien-the') === 'co-up' ? 'co-up' : 'co-tuong' }}"
+    @if($custom && empty($custom['invalid'])) data-custom='@json($custom)' @endif>
     <section data-bot-setup>
         <div class="grid gap-6 lg:grid-cols-[1fr_420px] items-start">
             <div>
@@ -24,6 +25,19 @@
                 <h1 class="page-title mt-1">Chơi cờ tướng & cờ úp với máy</h1>
                 <p class="page-lede">Luyện thực chiến với máy ngay trên trình duyệt — không cần cài đặt. Chọn biến thể, cấp độ, bên và bắt đầu.
                     @auth Mọi ván được tự lưu vào <a href="{{ route('history.index') }}">lịch sử ván đấu</a> để xem lại. @endauth</p>
+
+                @if($custom && !empty($custom['invalid']))
+                    <div class="alert mt-5"><x-icon name="x-circle" />Thế cờ trong link không hợp lệ (thiếu Tướng, bên kia đang bị chiếu hoặc đã hết nước đi) — hãy chọn ván mới bên dưới.</div>
+                @elseif($custom)
+                    <div class="card card--pad mt-5 flex gap-4 items-center" data-custom-card>
+                        <span class="li-thumb shrink-0" style="width:92px" data-fen-thumb="{{ $custom['fen'] }}"></span>
+                        <span class="flex-1 min-w-0">
+                            <b class="block">Bắt đầu từ thế cờ đã chọn · {{ $custom['redFirst'] ? 'Đỏ' : 'Đen' }} đi trước</b>
+                            <span class="block text-[13.5px] text-ink-soft">Chọn cấp độ và bên cầm quân rồi bấm "Bắt đầu". Ván từ thế tự chọn vẫn được lưu lịch sử nhưng không tính XP.</span>
+                            <a href="{{ route('play.bot') }}" class="text-[13.5px] font-bold">Bỏ, chơi từ thế mở chuẩn</a>
+                        </span>
+                    </div>
+                @endif
 
                 <div class="card card--pad mt-5" data-bot-resume hidden>
                     <div class="flex items-center justify-between gap-3 flex-wrap">

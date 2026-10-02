@@ -6,6 +6,7 @@ use App\Models\GameRecord;
 use App\Services\GameRecordService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 // Lịch sử ván đấu: danh sách, xem lại từng ván, chép vào thư viện để sửa / thêm nhánh biến.
 class HistoryController extends Controller
@@ -33,16 +34,46 @@ class HistoryController extends Controller
     public function show(GameRecord $record, GameRecordService $svc)
     {
         abort_unless($record->user_id === Auth::id(), 403);
-        $steps = $svc->steps($record->start_fen, $record->moves ?? [], $record->reveals ?? [], $record->captured ?? []) ?? [];
+        $steps = $svc->stepsFor($record) ?? [];
 
-        return view('account.history-show', compact('record', 'steps'));
+        return view('account.history-show', ['record' => $record, 'steps' => $steps, 'public' => false]);
+    }
+
+    /** Trang xem lại công khai qua link chia sẻ (noindex) — không lộ tên đối thủ là người thật. */
+    public function publicShow(string $token, GameRecordService $svc)
+    {
+        $record = GameRecord::with('user')->where('share_token', $token)->firstOrFail();
+
+        return view('account.history-show', ['record' => $record, 'steps' => $svc->stepsFor($record) ?? [], 'public' => true]);
+    }
+
+    /** Lưu kết quả phân tích ván (do trình duyệt tính bằng engine) để lần sau mở ra là có ngay. */
+    public function saveAnalysis(Request $request, GameRecord $record, GameRecordService $svc)
+    {
+        abort_unless($record->user_id === Auth::id(), 403);
+        $data = $request->validate(['analysis' => ['required', 'array']]);
+        abort_if(strlen((string) json_encode($data['analysis'])) > 300000, 413);
+        $clean = $svc->cleanAnalysis($data['analysis'], (int) $record->plies);
+        abort_if($clean === null, 422, 'Dữ liệu phân tích không khớp ván.');
+        $record->update(['analysis' => $clean]);
+
+        return response()->json(['ok' => true, 'accuracy' => $record->accuracy()]);
+    }
+
+    /** Bật / tắt link chia sẻ công khai. */
+    public function share(GameRecord $record)
+    {
+        abort_unless($record->user_id === Auth::id(), 403);
+        $record->update(['share_token' => $record->share_token ? null : Str::random(16)]);
+
+        return back()->with('success', $record->share_token ? 'Đã tạo link chia sẻ ván — ai có link đều xem lại được.' : 'Đã tắt link chia sẻ ván.');
     }
 
     /** Chép ván sang Thư viện (mạch chính + cây biến) rồi mở sẵn trình soạn để sửa / thêm nhánh. */
     public function toLibrary(GameRecord $record, GameRecordService $svc)
     {
         abort_unless($record->user_id === Auth::id(), 403);
-        $steps = $svc->steps($record->start_fen, $record->moves ?? [], $record->reveals ?? [], $record->captured ?? []);
+        $steps = $svc->stepsFor($record);
         abort_if($steps === null, 422, 'Không đọc được ván cờ.');
 
         // Định dạng của trình soạn (fen-composer.js): steps phẳng + cây biến lồng nhau.

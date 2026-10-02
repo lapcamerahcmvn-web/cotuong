@@ -146,3 +146,21 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - ⚠️ Gotcha MySQL: cột kiểu JSON giới hạn độ sâu lồng 100 → cây biến (2 tầng/nước) của ván > ~49 nước bị từ chối
   (lỗi 3157). Migration 2026_10_03_100002 đổi `saved_positions.variation_tree` sang longText (model vẫn cast array).
 - Link: dropdown tài khoản, hồ sơ, sảnh đấu bạn, trang chơi với máy, sheet kết thúc PvP. Test: `tests/Feature/HistoryTest.php`.
+
+## Đợt 7 (02/10/2026) — Phân tích ván (Game Review), chơi tiếp từ thế bất kỳ, link chia sẻ ván
+- **Phân tích ván** trên trang xem lại (`resources/js/review.js`, mount `[data-review]`): engine `review()` (engine.js)
+  chấm điểm CHÍNH XÁC mọi nước tại từng thế (exactRoot); cờ úp lấy mẫu túi quân chưa lộ (4 mẫu, trung bình).
+  Chạy song song tối đa 4 Web Worker (≈10 giây/30 nước). Xếp loại theo điểm mất (100 = 1 Tốt): ≤15 Tốt nhất,
+  <60 Tốt, <150 Thiếu chính xác, <350 Sai lầm, còn lại Sai lầm nghiêm trọng (thế đã thắng/thua chắc không bị tính
+  sai lầm). Độ chính xác % theo công thức Lichess (win% co giãn ×0.6 vì Xe = 9 Tốt). Hiện: thanh ưu thế, biểu đồ
+  (bấm để nhảy), "Khoảnh khắc quyết định", mũi tên nước tốt hơn, **Thử tìm nước tốt hơn** (3 lần, chấp nhận nước
+  trong 60 điểm của nước tốt nhất — dùng `alts` = điểm 14 nước đầu ở các thế có lỗi).
+- Kết quả lưu `game_records.analysis` qua POST `history.analysis` (chủ ván, `cleanAnalysis()` làm sạch, ≤300KB);
+  độ chính xác hiện ở danh sách lịch sử.
+- **Chơi tiếp với máy từ thế này**: `/choi-voi-may?tu-the=FEN&luot=do|den[&bien-the=co-up&tui=RRC..-rrc..]` —
+  server `GameRecordService::validStart()` (đủ 2 Tướng, quân úp đúng ô/bên, bên kia không bị chiếu, còn nước đi);
+  play-bot.js hỗ trợ `startFen`/`redFirst`/túi quân úp; ván lưu `first_side`, KHÔNG tính XP. Có nút ở trang xem lại
+  (mọi nước) và ở Thư viện.
+- **Link chia sẻ**: POST `history.share` bật/tắt `share_token` (16 ký tự) → `/van-co/{token}` (noindex, công khai,
+  hiện cả phân tích; đối thủ PvP hiện là "Bạn chơi" để không lộ tên người khác).
+- Migration `2026_10_03_100003` (first_side, analysis, share_token). Test: `HistoryTest` 7 test.

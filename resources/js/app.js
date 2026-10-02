@@ -136,6 +136,7 @@ function boot() {
     if (document.querySelector('[data-countdown]')) import('./countdown').then((m) => m.init());
     if (document.querySelector('[data-bot]')) import('./play-bot').then((m) => m.init());
     if (document.querySelector('[data-pvp]')) import('./play-pvp').then((m) => m.init());
+    if (document.querySelector('[data-review]')) import('./review').then((m) => m.init());
     document.querySelectorAll('[data-share-text]').forEach((b) => b.addEventListener('click', () => import('./share').then((m) => m.share(b.dataset.shareText, b.dataset.shareUrl || location.href))));
 }
 

@@ -16,11 +16,12 @@ const sideOf = (p) => (p === p.toUpperCase() ? 'do' : 'den');
  * Phân tích ván: { notes, caps:[{p, hidden, by, ply}], pool:{do:{R:n..}, den:{..}}, hiddenLeft:{do,den} }.
  * `reveals[i]` = quân lật ra ở nước i (null nếu không), `captured` = quân bị ăn theo thứ tự.
  */
-export function analyse(startFen, moves, reveals = [], captured = []) {
+export function analyse(startFen, moves, reveals = [], captured = [], pool0 = null) {
     const R = window.XiangqiRules;
     const b = R.loadFen(startFen);
     const coup = b.some(isHidden);
-    const pool = { do: { ...SET }, den: { ...SET } };
+    // pool0: túi quân úp lúc bắt đầu (ván từ thế tự chọn); mặc định đủ bộ 15 quân.
+    const pool = pool0 ? { do: { ...pool0.do }, den: { ...pool0.den } } : { do: { ...SET }, den: { ...SET } };
     const caps = [];
     let ci = 0;
     const notes = moves.map((m, i) => {

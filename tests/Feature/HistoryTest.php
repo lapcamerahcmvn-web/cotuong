@@ -112,4 +112,62 @@ class HistoryTest extends TestCase
         $this->actingAs($u)->post(route('history.library', $rec))->assertRedirect();
         $this->assertCount(120, $u->library()->first()->steps_json);
     }
+
+    public function test_custom_start_validation_and_no_xp(): void
+    {
+        $svc = app(GameRecordService::class);
+        $this->assertTrue($svc->validStart(Game::START_FEN, true));
+        $this->assertTrue($svc->validStart(Game::COUP_FEN, false));
+        $this->assertFalse($svc->validStart('rnba1abnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR', true));   // thiếu Tướng Đen
+        $this->assertTrue($svc->validStart('3k5/9/9/9/9/9/9/9/9/X3K4', true));        // quân úp Đỏ ở a0 (ô Xe) hợp lệ
+        $this->assertFalse($svc->validStart('3k5/9/9/9/9/9/9/9/X8/4K4', true));       // quân úp ở a1 — ô không có binh chủng xuất phát
+        $this->assertFalse($svc->validStart('3k5/9/9/9/9/9/9/9/9/4K3x', true));       // quân úp Đen nằm bên Đỏ
+        $this->assertFalse($svc->validStart('4k4/9/9/9/9/9/9/9/9/4K4', true));        // 2 Tướng đối mặt: Đen đang bị chiếu
+        $this->assertFalse($svc->validStart('4k4/4R4/9/9/9/9/9/9/9/3K5', true));     // Đen đang bị chiếu mà tới lượt Đỏ
+
+        $u = $this->user();
+        // Thế Đen đi trước: Xe Đen b9 sang a9, Đỏ Pháo 2 bình 5.
+        $fen = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+        $res = $this->actingAs($u)->postJson(route('play.bot.result'), $this->botPayload([
+            'result' => 'win', 'plies' => 12, 'ms' => 60000, 'side' => 'den',
+            'start_fen' => $fen, 'first_side' => 'den', 'moves' => ['h9g7', 'h2e2', 'b9c7', 'b2c2'],
+        ]))->assertOk();
+        $this->assertNull($res->json('gamification'));
+        $rec = GameRecord::first();
+        $this->assertSame('den', $rec->first_side);
+        $this->assertTrue($rec->customStart());
+        $this->assertSame('den', $svc->stepsFor($rec)[0]['move_side']);
+
+        $this->get(route('play.bot', ['tu-the' => $fen, 'luot' => 'den']))->assertOk()->assertSee('data-custom', false);
+        $this->get(route('play.bot', ['tu-the' => '4k4/4R4/9/9/9/9/9/9/9/3K5', 'luot' => 'do']))->assertOk()->assertSee('không hợp lệ');
+    }
+
+    public function test_analysis_save_and_public_share(): void
+    {
+        [$u, $other] = [$this->user('A'), $this->user('B')];
+        $this->actingAs($u)->postJson(route('play.bot.result'), $this->botPayload());
+        $rec = GameRecord::first();
+        $an = [
+            'evals' => [0, 20, -10, 300, 280],
+            'moves' => [['b' => 'h2e2', 'l' => 0, 'c' => 'best'], ['b' => 'b9c7', 'l' => 40, 'c' => 'good'],
+                ['b' => 'e2e6', 'l' => 0, 'c' => 'best'], ['b' => 'h7e7', 'l' => 400, 'c' => 'blunder']],
+            'acc' => ['do' => 97.2, 'den' => 61.5],
+            'alts' => ['3' => ['h7e7' => 0, 'b9c7' => -400, '<x>' => 5]],
+        ];
+        $this->actingAs($other)->postJson(route('history.analysis', $rec), ['analysis' => $an])->assertForbidden();
+        $this->actingAs($u)->postJson(route('history.analysis', $rec), ['analysis' => ['evals' => [1], 'moves' => []]])->assertStatus(422);
+        $this->actingAs($u)->postJson(route('history.analysis', $rec), ['analysis' => $an])->assertOk()->assertJson(['accuracy' => 97]);
+        $rec->refresh();
+        $this->assertSame(['h7e7' => 0, 'b9c7' => -400], $rec->analysis['alts'][3]);
+        $this->actingAs($u)->get(route('history.index'))->assertSee('chính xác 97%');
+
+        $this->actingAs($u)->post(route('history.share', $rec))->assertRedirect();
+        $token = $rec->fresh()->share_token;
+        $this->assertSame(16, strlen($token));
+        auth()->logout();
+        $this->get(route('history.public', $token))->assertOk()->assertSee('noindex', false)->assertDontSee('Lưu vào thư viện');
+        $this->actingAs($u)->post(route('history.share', $rec));
+        $this->assertNull($rec->fresh()->share_token);
+        $this->get(route('history.public', $token))->assertNotFound();
+    }
 }

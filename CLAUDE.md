@@ -140,6 +140,8 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
   **hỗ trợ cả Cờ úp** (quân úp giữ bí mật trên server, máy không nhìn trộm).
 - **Lịch sử ván đấu** `/tai-khoan/lich-su-van-dau` (02/10/2026): tự lưu mọi ván (máy + bạn), xem lại từng nước,
   chép vào Thư viện để sửa / thêm nhánh biến. Chi tiết: Đợt 6 trong `.claude/redesign-gamification.md`.
+- **Phân tích ván bằng máy** (chấm từng nước, biểu đồ ưu thế, độ chính xác, thử lại nước sai) + **chơi tiếp với
+  máy từ thế bất kỳ** + **link chia sẻ ván** `/van-co/{token}` (02/10/2026) — Đợt 7 cùng file.
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).

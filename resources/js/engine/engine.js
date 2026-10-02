@@ -506,3 +506,44 @@ export function gameOver(board, redToMove, coup) {
     if (!check && st.coup) return { winner: null, reason: 'hết nước đi (hoà theo luật cờ úp)' };
     return { winner: redToMove ? 'den' : 'do', reason: check ? 'chiếu hết' : 'hết nước đi' };
 }
+
+/**
+ * Phân tích ván (Game Review): điểm CHÍNH XÁC của mọi nước tại 1 thế (exactRoot), nhìn từ bên đi.
+ * Cờ úp: lấy mẫu cách xếp quân úp từ `pools` rồi lấy trung bình (kẹp ±5000 như thinkCoup).
+ * Trả { best, score, scores:{iccs:điểm}, depth } — best null nếu hết nước (score = kết cục).
+ */
+export function review(fen, red, opts = {}) {
+    const timeMs = opts.timeMs || 700;
+    const pub = loadFen(fen);
+    const coup = pub.some(isHiddenChar) || !!opts.coup;
+    if (!coup) {
+        const r = search(stateFrom(pub), red, { depth: opts.depth || 5, timeMs, exactRoot: true });
+        return { best: r.move, score: r.score, scores: r.scores || {}, depth: r.depth };
+    }
+    const base = stateFrom(pub, true);
+    const samples = opts.samples || 4;
+    const total = {}, count = {};
+    let depth = 0, terminal = null;
+    for (let k = 0; k < samples; k++) {
+        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true });
+        const pr = shuffle((opts.pools?.red || []).slice()), pb = shuffle((opts.pools?.black || []).slice());
+        for (let i = 0; i < 90; i++) {
+            if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
+            else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
+        }
+        const r = search(st, red, { depth: opts.depth || 4, timeMs: Math.round(timeMs / samples), exactRoot: true });
+        if (!r.move) { terminal = r.score; break; }
+        depth = Math.max(depth, r.depth);
+        for (const [m, sc] of Object.entries(r.scores || {})) {
+            total[m] = (total[m] || 0) + Math.max(-5000, Math.min(5000, sc)); count[m] = (count[m] || 0) + 1;
+        }
+    }
+    if (terminal !== null) return { best: null, score: terminal, scores: {}, depth: 0 };
+    const scores = {};
+    let best = null, bs = -Infinity;
+    for (const m of Object.keys(total)) {
+        scores[m] = Math.round(total[m] / count[m]);
+        if (scores[m] > bs) { bs = scores[m]; best = m; }
+    }
+    return { best, score: bs, scores, depth };
+}
