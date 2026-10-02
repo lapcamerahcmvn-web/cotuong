@@ -220,3 +220,19 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Đo độ chính xác: `tools/scan-bench` (sinh 66 ảnh có đáp án + chấm trong Chrome headless): ảnh màn hình 98.9% ô
   đúng, cờ úp 97.3%, ảnh chụp mô phỏng (góc kéo tay) 91.7%. Ảnh thật đa dạng hơn → luôn cần bước thẩm.
 - Test: `tests/Feature/ScanTest.php` (agent AI giả lập bằng `BoardVisionAgent::fake`).
+
+### Đợt 10b (02/10/2026) — Ảnh chụp VÁN CỜ THẬT (quân đặt lệch, chữ xoay tự do, gỗ trên gỗ)
+- Chế độ `photo` (tự bật khi không tự tìm được lưới → người dùng kéo góc; có công tắc "Ảnh chụp bàn cờ thật"),
+  nắn ở 56 px/ô:
+  - Phát hiện quân = **đường tròn mép quân** (`bestCircle`: gradient Sobel hướng tâm, tâm lệch ≤ 0.3 ô, bán kính
+    0.34–0.5 ô, phạt khoảng hở chu vi), lấy bán kính LỚN NHẤT còn biên mạnh (mép ngoài, không phải vòng khắc).
+    Loại quân "ma": đường kẻ vẫn chạy liền vào tâm ≥ 3 hướng (có quân thì bị che); 2 đĩa chồng nhau → bỏ đĩa yếu;
+    tâm lệch > 0.18 mà biên < 0.72; hàng 4/5 không cho tâm trượt vào sông (chữ 楚河 漢界).
+  - Mực = điểm TỐI hơn "mặt phẳng ánh sáng" khớp trên mặt quân (ánh sáng loang), ngưỡng Otsu, bản đồ mực mềm.
+  - Nhận chữ: lấy mẫu theo toạ độ chuẩn hoá BÁN KÍNH quân + căn tâm theo trọng tâm mực + cỡ theo bán kính quán tính
+    (so với mẫu), xoay 24 góc × 3 cỡ, cắt vòng khắc ngoài 0.7R; bước tinh 3 ứng viên đầu (lưới 32, ±6°);
+    phạt nhẹ mẫu giản thể (bộ cờ gỗ ở VN hầu hết phồn thể).
+  - Màu Đỏ/Đen ảnh chụp = R−G của 35% điểm mực đậm nhất (gỗ vốn ngả đỏ nên không dùng màu mặt quân).
+- UI: khung căn lưới vừa 72% chiều cao màn hình (ảnh dọc điện thoại thấy đủ 4 góc), **kính lúp** khi kéo chấm,
+  hướng dẫn "góc bị quân che → đặt chấm vào tâm quân". Ảnh mẫu mới `ban-that.jpg`, `co-up-that.jpg`.
+- Đo: `tools/scan-bench` — ván thật 90.9%, cờ úp thật 87.4% (trước ~0%), ảnh màn hình giữ 98.9%.

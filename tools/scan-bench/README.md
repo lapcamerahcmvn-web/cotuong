@@ -7,13 +7,18 @@ cd tools/scan-bench
 python gen.py            # sinh ~66 ảnh vào img/ + cases.json (cần Pillow, numpy, opencv-python, fontTools, brotli)
 npm i --no-save puppeteer-core   # 1 lần (không thêm vào package.json)
 node bench.mjs           # chạy nhận dạng trong Chrome headless (puppeteer-core), in số ô sai từng ảnh
-node bench.mjs photo     # lọc theo tên file
+node bench.mjs real      # lọc theo tên file
 ```
 
 Kiểu ảnh: 4 "phần mềm" giả lập (gỗ + serif, chữ trắng trên quân màu + giản thể + khung giao diện,
 kai + Đen chữ ngược / Đỏ ở trên, nền xanh + giản thể), ảnh chụp mô phỏng (nghiêng phối cảnh, mờ, nhiễu,
 quân xoay ngẫu nhiên — dùng góc lưới đáp án như khi người dùng kéo tay) và cờ úp.
 
-Kết quả 02/10/2026 (lưới tự tìm): ảnh màn hình 98.9% ô đúng · cờ úp 97.3% · ảnh chụp 91.7%.
+Thêm kiểu `real` / `real-coup` = **ván cờ thật chụp bằng điện thoại**: quân gỗ cùng tông bàn, có độ dày + bóng đổ,
+đặt lệch giao điểm ±0.2 ô, cỡ quân không đều, chữ khắc xoay 0–360°, ảnh nghiêng mạnh + xoay nhẹ + ánh sáng loang
++ vùng tối + JPEG; 1/4 số ảnh chụp từ phía Đen. Ảnh chụp mô phỏng người dùng kéo 4 góc lệch tay ±0.08 ô.
+
+Kết quả 02/10/2026: ảnh màn hình 98.9% ô đúng · cờ úp (màn hình) 97.3% · ảnh chụp nghiêng 98.1% ·
+**ván cờ thật 90.9% · cờ úp thật 87.4%** (trước khi làm chế độ ảnh chụp thật: ~0%).
 `fens.json` = vài thế cờ ngẫu nhiên lấy từ bảng puzzles/lesson_steps. Đường dẫn Chrome trong bench.mjs là
 `C:/Program Files/Google/Chrome/Application/chrome.exe` — sửa nếu máy khác.

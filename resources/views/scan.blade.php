@@ -47,11 +47,12 @@
             <div class="cluster justify-center mt-2">
                 <button type="button" class="chip" data-sample="{{ asset('images/scan-mau/phan-mem.jpg') }}">Ảnh màn hình phần mềm</button>
                 <button type="button" class="chip" data-sample="{{ asset('images/scan-mau/co-up.jpg') }}">Ván cờ úp</button>
-                <button type="button" class="chip" data-sample="{{ asset('images/scan-mau/anh-chup.jpg') }}">Ảnh chụp nghiêng</button>
+                <button type="button" class="chip" data-sample="{{ asset('images/scan-mau/ban-that.jpg') }}">Ván cờ thật (chụp nghiêng)</button>
+                <button type="button" class="chip" data-sample="{{ asset('images/scan-mau/co-up-that.jpg') }}">Cờ úp chụp thật</button>
             </div>
         </div>
         <div class="grid sm:grid-cols-3 gap-3 mt-8">
-            <div class="card card--pad"><b class="block mb-1">1 · Chọn ảnh</b><span class="text-[13.5px] text-ink-soft">Chụp thẳng từ trên xuống, đủ sáng, thấy rõ 4 góc lưới.</span></div>
+            <div class="card card--pad"><b class="block mb-1">1 · Chọn ảnh</b><span class="text-[13.5px] text-ink-soft">Chụp càng thẳng từ trên xuống càng tốt, đủ sáng, tránh bóng tay/đèn chói, thấy rõ 4 góc lưới. Quân đặt lệch, chữ quay ngang dọc vẫn nhận được.</span></div>
             <div class="card card--pad"><b class="block mb-1">2 · Căn lưới</b><span class="text-[13.5px] text-ink-soft">Ảnh màn hình được căn tự động; ảnh chụp nghiêng thì kéo 4 chấm vào 4 góc lưới.</span></div>
             <div class="card card--pad"><b class="block mb-1">3 · Thẩm &amp; dùng</b><span class="text-[13.5px] text-ink-soft">Bấm ô để sửa quân nhận sai, rồi lưu thư viện, cho máy đánh giá hoặc chơi tiếp.</span></div>
         </div>
@@ -69,6 +70,8 @@
                 </div>
             </div>
             <p class="scan-hint" data-align-hint></p>
+            <label class="flex items-center gap-2 text-[14px] mb-3 cursor-pointer"><input type="checkbox" data-photo-mode class="w-5 h-5 accent-[var(--primary)]">
+                <span><b>Ảnh chụp bàn cờ thật</b> <span class="text-ink-soft">— quân đặt lệch, chữ quay nhiều hướng (máy tự bật khi phải kéo góc tay)</span></span></label>
             <div class="scan-stage"><canvas data-align-canvas></canvas></div>
             <div class="text-center mt-4"><button type="button" class="btn btn--primary btn--lg" data-recognize><x-icon name="sparkles" /> Nhận dạng</button></div>
         </div>

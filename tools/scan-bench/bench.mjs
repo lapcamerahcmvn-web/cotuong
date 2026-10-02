@@ -32,13 +32,20 @@ const res = await p.evaluate(async (cases) => {
         const img = R.imageData(await load('/bench/img/' + c.file));
         const sc = img.scale;
         const truthC = c.corners.map(([x, y]) => [x * sc, y * sc]);
+        // Ảnh chụp: mô phỏng người dùng kéo 4 góc lệch tay ±0.08 ô (giả ngẫu nhiên cố định theo tên file).
+        if (c.kind !== 'screen' && c.kind !== 'coup') {
+            let seed = [...c.file].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7);
+            const rnd = () => ((seed = (seed * 1103515245 + 12345) >>> 0) / 4294967296 - 0.5) * 2;
+            const cw = Math.hypot(truthC[1][0] - truthC[0][0], truthC[1][1] - truthC[0][1]) / 8;
+            for (const p of truthC) { p[0] += rnd() * 0.08 * cw; p[1] += rnd() * 0.08 * cw; }
+        }
         let auto = null;
-        if (c.kind !== 'photo') auto = R.detectGrid(img);
+        if (c.kind === 'screen' || c.kind === 'coup') auto = R.detectGrid(img);
         const corners = auto ? auto.corners : truthC;
         const cornerErr = auto ? Math.max(...auto.corners.map(([x, y], i) => Math.hypot(x - truthC[i][0], y - truthC[i][1]))) / ((truthC[1][0] - truthC[0][0]) / 8) : null;
         const t0 = performance.now();
         const rect = R.rectify(img, corners, 40);
-        const r0 = await R.classify(rect, { fontBase: '/fonts/scan/' }); let r = r0; if (r0.quality < 0.76) { const r2 = await R.classify(rect, { photo: true, fontBase: '/fonts/scan/' }); if (r2.quality > r0.quality) r = r2; } window.__q = [r0.quality.toFixed(2), r.quality.toFixed(2)];
+        const manual = !auto; const r0 = await R.classify(rect, { photo: manual, fontBase: '/fonts/scan/' }); let r = r0; if (!manual && r0.quality < 0.76) { const r2 = await R.classify(rect, { photo: true, fontBase: '/fonts/scan/' }); if (r2.quality > r0.quality) r = r2; } window.__q = [r0.quality.toFixed(2), r.quality.toFixed(2)];
         const ms = performance.now() - t0;
         // đáp án
         const tb = new Array(90).fill(null);

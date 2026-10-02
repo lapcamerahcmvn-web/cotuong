@@ -59,22 +59,26 @@ function setup(root) {
     let view = 1;   // tỉ lệ canvas / ảnh
     function startAlign(auto) {
         steps.pick.hidden = true; steps.align.hidden = false; steps.result.hidden = true;
-        const maxW = Math.min(stage.parentElement.clientWidth, 760);
-        view = maxW / img.width;
+        // Vừa khung nhìn: ảnh dọc chụp bằng điện thoại không được cao quá màn hình (phải thấy đủ 4 chấm góc).
+        const maxW = Math.min(stage.parentElement.clientWidth - 16, 760), maxH = Math.max(320, window.innerHeight * 0.72);
+        view = Math.min(maxW / img.width, maxH / img.height);
         stage.width = Math.round(img.width * view); stage.height = Math.round(img.height * view);
         corners = null;
         if (auto) {
             const g = detectGrid(img);
             if (g) { corners = g.corners; setHint('Đã tự tìm thấy lưới bàn cờ — kiểm tra 4 chấm có nằm đúng 4 góc lưới không rồi bấm “Nhận dạng”.', 'ok'); }
         }
+        setPhoto(!corners);
         if (!corners) {
             const w = img.width, h = img.height, mx = w * 0.12, my = h * 0.1;
             corners = [[mx, my], [w - mx, my], [w - mx, h - my], [mx, h - my]];
-            setHint('Kéo 4 chấm tròn vào đúng 4 GIAO ĐIỂM ở góc ngoài cùng của lưới (không phải mép gỗ), lưới xanh phải trùng các đường kẻ.', '');
+            setHint('Ảnh chụp bàn cờ thật: kéo 4 chấm vào 4 GIAO ĐIỂM góc ngoài cùng của lưới (không phải mép bàn). Góc bị quân che thì đặt chấm vào TÂM quân ở góc. Lưới xanh phải trùng các đường kẻ.', '');
         }
         draw();
         steps.align.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    const photoBox = $('[data-photo-mode]');
+    function setPhoto(v) { if (photoBox) photoBox.checked = v; }
     function setHint(t, kind) { const h = $('[data-align-hint]'); h.textContent = t; h.className = 'scan-hint ' + (kind === 'ok' ? 'is-ok' : ''); }
     function draw() {
         ctx.drawImage(imgEl, 0, 0, stage.width, stage.height);
@@ -90,6 +94,21 @@ function setup(root) {
             ctx.fillStyle = drag === i ? 'rgba(200,69,31,.95)' : 'rgba(200,69,31,.7)'; ctx.fill();
             ctx.lineWidth = 2.5; ctx.strokeStyle = '#fff'; ctx.stroke();
         });
+        if (drag >= 0) loupe(corners[drag]);
+    }
+    // Kính lúp: phóng to vùng quanh chấm đang kéo (ngón tay che mất điểm cần đặt) — đặt ở góc đối diện.
+    function loupe([x, y]) {
+        const R = Math.min(78, stage.width * 0.2), zoom = 3;
+        const lx = x * view < stage.width / 2 ? stage.width - R - 10 : R + 10, ly = R + 10;
+        ctx.save();
+        ctx.beginPath(); ctx.arc(lx, ly, R, 0, Math.PI * 2); ctx.clip();
+        const sw = (R * 2) / zoom / view;
+        ctx.drawImage(imgEl, (x - sw / 2) * (imgEl.naturalWidth / img.width), (y - sw / 2) * (imgEl.naturalHeight / img.height),
+            sw * (imgEl.naturalWidth / img.width), sw * (imgEl.naturalHeight / img.height), lx - R, ly - R, R * 2, R * 2);
+        ctx.strokeStyle = 'rgba(200,69,31,.95)'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(lx - R, ly); ctx.lineTo(lx + R, ly); ctx.moveTo(lx, ly - R); ctx.lineTo(lx, ly + R); ctx.stroke();
+        ctx.restore();
+        ctx.beginPath(); ctx.arc(lx, ly, R, 0, Math.PI * 2); ctx.lineWidth = 3; ctx.strokeStyle = '#fff'; ctx.stroke();
     }
     let drag = -1;
     const pos = (e) => { const r = stage.getBoundingClientRect(); return [(e.clientX - r.left) * (stage.width / r.width) / view, (e.clientY - r.top) * (stage.height / r.height) / view]; };
@@ -103,7 +122,7 @@ function setup(root) {
     stage.addEventListener('pointerup', () => { drag = -1; draw(); });
     $('[data-auto-grid]').addEventListener('click', () => {
         const g = detectGrid(img);
-        if (g) { corners = g.corners; draw(); setHint('Đã căn lưới tự động.', 'ok'); } else setHint('Không tự tìm được lưới (ảnh chụp nghiêng?) — hãy kéo 4 chấm bằng tay.', '');
+        if (g) { corners = g.corners; setPhoto(false); draw(); setHint('Đã căn lưới tự động.', 'ok'); } else setHint('Không tự tìm được lưới (ảnh chụp nghiêng?) — hãy kéo 4 chấm bằng tay.', '');
     });
     $('[data-rotate]').addEventListener('click', () => {
         const cv = document.createElement('canvas');
@@ -120,10 +139,16 @@ function setup(root) {
         btn.disabled = true; btn.innerHTML = `${icon('sparkles')} Đang nhận dạng…`;
         await new Promise((r) => setTimeout(r, 30));
         try {
-            rect = rectify(img, corners, 40);
-            // Ảnh màn hình: chữ quay 0°/180°. Điểm khớp thấp → thử như ảnh chụp thật (quân xoay mọi góc).
-            let r = await classify(rect, {});
-            if (r.quality < 0.76) { const r2 = await classify(rect, { photo: true }); if (r2.quality > r.quality) r = r2; }
+            // Ảnh chụp bàn thật: dò mép quân (quân đặt lệch, gỗ trên gỗ), chữ xoay mọi góc, nắn ở độ phân giải cao hơn.
+            // Ảnh màn hình: chữ 0°/180°; điểm khớp thấp thì thử lại như ảnh chụp.
+            const photo = !!photoBox?.checked;
+            rect = rectify(img, corners, photo ? 56 : 40);
+            let r = await classify(rect, { photo });
+            if (!photo && r.quality < 0.76) {
+                const rect2 = rectify(img, corners, 56);
+                const r2 = await classify(rect2, { photo: true });
+                if (r2.quality > r.quality) { r = r2; rect = rect2; }
+            }
             result = r;
             redToMove = true;
             track('scan_done', { quality: Math.round(r.quality * 100), coup: r.coup, warnings: r.warnings.length });
