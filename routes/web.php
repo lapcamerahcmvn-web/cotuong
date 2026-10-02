@@ -28,6 +28,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\ScanController;
+use App\Http\Controllers\Admin\PuzzleAuditController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Middleware\LogAccess;
@@ -100,6 +101,10 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::post('lessons/{lesson:id}/toggle', [AdminLessonController::class, 'togglePublish'])->name('lessons.toggle');
     Route::post('lessons/{lesson:id}/generate', [AdminLessonController::class, 'generate'])->name('lessons.generate');
     Route::delete('lessons/{lesson:id}', [AdminLessonController::class, 'destroy'])->name('lessons.destroy');
+
+    // Kiểm định thế cờ luyện tập (nước đỡ trong sách chưa tốt nhất) — nhân sự.
+    Route::get('kiem-dinh-the-co', [PuzzleAuditController::class, 'index'])->name('puzzle-audit.index');
+    Route::post('kiem-dinh-the-co', [PuzzleAuditController::class, 'mark'])->name('puzzle-audit.mark');
 
     // Quản lý chuỗi bài học (thêm/sửa/xoá) — nhân sự (admin + biên tập).
     Route::get('series', [LessonSeriesController::class, 'index'])->name('series.index');

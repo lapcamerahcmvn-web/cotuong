@@ -4,7 +4,7 @@ import {
     loadFen, legalMoves, legalMovesSt, stateFrom, toIccs, search, thinkCoup, gameOver,
     START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review, mateIn, checkPuzzleMove,
 } from '../resources/js/engine/engine.js';
-import { LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
+import { ALL_LINES as LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
 
 let fail = 0;
 const ok = (cond, msg) => { console.log((cond ? '  ✓ ' : '  ✗ ') + msg); if (!cond) fail++; };
@@ -73,6 +73,10 @@ const first = new Set(bookMoves(START_FEN, true).map((x) => x.move));
 ok(first.has('h2e2') && first.has('c3c4') && first.has('g0e2'), 'thế mở có Pháo đầu / Tiên nhân chỉ lộ / Phi tượng');
 ok(bookMoves(loadFen(START_FEN), false).length === 0, 'sai lượt đi → ngoài sách');
 ok(pickBook(START_FEN, true, new Set(first)) === null, 'tránh hết nước sách → null (máy tự tính)');
+// Lỗi cũ trong book viết tay: Xe ra h0 sau lưng Pháo h2 → Pháo đen h7 ăn Xe. Book phải không còn nước này.
+const after = (line) => { const bb = loadFen(START_FEN); line.split(' ').forEach((mv) => { const [f, t] = fromIccs(mv); bb[t] = bb[f]; bb[f] = null; }); return bb; };
+ok(!bookMoves(after('g0e2 g6g5 h0g2 h9g7'), true).some((x) => x.move === 'i0h0'), 'book không cho Xe ra sau lưng Pháo (bị ăn)');
+ok(!bookMoves(after('g0e2 h9g7 h0g2'), false).some((x) => x.move === 'i9h9'), 'book không cho Đen ra Xe vào cột Pháo đỏ');
 
 console.log('Bộ giải chiếu hết (luyện tập nhận đường thắng khác sách)');
 ok(mateIn('3k5/R7R/9/9/9/9/9/9/9/4K4', true, 1)?.k === 1, 'tìm chiếu hết 1 nước');

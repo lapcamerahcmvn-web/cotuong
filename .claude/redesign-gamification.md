@@ -300,3 +300,19 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Server `PuzzleService::verifyLine`: luân phiên đúng bên, hợp lệ, kết thúc bên đỡ hết nước, số nước bên giải ≤ lời giải + 2.
   Nhận `line` ở `/luyen-tap/the-co/{id}/thu` + phiên 60 giây/3 mạng. Test: `tests/Feature/PuzzleAltLineTest.php`,
   `tools/engine-test.mjs` (bộ giải). Không cần migrate.
+
+## Đợt 15 (02/10/2026) — Kiểm định thế cờ + bộ giải nước êm + book khai cuộc sâu (user yêu cầu 1→2→3)
+1. **Admin › Kiểm định thế cờ** (`/admin/kiem-dinh-the-co`, nhân sự): bộ giải thử mọi cách đỡ ở từng nước của bên thua
+   trong 747 thế chiếu hết → 207 thế (180 mục sau khi gộp thế đầy đủ + đoạn kết theo bài/nước): 131 "Thoát" (không bị
+   chiếu hết trong số nước còn lại — chắc chắn vì còn ≤ 3 nước), 49 "Kéo dài"; 73 chỗ chính nước sách cũng không bị ép
+   (lời giải dựa vào nước đỡ yếu phía sau). Bàn mini mũi tên đỏ/xanh, ký hiệu Việt, nút "Đã sửa bài / Giữ nguyên"
+   (bảng `puzzle_audit_marks`, khoá bài + nước). Dữ liệu `database/data/puzzle-audit.json` sinh bằng
+   `tools/puzzle-audit.mjs` (hosting không chạy Node) — quy trình chạy lại: `.claude/puzzle-audit.md`.
+2. **Bộ giải chiếu hết thêm nước êm:** ≤ 3 nước xét mọi nước; sâu hơn liên chiếu + tối đa 2 nước êm (`QUIET_MAX`),
+   chạy theo TẦNG: liên chiếu trước (nhanh), tầng nước êm có giờ riêng `QUIET_MS = 700`. Đo 31 thế dài (≥ 4 nước, 706
+   nước khác sách): nước khác sách chứng minh thắng 3 → 8, đáp án chứng minh 19 → 20, trung bình < 1 giây/nước
+   (bản thử không chia tầng: 2 giây, 444 lần hết giờ → bỏ).
+3. **Book khai cuộc sâu:** `book-data.js` tự sinh từ 73 bài khai cuộc (engine lọc nước kém > 150 điểm) → 72 dòng, 574
+   thế, dài tới 20 nước (trước 21 dòng ≤ 10 nước). Bộ lọc bắt 5 lỗi trong dòng viết tay cũ (Xe ra sau lưng Pháo bị ăn)
+   → đã cắt. Chi tiết: `.claude/opening-book.md`.
+- Deploy cần `php artisan migrate --force` (bảng `puzzle_audit_marks`).

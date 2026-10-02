@@ -3,6 +3,7 @@
 // có trọng số để không lặp 1 kiểu; phân tích ván ghi "Nước sách" cho nước nằm trong book.
 // Toạ độ: cột a..i trái→phải nhìn từ Đỏ, hàng 0 (đáy Đỏ)..9 (đáy Đen). Hợp lệ từng nước kiểm ở tools/engine-test.mjs.
 import { START_FEN, loadFen, toFen, fromIccs } from './engine.js';
+import { LESSON_LINES } from './book-data.js';
 
 export const LINES = [
     // ── Pháo đầu (炮二平五) đối Bình phong mã (屏风马) ─────────────────────────────
@@ -18,30 +19,34 @@ export const LINES = [
     [5, 'h2e2 h7e7 h0g2 h9g7 i0h0 i9h9 b0c2 b9c7'],                      // Thuận pháo Xe thẳng đối Xe thẳng
     [4, 'h2e2 b7e7 h0g2 b9c7 i0h0 a9b9 b0c2 h9g7'],                      // Liệt pháo
     // ── Pháo đầu đối Tam bộ hổ / Đơn đề mã ───────────────────────────────────────
-    [4, 'h2e2 h9g7 h0g2 h7i7 i0h0 i9h9 b0c2 b9c7'],                      // Tam bộ hổ (Pháo 8 bình 9)
+    [4, 'h2e2 h9g7 h0g2 h7i7 i0h0 i9h9'],                      // Tam bộ hổ (Pháo 8 bình 9)
     // ── Tiên nhân chỉ lộ (仙人指路: 兵七进一) ─────────────────────────────────────
-    [8, 'c3c4 g6g5 b0c2 h9g7 h0g2 b9c7 i0h0 i9h9'],                      // Đối binh (卒7进1)
+    [8, 'c3c4 g6g5 b0c2 h9g7 h0g2 b9c7'],                      // Đối binh (卒7进1)
     [6, 'c3c4 b7c7 h2e2 c9e7 h0g2 h9g7 i0h0 i9h9'],                      // Pháo dưới tốt (卒底炮: 炮2平3)
     [4, 'c3c4 c9e7 h2e2 h9g7 h0g2 i9h9'],                                 // Phi tượng đáp lại
     [3, 'c3c4 h9g7 h2e2 g6g5 h0g2 i9h9'],                                 // Khởi mã đáp lại
     // ── Phi tượng cục (飞相局: 相三进五) ─────────────────────────────────────────
     [6, 'g0e2 h7f7 h0g2 h9g7 i0h0 i9h9 b0c2 g6g5'],                      // đối Sĩ giác pháo (炮8平6)
-    [5, 'g0e2 g6g5 h0g2 h9g7 i0h0 i9h9 c3c4 b9c7'],                      // đối Tiến tốt 7
-    [4, 'g0e2 h9g7 h0g2 i9h9 i0h0 g6g5 c3c4 b9c7'],                      // đối Khởi mã
+    [5, 'g0e2 g6g5 h0g2 h9g7'],                      // đối Tiến tốt 7
+    // (bỏ: g0e2 h9g7 h0g2 i9h9 i0h0 g6g5 c3c4 b9c7 — i9h9 kém 495 điểm theo engine)
     // ── Khởi mã cục (起马局: 马二进三) ──────────────────────────────────────────
-    [4, 'h0g2 g6g5 g3g4 h9g7 i0h0 i9h9'],                                 // đối Tiến tốt 7
+    // (bỏ: h0g2 g6g5 g3g4 h9g7 i0h0 i9h9 — g3g4 kém 183 điểm theo engine)
     [3, 'h0g2 h9g7 c3c4 g6g5 b0c2 b9c7'],                                 // đối Khởi mã
     // ── Quá cung pháo (过宫炮: 炮二平六) & Sĩ giác pháo (士角炮: 炮二平四) ─────────
     [3, 'h2d2 h9g7 h0g2 i9h9 i0h0 b9c7'],                                 // Quá cung pháo
     [2, 'h2f2 h9g7 h0g2 i9h9 i0h0 b9c7'],                                 // Sĩ giác pháo
 ];
 
+// Diễn biến từ các bài khai cuộc trên site (engine đã kiểm từng nước — tools/build-opening-book.mjs), trọng số 2/dòng:
+// tiền tố chung của nhiều bài cộng dồn → hệ phổ biến được chọn nhiều hơn.
+export const ALL_LINES = [...LINES, ...LESSON_LINES.map((l) => [2, l])];
+
 let BOOK = null;
 const key = (b, red) => toFen(b) + (red ? ' r' : ' b');
 
 function build() {
     BOOK = new Map();
-    for (const [w, line] of LINES) {
+    for (const [w, line] of ALL_LINES) {
         const b = loadFen(START_FEN);
         let red = true;
         for (const mv of line.split(' ')) {

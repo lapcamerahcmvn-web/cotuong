@@ -148,6 +148,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 - **Sai lầm của tôi** `/luyen-tap/sai-lam-cua-toi` — luyện lại nước sai từ ván đã phân tích, lặp ngắt quãng — Đợt 11.
 - **Máy đánh đúng lý thuyết** — cờ úp không nhìn trộm quân úp + nguyên lý khai cuộc (không vội vật Pháo giả); cờ tướng có book khai cuộc `resources/js/engine/book.js`, phân tích ghi "Nước sách" — Đợt 13.
 - **Luyện tập nhận mọi đường chiếu hết** — nước khác sách được bộ giải chứng minh thắng thì tính đúng, máy đỡ dai nhất — Đợt 14.
+- **Kiểm định thế cờ (Admin) + bộ giải nước êm + book khai cuộc 72 dòng/20 nước** — Đợt 15 (`.claude/puzzle-audit.md`, `.claude/opening-book.md`).
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).
