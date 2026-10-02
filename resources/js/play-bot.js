@@ -84,7 +84,7 @@ function setup(root) {
     const setupBox = $('[data-bot-setup]'), playBox = $('[data-bot-play]');
     const statusEl = $('[data-bot-status]'), listEl = $('[data-bot-moves]'), levelEl = $('[data-bot-level]');
     let worker = null, reqId = 0, g = null, board = null, view = null;
-    let turnStart = Date.now(), tick = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
+    let turnStart = Date.now(), tick = null, lastTick = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
 
     const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong', time: '600+5' };
     const markOn = (sel, val, attr) => root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x.dataset[attr] === String(val)));
@@ -152,8 +152,9 @@ function setup(root) {
 
     function refresh(animateLast) {
         view = replay(g);
-        board.set(fen(), g.moves[g.moves.length - 1] || null, animateLast ? undefined : { noAnim: true, silent: true });
         const a = analyse(startOf(g), g.moves, view.reveals, seenCaptured(), g.custom?.pool ? poolCounts(g.custom.pool) : null);
+        // Nước vừa đi: tiếng đặt quân + báo chiếu + giọng đọc tên nước (nếu bật trong Cài đặt → Âm thanh).
+        board.set(fen(), g.moves[g.moves.length - 1] || null, animateLast ? { say: a.notes[a.notes.length - 1] } : { noAnim: true, silent: true });
         renderNotes(listEl, redFirstOf(g) ? a.notes : [null, ...a.notes]);
         renderCaptured($('[data-bot-captured]'), a, g.human, { over: !!g.over });
         const nap = animateLast && lastNap(a, g.moves.length);
@@ -198,6 +199,12 @@ function setup(root) {
     function clockTick() {
         if (!g?.clock) return;
         const humanSide = g.human, botSide = humanRed() ? 'den' : 'do', turn = sideKey(turnRed());
+        // Tích tắc mỗi giây khi lượt mình còn < 10 giây.
+        const myMs = remaining(humanSide);
+        if (!g.over && turn === humanSide && myMs < 10000) {
+            const sec = Math.ceil(myMs / 1000);
+            if (sec !== lastTick) { lastTick = sec; window.XiangqiBoard.sound.tick(sec <= 5); }
+        } else lastTick = null;
         [['human', humanSide], ['bot', botSide]].forEach(([who, side]) => {
             const ms = remaining(side);
             const strip = root.querySelector(`[data-clock-strip="${who}"]`);
@@ -379,6 +386,7 @@ function setup(root) {
         refresh(false);           // hết ván: nắp đối phương đã ăn thành "?" bấm để lật
         board.lock(true);
         const outcome = r.winner === null ? 'draw' : (r.winner === g.human ? 'win' : 'loss');
+        window.XiangqiBoard.sound.end(outcome);
         status(outcome === 'win' ? 'Bạn thắng!' : outcome === 'loss' ? 'Máy thắng' : 'Hoà', outcome === 'win' ? 'ok' : 'err');
         track('game_finish', { mode: 'bot', level: g.level, result: outcome, variant: g.variant });
         let res = null;

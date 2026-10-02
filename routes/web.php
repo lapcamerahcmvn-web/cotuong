@@ -170,6 +170,7 @@ Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');
 Route::get('/nhan-dien-ban-co', [ScanController::class, 'show'])->name('scan');
+Route::view('/giao-dien-ban-co', 'display')->name('display');   // Giao diện bàn cờ + âm thanh (khách cũng dùng được, lưu trên thiết bị)
 Route::post('/nhan-dien-ban-co/ai', [ScanController::class, 'ai'])->name('scan.ai')->middleware(['auth', 'throttle:6,1,scan-ai']);
 Route::get('/ky-thu/{ref}', [ProfileController::class, 'show'])->name('profile.show')->where('ref', '[0-9]+(-[a-z0-9-]*)?');
 Route::middleware('auth')->group(function () {

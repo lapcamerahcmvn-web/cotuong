@@ -355,3 +355,20 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   cũng được học).
 - Bench 87 ảnh sinh: không đổi so với trước (98.0 / 97.4 / 97.3 / 90.9 / 86.4%).
 - AI nhận dạng (Claude vision) cần `ANTHROPIC_API_KEY` trong .env hosting — hiện TRỐNG nên nút AI không hiện.
+
+## Đợt 19 (02/10/2026) — Giao diện bàn cờ, quân cờ, âm thanh (user yêu cầu)
+- **LỖI CŨ đã sửa:** đổi màu bàn (Cổ điển / Ngọc bích / Tương phản cao) KHÔNG có tác dụng — biến `--xq-*` gốc ở `:root`
+  (base.css, ngoài @layer) luôn thắng quy tắc `[data-board-theme]` nằm TRONG `@layer components`. Giờ các quy tắc màu bàn
+  + số cột nằm cuối board.css, ngoài layer.
+- Màu bàn mới: Gỗ đậm (walnut), Giấy (paper), Cẩm thạch (marble), Bàn đêm (night) — 8 màu, ô mẫu xem trước.
+- Quân cờ (`board.js` PREF, localStorage): `piece_set` han|vi (chữ Việt Tướng/Sĩ/Tượng/Mã/Xe/Pháo/Tốt — cho người mới),
+  `piece_style` flat|3d (bóng đổ, thành quân, gradient mặt cong, gờ sáng), `board_coords` 1 = số cột quanh bàn (trên 1..9,
+  dưới 9..1, màu theo bên ngồi; khung `.board-holder` 468/550; ảnh thu nhỏ `{thumb:true}` không hiện).
+- Âm thanh (`Sound`, localStorage `xq_sound`): bật/tắt, âm lượng (master gain), bộ âm Gỗ/Đá-ngọc/Nhẹ, báo chiếu tướng
+  (`moveFx` kiểm chiếu sau mỗi nước — bài học, biến, ván đấu, giải đố), tích tắc < 10s (chơi máy + đấu bạn), âm báo kết
+  thúc ván (thắng/thua/hoà), giọng đọc nước đi tiếng Việt (Web Speech; không có giọng vi thì im + báo trong cài đặt;
+  đọc khi đi TIẾN trong bài học, sau mỗi nước khi chơi máy).
+- Trang cài đặt: `partials/display-settings.blade.php` + `resources/js/display-settings.js` (xem trước trực tiếp, "Đi thử
+  1 nước", nghe thử) — ở Cài đặt tài khoản và trang công khai `/giao-dien-ban-co` (khách dùng được); menu "⋯" mọi bàn cờ
+  có lối tắt "Giao diện & âm thanh".
+- Màn hoàn thành bài: vượt mục tiêu ngày hiện "Đã đạt mục tiêu hôm nay ✓ 143 XP / 50" thay vì "143/50 XP".

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#c8451f">
     {{-- Áp theme + giao diện bàn cờ đã lưu TRƯỚC khi tải CSS (chống nháy sáng/tối). Không lưu → theo HĐH. --}}
-    <script>(function(){try{var d=document.documentElement,t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;var b=localStorage.getItem('board_theme');if(b)d.dataset.boardTheme=b;if(localStorage.getItem('reduce_fx')==='1')d.classList.add('reduce-fx');}catch(e){}})();</script>
+    <script>(function(){try{var d=document.documentElement,t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;var b=localStorage.getItem('board_theme');if(b)d.dataset.boardTheme=b;if(localStorage.getItem('board_coords')==='1')d.dataset.boardCoords='1';if(localStorage.getItem('reduce_fx')==='1')d.classList.add('reduce-fx');}catch(e){}})();</script>
 
     @php
         // Blade escape sẵn nội dung @section(...) truyền theo tham số (e()). Các giá trị lấy từ

@@ -51,6 +51,7 @@
                             @auth
                                 <button type="button" data-xq-savefen data-xq-icon="bookmark" data-xq-label="Lưu vào thư viện">🔖 Lưu vào thư viện</button>
                             @endauth
+                            <a href="{{ route('display') }}" data-xq-icon="settings" data-xq-label="Giao diện &amp; âm thanh">⚙ Giao diện &amp; âm thanh</a>
                         </div>
                         <button type="button" class="board-fab" data-xq-fs title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">⛶</button>
                     </span>

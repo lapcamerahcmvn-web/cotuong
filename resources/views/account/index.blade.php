@@ -137,7 +137,7 @@
                 @endfor
             </div>
             @php $gp = min(100, (int) round(100 * $snap['goal']['xp'] / max(1, $snap['goal']['target']))); @endphp
-            <div class="mt-4 text-[13.5px] font-semibold flex justify-between"><span>Mục tiêu hôm nay</span><span>{{ $snap['goal']['xp'] }}/{{ $snap['goal']['target'] }} XP</span></div>
+            <div class="mt-4 text-[13.5px] font-semibold flex justify-between"><span>Mục tiêu hôm nay</span><span>@if($snap['goal']['xp'] >= $snap['goal']['target'])<span class="text-jade">Đã đạt ✓</span> @endif{{ $snap['goal']['xp'] }}/{{ $snap['goal']['target'] }} XP</span></div>
             <div class="progress progress--gold mt-1"><div class="progress__bar" style="width: {{ $gp }}%"></div></div>
         </section>
 

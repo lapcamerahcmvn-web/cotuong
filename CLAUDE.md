@@ -149,6 +149,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 - **Máy đánh đúng lý thuyết** — cờ úp không nhìn trộm quân úp + nguyên lý khai cuộc (không vội vật Pháo giả); cờ tướng có book khai cuộc `resources/js/engine/book.js`, phân tích ghi "Nước sách" — Đợt 13.
 - **Luyện tập nhận mọi đường chiếu hết** — nước khác sách được bộ giải chứng minh thắng thì tính đúng, máy đỡ dai nhất — Đợt 14.
 - **Kiểm định thế cờ (Admin) + bộ giải nước êm + book khai cuộc 72 dòng/20 nước** — Đợt 15 (`.claude/puzzle-audit.md`, `.claude/opening-book.md`).
+- **Giao diện bàn cờ & âm thanh** `/giao-dien-ban-co` — 8 màu bàn, chữ Hán/Việt, quân phẳng/3D, số cột, âm lượng/bộ âm/báo chiếu/tích tắc/giọng đọc — Đợt 19.
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).

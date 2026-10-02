@@ -43,20 +43,7 @@
             </label>
         </section>
 
-        <section class="card card--pad" data-local-settings>
-            <h2 class="text-lg font-extrabold mb-1">Giao diện (lưu trên thiết bị này)</h2>
-            <p class="text-[14px] text-ink-soft mb-3">Thay đổi có hiệu lực ngay.</p>
-            <div class="label mb-2">Bàn cờ</div>
-            <div class="flex flex-wrap gap-2 mb-4" data-board-themes>
-                @foreach(['' => 'Gỗ (mặc định)', 'classic' => 'Cổ điển', 'jade' => 'Ngọc bích', 'contrast' => 'Tương phản cao'] as $k => $label)
-                    <button type="button" class="chip" data-board-theme-opt="{{ $k }}">{{ $label }}</button>
-                @endforeach
-            </div>
-            <label class="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" class="w-5 h-5 accent-[var(--primary)]" data-reduce-fx>
-                <span class="font-semibold">Giảm hiệu ứng (tắt pháo giấy, nhấp nháy)</span>
-            </label>
-        </section>
+        @include('partials.display-settings')
 
         <div class="flex justify-end gap-2">
             <a href="{{ route('account.index') }}" class="btn btn--ghost">Huỷ</a>
@@ -65,27 +52,5 @@
     </form>
 </div>
 
-@push('scripts')
-<script>
-(function () {
-    var root = document.documentElement;
-    var cur = ''; try { cur = localStorage.getItem('board_theme') || ''; } catch (e) {}
-    var opts = document.querySelectorAll('[data-board-theme-opt]');
-    function mark() { opts.forEach(function (b) { b.classList.toggle('is-on', b.dataset.boardThemeOpt === cur); }); }
-    opts.forEach(function (b) { b.addEventListener('click', function () {
-        cur = b.dataset.boardThemeOpt;
-        try { cur ? localStorage.setItem('board_theme', cur) : localStorage.removeItem('board_theme'); } catch (e) {}
-        if (cur) root.dataset.boardTheme = cur; else delete root.dataset.boardTheme;
-        mark();
-    }); });
-    mark();
-    var fx = document.querySelector('[data-reduce-fx]');
-    try { fx.checked = localStorage.getItem('reduce_fx') === '1'; } catch (e) {}
-    fx.addEventListener('change', function () {
-        try { localStorage.setItem('reduce_fx', fx.checked ? '1' : '0'); } catch (e) {}
-        root.classList.toggle('reduce-fx', fx.checked);
-    });
-})();
-</script>
-@endpush
+
 @endsection

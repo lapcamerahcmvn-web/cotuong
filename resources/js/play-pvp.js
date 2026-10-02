@@ -16,7 +16,7 @@ function run(root) {
     const $ = (s) => root.querySelector(s);
     const code = root.dataset.code;
     let s = JSON.parse($('script[data-pvp-state]').textContent);
-    let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false;
+    let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false, lastTickSec = null;
     let seenPlies = s.moves.length;   // để chỉ báo "ăn nắp" cho nước MỚI, không báo lại khi tải trang
     const R = window.XiangqiRules;
 
@@ -156,6 +156,10 @@ function run(root) {
             let ms = s.clocks[side];
             if (s.status === 'playing' && s.turn === side) ms -= Date.now() - clockAt;
             ms = Math.max(0, ms);
+            if (side === s.you && s.status === 'playing' && s.turn === side && ms < 10000) {
+                const sec = Math.ceil(ms / 1000);
+                if (sec !== lastTickSec) { lastTickSec = sec; window.XiangqiBoard.sound.tick(sec <= 5); }
+            }
             const elc = root.querySelector(`[data-clock="${side}"]`);
             if (elc) {
                 const t = Math.ceil(ms / 1000);
@@ -167,6 +171,7 @@ function run(root) {
 
     function showEnd() {
         const win = s.you && s.result === s.you;
+        window.XiangqiBoard.sound.end(s.result === 'hoa' ? 'draw' : win ? 'win' : s.you ? 'loss' : 'draw');
         const dlg = openSheet(`<div class="celebrate">
             <div class="celebrate__burst">${icon(s.result === 'hoa' ? 'repeat' : (win ? 'trophy' : 'shield'))}</div>
             <h2>${escapeHtml(endText().split(' · ')[0])}</h2>

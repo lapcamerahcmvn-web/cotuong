@@ -26,28 +26,46 @@
     btn.innerHTML = ico(name) + (text ? '<span>' + text + '</span>' : '');
   }
 
-  // Âm thanh nước đi — tổng hợp bằng Web Audio API (không cần file audio).
+  // Âm thanh — tổng hợp bằng Web Audio API (không cần file audio) + giọng đọc nước đi (Web Speech, tiếng Việt).
+  // Cài đặt lưu localStorage 'xq_sound' (JSON): on, vol 0..1, pack 'wood'|'stone'|'soft', check, tick, end, voice.
   var Sound = (function () {
-    var muted = false;
-    try { muted = localStorage.getItem('xq_muted') === '1'; } catch (e) {}
-    var ctx = null;
+    var DEF = { on: true, vol: 0.8, pack: 'wood', check: true, tick: true, end: true, voice: false };
+    var P = {};
+    function load() {
+      var o = {};
+      try { o = JSON.parse(localStorage.getItem('xq_sound') || '{}') || {}; } catch (e) { o = {}; }
+      P = {};
+      for (var k in DEF) P[k] = (o[k] === undefined ? DEF[k] : o[k]);
+      try { if (localStorage.getItem('xq_muted') === '1' && o.on === undefined) P.on = false; } catch (e) {}
+    }
+    function store() {
+      try { localStorage.setItem('xq_sound', JSON.stringify(P)); localStorage.setItem('xq_muted', P.on ? '0' : '1'); } catch (e) {}
+    }
+    load();
+    window.addEventListener('storage', function (e) { if (e.key === 'xq_sound') load(); });
+    var ctx = null, master = null;
     function ac() {
-      if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+      if (!ctx) {
+        try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; }
+        master = ctx.createGain(); master.connect(ctx.destination);
+      }
       if (ctx.state === 'suspended') ctx.resume();
+      master.gain.value = Math.max(0, Math.min(1, +P.vol || 0)) * 1.25;
       return ctx;
     }
-    function tone(freq, dur, type, gain, delay) {
+    function tone(freq, dur, type, gain, delay, slideTo) {
       var c = ac(); if (!c) return;
       var t0 = c.currentTime + (delay || 0);
       var osc = c.createOscillator(), g = c.createGain();
       osc.type = type; osc.frequency.setValueAtTime(freq, t0);
+      if (slideTo) osc.frequency.exponentialRampToValueAtTime(slideTo, t0 + dur);
       g.gain.setValueAtTime(0, t0);
       g.gain.linearRampToValueAtTime(gain, t0 + 0.006);
       g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-      osc.connect(g); g.connect(c.destination);
+      osc.connect(g); g.connect(master);
       osc.start(t0); osc.stop(t0 + dur + 0.02);
     }
-    function noiseBurst(dur, gain, delay) {
+    function noiseBurst(dur, gain, delay, hp) {
       var c = ac(); if (!c) return;
       var t0 = c.currentTime + (delay || 0);
       var len = Math.max(1, Math.floor(c.sampleRate * dur));
@@ -56,24 +74,66 @@
       for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2);
       var src = c.createBufferSource(); src.buffer = buf;
       var g = c.createGain(); g.gain.setValueAtTime(gain, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-      src.connect(g); g.connect(c.destination);
+      var node = src;
+      if (hp) { var f = c.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = hp; src.connect(f); node = f; }
+      node.connect(g); g.connect(master);
       src.start(t0);
     }
-    function move(isCapture) {
-      if (muted) return;
-      tone(isCapture ? 150 : 190, 0.09, 'triangle', 0.22, 0);
-      tone(isCapture ? 95 : 115, 0.12, 'sine', 0.16, 0.006);
-      if (isCapture) noiseBurst(0.05, 0.14, 0.012);
+    // Bộ âm: Gỗ (cạch trầm như quân gỗ đặt xuống bàn) · Đá (tiếng "tách" sáng của quân đá/ngọc) · Nhẹ (êm, nhỏ).
+    var PACKS = {
+      wood: function (cap) { tone(cap ? 150 : 190, 0.09, 'triangle', 0.22, 0); tone(cap ? 95 : 115, 0.12, 'sine', 0.16, 0.006); if (cap) noiseBurst(0.05, 0.14, 0.012); },
+      stone: function (cap) { tone(cap ? 1250 : 1650, 0.05, 'sine', 0.14, 0); noiseBurst(0.035, 0.16, 0, 2200); tone(cap ? 420 : 560, 0.08, 'triangle', 0.1, 0.004); if (cap) noiseBurst(0.07, 0.12, 0.02, 1200); },
+      soft: function (cap) { tone(cap ? 330 : 392, 0.14, 'sine', 0.1, 0); if (cap) tone(262, 0.16, 'sine', 0.08, 0.05); }
+    };
+    function move(isCapture) { if (P.on) (PACKS[P.pack] || PACKS.wood)(!!isCapture); }
+    function check() { if (P.on && P.check) { tone(880, 0.11, 'square', 0.05, 0.08); tone(1175, 0.16, 'square', 0.05, 0.19); } }
+    function tick(urgent) { if (P.on && P.tick) tone(urgent ? 1400 : 1000, 0.035, 'square', urgent ? 0.05 : 0.03, 0); }
+    function end(kind) {
+      if (!P.on || !P.end) return;
+      if (kind === 'win') { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, 0.22, 'triangle', 0.12, i * 0.11); }); }
+      else if (kind === 'loss') { [392, 330, 262].forEach(function (f, i) { tone(f, 0.3, 'sine', 0.12, i * 0.16); }); }
+      else { tone(523, 0.25, 'sine', 0.1, 0); tone(523, 0.3, 'sine', 0.1, 0.22); }
     }
-    function good() { if (!muted) { tone(660, 0.12, 'sine', 0.12, 0); tone(880, 0.18, 'sine', 0.12, 0.09); } }
-    function bad() { if (!muted) { tone(220, 0.16, 'square', 0.06, 0); tone(165, 0.22, 'square', 0.06, 0.1); } }
-    function toggle() {
-      muted = !muted;
-      try { localStorage.setItem('xq_muted', muted ? '1' : '0'); } catch (e) {}
-      return muted;
+    function good() { if (P.on) { tone(660, 0.12, 'sine', 0.12, 0); tone(880, 0.18, 'sine', 0.12, 0.09); } }
+    function bad() { if (P.on) { tone(220, 0.16, 'square', 0.06, 0); tone(165, 0.22, 'square', 0.06, 0.1); } }
+    // Giọng đọc: chọn giọng tiếng Việt nếu máy có; không có thì im lặng (không đọc bằng giọng ngoại ngữ).
+    var viVoice = null;
+    function pickVoice() {
+      try { var vs = window.speechSynthesis.getVoices() || []; viVoice = vs.filter(function (v) { return /^vi/i.test(v.lang); })[0] || null; } catch (e) {}
     }
-    return { move: move, good: good, bad: bad, toggle: toggle, isMuted: function () { return muted; } };
+    if (window.speechSynthesis) { pickVoice(); try { window.speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch (e) {} }
+    function hasVoice() { if (!viVoice) pickVoice(); return !!viVoice; }
+    function say(text, force) {
+      if (!text || !window.speechSynthesis || !(force || (P.on && P.voice))) return;
+      if (!hasVoice()) return;
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(String(text).replace(/\s*[—-]\s*/g, ', '));
+        u.voice = viVoice; u.lang = viVoice.lang; u.rate = 1.05; u.volume = Math.max(0.1, Math.min(1, +P.vol || 0.8));
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    }
+    function toggle() { P.on = !P.on; store(); return !P.on; }
+    function get() { var o = {}; for (var k in P) o[k] = P[k]; return o; }
+    function set(o) { for (var k in o) if (k in DEF) P[k] = o[k]; store(); }
+    return {
+      move: move, check: check, tick: tick, end: end, good: good, bad: bad, say: say, hasVoice: hasVoice,
+      toggle: toggle, get: get, set: set, isMuted: function () { return !P.on; }
+    };
   })();
+
+  // Sau 1 nước: tiếng đặt quân / ăn quân, báo chiếu tướng (nếu có), đọc tên nước (nếu bật giọng đọc).
+  function moveFx(beforeFen, afterFen, wxf) {
+    Sound.move(countPieces(beforeFen) !== countPieces(afterFen));
+    var R = window.XiangqiRules;
+    if (R && afterFen) {
+      try {
+        var b = R.loadFen(afterFen.split(' ')[0]), coup = /[Xx]/.test(afterFen);
+        if (R.inCheck(b, true, coup) || R.inCheck(b, false, coup)) Sound.check();
+      } catch (e) {}
+    }
+    if (wxf) Sound.say(wxf);
+  }
 
   function attachSound(root) {
     var btn = root.querySelector('[data-xq-sound]');
@@ -148,6 +208,17 @@
     k: { c: '將' }, a: { c: '士' }, b: { c: '象' }, n: { c: '馬' }, r: { c: '車' }, c: { c: '砲' }, p: { c: '卒' },
     X: { up: true, red: true }, x: { up: true }
   };
+  Object.keys(PIECES).forEach(function (k) { PIECES[k].t = k.toUpperCase(); });
+  // Chữ Việt trên quân (cài đặt "Bộ quân: Chữ Việt") — dễ cho người mới chưa quen chữ Hán.
+  var VI = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt' };
+  // Cài đặt hiển thị (localStorage, trang Cài đặt): bộ chữ, kiểu quân phẳng/nổi, số cột quanh bàn.
+  var PREF = {};
+  function loadPrefs() {
+    function rd(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
+    PREF = { set: rd('piece_set', 'han'), style: rd('piece_style', 'flat'), coords: rd('board_coords', '0') === '1' };
+    try { document.documentElement.dataset.boardCoords = PREF.coords ? '1' : '0'; } catch (e) {}
+  }
+  loadPrefs();
   var PIECE_FONT = 'XiangqiKai,KaiTi,STKaiti,serif';
 
   function fenToBoard(fen) {
@@ -186,11 +257,26 @@
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="16.5" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".85"/>';
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="9" fill="none" stroke="var(--xq-disc,#f6ecd6)" stroke-width="1.5" opacity=".6"/>';
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="2.6" fill="var(--xq-disc,#f6ecd6)" opacity=".9"/>';
+    } else if (PREF.style === '3d') {
+      // Quân nổi: bóng đổ, mặt có độ cong (gradient), viền khắc đôi.
+      s += '<ellipse cx="' + (cx + 1.5) + '" cy="' + (cy + 4) + '" rx="21.5" ry="20.5" fill="rgba(30,16,0,.42)"/>';    // bóng đổ
+      s += '<circle cx="' + cx + '" cy="' + (cy + 2) + '" r="21" fill="var(--xq-line,#7c5a2c)" opacity=".55"/>';       // thành quân (độ dày)
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="var(--xq-disc,#f6ecd6)"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="url(#xqShade)"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="20.3" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>';  // gờ sáng
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="17.4" fill="none" stroke="' + col + '" stroke-width="1.5" opacity=".75"/>';
     } else {
       s += '<circle cx="' + cx + '" cy="' + (cy + 1.5) + '" r="21" fill="rgba(60,35,5,.22)"/>';
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="21" fill="var(--xq-disc,#f6ecd6)" stroke="' + col + '" stroke-width="2"/>';
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="17" fill="none" stroke="' + col + '" stroke-width="1" opacity=".35"/>';
-      s += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" font-size="24" font-family="' + PIECE_FONT + '" fill="' + col + '">' + p.c + '</text>';
+    }
+    if (!p.up) {
+      if (PREF.set === 'vi') {
+        var lb = VI[p.t] || p.c, fs = lb.length >= 5 ? 11 : lb.length >= 4 ? 12.5 : lb.length >= 3 ? 14 : 16.5;
+        s += '<text x="' + cx + '" y="' + (cy + fs * 0.36) + '" text-anchor="middle" font-size="' + fs + '" font-weight="800" font-family="\'Be Vietnam Pro\',system-ui,sans-serif" fill="' + col + '">' + lb + '</text>';
+      } else {
+        s += '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" font-size="24" font-family="' + PIECE_FONT + '" fill="' + col + '">' + p.c + '</text>';
+      }
     }
     return s;
   }
@@ -204,8 +290,21 @@
     function X(f) { return M + fx(f) * CW; }
     function Y(r) { return M + ry(r) * CH; }
     var board = fenToBoard(fen);
-    var s = '<svg viewBox="0 0 ' + BW + ' ' + BH + '" width="100%" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-label="Bàn cờ tướng">';
-    s += '<rect x="0" y="0" width="' + BW + '" height="' + BH + '" rx="10" fill="var(--xq-wood,#e9cf9c)"/>';
+    // Số cột (ký hiệu Việt "Pháo 2 bình 5"): mỗi bên đếm 1→9 từ PHẢI sang TRÁI theo hướng nhìn của mình →
+    // hàng số phía trên luôn 1..9, phía dưới luôn 9..1 (trái → phải), màu theo bên ngồi ở đó. Ảnh thu nhỏ không hiện.
+    var coords = opts.coords === true || (PREF.coords && !opts.thumb && opts.coords !== false);
+    var PAD = coords ? 15 : 0;
+    var s = '<svg viewBox="0 ' + (-PAD) + ' ' + BW + ' ' + (BH + 2 * PAD) + '" width="100%" preserveAspectRatio="xMidYMid meet" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-label="Bàn cờ tướng">';
+    if (PREF.style === '3d') s += '<defs><radialGradient id="xqShade" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#3a2408" stop-opacity=".38"/></radialGradient></defs>';
+    s += '<rect x="0" y="' + (-PAD) + '" width="' + BW + '" height="' + (BH + 2 * PAD) + '" rx="10" fill="var(--xq-wood,#e9cf9c)"/>';
+    if (coords) {
+      var topCol = flip ? 'var(--xq-red,#c0392b)' : 'var(--xq-black,#24333f)', botCol = flip ? 'var(--xq-black,#24333f)' : 'var(--xq-red,#c0392b)';
+      for (var cf = 0; cf < 9; cf++) {
+        var cxx = M + cf * CW;
+        s += '<text x="' + cxx + '" y="-2" text-anchor="middle" font-size="12.5" font-weight="700" font-family="system-ui,sans-serif" fill="' + topCol + '" opacity=".8">' + (cf + 1) + '</text>';
+        s += '<text x="' + cxx + '" y="' + (BH + 11) + '" text-anchor="middle" font-size="12.5" font-weight="700" font-family="system-ui,sans-serif" fill="' + botCol + '" opacity=".8">' + (9 - cf) + '</text>';
+      }
+    }
     for (var r = 0; r < 10; r++) s += line(X(0), Y(r), X(8), Y(r));
     for (var f = 0; f < 9; f++) {
       if (f === 0 || f === 8) s += line(X(f), Y(0), X(f), Y(9));
@@ -428,10 +527,10 @@
     function go(i, userAction) {
       var clamped = Math.max(-1, Math.min(steps.length - 1, i));
       if (clamped === idx) return false;
-      var beforeFen = idx < 0 ? startFen : steps[idx].fen;
+      var beforeFen = idx < 0 ? startFen : steps[idx].fen, forward = clamped > idx;
       idx = clamped;
       draw();
-      if (idx >= 0) Sound.move(countPieces(beforeFen) !== countPieces(steps[idx].fen));
+      if (idx >= 0) moveFx(beforeFen, steps[idx].fen, forward ? steps[idx].wxf : null);   // chỉ đọc khi đi tiến
       if (userAction) emit(root, 'xq:userstep');
       if (steps.length > 0 && idx === steps.length - 1) emit(root, 'xq:viewed-all-moves');
       return true;
@@ -556,7 +655,7 @@
       var beforeFen = cur.fen;
       cur = node;
       draw();
-      Sound.move(countPieces(beforeFen) !== countPieces(cur.fen));
+      moveFx(beforeFen, cur.fen, cur.wxf);
       notifyEnd();
     }
     function back() {
@@ -699,6 +798,7 @@
       state.board[m.to] = state.board[m.from]; state.board[m.from] = null;
       state.last = iccs; state.ply++; state.line.push(iccs);
       Sound.move(captured);
+      try { var cr = state.ply % 2 === 0 ? solverRed() : !solverRed(); if (Rules.inCheck(state.board, cr)) Sound.check(); } catch (e) {}
       return true;
     }
 
@@ -1022,7 +1122,7 @@
         st.board = Rules.loadFen(fen); st.last = lastIccs || null; st.selected = -1; st.dots = [];
         st.arrows = (o && o.arrows) || null; st.hint = -1;
         draw(o && o.noAnim ? { noAnim: true } : null);
-        if (lastIccs && !(o && o.silent)) Sound.move(countPieces(before) !== countPieces(fen));
+        if (lastIccs && !(o && o.silent)) moveFx(before, fen, o && o.say);
       },
       showArrow: function (iccs, color) {
         var m = iccsToIdx(iccs); if (!m) return;
@@ -1048,5 +1148,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
   else initAll();
 
-  window.XiangqiBoard = { render: renderBoard, mountPuzzle: mountPuzzle, mountGame: mountGame, init: initBoard, initAll: initAll, sound: Sound };
+  window.XiangqiBoard = { render: renderBoard, mountPuzzle: mountPuzzle, mountGame: mountGame, init: initBoard, initAll: initAll, sound: Sound, reloadPrefs: loadPrefs };
 })();

@@ -32,8 +32,8 @@
     .board-fab[aria-pressed="true"] { color: var(--ink-faint); }
     .board-fab.is-ok { color: var(--jade); border-color: var(--jade); }
     .board-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; min-width: 210px; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-lg); }
-    .board-menu button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px; border: 0; background: none; border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--ink); cursor: pointer; text-align: left; }
-    .board-menu button:hover { background: var(--surface-2); }
+    .board-menu button, .board-menu a { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px; border: 0; background: none; border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--ink); cursor: pointer; text-align: left; }
+    .board-menu button:hover, .board-menu a:hover { background: var(--surface-2); text-decoration: none; }
     .board-menu svg { width: 18px; height: 18px; color: var(--ink-soft); }
 
     .controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
@@ -101,8 +101,34 @@
     .seg__btn svg { width: 18px; height: 18px; }
     .seg__btn.is-on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
 
-    /* Giao diện bàn cờ thay thế (Cài đặt → Giao diện bàn cờ) */
-    [data-board-theme="classic"] { --xq-wood: #f3e3b6; --xq-wood-edge: #d9bf7d; --xq-line: #5b4320; --xq-disc: #fff7e6; }
-    [data-board-theme="jade"] { --xq-wood: #cfe3d8; --xq-wood-edge: #a9cbb8; --xq-line: #2f5a4c; --xq-disc: #f4faf6; }
-    [data-board-theme="contrast"] { --xq-wood: #f7ecd3; --xq-wood-edge: #c9b48a; --xq-line: #2a1d0c; --xq-disc: #ffffff; --xq-red: #b3170a; --xq-black: #0b1a24; }
 }
+
+/* Cài đặt giao diện: ô mẫu màu bàn + xem trước trực tiếp. */
+@layer components {
+    .ds-grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .ds-grid { grid-template-columns: minmax(200px, 260px) 1fr; } }
+    .ds-preview { max-width: 300px; width: 100%; margin: 0 auto; }
+    .ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+    .ds-swatch { display: grid; gap: 6px; padding: 6px; border-radius: 14px; border: 2px solid var(--line); background: var(--surface); cursor: pointer; text-align: center; }
+    .ds-swatch.is-on { border-color: var(--primary); box-shadow: var(--focus); }
+    .ds-swatch__wood { position: relative; display: block; height: 46px; border-radius: 9px; background:
+        linear-gradient(var(--xq-line), var(--xq-line)) 50% 50% / 100% 1.5px no-repeat,
+        linear-gradient(var(--xq-line), var(--xq-line)) 50% 50% / 1.5px 100% no-repeat, var(--xq-wood);
+        box-shadow: inset 0 0 0 1px var(--xq-wood-edge); }
+    .ds-swatch__pc { position: absolute; left: 50%; top: 50%; width: 24px; height: 24px; margin: -12px 0 0 -12px; border-radius: 50%; background: var(--xq-disc); box-shadow: inset 0 0 0 2px var(--xq-red); }
+    .ds-swatch__name { font-size: 12.5px; font-weight: 700; color: var(--ink-soft); }
+}
+
+
+/* Giao diện bàn cờ thay thế + số cột (Cài đặt → Giao diện). NGOÀI @layer: biến --xq-* gốc khai báo ở :root
+   (base.css, không thuộc layer) luôn thắng mọi quy tắc trong layer → trước 02/10/2026 đổi màu bàn KHÔNG có tác dụng. */
+[data-board-theme="classic"] { --xq-wood: #f3e3b6; --xq-wood-edge: #d9bf7d; --xq-line: #5b4320; --xq-disc: #fff7e6; }
+[data-board-theme="jade"] { --xq-wood: #cfe3d8; --xq-wood-edge: #a9cbb8; --xq-line: #2f5a4c; --xq-disc: #f4faf6; }
+[data-board-theme="contrast"] { --xq-wood: #f7ecd3; --xq-wood-edge: #c9b48a; --xq-line: #2a1d0c; --xq-disc: #ffffff; --xq-red: #b3170a; --xq-black: #0b1a24; }
+[data-board-theme="walnut"] { --xq-wood: #c08f58; --xq-wood-edge: #8d5f2e; --xq-line: #3b230c; --xq-disc: #f7e7c6; }
+[data-board-theme="marble"] { --xq-wood: #e7e6e1; --xq-wood-edge: #c4c2bb; --xq-line: #55534d; --xq-disc: #fdfcf8; --xq-black: #1f2a33; }
+[data-board-theme="paper"] { --xq-wood: #fbf6ea; --xq-wood-edge: #ddd2b8; --xq-line: #6b5a3e; --xq-disc: #fffdf7; }
+[data-board-theme="night"] { --xq-wood: #27313c; --xq-wood-edge: #161d25; --xq-line: #8ea3b8; --xq-disc: #eef2f6; --xq-red: #c93b2b; --xq-black: #1b2733; --xq-hl: rgba(255,170,90,.32); }
+[data-board-coords="1"] .board-holder { aspect-ratio: 468 / 550; }
+[data-board-coords="1"] [data-fen-thumb] .board-holder, [data-board-coords="1"] .board-holder[data-fen-thumb] { aspect-ratio: 468 / 520; }
+[data-board-theme="wood"] { --xq-wood: #e9cf9c; --xq-wood-edge: #dcb97e; --xq-line: #7c5a2c; --xq-disc: #f6ecd6; --xq-red: #c0392b; --xq-black: #24333f; }

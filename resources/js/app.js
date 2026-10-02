@@ -126,13 +126,14 @@ function boot() {
             // Ảnh bàn cờ tĩnh nhỏ (thẻ thế cờ hôm nay, thư viện…): <div data-fen-thumb="FEN" [data-flip]>
             document.querySelectorAll('[data-fen-thumb]').forEach((el) => {
                 const target = el.querySelector('.board-holder') || el;
-                target.innerHTML = window.XiangqiBoard.render(el.dataset.fenThumb, null, null, null, el.dataset.flip === '1');
+                target.innerHTML = window.XiangqiBoard.render(el.dataset.fenThumb, null, null, null, el.dataset.flip === '1', { thumb: true });
             });
             document.dispatchEvent(new CustomEvent('xq:board-ready'));
         });
     }
     if (document.querySelector('[data-lesson-page]')) import('./lesson').then((m) => m.init());
     if (document.querySelector('[data-practice]')) import('./practice').then((m) => m.init());
+    if (document.querySelector('[data-display-settings]')) import('./display-settings').then((m) => m.init());
     if (document.querySelector('[data-countdown]')) import('./countdown').then((m) => m.init());
     if (document.querySelector('[data-bot]')) import('./play-bot').then((m) => m.init());
     if (document.querySelector('[data-pvp]')) import('./play-pvp').then((m) => m.init());

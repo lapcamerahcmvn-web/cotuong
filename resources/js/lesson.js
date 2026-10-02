@@ -91,7 +91,7 @@ function showComplete(d, g) {
         ${g.xp > 0 ? `<div class="celebrate__xp">${icon('star')} +${g.xp} XP</div>` : '<p class="muted">Bài đã được đánh dấu là đã học.</p>'}
         <ul class="celebrate__list">
             <li class="text-flame">${icon('flame')} <span>Chuỗi <b>${g.streak}</b> ngày học</span></li>
-            <li>${icon('target')} <span class="flex-1">Mục tiêu hôm nay: <b>${g.goal.xp}/${g.goal.target} XP</b>
+            <li>${icon('target')} <span class="flex-1">${g.goal.xp >= g.goal.target ? `Đã đạt mục tiêu hôm nay ${icon('check')} <b>${g.goal.xp} XP</b> <span class="text-ink-soft">/ ${g.goal.target}</span>` : `Mục tiêu hôm nay: <b>${g.goal.xp}/${g.goal.target} XP</b>`}
                 <span class="progress progress--sm progress--gold mt-1 block"><span class="progress__bar" style="width:${goal}%"></span></span></span></li>
             <li>${icon('star')} <span>Cấp ${g.level.level} · ${escapeHtml(g.level.title)} — ${g.level.pct}% tới cấp kế</span></li>
         </ul>
