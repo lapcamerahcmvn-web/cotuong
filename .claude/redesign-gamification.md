@@ -326,3 +326,21 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Máy cũng bị tính giờ: còn < 45s thì nghĩ tối đa cấp Vừa, < 15s tối đa cấp Dễ.
 - Rời trang / ẩn tab: chốt giờ còn lại (không tính thời gian vắng mặt) — mốc lượt `turnStart` KHÔNG lưu.
 - Sửa kèm: thẻ "Máy · cấp …" bị `max-width: 62%` cắt mất tên cấp.
+
+## Đợt 17 (02/10/2026) — Máy cờ úp cấp Khó mạnh hơn + phân tích chuẩn hơn (user: "máy cấp Khó vẫn hay thua")
+- **Chẩn đoán trên 7 ván thật (đồng bộ từ web):** người thắng 5/7 — máy thua bằng bị chiếu hết dù HƠN quân (ván 1: +1250);
+  cờ úp cấp Khó chỉ tính sâu 3–4 nửa nước (4,5s chia 6 mẫu × ~0,75s, mỗi mẫu tính chính xác MỌI nước gốc); nguyên lý
+  khai cuộc chỉ áp 3 nước đầu → giữa khai cuộc vẫn "Pháo giả vật nắp" bị ăn lại; ván 6 máy chiếu dai rồi bị luật ép
+  đổi nước vào thế thua.
+- **Tìm kiếm** (`search`): kéo dài khi bị chiếu, nước rỗng (null move, bỏ khi tàn cuộc hết Xe/Mã/Pháo), PVS + LMR (không
+  giảm nước ăn quân / lật quân / killer), history heuristic. 3 giây: cờ tướng sâu 5 → 8, cờ úp 5 → 7. Cấp Khó bỏ trần độ
+  sâu (tới đâu hết giờ thì thôi). Đấu cờ tướng 1s/nước vs bản cũ: **8 thắng – 1 thua – 15 hoà**.
+- **Cờ úp cấp Khó:** 4 mẫu + thu hẹp ứng viên (`coupNarrow: 8`: mẫu đầu 30% thời gian chấm mọi nước, các mẫu sau chỉ
+  8 nước tốt nhất) + nguyên lý khai cuộc mở rộng (`coupOpeningPrior`, bên đi còn ≥ 11 quân úp ≈ 5 nước: mở quân hàng
+  trên, giữ Xe giả, không phí nước quân đã ngửa −25, ô Xe −30, Sĩ/Tượng −20, Mã −10; vật nắp bị ăn lại −200). Đấu cặp
+  vs bản cũ cùng 4,5s: chỉ search mới 8–8; + nguyên lý & dồn thời gian: 12–4, 11–4–1, cấu hình cuối 9–7 (cách xếp mới)
+  → tổng 32–15–1.
+- **Chiếu dai:** máy tránh chiếu lặp ngay từ lần 2 (`forbiddenMoves(red, 1)`) — chiếu dai không giữ được hoà theo luật.
+- **Phân tích 2 lượt** (`review.js`): lượt nhanh (cờ úp 2,4s × 6 mẫu, bỏ trần độ sâu 4/5) rồi kiểm tra KỸ (×3 thời gian,
+  8 mẫu) các nước bị đánh dấu chưa tốt. Đo 52 thế thật so với chuẩn 20s × 12 mẫu: sai lệch điểm mất 181 → 62, xếp
+  loại trùng 44 → 45/52, nước tốt nhất trùng 38 → 40/52. Ván 63 nước ≈ 70 giây (trước ≈ 25 giây).

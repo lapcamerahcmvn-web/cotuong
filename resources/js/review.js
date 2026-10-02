@@ -311,27 +311,42 @@ function setup(root) {
             <div class="progress progress--primary mt-2"><div class="progress__bar" data-rv-prog style="width:0%"></div></div>
             <p class="text-[13px] text-ink-soft mt-2" data-rv-progtext>Đang chuẩn bị máy…</p>`;
         const total = n + 1, res = new Array(total);
-        let done = 0, next = 0;
         const workers = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 2) - 1));
         const t0 = Date.now();
-        await Promise.all(Array.from({ length: workers }, () => new Promise((resolve) => {
-            const w = new Worker(new URL('./engine/worker.js', import.meta.url), { type: 'module' });
-            const take = () => {
-                if (next >= total) { w.terminate(); resolve(); return; }
-                const k = next++;
-                w.onmessage = (e) => {
-                    res[k] = e.data;
-                    done++;
-                    const pct = Math.round(done / total * 100);
-                    box.querySelector('[data-rv-prog]').style.width = pct + '%';
-                    const left = Math.round((Date.now() - t0) / done * (total - done) / 1000);
-                    box.querySelector('[data-rv-progtext]').textContent = `Đã chấm ${done}/${total} thế cờ${done > 3 && left > 0 ? ` · còn khoảng ${left} giây` : ''}`;
-                    take();
+        const prog = (pct, text) => {
+            box.querySelector('[data-rv-prog]').style.width = pct + '%';
+            box.querySelector('[data-rv-progtext]').textContent = text;
+        };
+        // Chấm 1 danh sách thế cờ song song trên nhiều worker.
+        const pass = (list, opts, label) => {
+            let done = 0, next = 0;
+            const t1 = Date.now();
+            return Promise.all(Array.from({ length: Math.min(workers, list.length) }, () => new Promise((resolve) => {
+                const w = new Worker(new URL('./engine/worker.js', import.meta.url), { type: 'module' });
+                const take = () => {
+                    if (next >= list.length) { w.terminate(); resolve(); return; }
+                    const k = list[next++];
+                    w.onmessage = (e) => {
+                        res[k] = e.data;
+                        done++;
+                        const left = Math.round((Date.now() - t1) / done * (list.length - done) / 1000);
+                        prog(Math.round(done / list.length * 100), `${label} ${done}/${list.length}${done > 3 && left > 0 ? ` · còn khoảng ${left} giây` : ''}`);
+                        take();
+                    };
+                    w.postMessage({ id: k, review: true, fen: fens[k], red: redAt(k), pools: coup ? pools[k] : undefined, ...opts });
                 };
-                w.postMessage({ id: k, review: true, fen: fens[k], red: redAt(k), pools: coup ? pools[k] : undefined, timeMs: coup ? 1200 : 900 });
-            };
-            take();
-        })));
+                take();
+            })));
+        };
+        // Lượt 1: chấm nhanh mọi thế (cờ úp 6 mẫu × 0,4s).
+        await pass(Array.from({ length: total }, (_, k) => k), { timeMs: coup ? 2400 : 1200 }, 'Đã chấm');
+        // Lượt 2: kiểm tra KỸ (gấp 3 thời gian, cờ úp 8 mẫu) các nước bị đánh dấu chưa tốt — chính là các nước người chơi
+        // cần xem; đo trên ván thật: lượt nhanh có lúc chấm "sai lầm" cho nước thật ra dẫn tới bị chiếu hết, hoặc ngược lại.
+        const doubt = build(res).moves.map((m, k) => (['inacc', 'mistake', 'blunder'].includes(m.c) ? k : -1)).filter((k) => k >= 0);
+        if (doubt.length) {
+            prog(0, `Đang kiểm tra kỹ ${doubt.length} nước đáng chú ý…`);
+            await pass(doubt, coup ? { timeMs: 7200, samples: 8 } : { timeMs: 3600 }, 'Kiểm tra kỹ');
+        }
         an = build(res);
         running = false;
         renderList(); renderSummary(); go(idx);

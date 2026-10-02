@@ -21,7 +21,7 @@ self.onmessage = (e) => {
         return;
     }
     if (e.data.review) {
-        self.postMessage({ id, ...review(fen, red, { pools, timeMs: e.data.timeMs }) });
+        self.postMessage({ id, ...review(fen, red, { pools, timeMs: e.data.timeMs, samples: e.data.samples }) });
         return;
     }
     let res;

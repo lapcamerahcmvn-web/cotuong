@@ -256,8 +256,11 @@ function setup(root) {
         return out;
     }
 
-    /** Luật chiếu dai: nước CHIẾU đưa tới thế đã xuất hiện ≥ 2 lần (lần thứ 3) bị cấm. */
-    function forbidden(iccs, hist = history()) {
+    /**
+     * Luật chiếu dai: nước CHIẾU đưa tới thế đã xuất hiện ≥ 2 lần (lần thứ 3) bị cấm. Máy dùng ngưỡng 1 (tránh ngay lần
+     * lặp thứ 2): chiếu dai không bao giờ giữ được hoà → chiếu lặp chỉ phí nước rồi bị ép đổi nước ở thế xấu.
+     */
+    function forbidden(iccs, hist = history(), limit = 2) {
         const [f, t] = fromIccs(iccs);
         const b = view.board.slice();
         let p = b[f];
@@ -266,11 +269,11 @@ function setup(root) {
         const moverRed = isRed(p);
         if (!inCheckSt(stateFrom(b, coup()), !moverRed)) return false;
         const key = toFen(b) + (moverRed ? 'b' : 'r');
-        return hist.filter((h) => h[0] === key).length >= 2;
+        return hist.filter((h) => h[0] === key).length >= limit;
     }
-    const forbiddenMoves = (red) => {
+    const forbiddenMoves = (red, limit = 2) => {
         const hist = history();
-        return legalMovesSt(stateFrom(view.board, coup()), red).map(([f, t]) => toIccs(f, t)).filter((m) => forbidden(m, hist));
+        return legalMovesSt(stateFrom(view.board, coup()), red).map(([f, t]) => toIccs(f, t)).filter((m) => forbidden(m, hist, limit));
     };
 
     function result() {
@@ -306,7 +309,7 @@ function setup(root) {
     }
 
     function engineMsg(red, extra = {}) {
-        const avoid = forbiddenMoves(red);
+        const avoid = forbiddenMoves(red, red === humanRed() ? 2 : 1);
         return coup() ? { fen: fen(), red, coup: true, pools: pools(red), avoid, ...extra } : { fen: fen(), red, avoid, ...extra };
     }
 

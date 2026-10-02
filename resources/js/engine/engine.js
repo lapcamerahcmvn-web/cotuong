@@ -334,14 +334,27 @@ const ttDepth = new Int8Array(TT_SIZE).fill(-1), ttFlag = new Int8Array(TT_SIZE)
 let H1 = 0, H2 = 0;   // kết quả hashAfter (tránh cấp phát mảng)
 const VICTIM = { K: 10000, R: 900, C: 450, N: 400, A: 200, B: 200, P: 100, X: 330 };
 const vOf = (p) => VICTIM[p.toUpperCase()] || 300;
-function order(st, moves, killers, best) {
+function order(st, moves, killers, best, hist) {
     return moves.map((m) => {
         let k = 0;
         if (best && m[0] === best[0] && m[1] === best[1]) k = 1e6;
         else if (st.b[m[1]]) k = 1e4 + vOf(st.b[m[1]]) * 10 - vOf(st.b[m[0]]) / 10;
         else if (killers && killers.some((x) => x && x[0] === m[0] && x[1] === m[1])) k = 5e3;
+        else if (hist) k = Math.min(4e3, hist[m[0] * 90 + m[1]]);
         return [k, m];
     }).sort((a, c) => c[0] - a[0]).map((x) => x[1]);
+}
+
+/** Bên `red` còn quân "lớn" (Xe/Mã/Pháo hoặc quân úp) → dùng nước rỗng an toàn (tàn cuộc ít quân dễ zugzwang). */
+function hasMajor(st, red) {
+    for (let i = 0; i < 90; i++) {
+        const p = st.b[i];
+        if (!p || isRed(p) !== red) continue;
+        if (st.h[i]) return true;
+        const t = p.toUpperCase();
+        if (t === 'R' || t === 'N' || t === 'C') return true;
+    }
+    return false;
 }
 
 /**
@@ -395,9 +408,12 @@ export function search(input, red, opts = {}) {
         return alpha;
     }
 
-    function negamax(depth, alpha, beta, side, ply, a1, a2) {
+    const hist = new Int32Array(90 * 90);
+    function negamax(depth, alpha, beta, side, ply, a1, a2, canNull = true) {
         if ((++nodes & 1023) === 0 && Date.now() > deadline) stop = true;
         if (stop) return 0;
+        const inChk = inCheckSt(st, side);
+        if (inChk && ply < 40) depth++;                         // bị chiếu: tính thêm 1 nước (không bỏ sót đòn sát)
         if (depth <= 0) return quiesce(alpha, beta, side, 0);
         const slot = a2 & TT_MASK;
         let hint = null;
@@ -412,22 +428,44 @@ export function search(input, red, opts = {}) {
                 if (alpha >= beta) return sc;
             }
         }
+        const pv = beta - alpha > 1;
+        // Nước rỗng: cho đối phương đi 2 lần liền mà vẫn ≥ beta → thế đủ tốt, cắt nhánh (bỏ khi bị chiếu / tàn cuộc ít quân).
+        if (canNull && !pv && !inChk && depth >= 3 && Math.abs(beta) < MATE - 1000 && hasMajor(st, side)) {
+            const R = depth >= 6 ? 3 : 2;
+            const sc = -negamax(depth - 1 - R, -beta, -beta + 1, !side, ply + 1, a1 ^ SIDE1, a2 ^ SIDE2, false);
+            if (stop) return 0;
+            if (sc >= beta) return beta;
+        }
         const alpha0 = alpha;
         let best = -Infinity, legal = 0, bestM = null;
-        for (const m of order(st, pseudoMoves(st, side), killers[ply], hint)) {
+        for (const m of order(st, pseudoMoves(st, side), killers[ply], hint, hist)) {
             const cap = st.b[m[1]];
+            const killer = killers[ply] && killers[ply].some((x) => x && x[0] === m[0] && x[1] === m[1]);
+            const reveal = st.h[m[0]];                         // nước lật quân úp: không tính nông
             hashAfter(m, a1, a2);
             const n1 = H1, n2 = H2;
             const u = make(st, m);
             if (inCheckSt(st, side)) { unmake(st, m, u); continue; }
             legal++;
-            const sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1, n1, n2);
+            let sc;
+            if (legal === 1) sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1, n1, n2);
+            else {
+                // Nước xếp sau, êm, không phải killer → tính nông hơn trước (LMR); vượt alpha thì tính lại đủ sâu.
+                let r = 0;
+                if (depth >= 3 && legal > 3 && !cap && !inChk && !killer && !reveal) r = legal > 8 && depth >= 5 ? 2 : 1;
+                sc = -negamax(depth - 1 - r, -alpha - 1, -alpha, !side, ply + 1, n1, n2);
+                if (sc > alpha && r) sc = -negamax(depth - 1, -alpha - 1, -alpha, !side, ply + 1, n1, n2);
+                if (sc > alpha && sc < beta) sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1, n1, n2);
+            }
             unmake(st, m, u);
             if (stop) return 0;
             if (sc > best) { best = sc; bestM = m; }
             if (sc > alpha) alpha = sc;
             if (alpha >= beta) {
-                if (!cap) killers[ply] = [m, (killers[ply] || [])[0]];
+                if (!cap) {
+                    killers[ply] = [m, (killers[ply] || [])[0]];
+                    hist[m[0] * 90 + m[1]] += depth * depth;
+                }
                 break;
             }
         }
@@ -444,7 +482,8 @@ export function search(input, red, opts = {}) {
     // opts.avoid: nước bị cấm ở gốc (chiếu dai lần thứ 3) — nếu chỉ còn nước bị cấm thì vẫn phải đi.
     const all = legalMovesSt(st, red);
     const allowed = opts.avoid?.size ? all.filter((m) => !opts.avoid.has(toIccs(m[0], m[1]))) : all;
-    const root = allowed.length ? allowed : all;
+    let root = allowed.length ? allowed : all;
+    if (opts.only?.size) { const o = root.filter((m) => opts.only.has(toIccs(m[0], m[1]))); if (o.length) root = o; }   // chỉ xét nhóm ứng viên
     if (!root.length) return { move: null, score: terminal(red, 0), depth: 0, nodes, scores: {} };
     let bestMove = root[0], bestScore = -Infinity, reached = 0, scores = {};
     for (let d = 1; d <= maxDepth; d++) {
@@ -476,7 +515,7 @@ export const LEVELS = {
     1: { name: 'Tập sự', depth: 1, timeMs: 300, noise: 260, random: 0.35, samples: 1 },
     2: { name: 'Dễ', depth: 2, timeMs: 700, noise: 90, random: 0.08, samples: 4, coupDepth: 2, coupTimeMs: 900, coupNoise: 30, coupRandom: 0.03 },
     3: { name: 'Vừa', depth: 3, timeMs: 1500, noise: 20, random: 0, samples: 6, coupDepth: 3, coupTimeMs: 2000 },
-    4: { name: 'Khó', depth: 6, timeMs: 3000, noise: 0, random: 0, samples: 6, coupDepth: 5, coupTimeMs: 4500 },
+    4: { name: 'Khó', depth: 30, timeMs: 3000, noise: 0, random: 0, samples: 4, coupDepth: 30, coupTimeMs: 4500, coupNarrow: 8 },   // sâu tới đâu hết giờ thì thôi
 };
 
 function randomMove(st, red, avoid = null) {
@@ -505,19 +544,25 @@ function shuffle(a) {
 }
 
 /**
- * Nguyên lý khai cuộc CỜ ÚP (bài học trên site: "thế trước quân sau", "chỉ vật Pháo giả khi đủ lực", "đấm tốt Biên,
- * đừng vội mở tốt trung lộ", "ưu tiên mở quân hàng trên"). Chỉ áp dụng giai đoạn khai cuộc (≥ 24 quân còn úp ≈ 5 nước
- * đầu mỗi bên). Trả hàm iccs → điểm cộng/trừ cho nước gốc.
+ * Nguyên lý khai cuộc CỜ ÚP (bài học trên site): khai cuộc chỉ gói trong ~5 nước đầu — trong đó
+ *  - ưu tiên MỞ quân, không phí nước đi lại quân đã ngửa;
+ *  - ưu tiên mở quân HÀNG TRÊN (ô Tốt, ô Pháo); quân hàng dưới để sau — giữ vị trí Xe giả (rất quan trọng);
+ *  - đấm tốt Biên, đừng vội mở tốt đầu; tốt 3/7 ở giữa;
+ *  - chỉ vật Pháo giả (quân úp ăn nắp) khi đủ lực — bị ăn lại ngay là sai.
+ * Áp khi bên đi còn ≥ 11 quân úp (≈ 4–5 nước đầu của bên đó). Trả hàm iccs → điểm cộng/trừ cho nước gốc (cả máy lẫn
+ * phân tích). Các mức nhỏ hơn hẳn giá trị quân → chiến thuật (bắt quân, đỡ đòn) vẫn quyết định.
  */
 export function coupOpeningPrior(pub, red) {
-    const hidden = pub.filter(isHiddenChar).length;
-    if (hidden < 24) return () => 0;
+    const own = pub.filter((p) => p === (red ? 'X' : 'x')).length;
+    if (own < 11) return () => 0;
     const st = stateFrom(pub, true);
     return (mv) => {
         const [f, t] = fromIccs(mv);
         const p = st.b[f];
-        if (!p || !st.h[f]) return 0;                 // chỉ xét nước MỞ quân úp
-        const role = ROLE[f], c = f % 9, target = st.b[t];
+        if (!p) return 0;
+        const target = st.b[t];
+        if (!st.h[f]) return target ? 0 : -25;                 // đi lại quân đã ngửa (không ăn quân): phí nhịp mở quân
+        const role = ROLE[f], c = f % 9;
         if (target && st.h[t]) {
             // Quân giả ăn nắp: chỉ đáng khi đối phương không ăn lại được ngay ("vật khi đủ lực").
             const u = make(st, [f, t]);
@@ -526,9 +571,14 @@ export function coupOpeningPrior(pub, red) {
             return recapture ? -200 : 0;
         }
         if (target) return 0;
-        if (role === 'P') return c === 0 || c === 8 ? 35 : c === 4 ? -35 : 10;   // tốt Biên / tốt đầu / tốt 3-7
-        if (role === 'C') return 15;                                            // mở Pháo hàng trên
-        return 0;
+        switch (role) {
+            case 'P': return c === 0 || c === 8 ? 35 : c === 4 ? -35 : 10;   // tốt Biên / tốt đầu / tốt 3-7
+            case 'C': return 15;                                               // Pháo hàng trên
+            case 'R': return -30;                                              // giữ vị trí Xe giả
+            case 'A': case 'B': return -20;                                    // Sĩ/Tượng hàng dưới — để sau
+            case 'N': return -10;
+            default: return 0;
+        }
     };
 }
 
@@ -576,10 +626,17 @@ export function thinkCoup(publicFen, pools, red, level, avoid = null) {
     const samples = Math.max(1, L.samples || 1);
     const total = {}, count = {};
     let nodes = 0, depth = 0;
+    // Thu hẹp ứng viên (cấp cao): mẫu đầu chấm MỌI nước (30% thời gian) → giữ `narrow` nước tốt nhất; các mẫu sau chỉ
+    // tính nhóm này nên sâu hơn nhiều (trước đây mỗi mẫu tính chính xác cả ~40 nước gốc, phí phần lớn thời gian).
+    const narrow = samples > 1 ? L.coupNarrow || 0 : 0;
+    const prior = coupOpeningPrior(pub, red);
+    const tAll = L.coupTimeMs || L.timeMs;
+    let only = null;
     for (let k = 0; k < samples; k++) {
         const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true, ...hv });
         strata.assign(st, k, samples);
-        const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round((L.coupTimeMs || L.timeMs) / samples), noise: L.coupNoise ?? L.noise, exactRoot: true, avoid });
+        const t = narrow ? (k === 0 ? tAll * 0.3 : (tAll * 0.7) / (samples - 1)) : tAll / samples;
+        const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round(t), noise: L.coupNoise ?? L.noise, exactRoot: true, avoid, only });
         nodes += res.nodes; depth = Math.max(depth, res.depth);
         if (!res.move) return { move: null, score: res.score, depth: 0, nodes };
         // Kẹp điểm: 1 cách xếp "may mắn" thấy chiếu hết không được lấn át trung bình các cách xếp khác.
@@ -587,10 +644,13 @@ export function thinkCoup(publicFen, pools, red, level, avoid = null) {
             const v = Math.max(-5000, Math.min(5000, sc));
             total[m] = (total[m] || 0) + v; count[m] = (count[m] || 0) + 1;
         }
+        if (narrow && k === 0) {
+            only = new Set(Object.keys(total).sort((a, b) => (total[b] + prior(b)) - (total[a] + prior(a))).slice(0, narrow));
+        }
     }
     let best = null, bestAvg = -Infinity;
-    const prior = coupOpeningPrior(pub, red);
     for (const m of Object.keys(total)) {
+        if (only && !only.has(m)) continue;
         const avg = total[m] / count[m] + (count[m] < samples ? -50 : 0) + prior(m);
         if (avg > bestAvg) { bestAvg = avg; best = m; }
     }
@@ -617,19 +677,19 @@ export function review(fen, red, opts = {}) {
     const pub = loadFen(fen);
     const coup = pub.some(isHiddenChar) || !!opts.coup;
     if (!coup) {
-        const r = search(stateFrom(pub), red, { depth: opts.depth || 5, timeMs, exactRoot: true });
+        const r = search(stateFrom(pub), red, { depth: opts.depth || 30, timeMs, exactRoot: true });   // sâu tới đâu hết giờ thì thôi
         return { best: r.move, score: r.score, scores: r.scores || {}, depth: r.depth };
     }
     const base = stateFrom(pub, true);
     const hv = hiddenValues(opts.pools);
-    const samples = opts.samples || 4;
+    const samples = opts.samples || 6;
     const strata = stratifier(pub, opts.pools);
     const total = {}, count = {};
     let depth = 0, terminal = null;
     for (let k = 0; k < samples; k++) {
         const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true, ...hv });
         strata.assign(st, k, samples);
-        const r = search(st, red, { depth: opts.depth || 4, timeMs: Math.round(timeMs / samples), exactRoot: true });
+        const r = search(st, red, { depth: opts.depth || 30, timeMs: Math.round(timeMs / samples), exactRoot: true });
         if (!r.move) { terminal = r.score; break; }
         depth = Math.max(depth, r.depth);
         for (const [m, sc] of Object.entries(r.scores || {})) {

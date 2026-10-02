@@ -51,6 +51,10 @@ const full = { red: COUP_SET, black: COUP_SET };
 let rush = 0;
 for (let i = 0; i < 6; i++) if (['b2b9', 'h2h9'].includes(thinkCoup(COUP_FEN, full, true, 3).move)) rush++;
 ok(rush <= 1, `máy vật Pháo giả ở nước đầu ${rush}/6 lần`);
+// Nguyên lý khai cuộc mở rộng (≈ 5 nước đầu): ưu tiên mở quân hàng trên, giữ Xe giả, không phí nước quân đã ngửa.
+ok(prior('a3a4') > prior('a0a1') && prior('b2b4') > prior('h0g2'), 'mở quân hàng trên trước quân hàng dưới (giữ Xe giả)');
+const opened = loadFen(COUP_FEN); opened[fromIccs('a3a4')[1]] = 'P'; opened[fromIccs('a3a4')[0]] = null;
+ok(coupOpeningPrior(opened, true)('a4a5') < 0, 'khai cuộc: đi lại Tốt đã ngửa (không ăn quân) bị trừ điểm');
 // Không "biết trước" quân lật ra trong cây tìm kiếm → thế đầu cân bằng, 2 nước đối xứng điểm gần bằng nhau.
 const rv = review(COUP_FEN, true, { pools: full, timeMs: 1200 });
 ok(Math.abs(rv.score) < 150, `phân tích thế đầu cờ úp gần cân bằng (${rv.score})`);
@@ -77,6 +81,12 @@ ok(pickBook(START_FEN, true, new Set(first)) === null, 'tránh hết nước sá
 const after = (line) => { const bb = loadFen(START_FEN); line.split(' ').forEach((mv) => { const [f, t] = fromIccs(mv); bb[t] = bb[f]; bb[f] = null; }); return bb; };
 ok(!bookMoves(after('g0e2 g6g5 h0g2 h9g7'), true).some((x) => x.move === 'i0h0'), 'book không cho Xe ra sau lưng Pháo (bị ăn)');
 ok(!bookMoves(after('g0e2 h9g7 h0g2'), false).some((x) => x.move === 'i9h9'), 'book không cho Đen ra Xe vào cột Pháo đỏ');
+
+console.log('Tìm kiếm sâu (null-move, LMR, PVS, kéo dài khi chiếu)');
+const deep = search('3k1ab2/4a4/4c4/2R6/9/R8/9/B2A3r1/4A2r1/2B2K3', true, { depth: 30, timeMs: 1500 });
+ok(['c6c9', 'a4a9'].includes(deep.move) && deep.score > 90000, `thấy chiếu hết 3 nước (${deep.move}, sâu ${deep.depth})`);
+const mid = search(START_FEN, true, { depth: 30, timeMs: 1500 });
+ok(mid.depth >= 5, `thế mở: 1,5 giây tính sâu ${mid.depth} (≥ 5)`);
 
 console.log('Bộ giải chiếu hết (luyện tập nhận đường thắng khác sách)');
 ok(mateIn('3k5/R7R/9/9/9/9/9/9/9/4K4', true, 1)?.k === 1, 'tìm chiếu hết 1 nước');
