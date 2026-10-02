@@ -157,6 +157,7 @@ npm run dev            # hoặc npm run build trước khi commit (public/build 
 # Kho thế cờ luyện tập (chạy lại sau mỗi lần nạp nội dung)
 php artisan cotuong:build-puzzles [--dry-run]
 php artisan test       # 23 test gamification/luyện tập/chơi/cờ úp (sqlite memory)
+node tools/engine-test.mjs   # BẮT BUỘC sau khi sửa engine máy (perft, luật cờ úp, không bỏ quân treo)
 
 # Import bài học từ .xqf (giải mã qua node decode.js)
 php artisan cotuong:import-xqf "storage/app/private/cotuong-sources/khai-cuoc/48-bai-nguyen-ly" \

@@ -62,7 +62,14 @@ export const ROLE = new Array(90).fill(null).map((_, i) => {
 export function stateFrom(board, coup = false) {
     const b = board.slice();
     const h = b.map((p) => (p && isHiddenChar(p) ? 1 : 0));
-    return { b, h, coup: coup || h.some(Boolean) };
+    return withKings({ b, h, coup: coup || h.some(Boolean) });
+}
+
+/** Ghi nhớ vị trí 2 Tướng (kR, kB) để kiểm tra chiếu không phải quét cả bàn. */
+export function withKings(st) {
+    st.kR = st.b.indexOf('K');
+    st.kB = st.b.indexOf('k');
+    return st;
 }
 
 const typeAt = (st, i) => (st.h[i] ? ROLE[i] : st.b[i].toUpperCase());
@@ -193,20 +200,26 @@ function attacked(st, sq, byRed) {
 }
 
 export function inCheckSt(st, red) {
-    const k = findKing(st.b, red);
+    const k = red ? st.kR : st.kB;
     return k < 0 ? true : attacked(st, k, !red);
 }
 
 /** Đi nước trên trạng thái; trả "undo" để hoàn lại. Quân úp đi → lật (h=0). */
 function make(st, m) {
+    const p = st.b[m[0]];
     const u = [st.b[m[1]], st.h[m[1]], st.h[m[0]]];
-    st.b[m[1]] = st.b[m[0]]; st.h[m[1]] = 0;
+    st.b[m[1]] = p; st.h[m[1]] = 0;
     st.b[m[0]] = null; st.h[m[0]] = 0;
+    if (p === 'K') st.kR = m[1]; else if (p === 'k') st.kB = m[1];
+    else if (u[0] === 'K') st.kR = -1; else if (u[0] === 'k') st.kB = -1;
     return u;
 }
 function unmake(st, m, u) {
-    st.b[m[0]] = st.b[m[1]]; st.h[m[0]] = u[2];
+    const p = st.b[m[1]];
+    st.b[m[0]] = p; st.h[m[0]] = u[2];
     st.b[m[1]] = u[0]; st.h[m[1]] = u[1];
+    if (p === 'K') st.kR = m[0]; else if (p === 'k') st.kB = m[0];
+    if (u[0] === 'K') st.kR = m[1]; else if (u[0] === 'k') st.kB = m[1];
 }
 
 export function legalMovesSt(st, red, capturesOnly = false) {
@@ -258,6 +271,23 @@ function evaluate(st, red) {
 }
 
 /* ---------------- Tìm kiếm ---------------- */
+// Zobrist: mỗi (ô, loại quân, úp?) một cặp số ngẫu nhiên 32-bit; khoá thế = XOR các cặp.
+const KIND = { K: 0, A: 1, B: 2, N: 3, R: 4, C: 5, P: 6, X: 7, k: 8, a: 9, b: 10, n: 11, r: 12, c: 13, p: 14, x: 15 };
+const Z1 = new Int32Array(90 * 32), Z2 = new Int32Array(90 * 32);
+(function seed() {
+    let x = 0x2545f491;
+    const rnd = () => { x ^= x << 13; x ^= x >>> 17; x ^= x << 5; return x | 0; };
+    for (let i = 0; i < Z1.length; i++) { Z1[i] = rnd(); Z2[i] = rnd(); }
+})();
+const zi = (sq, p, hid) => sq * 32 + KIND[p] + (hid ? 16 : 0);
+const SIDE1 = 0x5bd1e995, SIDE2 = 0x1b873593;
+const EXACT = 0, LOWER = 1, UPPER = 2;
+// Bảng chuyển vị dạng mảng số cố định (2^18 ô, ~4MB) — dùng chung giữa các lần tìm (khoá đã gồm danh
+// tính quân + lượt đi nên dùng lại an toàn). Ô = khoá & MASK; kiểm khớp bằng cả 2 nửa khoá.
+const TT_BITS = 18, TT_SIZE = 1 << TT_BITS, TT_MASK = TT_SIZE - 1;
+const ttK1 = new Int32Array(TT_SIZE), ttK2 = new Int32Array(TT_SIZE), ttScore = new Int32Array(TT_SIZE);
+const ttDepth = new Int8Array(TT_SIZE).fill(-1), ttFlag = new Int8Array(TT_SIZE), ttMove = new Int16Array(TT_SIZE).fill(-1);
+let H1 = 0, H2 = 0;   // kết quả hashAfter (tránh cấp phát mảng)
 const VICTIM = { K: 10000, R: 900, C: 450, N: 400, A: 200, B: 200, P: 100, X: 330 };
 const vOf = (p) => VICTIM[p.toUpperCase()] || 300;
 function order(st, moves, killers, best) {
@@ -275,12 +305,23 @@ function order(st, moves, killers, best) {
  * Trả { move, score, depth, nodes, scores } — scores = điểm từng nước gốc ở độ sâu xong cuối.
  */
 export function search(input, red, opts = {}) {
-    const st = typeof input === 'string' ? stateFrom(loadFen(input)) : input;
+    const st = typeof input === 'string' ? stateFrom(loadFen(input)) : (input.kR === undefined ? withKings(input) : input);
     const maxDepth = opts.depth || 3;
     const deadline = Date.now() + (opts.timeMs || 1500);
     const noise = opts.noise || 0;
     let nodes = 0, stop = false;
     const killers = [];
+    let h1 = 0, h2 = 0;
+    for (let i = 0; i < 90; i++) if (st.b[i]) { const k = zi(i, st.b[i], st.h[i]); h1 ^= Z1[k]; h2 ^= Z2[k]; }
+    if (!red) { h1 ^= SIDE1; h2 ^= SIDE2; }
+    if (st.coup) { h1 ^= 0x27d4eb2f; h2 ^= 0x165667b1; }   // luật cờ úp khác cờ tướng → không dùng chung kết quả
+    // Băm sau khi đi nước m (tính TRƯỚC khi make) → H1/H2: quân rời ô gốc, (bị ăn) rời ô đích, quân tới ô đích đã lật.
+    function hashAfter(m, a, b) {
+        const p = st.b[m[0]], c = st.b[m[1]];
+        let k = zi(m[0], p, st.h[m[0]]); a ^= Z1[k]; b ^= Z2[k];
+        if (c) { k = zi(m[1], c, st.h[m[1]]); a ^= Z1[k]; b ^= Z2[k]; }
+        k = zi(m[1], p, 0); H1 = a ^ Z1[k] ^ SIDE1; H2 = b ^ Z2[k] ^ SIDE2;
+    }
 
     function terminal(side, ply) {
         // Cờ tướng: hết nước = thua. Cờ úp: hết nước mà không bị chiếu = hoà.
@@ -288,39 +329,70 @@ export function search(input, red, opts = {}) {
     }
 
     function quiesce(alpha, beta, side, qd) {
-        const stand = evaluate(st, side);
-        if (stand >= beta) return beta;
-        if (alpha < stand) alpha = stand;
-        if (qd >= 6) return alpha;
-        for (const m of order(st, legalMovesSt(st, side, true))) {
+        if ((++nodes & 1023) === 0 && Date.now() > deadline) stop = true;
+        const checked = qd < 4 && inCheckSt(st, side);
+        if (!checked) {
+            const stand = evaluate(st, side);
+            if (stand >= beta) return beta;
+            if (alpha < stand) alpha = stand;
+            if (qd >= 6 || stop) return alpha;
+        }
+        let legal = 0;
+        for (const m of order(st, pseudoMoves(st, side, !checked))) {
             const u = make(st, m);
+            if (inCheckSt(st, side)) { unmake(st, m, u); continue; }
+            legal++;
             const sc = -quiesce(-beta, -alpha, !side, qd + 1);
             unmake(st, m, u);
             if (sc >= beta) return beta;
             if (sc > alpha) alpha = sc;
         }
+        if (checked && !legal) return terminal(side, 30 + qd);
         return alpha;
     }
 
-    function negamax(depth, alpha, beta, side, ply) {
+    function negamax(depth, alpha, beta, side, ply, a1, a2) {
         if ((++nodes & 1023) === 0 && Date.now() > deadline) stop = true;
         if (stop) return 0;
-        const moves = legalMovesSt(st, side);
-        if (!moves.length) return terminal(side, ply);
         if (depth <= 0) return quiesce(alpha, beta, side, 0);
-        let best = -Infinity;
-        for (const m of order(st, moves, killers[ply])) {
+        const slot = a2 & TT_MASK;
+        let hint = null;
+        if (ttK1[slot] === a1 && ttK2[slot] === a2 && ttDepth[slot] >= 0) {
+            const mv = ttMove[slot];
+            if (mv >= 0) hint = [(mv / 90) | 0, mv % 90];
+            if (ttDepth[slot] >= depth) {
+                const sc = ttScore[slot], fl = ttFlag[slot];
+                if (fl === EXACT) return sc;
+                if (fl === LOWER && sc > alpha) alpha = sc;
+                else if (fl === UPPER && sc < beta) beta = sc;
+                if (alpha >= beta) return sc;
+            }
+        }
+        const alpha0 = alpha;
+        let best = -Infinity, legal = 0, bestM = null;
+        for (const m of order(st, pseudoMoves(st, side), killers[ply], hint)) {
             const cap = st.b[m[1]];
+            hashAfter(m, a1, a2);
+            const n1 = H1, n2 = H2;
             const u = make(st, m);
-            const sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1);
+            if (inCheckSt(st, side)) { unmake(st, m, u); continue; }
+            legal++;
+            const sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1, n1, n2);
             unmake(st, m, u);
             if (stop) return 0;
-            if (sc > best) best = sc;
+            if (sc > best) { best = sc; bestM = m; }
             if (sc > alpha) alpha = sc;
             if (alpha >= beta) {
                 if (!cap) killers[ply] = [m, (killers[ply] || [])[0]];
                 break;
             }
+        }
+        if (!legal) return terminal(side, ply);
+        if (ttDepth[slot] <= depth || ttK1[slot] !== a1) {   // thay khi sâu hơn hoặc khác thế
+            ttK1[slot] = a1; ttK2[slot] = a2; ttDepth[slot] = depth;
+            ttScore[slot] = Math.max(-2e9, Math.min(2e9, best));
+            ttFlag[slot] = best <= alpha0 ? UPPER : best >= beta ? LOWER : EXACT;
+            ttMove[slot] = bestM ? bestM[0] * 90 + bestM[1] : -1;
         }
         return best;
     }
@@ -332,8 +404,11 @@ export function search(input, red, opts = {}) {
         let alpha = -Infinity, curBest = null, curScore = -Infinity;
         const cur = {};
         for (const m of order(st, root, killers[0], bestMove)) {
+            hashAfter(m, h1, h2);
+            const n1 = H1, n2 = H2;
             const u = make(st, m);
-            let sc = -negamax(d - 1, -Infinity, -alpha, !red, 1);
+            // exactRoot: mỗi nước gốc tìm với cửa sổ đầy đủ → điểm chính xác, không phải cận trên alpha-beta.
+            let sc = -negamax(d - 1, -Infinity, opts.exactRoot ? Infinity : -alpha, !red, 1, n1, n2);
             unmake(st, m, u);
             if (stop) break;
             if (noise) sc += Math.round((Math.random() - 0.5) * noise);
@@ -352,9 +427,9 @@ export function search(input, red, opts = {}) {
 /** Cấp độ máy: độ sâu, thời gian, độ "nhiễu" (đi kém cố ý), xác suất đi bừa, số mẫu xếp quân úp. */
 export const LEVELS = {
     1: { name: 'Tập sự', depth: 1, timeMs: 300, noise: 260, random: 0.35, samples: 1 },
-    2: { name: 'Dễ', depth: 2, timeMs: 700, noise: 90, random: 0.08, samples: 2 },
-    3: { name: 'Vừa', depth: 3, timeMs: 1500, noise: 20, random: 0, samples: 3 },
-    4: { name: 'Khó', depth: 6, timeMs: 3000, noise: 0, random: 0, samples: 4 },
+    2: { name: 'Dễ', depth: 2, timeMs: 700, noise: 90, random: 0.08, samples: 4, coupDepth: 2, coupTimeMs: 900, coupNoise: 30, coupRandom: 0.03 },
+    3: { name: 'Vừa', depth: 3, timeMs: 1500, noise: 20, random: 0, samples: 6, coupDepth: 3, coupTimeMs: 2000 },
+    4: { name: 'Khó', depth: 6, timeMs: 3000, noise: 0, random: 0, samples: 6, coupDepth: 5, coupTimeMs: 4500 },
 };
 
 function randomMove(st, red) {
@@ -390,7 +465,8 @@ export function thinkCoup(publicFen, pools, red, level) {
     const L = LEVELS[level] || LEVELS[2];
     const pub = loadFen(publicFen);
     const base = stateFrom(pub, true);
-    if (L.random && Math.random() < L.random) {
+    const rnd = L.coupRandom ?? L.random;
+    if (rnd && Math.random() < rnd) {
         const r = randomMove(base, red);
         if (r) return r;
     }
@@ -398,16 +474,20 @@ export function thinkCoup(publicFen, pools, red, level) {
     const total = {}, count = {};
     let nodes = 0, depth = 0;
     for (let k = 0; k < samples; k++) {
-        const st = { b: pub.slice(), h: base.h.slice(), coup: true };
+        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true });
         const pr = shuffle((pools.red || []).slice()), pb = shuffle((pools.black || []).slice());
         for (let i = 0; i < 90; i++) {
             if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
             else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
         }
-        const res = search(st, red, { depth: L.depth, timeMs: Math.round(L.timeMs / samples), noise: L.noise });
+        const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round((L.coupTimeMs || L.timeMs) / samples), noise: L.coupNoise ?? L.noise, exactRoot: true });
         nodes += res.nodes; depth = Math.max(depth, res.depth);
         if (!res.move) return { move: null, score: res.score, depth: 0, nodes };
-        for (const [m, sc] of Object.entries(res.scores || {})) { total[m] = (total[m] || 0) + sc; count[m] = (count[m] || 0) + 1; }
+        // Kẹp điểm: 1 cách xếp "may mắn" thấy chiếu hết không được lấn át trung bình các cách xếp khác.
+        for (const [m, sc] of Object.entries(res.scores || {})) {
+            const v = Math.max(-5000, Math.min(5000, sc));
+            total[m] = (total[m] || 0) + v; count[m] = (count[m] || 0) + 1;
+        }
     }
     let best = null, bestAvg = -Infinity;
     for (const m of Object.keys(total)) {

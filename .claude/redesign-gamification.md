@@ -110,3 +110,14 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Biên bản: `resources/js/notation.js` — nước quân úp ghi theo binh chủng ô + "(lật Mã)"; khay quân bị ăn có
   chênh lệch vật chất và số quân còn úp.
 - Lối vào: menu Chơi (2 mục cờ úp), trang `/co-up` (2 thẻ), footer. Huy hiệu `coup-bot`, `coup-pvp`.
+
+## Đợt 4 (02/10/2026) — Tối ưu máy (lỗi "Xe đã lật treo mà máy không ăn")
+- **Nguyên nhân**: thinkCoup cộng điểm từng nước gốc qua nhiều cách xếp, nhưng alpha-beta chỉ cho điểm CHÍNH XÁC
+  với nước tốt nhất; các nước khác chỉ là cận trên (toàn bằng nhau, vd 800) → cộng lại mất nghĩa, máy chọn gần như
+  ngẫu nhiên. Engine cũ cấp Vừa còn thua người đi ngẫu nhiên (0 thắng/6, bỏ lỡ 279 lần ăn quân).
+- **Sửa**: `exactRoot` (mỗi nước gốc tìm cửa sổ đầy đủ) cho cờ úp; kẹp điểm ±5000 trước khi lấy trung bình;
+  quiescence không "đứng yên" khi bị chiếu; giảm đi bừa/nhiễu cấp Dễ khi chơi cờ úp; số mẫu theo cấp 1/4/6/6.
+- **Tăng tốc**: nhớ vị trí 2 Tướng, kiểm tra hợp lệ lười trong vòng tìm, nút lá vào thẳng quiescence
+  (2,6–4,6× nút/giây), bảng chuyển vị Zobrist dạng typed array 2^18 ô (độ sâu 5 khai cuộc: 6,9s → 3,8s).
+- **Đo**: engine mới cấp Vừa thắng 6/6 trước người đi ngẫu nhiên; cấp Khó thắng cấp Vừa 3-2-1.
+- **Kiểm tra bắt buộc sau mỗi lần sửa engine**: `node tools/engine-test.mjs` (perft, luật cờ úp, ăn Xe treo).
