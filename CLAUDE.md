@@ -147,6 +147,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 - **Nhận diện bàn cờ từ ảnh** `/nhan-dien-ban-co` (ảnh chụp thật / màn hình phần mềm khác, cả cờ úp; chạy trên trình duyệt, AI tuỳ chọn) — Đợt 10.
 - **Sai lầm của tôi** `/luyen-tap/sai-lam-cua-toi` — luyện lại nước sai từ ván đã phân tích, lặp ngắt quãng — Đợt 11.
 - **Máy đánh đúng lý thuyết** — cờ úp không nhìn trộm quân úp + nguyên lý khai cuộc (không vội vật Pháo giả); cờ tướng có book khai cuộc `resources/js/engine/book.js`, phân tích ghi "Nước sách" — Đợt 13.
+- **Luyện tập nhận mọi đường chiếu hết** — nước khác sách được bộ giải chứng minh thắng thì tính đúng, máy đỡ dai nhất — Đợt 14.
 
 ### 🔄 Đang Làm / Việc Tiếp Theo
 1. Merge nhánh `redesign` → deploy theo `.claude/04-deploy.md` (có bước `cotuong:build-puzzles`).
@@ -166,7 +167,7 @@ npm run dev            # hoặc npm run build trước khi commit (public/build 
 # Kho thế cờ luyện tập (chạy lại sau mỗi lần nạp nội dung)
 php artisan cotuong:build-puzzles [--dry-run]
 php artisan test       # 23 test gamification/luyện tập/chơi/cờ úp (sqlite memory)
-node tools/engine-test.mjs   # BẮT BUỘC sau khi sửa engine máy (perft, luật cờ úp, không bỏ quân treo, khai cuộc cờ úp, book)
+node tools/engine-test.mjs   # BẮT BUỘC sau khi sửa engine máy (perft, luật cờ úp, không bỏ quân treo, khai cuộc cờ úp, book, bộ giải chiếu hết)
 
 # Import bài học từ .xqf (giải mã qua node decode.js)
 php artisan cotuong:import-xqf "storage/app/private/cotuong-sources/khai-cuoc/48-bai-nguyen-ly" \

@@ -20,11 +20,60 @@ class PuzzleService
 
     /**
      * So các nước người giải (chỉ nước của bên giải, theo thứ tự) với lời giải.
-     * Ở nước CUỐI, chấp nhận mọi nước khác cũng chiếu hết.
+     * Ở nước CUỐI, chấp nhận mọi nước khác cũng chiếu hết. Người giải đi ĐƯỜNG KHÁC (bộ giải chiếu hết phía client đã
+     * chứng minh) → client gửi cả diễn biến `$line` → nhận nếu hợp lệ và chiếu hết trong giới hạn (xem verifyLine).
      * @param list<string> $moves
+     * @param list<string>|null $line
      * @return array{ok:bool, wrong_ply:?int, user_move:?string, expected:?string}
      */
-    public function verify(Puzzle $p, array $moves): array
+    public function verify(Puzzle $p, array $moves, ?array $line = null): array
+    {
+        $strict = $this->verifySolution($p, $moves);
+        if (! $strict['ok'] && $line && $this->verifyLine($p, array_values($line))) {
+            return ['ok' => true, 'wrong_ply' => null, 'user_move' => null, 'expected' => null, 'alt' => true];
+        }
+
+        return $strict;
+    }
+
+    /**
+     * Đường thắng riêng: các nước luân phiên bắt đầu bằng bên giải, đều hợp lệ, kết thúc bằng bên đỡ hết nước đi;
+     * số nước của bên giải ≤ lời giải + 2 (đối phương đỡ tốt hơn sách → đáp án thật ra cũng dài hơn — xem
+     * worker.js). Chỉ cho thế mà lời giải trong sách kết thúc bằng chiếu hết.
+     */
+    public function verifyLine(Puzzle $p, array $line): bool
+    {
+        $sol = array_values($p->solution ?? []);
+        $solverRed = $p->side === 'do';
+        if (! $line || count($line) % 2 === 0 || intdiv(count($line) + 1, 2) > (int) $p->solver_moves + 2) {
+            return false;
+        }
+        $end = Rules::loadFen($p->fen);
+        foreach ($sol as $mv) {
+            $sq = Rules::iccs($mv);
+            if (! $sq) return false;
+            $end = Rules::apply($end, $sq[0], $sq[1]);
+        }
+        $defRed = count($sol) % 2 === 1 ? ! $solverRed : $solverRed;
+        if (! Rules::isMated($end, $defRed)) {
+            return false;
+        }
+
+        $b = Rules::loadFen($p->fen);
+        foreach ($line as $i => $mv) {
+            $red = ($i % 2 === 0) === $solverRed;
+            $sq = is_string($mv) ? Rules::iccs($mv) : null;
+            if (! $sq || ! isset($b[$sq[0]]) || Rules::isRed($b[$sq[0]]) !== $red || ! Rules::legalNoSelfCheck($b, $sq[0], $sq[1])) {
+                return false;
+            }
+            $b = Rules::apply($b, $sq[0], $sq[1]);
+        }
+
+        return Rules::isMated($b, ! $solverRed);
+    }
+
+    /** So khớp với lời giải trong sách (nước cuối được thay bằng nước chiếu hết khác). */
+    private function verifySolution(Puzzle $p, array $moves): array
     {
         $sol = array_values($p->solution ?? []);
         $board = Rules::loadFen($p->fen);
@@ -74,9 +123,9 @@ class PuzzleService
      * Ghi kết quả 1 lượt giải. Khách (user null) chỉ được thẩm định, không lưu.
      * @return array{ok:bool, verify:array, gamification:?array, rating:?array}
      */
-    public function submit(?User $user, Puzzle $p, string $mode, array $moves, int $ms, bool $revealed, ?string $sessionId = null): array
+    public function submit(?User $user, Puzzle $p, string $mode, array $moves, int $ms, bool $revealed, ?string $sessionId = null, ?array $line = null): array
     {
-        $v = $this->verify($p, $moves);
+        $v = $this->verify($p, $moves, $line);
         $ok = $v['ok'] && ! $revealed;
         if (! $user) {
             return ['ok' => $ok, 'verify' => $v, 'gamification' => null, 'rating' => null];

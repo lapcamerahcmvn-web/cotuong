@@ -636,13 +636,31 @@
       flip = cfg.side === 'den';
       state = {
         board: Rules.loadFen(cfg.fen), ply: 0, selected: -1, dots: [], solved: false, failed: false, locked: false,
-        moves: [], mistakes: 0, revealed: false, hint: -1, t0: Date.now(), last: null, arrows: null
+        moves: [], mistakes: 0, revealed: false, hint: -1, t0: Date.now(), last: null, arrows: null,
+        // Đường thắng KHÁC đáp án (đã được bộ giải chứng minh): dyn = true, đối phương đỡ theo máy, left = số nước còn lại.
+        line: [], dyn: false, left: 0, next: null, mateGoal: endsInMate()
       };
     }
 
+    // Lời giải kết thúc bằng chiếu hết → mới chấp nhận đường thắng khác (thế tàn cuộc "thắng thế" thì vẫn theo đáp án).
+    function endsInMate() {
+      var b = Rules.loadFen(cfg.fen);
+      for (var i = 0; i < cfg.solution.length; i++) {
+        var m = iccsToIdx(cfg.solution[i]); if (!m) return false;
+        b[m.to] = b[m.from]; b[m.from] = null;
+      }
+      var defRed = cfg.solution.length % 2 === 1 ? !solverRed() : solverRed();
+      for (var f = 0; f < 90; f++) {
+        var p = b[f]; if (!p || Rules.isRed(p) !== defRed) continue;
+        for (var t = 0; t < 90; t++) if (Rules.legalNoSelfCheck(b, f, t)) return false;
+      }
+      return true;
+    }
+
     function solverRed() { return cfg.side === 'do'; }
-    function expected() { return cfg.solution[state.ply] || null; }
-    function isSolverTurn() { return !state.solved && !state.failed && !state.locked && state.ply < cfg.solution.length && state.ply % 2 === 0; }
+    function expected() { return state.dyn ? state.next : (cfg.solution[state.ply] || null); }
+    function remaining() { return state.dyn ? state.left : Math.ceil((cfg.solution.length - state.ply) / 2); }
+    function isSolverTurn() { return !state.solved && !state.failed && !state.locked && (state.dyn || state.ply < cfg.solution.length) && state.ply % 2 === 0; }
     function fen() { return Rules.toFen(state.board); }
 
     function setCaption(step, text, kind) {
@@ -659,7 +677,7 @@
       dom.holder.innerHTML = renderBoard(fen(), lm, state.arrows, state.selected, flip, { dots: state.dots, check: check, hint: state.hint, hide: opts.hide });
       if (!opts.noAnim) playAnim(dom.holder);
       dom.holder.classList.toggle('is-interactive', isSolverTurn());
-      var total = Math.ceil(cfg.solution.length / 2), done = Math.ceil(state.ply / 2);
+      var done = Math.ceil(state.ply / 2), total = state.dyn ? done + state.left : Math.ceil(cfg.solution.length / 2);
       if (dom.pill) dom.pill.textContent = state.solved ? 'Đã giải xong!' : ('Nước ' + Math.min(done + 1, total) + '/' + total + ' · ' + (solverRed() ? 'Đỏ' : 'Đen') + ' đi');
     }
 
@@ -679,7 +697,7 @@
       var m = iccsToIdx(iccs); if (!m) return false;
       var captured = !!state.board[m.to];
       state.board[m.to] = state.board[m.from]; state.board[m.from] = null;
-      state.last = iccs; state.ply++;
+      state.last = iccs; state.ply++; state.line.push(iccs);
       Sound.move(captured);
       return true;
     }
@@ -696,7 +714,8 @@
       state.solved = true;
       Sound.good();
       var info = { moves: state.moves.slice(), ms: Date.now() - state.t0, mistakes: state.mistakes, revealed: state.revealed };
-      setCaption(state.revealed ? 'Đã xem lời giải' : 'Chính xác!', state.revealed ? 'Thử lại thế này sau để ghi nhớ nhé.' : (state.mistakes ? 'Bạn đã giải xong (có ' + state.mistakes + ' lần đi sai).' : 'Xuất sắc — bạn đã giải đúng ngay từ đầu.'), 'ok');
+      if (state.dyn) info.line = state.line.slice();   // đường thắng riêng → server thẩm định cả diễn biến
+      setCaption(state.revealed ? 'Đã xem lời giải' : 'Chính xác!', state.revealed ? 'Thử lại thế này sau để ghi nhớ nhé.' : state.dyn ? 'Bạn đã chiếu hết theo một đường khác lời giải trong sách — rất hay!' : (state.mistakes ? 'Bạn đã giải xong (có ' + state.mistakes + ' lần đi sai).' : 'Xuất sắc — bạn đã giải đúng ngay từ đầu.'), 'ok');
       draw({ noAnim: true });
       emit(root, 'xq:puzzle-solved', info);
       if (cfg.onSolved) cfg.onSolved(info);
@@ -709,42 +728,47 @@
       state.selected = -1; state.dots = []; state.hint = -1;
       if (!Rules.legalNoSelfCheck(state.board, from, to)) { draw({ noAnim: true }); return; }
 
-      var isFinal = state.ply === cfg.solution.length - 1;
-      var ok = got === exp;
-      if (!ok && isFinal) {
-        // Nước cuối khác đáp án nhưng vẫn chiếu hết → tính đúng.
+      var isFinal = !state.dyn && state.ply === cfg.solution.length - 1;
+      var ok = !state.dyn && got === exp;
+      var mates = false;
+      if (got !== exp || state.dyn) {
+        // Nước khác đáp án nhưng chiếu hết ngay → tính đúng (mọi lúc, không chỉ nước cuối).
         var snap = state.board.slice();
         state.board[to] = state.board[from]; state.board[from] = null;
-        ok = !hasAnyMove(!solverRed());
+        mates = !hasAnyMove(!solverRed());
         state.board = snap;
+        if (mates) ok = true;
       }
-      var info = { ok: ok, ply: state.ply, move: got, expected: exp };
+      // Khác đáp án / đang đi đường riêng → nhờ bộ giải chiếu hết kiểm chứng (bất đồng bộ, khoá bàn trong lúc chờ).
+      var checker = cfg.checkMove || window.XiangqiPuzzleCheck;
+      if (!mates && !isFinal && (state.dyn || got !== exp) && state.mateGoal && checker) {
+        var before = fen(), mine = state;
+        state.locked = true;
+        if (!state.dyn) setCaption('Đang kiểm tra…', 'Nước này khác lời giải trong sách — máy đang kiểm chứng xem có còn thắng không.', null);
+        draw({ noAnim: true });
+        Promise.resolve(checker({ fen: before, red: solverRed(), move: got, expected: exp, n: remaining() })).then(function (r) {
+          if (state !== mine || state.solved) return;   // đã bị đặt lại / chuyển thế trong lúc chờ
+          state.locked = false;
+          if (r && r.status === 'win') return acceptLine(got, exp, r);
+          if (r && r.status === 'slow') {
+            setCaption('Vẫn thắng — nhưng chưa nhanh nhất', 'Nước này vẫn dẫn tới chiếu hết nhưng cần ' + r.k + ' nước. Hãy tìm đường ngắn hơn.', null);
+            draw({ noAnim: true });
+            return;
+          }
+          wrong(got, exp);
+        }, function () { if (state !== mine) return; state.locked = false; wrong(got, exp); });
+        return;
+      }
+      if (!ok) return wrong(got, exp);
+      if (mates && got !== exp) state.dyn = true;   // chiếu hết sớm hơn đáp án
+      if (state.dyn) { state.moves.push(got); applyIccs(got); draw(); finishSolved(); return; }
+      var info = { ok: true, ply: state.ply, move: got, expected: exp };
       emit(root, 'xq:puzzle-move', info);
       if (cfg.onMove) cfg.onMove(info);
 
-      if (!ok) {
-        state.mistakes++;
-        Sound.bad();
-        if (dom.holder.animate && !REDUCE) dom.holder.classList.remove('xq-shake'), void dom.holder.offsetWidth, dom.holder.classList.add('xq-shake');
-        if (cfg.failOnWrong) {
-          state.failed = true;
-          var em = iccsToIdx(exp);
-          state.arrows = em ? [{ from: em.from, to: em.to, color: '#2f6b5e' }] : null;
-          setCaption('Chưa đúng', 'Nước đúng được chỉ bằng mũi tên xanh.', 'err');
-          draw({ noAnim: true });
-          var fail = { moves: state.moves.concat([got]), ms: Date.now() - state.t0, wrongPly: info.ply, userMove: got, expected: exp };
-          emit(root, 'xq:puzzle-failed', fail);
-          if (cfg.onFail) cfg.onFail(fail);
-        } else {
-          setCaption('Chưa đúng', 'Nước này chưa phải nước hay nhất — thử lại nhé.', 'err');
-          draw({ noAnim: true });
-        }
-        return;
-      }
-
       state.moves.push(got);
       applyIccs(got);
-      if (state.ply >= cfg.solution.length) { draw(); finishSolved(); return; }
+      if (state.ply >= cfg.solution.length || mates) { draw(); finishSolved(); return; }
       setCaption('Đúng rồi!', 'Đối phương đang đáp trả…', 'ok');
       draw();
       state.locked = true;
@@ -755,6 +779,51 @@
         setCaption('Đến lượt bạn', 'Tìm nước tiếp theo.', null);
         draw();
       }, 520);
+    }
+
+    // Nước được bộ giải chứng minh vẫn thắng: đi tiếp theo đường riêng, đối phương đỡ DAI nhất (máy chọn).
+    function acceptLine(got, exp, r) {
+      var info = { ok: true, ply: state.ply, move: got, expected: exp, alt: !state.dyn && got !== exp };
+      emit(root, 'xq:puzzle-move', info);
+      if (cfg.onMove) cfg.onMove(info);
+      var first = !state.dyn && got !== exp;
+      state.dyn = true;
+      state.left = Math.max(0, r.k - 1);
+      state.moves.push(got);
+      applyIccs(got);
+      if (!r.reply) { draw(); finishSolved(); return; }
+      setCaption(first ? 'Hay — một đường thắng khác!' : 'Đúng rồi!', first ? 'Nước này không có trong sách nhưng máy đã chứng minh vẫn chiếu hết được. Đối phương đỡ…' : 'Đối phương đang đáp trả…', 'ok');
+      draw();
+      state.locked = true;
+      reply = setTimeout(function () {
+        state.locked = false;
+        applyIccs(r.reply);
+        state.next = r.next;
+        setCaption('Đến lượt bạn', 'Còn ' + state.left + ' nước để chiếu hết.', null);
+        draw();
+      }, 520);
+    }
+
+    function wrong(got, exp) {
+      var info = { ok: false, ply: state.ply, move: got, expected: exp };
+      emit(root, 'xq:puzzle-move', info);
+      if (cfg.onMove) cfg.onMove(info);
+      state.mistakes++;
+      Sound.bad();
+      if (dom.holder.animate && !REDUCE) dom.holder.classList.remove('xq-shake'), void dom.holder.offsetWidth, dom.holder.classList.add('xq-shake');
+      if (cfg.failOnWrong) {
+        state.failed = true;
+        var em = iccsToIdx(exp);
+        state.arrows = em ? [{ from: em.from, to: em.to, color: '#2f6b5e' }] : null;
+        setCaption('Chưa đúng', 'Nước đúng được chỉ bằng mũi tên xanh.', 'err');
+        draw({ noAnim: true });
+        var fail = { moves: state.moves.concat([got]), ms: Date.now() - state.t0, wrongPly: info.ply, userMove: got, expected: exp };
+        emit(root, 'xq:puzzle-failed', fail);
+        if (cfg.onFail) cfg.onFail(fail);
+      } else {
+        setCaption('Chưa đúng', 'Nước này chưa phải nước hay nhất — thử lại nhé.', 'err');
+        draw({ noAnim: true });
+      }
     }
 
     // ---- Đầu vào: bấm-bấm + kéo-thả (Pointer Events), gắn 1 lần trên holder ----

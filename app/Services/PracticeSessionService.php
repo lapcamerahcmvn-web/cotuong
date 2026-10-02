@@ -58,7 +58,7 @@ class PracticeSessionService
     }
 
     /** Nộp nước đi cho thế hiện tại. Trả trạng thái phiên + thế kế tiếp (nếu còn). */
-    public function answer(PracticeSession $s, ?User $u, int $puzzleId, array $moves, int $ms): array
+    public function answer(PracticeSession $s, ?User $u, int $puzzleId, array $moves, int $ms, ?array $line = null): array
     {
         if ($s->isOver()) {
             return $this->finish($s, $u);
@@ -68,7 +68,7 @@ class PracticeSessionService
             return $this->state($s, $u, null);
         }
 
-        $res = $this->puzzles->submit($u, $p, $s->mode, $moves, $ms, false, $s->uuid);
+        $res = $this->puzzles->submit($u, $p, $s->mode, $moves, $ms, false, $s->uuid, $line);
         $log = $s->log ?? [];
         $log[] = ['id' => $p->id, 'ok' => $res['ok']];
         $s->log = $log;

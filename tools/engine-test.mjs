@@ -2,7 +2,7 @@
 // BẮT BUỘC chạy lại sau mỗi lần sửa engine — sai luật/sai điểm rất khó thấy khi chỉ chơi thử.
 import {
     loadFen, legalMoves, legalMovesSt, stateFrom, toIccs, search, thinkCoup, gameOver,
-    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review,
+    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review, mateIn, checkPuzzleMove,
 } from '../resources/js/engine/engine.js';
 import { LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
 
@@ -73,6 +73,17 @@ const first = new Set(bookMoves(START_FEN, true).map((x) => x.move));
 ok(first.has('h2e2') && first.has('c3c4') && first.has('g0e2'), 'thế mở có Pháo đầu / Tiên nhân chỉ lộ / Phi tượng');
 ok(bookMoves(loadFen(START_FEN), false).length === 0, 'sai lượt đi → ngoài sách');
 ok(pickBook(START_FEN, true, new Set(first)) === null, 'tránh hết nước sách → null (máy tự tính)');
+
+console.log('Bộ giải chiếu hết (luyện tập nhận đường thắng khác sách)');
+ok(mateIn('3k5/R7R/9/9/9/9/9/9/9/4K4', true, 1)?.k === 1, 'tìm chiếu hết 1 nước');
+const sx = '3k1ab2/4a4/4c4/2R6/9/R8/9/B2A3r1/4A2r1/2B2K3';   // Song Xe: sách c6c9…, a4a9… cũng thắng
+const alt = checkPuzzleMove(sx, true, 'a4a9', 3);
+ok(alt.status === 'win' && alt.k <= 3 && alt.reply && alt.next, `nước khác sách a4a9 được chứng minh thắng (${alt.status} ${alt.k})`);
+ok(checkPuzzleMove(sx, true, 'c6c9', 3).status === 'win', 'nước theo sách vẫn thắng');
+ok(checkPuzzleMove(sx, true, 'a4a5', 3).status !== 'win', 'nước yếu không được nhận');
+const tm = Date.now(); checkPuzzleMove('1R3a1c1/r3a4/3kN4/8p/p8/9/9/8B/9/4K4', true, 'b9b5', 3);
+const dt = Date.now() - tm;
+ok(dt < 3000, `kiểm 1 nước trong ${dt}ms`);
 
 console.log(fail ? `\n${fail} kiểm tra THẤT BẠI` : '\nTất cả đạt');
 process.exit(fail ? 1 : 0);

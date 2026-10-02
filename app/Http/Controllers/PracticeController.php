@@ -146,13 +146,15 @@ class PracticeController extends Controller
         $data = $request->validate([
             'moves' => ['present', 'array', 'max:40'],
             'moves.*' => ['string', 'regex:/^[a-i]\d[a-i]\d$/'],
+            'line' => ['nullable', 'array', 'max:60'],
+            'line.*' => ['string', 'regex:/^[a-i]\d[a-i]\d$/'],
             'ms' => ['required', 'integer', 'min:0'],
             'mode' => ['required', 'in:' . implode(',', PuzzleService::MODES)],
             'revealed' => ['nullable', 'boolean'],
         ]);
         abort_if($puzzle->status !== 'published', 404);
 
-        $res = $this->puzzles->submit(Auth::user(), $puzzle, $data['mode'], $data['moves'], (int) $data['ms'], (bool) ($data['revealed'] ?? false));
+        $res = $this->puzzles->submit(Auth::user(), $puzzle, $data['mode'], $data['moves'], (int) $data['ms'], (bool) ($data['revealed'] ?? false), null, $data['line'] ?? null);
 
         return response()->json([
             'ok' => $res['ok'],
@@ -180,10 +182,12 @@ class PracticeController extends Controller
             'puzzle_id' => ['required', 'integer'],
             'moves' => ['present', 'array', 'max:20'],
             'moves.*' => ['string', 'regex:/^[a-i]\d[a-i]\d$/'],
+            'line' => ['nullable', 'array', 'max:60'],
+            'line.*' => ['string', 'regex:/^[a-i]\d[a-i]\d$/'],
             'ms' => ['required', 'integer', 'min:0'],
         ]);
 
-        return response()->json($this->sessions->answer($s, Auth::user(), (int) $data['puzzle_id'], $data['moves'], (int) $data['ms']));
+        return response()->json($this->sessions->answer($s, Auth::user(), (int) $data['puzzle_id'], $data['moves'], (int) $data['ms'], $data['line'] ?? null));
     }
 
     public function sessionFinish(string $uuid): JsonResponse

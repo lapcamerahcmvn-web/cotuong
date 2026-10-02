@@ -3,11 +3,13 @@
 //  [data-practice="session"] — phiên có luật: 60 giây (rush) · 3 mạng (survival)
 // Bàn cờ dùng XiangqiBoard.mountPuzzle (public/js/board.js). Kết quả luôn được server thẩm định.
 import { loadBoard, postJson, getJson, track, icon, escapeHtml, store, save, fmt } from './core';
+import { installPuzzleCheck } from './puzzle-check';
 import { handleGamification, confetti } from './gamification';
 
 export function init() {
     const root = document.querySelector('[data-practice]');
     if (!root) return;
+    installPuzzleCheck();
     loadBoard().then(() => (root.dataset.practice === 'session' ? initSession(root) : initPlay(root)));
 }
 
@@ -71,7 +73,7 @@ function initPlay(root) {
         track(ok && !info.revealed ? 'puzzle_correct' : 'puzzle_wrong', { mode, puzzle_id: puzzle.id });
         let res = null;
         try {
-            res = await postJson(`/luyen-tap/the-co/${puzzle.id}/thu`, { moves: info.moves, ms: info.ms, mode, revealed: !!info.revealed });
+            res = await postJson(`/luyen-tap/the-co/${puzzle.id}/thu`, { moves: info.moves, line: info.line, ms: info.ms, mode, revealed: !!info.revealed });
         } catch (e) { /* mất mạng: vẫn cho đi tiếp */ }
         if (res) handleGamification(res.gamification);
         if (mode === 'daily' && ok && !info.revealed) { track('daily_challenge_complete'); confetti($(root, '[data-board]')); }
@@ -210,7 +212,7 @@ function initSession(root) {
         if (!failed) pop('+1', 'var(--jade)');
         await new Promise((r) => setTimeout(r, failed ? 900 : 250));
         let st;
-        try { st = await postJson(`/luyen-tap/phien/${uuid}/nuoc`, { puzzle_id: puzzle.id, moves: info.moves, ms: info.ms }); } catch (e) { st = null; }
+        try { st = await postJson(`/luyen-tap/phien/${uuid}/nuoc`, { puzzle_id: puzzle.id, moves: info.moves, line: info.line, ms: info.ms }); } catch (e) { st = null; }
         sending = false;
         if (failed && mode === 'rush') pop('−5s', 'var(--danger)');
         if (st) apply(st);

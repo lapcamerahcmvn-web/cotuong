@@ -284,3 +284,19 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   cho quân lật trong lúc tìm kiếm (make/unmake giữ), `evaluate` tính vật chất của nó = kỳ vọng túi quân (vị trí vẫn theo
   quân thật). Kết quả: thế đầu ≈ 0, nước đối xứng điểm bằng nhau, sai số ±50; đấu cặp cấp Vừa vs bản 184f757:
   **21–11** (32 ván). Phân tích cờ úp dùng ngưỡng rộng hơn (tốt nhất ≤30 · tốt <90 · thiếu chính xác <200 · sai lầm <400).
+
+## Đợt 14 (02/10/2026) — Luyện tập nhận MỌI đường chiếu hết, không chỉ 1 nước trong sách (user yêu cầu)
+- Trước: chỉ nước CUỐI được nhận nước chiếu hết khác; nước giữa khác sách = sai. Đo 120 thế: 12/100 thế chiếu hết có nước
+  đầu thắng khác sách (22 nước bị chấm sai oan), 37 nước khác thắng nhưng chậm hơn.
+- Bộ giải CHỨNG MINH chiếu hết `engine.js` (`mateIn`, `checkPuzzleMove`): bên hết nước = thua; thử "liên chiếu" trước
+  (nhanh), toàn bộ nước khi còn ≤ 3 nước (`FULL_MAX`); hết giờ → không kết luận. Kiểm 1 nước ~10–850ms, chạy Web Worker
+  (`worker.js` message `puzzle`, `resources/js/puzzle-check.js` gắn `window.XiangqiPuzzleCheck`, nạp ở practice.js + lesson.js).
+- **Chuẩn công bằng:** nhiều thế trong sách cho bên thua đỡ CHƯA tốt nhất (VD #22: Đen đỡ a8a9 thì không bị chiếu hết trong 3
+  nước) → nước khác sách được nhận nếu thắng KHÔNG CHẬM HƠN nước đáp án khi cả hai cùng gặp cách đỡ tốt nhất (budget = n,
+  hoặc số nước thật của đáp án, tối đa n+2). Chỉ áp cho thế mà lời giải kết thúc bằng chiếu hết.
+- `public/js/board.js` createPuzzle: nước khác sách → khoá bàn "Đang kiểm tra…" → `win`: đi tiếp ĐƯỜNG RIÊNG (`state.dyn`,
+  đối phương đỡ DAI nhất do máy chọn, gợi ý = nước thắng kế tiếp); `slow`: "vẫn thắng nhưng chưa nhanh nhất", không tính sai;
+  còn lại: sai như cũ. Chiếu hết sớm hơn sách ở bất kỳ nước nào → đúng. Kết quả gửi kèm `line` (cả 2 bên).
+- Server `PuzzleService::verifyLine`: luân phiên đúng bên, hợp lệ, kết thúc bên đỡ hết nước, số nước bên giải ≤ lời giải + 2.
+  Nhận `line` ở `/luyen-tap/the-co/{id}/thu` + phiên 60 giây/3 mạng. Test: `tests/Feature/PuzzleAltLineTest.php`,
+  `tools/engine-test.mjs` (bộ giải). Không cần migrate.

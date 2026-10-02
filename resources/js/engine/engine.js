@@ -646,3 +646,118 @@ export function review(fen, red, opts = {}) {
     }
     return { best, score: bs, scores, depth };
 }
+
+/* ---------------- Giải thế CHIẾU HẾT (luyện tập: chấp nhận đường thắng khác đáp án) ---------------- */
+// Cờ tướng: bên hết nước đi (bị chiếu hết hoặc bị "khốn") là thua. Bộ giải CHỨNG MINH (không ước lượng): bên công
+// thắng trong ≤ n nước của mình với MỌI cách đỡ. Thử trước chế độ "liên chiếu" (chỉ nước chiếu — đa số sát pháp,
+// rất nhanh), rồi toàn bộ nước khi n nhỏ. Hết giờ → ném TIMEOUT (không kết luận bừa).
+const TIMEOUT = { timeout: true };
+
+function hasLegal(st, side) {
+    for (const m of pseudoMoves(st, side)) {
+        const u = make(st, m);
+        const ok = !inCheckSt(st, side);
+        unmake(st, m, u);
+        if (ok) return true;
+    }
+    return false;
+}
+
+function mateProver(st, deadline) {
+    const memo = new Map();
+    let nodes = 0;
+    const key = (side, n, co) => st.b.join(',') + (side ? 'r' : 'b') + n + (co ? 'c' : 'f');
+    // Bên `side` vừa đi xong, `def` = bên đỡ đang tới lượt; bên công còn n-1 nước sau nước vừa đi.
+    function defended(def, n, co) {
+        if (n <= 1) return hasLegal(st, def);                 // còn nước đỡ = chưa hết
+        const replies = legalMovesSt(st, def);
+        if (!replies.length) return false;
+        for (const m of order(st, replies)) {
+            const u = make(st, m);
+            const ok = attack(!def, n - 1, co);
+            unmake(st, m, u);
+            if (!ok) return true;
+        }
+        return false;
+    }
+    // Bên `side` tới lượt: có nước nào thắng trong ≤ n nước không? Trả nước thắng hoặc null.
+    function attack(side, n, co, wantMove = false) {
+        if ((++nodes & 255) === 0 && Date.now() > deadline) throw TIMEOUT;
+        const k = key(side, n, co);
+        if (!wantMove && memo.has(k)) return memo.get(k);
+        let win = null;
+        for (const m of order(st, legalMovesSt(st, side))) {
+            const u = make(st, m);
+            const check = inCheckSt(st, !side);
+            let ok;
+            if (!check && (co || n === 1)) ok = !hasLegal(st, !side);   // nước êm chỉ thắng khi đối phương hết nước
+            else ok = !defended(!side, n, co);
+            unmake(st, m, u);
+            if (ok) { win = m; break; }
+        }
+        memo.set(k, !!win);
+        return wantMove ? win : !!win;
+    }
+    return { attack, defended, nodes: () => nodes };
+}
+
+const FULL_MAX = 3;   // toàn bộ nước (kể cả nước êm) chỉ thử khi còn ≤ 3 nước — sâu hơn thì quá chậm
+function provenMate(st, side, n, deadline, P) {
+    for (let k = 1; k <= n; k++) {
+        for (const co of k <= FULL_MAX ? [true, false] : [true]) {
+            const m = P.attack(side, k, co, true);
+            if (m) return { k, move: toIccs(m[0], m[1]) };
+        }
+    }
+    return null;
+}
+
+/**
+ * Bên `red` chiếu hết được trong ≤ n nước? → { k, move } (k nhỏ nhất tìm được) | null | { timeout:true }.
+ */
+export function mateIn(fen, red, n, timeMs = 2000) {
+    const st = stateFrom(loadFen(fen));
+    const deadline = Date.now() + timeMs;
+    try { return provenMate(st, red, n, deadline, mateProver(st, deadline)); } catch (e) { if (e === TIMEOUT) return TIMEOUT; throw e; }
+}
+
+/**
+ * Kiểm nước `mv` của bên giải (bên `red`) có còn thắng trong ≤ n nước (tính cả nước này) không.
+ * → { status:'win', k, reply, next }  — thắng: `reply` = nước đỡ DAI nhất của đối phương (null nếu đã chiếu hết),
+ *                                        `next` = nước thắng tiếp theo sau `reply`.
+ *   { status:'slow', k }               — vẫn chiếu hết được nhưng cần nhiều nước hơn lời giải.
+ *   { status:'no' } | { status:'unknown' } (hết giờ chưa chứng minh được).
+ */
+export function checkPuzzleMove(fen, red, mv, n, timeMs = 2500) {
+    const st = stateFrom(loadFen(fen));
+    const deadline = Date.now() + timeMs;
+    const [f, t] = fromIccs(mv);
+    if (!legalMovesSt(st, red).some((m) => m[0] === f && m[1] === t)) return { status: 'no' };
+    const P = mateProver(st, deadline);
+    const u = make(st, [f, t]);
+    try {
+        if (!hasLegal(st, !red)) return { status: 'win', k: 1, reply: null, next: null };
+        let k = 0;
+        for (let j = 2; j <= n + 2 && !k; j++) {
+            for (const co of j <= FULL_MAX ? [true, false] : [true]) {
+                if (!P.defended(!red, j, co)) { k = j; break; }
+            }
+        }
+        if (!k) return { status: 'no' };
+        if (k > n) return { status: 'slow', k };
+        // Đỡ dai nhất: nước đỡ khiến bên công cần nhiều nước nhất (sát pháp hay = máy kháng cự tối đa).
+        let reply = null, next = null, longest = 0;
+        for (const r of order(st, legalMovesSt(st, !red))) {
+            const u2 = make(st, r);
+            const res = provenMate(st, red, k - 1, deadline, P);
+            unmake(st, r, u2);
+            if (res && res.k > longest) { longest = res.k; reply = toIccs(r[0], r[1]); next = res.move; }
+        }
+        return reply ? { status: 'win', k, reply, next } : { status: 'unknown' };
+    } catch (e) {
+        if (e === TIMEOUT) return { status: 'unknown' };
+        throw e;
+    } finally {
+        unmake(st, [f, t], u);
+    }
+}

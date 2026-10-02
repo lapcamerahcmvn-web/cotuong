@@ -1,12 +1,25 @@
 // Web Worker: { id, fen, red, level, analyse?, coup?, pools? } → { id, move, score, depth }.
 // Cờ úp: `fen` là bàn công khai (quân úp = X/x), `pools` = binh chủng chưa lộ của mỗi bên.
 // Phân tích ván: { id, review: true, fen, red, pools?, timeMs? } → { id, best, score, scores, depth }.
-import { think, thinkCoup, search, stateFrom, loadFen, review } from './engine';
+// Giải đố: { id, puzzle: true, fen, red, move, expected, n } → kết quả checkPuzzleMove (nước khác đáp án có thắng không).
+import { think, thinkCoup, search, stateFrom, loadFen, review, checkPuzzleMove } from './engine';
 import { pickBook } from './book';
 
 self.onmessage = (e) => {
     const { id, fen, red, level, analyse, coup, pools } = e.data;
     const avoid = e.data.avoid?.length ? new Set(e.data.avoid) : null;   // nước bị cấm (chiếu dai lần thứ 3)
+    if (e.data.puzzle) {
+        const { move, expected, n } = e.data;
+        // Chuẩn công bằng: nước khác đáp án được nhận nếu thắng KHÔNG CHẬM HƠN nước đáp án khi đối phương đỡ tốt nhất
+        // (nhiều thế trong sách cho bên thua đỡ chưa tốt → đáp án thật ra cần nhiều nước hơn số nước ghi trong bài).
+        let budget = n;
+        if (expected && expected !== move) {
+            const ex = checkPuzzleMove(fen, red, expected, n + 2, 1500);
+            budget = ex.status === 'win' ? n : ex.status === 'slow' ? ex.k : n + 2;
+        }
+        self.postMessage({ id, ...checkPuzzleMove(fen, red, move, budget, 2500), budget });
+        return;
+    }
     if (e.data.review) {
         self.postMessage({ id, ...review(fen, red, { pools, timeMs: e.data.timeMs }) });
         return;

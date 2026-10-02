@@ -1,11 +1,13 @@
 // Trang bài học: chuyển "Xem lời giảng / Thử tự giải", theo dõi tiến độ (đăng nhập), sheet hoàn
 // thành (+XP, bài tiếp theo), ghi kết quả "Thử tự giải" vào kho thế cờ, tiến độ khách (localStorage).
 import { postJson, store, save, track, icon, escapeHtml } from './core';
+import { installPuzzleCheck } from './puzzle-check';
 import { handleGamification, openSheet, confetti } from './gamification';
 
 export function init() {
     const page = document.querySelector('[data-lesson-page]');
     if (!page) return;
+    installPuzzleCheck();
     const d = page.dataset;
     const lessonId = parseInt(d.lessonId, 10);
     initModeToggle();
@@ -119,7 +121,7 @@ function initLessonPuzzle(d) {
         const box = document.getElementById('lesson-board-puzzle');
         if (!box || !box.contains(e.target)) return;
         track(e.detail.revealed ? 'puzzle_reveal' : 'puzzle_correct', { mode: 'lesson' });
-        report({ moves: e.detail.moves, ms: e.detail.ms, revealed: e.detail.revealed });
+        report({ moves: e.detail.moves, line: e.detail.line, ms: e.detail.ms, revealed: e.detail.revealed });
         box.__moves = [];
     });
 }
