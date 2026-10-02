@@ -164,3 +164,20 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - **Link chia sẻ**: POST `history.share` bật/tắt `share_token` (16 ký tự) → `/van-co/{token}` (noindex, công khai,
   hiện cả phân tích; đối thủ PvP hiện là "Bạn chơi" để không lộ tên người khác).
 - Migration `2026_10_03_100003` (first_side, analysis, share_token). Test: `HistoryTest` 7 test.
+
+## Đợt 8 (02/10/2026) — Thử thách tuần + giải thưởng bảng xếp hạng tuần
+- Cấu hình `config/weekly.php`: kho nhiệm vụ 3 nhóm (Học / Luyện / Chơi), mỗi tuần (thứ 2–CN giờ VN) chọn CỐ ĐỊNH
+  theo crc32 ngày đầu tuần: 1 nhiệm vụ/nhóm + 1 nhiệm vụ thêm khác chỉ số → mọi người cùng thử thách.
+  Tiến độ suy từ dữ liệu sẵn có (`user_daily_activity`, sổ XP, `game_records` ≥10 nửa nước — ván thắng máy chỉ tính
+  ván từ thế mở chuẩn, `practice_sessions`) → không ghi thêm gì khi học/chơi.
+- Nhận thưởng: POST `/thu-thach-tuan/nhan` {quest | chest} → `GamificationService::grant()` (idem_key
+  `weekly:{tuần}:{nhiệm vụ}`). **grant() KHÔNG cộng vào hoạt động ngày** → XP thưởng không tính vào bảng xếp hạng
+  tuần/tháng, mục tiêu ngày, chuỗi ngày. Rương tuần (xong cả 4): +150 XP + 1 thẻ giữ chuỗi.
+- Giải bảng XP tuần (bảng `weekly_awards`): Top 1/2/3 cúp vàng/bạc/đồng (+500/300/200 XP + 1 thẻ giữ chuỗi), hạng
+  4–10 "Top 10" (+100 XP); tối thiểu 100 XP/tuần, người ẩn khỏi xếp hạng không xét. Không có cron → `ensureFinalized()`
+  chốt tuần trước "lười" ở view composer layout (cache forever + unique week/user + idem_key ⇒ không trao trùng).
+  Giải chưa xem → `window.__xq.award` → bảng chúc mừng 1 lần (POST `/giai-thuong-tuan/{id}/da-xem`).
+- Trang `/thu-thach-tuan` (noindex): thử thách, giải thưởng, bảng XP tuần top 10, bục vinh danh tuần trước, tủ cúp.
+  Thẻ thử thách thu gọn ở trang chủ (đã đăng nhập); banner ở `/xep-hang`; link ở dropdown tài khoản + hồ sơ.
+- Huy hiệu mới: weekly-1/4 (mở rương), weekly-top10/podium/champ. Test: `tests/Feature/WeeklyTest.php` (3 test).
+- ⚠️ `WeeklyAward.week_start` KHÔNG cast 'date' (sqlite lưu kèm giờ → truy vấn theo ngày lệch) — dùng accessor.

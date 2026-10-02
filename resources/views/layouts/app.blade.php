@@ -66,7 +66,7 @@
     <noscript><link rel="stylesheet" href="{{ $_fontHref }}"></noscript>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script>window.__xq={rules:"{{ asset('js/xiangqi-rules.js') }}?v={{ @filemtime(public_path('js/xiangqi-rules.js')) }}",board:"{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}",auth:{{ auth()->check() ? 'true' : 'false' }},ga:{{ config('site.ga4_id') ? 'true' : 'false' }}};</script>
+    <script>window.__xq={rules:"{{ asset('js/xiangqi-rules.js') }}?v={{ @filemtime(public_path('js/xiangqi-rules.js')) }}",board:"{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}",auth:{{ auth()->check() ? 'true' : 'false' }},ga:{{ config('site.ga4_id') ? 'true' : 'false' }},award:@json($weeklyAward ?? null)};</script>
 
     {{-- JSON-LD toàn site: Organization + WebSite (kèm SearchAction). Trang con tham chiếu @id. --}}
     {!! \App\Support\Seo::ld($orgLd) !!}
@@ -182,6 +182,7 @@
                             <a href="{{ route('history.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="clock" /></span><span>Lịch sử ván đấu</span></a>
                             <a href="{{ route('practice.review') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="repeat" /></span><span>Luyện lỗi sai</span></a>
                             <a href="{{ route('leaderboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="trophy" /></span><span>Bảng xếp hạng</span></a>
+                            <a href="{{ route('weekly') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="target" /></span><span>Thử thách tuần</span></a>
                             <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Ván đấu của tôi</span></a>
                             <a href="{{ route('account.settings') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="settings" /></span><span>Cài đặt</span></a>
                             @if($u->isStaff())

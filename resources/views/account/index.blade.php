@@ -168,6 +168,11 @@
             <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
         </a>
 
+        <a href="{{ route('weekly') }}" class="card card--pad flex items-center gap-3">
+            <span class="wk-medal wk-medal--gold !w-[42px] !h-[42px]"><x-icon name="trophy" /></span>
+            <span class="flex-1"><span class="block font-bold">Thử thách tuần &amp; tủ cúp</span><span class="block text-[13px] text-ink-soft">{{ $trophyCount ? $trophyCount . ' cúp tuần đã đạt' : '4 thử thách mới mỗi tuần, Top 10 nhận cúp' }}</span></span>
+            <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
+        </a>
         <a href="{{ route('history.index') }}" class="card card--pad flex items-center gap-3">
             <span class="stat__icon tone-gold"><x-icon name="clock" /></span>
             <span class="flex-1"><span class="block font-bold">Lịch sử ván đấu</span><span class="block text-[13px] text-ink-soft">{{ $gameCount ? $gameCount.' ván đã lưu — xem lại, thêm biến' : 'Chơi với máy / đấu bạn để lưu ván' }}</span></span>

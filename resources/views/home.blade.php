@@ -82,6 +82,10 @@
         <div class="card stat"><span class="stat__icon tone-jade"><x-icon name="chart" /></span><span><span class="stat__value">{{ $u->puzzle_rating }}</span><span class="stat__label block">điểm thế cờ</span></span></div>
     </div>
 
+    @if($weekly)
+        <div class="mt-4">@include('partials.weekly-card', ['progress' => $weekly, 'compact' => true])</div>
+    @endif
+
     @if(!$u->onboarding_level)
         <div class="card card--pad card--hero mt-4">
             <div class="font-display font-extrabold text-lg">Bạn muốn bắt đầu từ đâu?</div>

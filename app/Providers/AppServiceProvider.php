@@ -54,7 +54,26 @@ class AppServiceProvider extends ServiceProvider
                 'websiteLd' => Seo::websiteLd(),
                 // Chip chuỗi ngày / XP / mục tiêu ngày trên header (chỉ khi đăng nhập).
                 'hud' => auth()->check() ? app(\App\Services\Gamification\GamificationService::class)->snapshot(auth()->user()) : null,
+                // Giải xếp hạng tuần chưa xem → bảng chúc mừng 1 lần (giải tuần trước được chốt "lười" ở đây).
+                'weeklyAward' => auth()->check() ? $this->weeklyAward() : null,
             ]);
         });
+    }
+
+    private function weeklyAward(): ?array
+    {
+        $svc = app(\App\Services\Gamification\WeeklyService::class);
+        $svc->ensureFinalized();
+        $a = $svc->unseen(auth()->user());
+        if (! $a) {
+            return null;
+        }
+        $p = $a->prize();
+
+        return [
+            'id' => $a->id, 'rank' => $a->rank, 'score' => $a->score, 'xp' => $a->xp, 'name' => $p['name'],
+            'medal' => $p['medal'], 'freezes' => $p['freezes'],
+            'week' => $a->week_start->format('d/m') . '–' . $a->week_start->addDays(6)->format('d/m'),
+        ];
     }
 }

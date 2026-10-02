@@ -81,6 +81,36 @@ class GamificationService
         });
     }
 
+    /**
+     * XP thưởng (thử thách tuần, giải xếp hạng): vào sổ cái + tổng XP/cấp độ nhưng KHÔNG vào hoạt động ngày →
+     * không tính vào bảng xếp hạng tuần/tháng, mục tiêu ngày hay chuỗi ngày. Idempotent theo $key.
+     */
+    public function grant(User $user, string $reason, string $key, int $amount, int $freezes = 0): array
+    {
+        $today = Vn::today();
+
+        return DB::transaction(function () use ($user, $reason, $key, $amount, $freezes, $today) {
+            /** @var User $u */
+            $u = User::whereKey($user->id)->lockForUpdate()->first();
+            $levelBefore = (int) $u->level;
+            $todayXp = (int) (UserDailyActivity::where('user_id', $u->id)->where('date', $today)->value('xp') ?? 0);
+            $gained = $this->ledger($u, $amount, $reason, $key, null, $today);
+            if ($gained === null) {
+                return $this->result($u, 0, false, $todayXp, [], false);
+            }
+            $u->xp_total = (int) $u->xp_total + $gained;
+            $u->level = LevelService::levelFor((int) $u->xp_total);
+            if ($freezes > 0) {
+                $u->streak_freezes = min((int) config('gamification.freeze_max'), (int) $u->streak_freezes + $freezes);
+            }
+            $u->save();
+            $new = $this->achievements->evaluate($u, $reason);
+            $user->setRawAttributes($u->getAttributes(), true);
+
+            return $this->result($u, $gained, $u->level > $levelBefore, $todayXp, $new, false);
+        });
+    }
+
     /** Hoàn thành bài học: XP bài + thưởng hoàn thành chương trình / giai đoạn (mỗi thứ 1 lần). */
     public function lessonCompleted(User $user, Lesson $lesson): array
     {

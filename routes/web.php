@@ -17,6 +17,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\WeeklyController;
 use App\Http\Controllers\LearningPathController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
@@ -159,6 +160,11 @@ Route::middleware('auth')->group(function () {
 // ---- Lộ trình + Luyện tập + Xếp hạng ----
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
+Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');
+Route::middleware('auth')->group(function () {
+    Route::post('/thu-thach-tuan/nhan', [WeeklyController::class, 'claim'])->name('weekly.claim')->middleware('throttle:30,1,weekly');
+    Route::post('/giai-thuong-tuan/{award}/da-xem', [WeeklyController::class, 'seen'])->name('weekly.seen');
+});
 
 Route::prefix('luyen-tap')->name('practice.')->group(function () {
     Route::get('/', [PracticeController::class, 'hub'])->name('hub');

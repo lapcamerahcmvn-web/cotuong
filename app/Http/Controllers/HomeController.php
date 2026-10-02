@@ -52,6 +52,7 @@ class HomeController extends Controller
         $user = auth()->user();
         $paths = app(\App\Services\LearningPathService::class)->summary($user);
         $snap = $user ? app(\App\Services\Gamification\GamificationService::class)->snapshot($user) : null;
+        $weekly = $user ? app(\App\Services\Gamification\WeeklyService::class)->progress($user) : null;
         $continue = $user?->nextLesson();
         $continueSeries = null;
         if ($continue && $continue->series_id) {
@@ -64,7 +65,7 @@ class HomeController extends Controller
 
         return view('home', compact(
             'phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree',
-            'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'continue', 'continueSeries', 'weak', 'topWeek',
+            'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'weekly', 'continue', 'continueSeries', 'weak', 'topWeek',
         ));
     }
 }

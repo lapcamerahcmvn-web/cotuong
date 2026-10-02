@@ -7,6 +7,7 @@ use App\Models\LessonProgress;
 use App\Models\PuzzleAttempt;
 use App\Models\User;
 use App\Models\UserAchievement;
+use App\Models\WeeklyAward;
 use App\Models\XpTransaction;
 
 // Kiểm tra & mở huy hiệu theo định nghĩa trong config/achievements.php.
@@ -25,6 +26,9 @@ class AchievementService
         'pvp_win'         => ['pvp', 'coup_pvp', 'pvp_games', 'level', 'streak'],
         'pvp_draw'        => ['pvp_games', 'level', 'streak'],
         'pvp_play'        => ['pvp_games', 'level', 'streak'],
+        'weekly_quest'    => ['level'],
+        'weekly_chest'    => ['weekly_chest', 'level'],
+        'weekly_prize'    => ['weekly_rank', 'level'],
     ];
 
     /** @return list<array{key:string,name:string,desc:string,icon:string}> huy hiệu mới mở */
@@ -66,6 +70,8 @@ class AchievementService
             'pvp_games' => ($m['pvpg'] ??= XpTransaction::where('user_id', $u->id)->whereIn('reason', ['pvp_win', 'pvp_draw', 'pvp_play'])->count()) >= $v,
             'coup_bot' => XpTransaction::where('user_id', $u->id)->where('reason', 'bot_win')->where('idem_key', 'like', 'bot:L%:co-up:%')->exists(),
             'coup_pvp' => XpTransaction::where('user_id', $u->id)->where('reason', 'pvp_win')->where('idem_key', 'like', 'pvp:co-up:%')->exists(),
+            'weekly_chest' => XpTransaction::where('user_id', $u->id)->where('reason', 'weekly_chest')->count() >= $v,
+            'weekly_rank'  => WeeklyAward::where('user_id', $u->id)->where('rank', '<=', $v)->exists(),
             'series'   => $this->seriesDone($u, (string) $v),
             'phase'    => $this->phaseDone($u, (string) $v),
             default    => false,

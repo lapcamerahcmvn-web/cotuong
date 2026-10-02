@@ -16,6 +16,12 @@
         <p class="page-lede mx-auto">Thi đua cho vui — cấp độ và điểm ở đây không phải đẳng cấp cờ chính thức.</p>
     </div>
 
+    <a href="{{ route('weekly') }}" class="card card--hero card--pad flex items-center gap-3 mb-4 hover:no-underline">
+        <span class="wk-medal wk-medal--gold"><x-icon name="trophy" /></span>
+        <span class="flex-1 min-w-0 text-ink"><b class="block">Giải thưởng & thử thách tuần</b><span class="text-[13.5px] text-ink-soft">Top 10 bảng XP tuần nhận cúp + XP thưởng · 4 thử thách mới mỗi thứ Hai</span></span>
+        <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
+    </a>
+
     <nav class="tabs mb-3" aria-label="Loại bảng xếp hạng">
         @foreach($boards as $k => [$label, $ic])
             <a href="{{ route('leaderboard', ['loai' => $k]) }}" class="tabs__item {{ $board === $k ? 'is-on' : '' }}"><x-icon :name="$ic" class="w-4 h-4" /> {{ $label }}</a>
