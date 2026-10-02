@@ -12,7 +12,7 @@ export async function postJson(url, body = {}, opts = {}) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'X-CSRF-TOKEN': csrf() },
         body: JSON.stringify(body),
     });
-    if (!res.ok) throw Object.assign(new Error('HTTP ' + res.status), { status: res.status });
+    if (!res.ok) throw Object.assign(new Error('HTTP ' + res.status), { status: res.status, data: await res.json().catch(() => null) });
     return res.json();
 }
 

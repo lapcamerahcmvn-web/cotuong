@@ -397,7 +397,10 @@ export function search(input, red, opts = {}) {
         return best;
     }
 
-    const root = legalMovesSt(st, red);
+    // opts.avoid: nước bị cấm ở gốc (chiếu dai lần thứ 3) — nếu chỉ còn nước bị cấm thì vẫn phải đi.
+    const all = legalMovesSt(st, red);
+    const allowed = opts.avoid?.size ? all.filter((m) => !opts.avoid.has(toIccs(m[0], m[1]))) : all;
+    const root = allowed.length ? allowed : all;
     if (!root.length) return { move: null, score: terminal(red, 0), depth: 0, nodes, scores: {} };
     let bestMove = root[0], bestScore = -Infinity, reached = 0, scores = {};
     for (let d = 1; d <= maxDepth; d++) {
@@ -432,8 +435,9 @@ export const LEVELS = {
     4: { name: 'Khó', depth: 6, timeMs: 3000, noise: 0, random: 0, samples: 6, coupDepth: 5, coupTimeMs: 4500 },
 };
 
-function randomMove(st, red) {
-    const ms = legalMovesSt(st, red);
+function randomMove(st, red, avoid = null) {
+    let ms = legalMovesSt(st, red);
+    if (avoid?.size) { const ok = ms.filter((m) => !avoid.has(toIccs(m[0], m[1]))); if (ok.length) ms = ok; }
     if (!ms.length) return null;
     const caps = ms.filter((m) => st.b[m[1]]);
     const pool = caps.length && Math.random() < 0.5 ? caps : ms;
@@ -441,14 +445,14 @@ function randomMove(st, red) {
     return { move: toIccs(pick[0], pick[1]), score: 0, depth: 0, nodes: 0 };
 }
 
-export function think(fen, red, level) {
+export function think(fen, red, level, avoid = null) {
     const L = LEVELS[level] || LEVELS[2];
     const st = stateFrom(loadFen(fen));
     if (L.random && Math.random() < L.random) {
-        const r = randomMove(st, red);
+        const r = randomMove(st, red, avoid);
         if (r) return r;
     }
-    return search(st, red, L);
+    return search(st, red, { ...L, avoid });
 }
 
 function shuffle(a) {
@@ -461,13 +465,13 @@ function shuffle(a) {
  * binh chủng CHƯA LỘ của mỗi bên (máy chỉ biết bao nhiêu, không biết quân nào ở đâu).
  * Thử nhiều cách xếp ngẫu nhiên, cộng điểm từng nước gốc, chọn nước tốt nhất trung bình.
  */
-export function thinkCoup(publicFen, pools, red, level) {
+export function thinkCoup(publicFen, pools, red, level, avoid = null) {
     const L = LEVELS[level] || LEVELS[2];
     const pub = loadFen(publicFen);
     const base = stateFrom(pub, true);
     const rnd = L.coupRandom ?? L.random;
     if (rnd && Math.random() < rnd) {
-        const r = randomMove(base, red);
+        const r = randomMove(base, red, avoid);
         if (r) return r;
     }
     const samples = Math.max(1, L.samples || 1);
@@ -480,7 +484,7 @@ export function thinkCoup(publicFen, pools, red, level) {
             if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
             else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
         }
-        const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round((L.coupTimeMs || L.timeMs) / samples), noise: L.coupNoise ?? L.noise, exactRoot: true });
+        const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round((L.coupTimeMs || L.timeMs) / samples), noise: L.coupNoise ?? L.noise, exactRoot: true, avoid });
         nodes += res.nodes; depth = Math.max(depth, res.depth);
         if (!res.move) return { move: null, score: res.score, depth: 0, nodes };
         // Kẹp điểm: 1 cách xếp "may mắn" thấy chiếu hết không được lấn át trung bình các cách xếp khác.
@@ -494,7 +498,7 @@ export function thinkCoup(publicFen, pools, red, level) {
         const avg = total[m] / count[m] + (count[m] < samples ? -50 : 0);
         if (avg > bestAvg) { bestAvg = avg; best = m; }
     }
-    if (!best) { const r = randomMove(base, red); return r || { move: null, score: 0, depth: 0, nodes }; }
+    if (!best) { const r = randomMove(base, red, avoid); return r || { move: null, score: 0, depth: 0, nodes }; }
     return { move: best, score: Math.round(bestAvg), depth, nodes };
 }
 

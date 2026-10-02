@@ -88,6 +88,9 @@ class GameService
             }
             $b[$to] = $mover;
             $b[$from] = null;
+            if ($this->forbiddenCheck($g, $b, $side === 'do')) {
+                return ['ok' => false, 'error' => 'Luật chiếu dai: không được chiếu lặp lại thế cờ lần thứ 3 — hãy đi nước khác.', 'game' => $g];
+            }
             if ($coup) {
                 $g->secret = $secret;
                 $g->reveals = array_merge($g->reveals ?? [], [$revealed]);
@@ -199,21 +202,54 @@ class GameService
         });
     }
 
-    /** Lặp thế 3 lần (bàn công khai; quân vừa lật thay 'X' bằng mặt thật theo `reveals`). */
-    private function repeated(Game $g): bool
+    /**
+     * Lịch sử thế cờ công khai: [khoá thế (bàn + lượt đi), nước vừa đi có chiếu không, bên vừa đi] cho thế đầu và
+     * sau từng nước (quân vừa lật thay 'X' bằng mặt thật theo `reveals`).
+     * @return list<array{0:string,1:bool,2:?string}>
+     */
+    private function history(Game $g): array
     {
-        $b = Rules::loadFen($g->isCoup() ? Game::COUP_FEN : Game::START_FEN);
-        $seen = [Rules::toFen($b) . 'r' => 1];
+        $coup = $g->isCoup();
+        $b = Rules::loadFen($coup ? Game::COUP_FEN : Game::START_FEN);
+        $out = [[Rules::toFen($b) . 'r', false, null]];
         $rev = $g->reveals ?? [];
         foreach ($g->moves ?? [] as $i => $m) {
             $sq = Rules::iccs($m);
             $b = Rules::apply($b, $sq[0], $sq[1]);
             if (! empty($rev[$i])) $b[$sq[1]] = $rev[$i];
-            $k = Rules::toFen($b) . ($i % 2 ? 'r' : 'b');
-            if (($seen[$k] = ($seen[$k] ?? 0) + 1) >= 3) return true;
+            $moverRed = $i % 2 === 0;
+            $out[] = [Rules::toFen($b) . ($moverRed ? 'b' : 'r'), Rules::inCheck($b, ! $moverRed, $coup), $moverRed ? 'do' : 'den'];
         }
 
-        return false;
+        return $out;
+    }
+
+    /**
+     * Lặp thế 3 lần → hoà, TRỪ khi trong chu kỳ lặp có 1 bên nước nào cũng chiếu (chiếu dai): khi đó không xử hoà —
+     * bên chiếu bị cấm đi tiếp nước chiếu lặp lần 3 (xem forbiddenCheck()).
+     */
+    private function repeated(Game $g): bool
+    {
+        $h = $this->history($g);
+        $last = end($h)[0];
+        $idx = array_keys(array_filter($h, fn ($x) => $x[0] === $last));
+        if (count($idx) < 3) return false;
+        $span = array_slice($h, $idx[0] + 1);
+        foreach (['do', 'den'] as $side) {
+            $mine = array_filter($span, fn ($x) => $x[2] === $side);
+            if ($mine && count(array_filter($mine, fn ($x) => $x[1])) === count($mine)) return false;   // chiếu dai
+        }
+
+        return true;
+    }
+
+    /** Nước chiếu đưa tới thế đã xuất hiện ≥ 2 lần (lần thứ 3) → cấm (luật chiếu dai). */
+    private function forbiddenCheck(Game $g, array $after, bool $moverRed): bool
+    {
+        if (! Rules::inCheck($after, ! $moverRed, $g->isCoup())) return false;
+        $key = Rules::toFen($after) . ($moverRed ? 'b' : 'r');
+
+        return count(array_filter($this->history($g), fn ($x) => $x[0] === $key)) >= 2;
     }
 
     /** Tráo 15 quân mỗi bên lên 15 ô xuất phát (trừ Tướng). Khoá = chỉ số ô 0..89. */

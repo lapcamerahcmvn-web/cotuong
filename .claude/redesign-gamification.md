@@ -248,3 +248,16 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Lối vào: thẻ ở `/luyen-tap`, nút "Luyện lại N sai lầm của bạn" + toast ngay sau khi phân tích xong.
 - Huy hiệu `mistakes-10/50`; nhiệm vụ tuần `mistakes-5` với `since: 2026-10-12` — config weekly hỗ trợ `since` để thêm
   nhiệm vụ mới KHÔNG làm đổi bộ nhiệm vụ của tuần đang diễn ra. Test: `tests/Feature/MistakeTest.php`.
+
+## Đợt 12 (02/10/2026) — Chuẩn hoá luật: ăn nắp bí mật + chiếu dai (user yêu cầu)
+- **Ăn nắp (cờ úp):** ăn quân đang úp thì CHỈ bên ăn biết là quân gì; bên kia + người xem chỉ thấy 'X'/'x' (màu, không
+  binh chủng) cho tới khi hết ván. Server: `Game::capturedFor($viewerSide)` (state() trả theo người xem). Máy:
+  `play-bot.js seenCaptured()`; engine nhận túi quân THEO HIỂU BIẾT bên đang nghĩ (`pools(forRed)`: bộ 15 − quân đã
+  lật − nắp chính mình ăn; nắp bị đối phương ăn vẫn ở trong túi → túi có thể lớn hơn số quân úp trên bàn, engine bốc
+  ngẫu nhiên đủ số). Khay: nắp chưa rõ = "?"; hết ván nắp đối phương ăn = nút "?" bấm để lật (`renderCaptured(.., {over})`);
+  xác suất "quân úp còn lại" chia cho cả túi chưa lộ + ghi "N nắp bị ăn chưa rõ". Biên bản: "ăn nắp (chưa rõ)".
+- **Chiếu dai (cả cờ tướng & cờ úp, máy + đấu bạn):** nước CHIẾU đưa tới thế (bàn + lượt) đã xuất hiện ≥ 2 lần bị cấm
+  (`GameService::forbiddenCheck`, `play-bot forbidden()`; engine nhận `avoid` → loại ở gốc, nếu chỉ còn nước bị cấm thì
+  vẫn đi). Lặp 3 lần → hoà CHỈ khi trong chu kỳ không có bên nào nước nào cũng chiếu (thế sau nước đỡ lặp tới lần 3 trước
+  thế sau nước chiếu — nếu cứ lặp 3 là hoà thì chiếu dai thành hoà, sai luật).
+- `postJson` giữ body lỗi (`e.data`) → đấu bạn hiện đúng lý do bị từ chối. Test: `tests/Feature/CoupRulesTest.php`.

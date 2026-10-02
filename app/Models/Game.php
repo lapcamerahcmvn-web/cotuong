@@ -83,6 +83,34 @@ class Game extends Model
         return ['do' => max(0, $red), 'den' => max(0, $black)];
     }
 
+    /**
+     * Cờ úp: ăn quân đang ÚP thì chỉ bên ăn biết đó là quân gì — bên kia (và người xem) chỉ thấy 'X'/'x' (nắp chưa rõ)
+     * cho tới khi hết ván. Quân bị ăn khi đã lật thì ai cũng thấy.
+     */
+    public function capturedFor(?string $viewerSide): array
+    {
+        $cap = $this->captured ?? [];
+        if (! $this->isCoup() || $this->status !== 'playing' || ! $cap) return $cap;
+        $b = \App\Support\Xiangqi\Rules::loadFen(self::COUP_FEN);
+        $rev = $this->reveals ?? [];
+        $ci = 0;
+        foreach ($this->moves ?? [] as $i => $m) {
+            $sq = \App\Support\Xiangqi\Rules::iccs($m);
+            $target = $b[$sq[1]];
+            if ($target !== null) {
+                $capturer = $i % 2 === 0 ? 'do' : 'den';
+                if (($target === 'X' || $target === 'x') && $viewerSide !== $capturer && isset($cap[$ci])) {
+                    $cap[$ci] = $target;      // giữ màu, giấu binh chủng
+                }
+                $ci++;
+            }
+            $b = \App\Support\Xiangqi\Rules::apply($b, $sq[0], $sq[1]);
+            if (! empty($rev[$i])) $b[$sq[1]] = $rev[$i];
+        }
+
+        return $cap;
+    }
+
     public function state(?User $viewer): array
     {
         return [
@@ -92,7 +120,7 @@ class Game extends Model
             'fen' => $this->fen,
             'moves' => $this->moves ?? [],
             'reveals' => $this->reveals ?? [],
-            'captured' => $this->captured ?? [],
+            'captured' => $this->capturedFor($this->sideOf($viewer)),
             'turn' => $this->turn(),
             'you' => $this->sideOf($viewer),
             'red' => $this->red ? ['name' => $this->red->name, 'level' => $this->red->level, 'avatar' => $this->red->avatar] : null,

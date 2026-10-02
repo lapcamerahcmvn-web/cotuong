@@ -326,3 +326,13 @@
 @layer components {
     [data-mk-info] svg, [data-mk-feedback] svg { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; }
 }
+@layer components {
+    /* Cờ úp: nắp đối phương ăn — trong ván chỉ thấy "?", hết ván bấm để lật */
+    .cap-chip.is-unknown { color: var(--ink-faint); font-family: var(--font-sans); font-weight: 900; }
+    .cap-chip.is-secret { cursor: pointer; font-family: var(--font-sans); font-weight: 900; border: 0; animation: capWiggle 2.4s ease-in-out infinite; }
+    .cap-chip.is-secret:hover { transform: scale(1.12); }
+    .cap-chip.is-flipped { animation: capFlip .45s ease; }
+    @keyframes capWiggle { 0%, 80%, 100% { transform: rotate(0); } 86% { transform: rotate(-10deg); } 93% { transform: rotate(10deg); } }
+    @keyframes capFlip { 0% { transform: rotateY(90deg); } 100% { transform: rotateY(0); } }
+    html.reduce-fx .cap-chip.is-secret, html.reduce-fx .cap-chip.is-flipped { animation: none; }
+}

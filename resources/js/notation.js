@@ -46,7 +46,7 @@ export function analyse(startFen, moves, reveals = [], captured = [], pool0 = nu
             const id = isHidden(victim) ? null : victim;
             if (hidden && id) pool[sideOf(id)][id.toUpperCase()]--;
             caps.push({ p: id || victim, hidden, by: sideOf(p === 'X' ? 'X' : p === 'x' ? 'x' : p), ply: i });
-            note += hidden ? ` — ăn nắp${id ? ': ' + NAME[id.toUpperCase()] : ''}` : (id ? ` — ăn ${NAME[id.toUpperCase()]}` : '');
+            note += hidden ? ` — ăn nắp${id ? ': ' + NAME[id.toUpperCase()] : ' (chưa rõ)'}` : (id ? ` — ăn ${NAME[id.toUpperCase()]}` : '');
         }
         b[f.from] = null;
         return note;
@@ -81,37 +81,52 @@ const chip = (p, extra = '', title = '') => `<span class="cap-chip ${p === p.toU
 /**
  * Khay quân bị ăn (+ cờ úp: đánh dấu "nắp", đếm số nắp đã ăn, túi quân úp còn lại của mỗi bên).
  * `a` = kết quả analyse(). `you` = 'do'|'den'|null để ghi "Bạn".
+ * Luật cờ úp: ăn quân đang úp thì chỉ bên ăn biết là quân gì → trong ván, nắp đối phương ăn của mình hiện "?";
+ * `opts.over` (hết ván): các nắp đó thành nút bấm để lật xem.
  */
-export function renderCaptured(el, a, you = null) {
+export function renderCaptured(el, a, you = null, opts = {}) {
     if (!el) return;
     const total = a.caps.length;
     const row = (by) => {
         const list = a.caps.map((c, idx) => ({ ...c, idx })).filter((c) => c.by === by)
-            .sort((x, y) => (VALUE[y.p.toUpperCase()] || 0) - (VALUE[x.p.toUpperCase()] || 0));
+            .sort((x, y) => (VALUE[(y.p || '').toUpperCase()] || 0) - (VALUE[(x.p || '').toUpperCase()] || 0));
         const naps = list.filter((c) => c.hidden).length;
-        const score = list.reduce((s, c) => s + (VALUE[c.p.toUpperCase()] || 0), 0);
+        const score = list.reduce((s, c) => s + (VALUE[(c.p || '').toUpperCase()] || 0), 0);
         const who = (by === 'do' ? 'Đỏ' : 'Đen') + (you === by ? ' (bạn)' : '');
-        const chips = list.map((c) => chip(c.p, (c.hidden ? 'is-nap' : '') + (c.idx === total - 1 ? ' is-new' : ''),
-            (c.hidden ? 'Ăn nắp: ' : 'Ăn: ') + (NAME[c.p.toUpperCase()] || '?') + ' (nước ' + (Math.floor(c.ply / 2) + 1) + ')')).join('');
+        const chips = list.map((c) => {
+            const unknown = isHidden(c.p);
+            const secret = c.hidden && !unknown && opts.over && you && by !== you;   // hết ván: bấm để lật
+            if (unknown) return chip(c.p, 'is-nap is-unknown', 'Ăn nắp: chưa biết là quân gì (nước ' + (Math.floor(c.ply / 2) + 1) + ')');
+            if (secret) return `<button type="button" class="cap-chip ${c.p === c.p.toUpperCase() ? 'is-red' : 'is-black'} is-nap is-secret" data-real="${GLYPH[c.p]}" data-name="${escapeHtml(NAME[c.p.toUpperCase()])}" title="Bấm để lật nắp">?</button>`;
+            return chip(c.p, (c.hidden ? 'is-nap' : '') + (c.idx === total - 1 ? ' is-new' : ''),
+                (c.hidden ? 'Ăn nắp: ' : 'Ăn: ') + (NAME[c.p.toUpperCase()] || '?') + ' (nước ' + (Math.floor(c.ply / 2) + 1) + ')');
+        }).join('');
         return { html: `<div class="flex items-start gap-2 min-h-[30px]"><span class="side-dot ${by} mt-2"></span>
             <span class="text-[12.5px] font-bold text-ink-soft w-20 shrink-0 pt-1">${who} ăn${naps ? `<span class="block font-semibold text-ink-faint">${naps} nắp</span>` : ''}</span>
             <span class="flex flex-wrap gap-1 flex-1">${chips || '<span class="text-ink-faint text-[13px] pt-1">—</span>'}</span></div>`, score };
     };
     const r = row('do'), d = row('den');
     const diff = r.score - d.score;
+    const unknownAny = a.caps.some((c) => isHidden(c.p));
     let html = `<div class="flex items-center justify-between mb-1"><span class="font-extrabold text-[14px]">Quân bị ăn</span>
-        ${diff ? `<span class="text-[12.5px] font-bold text-jade-ink">${diff > 0 ? 'Đỏ' : 'Đen'} hơn ${Math.abs(diff)} điểm</span>` : ''}</div>` + r.html + d.html;
+        ${diff && !unknownAny ? `<span class="text-[12.5px] font-bold text-jade-ink">${diff > 0 ? 'Đỏ' : 'Đen'} hơn ${Math.abs(diff)} điểm</span>` : ''}</div>` + r.html + d.html;
+    if (opts.over && a.caps.some((c) => c.hidden && !isHidden(c.p) && you && c.by !== you)) {
+        html += '<p class="text-[12.5px] text-ink-soft mt-1 mb-0">Ván đã xong — bấm vào nắp “?” để lật xem quân bị ăn.</p>';
+    }
 
     if (a.pool) {
         const poolRow = (side) => {
             const left = a.hiddenLeft[side];
+            // Nắp của bên này bị ăn mà mình chưa biết là gì vẫn nằm trong "túi chưa lộ" → xác suất chia cho cả túi.
+            const unknown = a.caps.filter((c) => isHidden(c.p) && sideOf(c.p) === side).length;
+            const bag = ORDER.reduce((n, t) => n + Math.max(0, a.pool[side][t]), 0);
             const counts = ORDER.filter((t) => a.pool[side][t] > 0)
                 .map((t) => {
-                    const pct = Math.round(100 * a.pool[side][t] / Math.max(1, left));
+                    const pct = Math.round(100 * a.pool[side][t] / Math.max(1, bag));
                     return `<span class="pool-item" title="Xác suất lật ra ${NAME[t]}: ${pct}%">${chip(side === 'do' ? t : t.toLowerCase(), 'is-sm')}<span class="leading-tight"><b>×${a.pool[side][t]}</b><small class="block text-[10.5px] text-ink-faint">${pct}%</small></span></span>`;
                 }).join('');
             return `<div class="flex items-start gap-2 mt-1.5"><span class="side-dot ${side} mt-2"></span>
-                <span class="text-[12.5px] font-bold text-ink-soft w-20 shrink-0 pt-1">${side === 'do' ? 'Đỏ' : 'Đen'} còn úp<span class="block font-semibold text-ink-faint">${left} quân</span></span>
+                <span class="text-[12.5px] font-bold text-ink-soft w-20 shrink-0 pt-1">${side === 'do' ? 'Đỏ' : 'Đen'} còn úp<span class="block font-semibold text-ink-faint">${left} quân${unknown ? ` · ${unknown} nắp bị ăn chưa rõ` : ''}</span></span>
                 <span class="flex flex-wrap gap-x-2 gap-y-1 flex-1">${counts || '<span class="text-ink-faint text-[13px] pt-1">Đã lật hết</span>'}</span></div>`;
         };
         html += `<div class="border-t border-line mt-3 pt-3"><div class="font-extrabold text-[14px]">Quân úp còn lại
@@ -119,6 +134,12 @@ export function renderCaptured(el, a, you = null) {
             ${poolRow('do')}${poolRow('den')}</div>`;
     }
     el.innerHTML = html;
+    el.querySelectorAll('.is-secret').forEach((b) => b.addEventListener('click', () => {
+        b.textContent = b.dataset.real;
+        b.classList.remove('is-secret');
+        b.classList.add('is-flipped');
+        b.title = 'Nắp này là: ' + b.dataset.name;
+    }, { once: true }));
 }
 
 /** Thông báo khi vừa có quân bị ăn lúc còn úp. Trả về {p, by} nếu nước cuối là ăn nắp. */

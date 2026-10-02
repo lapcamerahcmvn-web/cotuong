@@ -3,7 +3,7 @@
 // mỗi bên (không biết quân nào ở ô nào) → không nhìn trộm.
 import { loadBoard, postJson, track, icon, escapeHtml, store, save, toast } from './core';
 import { handleGamification, openSheet, confetti } from './gamification';
-import { START_FEN, COUP_FEN, COUP_SET, loadFen, toFen, fromIccs, gameOver, stateFrom, inCheckSt, LEVELS } from './engine/engine';
+import { START_FEN, COUP_FEN, COUP_SET, loadFen, toFen, fromIccs, gameOver, stateFrom, inCheckSt, legalMovesSt, toIccs, isRed, LEVELS } from './engine/engine';
 import { analyse, renderNotes, renderCaptured, lastNap, NAME } from './notation';
 
 const poolCounts = (pool) => {
@@ -43,22 +43,28 @@ function newLayout(startFen = COUP_FEN, pool = null) {
 const startOf = (g) => g.startFen || (g.variant === 'co-up' ? COUP_FEN : START_FEN);
 const redFirstOf = (g) => g.redFirst !== false;
 
-/** Dựng lại bàn công khai từ các nước đã đi (lật quân theo layout). */
+/**
+ * Dựng lại bàn công khai từ các nước đã đi (lật quân theo layout). `capInfo[k]` = quân bị ăn thứ k lúc đó có đang úp
+ * không + bên ăn — luật cờ úp: ăn nắp thì CHỈ bên ăn biết là quân gì.
+ */
 function replay(g) {
     const b = loadFen(startOf(g));
-    const reveals = [], captured = [];
-    for (const m of g.moves) {
+    const reveals = [], captured = [], capInfo = [];
+    g.moves.forEach((m, i) => {
         const [f, t] = fromIccs(m);
         let p = b[f], rev = null;
         if (p === 'X' || p === 'x') { p = rev = g.layout[f]; }
         let v = b[t];
-        if (v === 'X' || v === 'x') v = g.layout[t];
-        if (v) captured.push(v);
+        const hidden = v === 'X' || v === 'x';
+        if (hidden) v = g.layout[t];
+        if (v) { captured.push(v); capInfo.push({ hidden, by: isRed(p) ? 'do' : 'den', ply: i }); }
         b[t] = p; b[f] = null;
         reveals.push(rev);
-    }
-    return { board: b, reveals, captured };
+    });
+    return { board: b, reveals, captured, capInfo };
 }
+
+const removeOne = (arr, t) => { const k = arr.indexOf(t); if (k >= 0) arr.splice(k, 1); };
 
 function setup(root) {
     const $ = (s) => root.querySelector(s);
@@ -126,16 +132,20 @@ function setup(root) {
     const turnRed = () => turnRedAt(g.moves.length);
     const fen = () => toFen(view.board);
 
+    /** Quân bị ăn theo góc nhìn người chơi: nắp máy ăn của mình → chỉ biết màu ('X'/'x') cho tới khi hết ván. */
+    const seenCaptured = () => view.captured.map((v, k) => (view.capInfo[k].hidden && view.capInfo[k].by !== g.human && !g.over ? (isRed(v) ? 'X' : 'x') : v));
+
     function refresh(animateLast) {
         view = replay(g);
         board.set(fen(), g.moves[g.moves.length - 1] || null, animateLast ? undefined : { noAnim: true, silent: true });
-        const a = analyse(startOf(g), g.moves, view.reveals, view.captured, g.custom?.pool ? poolCounts(g.custom.pool) : null);
+        const a = analyse(startOf(g), g.moves, view.reveals, seenCaptured(), g.custom?.pool ? poolCounts(g.custom.pool) : null);
         renderNotes(listEl, redFirstOf(g) ? a.notes : [null, ...a.notes]);
-        renderCaptured($('[data-bot-captured]'), a, g.human);
+        renderCaptured($('[data-bot-captured]'), a, g.human, { over: !!g.over });
         const nap = animateLast && lastNap(a, g.moves.length);
         if (nap) {
             const mine = nap.by === g.human;
-            toast(mine ? `Bạn ăn nắp: ${NAME[nap.p.toUpperCase()]}!` : `Máy ăn nắp của bạn: ${NAME[nap.p.toUpperCase()]}`,
+            const naps = a.caps.filter((c) => c.hidden && c.by !== g.human).length;
+            toast(mine ? `Bạn ăn nắp: ${NAME[nap.p.toUpperCase()]}!` : `Máy vừa ăn 1 nắp của bạn (đã mất ${naps} nắp — chỉ máy biết là quân gì)`,
                 { kind: mine ? 'xp' : 'err', iconName: mine ? 'sparkles' : 'x-circle', timeout: 3500 });
         }
     }
@@ -165,39 +175,81 @@ function setup(root) {
 
     function humanMove(iccs) {
         if (g.over || turnRed() !== humanRed()) return;
+        if (forbidden(iccs)) {
+            status('Luật chiếu dai: không được chiếu lặp lại lần thứ 3 — hãy đi nước khác', 'err');
+            toast('Không được chiếu lặp lại thế cờ lần thứ 3 (chiếu dai) — hãy đổi nước.', { kind: 'err', iconName: 'x-circle', timeout: 4500 });
+            board.set(fen(), g.moves[g.moves.length - 1] || null, { noAnim: true, silent: true });
+            return;
+        }
         apply(iccs);
         next();
     }
 
-    function result() {
-        const end = gameOver(view.board, turnRed(), coup());
-        if (end) return end;
-        // Lặp thế 3 lần — tính trên bàn công khai.
+    /** Lịch sử thế công khai: [khoá thế (bàn + lượt), nước vừa đi có chiếu không, bên vừa đi]. */
+    function history() {
         const b = loadFen(startOf(g));
-        const seen = { [toFen(b) + (turnRedAt(0) ? 'r' : 'b')]: 1 };
+        const out = [[toFen(b) + (turnRedAt(0) ? 'r' : 'b'), false, null]];
         g.moves.forEach((m, i) => {
             const [f, t] = fromIccs(m);
             b[t] = view.reveals[i] || b[f]; b[f] = null;
-            const k = toFen(b) + (turnRedAt(i + 1) ? 'r' : 'b');
-            seen[k] = (seen[k] || 0) + 1;
+            const moverRed = turnRedAt(i);
+            out.push([toFen(b) + (moverRed ? 'b' : 'r'), inCheckSt(stateFrom(b, coup()), !moverRed), moverRed ? 'do' : 'den']);
         });
-        if (Object.values(seen).some((n) => n >= 3)) return { winner: null, reason: 'lặp lại thế cờ 3 lần' };
+        return out;
+    }
+
+    /** Luật chiếu dai: nước CHIẾU đưa tới thế đã xuất hiện ≥ 2 lần (lần thứ 3) bị cấm. */
+    function forbidden(iccs, hist = history()) {
+        const [f, t] = fromIccs(iccs);
+        const b = view.board.slice();
+        let p = b[f];
+        if (p === 'X' || p === 'x') p = g.layout[f];
+        b[t] = p; b[f] = null;
+        const moverRed = isRed(p);
+        if (!inCheckSt(stateFrom(b, coup()), !moverRed)) return false;
+        const key = toFen(b) + (moverRed ? 'b' : 'r');
+        return hist.filter((h) => h[0] === key).length >= 2;
+    }
+    const forbiddenMoves = (red) => {
+        const hist = history();
+        return legalMovesSt(stateFrom(view.board, coup()), red).map(([f, t]) => toIccs(f, t)).filter((m) => forbidden(m, hist));
+    };
+
+    function result() {
+        const end = gameOver(view.board, turnRed(), coup());
+        if (end) return end;
+        // Lặp thế 3 lần → hoà, trừ khi 1 bên chiếu liên tục trong chu kỳ (chiếu dai: bên đó bị cấm chiếu tiếp).
+        const hist = history();
+        const last = hist[hist.length - 1][0];
+        const idx = hist.map((h, i) => (h[0] === last ? i : -1)).filter((i) => i >= 0);
+        if (idx.length >= 3) {
+            const span = hist.slice(idx[0] + 1);
+            const perpetual = ['do', 'den'].some((sd) => { const mine = span.filter((h) => h[2] === sd); return mine.length && mine.every((h) => h[1]); });
+            if (!perpetual) return { winner: null, reason: 'lặp lại thế cờ 3 lần' };
+        }
         if (g.moves.length >= MAX_PLIES) return { winner: null, reason: 'quá ' + MAX_PLIES / 2 + ' nước' };
         return null;
     }
 
-    /** Túi quân chưa lộ của mỗi bên — thứ duy nhất máy được biết về quân úp. */
-    function pools() {
-        const red = [], black = [];
-        view.board.forEach((p, i) => {
-            if (p === 'X') red.push(g.layout[i]);
-            else if (p === 'x') black.push(g.layout[i].toUpperCase());
+    /**
+     * Túi quân chưa lộ của mỗi bên THEO HIỂU BIẾT của bên `forRed`: bộ 15 quân − quân đã lật (ai cũng thấy) − nắp do
+     * chính bên này ăn (chỉ bên ăn biết). Nắp bị đối phương ăn vẫn nằm trong túi vì không biết là quân gì → túi có thể
+     * nhiều hơn số quân úp còn trên bàn (engine bốc ngẫu nhiên đủ số).
+     */
+    function pools(forRed) {
+        const base = g.custom?.pool;
+        const bag = { red: base ? base.red.slice() : COUP_SET.slice(), black: base ? base.black.slice() : COUP_SET.slice() };
+        if (!base && g.startFen) loadFen(g.startFen).forEach((p) => { if (p && p !== 'X' && p !== 'x' && p.toUpperCase() !== 'K') removeOne(isRed(p) ? bag.red : bag.black, p.toUpperCase()); });
+        view.reveals.forEach((rv) => { if (rv) removeOne(isRed(rv) ? bag.red : bag.black, rv.toUpperCase()); });
+        view.capInfo.forEach((c, k) => {
+            if (c.hidden && (c.by === 'do') === forRed) { const v = view.captured[k]; removeOne(isRed(v) ? bag.red : bag.black, v.toUpperCase()); }
         });
-        return { red, black };
+        return bag;
     }
 
     function engineMsg(red, extra = {}) {
-        return coup() ? { fen: fen(), red, coup: true, pools: pools(), ...extra } : { fen: fen(), red, ...extra };
+        const avoid = forbiddenMoves(red);
+        return coup() ? { fen: fen(), red, coup: true, pools: pools(red), avoid, ...extra } : { fen: fen(), red, avoid, ...extra };
     }
 
     async function next() {
@@ -250,6 +302,7 @@ function setup(root) {
 
     async function finish(r) {
         g.over = r; persist();
+        refresh(false);           // hết ván: nắp đối phương đã ăn thành "?" bấm để lật
         board.lock(true);
         const outcome = r.winner === null ? 'draw' : (r.winner === g.human ? 'win' : 'loss');
         status(outcome === 'win' ? 'Bạn thắng!' : outcome === 'loss' ? 'Máy thắng' : 'Hoà', outcome === 'win' ? 'ok' : 'err');

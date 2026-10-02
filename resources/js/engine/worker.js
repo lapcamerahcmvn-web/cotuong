@@ -5,12 +5,13 @@ import { think, thinkCoup, search, stateFrom, loadFen, review } from './engine';
 
 self.onmessage = (e) => {
     const { id, fen, red, level, analyse, coup, pools } = e.data;
+    const avoid = e.data.avoid?.length ? new Set(e.data.avoid) : null;   // nước bị cấm (chiếu dai lần thứ 3)
     if (e.data.review) {
         self.postMessage({ id, ...review(fen, red, { pools, timeMs: e.data.timeMs }) });
         return;
     }
     let res;
-    if (coup) res = thinkCoup(fen, pools || { red: [], black: [] }, red, analyse ? 3 : level);
-    else res = analyse ? search(stateFrom(loadFen(fen)), red, { depth: 4, timeMs: 1500 }) : think(fen, red, level);
+    if (coup) res = thinkCoup(fen, pools || { red: [], black: [] }, red, analyse ? 3 : level, avoid);
+    else res = analyse ? search(stateFrom(loadFen(fen)), red, { depth: 4, timeMs: 1500, avoid }) : think(fen, red, level, avoid);
     self.postMessage({ id, move: res.move, score: res.score, depth: res.depth, nodes: res.nodes });
 };

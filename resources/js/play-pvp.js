@@ -39,7 +39,9 @@ function run(root) {
             apply(res);
             track('pvp_move');
         } catch (e) {
-            status('Nước đi không được chấp nhận — thử lại.', 'err');
+            const msg = e.data?.error || 'Nước đi không được chấp nhận — thử lại.';
+            status(msg, 'err');
+            if (e.data?.error) toast(msg, { kind: 'err', iconName: 'x-circle', timeout: 4500 });
             board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
             render();
         }
@@ -134,12 +136,15 @@ function run(root) {
         const a = analyse(coup ? COUP_START : START, s.moves, s.reveals || [], s.captured || []);
         renderNotes($('[data-pvp-moves]'), a.notes);
         $('[data-pvp-count]').textContent = a.notes.length ? Math.ceil(a.notes.length / 2) + ' nước' : '';
-        renderCaptured($('[data-pvp-captured]'), a, s.you);
+        renderCaptured($('[data-pvp-captured]'), a, s.you, { over: s.status !== 'playing' });
         if (s.moves.length > seenPlies) {
             const nap = lastNap(a, s.moves.length);
             if (nap) {
                 const who = s.you ? (nap.by === s.you ? 'Bạn' : 'Đối thủ') : (nap.by === 'do' ? 'Đỏ' : 'Đen');
-                toast(`${who} ăn nắp: ${NAME[nap.p.toUpperCase()]}!`, { kind: s.you && nap.by !== s.you ? 'err' : 'xp', iconName: 'sparkles', timeout: 3500 });
+                // Ăn nắp: chỉ bên ăn biết là quân gì (server đã giấu với người khác).
+                const known = nap.p !== 'X' && nap.p !== 'x';
+                toast(known ? `${who} ăn nắp: ${NAME[nap.p.toUpperCase()]}!` : `${who} vừa ăn 1 nắp${s.you && nap.by !== s.you ? ' của bạn' : ''} — chỉ bên ăn biết là quân gì`,
+                    { kind: s.you && nap.by !== s.you ? 'err' : 'xp', iconName: 'sparkles', timeout: 3500 });
             }
         }
         seenPlies = s.moves.length;
