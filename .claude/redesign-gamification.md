@@ -318,7 +318,7 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Deploy cần `php artisan migrate --force` (bảng `puzzle_audit_marks`).
 
 ## Đợt 16 (02/10/2026) — Đồng hồ khi chơi với máy (user yêu cầu)
-- Màn hình bắt đầu: "Thời gian mỗi bên" — Không giới hạn · 5'+3s · 10'+5s (mặc định) · 15'+10s · 30' (Fischer: cộng giây
+- Màn hình bắt đầu: "Thời gian mỗi bên" — nhóm Cố định: Không giới hạn · 5 · 10 · 15 · 30 phút; nhóm Cộng giây: 5'+3s · 10'+5s (mặc định) · 15'+10s (Fischer: cộng giây
   sau mỗi nước). `g.clock = {tc, inc, do, den, hist}` lưu trong ván (localStorage); `hist` = giờ còn lại sau mỗi nước →
   "Đi lại" khôi phục đúng giờ.
 - 2 thanh đồng hồ kẹp trên (Máy) / dưới (Bạn) bàn cờ, lật bàn thì đổi chỗ; bên đang đi sáng màu, < 20s đỏ nhấp nháy,

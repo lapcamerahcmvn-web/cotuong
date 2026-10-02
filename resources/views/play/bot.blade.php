@@ -8,7 +8,7 @@
         ['Chơi cờ tướng với máy có mất phí không?', 'Hoàn toàn miễn phí và không cần cài đặt. Máy chạy ngay trên trình duyệt của bạn, kể cả trên điện thoại.'],
         ['Máy chơi mạnh cỡ nào?', 'Có 4 cấp: Tập sự (thỉnh thoảng đi bừa, hợp người mới), Dễ, Vừa và Khó (tính trước nhiều nước). Thắng cấp thấp rồi hãy thử cấp cao hơn.'],
         ['Có được đi lại hoặc xin gợi ý không?', 'Có. Nút "Đi lại" lùi lại nước vừa đi, nút "Gợi ý" chỉ nước máy cho là tốt nhất. Dùng trợ giúp thì ván thắng chỉ được nửa XP.'],
-        ['Có tính giờ khi chơi với máy không?', 'Có. Chọn 5, 10, 15 hoặc 30 phút mỗi bên (có thể kèm cộng giây sau mỗi nước) hoặc không giới hạn. Bên nào hết giờ trước là thua — máy cũng bị tính giờ.'],
+        ['Có tính giờ khi chơi với máy không?', 'Có. Chọn 5, 10, 15 hoặc 30 phút mỗi bên — cố định (không cộng giờ) hoặc kèm cộng giây sau mỗi nước — hoặc không giới hạn. Bên nào hết giờ trước là thua — máy cũng bị tính giờ.'],
         ['Khi nào ván cờ hoà?', 'Khi cùng một thế cờ lặp lại 3 lần mà không bên nào chiếu liên tục, hoặc ván kéo dài quá 150 nước mỗi bên. Chiếu dai thì KHÔNG xử hoà: bên chiếu không được chiếu lặp lại thế cờ lần thứ 3, phải đổi nước. Cờ tướng: hết nước đi hợp lệ là thua. Cờ úp: hết nước mà không bị chiếu là hoà.'],
         ['Có chơi cờ úp với máy được không?', 'Có. Chọn biến thể "Cờ úp": 30 quân được úp và tráo ngẫu nhiên, lật mặt khi đi. Máy cũng không biết quân úp là gì — nó chỉ biết mỗi bên còn những quân nào chưa lộ, giống hệt bạn.'],
     ];
@@ -83,12 +83,16 @@
                 </div>
 
                 <h2 class="text-lg font-extrabold mt-6 mb-3">Thời gian mỗi bên</h2>
-                <div class="flex flex-wrap gap-2">
-                    @foreach(['0' => 'Không giới hạn', '300+3' => '5 phút + 3 giây', '600+5' => '10 phút + 5 giây', '900+10' => '15 phút + 10 giây', '1800+0' => '30 phút'] as $tc => $label)
-                        <button type="button" class="chip {{ $tc === '600+5' ? 'is-on' : '' }}" data-pick-time="{{ $tc }}"><x-icon name="clock" /> {{ $label }}</button>
-                    @endforeach
-                </div>
-                <p class="text-[13px] text-ink-soft mt-2 mb-0">Mỗi nước đi xong được cộng thêm số giây ghi sau dấu “+”. Hết giờ là thua — máy cũng bị tính giờ và sẽ đi nhanh hơn khi sắp hết giờ.</p>
+                @foreach(['Cố định (không cộng giờ)' => ['0' => 'Không giới hạn', '300+0' => '5 phút', '600+0' => '10 phút', '900+0' => '15 phút', '1800+0' => '30 phút'],
+                          'Cộng giây sau mỗi nước' => ['300+3' => '5 phút + 3 giây', '600+5' => '10 phút + 5 giây', '900+10' => '15 phút + 10 giây']] as $group => $opts)
+                    <div class="text-[13px] font-bold text-ink-soft mt-3 mb-2">{{ $group }}</div>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach($opts as $tc => $label)
+                            <button type="button" class="chip {{ $tc === '600+5' ? 'is-on' : '' }}" data-pick-time="{{ $tc }}"><x-icon name="clock" /> {{ $label }}</button>
+                        @endforeach
+                    </div>
+                @endforeach
+                <p class="text-[13px] text-ink-soft mt-2 mb-0">Cố định: hết số phút là hết, không được cộng thêm. Cộng giây: mỗi nước đi xong được cộng thêm số giây ghi sau dấu “+”. Hết giờ là thua — máy cũng bị tính giờ và sẽ đi nhanh hơn khi sắp hết giờ.</p>
 
                 <button type="button" class="btn btn--primary btn--lg mt-6" data-bot-start><x-icon name="play" /> Bắt đầu ván mới</button>
                 @guest<p class="text-[13.5px] text-ink-soft mt-3"><a href="{{ route('login') }}" class="font-bold">Đăng nhập</a> để nhận XP khi thắng máy (tối đa {{ config('gamification.caps.bot_wins_daily') }} ván/ngày).</p>@endguest
