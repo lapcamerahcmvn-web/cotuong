@@ -138,6 +138,18 @@ function boot() {
     if (document.querySelector('[data-pvp]')) import('./play-pvp').then((m) => m.init());
     if (document.querySelector('[data-review]')) import('./review').then((m) => m.init());
     if (document.querySelector('[data-weekly]')) import('./weekly').then((m) => m.init());
+    document.addEventListener('click', (e) => {
+        const f = e.target.closest('[data-follow]');
+        if (f) import('./social').then((m) => m.follow(f));
+    });
+    // "Cài ứng dụng" (PWA, không service worker): chỉ hiện nút khi trình duyệt cho phép cài.
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('[data-install]').forEach((b) => {
+            b.hidden = false;
+            b.onclick = async () => { e.prompt(); const r = await e.userChoice; track('pwa_install', { outcome: r.outcome }); if (r.outcome === 'accepted') b.hidden = true; };
+        });
+    });
     if (window.__xq?.award) setTimeout(() => import('./weekly').then((m) => m.showAward(window.__xq.award)), 700);
     document.querySelectorAll('[data-share-text]').forEach((b) => b.addEventListener('click', () => import('./share').then((m) => m.share(b.dataset.shareText, b.dataset.shareUrl || location.href))));
 }

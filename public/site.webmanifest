@@ -1,16 +1,24 @@
 {
+    "id": "/",
     "name": "Học Cờ Tướng",
     "short_name": "Học Cờ Tướng",
     "description": "Học cờ tướng và cờ úp qua bàn cờ tương tác, diễn giải từng nước đi.",
     "lang": "vi-VN",
-    "start_url": "/",
+    "start_url": "/?utm_source=pwa",
     "scope": "/",
     "display": "standalone",
+    "orientation": "portrait",
     "background_color": "#f4efe4",
     "theme_color": "#c8451f",
+    "categories": ["education", "games"],
     "icons": [
         { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
         { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
         { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "shortcuts": [
+        { "name": "Thế cờ hôm nay", "url": "/luyen-tap/hom-nay?utm_source=pwa", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+        { "name": "Chơi với máy", "url": "/choi-voi-may?utm_source=pwa", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+        { "name": "Thử thách tuần", "url": "/thu-thach-tuan?utm_source=pwa", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
     ]
 }

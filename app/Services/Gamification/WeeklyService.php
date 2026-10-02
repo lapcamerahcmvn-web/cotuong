@@ -230,9 +230,9 @@ class WeeklyService
     {
         $week = $this->week(1);
 
-        return Cache::remember('weekly-podium:' . $week, 600, fn () => WeeklyAward::with('user:id,name,avatar,level')
+        return Cache::remember('weekly-podium2:' . $week, 600, fn () => WeeklyAward::with('user:id,name,avatar,level')
             ->where('week_start', $week)->where('rank', '<=', 3)->orderBy('rank')->get()
-            ->map(fn ($a) => ['rank' => $a->rank, 'score' => $a->score, 'name' => $a->user?->name, 'avatar' => $a->user?->avatar, 'level' => $a->user?->level])
+            ->map(fn ($a) => ['user_id' => $a->user_id, 'rank' => $a->rank, 'score' => $a->score, 'name' => $a->user?->name, 'avatar' => $a->user?->avatar, 'level' => $a->user?->level])
             ->all());
     }
 

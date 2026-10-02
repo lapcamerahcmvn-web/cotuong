@@ -23,6 +23,7 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PlayController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\SearchController;
@@ -161,6 +162,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');
+Route::get('/ky-thu/{ref}', [ProfileController::class, 'show'])->name('profile.show')->where('ref', '[0-9]+(-[a-z0-9-]*)?');
+Route::middleware('auth')->group(function () {
+    Route::post('/ky-thu/{ref}/theo-doi', [ProfileController::class, 'follow'])->name('profile.follow')->where('ref', '[0-9]+(-[a-z0-9-]*)?')->middleware('throttle:30,1,follow');
+    Route::get('/ban-be', [ProfileController::class, 'friends'])->name('friends');
+});
 Route::middleware('auth')->group(function () {
     Route::post('/thu-thach-tuan/nhan', [WeeklyController::class, 'claim'])->name('weekly.claim')->middleware('throttle:30,1,weekly');
     Route::post('/giai-thuong-tuan/{award}/da-xem', [WeeklyController::class, 'seen'])->name('weekly.seen');

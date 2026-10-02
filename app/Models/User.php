@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -111,6 +112,33 @@ class User extends Authenticatable
             'streak_last_date' => 'date',
             'leaderboard_opt_out' => 'boolean',
         ];
+    }
+
+    /** Người mình theo dõi. */
+    public function following(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'follows', 'follower_id', 'followee_id')->withPivot('created_at');
+    }
+
+    public function followers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followee_id', 'follower_id')->withPivot('created_at');
+    }
+
+    /** Hồ sơ công khai được xem không (người chọn ẩn khỏi xếp hạng = hồ sơ riêng tư). */
+    public function isPublic(): bool
+    {
+        return ! $this->leaderboard_opt_out;
+    }
+
+    public function profileUrl(): string
+    {
+        return self::profileUrlFor($this->id, $this->name);
+    }
+
+    public static function profileUrlFor(int $id, ?string $name): string
+    {
+        return route('profile.show', $id . '-' . (\Illuminate\Support\Str::slug((string) $name) ?: 'ky-thu'));
     }
 
     public function achievements(): HasMany

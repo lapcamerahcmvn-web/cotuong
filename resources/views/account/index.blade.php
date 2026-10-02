@@ -168,6 +168,16 @@
             <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
         </a>
 
+        <a href="{{ route('friends') }}" class="card card--pad flex items-center gap-3">
+            <span class="stat__icon tone-jade"><x-icon name="user" /></span>
+            <span class="flex-1"><span class="block font-bold">Bạn bè</span><span class="block text-[13px] text-ink-soft">{{ $followingCount ? 'Đang theo dõi ' . $followingCount . ' kỳ thủ · thi đua XP tuần' : 'Theo dõi kỳ thủ khác để thi đua XP tuần' }}</span></span>
+            <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
+        </a>
+        <a href="{{ $user->profileUrl() }}" class="card card--pad flex items-center gap-3">
+            <span class="stat__icon tone-primary"><x-icon name="eye" /></span>
+            <span class="flex-1"><span class="block font-bold">Hồ sơ công khai</span><span class="block text-[13px] text-ink-soft">{{ $user->isPublic() ? 'Trang người khác thấy khi bấm vào tên bạn' : 'Đang riêng tư (ẩn khỏi xếp hạng)' }}</span></span>
+            <x-icon name="chev-right" class="w-5 h-5 text-ink-faint" />
+        </a>
         <a href="{{ route('weekly') }}" class="card card--pad flex items-center gap-3">
             <span class="wk-medal wk-medal--gold !w-[42px] !h-[42px]"><x-icon name="trophy" /></span>
             <span class="flex-1"><span class="block font-bold">Thử thách tuần &amp; tủ cúp</span><span class="block text-[13px] text-ink-soft">{{ $trophyCount ? $trophyCount . ' cúp tuần đã đạt' : '4 thử thách mới mỗi tuần, Top 10 nhận cúp' }}</span></span>

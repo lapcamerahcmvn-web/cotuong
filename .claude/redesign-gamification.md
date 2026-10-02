@@ -181,3 +181,17 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   Thẻ thử thách thu gọn ở trang chủ (đã đăng nhập); banner ở `/xep-hang`; link ở dropdown tài khoản + hồ sơ.
 - Huy hiệu mới: weekly-1/4 (mở rương), weekly-top10/podium/champ. Test: `tests/Feature/WeeklyTest.php` (3 test).
 - ⚠️ `WeeklyAward.week_start` KHÔNG cast 'date' (sqlite lưu kèm giờ → truy vấn theo ngày lệch) — dùng accessor.
+
+## Đợt 9 (02/10/2026) — Hồ sơ kỳ thủ công khai, theo dõi bạn bè, cài web như app
+- Bảng `follows` (follower_id → followee_id, 1 chiều kiểu Duolingo, tối đa 200). `User::following()/followers()`,
+  `isPublic()` (= không chọn "ẩn khỏi xếp hạng"), `profileUrl()` / `profileUrlFor(id, name)` → `/ky-thu/{id}-{slug}`
+  (sai slug → 301 về đúng slug; hồ sơ riêng tư → 404 với người khác, chủ vẫn xem được kèm cảnh báo). noindex.
+- Hồ sơ: cấp/XP, người theo dõi, chỉ số (chuỗi ngày, bài, thế cờ, ván thắng), huy hiệu đã mở, tủ cúp tuần + hạng tuần,
+  kỷ lục, ván đã bật link chia sẻ. Nút Theo dõi (POST `profile.follow`, JS `resources/js/social.js`) / Thách đấu / Mời bạn bè.
+- `/ban-be` (`SocialService`): bảng XP tuần giữa mình + người đang theo dõi, bảng tin 14 ngày (huy hiệu, giải tuần,
+  thắng đấu bạn / thắng máy cấp Vừa+), danh sách đang theo dõi / người theo dõi (nút "Theo dõi lại").
+- Tên trên `/xep-hang`, top 10 + bục vinh danh `/thu-thach-tuan` đều link sang hồ sơ; tab "Bạn bè" ở bảng xếp hạng;
+  dropdown tài khoản + trang hồ sơ có lối vào.
+- PWA KHÔNG service worker: manifest thêm `id`, `shortcuts` (Thế cờ hôm nay / Chơi với máy / Thử thách tuần);
+  nút "Cài ứng dụng" trong dropdown chỉ hiện khi trình duyệt bắn `beforeinstallprompt`.
+- Test: `tests/Feature/SocialTest.php` (3 test).

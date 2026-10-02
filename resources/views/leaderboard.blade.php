@@ -26,6 +26,7 @@
         @foreach($boards as $k => [$label, $ic])
             <a href="{{ route('leaderboard', ['loai' => $k]) }}" class="tabs__item {{ $board === $k ? 'is-on' : '' }}"><x-icon :name="$ic" class="w-4 h-4" /> {{ $label }}</a>
         @endforeach
+        <a href="{{ $me ? route('friends') : route('login') }}" class="tabs__item"><x-icon name="user" class="w-4 h-4" /> Bạn bè</a>
     </nav>
     @if($board === 'xp')
         <div class="chips mb-4 justify-center">
@@ -40,7 +41,7 @@
             <div class="lb-row {{ $me && $r['user_id'] === $me->id ? 'is-me' : '' }}">
                 <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
                 <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
-                <span class="lb-name">{{ $r['name'] }}<small>Cấp {{ $r['level'] }} · {{ \App\Services\Gamification\LevelService::title($r['level']) }}</small></span>
+                <a href="{{ \App\Models\User::profileUrlFor($r['user_id'], $r['name']) }}" class="lb-name text-ink hover:text-primary">{{ $r['name'] }}<small>Cấp {{ $r['level'] }} · {{ \App\Services\Gamification\LevelService::title($r['level']) }}</small></a>
                 <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }} <span class="text-[12px] text-ink-faint font-semibold">{{ $unit }}</span></span>
             </div>
         @empty

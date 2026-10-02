@@ -179,12 +179,14 @@
                         <div class="dropdown__panel dropdown__panel--right" data-dropdown-panel>
                             <a href="{{ route('account.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Hồ sơ của tôi<small>Cấp {{ $hud['level']['level'] ?? 1 }} · {{ $hud['level']['title'] ?? '' }}</small></span></a>
                             <a href="{{ route('account.library') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="bookmark" /></span><span>Thư viện thế cờ</span></a>
+                            <a href="{{ route('friends') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Bạn bè<small>Thi đua XP tuần với bạn bè</small></span></a>
                             <a href="{{ route('history.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="clock" /></span><span>Lịch sử ván đấu</span></a>
                             <a href="{{ route('practice.review') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="repeat" /></span><span>Luyện lỗi sai</span></a>
                             <a href="{{ route('leaderboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="trophy" /></span><span>Bảng xếp hạng</span></a>
                             <a href="{{ route('weekly') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="target" /></span><span>Thử thách tuần</span></a>
                             <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Ván đấu của tôi</span></a>
                             <a href="{{ route('account.settings') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="settings" /></span><span>Cài đặt</span></a>
+                            <button type="button" class="dropdown__item w-full text-left" data-install hidden><span class="dropdown__glyph"><x-icon name="expand" /></span><span>Cài ứng dụng<small>Mở nhanh từ màn hình chính</small></span></button>
                             @if($u->isStaff())
                                 <a href="{{ route('admin.dashboard') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="shield" /></span><span>Quản trị</span></a>
                             @endif

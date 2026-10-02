@@ -64,7 +64,7 @@ test ! -f public/hot   # file hot (npm run dev) mà lọt lên hosting → toàn
 **Trên hosting (sau `git reset --hard`):**
 ```bash
 composer install --no-dev --optimize-autoloader
-php artisan migrate --force                       # migration mới: gamification + puzzles (01/10), games + cờ úp (02/10), game_records + saved_positions longText + review/share (03/10), weekly_awards (04/10)
+php artisan migrate --force                       # migration mới: gamification + puzzles (01/10), games + cờ úp (02/10), game_records + saved_positions longText + review/share (03/10), weekly_awards (04/10), follows (05/10)
 php artisan db:seed --class=ContentSeeder --force # nếu content.json đổi (KHÔNG đụng bảng mới)
 php artisan cotuong:build-puzzles                 # dựng/cập nhật kho thế cờ — chạy SAU ContentSeeder
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache

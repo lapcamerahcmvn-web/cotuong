@@ -46,7 +46,7 @@
                         <div class="wk-podium__col wk-podium__col--{{ $rank }}">
                             @if($p)
                                 <span class="avatar avatar--lg">@if($p['avatar'])<img src="{{ $p['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($p['name'] ?? '?', 0, 1)) }}@endif</span>
-                                <b class="wk-podium__name">{{ $p['name'] }}</b>
+                                <a href="{{ \App\Models\User::profileUrlFor($p['user_id'] ?? 0, $p['name']) }}" class="wk-podium__name font-bold text-ink">{{ $p['name'] }}</a>
                                 <small>{{ number_format($p['score'], 0, ',', '.') }} XP</small>
                             @endif
                             <span class="wk-podium__step"><span class="wk-medal wk-medal--{{ $medalOf($rank) }}"><x-icon name="trophy" /></span>{{ $rank }}</span>
@@ -101,7 +101,7 @@
                 <div class="lb-row {{ $me && $r['user_id'] === $me->id ? 'is-me' : '' }}">
                     <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
                     <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
-                    <span class="lb-name">{{ $r['name'] }}<small>{{ $i < 3 ? $prizes[$i + 1]['name'] : 'Top 10' }} nếu giữ hạng</small></span>
+                    <a href="{{ \App\Models\User::profileUrlFor($r['user_id'], $r['name']) }}" class="lb-name text-ink">{{ $r['name'] }}<small>{{ $i < 3 ? $prizes[$i + 1]['name'] : 'Top 10' }} nếu giữ hạng</small></a>
                     <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }}</span>
                 </div>
             @empty

@@ -284,3 +284,12 @@
     .wk-podium__col--2 .wk-podium__step { height: 86px; }
     .wk-podium__col--3 .wk-podium__step { height: 68px; }
 }
+
+@layer components {
+    /* ---------- Bạn bè / hồ sơ công khai ---------- */
+    .feed-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .feed-item:last-child { border-bottom: 0; }
+    .feed-item__icon { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--gold-soft); color: var(--gold-ink); flex-shrink: 0; }
+    .feed-item__icon svg { width: 18px; height: 18px; }
+    a.lb-name:hover { color: var(--primary); text-decoration: none; }
+}
