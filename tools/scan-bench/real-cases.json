@@ -1,0 +1,28 @@
+[
+ {
+  "file": "real/user-app-01.png",
+  "fen": "4kabr1/4a4/6n2/4p3p/n1b3p2/4P4/Pc1c2P1P/1C2C1N2/4A4/2B1KABR1",
+  "kind": "screen",
+  "style": "user-app",
+  "corners": [
+   [
+    88,
+    95
+   ],
+   [
+    1122,
+    95
+   ],
+   [
+    1122,
+    1268
+   ],
+   [
+    88,
+    1268
+   ]
+  ],
+  "red_top": false,
+  "note": "Ảnh màn hình phần mềm TQ (quân 3D, chữ thư pháp) người dùng gửi 02/10/2026 — góc lưới đặt tay"
+ }
+]

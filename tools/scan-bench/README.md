@@ -22,3 +22,12 @@ Kết quả 02/10/2026: ảnh màn hình 98.9% ô đúng · cờ úp (màn hình
 **ván cờ thật 90.9% · cờ úp thật 87.4%** (trước khi làm chế độ ảnh chụp thật: ~0%).
 `fens.json` = vài thế cờ ngẫu nhiên lấy từ bảng puzzles/lesson_steps. Đường dẫn Chrome trong bench.mjs là
 `C:/Program Files/Google/Chrome/Application/chrome.exe` — sửa nếu máy khác.
+
+## Ảnh thật người dùng gửi (`real/` + `real-cases.json`, có commit)
+- `real/user-app-01.png` (02/10/2026): ảnh màn hình phần mềm cờ TQ — quân 3D cùng tông gỗ, chữ thư pháp. Dò lưới tự động
+  không bắt được → góc đặt tay → chế độ ảnh chụp: **sai 6/26** (font mẫu chấm nghiêng hẳn về "Xe"). Đã thử và BỎ: gộp điểm
+  theo nhóm quân giống nhau (8 sai), cắt vòng khắc quanh chữ (9–11 sai).
+- Giải pháp: **học kiểu chữ** (`opts.learned` trong `classify`, lưu `localStorage xq.scan.learned` khi người dùng dùng kết
+  quả đã thẩm). Thử "bỏ-ra-một" trên ảnh này: 18–20 → 23/26 đúng (3 sai là loại chỉ có 1 mẫu). E2E: quét lần đầu sai 5,
+  sửa + bấm "Máy đánh giá" → quét lại đúng 26/26.
+- Cờ cho bench: `SCREEN=1` ép chế độ màn hình, `DBG=1` in điểm từng quân, `NOGROUP/RING/SIMT` (thử nghiệm cũ).

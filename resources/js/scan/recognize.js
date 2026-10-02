@@ -806,6 +806,24 @@ export async function classify(rect, opts = {}) {
         shown.splice(i, 1);
     }
 
+    // "Chữ ký" nét chữ từng quân (lưới 20×20 chuẩn hoá) — để học kiểu chữ của phần mềm người dùng hay chụp, và để khi
+    // người dùng sửa 1 quân thì tự sửa các quân có chữ giống hệt. Ảnh màn hình chữ 0°/180°, ảnh chụp xoay tự do.
+    const rots = opts.photo ? Array.from({ length: 24 }, (_, i) => (i * Math.PI) / 12) : [0, Math.PI];
+    for (const f of shown) f.sig = normalize(f.inkPts, 0);
+    const learned = (opts.learned || []).filter((x) => x && x.v && x.v.length === N * N && TYPES.includes(x.t));
+    if (learned.length) {
+        // Mẫu đã học (người dùng đã thẩm ở lần quét trước): giống ≥ 0.8 thì cộng mạnh — kiểu chữ phần mềm lặp lại y hệt.
+        for (const f of shown) {
+            const vs = rots.map((a) => (a ? normalize(f.inkPts, a) : f.sig));
+            const best = {};
+            for (const L of learned) for (const v of vs) { const d = dot(v, L.v); if (d > (best[L.t] ?? -1)) best[L.t] = d; }
+            // Đã có mẫu khớp rõ → tin mẫu học là chính (font mẫu lệch hẳn với chữ thư pháp của phần mềm), font chỉ phụ.
+            if (Math.max(...Object.values(best)) >= (globalThis.SCAN_LEARN_T ?? 0.8)) {
+                for (const t of TYPES) f.scores[t] = 0.3 * f.scores[t] + 0.7 * (best[t] ?? 0);
+            }
+        }
+    }
+
     // Gán binh chủng tối ưu toàn cục (Hungarian) theo luật: số lượng, ô hợp lệ, mỗi bên ưu tiên có 1 Tướng.
     // Chiều bàn (Đỏ dưới / Đỏ trên) chọn theo tổng điểm cao hơn khi gán thử cả hai chiều.
     const solveSide = (red, flip) => {
@@ -857,7 +875,9 @@ export async function classify(rect, opts = {}) {
     if (pieces.length > 32) warnings.push('Nhận ra hơn 32 quân — kiểm tra lại góc lưới');
     const debug = opts.debug ? pieces.map((f) => ({ sq: at(f.sq), soft: f.soft ? { D: f.soft.D, m: Array.from(f.soft.m, (v) => Math.round(v * 255)) } : null, bestV: f.bestV, circ: f.circ, body: f.body, lb: f.lb, inkColor: f.inkColor, hidden: f.hidden, ink: f.inkPts.length, inner: f.inner.length, inkFrac: +f.inkFrac.toFixed(3), red: +f.red.toFixed(2), scores: f.scores, mask: f.inkPts.length ? Array.from(normalize(f.inkPts, 0)).map((v) => (v > 0.01 ? 1 : 0)) : null })) : undefined;
     const quality = shown.length ? shown.reduce((acc, f) => acc + Math.max(...Object.values(f.scores)), 0) / shown.length : 1;
-    return { board, conf, flipped: !!flipped, coup, quality, warnings: [...new Set(warnings)], debug, offs: opts.debug ? feats.map((f) => +f.off.toFixed(2)) : undefined, thr, circles: opts.debug && opts.photo ? feats.map((f) => ({ sq: f.sq, lt: f.lt, ...f.circ, piece: pieces.includes(f) })) : undefined };
+    const sigs = {};
+    for (const f of shown) sigs[at(f.sq)] = Array.from(f.sig, (v) => Math.round(v * 1000) / 1000);
+    return { board, conf, flipped: !!flipped, coup, quality, sigs, warnings: [...new Set(warnings)], debug, offs: opts.debug ? feats.map((f) => +f.off.toFixed(2)) : undefined, thr, circles: opts.debug && opts.photo ? feats.map((f) => ({ sq: f.sq, lt: f.lt, ...f.circ, piece: pieces.includes(f) })) : undefined };
 }
 
 export function toFen(board) {

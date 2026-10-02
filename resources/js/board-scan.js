@@ -1,12 +1,27 @@
 // Trang "Nhận diện bàn cờ từ ảnh": chọn/chụp/dán ảnh → căn 4 góc lưới (tự động hoặc kéo tay) → nhận dạng
 // trên trình duyệt → THẨM (bấm ô để sửa) → lưu thư viện / mở trình soạn / máy đánh giá / chơi tiếp với máy.
-import { loadBoard, postJson, icon, escapeHtml, toast, track } from './core';
+import { loadBoard, postJson, icon, escapeHtml, toast, track, store, save } from './core';
 import { detectGrid, rectify, classify, toFen, homography, applyH, imageData, loadTemplates } from './scan/recognize';
 
 const PALETTE = [null, 'K', 'A', 'B', 'N', 'R', 'C', 'P', 'X', 'k', 'a', 'b', 'n', 'r', 'c', 'p', 'x'];
 const NAME = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt', X: 'Quân úp' };
 const GLYPH = { K: '帥', A: '仕', B: '相', N: '傌', R: '俥', C: '炮', P: '兵', k: '將', a: '士', b: '象', n: '馬', r: '車', c: '砲', p: '卒', X: '?', x: '?' };
 const COUP_SET = 'AABBNNRRCCPPPPP';
+
+/*
+ * HỌC KIỂU CHỮ của phần mềm người dùng hay chụp: mỗi phần mềm vẽ quân giống hệt nhau giữa các ảnh, nhưng chữ thư pháp
+ * của chúng có thể khác xa font mẫu. Khi người dùng đã THẨM xong và dùng kết quả, lưu "chữ ký" nét chữ của từng quân
+ * (trên thiết bị này) → lần quét sau máy so với mẫu đã học trước. Tối đa 6 mẫu mỗi binh chủng.
+ */
+const LEARN_KEY = 'xq.scan.learned';
+const LEARN_PER_TYPE = 6;
+const sim = (a, b) => {
+    let d = 0, r = 0;
+    const n = a.length;
+    for (let i = 0; i < n; i++) { d += a[i] * b[i]; r += a[i] * b[n - 1 - i]; }   // 0° và 180° (Đen chữ ngược)
+    return Math.max(d, r);
+};
+const loadLearned = () => { const v = store(LEARN_KEY, []); return Array.isArray(v) ? v : []; };
 
 export function init() {
     const root = document.querySelector('[data-scan]');
@@ -21,6 +36,7 @@ function setup(root) {
     const cfg = JSON.parse(root.dataset.scan || '{}');
     const steps = { pick: $('[data-step="pick"]'), align: $('[data-step="align"]'), result: $('[data-step="result"]') };
     let img = null, imgEl = null, corners = null, rect = null, result = null, selected = -1, redToMove = true;
+    let edited = new Set(), learnedThisScan = false;
 
     const show = (name) => {
         Object.entries(steps).forEach(([k, el]) => { el.hidden = k !== name && !(name === 'result' && k === 'align' && false); });
@@ -143,13 +159,16 @@ function setup(root) {
             // Ảnh màn hình: chữ 0°/180°; điểm khớp thấp thì thử lại như ảnh chụp.
             const photo = !!photoBox?.checked;
             rect = rectify(img, corners, photo ? 56 : 40);
-            let r = await classify(rect, { photo });
+            const learned = loadLearned();
+            let r = await classify(rect, { photo, learned });
             if (!photo && r.quality < 0.76) {
                 const rect2 = rectify(img, corners, 56);
-                const r2 = await classify(rect2, { photo: true });
+                const r2 = await classify(rect2, { photo: true, learned });
                 if (r2.quality > r.quality) { r = r2; rect = rect2; }
             }
             result = r;
+            result.sigs = r.sigs || {};
+            edited = new Set(); learnedThisScan = false;
             redToMove = true;
             track('scan_done', { quality: Math.round(r.quality * 100), coup: r.coup, warnings: r.warnings.length });
             renderResult();
@@ -182,10 +201,13 @@ function setup(root) {
         const counts = validate();
         $('[data-result-info]').innerHTML = [
             unsure ? `<span class="scan-chip is-warn">${icon('target')} ${unsure} ô máy chưa chắc (chấm vàng) — kiểm tra kỹ</span>` : `<span class="scan-chip is-ok">${icon('check')} Máy khá chắc chắn mọi quân</span>`,
+            unsure >= 5 && cfg.aiUrl ? `<span class="scan-chip">${icon('sparkles')} Nhiều ô chưa chắc (kiểu chữ lạ?) — thử <b class="ml-1">Nhận dạng lại bằng AI</b>; dùng kết quả xong máy sẽ nhớ kiểu chữ này cho lần sau</span>` : '',
             ...result.warnings.map((w) => `<span class="scan-chip is-warn">${escapeHtml(w)}</span>`),
             ...counts.map((w) => `<span class="scan-chip is-err">${escapeHtml(w)}</span>`),
+            loadLearned().length ? `<span class="scan-chip is-ok">${icon('sparkles')} Đã nhớ kiểu chữ từ các lần bạn thẩm trước <button type="button" class="underline font-bold ml-1" data-forget>Xoá</button></span>` : '',
             result.coup ? `<span class="scan-chip">${icon('layers')} Cờ úp: ${b.filter((p) => p === 'X').length} quân úp Đỏ · ${b.filter((p) => p === 'x').length} quân úp Đen</span>` : '',
         ].join('');
+        $('[data-forget]')?.addEventListener('click', () => { save(LEARN_KEY, []); toast('Đã xoá mẫu chữ đã học.'); drawBoard(); });
         $('[data-fen-out]').value = fen();
         $('[data-turn]').querySelectorAll('button').forEach((x) => x.classList.toggle('is-on', (x.dataset.side === 'do') === redToMove));
         renderPalette();
@@ -222,19 +244,55 @@ function setup(root) {
         pal.innerHTML = `<div class="text-[13px] font-bold mb-2">Ô ${'abcdefghi'[selected % 9]}${9 - Math.floor(selected / 9)}: chọn quân</div><div class="scan-palette">` +
             PALETTE.map((p) => `<button type="button" class="scan-pc ${p ? (p === p.toUpperCase() ? 'is-red' : 'is-black') : ''} ${p === cur ? 'is-on' : ''}" data-pc="${p || ''}" title="${p ? (NAME[p.toUpperCase()] || '') + (p === p.toUpperCase() ? ' Đỏ' : ' Đen') : 'Xoá'}">${p ? GLYPH[p] : icon('x')}</button>`).join('') + '</div>';
         pal.querySelectorAll('[data-pc]').forEach((bt) => bt.addEventListener('click', () => {
-            result.board[selected] = bt.dataset.pc || null;
+            const pc = bt.dataset.pc || null;
+            result.board[selected] = pc;
             result.conf[selected] = 1;
+            edited.add(selected);
+            // Sửa 1 quân → tự sửa các quân có chữ GIỐNG HỆT (cùng phần mềm vẽ y nhau), giữ màu của từng quân.
+            const me = result.sigs[selected];
+            let more = 0;
+            if (pc && me && !/[Xx]/.test(pc)) {
+                for (const [k, v] of Object.entries(result.sigs)) {
+                    const j = +k, cur = result.board[j];
+                    if (j === selected || edited.has(j) || !cur || /[Xx]/.test(cur) || cur.toUpperCase() === pc.toUpperCase()) continue;
+                    if (sim(me, v) < 0.93) continue;   // chỉ chữ gần như trùng khít (đo trên ảnh thật: thấp hơn dễ sửa nhầm)
+                    result.board[j] = cur === cur.toUpperCase() ? pc.toUpperCase() : pc.toLowerCase();
+                    result.conf[j] = 0.4;   // chấm vàng: nhờ người dùng liếc lại
+                    more++;
+                }
+            }
+            if (more) toast(`Đã tự sửa thêm ${more} quân có chữ giống hệt — kiểm tra lại giúp nhé.`, { iconName: 'sparkles' });
             drawBoard();
         }));
     }
     $('[data-turn]').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { redToMove = b.dataset.side === 'do'; drawBoard(); }));
     $('[data-flip-result]').addEventListener('click', () => {
-        result.board = result.board.slice().reverse(); result.conf = result.conf.slice().reverse(); selected = -1; drawBoard();
+        result.board = result.board.slice().reverse(); result.conf = result.conf.slice().reverse(); selected = -1;
+        result.sigs = Object.fromEntries(Object.entries(result.sigs || {}).map(([k, v]) => [89 - k, v]));
+        edited = new Set([...edited].map((k) => 89 - k));
+        drawBoard();
     });
     $('[data-copy-fen]').addEventListener('click', () => navigator.clipboard?.writeText(fen()).then(() => toast('Đã sao chép FEN.')));
     $('[data-realign]').addEventListener('click', () => { steps.result.hidden = true; steps.align.scrollIntoView({ behavior: 'smooth' }); });
 
-    const ready = () => { const v = validate(); if (v.length) { toast(v[0], { kind: 'err' }); return false; } return true; };
+    const ready = () => { const v = validate(); if (v.length) { toast(v[0], { kind: 'err' }); return false; } learn(); return true; };
+    /** Kết quả đã thẩm hợp lệ → ghi nhớ chữ ký nét chữ từng quân theo binh chủng (1 lần mỗi ảnh). */
+    function learn() {
+        if (learnedThisScan || !result?.sigs) return;
+        learnedThisScan = true;
+        const L = loadLearned();
+        for (const [k, v] of Object.entries(result.sigs)) {
+            const p = result.board[+k];
+            if (!p || /[Xx]/.test(p)) continue;
+            const t = p.toUpperCase();
+            const vv = v.map((x) => Math.round(x * 100) / 100);
+            if (L.some((e) => e.t === t && sim(e.v, vv) > 0.97)) continue;   // đã có mẫu gần như y hệt
+            L.push({ t, v: vv });
+            const same = L.filter((e) => e.t === t);
+            if (same.length > LEARN_PER_TYPE) L.splice(L.indexOf(same[0]), 1);
+        }
+        save(LEARN_KEY, L);
+    }
     // Túi quân úp còn lại mỗi bên (cờ úp): bộ 15 quân trừ quân đã lật đang có trên bàn.
     const tui = () => {
         const left = (red) => { const s = COUP_SET.split(''); result.board.forEach((p) => { if (p && p !== 'X' && p !== 'x' && p.toUpperCase() !== 'K' && (p === p.toUpperCase()) === red) { const i = s.indexOf(p.toUpperCase()); if (i >= 0) s.splice(i, 1); } }); return s.join(''); };
@@ -248,6 +306,7 @@ function setup(root) {
     });
     $('[data-compose]').addEventListener('click', () => {
         if (!cfg.auth) { location.href = cfg.loginUrl; return; }
+        if (!validate().length) learn();
         location.href = cfg.libraryUrl + '?' + new URLSearchParams({ fen: fen() });
     });
     $('[data-save]').addEventListener('click', async () => {
@@ -299,6 +358,7 @@ function setup(root) {
         btn.disabled = false; btn.innerHTML = `${icon('sparkles')} Nhận dạng lại bằng AI`;
         if (!res?.fen) { toast(res?.message || 'AI chưa đọc được ảnh này.', { kind: 'err' }); return; }
         result.board = R.loadFen(res.fen); result.conf = new Array(90).fill(1); result.warnings = ['Kết quả từ AI — vẫn cần thẩm lại'];
+        edited = new Set(); learnedThisScan = false;   // giữ chữ ký nét chữ (result.sigs) → dùng kết quả AI xong sẽ học kiểu chữ
         result.coup = /[Xx]/.test(res.fen); selected = -1;
         drawBoard();
         track('scan_ai');

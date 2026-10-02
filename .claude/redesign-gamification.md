@@ -344,3 +344,14 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - **Phân tích 2 lượt** (`review.js`): lượt nhanh (cờ úp 2,4s × 6 mẫu, bỏ trần độ sâu 4/5) rồi kiểm tra KỸ (×3 thời gian,
   8 mẫu) các nước bị đánh dấu chưa tốt. Đo 52 thế thật so với chuẩn 20s × 12 mẫu: sai lệch điểm mất 181 → 62, xếp
   loại trùng 44 → 45/52, nước tốt nhất trùng 38 → 40/52. Ván 63 nước ≈ 70 giây (trước ≈ 25 giây).
+
+## Đợt 18 (02/10/2026) — Nhận dạng ảnh: học kiểu chữ của phần mềm người dùng hay chụp
+- Ảnh lỗi người dùng gửi (phần mềm TQ, quân 3D chữ thư pháp): vị trí + màu đúng, sai binh chủng 6–9 ô — font mẫu không
+  giống chữ thư pháp, quân 3D cùng tông gỗ → rơi vào chế độ ảnh chụp. Lưu thành ca thật `tools/scan-bench/real/`.
+- `recognize.js`: trả `sigs` (chữ ký nét chữ 20×20 từng quân); `opts.learned` = mẫu đã học → khớp ≥ 0.8 thì điểm =
+  30% font + 70% mẫu học. `board-scan.js`: dùng kết quả đã thẩm (đánh giá / chơi tiếp / lưu / soạn) → lưu ≤ 6 mẫu mỗi
+  binh chủng vào localStorage (`xq.scan.learned`, có nút Xoá); sửa 1 ô → tự sửa các quân chữ TRÙNG KHÍT (≥ 0.93; ngưỡng
+  thấp hơn đo trên ảnh thật sửa nhầm); nhiều ô chưa chắc + có AI → gợi ý "Nhận dạng lại bằng AI" (kết quả AI dùng xong
+  cũng được học).
+- Bench 87 ảnh sinh: không đổi so với trước (98.0 / 97.4 / 97.3 / 90.9 / 86.4%).
+- AI nhận dạng (Claude vision) cần `ANTHROPIC_API_KEY` trong .env hosting — hiện TRỐNG nên nút AI không hiện.

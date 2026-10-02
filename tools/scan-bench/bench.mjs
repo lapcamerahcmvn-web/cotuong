@@ -17,19 +17,23 @@ const srv = http.createServer((req, res) => {
 }).listen(8099);
 
 const filter = process.argv[2] || '';
-const cases = JSON.parse(fs.readFileSync(HERE + '/cases.json', 'utf8')).filter((c) => c.file.includes(filter));
+// cases.json: ảnh sinh bằng gen.py (không commit) · real-cases.json: ảnh THẬT người dùng gửi (commit trong real/).
+const cases = [...(fs.existsSync(HERE + '/cases.json') ? JSON.parse(fs.readFileSync(HERE + '/cases.json', 'utf8')) : []), ...JSON.parse(fs.readFileSync(HERE + '/real-cases.json', 'utf8'))].filter((c) => c.file.includes(filter));
 const b = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: 'new' });
 const p = await b.newPage();
 p.on('pageerror', (e) => console.log('JS', e.message));
-p.on('console', (m) => { if (m.type() === 'error') console.log('console', m.text()); });
+p.on('console', (m) => { if (m.type() === 'error' || m.text().startsWith('DBG')) console.log(m.text()); });
 await p.goto('http://127.0.0.1:8099/');
+if (process.env.DBG) await p.evaluate(() => { globalThis.SCAN_DEBUG = 1; });
+if (process.env.SCREEN) await p.evaluate(() => { window.FORCE_SCREEN = 1; });
+await p.evaluate((e) => { if (e.NOGROUP) globalThis.SCAN_NO_GROUP = 1; if (e.RING) globalThis.SCAN_RING = +e.RING; if (e.SIMT) globalThis.SCAN_SIM_T = +e.SIMT; }, { NOGROUP: process.env.NOGROUP, RING: process.env.RING, SIMT: process.env.SIMT });
 const res = await p.evaluate(async (cases) => {
     const R = await import('/src/scan/recognize.js');
     await R.loadTemplates('/fonts/scan/');
     const load = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.src = src; });
     const out = [];
     for (const c of cases) {
-        const img = R.imageData(await load('/bench/img/' + c.file));
+        const img = R.imageData(await load((c.file.startsWith('real/') ? '/bench/' : '/bench/img/') + c.file));
         const sc = img.scale;
         const truthC = c.corners.map(([x, y]) => [x * sc, y * sc]);
         // Ảnh chụp: mô phỏng người dùng kéo 4 góc lệch tay ±0.08 ô (giả ngẫu nhiên cố định theo tên file).
@@ -45,7 +49,7 @@ const res = await p.evaluate(async (cases) => {
         const cornerErr = auto ? Math.max(...auto.corners.map(([x, y], i) => Math.hypot(x - truthC[i][0], y - truthC[i][1]))) / ((truthC[1][0] - truthC[0][0]) / 8) : null;
         const t0 = performance.now();
         const rect = R.rectify(img, corners, 40);
-        const manual = !auto; const r0 = await R.classify(rect, { photo: manual, fontBase: '/fonts/scan/' }); let r = r0; if (!manual && r0.quality < 0.76) { const r2 = await R.classify(rect, { photo: true, fontBase: '/fonts/scan/' }); if (r2.quality > r0.quality) r = r2; } window.__q = [r0.quality.toFixed(2), r.quality.toFixed(2)];
+        const manual = !auto && !window.FORCE_SCREEN; const r0 = await R.classify(rect, { photo: manual, fontBase: '/fonts/scan/' }); let r = r0; if (!manual && r0.quality < 0.76) { const r2 = await R.classify(rect, { photo: true, fontBase: '/fonts/scan/' }); if (r2.quality > r0.quality) r = r2; } window.__q = [r0.quality.toFixed(2), r.quality.toFixed(2)];
         const ms = performance.now() - t0;
         // đáp án
         const tb = new Array(90).fill(null);
@@ -55,6 +59,7 @@ const res = await p.evaluate(async (cases) => {
             if (tb[i]) present++;
             if ((tb[i] || null) !== (r.board[i] || null)) wrong.push(`${i}:${tb[i] || '.'}→${r.board[i] || '.'}`);
         }
+        if (globalThis.SCAN_DEBUG) console.log('DBG', JSON.stringify(globalThis.SCAN_DBG));
         out.push({ q: window.__q, file: c.file, kind: c.kind, auto: !!auto, cornerErr: cornerErr === null ? null : +cornerErr.toFixed(2), wrong: wrong.length, present, list: wrong.slice(0, 8).join(' '), flipped: r.flipped, ms: Math.round(ms), warn: r.warnings.join('; ') });
     }
     return out;
