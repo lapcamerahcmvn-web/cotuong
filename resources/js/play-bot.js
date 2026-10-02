@@ -66,17 +66,32 @@ function replay(g) {
 
 const removeOne = (arr, t) => { const k = arr.indexOf(t); if (k >= 0) arr.splice(k, 1); };
 
+/** Thể thức giờ "giây+cộng" (VD "600+5") → đồng hồ ván; "0" = không tính giờ. hist = giờ còn lại sau mỗi nước (để đi lại). */
+function newClock(tc) {
+    const [base, inc] = String(tc || '0').split('+').map((x) => parseInt(x, 10) || 0);
+    if (!base) return null;
+    return { tc, inc: inc * 1000, do: base * 1000, den: base * 1000, hist: [[base * 1000, base * 1000]] };
+}
+const fmtClock = (ms) => {
+    ms = Math.max(0, ms);
+    if (ms < 10000) return '0:0' + (ms / 1000).toFixed(1);
+    const t = Math.ceil(ms / 1000);
+    return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
+};
+
 function setup(root) {
     const $ = (s) => root.querySelector(s);
     const setupBox = $('[data-bot-setup]'), playBox = $('[data-bot-play]');
     const statusEl = $('[data-bot-status]'), listEl = $('[data-bot-moves]'), levelEl = $('[data-bot-level]');
     let worker = null, reqId = 0, g = null, board = null, view = null;
+    let turnStart = Date.now(), tick = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
 
-    const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong' };
+    const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong', time: '600+5' };
     const markOn = (sel, val, attr) => root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x.dataset[attr] === String(val)));
     markOn('[data-pick-variant]', pick.variant, 'pickVariant');
     root.querySelectorAll('[data-pick-level]').forEach((b) => b.addEventListener('click', () => { pick.level = +b.dataset.pickLevel; markOn('[data-pick-level]', pick.level, 'pickLevel'); }));
     root.querySelectorAll('[data-pick-side]').forEach((b) => b.addEventListener('click', () => { pick.side = b.dataset.pickSide; markOn('[data-pick-side]', pick.side, 'pickSide'); }));
+    root.querySelectorAll('[data-pick-time]').forEach((b) => b.addEventListener('click', () => { pick.time = b.dataset.pickTime; markOn('[data-pick-time]', pick.time, 'pickTime'); }));
     root.querySelectorAll('[data-pick-variant]').forEach((b) => b.addEventListener('click', () => {
         pick.variant = b.dataset.pickVariant; markOn('[data-pick-variant]', pick.variant, 'pickVariant');
         root.querySelectorAll('[data-coup-only]').forEach((x) => { x.hidden = pick.variant !== 'co-up'; });
@@ -94,8 +109,8 @@ function setup(root) {
         root.querySelectorAll('[data-coup-only]').forEach((x) => { x.hidden = true; });
     }
 
-    const fresh = (level, human, variant, from = null) => ({
-        level, human, variant, moves: [], hints: 0, undos: 0, over: null, t0: Date.now(),
+    const fresh = (level, human, variant, from = null, tc = pick.time) => ({
+        level, human, variant, moves: [], hints: 0, undos: 0, over: null, t0: Date.now(), clock: newClock(tc),
         startFen: from?.fen || null, redFirst: from ? from.redFirst : true, custom: from || null,
         layout: variant === 'co-up' ? newLayout(from?.fen || COUP_FEN, from?.pool || null) : null,
     });
@@ -161,14 +176,57 @@ function setup(root) {
         el.innerHTML = '<div class="board-holder" data-xq-holder></div>';
         view = replay(g);
         board = window.XiangqiBoard.mountGame(el, { fen: fen(), red: humanRed(), coup: coup(), onMove: humanMove });
+        $('[data-bot-clocks]').classList.toggle('no-clock', !g.clock);
+        $('[data-bot-clocks]').classList.remove('is-flipped');
+        turnStart = Date.now();
+        clearInterval(tick);
+        if (g.clock && !g.over) tick = setInterval(clockTick, 100);
         refresh(false);
         persist();
+        clockTick();
         track('game_start', { mode: 'bot', level: g.level, side: g.human, variant: g.variant });
         next();
     }
 
+    // ---- Đồng hồ ----
+    const sideKey = (red) => (red ? 'do' : 'den');
+    function remaining(side) {
+        if (!g.clock) return Infinity;
+        const running = !g.over && sideKey(turnRed()) === side;
+        return g.clock[side] - (running ? Date.now() - turnStart : 0);
+    }
+    function clockTick() {
+        if (!g?.clock) return;
+        const humanSide = g.human, botSide = humanRed() ? 'den' : 'do', turn = sideKey(turnRed());
+        [['human', humanSide], ['bot', botSide]].forEach(([who, side]) => {
+            const ms = remaining(side);
+            const strip = root.querySelector(`[data-clock-strip="${who}"]`);
+            strip.querySelector('[data-clock]').textContent = fmtClock(ms);
+            strip.classList.toggle('is-active', !g.over && turn === side);
+            strip.classList.toggle('is-low', !g.over && turn === side && ms < 20000);
+        });
+        if (!g.over && remaining(turn) <= 0) {
+            g.clock[turn] = 0;
+            finish({ winner: turn === 'do' ? 'den' : 'do', reason: 'hết giờ' });
+        }
+    }
+    /** Trừ giờ bên vừa đi + cộng giây thưởng, ghi lại để "Đi lại" khôi phục đúng. */
+    function chargeMove() {
+        if (!g.clock) return;
+        const side = sideKey(turnRed());
+        g.clock[side] = Math.max(0, remaining(side)) + g.clock.inc;
+        turnStart = Date.now();
+    }
+    // Rời trang / ẩn tab: chốt giờ còn lại để lần sau chơi tiếp đúng (không tính thời gian vắng mặt).
+    const freeze = () => { if (g?.clock && !g.over) { const side = sideKey(turnRed()); g.clock[side] = Math.max(0, remaining(side)); turnStart = Date.now(); persist(); } };
+    addEventListener('pagehide', freeze);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) freeze(); });
+
     function apply(iccs) {
+        if (g.clock && remaining(sideKey(turnRed())) <= 0) { clockTick(); return; }   // nước tới sau khi đã hết giờ
+        chargeMove();
         g.moves.push(iccs);
+        if (g.clock) g.clock.hist.push([g.clock.do, g.clock.den]);
         refresh(true);
         persist();
     }
@@ -253,6 +311,7 @@ function setup(root) {
     }
 
     async function next() {
+        if (g.over) return;
         const r = result();
         if (r) return finish(r);
         const humanTurn = turnRed() === humanRed();
@@ -261,7 +320,10 @@ function setup(root) {
         status(humanTurn ? (check ? 'Bạn đang bị chiếu!' : 'Đến lượt bạn') : 'Máy đang suy nghĩ…', humanTurn ? (check ? 'err' : 'ok') : null);
         if (humanTurn) return;
         const t0 = Date.now();
-        const res = await ask(engineMsg(!humanRed(), { level: g.level }));
+        // Máy cũng bị tính giờ: sắp hết giờ thì nghĩ nông hơn cho kịp (cấp Vừa ~1,5s, Dễ ~0,7s mỗi nước).
+        const left = remaining(sideKey(!humanRed()));
+        const level = left < 15000 ? Math.min(g.level, 2) : left < 45000 ? Math.min(g.level, 3) : g.level;
+        const res = await ask(engineMsg(!humanRed(), { level }));
         await new Promise((ok) => setTimeout(ok, Math.max(0, 450 - (Date.now() - t0))));
         if (g.over || !res.move) return;
         apply(res.move);
@@ -279,6 +341,11 @@ function setup(root) {
     $('[data-bot-undo]').addEventListener('click', () => {
         if (g.over || turnRed() !== humanRed() || g.moves.length < 2) return;
         g.moves = g.moves.slice(0, -2);
+        if (g.clock) {
+            g.clock.hist = g.clock.hist.slice(0, -2);
+            [g.clock.do, g.clock.den] = g.clock.hist[g.clock.hist.length - 1];
+            turnStart = Date.now();
+        }
         g.undos++;
         refresh(false); persist(); next();
     });
@@ -288,7 +355,7 @@ function setup(root) {
         const res = await ask(engineMsg(humanRed(), { analyse: true }));
         if (res.move && turnRed() === humanRed()) { g.hints++; board.showArrow(res.move, '#d99a1e'); status('Gợi ý: mũi tên vàng', 'ok'); persist(); }
     });
-    $('[data-bot-flip]').addEventListener('click', () => board.flip());
+    $('[data-bot-flip]').addEventListener('click', () => { board.flip(); $('[data-bot-clocks]').classList.toggle('is-flipped'); });
     $('[data-bot-resign]').addEventListener('click', () => {
         if (g.over || !confirm('Xin thua ván này?')) return;
         finish({ winner: humanRed() ? 'den' : 'do', reason: 'xin thua' });
@@ -296,12 +363,16 @@ function setup(root) {
     $('[data-bot-new]').addEventListener('click', () => {
         if (!g.over && g.moves.length > 4 && !confirm('Bỏ ván đang chơi và bắt đầu ván mới?')) return;
         save(KEY, null);
+        clearInterval(tick);
         playBox.hidden = true; setupBox.hidden = false;
         $('[data-bot-resume]').hidden = true;
     });
 
     async function finish(r) {
+        if (g.clock && !g.over) { const side = sideKey(turnRed()); g.clock[side] = Math.max(0, remaining(side)); }
         g.over = r; persist();
+        clearInterval(tick);
+        clockTick();
         refresh(false);           // hết ván: nắp đối phương đã ăn thành "?" bấm để lật
         board.lock(true);
         const outcome = r.winner === null ? 'draw' : (r.winner === g.human ? 'win' : 'loss');
@@ -338,7 +409,7 @@ function setup(root) {
         if (outcome === 'win') confetti(dlg.querySelector('.celebrate'));
         dlg.querySelectorAll('[data-again]').forEach((b) => b.addEventListener('click', () => {
             dlg.close();
-            start(fresh(+b.dataset.again, g.human, g.variant, g.custom));
+            start(fresh(+b.dataset.again, g.human, g.variant, g.custom, g.clock?.tc || '0'));
         }));
         dlg.querySelector('[data-share]').addEventListener('click', () => {
             const verb = outcome === 'win' ? 'thắng' : outcome === 'loss' ? 'thua' : 'hoà';

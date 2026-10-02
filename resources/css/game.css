@@ -340,3 +340,19 @@
     .rv-book.rv-mark { background: #6b5aa6; }
     .rv-verdict.rv-book b { color: #6b5aa6; }
 }
+
+/* Đồng hồ chơi với máy: 2 thanh kẹp trên/dưới bàn cờ (bên đang nghĩ sáng lên, sắp hết giờ đỏ nhấp nháy). */
+@layer components {
+    .bot-clocks { display: flex; flex-direction: column; }
+    .bot-clocks.is-flipped { flex-direction: column-reverse; }
+    .bot-clocks.no-clock .clock-strip { display: none; }
+    .clock-strip { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 14px; font-size: 14px; font-weight: 700; color: var(--ink-soft); }
+    .clock-strip__who { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+    .clock-strip__who .ic { width: 16px; height: 16px; }
+    .clock-strip__time { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 800; padding: 2px 12px; border-radius: 10px; background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); min-width: 84px; text-align: center; transition: background .15s, color .15s; }
+    .clock-strip.is-active { color: var(--ink); }
+    .clock-strip.is-active .clock-strip__time { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .clock-strip.is-low .clock-strip__time { background: var(--danger); color: #fff; border-color: var(--danger); animation: clockLow 1s steps(2) infinite; }
+    @keyframes clockLow { 50% { opacity: .65; } }
+    @media (prefers-reduced-motion: reduce) { .clock-strip.is-low .clock-strip__time { animation: none; } }
+}

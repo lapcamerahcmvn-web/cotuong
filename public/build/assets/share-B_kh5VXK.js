@@ -1,0 +1,2 @@
+import{m as e,p as t}from"./app-DaJc8Fg_.js";async function n(n,r){e(`share`,{url:r});let i=n+`
+`+r;if(navigator.share&&/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent))try{await navigator.share({text:n,url:r});return}catch{}try{await navigator.clipboard.writeText(i),t(`Đã sao chép — dán vào Zalo/Facebook để khoe nhé!`,{kind:`ok`,iconName:`copy`})}catch{window.prompt(`Sao chép nội dung này:`,i)}}export{n as share};

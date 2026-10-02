@@ -316,3 +316,13 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
    thế, dài tới 20 nước (trước 21 dòng ≤ 10 nước). Bộ lọc bắt 5 lỗi trong dòng viết tay cũ (Xe ra sau lưng Pháo bị ăn)
    → đã cắt. Chi tiết: `.claude/opening-book.md`.
 - Deploy cần `php artisan migrate --force` (bảng `puzzle_audit_marks`).
+
+## Đợt 16 (02/10/2026) — Đồng hồ khi chơi với máy (user yêu cầu)
+- Màn hình bắt đầu: "Thời gian mỗi bên" — Không giới hạn · 5'+3s · 10'+5s (mặc định) · 15'+10s · 30' (Fischer: cộng giây
+  sau mỗi nước). `g.clock = {tc, inc, do, den, hist}` lưu trong ván (localStorage); `hist` = giờ còn lại sau mỗi nước →
+  "Đi lại" khôi phục đúng giờ.
+- 2 thanh đồng hồ kẹp trên (Máy) / dưới (Bạn) bàn cờ, lật bàn thì đổi chỗ; bên đang đi sáng màu, < 20s đỏ nhấp nháy,
+  < 10s hiện phần mười giây. Hết giờ = thua ("hết giờ", lưu lịch sử như ván thường). Nước tới sau khi đã hết giờ bị bỏ.
+- Máy cũng bị tính giờ: còn < 45s thì nghĩ tối đa cấp Vừa, < 15s tối đa cấp Dễ.
+- Rời trang / ẩn tab: chốt giờ còn lại (không tính thời gian vắng mặt) — mốc lượt `turnStart` KHÔNG lưu.
+- Sửa kèm: thẻ "Máy · cấp …" bị `max-width: 62%` cắt mất tên cấp.
