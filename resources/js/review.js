@@ -2,8 +2,10 @@
 // Web Worker), xếp loại nước đi, biểu đồ ưu thế, độ chính xác từng bên, "thử tìm nước tốt hơn" tại nước
 // sai và "chơi tiếp với máy từ thế này". Kết quả lưu lên server (ván của chính mình) để lần sau có ngay.
 import { loadBoard, postJson, icon, escapeHtml, toast, track } from './core';
+import { bookMoves } from './engine/book';
 
 const CLS = {
+    book: { label: 'Nước sách', mark: '≡', tone: 'book' },
     best: { label: 'Tốt nhất', mark: '★', tone: 'best' },
     good: { label: 'Tốt', mark: '✓', tone: 'good' },
     inacc: { label: 'Thiếu chính xác', mark: '?!', tone: 'inacc' },
@@ -155,7 +157,7 @@ function setup(root) {
         let html = `<div class="rv-coach__head"><span class="side-dot ${s.side}"></span>Nước ${Math.ceil(idx / 2)} · ${escapeHtml(s.caption.replace(/\.$/, ''))}</div>`;
         if (k) {
             html += `<p class="rv-verdict rv-${k.tone}"><b>${k.mark} ${k.label}</b>${mv.l > 15 && mv.c !== 'best' ? ` — mất khoảng ${(mv.l / 100).toFixed(1).replace('.', ',')} điểm` : ''}.`;
-            if (mv.b && mv.b !== s.iccs && mv.c !== 'best') html += ` Nước tốt hơn: <b>${escapeHtml(noteOf(idx - 1, mv.b))}</b>.`;
+            if (mv.b && mv.b !== s.iccs && !['best', 'book'].includes(mv.c)) html += ` Nước tốt hơn: <b>${escapeHtml(noteOf(idx - 1, mv.b))}</b>.`;
             html += ` <span class="text-ink-faint">Thế cờ: ${fmt(an.evals[idx])}</span></p>`;
             if (better) html += '<p class="text-[13px] text-ink-soft">Mũi tên xanh = nước máy đề xuất · mũi tên đỏ = nước đã đi.</p>';
         } else if (!an) {
@@ -269,7 +271,7 @@ function setup(root) {
             return;
         }
         const count = (side) => {
-            const c = { best: 0, good: 0, inacc: 0, mistake: 0, blunder: 0 };
+            const c = { book: 0, best: 0, good: 0, inacc: 0, mistake: 0, blunder: 0 };
             an.moves.forEach((m, i) => { if ((redAt(i) ? 'do' : 'den') === side) c[m.c]++; });
             return c;
         };
@@ -360,11 +362,14 @@ function setup(root) {
             let loss = Math.max(0, bestSc - played);
             // Thế đã thắng chắc / thua chắc: kéo dài đường chiếu hết không phải "sai lầm".
             if ((bestSc >= 1500 && played >= 1200) || bestSc <= -1500) loss = Math.min(loss, 40);
-            const c = (best === s.iccs || loss <= 15) ? 'best' : loss < 60 ? 'good' : loss < 150 ? 'inacc' : loss < 350 ? 'mistake' : 'blunder';
+            // Nước nằm trong book khai cuộc (cờ tướng, thế mở chuẩn) = "Nước sách", không chấm theo độ sâu tìm ngắn.
+            const inBook = !coup && bookMoves(fens[i], redAt(i)).some((x) => x.move === s.iccs);
+            const c = inBook ? 'book' : (best === s.iccs || loss <= 15) ? 'best' : loss < 60 ? 'good' : loss < 150 ? 'inacc' : loss < 350 ? 'mistake' : 'blunder';
+            if (inBook) loss = 0;
             moves.push({ b: best, l: Math.round(loss), c });
             const side = redAt(i) ? 'do' : 'den';
-            accs[side].push(Math.max(0, Math.min(100, 103.1668 * Math.exp(-0.04354 * (wp(bestSc) - wp(played))) - 3.1669)));
-            if (c !== 'best' && c !== 'good') {
+            accs[side].push(inBook ? 100 : Math.max(0, Math.min(100, 103.1668 * Math.exp(-0.04354 * (wp(bestSc) - wp(played))) - 3.1669)));
+            if (!['book', 'best', 'good'].includes(c)) {
                 alts[i] = Object.fromEntries(Object.entries(scores).sort((a, b) => b[1] - a[1]).slice(0, 14));
             }
         });

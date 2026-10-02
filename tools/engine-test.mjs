@@ -2,8 +2,9 @@
 // BẮT BUỘC chạy lại sau mỗi lần sửa engine — sai luật/sai điểm rất khó thấy khi chỉ chơi thử.
 import {
     loadFen, legalMoves, legalMovesSt, stateFrom, toIccs, search, thinkCoup, gameOver,
-    START_FEN, COUP_FEN, COUP_SET,
+    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs,
 } from '../resources/js/engine/engine.js';
+import { LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
 
 let fail = 0;
 const ok = (cond, msg) => { console.log((cond ? '  ✓ ' : '  ✗ ') + msg); if (!cond) fail++; };
@@ -41,6 +42,32 @@ const pools = { red: COUP_SET.slice(0, b.filter((p) => p === 'X').length), black
 let hit = 0;
 for (let i = 0; i < 3; i++) if (thinkCoup(hang, pools, false, 3).move === 'e6e5') hit++;
 ok(hit === 3, `ăn Xe treo ${hit}/3 lần`);
+
+console.log('Lý thuyết khai cuộc cờ úp: Pháo giả không vội vật Mã giả');
+const prior = coupOpeningPrior(loadFen(COUP_FEN), true);
+ok(prior('b2b9') <= -200 && prior('h2h9') <= -200, 'nước đầu Pháo giả ăn nắp (bị ăn lại ngay) bị trừ điểm');
+ok(prior('a3a4') > prior('e3e4'), 'tốt Biên ưu tiên hơn tốt đầu');
+const full = { red: COUP_SET, black: COUP_SET };
+let rush = 0;
+for (let i = 0; i < 6; i++) if (['b2b9', 'h2h9'].includes(thinkCoup(COUP_FEN, full, true, 3).move)) rush++;
+ok(rush <= 1, `máy vật Pháo giả ở nước đầu ${rush}/6 lần`);
+
+console.log('Book khai cuộc cờ tướng');
+let bad = 0;
+for (const [, line] of LINES) {
+    const bb = loadFen(START_FEN);
+    let red = true;
+    for (const mv of line.split(' ')) {
+        if (!legalMoves(bb, red).some((m) => toIccs(m[0], m[1]) === mv)) { bad++; console.log('    sai luật:', line, mv); break; }
+        const [f, t] = fromIccs(mv);
+        bb[t] = bb[f]; bb[f] = null; red = !red;
+    }
+}
+ok(bad === 0, `${LINES.length} diễn biến sách đều hợp lệ`);
+const first = new Set(bookMoves(START_FEN, true).map((x) => x.move));
+ok(first.has('h2e2') && first.has('c3c4') && first.has('g0e2'), 'thế mở có Pháo đầu / Tiên nhân chỉ lộ / Phi tượng');
+ok(bookMoves(loadFen(START_FEN), false).length === 0, 'sai lượt đi → ngoài sách');
+ok(pickBook(START_FEN, true, new Set(first)) === null, 'tránh hết nước sách → null (máy tự tính)');
 
 console.log(fail ? `\n${fail} kiểm tra THẤT BẠI` : '\nTất cả đạt');
 process.exit(fail ? 1 : 0);

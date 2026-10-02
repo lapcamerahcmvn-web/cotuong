@@ -261,3 +261,20 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   vẫn đi). Lặp 3 lần → hoà CHỈ khi trong chu kỳ không có bên nào nước nào cũng chiếu (thế sau nước đỡ lặp tới lần 3 trước
   thế sau nước chiếu — nếu cứ lặp 3 là hoà thì chiếu dai thành hoà, sai luật).
 - `postJson` giữ body lỗi (`e.data`) → đấu bạn hiện đúng lý do bị từ chối. Test: `tests/Feature/CoupRulesTest.php`.
+
+## Đợt 13 (02/10/2026) — Máy đánh đúng lý thuyết cờ úp + book khai cuộc cờ tướng (user yêu cầu)
+- **Lỗi gốc cờ úp:** máy (và phân tích) coi "Pháo giả vật Mã giả" (b2b9/h2h9) là nước mạnh nhất. Nguyên nhân: (1) mỗi mẫu
+  xếp quân úp engine "nhìn thấy" quân thật → tính như biết trước (strategy fusion); (2) phương sai mẫu lớn (2 nước đối xứng
+  lệch hàng trăm điểm); (3) không có kiến thức khai cuộc. Sửa trong `resources/js/engine/engine.js`:
+  - Quân úp lượng giá theo **kỳ vọng túi quân** (`hiddenValues`) + tiềm năng ô xuất phát `SLOT` + độ linh hoạt `MOB` — không nhìn trộm.
+  - **Lấy mẫu phân tầng** (`stratifier`): mỗi ô úp nhận lần lượt các quân rải đều túi qua K mẫu.
+  - `coupOpeningPrior` (khi còn ≥ 24 quân úp): quân úp ăn nắp mà bị ăn lại ngay −200; tốt Biên +35, tốt đầu −35, tốt 3/7 +10,
+    mở Pháo +15 — áp cho cả máy (`thinkCoup`) lẫn phân tích (review). Tốt xuống đáy = lão tốt (PST 15).
+  - Kết quả: xếp hạng nước đầu a3a4/c0e2/e3e4 đứng đầu, b2b9 tụt #9; cấp Vừa vật Pháo nước đầu 0/6 (test).
+    Đấu cặp đổi màu cấp Vừa engine mới vs cũ 24 ván: **13 thắng – 9 thua – 2 hoà** (không yếu đi).
+- **Book khai cuộc cờ tướng** `resources/js/engine/book.js`: 21 diễn biến có trọng số (Pháo đầu–Bình phong mã: Mã thất lộ/
+  Xe qua hà; Phản cung mã; Thuận pháo Xe thẳng–Xe ngang; Liệt pháo; Tam bộ hổ; Tiên nhân chỉ lộ: đối binh/Pháo dưới tốt;
+  Phi tượng; Khởi mã; Quá cung pháo; Sĩ giác pháo). Worker: cấp ≥ 2, không phải chế độ phân tích → đi nước sách ngẫu nhiên
+  theo trọng số (tôn trọng `avoid`). Phân tích ván: nước trong book = **"≡ Nước sách"** (class `book`, độ chính xác 100,
+  không gợi ý "nước tốt hơn"); `GameRecordService::cleanAnalysis` nhận class `book`.
+- Test: `node tools/engine-test.mjs` thêm kiểm prior cờ úp + tính hợp lệ từng nước sách. Không cần migrate.

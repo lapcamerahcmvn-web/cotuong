@@ -243,13 +243,38 @@ function pst(t, r, c, red) {
     const rr = red ? r : 9 - r;            // hàng tính từ phía mình: 9 = hàng cuối của mình
     const center = 4 - Math.abs(c - 4);
     switch (t) {
-        case 'P': return rr <= 4 ? 70 + (4 - rr) * 12 + (rr >= 1 ? center * 8 : -20) : 0;
+        case 'P': return rr === 0 ? 15 : rr <= 4 ? 70 + (4 - rr) * 12 + center * 8 : 0;   // hàng đáy đối phương = lão tốt
         case 'N': return center * 8 + (rr <= 6 ? 15 : 0) - (rr === 9 ? 15 : 0);
         case 'C': return (c === 4 ? 20 : 0) + (rr === 7 ? 5 : 0) + (rr <= 2 ? 10 : 0);
         case 'R': return (rr <= 6 ? 15 : 0) + (c === 3 || c === 5 ? 6 : 0);
         case 'K': return c === 4 ? 6 : 0;
         default: return 0;
     }
+}
+
+/*
+ * Cờ úp — giá trị VỊ TRÍ của quân giả theo ô xuất phát (lý thuyết: "vị trí Xe giả cực quan trọng", Pháo giả là quân
+ * công kích chính; Sĩ/Tượng giả thụ động). Cộng thêm vào giá trị kỳ vọng của túi quân chưa lộ.
+ */
+const SLOT = { R: 45, C: 40, N: 5, B: -5, A: -10, P: 0 };
+const MOB = { R: 5, C: 3, N: 4 };   // điểm mỗi nước đi được — "không gian phát triển là tối thượng"
+
+/** Số ô đi được của Xe/Pháo (theo tia) và Mã (chân không bị cản) — dùng cho cờ úp. */
+function mobility(st, i, t) {
+    const b = st.b, r = (i / 9) | 0, c = i % 9;
+    let n = 0;
+    if (t === 'R' || t === 'C') {
+        for (const [dr, dc] of ORTH) {
+            let nr = r + dr, nc = c + dc;
+            while (ON(nr, nc) && !b[nr * 9 + nc]) { n++; nr += dr; nc += dc; }
+        }
+    } else if (t === 'N') {
+        for (const [dr, dc, lr, lc] of KNIGHT) {
+            const nr = r + dr, nc = c + dc;
+            if (ON(nr, nc) && !b[(r + lr) * 9 + c + lc]) n++;
+        }
+    }
+    return n;
 }
 
 function evaluate(st, red) {
@@ -259,15 +284,29 @@ function evaluate(st, red) {
         if (!p) continue;
         const pr = isRed(p);
         let v;
-        if (isHiddenChar(p)) v = HIDDEN_VAL;
-        else {
+        if (isHiddenChar(p) || st.h[i]) {
+            // Quân còn úp: KHÔNG dùng danh tính thật (kể cả khi trạng thái mẫu biết) — chỉ giá trị kỳ vọng của túi quân
+            // chưa lộ + giá trị vị trí ô giả. Tránh "nhìn trộm nắp" (strategy fusion) khi lấy mẫu cách xếp quân.
+            const role = ROLE[i];
+            v = (pr ? st.hvR : st.hvB) ?? HIDDEN_VAL;
+            if (st.coup && role) v += SLOT[role] + (MOB[role] ? MOB[role] * mobility(st, i, role) : 0);
+        } else {
             const t = p.toUpperCase();
-            v = VAL[t] + (st.h[i] ? 0 : pst(t, (i / 9) | 0, i % 9, pr));
-            if (st.coup && (t === 'A' || t === 'B') && !st.h[i]) v += 40;   // Sĩ/Tượng tự do trong cờ úp
+            v = VAL[t] + pst(t, (i / 9) | 0, i % 9, pr);
+            if (st.coup) {
+                if (t === 'A' || t === 'B') v += 40;                              // Sĩ/Tượng tự do trong cờ úp
+                if (MOB[t]) v += MOB[t] * mobility(st, i, t);
+            }
         }
         s += pr ? v : -v;
     }
     return red ? s : -s;
+}
+
+/** Giá trị kỳ vọng 1 quân úp của mỗi bên theo túi quân chưa lộ (theo hiểu biết của bên đang tính). */
+function hiddenValues(pools) {
+    const ev = (list) => (list && list.length ? list.reduce((a, t) => a + VAL[t.toUpperCase()], 0) / list.length : HIDDEN_VAL);
+    return { hvR: ev(pools?.red), hvB: ev(pools?.black) };
 }
 
 /* ---------------- Tìm kiếm ---------------- */
@@ -461,6 +500,59 @@ function shuffle(a) {
 }
 
 /**
+ * Nguyên lý khai cuộc CỜ ÚP (bài học trên site: "thế trước quân sau", "chỉ vật Pháo giả khi đủ lực", "đấm tốt Biên,
+ * đừng vội mở tốt trung lộ", "ưu tiên mở quân hàng trên"). Chỉ áp dụng giai đoạn khai cuộc (≥ 24 quân còn úp ≈ 5 nước
+ * đầu mỗi bên). Trả hàm iccs → điểm cộng/trừ cho nước gốc.
+ */
+export function coupOpeningPrior(pub, red) {
+    const hidden = pub.filter(isHiddenChar).length;
+    if (hidden < 24) return () => 0;
+    const st = stateFrom(pub, true);
+    return (mv) => {
+        const [f, t] = fromIccs(mv);
+        const p = st.b[f];
+        if (!p || !st.h[f]) return 0;                 // chỉ xét nước MỞ quân úp
+        const role = ROLE[f], c = f % 9, target = st.b[t];
+        if (target && st.h[t]) {
+            // Quân giả ăn nắp: chỉ đáng khi đối phương không ăn lại được ngay ("vật khi đủ lực").
+            const u = make(st, [f, t]);
+            const recapture = attacked(st, t, !red);
+            unmake(st, [f, t], u);
+            return recapture ? -200 : 0;
+        }
+        if (target) return 0;
+        if (role === 'P') return c === 0 || c === 8 ? 35 : c === 4 ? -35 : 10;   // tốt Biên / tốt đầu / tốt 3-7
+        if (role === 'C') return 15;                                            // mở Pháo hàng trên
+        return 0;
+    };
+}
+
+/**
+ * Lấy mẫu PHÂN TẦNG cách xếp quân úp: mỗi bên xếp các ô úp theo 1 thứ tự ngẫu nhiên và túi quân theo 1 thứ tự ngẫu
+ * nhiên; mẫu k xoay túi đi floor(k·m/K) vị trí → qua K mẫu, MỖI ô úp nhận lần lượt các quân rải đều khắp túi (thay vì
+ * bốc ngẫu nhiên độc lập). Giảm mạnh phương sai ở nút lật quân (Xe vs Tốt chênh 800 điểm) — 2 nước đối xứng cho điểm
+ * gần như bằng nhau. Trong 1 mẫu các ô nhận quân KHÁC nhau của túi → cách xếp luôn hợp lệ.
+ */
+function stratifier(pub, pools) {
+    const side = (ch, list) => {
+        const sq = shuffle(pub.map((p, i) => (p === ch ? i : -1)).filter((i) => i >= 0));
+        return { sq, bag: shuffle((list || []).slice()) };
+    };
+    const R = side('X', pools?.red), B = side('x', pools?.black);
+    return {
+        assign(st, k, K) {
+            for (const [S, red] of [[R, true], [B, false]]) {
+                const m = S.bag.length, shift = m ? Math.floor((k * m) / K) : 0;
+                S.sq.forEach((i, j) => {
+                    const t = j < m ? S.bag[(j + shift) % m] : 'P';
+                    st.b[i] = red ? t : t.toLowerCase();
+                });
+            }
+        },
+    };
+}
+
+/**
  * Cờ úp: `publicFen` có quân 'X'/'x' chưa rõ; `pools` = { red: ['R','C',...], black: [...] } là các
  * binh chủng CHƯA LỘ của mỗi bên (máy chỉ biết bao nhiêu, không biết quân nào ở đâu).
  * Thử nhiều cách xếp ngẫu nhiên, cộng điểm từng nước gốc, chọn nước tốt nhất trung bình.
@@ -469,6 +561,8 @@ export function thinkCoup(publicFen, pools, red, level, avoid = null) {
     const L = LEVELS[level] || LEVELS[2];
     const pub = loadFen(publicFen);
     const base = stateFrom(pub, true);
+    const hv = hiddenValues(pools);
+    const strata = stratifier(pub, pools);
     const rnd = L.coupRandom ?? L.random;
     if (rnd && Math.random() < rnd) {
         const r = randomMove(base, red, avoid);
@@ -478,12 +572,8 @@ export function thinkCoup(publicFen, pools, red, level, avoid = null) {
     const total = {}, count = {};
     let nodes = 0, depth = 0;
     for (let k = 0; k < samples; k++) {
-        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true });
-        const pr = shuffle((pools.red || []).slice()), pb = shuffle((pools.black || []).slice());
-        for (let i = 0; i < 90; i++) {
-            if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
-            else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
-        }
+        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true, ...hv });
+        strata.assign(st, k, samples);
         const res = search(st, red, { depth: L.coupDepth || L.depth, timeMs: Math.round((L.coupTimeMs || L.timeMs) / samples), noise: L.coupNoise ?? L.noise, exactRoot: true, avoid });
         nodes += res.nodes; depth = Math.max(depth, res.depth);
         if (!res.move) return { move: null, score: res.score, depth: 0, nodes };
@@ -494,8 +584,9 @@ export function thinkCoup(publicFen, pools, red, level, avoid = null) {
         }
     }
     let best = null, bestAvg = -Infinity;
+    const prior = coupOpeningPrior(pub, red);
     for (const m of Object.keys(total)) {
-        const avg = total[m] / count[m] + (count[m] < samples ? -50 : 0);
+        const avg = total[m] / count[m] + (count[m] < samples ? -50 : 0) + prior(m);
         if (avg > bestAvg) { bestAvg = avg; best = m; }
     }
     if (!best) { const r = randomMove(base, red, avoid); return r || { move: null, score: 0, depth: 0, nodes }; }
@@ -525,16 +616,14 @@ export function review(fen, red, opts = {}) {
         return { best: r.move, score: r.score, scores: r.scores || {}, depth: r.depth };
     }
     const base = stateFrom(pub, true);
+    const hv = hiddenValues(opts.pools);
     const samples = opts.samples || 4;
+    const strata = stratifier(pub, opts.pools);
     const total = {}, count = {};
     let depth = 0, terminal = null;
     for (let k = 0; k < samples; k++) {
-        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true });
-        const pr = shuffle((opts.pools?.red || []).slice()), pb = shuffle((opts.pools?.black || []).slice());
-        for (let i = 0; i < 90; i++) {
-            if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
-            else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
-        }
+        const st = withKings({ b: pub.slice(), h: base.h.slice(), coup: true, ...hv });
+        strata.assign(st, k, samples);
         const r = search(st, red, { depth: opts.depth || 4, timeMs: Math.round(timeMs / samples), exactRoot: true });
         if (!r.move) { terminal = r.score; break; }
         depth = Math.max(depth, r.depth);
@@ -545,8 +634,9 @@ export function review(fen, red, opts = {}) {
     if (terminal !== null) return { best: null, score: terminal, scores: {}, depth: 0 };
     const scores = {};
     let best = null, bs = -Infinity;
+    const prior = coupOpeningPrior(pub, red);
     for (const m of Object.keys(total)) {
-        scores[m] = Math.round(total[m] / count[m]);
+        scores[m] = Math.round(total[m] / count[m] + prior(m));
         if (scores[m] > bs) { bs = scores[m]; best = m; }
     }
     return { best, score: bs, scores, depth };

@@ -149,7 +149,7 @@ class GameRecordService
         $evals = array_values((array) ($a['evals'] ?? []));
         $moves = array_values((array) ($a['moves'] ?? []));
         if (count($evals) !== $plies + 1 || count($moves) !== $plies) return null;
-        $classes = ['best', 'good', 'inacc', 'mistake', 'blunder'];
+        $classes = ['book', 'best', 'good', 'inacc', 'mistake', 'blunder'];
         $clip = fn ($v) => max(-100000, min(100000, (int) $v));
         $out = ['v' => 1, 'evals' => array_map($clip, $evals), 'moves' => [], 'acc' => [], 'alts' => []];
         foreach ($moves as $m) {
