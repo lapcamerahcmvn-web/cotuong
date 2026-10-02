@@ -1,7 +1,10 @@
-// Chơi với máy: engine chạy trong Web Worker; ván đang chơi lưu localStorage để mở lại.
+// Chơi với máy (cờ tướng + cờ úp): engine chạy trong Web Worker; ván đang chơi lưu localStorage.
+// Cờ úp: ván giữ `layout` (danh tính 30 quân úp) để lật quân; máy CHỈ nhận "túi quân chưa lộ" của
+// mỗi bên (không biết quân nào ở ô nào) → không nhìn trộm.
 import { loadBoard, postJson, track, icon, escapeHtml, store, save } from './core';
 import { handleGamification, openSheet, confetti } from './gamification';
-import { START_FEN, loadFen, toFen, legalMoves, inCheck, fromIccs, LEVELS } from './engine/engine';
+import { START_FEN, COUP_FEN, COUP_SET, loadFen, toFen, fromIccs, gameOver, stateFrom, inCheckSt, LEVELS } from './engine/engine';
+import { buildNotes, renderNotes, renderCaptured } from './notation';
 
 const KEY = 'xq.bot.game';
 const MAX_PLIES = 300;
@@ -12,30 +15,65 @@ export function init() {
     loadBoard().then(() => setup(root));
 }
 
+function newLayout() {
+    const layout = {};
+    const b = loadFen(COUP_FEN);
+    [true, false].forEach((red) => {
+        const set = COUP_SET.slice().sort(() => Math.random() - 0.5);
+        for (let i = 0; i < 90; i++) if (b[i] === (red ? 'X' : 'x')) layout[i] = red ? set.pop() : set.pop().toLowerCase();
+    });
+    return layout;
+}
+
+/** Dựng lại bàn công khai từ các nước đã đi (lật quân theo layout). */
+function replay(g) {
+    const b = loadFen(g.variant === 'co-up' ? COUP_FEN : START_FEN);
+    const reveals = [], captured = [];
+    for (const m of g.moves) {
+        const [f, t] = fromIccs(m);
+        let p = b[f], rev = null;
+        if (p === 'X' || p === 'x') { p = rev = g.layout[f]; }
+        let v = b[t];
+        if (v === 'X' || v === 'x') v = g.layout[t];
+        if (v) captured.push(v);
+        b[t] = p; b[f] = null;
+        reveals.push(rev);
+    }
+    return { board: b, reveals, captured };
+}
+
 function setup(root) {
     const $ = (s) => root.querySelector(s);
     const setupBox = $('[data-bot-setup]'), playBox = $('[data-bot-play]');
     const statusEl = $('[data-bot-status]'), listEl = $('[data-bot-moves]'), levelEl = $('[data-bot-level]');
-    let worker = null, reqId = 0, g = null, board = null;
+    let worker = null, reqId = 0, g = null, board = null, view = null;
 
-    const pick = { level: 2, side: 'do' };
-    root.querySelectorAll('[data-pick-level]').forEach((b) => b.addEventListener('click', () => {
-        pick.level = +b.dataset.pickLevel; mark('[data-pick-level]', b);
+    const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong' };
+    const markOn = (sel, val, attr) => root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x.dataset[attr] === String(val)));
+    markOn('[data-pick-variant]', pick.variant, 'pickVariant');
+    root.querySelectorAll('[data-pick-level]').forEach((b) => b.addEventListener('click', () => { pick.level = +b.dataset.pickLevel; markOn('[data-pick-level]', pick.level, 'pickLevel'); }));
+    root.querySelectorAll('[data-pick-side]').forEach((b) => b.addEventListener('click', () => { pick.side = b.dataset.pickSide; markOn('[data-pick-side]', pick.side, 'pickSide'); }));
+    root.querySelectorAll('[data-pick-variant]').forEach((b) => b.addEventListener('click', () => {
+        pick.variant = b.dataset.pickVariant; markOn('[data-pick-variant]', pick.variant, 'pickVariant');
+        root.querySelectorAll('[data-coup-only]').forEach((x) => { x.hidden = pick.variant !== 'co-up'; });
     }));
-    root.querySelectorAll('[data-pick-side]').forEach((b) => b.addEventListener('click', () => {
-        pick.side = b.dataset.pickSide; mark('[data-pick-side]', b);
-    }));
-    function mark(sel, on) { root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x === on)); }
+    root.querySelectorAll('[data-coup-only]').forEach((x) => { x.hidden = pick.variant !== 'co-up'; });
+
+    const fresh = (level, human, variant) => ({
+        level, human, variant, moves: [], hints: 0, undos: 0, over: null, t0: Date.now(),
+        layout: variant === 'co-up' ? newLayout() : null,
+    });
 
     $('[data-bot-start]').addEventListener('click', () => {
         const side = pick.side === 'random' ? (Math.random() < 0.5 ? 'do' : 'den') : pick.side;
-        start({ level: pick.level, human: side, fen: START_FEN, moves: [], hints: 0, undos: 0, over: null, t0: Date.now() });
+        start(fresh(pick.level, side, pick.variant));
     });
 
     const saved = store(KEY, null);
     if (saved && !saved.over && saved.moves?.length) {
         const r = $('[data-bot-resume]');
         r.hidden = false;
+        r.querySelector('[data-resume-label]').textContent = saved.variant === 'co-up' ? 'Bạn có ván CỜ ÚP đang chơi dở' : 'Bạn có ván đang chơi dở';
         r.querySelector('button').addEventListener('click', () => start(saved));
     }
 
@@ -52,35 +90,40 @@ function setup(root) {
         });
     }
 
+    const coup = () => g.variant === 'co-up';
     const humanRed = () => g.human === 'do';
-    const turnRed = () => g.moves.length % 2 === 0;           // ván luôn bắt đầu từ thế chuẩn, Đỏ đi trước
-    const curFen = () => g.fen;
+    const turnRed = () => g.moves.length % 2 === 0;           // ván luôn từ thế đầu, Đỏ đi trước
+    const fen = () => toFen(view.board);
+
+    function refresh(animateLast) {
+        view = replay(g);
+        board.set(fen(), g.moves[g.moves.length - 1] || null, animateLast ? undefined : { noAnim: true, silent: true });
+        const startFen = coup() ? COUP_FEN : START_FEN;
+        renderNotes(listEl, buildNotes(startFen, g.moves, view.reveals));
+        const hidden = coup() ? { red: view.board.filter((p) => p === 'X').length, black: view.board.filter((p) => p === 'x').length } : null;
+        renderCaptured($('[data-bot-captured]'), view.captured.slice(), hidden);
+    }
 
     function start(game) {
         g = game;
         setupBox.hidden = true; playBox.hidden = false;
         window.scrollTo({ top: Math.max(0, playBox.getBoundingClientRect().top + scrollY - 76), behavior: 'smooth' });
         levelEl.textContent = LEVELS[g.level].name;
+        $('[data-bot-variant]').textContent = coup() ? 'Cờ úp' : 'Cờ tướng';
+        $('[data-bot-variant]').hidden = !coup();
         const el = $('[data-bot-board]');
         el.innerHTML = '<div class="board-holder" data-xq-holder></div>';
-        board = window.XiangqiBoard.mountGame(el, { fen: g.fen, red: humanRed(), onMove: humanMove });
-        board.set(g.fen, g.moves[g.moves.length - 1] || null, { noAnim: true, silent: true });
-        renderMoves();
+        view = replay(g);
+        board = window.XiangqiBoard.mountGame(el, { fen: fen(), red: humanRed(), coup: coup(), onMove: humanMove });
+        refresh(false);
         persist();
-        track('game_start', { mode: 'bot', level: g.level, side: g.human });
+        track('game_start', { mode: 'bot', level: g.level, side: g.human, variant: g.variant });
         next();
     }
 
     function apply(iccs) {
-        const b = loadFen(g.fen);
-        const [f, t] = fromIccs(iccs);
-        const note = window.XiangqiRules.notation(b, f, t);
-        b[t] = b[f]; b[f] = null;
-        g.fen = toFen(b);
         g.moves.push(iccs);
-        (g.notes ||= []).push(note);
-        board.set(g.fen, iccs);
-        renderMoves();
+        refresh(true);
         persist();
     }
 
@@ -91,15 +134,15 @@ function setup(root) {
     }
 
     function result() {
-        const b = loadFen(g.fen), red = turnRed();
-        if (!legalMoves(b, red).length) return { winner: red ? 'den' : 'do', reason: inCheck(b, red) ? 'chiếu hết' : 'hết nước đi' };
-        const seen = {};
-        // Tính lặp từ các thế đã qua (dựng lại từ nước đi).
-        let fb = loadFen(START_FEN);
-        seen[toFen(fb) + 'r'] = 1;
+        const end = gameOver(view.board, turnRed(), coup());
+        if (end) return end;
+        // Lặp thế 3 lần — tính trên bàn công khai.
+        const b = loadFen(coup() ? COUP_FEN : START_FEN);
+        const seen = { [toFen(b) + 'r']: 1 };
         g.moves.forEach((m, i) => {
-            const [f, t] = fromIccs(m); fb[t] = fb[f]; fb[f] = null;
-            const k = toFen(fb) + (i % 2 ? 'r' : 'b');
+            const [f, t] = fromIccs(m);
+            b[t] = view.reveals[i] || b[f]; b[f] = null;
+            const k = toFen(b) + (i % 2 ? 'r' : 'b');
             seen[k] = (seen[k] || 0) + 1;
         });
         if (Object.values(seen).some((n) => n >= 3)) return { winner: null, reason: 'lặp lại thế cờ 3 lần' };
@@ -107,16 +150,30 @@ function setup(root) {
         return null;
     }
 
+    /** Túi quân chưa lộ của mỗi bên — thứ duy nhất máy được biết về quân úp. */
+    function pools() {
+        const red = [], black = [];
+        view.board.forEach((p, i) => {
+            if (p === 'X') red.push(g.layout[i]);
+            else if (p === 'x') black.push(g.layout[i].toUpperCase());
+        });
+        return { red, black };
+    }
+
+    function engineMsg(red, extra = {}) {
+        return coup() ? { fen: fen(), red, coup: true, pools: pools(), ...extra } : { fen: fen(), red, ...extra };
+    }
+
     async function next() {
         const r = result();
         if (r) return finish(r);
         const humanTurn = turnRed() === humanRed();
         board.lock(!humanTurn);
-        const check = inCheck(loadFen(g.fen), turnRed());
+        const check = inCheckSt(stateFrom(view.board, coup()), turnRed());
         status(humanTurn ? (check ? 'Bạn đang bị chiếu!' : 'Đến lượt bạn') : 'Máy đang suy nghĩ…', humanTurn ? (check ? 'err' : 'ok') : null);
         if (humanTurn) return;
         const t0 = Date.now();
-        const res = await ask({ fen: curFen(), red: !humanRed(), level: g.level });
+        const res = await ask(engineMsg(!humanRed(), { level: g.level }));
         await new Promise((ok) => setTimeout(ok, Math.max(0, 450 - (Date.now() - t0))));
         if (g.over || !res.move) return;
         apply(res.move);
@@ -128,34 +185,19 @@ function setup(root) {
         statusEl.className = 'tag ' + (kind === 'ok' ? 'tag--done' : kind === 'err' ? 'tag--level-nang-cao' : '');
     }
 
-    function renderMoves() {
-        const notes = g.notes || [];
-        let h = '';
-        for (let i = 0; i < notes.length; i += 2) {
-            h += `<div class="flex gap-2 py-1.5 border-b border-line text-[14px]"><span class="w-7 text-ink-faint font-bold">${i / 2 + 1}.</span>
-                <span class="flex-1"><span class="side-dot do"></span>${escapeHtml(notes[i])}</span>
-                <span class="flex-1">${notes[i + 1] ? '<span class="side-dot den"></span>' + escapeHtml(notes[i + 1]) : ''}</span></div>`;
-        }
-        listEl.innerHTML = h || '<p class="text-ink-faint text-[14px] m-0">Chưa có nước nào.</p>';
-        listEl.scrollTop = listEl.scrollHeight;
-    }
-
     function persist() { save(KEY, g); }
 
     // ---- Nút điều khiển ----
     $('[data-bot-undo]').addEventListener('click', () => {
         if (g.over || turnRed() !== humanRed() || g.moves.length < 2) return;
-        const keep = g.moves.slice(0, -2), notes = (g.notes || []).slice(0, -2);
-        let b = loadFen(START_FEN);
-        keep.forEach((m) => { const [f, t] = fromIccs(m); b[t] = b[f]; b[f] = null; });
-        g.moves = keep; g.notes = notes; g.fen = toFen(b); g.undos++;
-        board.set(g.fen, keep[keep.length - 1] || null, { noAnim: true, silent: true });
-        renderMoves(); persist(); next();
+        g.moves = g.moves.slice(0, -2);
+        g.undos++;
+        refresh(false); persist(); next();
     });
     $('[data-bot-hint]').addEventListener('click', async () => {
         if (g.over || turnRed() !== humanRed()) return;
         status('Đang tìm gợi ý…', null);
-        const res = await ask({ fen: curFen(), red: humanRed(), analyse: true });
+        const res = await ask(engineMsg(humanRed(), { analyse: true }));
         if (res.move && turnRed() === humanRed()) { g.hints++; board.showArrow(res.move, '#d99a1e'); status('Gợi ý: mũi tên vàng', 'ok'); persist(); }
     });
     $('[data-bot-flip]').addEventListener('click', () => board.flip());
@@ -175,13 +217,14 @@ function setup(root) {
         board.lock(true);
         const outcome = r.winner === null ? 'draw' : (r.winner === g.human ? 'win' : 'loss');
         status(outcome === 'win' ? 'Bạn thắng!' : outcome === 'loss' ? 'Máy thắng' : 'Hoà', outcome === 'win' ? 'ok' : 'err');
-        track('game_finish', { mode: 'bot', level: g.level, result: outcome });
+        track('game_finish', { mode: 'bot', level: g.level, result: outcome, variant: g.variant });
         let res = null;
         if (window.__xq?.auth) {
             res = await postJson('/choi-voi-may/ket-qua', {
-                level: g.level, result: outcome, plies: g.moves.length, hints: g.hints, undos: g.undos, ms: Date.now() - g.t0,
+                level: g.level, result: outcome, plies: g.moves.length, hints: g.hints, undos: g.undos, ms: Date.now() - g.t0, variant: g.variant,
             }).catch(() => null);
         }
+        const kind = coup() ? 'cờ úp' : 'cờ tướng';
         const title = outcome === 'win' ? 'Bạn đã thắng!' : outcome === 'loss' ? 'Máy thắng ván này' : 'Ván cờ hoà';
         const glyph = outcome === 'win' ? 'trophy' : outcome === 'loss' ? 'shield' : 'repeat';
         const xp = res?.gamification?.xp || 0;
@@ -189,7 +232,7 @@ function setup(root) {
         const dlg = openSheet(`<div class="celebrate">
             <div class="celebrate__burst">${icon(glyph)}</div>
             <h2>${title}</h2>
-            <p class="muted">Cấp ${escapeHtml(LEVELS[g.level].name)} · ${Math.ceil(g.moves.length / 2)} nước · ${escapeHtml(r.reason)}</p>
+            <p class="muted">${escapeHtml(kind)} · cấp ${escapeHtml(LEVELS[g.level].name)} · ${Math.ceil(g.moves.length / 2)} nước · ${escapeHtml(r.reason)}</p>
             ${xp ? `<div class="celebrate__xp">${icon('star')} +${xp} XP</div>` : ''}
             ${!window.__xq?.auth && outcome === 'win' ? '<p class="text-[13.5px] text-ink-soft">Đăng nhập để nhận XP khi thắng máy.</p>' : ''}
             <div class="celebrate__actions mt-3">
@@ -200,10 +243,11 @@ function setup(root) {
         if (outcome === 'win') confetti(dlg.querySelector('.celebrate'));
         dlg.querySelectorAll('[data-again]').forEach((b) => b.addEventListener('click', () => {
             dlg.close();
-            start({ level: +b.dataset.again, human: g.human, fen: START_FEN, moves: [], hints: 0, undos: 0, over: null, t0: Date.now() });
+            start(fresh(+b.dataset.again, g.human, g.variant));
         }));
         dlg.querySelector('[data-share]').addEventListener('click', () => {
-            import('./share').then((m) => m.share(`♟ Tôi vừa ${outcome === 'win' ? 'thắng' : outcome === 'loss' ? 'thua' : 'hoà'} máy cấp ${LEVELS[g.level].name} sau ${Math.ceil(g.moves.length / 2)} nước trên Học Cờ Tướng!`, location.origin + '/choi-voi-may'));
+            const verb = outcome === 'win' ? 'thắng' : outcome === 'loss' ? 'thua' : 'hoà';
+            import('./share').then((m) => m.share(`♟ Tôi vừa ${verb} máy ván ${kind} cấp ${LEVELS[g.level].name} sau ${Math.ceil(g.moves.length / 2)} nước trên Học Cờ Tướng!`, location.origin + '/choi-voi-may' + (coup() ? '?bien-the=co-up' : '')));
         });
         if (res?.gamification) handleGamification(res.gamification, { silent: true });
     }

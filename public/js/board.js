@@ -870,7 +870,7 @@
   /* ======================================================================
      Bàn cờ VÁN ĐẤU tự do (chơi với máy / đấu bạn). Bàn chỉ lo hiển thị + nhận nước đi hợp lệ
      của người chơi; luật thắng/thua, lượt đi, đồng hồ do nơi gọi quản lý.
-     cfg: { fen, red:boolean (người chơi cầm Đỏ), onMove(iccs) }
+     cfg: { fen, red:boolean (người chơi cầm Đỏ), coup:boolean (cờ úp), onMove(iccs) }
      API: set(fen, lastIccs, {arrows}) · lock(bool) · setFlip(bool) · flip() · fen()
      ====================================================================== */
   function mountGame(el, cfg) {
@@ -882,7 +882,7 @@
       opts = opts || {};
       var lm = st.last ? iccsToSquares(st.last) : null;
       var check = -1;
-      [true, false].forEach(function (red) { if (Rules.inCheck(st.board, red)) check = Rules.findKing(st.board, red); });
+      [true, false].forEach(function (red) { if (Rules.inCheck(st.board, red, !!cfg.coup)) check = Rules.findKing(st.board, red); });
       holder.innerHTML = renderBoard(Rules.toFen(st.board), lm, st.arrows, st.selected, st.flip, { dots: st.dots, check: check, hint: st.hint, hide: opts.hide });
       if (!opts.noAnim) playAnim(holder);
       holder.classList.toggle('is-interactive', !st.locked);
@@ -890,12 +890,12 @@
     function isOwn(sq) { var p = st.board[sq]; return !!p && Rules.isRed(p) === cfg.red; }
     function select(sq) {
       st.selected = sq; st.dots = [];
-      if (sq >= 0) for (var t = 0; t < 90; t++) if (Rules.legalNoSelfCheck(st.board, sq, t)) st.dots.push(t);
+      if (sq >= 0) for (var t = 0; t < 90; t++) if (Rules.legalNoSelfCheck(st.board, sq, t, false, !!cfg.coup)) st.dots.push(t);
       draw({ noAnim: true });
     }
     function attempt(from, to) {
       if (st.locked) return;
-      var ok = Rules.legalNoSelfCheck(st.board, from, to);
+      var ok = Rules.legalNoSelfCheck(st.board, from, to, false, !!cfg.coup);
       st.selected = -1; st.dots = [];
       if (!ok) { draw({ noAnim: true }); return; }
       var iccs = Rules.toIccs(from) + Rules.toIccs(to);

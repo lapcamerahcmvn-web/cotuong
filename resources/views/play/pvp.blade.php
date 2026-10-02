@@ -9,10 +9,11 @@
     $you = $game->sideOf($u);
     $canAccept = $game->status === 'waiting' && $u && ! $you;
 @endphp
-<div data-pvp data-code="{{ $game->code }}" data-needs-board>
+<div data-pvp data-code="{{ $game->code }}" data-variant="{{ $game->variant }}" data-needs-board>
     <script type="application/json" data-pvp-state>@json($state, JSON_UNESCAPED_UNICODE)</script>
 
-    <nav class="crumbs" aria-label="breadcrumb"><a href="{{ route('pvp.lobby') }}">Thách đấu</a><x-icon name="chev-right" /><span>Ván #{{ $game->code }}</span></nav>
+    <nav class="crumbs" aria-label="breadcrumb"><a href="{{ route('pvp.lobby') }}">Thách đấu</a><x-icon name="chev-right" /><span>Ván #{{ $game->code }}</span>
+        @if($game->isCoup())<span class="variant-badge ml-2">Cờ úp</span>@endif</nav>
 
     @if($game->status === 'waiting')
         <div class="card card--pad card--hero mb-4" data-pvp-waiting>
@@ -23,7 +24,7 @@
                         <p class="text-ink-soft text-[14.5px] mt-1 mb-0">Ván bắt đầu ngay khi bạn ấy bấm "Nhận lời". Trang này tự cập nhật.</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <button type="button" class="btn btn--primary" data-share-text="♟ Thách đấu cờ tướng với mình nhé! Mã phòng {{ $game->code }}" data-share-url="{{ route('pvp.show', $game->code) }}"><x-icon name="share" /> Gửi lời mời</button>
+                        <button type="button" class="btn btn--primary" data-share-text="♟ Thách đấu {{ mb_strtolower(\App\Models\Game::VARIANTS[$game->variant]) }} với mình nhé! Mã phòng {{ $game->code }}" data-share-url="{{ route('pvp.show', $game->code) }}"><x-icon name="share" /> Gửi lời mời</button>
                         <form method="POST" action="{{ route('pvp.resign', $game->code) }}" data-pvp-cancel>@csrf<button class="btn btn--ghost" type="submit">Huỷ phòng</button></form>
                     </div>
                 </div>
@@ -32,7 +33,7 @@
                 <div class="flex flex-wrap items-center gap-4 justify-between">
                     <div>
                         <div class="font-display font-extrabold text-xl">{{ ($game->red ?? $game->black)?->name }} thách đấu bạn!</div>
-                        <p class="text-ink-soft text-[14.5px] mt-1 mb-0">Bạn cầm quân {{ $game->red_user_id ? 'Đen' : 'Đỏ' }} · {{ \App\Models\Game::TIME_CONTROLS[$game->time_control] }}</p>
+                        <p class="text-ink-soft text-[14.5px] mt-1 mb-0">{{ \App\Models\Game::VARIANTS[$game->variant] }} · bạn cầm quân {{ $game->red_user_id ? 'Đen' : 'Đỏ' }} · {{ \App\Models\Game::TIME_CONTROLS[$game->time_control] }}</p>
                     </div>
                     <form method="POST" action="{{ route('pvp.accept', $game->code) }}">@csrf<button class="btn btn--primary btn--lg" type="submit"><x-icon name="sword" /> Nhận lời</button></form>
                 </div>
@@ -55,6 +56,7 @@
         <div class="grid gap-3 content-start">
             <div class="card card--pad" data-pvp-status>Đang tải…</div>
             <div class="card card--pad" data-pvp-draw hidden></div>
+            <div class="card card--pad !py-3" data-pvp-captured></div>
             <div class="card overflow-hidden">
                 <div class="side-head"><span>Biên bản ván cờ</span><span class="muted" data-pvp-count></span></div>
                 <div class="px-4 py-2 max-h-[40vh] overflow-y-auto" data-pvp-moves></div>

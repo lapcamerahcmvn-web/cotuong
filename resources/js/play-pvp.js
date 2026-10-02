@@ -1,8 +1,10 @@
 // Phòng đấu bạn bè: polling trạng thái (1,5s; 4s khi tab ẩn), đồng hồ đếm cục bộ, gửi nước đi.
 import { loadBoard, postJson, getJson, track, icon, escapeHtml, toast } from './core';
 import { openSheet, confetti } from './gamification';
+import { buildNotes, renderNotes, renderCaptured } from './notation';
 
 const START = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+const COUP_START = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
 
 export function init() {
     const root = document.querySelector('[data-pvp]');
@@ -18,9 +20,10 @@ function run(root) {
     const R = window.XiangqiRules;
 
     const youRed = () => s.you !== 'den';
+    const coup = s.variant === 'co-up';
     const el = $('[data-pvp-board]');
     el.innerHTML = '<div class="board-holder" data-xq-holder></div>';
-    const board = window.XiangqiBoard.mountGame(el, { fen: s.fen, red: youRed(), onMove: send });
+    const board = window.XiangqiBoard.mountGame(el, { fen: s.fen, red: youRed(), coup, onMove: send });
     board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
     render(true);
     poll();
@@ -91,7 +94,7 @@ function run(root) {
         else if (s.status === 'finished') status(endText(), s.result === 'hoa' ? null : (s.result === s.you ? 'ok' : 'err'));
         else if (!s.you) status(`Đang xem · tới lượt ${s.turn === 'do' ? 'Đỏ' : 'Đen'}`, null);
         else {
-            const check = R.inCheck(R.loadFen(s.fen), s.turn === 'do');
+            const check = R.inCheck(R.loadFen(s.fen), s.turn === 'do', coup);
             status(myTurn ? (check ? 'Bạn đang bị chiếu!' : 'Tới lượt bạn') : 'Chờ đối thủ đi…', myTurn ? (check ? 'err' : 'ok') : null);
         }
         renderDraw();
@@ -127,23 +130,12 @@ function run(root) {
     }
 
     function renderMoves() {
-        const b = R.loadFen(START);
-        const notes = s.moves.map((m) => {
-            const f = R.fromIccs(m);
-            const n = R.notation(b, f.from, f.to);
-            b[f.to] = b[f.from]; b[f.from] = null;
-            return n;
-        });
-        let h = '';
-        for (let i = 0; i < notes.length; i += 2) {
-            h += `<div class="flex gap-2 py-1.5 border-b border-line text-[14px]"><span class="w-7 text-ink-faint font-bold">${i / 2 + 1}.</span>
-                <span class="flex-1"><span class="side-dot do"></span>${escapeHtml(notes[i])}</span>
-                <span class="flex-1">${notes[i + 1] ? '<span class="side-dot den"></span>' + escapeHtml(notes[i + 1]) : ''}</span></div>`;
-        }
-        const list = $('[data-pvp-moves]');
-        list.innerHTML = h || '<p class="text-ink-faint text-[14px] m-0">Chưa có nước nào.</p>';
-        list.scrollTop = list.scrollHeight;
+        const notes = buildNotes(coup ? COUP_START : START, s.moves, s.reveals || []);
+        renderNotes($('[data-pvp-moves]'), notes);
         $('[data-pvp-count]').textContent = notes.length ? Math.ceil(notes.length / 2) + ' nước' : '';
+        const fen = s.fen.split(' ')[0];
+        renderCaptured($('[data-pvp-captured]'), (s.captured || []).slice(),
+            coup ? { red: (fen.match(/X/g) || []).length, black: (fen.match(/x/g) || []).length } : null);
     }
 
     function tickClocks() {

@@ -1,8 +1,16 @@
-// Engine cờ tướng gọn nhẹ (chạy trong Web Worker): sinh nước hợp lệ, đánh giá thế cờ,
+// Engine cờ tướng + CỜ ÚP (chạy trong Web Worker): sinh nước hợp lệ, đánh giá thế cờ,
 // tìm kiếm negamax alpha-beta + quiescence + iterative deepening + killer moves.
 // Bàn = mảng 90 ô, index = hàng*9 + cột, hàng 0 = trên (Đen), chữ HOA = Đỏ (giống FEN / board.js).
+//
+// Cờ úp: quân úp ghi 'X' (Đỏ) / 'x' (Đen) trên bàn CÔNG KHAI. Trạng thái nội bộ `st = {b, h, coup}`:
+//   b[i] = quân (danh tính thật nếu biết, hoặc 'X'/'x' nếu chưa biết), h[i] = 1 nếu đang úp.
+//   Quân úp đi theo binh chủng của ô xuất phát (ROLE), lật lộ mặt ngay khi đi. Sau khi lật,
+//   Sĩ/Tượng không bị giới hạn cung/sông. Hết nước mà không bị chiếu = HOÀ (cờ tướng: thua).
+// Máy KHÔNG nhìn quân úp: thinkCoup() thử nhiều cách xếp ngẫu nhiên các quân chưa lộ (determinization).
 
 export const START_FEN = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
+export const COUP_FEN = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
+export const COUP_SET = ['A', 'A', 'B', 'B', 'N', 'N', 'R', 'R', 'C', 'C', 'P', 'P', 'P', 'P', 'P'];
 const MATE = 100000;
 
 export function loadFen(fen) {
@@ -33,12 +41,31 @@ export function toFen(b) {
 }
 
 export const isRed = (p) => p === p.toUpperCase();
+export const isHiddenChar = (p) => p === 'X' || p === 'x';
 export const toIccs = (from, to) => String.fromCharCode(97 + (from % 9)) + (9 - ((from / 9) | 0)) + String.fromCharCode(97 + (to % 9)) + (9 - ((to / 9) | 0));
 export function fromIccs(s) {
     const i = (a, d) => (9 - (d.charCodeAt(0) - 48)) * 9 + (a.charCodeAt(0) - 97);
     return [i(s[0], s[1]), i(s[2], s[3])];
 }
 
+/** Binh chủng theo ô xuất phát (quân úp luôn đứng trên ô xuất phát của nó). */
+const BACK = ['R', 'N', 'B', 'A', 'K', 'A', 'B', 'N', 'R'];
+export const ROLE = new Array(90).fill(null).map((_, i) => {
+    const r = (i / 9) | 0, c = i % 9;
+    if (r === 0 || r === 9) return BACK[c];
+    if ((r === 2 || r === 7) && (c === 1 || c === 7)) return 'C';
+    if ((r === 3 || r === 6) && c % 2 === 0) return 'P';
+    return null;
+});
+
+/** Bàn công khai → trạng thái nội bộ (quân 'X'/'x' = úp chưa rõ danh tính). */
+export function stateFrom(board, coup = false) {
+    const b = board.slice();
+    const h = b.map((p) => (p && isHiddenChar(p) ? 1 : 0));
+    return { b, h, coup: coup || h.some(Boolean) };
+}
+
+const typeAt = (st, i) => (st.h[i] ? ROLE[i] : st.b[i].toUpperCase());
 const inPalace = (r, c, red) => c >= 3 && c <= 5 && (red ? r >= 7 && r <= 9 : r >= 0 && r <= 2);
 const ON = (r, c) => r >= 0 && r < 10 && c >= 0 && c < 9;
 const ORTH = [[-1, 0], [1, 0], [0, -1], [0, 1]];
@@ -46,8 +73,8 @@ const DIAG = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
 const KNIGHT = [[-2, -1, -1, 0], [-2, 1, -1, 0], [2, -1, 1, 0], [2, 1, 1, 0], [-1, -2, 0, -1], [1, -2, 0, -1], [-1, 2, 0, 1], [1, 2, 0, 1]];
 
 /** Nước giả hợp lệ (chưa lọc tự chiếu). Trả mảng [from, to]. */
-function pseudoMoves(b, red, capturesOnly = false) {
-    const out = [];
+function pseudoMoves(st, red, capturesOnly = false) {
+    const b = st.b, out = [];
     const push = (f, t) => {
         const q = b[t];
         if (q && isRed(q) === red) return;
@@ -57,15 +84,19 @@ function pseudoMoves(b, red, capturesOnly = false) {
     for (let i = 0; i < 90; i++) {
         const p = b[i];
         if (!p || isRed(p) !== red) continue;
-        const r = (i / 9) | 0, c = i % 9, t = p.toUpperCase();
+        const r = (i / 9) | 0, c = i % 9, t = typeAt(st, i);
+        const free = st.coup && !st.h[i];          // Sĩ/Tượng đã lật trong cờ úp: không giới hạn cung/sông
         if (t === 'K') {
             for (const [dr, dc] of ORTH) { const nr = r + dr, nc = c + dc; if (inPalace(nr, nc, red)) push(i, nr * 9 + nc); }
         } else if (t === 'A') {
-            for (const [dr, dc] of DIAG) { const nr = r + dr, nc = c + dc; if (inPalace(nr, nc, red)) push(i, nr * 9 + nc); }
+            for (const [dr, dc] of DIAG) {
+                const nr = r + dr, nc = c + dc;
+                if (free ? ON(nr, nc) : inPalace(nr, nc, red)) push(i, nr * 9 + nc);
+            }
         } else if (t === 'B') {
             for (const [dr, dc] of DIAG) {
                 const nr = r + 2 * dr, nc = c + 2 * dc;
-                if (!ON(nr, nc) || (red ? nr < 5 : nr > 4) || b[(r + dr) * 9 + c + dc]) continue;
+                if (!ON(nr, nc) || (!free && (red ? nr < 5 : nr > 4)) || b[(r + dr) * 9 + c + dc]) continue;
                 push(i, nr * 9 + nc);
             }
         } else if (t === 'N') {
@@ -109,22 +140,24 @@ function findKing(b, red) {
 }
 
 /** Ô `sq` có bị bên `byRed` tấn công không (kể cả lộ mặt tướng). */
-function attacked(b, sq, byRed) {
+function attacked(st, sq, byRed) {
+    const b = st.b;
     const r = (sq / 9) | 0, c = sq % 9;
+    const own = (i) => b[i] && isRed(b[i]) === byRed;
     for (const [dr, dc] of ORTH) {
         let nr = r + dr, nc = c + dc, screen = false;
         while (ON(nr, nc)) {
-            const q = b[nr * 9 + nc];
-            if (q) {
+            const i = nr * 9 + nc;
+            if (b[i]) {
                 if (!screen) {
-                    if (isRed(q) === byRed) {
-                        const t = q.toUpperCase();
+                    if (own(i)) {
+                        const t = typeAt(st, i);
                         if (t === 'R') return true;
                         if (t === 'K' && dc === 0) return true;          // lộ mặt tướng
                     }
                     screen = true;
                 } else {
-                    if (isRed(q) === byRed && q.toUpperCase() === 'C') return true;
+                    if (own(i) && typeAt(st, i) === 'C') return true;
                     break;
                 }
             }
@@ -132,47 +165,72 @@ function attacked(b, sq, byRed) {
         }
     }
     // Tốt: Đỏ tiến lên (hàng giảm), Đen tiến xuống; đã qua sông thì ăn ngang được.
-    const pawn = byRed ? 'P' : 'p';
-    if (byRed ? (r + 1 <= 9 && b[(r + 1) * 9 + c] === pawn) : (r - 1 >= 0 && b[(r - 1) * 9 + c] === pawn)) return true;
+    const isPawn = (i) => own(i) && typeAt(st, i) === 'P';
+    if (byRed ? (r + 1 <= 9 && isPawn((r + 1) * 9 + c)) : (r - 1 >= 0 && isPawn((r - 1) * 9 + c))) return true;
     if (byRed ? r <= 4 : r >= 5) {
-        if (c > 0 && b[r * 9 + c - 1] === pawn) return true;
-        if (c < 8 && b[r * 9 + c + 1] === pawn) return true;
+        if (c > 0 && isPawn(r * 9 + c - 1)) return true;
+        if (c < 8 && isPawn(r * 9 + c + 1)) return true;
     }
     // Mã: mã ở (r+dr, c+dc) nhảy tới (r,c); chân mã nằm cạnh con mã theo trục dài.
     for (const [dr, dc] of [[-2, -1], [-2, 1], [2, -1], [2, 1], [-1, -2], [1, -2], [-1, 2], [1, 2]]) {
         const nr = r + dr, nc = c + dc;
         if (!ON(nr, nc)) continue;
-        const q = b[nr * 9 + nc];
-        if (!q || isRed(q) !== byRed || q.toUpperCase() !== 'N') continue;
+        const i = nr * 9 + nc;
+        if (!own(i) || typeAt(st, i) !== 'N') continue;
         const lr = Math.abs(dr) === 2 ? nr - Math.sign(dr) : nr, lc = Math.abs(dc) === 2 ? nc - Math.sign(dc) : nc;
         if (!b[lr * 9 + lc]) return true;
+    }
+    // Cờ úp: Sĩ/Tượng đã lật đi khắp bàn nên có thể chiếu Tướng.
+    if (st.coup) {
+        for (const [dr, dc] of DIAG) {
+            const a = r + dr, b2 = c + dc;
+            if (ON(a, b2) && own(a * 9 + b2) && !st.h[a * 9 + b2] && typeAt(st, a * 9 + b2) === 'A') return true;
+            const e = r + 2 * dr, f = c + 2 * dc;
+            if (ON(e, f) && own(e * 9 + f) && !st.h[e * 9 + f] && typeAt(st, e * 9 + f) === 'B' && !b[a * 9 + b2]) return true;
+        }
     }
     return false;
 }
 
-export function inCheck(b, red) {
-    const k = findKing(b, red);
-    return k < 0 ? true : attacked(b, k, !red);
+export function inCheckSt(st, red) {
+    const k = findKing(st.b, red);
+    return k < 0 ? true : attacked(st, k, !red);
 }
 
-export function legalMoves(b, red, capturesOnly = false) {
+/** Đi nước trên trạng thái; trả "undo" để hoàn lại. Quân úp đi → lật (h=0). */
+function make(st, m) {
+    const u = [st.b[m[1]], st.h[m[1]], st.h[m[0]]];
+    st.b[m[1]] = st.b[m[0]]; st.h[m[1]] = 0;
+    st.b[m[0]] = null; st.h[m[0]] = 0;
+    return u;
+}
+function unmake(st, m, u) {
+    st.b[m[0]] = st.b[m[1]]; st.h[m[0]] = u[2];
+    st.b[m[1]] = u[0]; st.h[m[1]] = u[1];
+}
+
+export function legalMovesSt(st, red, capturesOnly = false) {
     const out = [];
-    for (const m of pseudoMoves(b, red, capturesOnly)) {
-        const cap = b[m[1]];
-        b[m[1]] = b[m[0]]; b[m[0]] = null;
-        if (!inCheck(b, red)) out.push(m);
-        b[m[0]] = b[m[1]]; b[m[1]] = cap;
+    for (const m of pseudoMoves(st, red, capturesOnly)) {
+        const u = make(st, m);
+        if (!inCheckSt(st, red)) out.push(m);
+        unmake(st, m, u);
     }
     return out;
 }
 
+// Tiện ích cho bàn cờ tướng thường (không úp) — giữ API cũ.
+export const legalMoves = (b, red, capturesOnly = false) => legalMovesSt(stateFrom(b), red, capturesOnly);
+export const inCheck = (b, red) => inCheckSt(stateFrom(b), red);
+
 /* ---------------- Đánh giá ---------------- */
 const VAL = { K: 0, A: 200, B: 200, N: 400, R: 900, C: 450, P: 100 };
+const HIDDEN_VAL = 330;   // giá trị kỳ vọng của 1 quân úp chưa rõ danh tính
 function pst(t, r, c, red) {
     const rr = red ? r : 9 - r;            // hàng tính từ phía mình: 9 = hàng cuối của mình
     const center = 4 - Math.abs(c - 4);
     switch (t) {
-        case 'P': return rr <= 4 ? 70 + (4 - rr) * 12 + (rr >= 1 ? center * 8 : -20) : (rr === 5 || rr === 6 ? 0 : 0);
+        case 'P': return rr <= 4 ? 70 + (4 - rr) * 12 + (rr >= 1 ? center * 8 : -20) : 0;
         case 'N': return center * 8 + (rr <= 6 ? 15 : 0) - (rr === 9 ? 15 : 0);
         case 'C': return (c === 4 ? 20 : 0) + (rr === 7 ? 5 : 0) + (rr <= 2 ? 10 : 0);
         case 'R': return (rr <= 6 ? 15 : 0) + (c === 3 || c === 5 ? 6 : 0);
@@ -181,48 +239,63 @@ function pst(t, r, c, red) {
     }
 }
 
-export function evaluate(b, red) {
+function evaluate(st, red) {
     let s = 0;
     for (let i = 0; i < 90; i++) {
-        const p = b[i];
+        const p = st.b[i];
         if (!p) continue;
-        const pr = isRed(p), t = p.toUpperCase();
-        const v = VAL[t] + pst(t, (i / 9) | 0, i % 9, pr);
+        const pr = isRed(p);
+        let v;
+        if (isHiddenChar(p)) v = HIDDEN_VAL;
+        else {
+            const t = p.toUpperCase();
+            v = VAL[t] + (st.h[i] ? 0 : pst(t, (i / 9) | 0, i % 9, pr));
+            if (st.coup && (t === 'A' || t === 'B') && !st.h[i]) v += 40;   // Sĩ/Tượng tự do trong cờ úp
+        }
         s += pr ? v : -v;
     }
     return red ? s : -s;
 }
 
 /* ---------------- Tìm kiếm ---------------- */
-const VICTIM = { K: 10000, R: 900, C: 450, N: 400, A: 200, B: 200, P: 100 };
-function order(b, moves, killers, best) {
+const VICTIM = { K: 10000, R: 900, C: 450, N: 400, A: 200, B: 200, P: 100, X: 330 };
+const vOf = (p) => VICTIM[p.toUpperCase()] || 300;
+function order(st, moves, killers, best) {
     return moves.map((m) => {
         let k = 0;
         if (best && m[0] === best[0] && m[1] === best[1]) k = 1e6;
-        else if (b[m[1]]) k = 1e4 + VICTIM[b[m[1]].toUpperCase()] * 10 - VICTIM[b[m[0]].toUpperCase()] / 10;
+        else if (st.b[m[1]]) k = 1e4 + vOf(st.b[m[1]]) * 10 - vOf(st.b[m[0]]) / 10;
         else if (killers && killers.some((x) => x && x[0] === m[0] && x[1] === m[1])) k = 5e3;
         return [k, m];
     }).sort((a, c) => c[0] - a[0]).map((x) => x[1]);
 }
 
-export function search(fen, red, opts = {}) {
-    const b = loadFen(fen);
+/**
+ * Tìm nước tốt nhất. `input` là FEN (cờ tướng) hoặc trạng thái `{b,h,coup}`.
+ * Trả { move, score, depth, nodes, scores } — scores = điểm từng nước gốc ở độ sâu xong cuối.
+ */
+export function search(input, red, opts = {}) {
+    const st = typeof input === 'string' ? stateFrom(loadFen(input)) : input;
     const maxDepth = opts.depth || 3;
     const deadline = Date.now() + (opts.timeMs || 1500);
     const noise = opts.noise || 0;
     let nodes = 0, stop = false;
     const killers = [];
 
+    function terminal(side, ply) {
+        // Cờ tướng: hết nước = thua. Cờ úp: hết nước mà không bị chiếu = hoà.
+        return st.coup && !inCheckSt(st, side) ? 0 : -MATE + ply;
+    }
+
     function quiesce(alpha, beta, side, qd) {
-        const stand = evaluate(b, side);
+        const stand = evaluate(st, side);
         if (stand >= beta) return beta;
         if (alpha < stand) alpha = stand;
         if (qd >= 6) return alpha;
-        for (const m of order(b, legalMoves(b, side, true))) {
-            const cap = b[m[1]];
-            b[m[1]] = b[m[0]]; b[m[0]] = null;
+        for (const m of order(st, legalMovesSt(st, side, true))) {
+            const u = make(st, m);
             const sc = -quiesce(-beta, -alpha, !side, qd + 1);
-            b[m[0]] = b[m[1]]; b[m[1]] = cap;
+            unmake(st, m, u);
             if (sc >= beta) return beta;
             if (sc > alpha) alpha = sc;
         }
@@ -232,15 +305,15 @@ export function search(fen, red, opts = {}) {
     function negamax(depth, alpha, beta, side, ply) {
         if ((++nodes & 1023) === 0 && Date.now() > deadline) stop = true;
         if (stop) return 0;
-        const moves = legalMoves(b, side);
-        if (!moves.length) return -MATE + ply;          // hết nước = thua (cờ tướng không có hoà do hết nước)
+        const moves = legalMovesSt(st, side);
+        if (!moves.length) return terminal(side, ply);
         if (depth <= 0) return quiesce(alpha, beta, side, 0);
         let best = -Infinity;
-        for (const m of order(b, moves, killers[ply])) {
-            const cap = b[m[1]];
-            b[m[1]] = b[m[0]]; b[m[0]] = null;
+        for (const m of order(st, moves, killers[ply])) {
+            const cap = st.b[m[1]];
+            const u = make(st, m);
             const sc = -negamax(depth - 1, -beta, -alpha, !side, ply + 1);
-            b[m[0]] = b[m[1]]; b[m[1]] = cap;
+            unmake(st, m, u);
             if (stop) return 0;
             if (sc > best) best = sc;
             if (sc > alpha) alpha = sc;
@@ -252,48 +325,104 @@ export function search(fen, red, opts = {}) {
         return best;
     }
 
-    const root = legalMoves(b, red);
-    if (!root.length) return { move: null, score: -MATE, depth: 0, nodes };
-    let bestMove = root[0], bestScore = -Infinity, reached = 0;
+    const root = legalMovesSt(st, red);
+    if (!root.length) return { move: null, score: terminal(red, 0), depth: 0, nodes, scores: {} };
+    let bestMove = root[0], bestScore = -Infinity, reached = 0, scores = {};
     for (let d = 1; d <= maxDepth; d++) {
         let alpha = -Infinity, curBest = null, curScore = -Infinity;
-        for (const m of order(b, root, killers[0], bestMove)) {
-            const cap = b[m[1]];
-            b[m[1]] = b[m[0]]; b[m[0]] = null;
+        const cur = {};
+        for (const m of order(st, root, killers[0], bestMove)) {
+            const u = make(st, m);
             let sc = -negamax(d - 1, -Infinity, -alpha, !red, 1);
-            b[m[0]] = b[m[1]]; b[m[1]] = cap;
+            unmake(st, m, u);
             if (stop) break;
             if (noise) sc += Math.round((Math.random() - 0.5) * noise);
+            cur[toIccs(m[0], m[1])] = sc;
             if (sc > curScore) { curScore = sc; curBest = m; }
             if (sc > alpha) alpha = sc;
         }
         if (stop && d > 1) break;
-        if (curBest) { bestMove = curBest; bestScore = curScore; reached = d; }
+        if (curBest) { bestMove = curBest; bestScore = curScore; reached = d; scores = cur; }
         if (Math.abs(bestScore) > MATE - 100) break;    // đã thấy chiếu hết
         if (Date.now() > deadline) break;
     }
-    return { move: toIccs(bestMove[0], bestMove[1]), score: bestScore, depth: reached, nodes };
+    return { move: toIccs(bestMove[0], bestMove[1]), score: bestScore, depth: reached, nodes, scores };
 }
 
-/** Cấp độ máy: độ sâu, thời gian, độ "nhiễu" (đi kém cố ý) và xác suất đi bừa. */
+/** Cấp độ máy: độ sâu, thời gian, độ "nhiễu" (đi kém cố ý), xác suất đi bừa, số mẫu xếp quân úp. */
 export const LEVELS = {
-    1: { name: 'Tập sự', depth: 1, timeMs: 300, noise: 260, random: 0.35 },
-    2: { name: 'Dễ', depth: 2, timeMs: 600, noise: 90, random: 0.08 },
-    3: { name: 'Vừa', depth: 3, timeMs: 1200, noise: 20, random: 0 },
-    4: { name: 'Khó', depth: 6, timeMs: 2500, noise: 0, random: 0 },
+    1: { name: 'Tập sự', depth: 1, timeMs: 300, noise: 260, random: 0.35, samples: 1 },
+    2: { name: 'Dễ', depth: 2, timeMs: 700, noise: 90, random: 0.08, samples: 2 },
+    3: { name: 'Vừa', depth: 3, timeMs: 1500, noise: 20, random: 0, samples: 3 },
+    4: { name: 'Khó', depth: 6, timeMs: 3000, noise: 0, random: 0, samples: 4 },
 };
+
+function randomMove(st, red) {
+    const ms = legalMovesSt(st, red);
+    if (!ms.length) return null;
+    const caps = ms.filter((m) => st.b[m[1]]);
+    const pool = caps.length && Math.random() < 0.5 ? caps : ms;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    return { move: toIccs(pick[0], pick[1]), score: 0, depth: 0, nodes: 0 };
+}
 
 export function think(fen, red, level) {
     const L = LEVELS[level] || LEVELS[2];
+    const st = stateFrom(loadFen(fen));
     if (L.random && Math.random() < L.random) {
-        const b = loadFen(fen);
-        const ms = legalMoves(b, red);
-        if (ms.length) {
-            const caps = ms.filter((m) => b[m[1]]);
-            const pool = caps.length && Math.random() < 0.5 ? caps : ms;
-            const pick = pool[Math.floor(Math.random() * pool.length)];
-            return { move: toIccs(pick[0], pick[1]), score: 0, depth: 0, nodes: 0 };
-        }
+        const r = randomMove(st, red);
+        if (r) return r;
     }
-    return search(fen, red, L);
+    return search(st, red, L);
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+}
+
+/**
+ * Cờ úp: `publicFen` có quân 'X'/'x' chưa rõ; `pools` = { red: ['R','C',...], black: [...] } là các
+ * binh chủng CHƯA LỘ của mỗi bên (máy chỉ biết bao nhiêu, không biết quân nào ở đâu).
+ * Thử nhiều cách xếp ngẫu nhiên, cộng điểm từng nước gốc, chọn nước tốt nhất trung bình.
+ */
+export function thinkCoup(publicFen, pools, red, level) {
+    const L = LEVELS[level] || LEVELS[2];
+    const pub = loadFen(publicFen);
+    const base = stateFrom(pub, true);
+    if (L.random && Math.random() < L.random) {
+        const r = randomMove(base, red);
+        if (r) return r;
+    }
+    const samples = Math.max(1, L.samples || 1);
+    const total = {}, count = {};
+    let nodes = 0, depth = 0;
+    for (let k = 0; k < samples; k++) {
+        const st = { b: pub.slice(), h: base.h.slice(), coup: true };
+        const pr = shuffle((pools.red || []).slice()), pb = shuffle((pools.black || []).slice());
+        for (let i = 0; i < 90; i++) {
+            if (st.b[i] === 'X') st.b[i] = pr.pop() || 'P';
+            else if (st.b[i] === 'x') st.b[i] = (pb.pop() || 'P').toLowerCase();
+        }
+        const res = search(st, red, { depth: L.depth, timeMs: Math.round(L.timeMs / samples), noise: L.noise });
+        nodes += res.nodes; depth = Math.max(depth, res.depth);
+        if (!res.move) return { move: null, score: res.score, depth: 0, nodes };
+        for (const [m, sc] of Object.entries(res.scores || {})) { total[m] = (total[m] || 0) + sc; count[m] = (count[m] || 0) + 1; }
+    }
+    let best = null, bestAvg = -Infinity;
+    for (const m of Object.keys(total)) {
+        const avg = total[m] / count[m] + (count[m] < samples ? -50 : 0);
+        if (avg > bestAvg) { bestAvg = avg; best = m; }
+    }
+    if (!best) { const r = randomMove(base, red); return r || { move: null, score: 0, depth: 0, nodes }; }
+    return { move: best, score: Math.round(bestAvg), depth, nodes };
+}
+
+/** Kết thúc ván (dùng chung bot / kiểm tra): null nếu chưa hết. */
+export function gameOver(board, redToMove, coup) {
+    const st = stateFrom(board, coup);
+    if (legalMovesSt(st, redToMove).length) return null;
+    const check = inCheckSt(st, redToMove);
+    if (!check && st.coup) return { winner: null, reason: 'hết nước đi (hoà theo luật cờ úp)' };
+    return { winner: redToMove ? 'den' : 'do', reason: check ? 'chiếu hết' : 'hết nước đi' };
 }

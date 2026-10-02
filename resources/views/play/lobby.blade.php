@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Thách Đấu Cờ Tướng Với Bạn Bè Qua Link — Học Cờ Tướng')
-@section('description', 'Tạo phòng cờ tướng, gửi link qua Zalo/Facebook để thách đấu bạn bè. Có đồng hồ 5–15 phút, đề nghị hoà, xin thua, luật kiểm tra tự động.')
+@section('title', 'Thách Đấu Cờ Tướng, Cờ Úp Với Bạn Bè Qua Link — Học Cờ Tướng')
+@section('description', 'Tạo phòng cờ tướng hoặc cờ úp, gửi link qua Zalo/Facebook để thách đấu bạn bè. Đồng hồ 5–15 phút, đề nghị hoà, luật kiểm tra tự động, quân úp được giữ bí mật.')
 
 @section('content')
 @php $u = auth()->user(); @endphp
@@ -16,6 +16,12 @@
         <form method="POST" action="{{ route('pvp.store') }}" class="card card--pad mt-5">
             @csrf
             <h2 class="text-lg font-extrabold mb-3">Tạo phòng mới</h2>
+            <div class="label mb-2">Biến thể</div>
+            <div class="choice-grid sm:grid-cols-2 mb-4" data-choice-group>
+                <input type="hidden" name="variant" value="{{ request('bien-the') === 'co-up' ? 'co-up' : 'co-tuong' }}">
+                <button type="button" class="choice {{ request('bien-the') === 'co-up' ? '' : 'is-on' }}" data-choice="co-tuong"><span class="choice__glyph">帥</span><span><b>Cờ tướng</b><small>Luật chuẩn</small></span></button>
+                <button type="button" class="choice {{ request('bien-the') === 'co-up' ? 'is-on' : '' }}" data-choice="co-up"><span class="choice__glyph" style="background:var(--xq-red);color:var(--xq-disc);box-shadow:none">?</span><span><b>Cờ úp</b><small>Quân úp, lật mặt khi đi</small></span></button>
+            </div>
             <div class="label mb-2">Bạn cầm quân</div>
             <div class="choice-grid sm:grid-cols-3 mb-4" data-choice-group>
                 <input type="hidden" name="side" value="do">
@@ -71,7 +77,7 @@
                     <a href="{{ route('pvp.show', $g->code) }}" class="flex items-center gap-3 px-4 py-3 border-b border-line text-ink hover:bg-surface-2 hover:no-underline">
                         <span class="side-dot {{ $side }}"></span>
                         <span class="flex-1 min-w-0"><span class="block font-bold truncate">{{ $opp?->name ?? 'Chưa có đối thủ' }}</span>
-                            <span class="block text-[12.5px] text-ink-faint">#{{ $g->code }} · {{ \App\Models\Game::TIME_CONTROLS[$g->time_control] ?? '' }} · {{ $g->updated_at->locale('vi')->diffForHumans() }}</span></span>
+                            <span class="block text-[12.5px] text-ink-faint">#{{ $g->code }} · {{ \App\Models\Game::VARIANTS[$g->variant] ?? '' }} · {{ \App\Models\Game::TIME_CONTROLS[$g->time_control] ?? '' }} · {{ $g->updated_at->locale('vi')->diffForHumans() }}</span></span>
                         <span class="tag {{ $label === 'Tới lượt bạn' || $label === 'Thắng' ? 'tag--done' : '' }}">{{ $label }}</span>
                     </a>
                 @endforeach

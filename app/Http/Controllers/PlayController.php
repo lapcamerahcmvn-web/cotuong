@@ -27,6 +27,7 @@ class PlayController extends Controller
             'hints' => ['nullable', 'integer', 'min:0'],
             'undos' => ['nullable', 'integer', 'min:0'],
             'ms' => ['nullable', 'integer', 'min:0'],
+            'variant' => ['nullable', 'in:co-tuong,co-up'],
         ]);
         $u = Auth::user();
         // Ván thắng hợp lệ cần ít nhất vài nước và thời gian chơi tối thiểu (chặn gửi tay).
@@ -44,7 +45,10 @@ class PlayController extends Controller
         }
 
         return response()->json([
-            'gamification' => $gami->record($u, 'bot_win', ['key' => 'bot:L' . $data['level'] . ':' . $today . ':' . ($n + 1), 'amount' => $amount]),
+            'gamification' => $gami->record($u, 'bot_win', [
+                'key' => 'bot:L' . $data['level'] . ':' . ($data['variant'] ?? 'co-tuong') . ':' . $today . ':' . ($n + 1),
+                'amount' => $amount,
+            ]),
         ]);
     }
 }

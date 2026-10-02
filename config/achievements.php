@@ -31,6 +31,8 @@ return [
     'bot-2'          => ['name' => 'Thắng máy', 'desc' => 'Thắng máy từ cấp Dễ trở lên', 'icon' => 'shield', 'type' => 'bot', 'value' => 2],
     'bot-3'          => ['name' => 'Vượt mặt máy', 'desc' => 'Thắng máy cấp Vừa', 'icon' => 'shield', 'type' => 'bot', 'value' => 3],
     'bot-4'          => ['name' => 'Hạ máy cấp Khó', 'desc' => 'Thắng máy cấp Khó', 'icon' => 'trophy', 'type' => 'bot', 'value' => 4],
+    'coup-bot'       => ['name' => 'Bậc thầy lật quân', 'desc' => 'Thắng máy ván cờ úp', 'icon' => 'layers', 'type' => 'coup_bot', 'value' => 1],
+    'coup-pvp'       => ['name' => 'Úp mà thắng', 'desc' => 'Thắng bạn bè ván cờ úp', 'icon' => 'layers', 'type' => 'coup_pvp', 'value' => 1],
     'pvp-1'          => ['name' => 'Chiến thắng đầu tay', 'desc' => 'Thắng ván đấu bạn đầu tiên', 'icon' => 'sword', 'type' => 'pvp', 'value' => 1],
     'pvp-10'         => ['name' => 'Kỳ thủ giao lưu', 'desc' => 'Chơi 10 ván đấu bạn', 'icon' => 'user', 'type' => 'pvp_games', 'value' => 10],
     'phase-nhap-mon'   => ['name' => 'Tốt nghiệp Nhập môn', 'desc' => 'Hoàn thành toàn bộ Nhập môn', 'icon' => 'graduation', 'type' => 'phase', 'value' => 'nhap-mon'],

@@ -90,3 +90,23 @@ nút "Đề nghị hoà" (429), khách luyện tập nhiều có thể bị ch�
 - Điều hướng: header thêm menu **Chơi**; thanh dưới mobile: Trang chủ · Học · Luyện · Chơi · Tôi (Xếp hạng chuyển vào
   menu tài khoản + trang chủ).
 - Test: `tests/Feature/PlayTest.php` (6 test: lượt/luật, hoà + XP, lặp 3 lần, xin thua/hết giờ, XP thắng máy, render).
+
+## Đợt 3 (02/10/2026) — Cờ úp cho Chơi với máy + Thách đấu bạn bè
+
+Luật theo bài "Luật chơi cờ úp" của site: 2 Tướng ngửa; 15 quân/bên úp & tráo trên ô xuất phát của bên mình;
+quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; **Sĩ/Tượng đã lật không bị giới hạn cung/sông**
+(và vì thế có thể chiếu Tướng); chiếu bí = thắng; **hết nước mà không bị chiếu = HOÀ** (cờ tướng: thua);
+ăn quân úp → quân bị ăn lộ mặt (vào khay quân bị ăn).
+
+- **Engine** `resources/js/engine/engine.js`: trạng thái `{b, h, coup}`, ROLE theo ô; `thinkCoup()` dùng
+  *determinization*: máy chỉ nhận **túi quân chưa lộ** của mỗi bên (không biết quân nào ở đâu), thử 1–4 cách xếp
+  ngẫu nhiên, cộng điểm từng nước gốc. Perft cờ tướng vẫn 44/1920/79666 (đã kiểm sau refactor).
+- **Luật dùng chung**: `public/js/xiangqi-rules.js` thêm tham số `coup` (legalMove/inCheck/legalNoSelfCheck —
+  mặc định false, admin không đổi); `App\Support\Xiangqi\Rules` thêm `role()` + tham số `$coup`.
+- **Chơi với máy**: `?bien-the=co-up`; ván lưu `layout` (danh tính quân úp) trong localStorage, mọi trạng thái
+  công khai dựng lại bằng `replay()` từ danh sách nước (đi lại chính xác, quân lật lại úp khi lùi).
+- **Đấu bạn**: cột `games.variant|secret|reveals|captured` (migration 2026_10_02_100002). `secret` nằm trong
+  `$hidden` của model và KHÔNG có trong `state()` — client chỉ thấy X/x. Test `CoupTest` kiểm việc này.
+- Biên bản: `resources/js/notation.js` — nước quân úp ghi theo binh chủng ô + "(lật Mã)"; khay quân bị ăn có
+  chênh lệch vật chất và số quân còn úp.
+- Lối vào: menu Chơi (2 mục cờ úp), trang `/co-up` (2 thẻ), footer. Huy hiệu `coup-bot`, `coup-pvp`.

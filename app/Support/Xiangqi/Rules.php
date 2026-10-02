@@ -5,7 +5,10 @@ namespace App\Support\Xiangqi;
 /**
  * Luật cờ tướng tối thiểu (bản PHP của public/js/xiangqi-rules.js) — dùng để thẩm định lời giải
  * thế cờ phía server và khi dựng kho thế cờ. Bàn = mảng 90 ô, index = rank*9+file, rank 0 = trên
- * (bên Đen), giá trị là 1 ký tự quân (chữ HOA = Đỏ) hoặc null. Không hỗ trợ quân úp (cờ úp).
+ * (bên Đen), giá trị là 1 ký tự quân (chữ HOA = Đỏ) hoặc null.
+ *
+ * Cờ úp ($coup = true): 'X'/'x' = quân úp, đi theo binh chủng của ô xuất phát (role()); Sĩ/Tượng đã
+ * lật không bị giới hạn cung/sông. Hết nước đi mà không bị chiếu = hoà (xử lý ở GameService).
  */
 final class Rules
 {
@@ -78,7 +81,19 @@ final class Rules
         return $sq($from) . $sq($to);
     }
 
-    public static function legalMove(array $b, int $from, int $to): bool
+    /** Binh chủng theo ô xuất phát — quân úp luôn đứng ở ô xuất phát của nó. */
+    public static function role(int $i): ?string
+    {
+        $r = intdiv($i, 9);
+        $c = $i % 9;
+        if ($r === 0 || $r === 9) return ['R', 'N', 'B', 'A', 'K', 'A', 'B', 'N', 'R'][$c];
+        if (($r === 2 || $r === 7) && ($c === 1 || $c === 7)) return 'C';
+        if (($r === 3 || $r === 6) && $c % 2 === 0) return 'P';
+
+        return null;
+    }
+
+    public static function legalMove(array $b, int $from, int $to, bool $coup = false): bool
     {
         $p = $b[$from] ?? null;
         if ($p === null || $from === $to || $to < 0 || $to > 89) {
@@ -89,7 +104,10 @@ final class Rules
             return false;
         }
         $red = self::isRed($p);
-        $t = strtoupper($p);
+        $hidden = $p === 'X' || $p === 'x';
+        $t = $hidden ? self::role($from) : strtoupper($p);
+        if ($t === null) return false;
+        $free = $coup && ! $hidden;      // Sĩ/Tượng đã lật trong cờ úp
         $fr = intdiv($from, 9); $fc = $from % 9; $tr = intdiv($to, 9); $tc = $to % 9;
         $dr = $tr - $fr; $dc = $tc - $fc; $adr = abs($dr); $adc = abs($dc);
 
@@ -133,9 +151,11 @@ final class Rules
                 if ($adr !== 2 || $adc !== 2) return false;
                 if ($b[($fr + intdiv($dr, 2)) * 9 + ($fc + intdiv($dc, 2))] !== null) return false;
 
-                return $red ? $tr >= 5 : $tr <= 4;
+                return $free || ($red ? $tr >= 5 : $tr <= 4);
             case 'A':
-                if ($adr !== 1 || $adc !== 1 || $tc < 3 || $tc > 5) return false;
+                if ($adr !== 1 || $adc !== 1) return false;
+                if ($free) return true;
+                if ($tc < 3 || $tc > 5) return false;
 
                 return $red ? $tr >= 7 : $tr <= 2;
             case 'K':
@@ -166,13 +186,13 @@ final class Rules
         return -1;
     }
 
-    public static function inCheck(array $b, bool $red): bool
+    public static function inCheck(array $b, bool $red, bool $coup = false): bool
     {
         $ki = self::findKing($b, $red);
         if ($ki < 0) return false;
         foreach ($b as $i => $p) {
             if ($p === null || self::isRed($p) === $red) continue;
-            if (self::legalMove($b, $i, $ki)) return true;
+            if (self::legalMove($b, $i, $ki, $coup)) return true;
         }
 
         return false;
@@ -186,19 +206,23 @@ final class Rules
         return $b;
     }
 
-    public static function legalNoSelfCheck(array $b, int $from, int $to): bool
+    public static function legalNoSelfCheck(array $b, int $from, int $to, bool $coup = false): bool
     {
-        if (! self::legalMove($b, $from, $to)) return false;
+        if (! self::legalMove($b, $from, $to, $coup)) return false;
+        $red = self::isRed($b[$from]);
+        $nb = self::apply($b, $from, $to);
+        // Quân úp vừa đi đã lật — thay bằng ký tự trung tính để không bị hiểu nhầm binh chủng theo ô mới.
+        if ($nb[$to] === 'X' || $nb[$to] === 'x') $nb[$to] = $red ? 'Z' : 'z';
 
-        return ! self::inCheck(self::apply($b, $from, $to), self::isRed($b[$from]));
+        return ! self::inCheck($nb, $red, $coup);
     }
 
-    public static function hasLegalMove(array $b, bool $red): bool
+    public static function hasLegalMove(array $b, bool $red, bool $coup = false): bool
     {
         foreach ($b as $from => $p) {
             if ($p === null || self::isRed($p) !== $red) continue;
             for ($to = 0; $to < 90; $to++) {
-                if (self::legalNoSelfCheck($b, $from, $to)) return true;
+                if (self::legalNoSelfCheck($b, $from, $to, $coup)) return true;
             }
         }
 

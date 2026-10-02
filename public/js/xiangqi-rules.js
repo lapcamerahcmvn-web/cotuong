@@ -45,29 +45,31 @@
     return true;
   }
 
-  function legalMove(b, from, to, up) {
+  // coup=true (cờ úp): Sĩ/Tượng đã lật không bị giới hạn cung/sông.
+  function legalMove(b, from, to, up, coup) {
     var p = b[from]; if (!p || from === to) return false;
     var tgt = b[to]; if (tgt && sameSide(tgt, p)) return false;
     var red = isRed(p), type, isUp = up || (p === 'X' || p === 'x');
     if (isUp) { var role = posRole(from); if (!role) return true; type = role; }
     else type = p.toUpperCase();
-    return moveByType(type, red, b, from, to, isUp);
+    var free = isUp || (coup && (type === 'A' || type === 'B'));
+    return moveByType(type, red, b, from, to, free);
   }
 
   function findKing(b, red) { var kc = red ? 'K' : 'k'; for (var i = 0; i < 90; i++) if (b[i] === kc) return i; return -1; }
 
   // Tướng bên `red` có đang bị chiếu không (kể cả luật đối mặt tướng — legalMove của Tướng đã lo).
-  function inCheck(b, red) {
+  function inCheck(b, red, coup) {
     var ki = findKing(b, red); if (ki < 0) return false;
-    for (var i = 0; i < 90; i++) { var p = b[i]; if (!p || isRed(p) === red) continue; if (legalMove(b, i, ki)) return true; }
+    for (var i = 0; i < 90; i++) { var p = b[i]; if (!p || isRed(p) === red) continue; if (legalMove(b, i, ki, false, coup)) return true; }
     return false;
   }
 
   // Nước hợp lệ VÀ không để hở Tướng mình (lọc tự chiếu — legalMove thuần không lọc).
-  function legalNoSelfCheck(b, from, to, up) {
-    if (!legalMove(b, from, to, up)) return false;
+  function legalNoSelfCheck(b, from, to, up, coup) {
+    if (!legalMove(b, from, to, up, coup)) return false;
     var nb = b.slice(); nb[to] = nb[from]; nb[from] = null;
-    return !inCheck(nb, isRed(b[from]));
+    return !inCheck(nb, isRed(b[from]), coup);
   }
 
   function loadFen(fen) {

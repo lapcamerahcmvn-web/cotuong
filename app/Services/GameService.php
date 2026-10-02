@@ -17,16 +17,21 @@ class GameService
 
     public function __construct(private GamificationService $gami) {}
 
-    public function create(User $u, string $side, int $time): Game
+    public function create(User $u, string $side, int $time, string $variant = 'co-tuong'): Game
     {
         $side = $side === 'random' ? (random_int(0, 1) ? 'do' : 'den') : $side;
+        $coup = $variant === 'co-up';
 
         return Game::create([
             'code' => Game::newCode(),
+            'variant' => $coup ? 'co-up' : 'co-tuong',
             'creator_id' => $u->id,
             'red_user_id' => $side === 'do' ? $u->id : null,
             'black_user_id' => $side === 'den' ? $u->id : null,
-            'fen' => Game::START_FEN,
+            'fen' => $coup ? Game::COUP_FEN : Game::START_FEN,
+            'secret' => $coup ? $this->shuffleSecret() : null,
+            'reveals' => [],
+            'captured' => [],
             'moves' => [],
             'time_control' => $time,
             'red_ms' => $time * 1000,
@@ -61,12 +66,32 @@ class GameService
             $side = $g->sideOf($u);
             if (! $side || $side !== $g->turn()) return ['ok' => false, 'error' => 'Chưa tới lượt bạn.', 'game' => $g];
 
+            $coup = $g->isCoup();
             $sq = Rules::iccs($iccs);
             $b = Rules::loadFen($g->fen);
-            if (! $sq || $b[$sq[0]] === null || Rules::isRed($b[$sq[0]]) !== ($side === 'do') || ! Rules::legalNoSelfCheck($b, $sq[0], $sq[1])) {
+            if (! $sq || $b[$sq[0]] === null || Rules::isRed($b[$sq[0]]) !== ($side === 'do') || ! Rules::legalNoSelfCheck($b, $sq[0], $sq[1], $coup)) {
                 return ['ok' => false, 'error' => 'Nước đi không hợp lệ.', 'game' => $g];
             }
-            $b = Rules::apply($b, $sq[0], $sq[1]);
+            [$from, $to] = $sq;
+            $secret = $g->secret ?? [];
+            $mover = $b[$from];
+            $revealed = null;
+            if ($mover === 'X' || $mover === 'x') {          // lật quân úp
+                $mover = $revealed = $secret[$from];
+                unset($secret[$from]);
+            }
+            $victim = $b[$to];
+            if ($victim === 'X' || $victim === 'x') {        // ăn quân úp → lộ mặt
+                $victim = $secret[$to];
+                unset($secret[$to]);
+            }
+            $b[$to] = $mover;
+            $b[$from] = null;
+            if ($coup) {
+                $g->secret = $secret;
+                $g->reveals = array_merge($g->reveals ?? [], [$revealed]);
+                if ($victim) $g->captured = array_merge($g->captured ?? [], [$victim]);
+            }
 
             if ($g->time_control) {
                 $used = (int) $g->turn_started_at->diffInMilliseconds(now(), true);
@@ -82,9 +107,15 @@ class GameService
             $g->version++;
 
             $opp = $side === 'do' ? 'den' : 'do';
-            if (! Rules::hasLegalMove($b, $opp === 'do')) {
-                $this->finish($g, $side, Rules::inCheck($b, $opp === 'do') ? 'chiếu hết' : 'hết nước đi');
-            } elseif ($this->repeated($moves)) {
+            if (! Rules::hasLegalMove($b, $opp === 'do', $coup)) {
+                $mated = Rules::inCheck($b, $opp === 'do', $coup);
+                // Cờ úp: hết nước mà không bị chiếu → hoà (cờ tướng: thua).
+                if ($mated || ! $coup) {
+                    $this->finish($g, $side, $mated ? 'chiếu hết' : 'hết nước đi');
+                } else {
+                    $this->finish($g, 'hoa', 'hết nước đi (hoà theo luật cờ úp)');
+                }
+            } elseif ($this->repeated($g)) {
                 $this->finish($g, 'hoa', 'lặp lại thế cờ 3 lần');
             } elseif (count($moves) >= self::MAX_PLIES) {
                 $this->finish($g, 'hoa', 'quá ' . (self::MAX_PLIES / 2) . ' nước');
@@ -167,18 +198,37 @@ class GameService
         });
     }
 
-    private function repeated(array $moves): bool
+    /** Lặp thế 3 lần (bàn công khai; quân vừa lật thay 'X' bằng mặt thật theo `reveals`). */
+    private function repeated(Game $g): bool
     {
-        $b = Rules::loadFen(Game::START_FEN);
+        $b = Rules::loadFen($g->isCoup() ? Game::COUP_FEN : Game::START_FEN);
         $seen = [Rules::toFen($b) . 'r' => 1];
-        foreach ($moves as $i => $m) {
+        $rev = $g->reveals ?? [];
+        foreach ($g->moves ?? [] as $i => $m) {
             $sq = Rules::iccs($m);
             $b = Rules::apply($b, $sq[0], $sq[1]);
+            if (! empty($rev[$i])) $b[$sq[1]] = $rev[$i];
             $k = Rules::toFen($b) . ($i % 2 ? 'r' : 'b');
             if (($seen[$k] = ($seen[$k] ?? 0) + 1) >= 3) return true;
         }
 
         return false;
+    }
+
+    /** Tráo 15 quân mỗi bên lên 15 ô xuất phát (trừ Tướng). Khoá = chỉ số ô 0..89. */
+    private function shuffleSecret(): array
+    {
+        $secret = [];
+        $board = Rules::loadFen(Game::COUP_FEN);
+        foreach ([true, false] as $red) {
+            $set = Game::COUP_SET;
+            shuffle($set);
+            foreach ($board as $i => $p) {
+                if ($p === ($red ? 'X' : 'x')) $secret[$i] = $red ? array_pop($set) : strtolower(array_pop($set));
+            }
+        }
+
+        return $secret;
     }
 
     /** $result: do | den | hoa. Ghi kết quả + XP (sau commit). Không tự save. */
@@ -202,7 +252,8 @@ class GameService
                 if ($n >= (int) config('gamification.caps.pvp_games_daily')) continue;
                 [$reason, $amount] = $result === 'hoa' ? ['pvp_draw', config('gamification.xp.pvp_draw')]
                     : ($result === $side ? ['pvp_win', config('gamification.xp.pvp_win')] : ['pvp_play', 5]);
-                $this->gami->record($u, $reason, ['key' => 'pvp:' . $gid, 'amount' => (int) $amount]);
+                $key = 'pvp:' . ($g->variant === 'co-up' ? 'co-up:' : '') . $gid;
+                $this->gami->record($u, $reason, ['key' => $key, 'amount' => (int) $amount]);
             }
         });
     }

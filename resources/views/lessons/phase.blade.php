@@ -91,6 +91,21 @@
     </div>
 </section>
 
+@if($phase === 'co-up')
+<section class="section pb-0">
+    <div class="grid gap-3 sm:grid-cols-2">
+        <a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}" class="card mode-card card--hero">
+            <span class="mode-card__icon tone-primary"><x-icon name="shield" /></span>
+            <span><h3>Chơi cờ úp với máy</h3><p>4 cấp độ, máy không nhìn trộm quân úp. Có gợi ý, đi lại, lưu ván dở.</p></span>
+        </a>
+        <a href="{{ route('pvp.lobby', ['bien-the' => 'co-up']) }}" class="card mode-card">
+            <span class="mode-card__icon tone-gold"><x-icon name="sword" /></span>
+            <span><h3>Thách đấu cờ úp với bạn</h3><p>Tạo phòng, gửi link Zalo — quân úp được server giữ bí mật, không ai soi được.</p></span>
+        </a>
+    </div>
+</section>
+@endif
+
 @if($seriesList->where('published_lessons_count', '>', 0)->isNotEmpty())
 <section class="section pb-0">
     <div class="section-head"><div><h2>Chương trình</h2><p>Học theo chuỗi bài có thứ tự — dễ theo dõi tiến độ.</p></div></div>

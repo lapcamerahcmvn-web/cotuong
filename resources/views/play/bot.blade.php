@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Chơi Cờ Tướng Với Máy Online Miễn Phí — 4 Cấp Độ | Học Cờ Tướng')
-@section('description', 'Chơi cờ tướng với máy online miễn phí, không cần cài đặt: 4 cấp độ từ Tập sự đến Khó, có gợi ý nước đi, đi lại, lưu ván đang chơi. Thắng máy để nhận XP.')
+@section('title', 'Chơi Cờ Tướng, Cờ Úp Với Máy Online Miễn Phí | Học Cờ Tướng')
+@section('description', 'Chơi cờ tướng và cờ úp với máy online miễn phí, không cần cài đặt: 4 cấp độ từ Tập sự đến Khó, có gợi ý, đi lại, lưu ván đang chơi. Thắng máy để nhận XP.')
 
 @push('head')
 @php
@@ -8,26 +8,43 @@
         ['Chơi cờ tướng với máy có mất phí không?', 'Hoàn toàn miễn phí và không cần cài đặt. Máy chạy ngay trên trình duyệt của bạn, kể cả trên điện thoại.'],
         ['Máy chơi mạnh cỡ nào?', 'Có 4 cấp: Tập sự (thỉnh thoảng đi bừa, hợp người mới), Dễ, Vừa và Khó (tính trước nhiều nước). Thắng cấp thấp rồi hãy thử cấp cao hơn.'],
         ['Có được đi lại hoặc xin gợi ý không?', 'Có. Nút "Đi lại" lùi lại nước vừa đi, nút "Gợi ý" chỉ nước máy cho là tốt nhất. Dùng trợ giúp thì ván thắng chỉ được nửa XP.'],
-        ['Khi nào ván cờ hoà?', 'Khi cùng một thế cờ lặp lại 3 lần, hoặc ván kéo dài quá 150 nước mỗi bên. Hết nước đi hợp lệ là thua, đúng luật cờ tướng.'],
+        ['Khi nào ván cờ hoà?', 'Khi cùng một thế cờ lặp lại 3 lần, hoặc ván kéo dài quá 150 nước mỗi bên. Cờ tướng: hết nước đi hợp lệ là thua. Cờ úp: hết nước mà không bị chiếu là hoà.'],
+        ['Có chơi cờ úp với máy được không?', 'Có. Chọn biến thể "Cờ úp": 30 quân được úp và tráo ngẫu nhiên, lật mặt khi đi. Máy cũng không biết quân úp là gì — nó chỉ biết mỗi bên còn những quân nào chưa lộ, giống hệt bạn.'],
     ];
 @endphp
 {!! \App\Support\Seo::ld(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => collect($faqs)->map(fn ($f) => ['@type' => 'Question', 'name' => $f[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f[1]]])->all()]) !!}
 @endpush
 
 @section('content')
-<div data-bot data-needs-board>
+<div data-bot data-needs-board data-default-variant="{{ request('bien-the') === 'co-up' ? 'co-up' : 'co-tuong' }}">
     <section data-bot-setup>
         <div class="grid gap-6 lg:grid-cols-[1fr_420px] items-start">
             <div>
                 <div class="eyebrow"><x-icon name="sword" /> Chơi</div>
-                <h1 class="page-title mt-1">Chơi cờ tướng với máy</h1>
-                <p class="page-lede">Luyện thực chiến với máy ngay trên trình duyệt — không cần cài đặt. Chọn cấp độ, chọn bên và bắt đầu.</p>
+                <h1 class="page-title mt-1">Chơi cờ tướng & cờ úp với máy</h1>
+                <p class="page-lede">Luyện thực chiến với máy ngay trên trình duyệt — không cần cài đặt. Chọn biến thể, cấp độ, bên và bắt đầu.</p>
 
                 <div class="card card--pad mt-5" data-bot-resume hidden>
                     <div class="flex items-center justify-between gap-3 flex-wrap">
-                        <span><span class="font-bold block">Bạn có ván đang chơi dở</span><span class="text-[13.5px] text-ink-soft">Tiếp tục đúng thế cờ lần trước.</span></span>
+                        <span><span class="font-bold block" data-resume-label>Bạn có ván đang chơi dở</span><span class="text-[13.5px] text-ink-soft">Tiếp tục đúng thế cờ lần trước.</span></span>
                         <button type="button" class="btn btn--primary"><x-icon name="play" /> Chơi tiếp</button>
                     </div>
+                </div>
+
+                <h2 class="text-lg font-extrabold mt-6 mb-3">Biến thể</h2>
+                <div class="grid gap-2 sm:grid-cols-2">
+                    <button type="button" class="choice" data-pick-variant="co-tuong"><span class="choice__glyph">帥</span><span><b>Cờ tướng</b><small>Luật cờ tướng chuẩn</small></span></button>
+                    <button type="button" class="choice" data-pick-variant="co-up"><span class="choice__glyph" style="background:var(--xq-red);color:var(--xq-disc);box-shadow:none">?</span><span><b>Cờ úp</b><small>Quân úp, lật mặt khi đi — mỗi ván một khác</small></span></button>
+                </div>
+                <div class="card card--pad mt-4 text-[14px]" data-coup-only>
+                    <div class="font-bold mb-1 flex items-center gap-2"><span class="variant-badge">Cờ úp</span> Luật nhanh</div>
+                    <ul class="list-disc pl-5 m-0 text-ink-soft grid gap-1">
+                        <li>Hai Tướng để ngửa; 15 quân còn lại mỗi bên úp và tráo ngẫu nhiên trên ô xuất phát.</li>
+                        <li>Quân úp đi theo binh chủng của ô đang đứng, lật lộ mặt ngay nước đầu.</li>
+                        <li>Sĩ, Tượng đã lật được ra khỏi cung và qua sông.</li>
+                        <li>Chiếu bí thắng; hết nước mà không bị chiếu là hoà.</li>
+                    </ul>
+                    <p class="text-[12.5px] text-ink-faint mt-2 mb-0">Máy không nhìn trộm quân úp — nó chỉ biết mỗi bên còn những quân gì chưa lộ.</p>
                 </div>
 
                 <h2 class="text-lg font-extrabold mt-6 mb-3">Cấp độ</h2>
@@ -76,7 +93,7 @@
             <div class="min-w-0">
                 <div class="board-card card">
                     <div class="board-bar">
-                        <span class="step-pill">Máy · cấp <b class="ml-1" data-bot-level></b></span>
+                        <span class="flex items-center gap-2 min-w-0"><span class="variant-badge" data-bot-variant hidden>Cờ úp</span><span class="step-pill">Máy · cấp <b class="ml-1" data-bot-level></b></span></span>
                         <span class="tag" data-bot-status>Đang tải…</span>
                     </div>
                     <div class="board-stage" data-bot-board></div>
@@ -88,9 +105,10 @@
                 </div>
             </div>
             <div class="grid gap-3 content-start">
+                <div class="card card--pad !py-3" data-bot-captured></div>
                 <div class="card overflow-hidden">
                     <div class="side-head"><span>Biên bản ván cờ</span></div>
-                    <div class="px-4 py-2 max-h-[46vh] overflow-y-auto" data-bot-moves></div>
+                    <div class="px-4 py-2 max-h-[40vh] overflow-y-auto" data-bot-moves></div>
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <button type="button" class="btn btn--ghost btn--danger" data-bot-resign><x-icon name="x-circle" /> Xin thua</button>

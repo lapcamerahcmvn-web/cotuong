@@ -141,6 +141,9 @@
                     <div class="dropdown__panel" data-dropdown-panel>
                         <a href="{{ route('play.bot') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="shield" /></span><span>Chơi với máy<small>4 cấp độ, có gợi ý nước đi</small></span></a>
                         <a href="{{ route('pvp.lobby') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="sword" /></span><span>Thách đấu bạn bè<small>Gửi link, chơi theo lượt có đồng hồ</small></span></a>
+                        <div class="dropdown__sep"></div>
+                        <a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}" class="dropdown__item"><span class="dropdown__glyph">卒</span><span>Cờ úp với máy<small>Quân úp tráo ngẫu nhiên, lật khi đi</small></span></a>
+                        <a href="{{ route('pvp.lobby', ['bien-the' => 'co-up']) }}" class="dropdown__item"><span class="dropdown__glyph">卒</span><span>Thách đấu cờ úp<small>Quân úp được giữ bí mật trên server</small></span></a>
                     </div>
                 </div>
                 <a href="{{ route('posts.index') }}" class="main-nav__link {{ request()->routeIs('posts.*') ? 'is-active' : '' }}"><x-icon name="news" /> Tin tức</a>
@@ -237,6 +240,7 @@
                     <ul>
                         <li><a href="{{ route('play.bot') }}">Chơi cờ tướng với máy</a></li>
                         <li><a href="{{ route('pvp.lobby') }}">Thách đấu bạn bè</a></li>
+                        <li><a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}">Chơi cờ úp với máy</a></li>
                     </ul>
                 </div>
                 <div>

@@ -28,12 +28,13 @@ class GameController extends Controller
         $data = $request->validate([
             'side' => ['required', 'in:do,den,random'],
             'time' => ['required', 'in:' . implode(',', array_keys(Game::TIME_CONTROLS))],
+            'variant' => ['nullable', 'in:' . implode(',', array_keys(Game::VARIANTS))],
         ]);
         $active = Game::where('creator_id', Auth::id())->where('status', 'waiting')->count();
         if ($active >= 5) {
             return back()->withErrors(['side' => 'Bạn đang có 5 phòng chờ — huỷ bớt hoặc chờ bạn vào trước.']);
         }
-        $g = $this->games->create(Auth::user(), $data['side'], (int) $data['time']);
+        $g = $this->games->create(Auth::user(), $data['side'], (int) $data['time'], $data['variant'] ?? 'co-tuong');
 
         return redirect()->route('pvp.show', $g->code);
     }

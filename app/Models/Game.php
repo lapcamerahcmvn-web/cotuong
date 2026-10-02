@@ -11,14 +11,30 @@ class Game extends Model
 {
     public const START_FEN = 'rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR';
 
+    /** Cờ úp: 30 quân úp (X Đỏ / x Đen) trên ô xuất phát, hai Tướng ngửa. */
+    public const COUP_FEN = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
+
+    public const COUP_SET = ['A', 'A', 'B', 'B', 'N', 'N', 'R', 'R', 'C', 'C', 'P', 'P', 'P', 'P', 'P'];
+
+    public const VARIANTS = ['co-tuong' => 'Cờ tướng', 'co-up' => 'Cờ úp'];
+
     public const TIME_CONTROLS = [0 => 'Không giới hạn', 300 => '5 phút', 600 => '10 phút', 900 => '15 phút'];
 
     protected $fillable = [
-        'code', 'creator_id', 'red_user_id', 'black_user_id', 'status', 'fen', 'moves', 'time_control',
+        'code', 'variant', 'creator_id', 'red_user_id', 'black_user_id', 'status', 'fen', 'moves', 'time_control',
         'red_ms', 'black_ms', 'turn_started_at', 'result', 'reason', 'draw_offer', 'version',
+        'secret', 'reveals', 'captured',
     ];
 
-    protected $casts = ['moves' => 'array', 'turn_started_at' => 'datetime'];
+    // `secret` (danh tính quân úp) KHÔNG được đưa vào state()/JSON — chỉ GameService đọc.
+    protected $hidden = ['secret'];
+
+    protected $casts = ['moves' => 'array', 'secret' => 'array', 'reveals' => 'array', 'captured' => 'array', 'turn_started_at' => 'datetime'];
+
+    public function isCoup(): bool
+    {
+        return $this->variant === 'co-up';
+    }
 
     public static function newCode(): string
     {
@@ -71,9 +87,12 @@ class Game extends Model
     {
         return [
             'code' => $this->code,
+            'variant' => $this->variant,
             'status' => $this->status,
             'fen' => $this->fen,
             'moves' => $this->moves ?? [],
+            'reveals' => $this->reveals ?? [],
+            'captured' => $this->captured ?? [],
             'turn' => $this->turn(),
             'you' => $this->sideOf($viewer),
             'red' => $this->red ? ['name' => $this->red->name, 'level' => $this->red->level, 'avatar' => $this->red->avatar] : null,
