@@ -243,8 +243,32 @@ function cmdDrafts(args) {
   }
 }
 
+// node tcbd.cjs repair <drafts.json> <id> <ply>  — sách in sai 1 nước? Thử MỌI nước hợp lệ của đúng bên
+// ở ply đó, giữ lại những nước khiến TOÀN BỘ phần còn lại của mạch chính đi được. Chỉ gợi ý — người
+// viết phải đối chiếu với lời bình của sách (chiếu, ăn quân...) trước khi chấp nhận.
+function cmdRepair(args) {
+  const list = JSON.parse(fs.readFileSync(args[0], 'utf8'));
+  const d = list.find(x => String(x.id) === args[1]); const ply = +args[2];
+  let fen = d.fen || cachedFen(d.diagram).fen; fen = applyFix(fen, d.fix);
+  let b = G.loadFen(fen);
+  const redAt = (p) => ((p % 2 === 1) ? d.first === 'do' : d.first !== 'do');
+  for (let i = 0; i < ply - 1; i++) { const r = play(b, d.main[i], redAt(i + 1)); if (r.err) { console.log('lỗi trước ply', i + 1, r.err); return; } b = r.board; }
+  const red = redAt(ply); let found = 0;
+  for (let f = 0; f < 90; f++) {
+    if (!b[f] || isRedCh(b[f]) !== red) continue;
+    for (let t = 0; t < 90; t++) {
+      if (!G.legalNoSelfCheck(b, f, t)) continue;
+      let nb = b.slice(); const w = G.notation(b, f, t); nb[t] = nb[f]; nb[f] = null; let ok = true;
+      for (let i = ply; i < d.main.length; i++) { const r = play(nb, d.main[i], redAt(i + 1)); if (r.err) { ok = false; break; } nb = r.board; }
+      if (ok) { found++; console.log(`  ✓ ply ${ply}: ${w}  (sách ghi "${d.main[ply - 1]}")`); }
+    }
+  }
+  if (!found) console.log('  không nước nào làm phần còn lại hợp lệ');
+}
+
 const [cmd, ...rest] = process.argv.slice(2);
 if (cmd === 'check') cmdCheck(rest);
+else if (cmd === 'repair') cmdRepair(rest);
 else if (cmd === 'drafts') cmdDrafts(rest);
 else if (cmd === 'build') cmdBuild(rest);
 else console.log('Dùng: node tcbd.cjs check <diagram|FEN> <do|den> [nước...] | build <batch.json>...');

@@ -1,0 +1,833 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+  "slug": "trung-cuoc-bao-dien-tap-1",
+  "game_mode": "co-tuong",
+  "phase": "trung-cuoc",
+  "description": "Chuyên đề Trung Cuộc Bảo Điển phần lý luận: trung cuộc là gì, cách thẩm cục (đánh giá thế cờ), tư tưởng và mục tiêu chiến lược, các chiến thuật trung cuộc, chiến pháp theo từng loại trận, thiết kế chiến dịch... Mỗi luận điểm minh họa bằng ván thực chiến trên bàn cờ tương tác, lời giảng viết lại dễ hiểu.",
+  "planned_total": null,
+  "sort_order": 21
+ },
+ "lessons": [
+  {
+   "order": 1010,
+   "slug": "trung-cuoc-bao-dien-t1-trung-cuoc-la-gi",
+   "title": "Chương 1 · Trung Cuộc Là Gì — Cao Trào Của Ván Cờ",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c1-hvh",
+   "summary": "Khai cuộc là nền móng, trung cuộc là mấu chốt, tàn cuộc thể hiện công phu. Bài mở đầu giải thích vai trò của trung cuộc qua một nước 'song hiến' kinh điển của Hồ Vinh Hoa.",
+   "seo_title": "Trung Cuộc Cờ Tướng Là Gì? Vai Trò Và Ví Dụ Hồ Vinh Hoa",
+   "seo_description": "Trung cuộc cờ tướng là gì, vì sao quyết định thắng thua: khai cuộc là cơ sở, trung cuộc là mấu chốt. Ví dụ Hồ Vinh Hoa lui Xe song hiến, bàn cờ tương tác.",
+   "content": "<h2>Ba giai đoạn của một ván cờ</h2><p>Mỗi ván cờ trải qua khai cuộc, trung cuộc và tàn cuộc. Có thể tóm gọn: <strong>khai cuộc là cơ sở, trung cuộc là mấu chốt, tàn cuộc thể hiện công phu</strong>. Ở khai cuộc, quân hai bên còn đủ, mỗi bên tự bày trận. Khi các quân mạnh bắt đầu tiếp xúc, va chạm nhau, ván cờ bước vào trung cuộc — giai đoạn quân còn đông, đường biến phức tạp nhất.</p><h2>Vì sao trung cuộc khó?</h2><p>Trung cuộc có lúc là những trận công sát dữ dội, có lúc là giằng co âm thầm \"cài răng lược\". Có khi đang thua trông thấy, một nước xảo diệu lại hóa nguy thành an; có khi đang khải hoàn, một nước bất cẩn lại dẫn đến thất bại. Vì vậy trung cuộc là bài kiểm tra toàn diện: thẩm cục (đánh giá thế cờ), tính toán, phán đoán, hiểu thế trận — tất cả đều bộc lộ ở đây. Đây cũng là nơi phong cách và bản lĩnh của từng kỳ thủ thể hiện rõ nhất.</p><h2>Ví dụ: một nước lui Xe thay đổi cả ván</h2><p>Hồ Vinh Hoa vô địch toàn quốc lần đầu năm 15 tuổi, sau đó lập kỷ lục mười lần vô địch. Thế cờ bài này trích từ ván ông gặp Lý Lai Quần. Đen đang nhòm Mã Đỏ. Cách đi thông thường là Mã ăn Pháo rồi đổi quân — Đỏ bắt được Tốt qua hà nhưng ván cờ giản hóa, dễ hòa (biến trên bàn cờ).</p><p>Hồ Vinh Hoa lại đi <strong>Xe 4 thoái 4</strong>: lui Xe vừa chặn đường Mã phải của Đen, vừa để Xe đứng ngay miệng Pháo — một nước \"song hiến\" (hai lần dâng quân). Đen ăn Xe, nhưng Xe kia của Đỏ xuống chiếu, Mã ăn Pháo chiếu, rồi Mã ăn lại Xe Đen. Tiếp đó Đỏ dồn ép liên tục, Xe ăn Tượng chiếu, ăn Tốt, chiếm ưu thế rõ rệt.</p><h2>Bài học</h2><ul><li>Chiến thuật <strong>bỏ trước lấy sau</strong> (tiên phế hậu đoạt): phế quân để đổi lấy thế công, rồi đoạt lại quân.</li><li>Trình độ trung cuộc không đến trong một sớm một chiều — phải luyện công phu cơ bản, phương thức tư duy và nghiên cứu nhiều thế cờ thực chiến.</li></ul>",
+   "captions": {
+    "1": "Lui Xe — vừa cản đường Mã phải của Đen, vừa dâng Xe vào miệng Pháo: 'song hiến mỹ tửu'.",
+    "2": "Pháo Đen ăn Xe.",
+    "3": "Xe kia xuống đáy chiếu Tướng.",
+    "5": "Mã ăn Pháo chiếu.",
+    "7": "Mã ăn lại Xe — bỏ trước lấy sau.",
+    "19": "Xe bình trung lộ chiếu.",
+    "27": "Xe ăn Tượng chiếu.",
+    "29": "Xe lùi ăn Tốt.",
+    "31": "Đỏ nhiều quân, chiếm ưu thế rõ rệt."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cách đi thông thường: Mã ăn Pháo...",
+     "5": "...bắt được Tốt qua hà nhưng ván cờ giản hóa, dễ dẫn đến hòa."
+    }
+   },
+   "fen": "4kabr1/4aR3/r3b1c2/p3N3p/4C1pn1/1cp6/P3P3P/6N2/9/1RBAKAB2"
+  },
+  {
+   "order": 1020,
+   "slug": "trung-cuoc-bao-dien-t1-lich-su-va-dinh-nghia-trung-cuoc",
+   "title": "Chương 1 · Lịch Sử Nghiên Cứu Và Định Nghĩa Trung Cuộc",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c1-dn1",
+   "summary": "Từ bài thơ cờ cổ 'đoạt quân được tiên thì đoạt quân' đến các kỳ phổ Minh – Thanh và sách hiện đại: trung cuộc được nghiên cứu ra sao, và định nghĩa trung cuộc là 'quá độ giữa khai cuộc và tàn cuộc'.",
+   "seo_title": "Lịch Sử Nghiên Cứu Trung Cuộc Cờ Tướng Và Định Nghĩa",
+   "seo_description": "Lịch sử nghiên cứu trung cuộc cờ tướng từ cổ phổ đến hiện đại, định nghĩa trung cuộc và các loại trận hình thành trung cuộc: cấp tiến, nhu trận, phản đạn, chậm công.",
+   "content": "<h2>Từ cổ phổ đến hiện đại</h2><p>Kỳ phổ sớm nhất còn lưu lại có từ năm 1325, kèm một bài thơ tóm tắt tư tưởng chiến đấu của người xưa, đại ý: <em>đoạt quân mà được tiên thì nên đoạt; đoạt quân mà mất thế ắt thua cờ; Xe trước Mã sau phải hô ứng; tiến lên trận tiền phải có Xe theo</em>. Bài thơ ngắn nhưng đã chạm đến cốt lõi của trung cuộc: quan hệ giữa quân, tiên và thế.</p><p>Thời Minh – Thanh, cờ tướng phát triển mạnh, xuất hiện nhiều kỳ phổ nổi tiếng. Người ta hay nói \"Minh Pháo, Thanh Mã\": một bộ phổ đời Minh chuyên về các thế Pháo, một bộ đời Thanh chuyên về Bình phong Mã. Các cổ phổ thường trộn lẫn bố cục, trung cuộc và tàn cuộc, có khi phế quân công sát dứt khoát, có khi giản hóa thành tàn cuộc thực dụng — dù đôi chỗ \"chiều ý đối phương\" cho đẹp, chúng vẫn rèn luyện tư duy và sức sáng tạo rất tốt.</p><p>Thế kỷ 20, cờ tướng trở thành môn thi đấu chính thức, các tạp chí và sách chuyên về trung cuộc ra đời ngày càng nhiều. Tuy vậy phần lớn vẫn là ván thực chiến, thiếu tính hệ thống và lý luận — đó là khoảng trống mà chuyên đề này hướng tới.</p><h2>Trung cuộc là gì?</h2><p>Có một câu tổng kết chiến lược tàn cuộc rất nổi tiếng: <em>ưu thì mưu thắng, kém thì mưu hòa, cân bằng thì giữ không thua và chờ thời cơ</em>. Tinh thần đó xuyên suốt cả ván cờ. Khi vị trí các quân đã định hình, khai cuộc kết thúc; khi trung cuộc kết thúc thì tàn cuộc bắt đầu. Vì vậy <strong>trung cuộc là giai đoạn quá độ giữa khai cuộc và tàn cuộc</strong> — vừa phát huy ưu thế khai cuộc, vừa mở đường cho tàn cuộc.</p><h2>Trung cuộc hình thành từ những loại trận nào?</h2><ul><li><strong>Cấp tiến trận</strong> — như thế cờ trên bàn (Trung Pháo hoành Xe bàn đầu Mã đối Bình phong Mã cấp tiến, ván Lưu Văn Triết – Trần Bá Tường 1962): va chạm sớm, quyết liệt.</li><li><strong>Nhu trận</strong> — như Đối binh cục chuyển Đơn đề Mã đối Bình phong Mã: mềm dẻo, giằng co.</li><li><strong>Phản đạn trận</strong> — Sĩ giác Pháo, Tả Pháo phong Xe chuyển Liệt Pháo, Thuận Pháo, Phản cung Mã...</li><li><strong>Chậm công trận</strong> — Trung Pháo tuần hà Pháo, Trung Pháo hoành Xe thất lộ Mã, Ngũ lục Pháo, Ngũ thất Pháo...</li></ul><p>Mỗi loại trận cho ra những trung cuộc có tính chất khác nhau, đòi hỏi khả năng phán đoán khác nhau. Hiểu sâu trung cuộc, nắm quy luật biến hóa của nó, là chìa khóa liên kết cả ba giai đoạn.</p>",
+   "fen": "2r1kab2/N3a4/4b1n2/p1CR4p/6p2/4p4/P1P5P/4CKN2/4A2r1/1RBA3cc"
+  },
+  {
+   "order": 1030,
+   "slug": "trung-cuoc-bao-dien-t1-phan-chia-tien-trung-cuoc-hau-trung-cuoc",
+   "title": "Chương 1 · Phân Chia Tiền Trung Cuộc Và Hậu Trung Cuộc",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c1-pc",
+   "summary": "Khi nào khai cuộc kết thúc, khi nào bước vào trung cuộc? Bốn tiêu chí nhận biết, cách chia Tiền trung cuộc – Hậu trung cuộc, minh họa bằng trọn ván Lý Gia Hoa – Triệu Quốc Vinh 1989.",
+   "seo_title": "Tiền Trung Cuộc Và Hậu Trung Cuộc — Cách Phân Chia",
+   "seo_description": "Cách nhận biết khi nào ván cờ tướng vào trung cuộc, 4 tiêu chí phân chia, Tiền trung cuộc và Hậu trung cuộc, minh họa trọn ván Lý Gia Hoa - Triệu Quốc Vinh.",
+   "content": "<h2>Ranh giới không cố định</h2><p>Rất khó chỉ ra một nước cụ thể để nói \"từ đây là trung cuộc\". Có sách lấy tàn cuộc thực chiến gọi là trung cuộc, có sách lại gọi những thế vừa qua khai cuộc là trung cuộc. Trộn lẫn như vậy không ổn. Thực tế có thể dựa vào bốn tiêu chí:</p><ul><li><strong>Mức động viên quân</strong>: mỗi bên đã xuất 4–5 quân mạnh (Xe, Pháo, Mã) trở lên, và đã có những nước đi Sĩ, Tượng, Tốt.</li><li><strong>Trạng thái tiếp xúc</strong>: quân hai bên nhòm ngó nhau, \"chạm là nổ\".</li><li><strong>Triển khai chiến lược</strong>: ý đồ công – thủ của hai bên đã lộ rõ, các quân bắt đầu phối hợp tranh thế.</li><li><strong>Số nước tham khảo</strong>: khai cuộc thường định hình sau khoảng 10 nước, có khi đến 15 nước.</li></ul><h2>Tiền trung cuộc và Hậu trung cuộc</h2><p><strong>Tiền trung cuộc</strong> là chặng đầu sau khai cuộc, kéo dài khoảng 10–20 nước, khi mỗi bên đã điều 5–6 quân mạnh vào cuộc chiến — những nước \"kế thừa trước, mở ra sau\". <strong>Hậu trung cuộc</strong> là khi đã qua đổi quân chủ lực, mỗi bên còn khoảng ba quân mạnh (ví dụ song Mã, song Pháo, song Mã một Pháo — có thể là trung tàn cuộc không Xe). Nếu Tiền trung cuộc là quan trọng thì Hậu trung cuộc thể hiện công phu: đây là cao trào, quyết định thắng – thua – hòa hoặc chuyển sang tàn cuộc.</p><h2>Minh họa: trọn ván Lý Gia Hoa – Triệu Quốc Vinh (Trùng Khánh 1989)</h2><p>Bàn cờ bên dưới đi lại toàn bộ ván từ nước đầu tiên. Hãy chú ý ba mốc:</p><ul><li><strong>Sau nước 10</strong>: thế \"Trung Pháo quá hà Xe đối Bình phong Mã bình Pháo tính Xe\" — mỗi bên đã điều 4–5 quân mạnh. Đỏ rời Pháo đầu, phối hợp Xe quá hà ép cánh phải Đen; Đen tiến Pháo qua hà nhòm Tốt 3. Mỗi bên công một cánh: bắt đầu Tiền trung cuộc.</li><li><strong>Sau nước 31</strong>: Đỏ dùng Pháo đổi Mã, trầm Pháo đáy phát động tấn công. Mỗi bên chỉ còn 4 quân mạnh: bước vào Hậu trung cuộc quyết chiến.</li><li><strong>Nước 40</strong>: Đỏ tham công, nước 35 ăn Tượng và nước 37 lên Sĩ đều là sai lầm; Đen nắm lấy cơ hội. Đỏ không chống nổi đòn Pháo 3 bình 6 tiếp theo, đành nhận thua.</li></ul>",
+   "captions": {
+    "1": "Pháo đầu — khai cuộc bắt đầu.",
+    "20": "Hết nước 10: hai bên đã điều 4–5 quân mạnh, mỗi bên công một cánh — bước vào Tiền trung cuộc.",
+    "48": "Đen kỹ diệu tính Xe (nước 24).",
+    "59": "Pháo đổi Mã (nước 30).",
+    "61": "Pháo trầm đáy phát động tấn công — mỗi bên còn 4 quân mạnh: Hậu trung cuộc.",
+    "69": "Xe ăn Tượng chiếu — tham công, một sai lầm.",
+    "73": "Lên Sĩ — sai lầm thứ hai, Đen nắm được cơ hội.",
+    "80": "Pháo tiến — Đỏ không chống nổi nước Pháo 3 bình 6 tiếp theo, nhận thua."
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 2010,
+   "slug": "trung-cuoc-bao-dien-t1-y-nghia-tham-cuc",
+   "title": "Chương 2 · Thẩm Cục Là Gì Và Vì Sao Quan Trọng",
+   "level": "trung-cap",
+   "summary": "Thẩm cục là biết rõ hiện trạng ván cờ: ai tiên, ai hậu, ai chủ động, tiêu điểm tranh chấp ở đâu. Thẩm cục sai thì chọn nước sai — các đại sư dành phần lớn thời gian trung cuộc để thẩm cục.",
+   "seo_title": "Thẩm Cục Trong Cờ Tướng Là Gì? Cách Đánh Giá Thế Cờ",
+   "seo_description": "Thẩm cục là gì trong trung cuộc cờ tướng: nhận biết tiên – hậu, chủ động – bị động, tiêu điểm tranh chấp để đặt quyết sách. Nền tảng của mọi nước đi đúng.",
+   "content": "<h2>Thẩm cục là gì?</h2><p>Muốn đánh tốt trung cuộc, việc đầu tiên là phải <strong>biết rõ hiện trạng ván cờ</strong>: bên nào ưu, bên nào kém; mình đang tiên thủ hay hậu thủ, chủ động hay bị động; tiêu điểm đối lập giữa hai bên nằm ở đâu. Đó chính là thẩm cục. Từ thẩm cục, người chơi tìm ra cách giải quyết mâu thuẫn, định ra quyết sách chiến lược và dẫn ván cờ theo hướng có lợi cho mình.</p><h2>Thẩm cục sai — hậu quả ra sao?</h2><p>Trung cuộc quân còn nhiều, hai bên mưu tính lẫn nhau, đường biến chằng chịt và liên quan trực tiếp đến thành bại. Nếu thẩm cục sai, người chơi sẽ chọn nước đi sai: mất tiên, mất ưu thế, thậm chí làm thế cờ xấu đi. Không phải ngẫu nhiên mà các đại sư, ngoài kỹ thuật toàn diện, đều đặc biệt coi trọng thẩm cục — phần lớn thời gian suy nghĩ ở trung cuộc của họ dành cho việc này.</p><h2>Một ví dụ cách thẩm cục</h2><p>Hãy hình dung một thế cờ sau 10 nước: Xe Đỏ chiếm hàng 2 của Đen, ghim chặt Xe và Mã Đen; song Mã song Pháo Đỏ tạm thời chưa uy hiếp gì; ngoài Xe và Mã bị kìm, các quân khác của Đen đứng khá đẹp. Thẩm cục cho thấy: <em>làm sao giải thoát Xe Mã bị kìm của Đen, và những biến hóa công – thủ ở cánh trái Đen</em>, chính là tiêu điểm của cả hai bên — cũng là hướng cần tính toán trọng điểm về sau.</p><p>Đó là thói quen cần rèn: trước khi tìm nước đi, hãy trả lời câu hỏi \"<strong>cuộc tranh chấp chính đang diễn ra ở đâu?</strong>\". Các bài tiếp theo của chương sẽ đi sâu vào cách thẩm thế, thẩm quân, các loại cục diện và cách đánh giá định lượng, định tính.</p>"
+  },
+  {
+   "order": 2020,
+   "slug": "trung-cuoc-bao-dien-t1-tham-the-tham-quan-tham-ma-mat-the",
+   "title": "Chương 2 · Thẩm Thế, Thẩm Quân — Ví Dụ: Tham Mã Mất Thế",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-t2a",
+   "summary": "Quân là lực lượng, Thế là sự bố trí phối hợp của các quân. Sáu câu hỏi để thẩm thế, năm câu hỏi để thẩm quân, và một ván minh họa: Đỏ thấy Mã là ăn, Đen phế liền hai Mã để đổi lấy sát thế.",
+   "seo_title": "Thẩm Thế, Thẩm Quân Trong Trung Cuộc — Quân Và Thế",
+   "seo_description": "Quan hệ Quân và Thế trong trung cuộc cờ tướng: 6 phương diện thẩm thế, 5 điểm thẩm quân. Ví dụ tham ăn Mã mất thế, đối phương phế 2 Mã tạo thế Giáp Xe Pháo.",
+   "content": "<h2>Quân và Thế</h2><p>Mọi cuộc chiến trên bàn cờ rốt cuộc là tranh đoạt <strong>Quân</strong> và <strong>Thế</strong>. Quân là lực lượng chiến đấu: Xe, Pháo, Mã là quân mạnh; Tướng, Sĩ, Tượng, Tốt là quân yếu (nhưng Tốt qua hà, Tốt áp cung thì uy lực rất lớn). Thế là sự bố trí hợp lý của các quân, tác dụng hỗ trợ lẫn nhau và sức công – thủ sinh ra từ đó. Có Quân mới có Thế, hai thứ không tách rời.</p><p>Nguyên tắc: việc được – mất quân phải xét theo ảnh hưởng tới Thế. Có lợi cho Thế thì được quân hay mất quân đều nên làm; vì tham quân mà mất Thế là phá hỏng ván cờ. <em>Phế quân được thế thì nên làm, ăn quân thất thế gặp tai ương.</em> Phế quân đoạt tiên, đoạt quân đoạt tiên là đoạt Thế; đoạt quân mất tiên, mất quân mất tiên là mất Thế.</p><h2>Sáu câu hỏi thẩm thế</h2><ul><li>Thế trận bên mình có sơ hở không?</li><li>Thế trận đối phương có nhược điểm gì?</li><li>Nên công trung lộ hay hai cánh?</li><li>Làm sao vây bắt, khống chế quân đối phương đã xâm nhập?</li><li>Ưu thế làm sao mở rộng, kém thế làm sao tiêu trừ?</li><li>Xu hướng ván cờ là thắng, thua hay hòa?</li></ul><h2>Năm câu hỏi thẩm quân</h2><ul><li>Quân mình có chiếm vị trí quan trọng, địa thế có lợi không?</li><li>Các quân có liên hệ mật thiết, không cản trở nhau không?</li><li>Có quân nào đang bị ăn, bị bắt không?</li><li>Hướng phát triển của từng quân có mục tiêu rõ ràng không?</li><li>Có khả năng phế quân nhập cuộc, đổi quân cướp tiên, vận quân đoạt thế không?</li></ul><h2>Ví dụ: thấy quân là ăn</h2><p>Một ván cấp thành phố, sau 7 nước: Đỏ mới xuất 3 quân mạnh, Đen đã xuất 5, song Pháo Đen đã vào trận địa Đỏ, có Tốt 7 qua hà. Mã trái Đen bị đè, Mã và Tốt đều trong miệng Xe Đỏ. Đen chọn phương châm <strong>phế Mã đoạt thế</strong>, mục tiêu là Tượng đáy cánh phải Đỏ. Đỏ có ba lựa chọn: Xe 3 thoái 2, Mã 3 tiến 4, hoặc Xe 3 tiến 1 ăn Mã.</p><p>Đỏ chọn ăn Mã — căn bệnh thường gặp của người mới: thấy quân là ăn, bất chấp hậu quả. Đen phế tiếp Mã thứ hai, Pháo ăn Tượng đáy, tiến Tốt khống chế Mã Đỏ, lên Xe phòng chiếu rút... cuối cùng hình thành <strong>sát thế Giáp Xe Pháo</strong>, Đen thắng chắc. Hai cách đi kia (lùi Xe hoặc nhảy Mã) đều tốt hơn.</p>",
+   "captions": {
+    "1": "Xe ăn Mã — thấy quân là ăn, đoạt quân mất thế: gốc rễ của thất bại.",
+    "2": "Đen phế tiếp Mã thứ hai — có đầu óc, có đảm lược.",
+    "3": "Xe ăn Mã thứ hai.",
+    "4": "Pháo ăn Tượng đáy chiếu.",
+    "8": "Tốt tiến khống chế Mã Đỏ.",
+    "10": "Thăng Xe phòng Đỏ chiếu rút.",
+    "13": "Xe ăn Xe chiếu.",
+    "14": "Tướng ăn Xe.",
+    "16": "Xe xuống đáy chiếu.",
+    "22": "Hình thành sát thế Giáp Xe Pháo — Đen thắng chắc."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Lựa chọn tốt hơn: lui Xe."
+    },
+    "1": {
+     "1": "Hoặc nhảy Mã — cũng tốt hơn ăn Mã."
+    }
+   },
+   "fen": "r1bakabr1/9/2n3n2/p1p1p1R1p/9/2P3p2/Pc2P2cP/1C2C1N2/9/RNBAKAB2"
+  },
+  {
+   "order": 2030,
+   "slug": "trung-cuoc-bao-dien-t1-chon-the-khong-chon-quan",
+   "title": "Chương 2 · Chọn Thế, Không Chọn Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-t2b",
+   "summary": "Đang ít quân hơn, Đen đứng trước lựa chọn ăn quân hay giữ thế — và chọn thế: bình Pháo trung lộ, sau đó đoạt lại quân, phản đoạt thế, cuối cùng nhiều hơn hai Tốt và thắng.",
+   "seo_title": "Chọn Thế Không Chọn Quân — Ví Dụ Thẩm Cục Trung Cuộc",
+   "seo_description": "Ví dụ thẩm cục trung cuộc cờ tướng: bên ít quân chọn bình Pháo trung lộ giữ thế thay vì ăn quân, sau đó đoạt lại quân và giành thắng lợi. Bàn cờ có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ từ một ván giải cá nhân toàn quốc 1988. Đen đang ít quân hơn, đứng trước lựa chọn giữa <strong>Quân</strong> và <strong>Thế</strong>. Thực chiến, Đen chọn Thế.</p><h2>Bình Pháo trung lộ</h2><p>Đen đi <strong>Pháo 7 bình 5</strong>, thà giữ thế chứ không ăn quân — chính xác. Nếu Đen tham ăn bằng Xe 2 tiến 9, Đỏ tiến Xe lên và Đen sẽ khó đi (biến trên bàn cờ). Sau Pháo trung lộ, Đỏ bình Xe bắt Pháo, Đen lùi Mã, Đỏ nhảy Mã, và Đen <strong>bình Xe kịp thời đoạt lại quân</strong> — từ đó phản đoạt lại thế.</p><h2>Diễn biến</h2><p>Đen bình Pháo sang cánh chuyển hướng tấn công rất linh hoạt, tiến Pháo đánh sâu, rồi <strong>hiến Xe ép đổi</strong> để mở rộng ưu thế. Sau loạt đổi quân, Đen nhiều hơn hai Tốt, bước vào tàn cuộc với ưu thế và cuối cùng thắng.</p><h2>Bài học</h2><p>Khi phải chọn giữa quân và thế, hãy chọn thế. Quân bị mất trong lúc giữ thế thường lấy lại được; thế đã mất thì rất khó giành lại.</p>",
+   "captions": {
+    "1": "Bình Pháo trung lộ — thà chọn thế chứ không ăn quân, chính xác.",
+    "2": "Bình Xe tróc Pháo.",
+    "5": "Bình Xe kịp thời...",
+    "7": "...Xe ăn Pháo đoạt lại quân, phản đoạt lại thế.",
+    "17": "Bình Pháo chuyển hướng tấn công — cách đi linh hoạt.",
+    "25": "Hiến Xe ép đổi, mở rộng ưu thế — nước hay.",
+    "29": "Đen nhiều hơn 2 Tốt, ưu thế khi vào tàn cuộc, cuối cùng thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen tham ăn quân...",
+     "2": "...Xe Đỏ tiến lên, Đen khó đi."
+    }
+   },
+   "fen": "1r2kab2/4a4/2C3c2/p3p3p/2b2np2/4P4/P2R2P1P/6N2/9/1NBAKAB2"
+  },
+  {
+   "order": 2040,
+   "slug": "trung-cuoc-bao-dien-t1-hien-ma-ap-tuong",
+   "title": "Chương 2 · Hiến Mã Áp Tướng — Chọn Thế Giành Thắng",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-t2c",
+   "summary": "Sáu quân mạnh hai bên còn đủ, Đỏ có một Mã đơn độc trong hang hổ. Lợi dụng nước tiên, Đỏ hiến Mã áp sát Tướng rồi liên tiếp tung đòn, dù ít quân vẫn nắm chắc phần thắng.",
+   "seo_title": "Hiến Mã Áp Tướng — Ví Dụ Chọn Thế Trung Cuộc",
+   "seo_description": "Ví dụ trung cuộc cờ tướng giải Đôn Hoàng Bôi 1983: hiến Mã áp Tướng, kế hoạch liên hoàn, Pháo phá Tượng, Đỏ ít quân nhưng thế công rất mạnh. Có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ sau 13 nước giữa hai đại sư tại giải Đôn Hoàng Bôi (1983). Sáu quân mạnh mỗi bên còn đủ, Đỏ công Đen thủ. Một Mã Đỏ đã đơn độc thâm nhập hang hổ.</p><h2>Hiến Mã áp Tướng</h2><p><strong>Mã 7 tiến 6</strong> — đưa Mã áp sát Tướng. Đây là nước có trình độ: nếu Đỏ đi Mã 6 tiến 5 hay Pháo 6 tiến 5 ngay thì Đen đều ứng phó được, Đỏ không được gì. Tiếp đó Đỏ dùng Mã sau ăn Tốt — kế hoạch liên tiếp, lại một nước hay. Nếu Đỏ đổi thành Pháo 6 tiến 5 thì Đen tiến Xe \"bỏ trước lấy sau\", không thiệt gì (biến trên bàn cờ).</p><h2>Đen nhiều quân nhưng mất thế</h2><p>Hai bên đổi Mã, Pháo Đỏ ăn Mã chiếu, Mã Đỏ ăn Tượng. Đen bình Pháo, ngầm chuẩn bị Xe 3 bình 8; nếu Đen bình Xe trung lộ thay vào đó thì Đỏ ưu. Đỏ tiếp tục phi Tượng, bình Pháo trung lộ, Pháo ăn Tốt, Pháo ăn Tượng chiếu... Đen tuy nhiều quân nhưng mất thế, thế công Đỏ rất mạnh — Đỏ nhất định thắng.</p><h2>Bài học</h2><p>Ba ví dụ của tiết này cùng một kết luận: <strong>khi phải lựa chọn giữa Quân và Thế, tất yếu chọn Thế</strong>.</p>",
+   "captions": {
+    "1": "Hiến Mã áp Tướng — nước có trình độ.",
+    "3": "Mã sau ăn Tốt — kế hoạch liên tiếp, lại một nước hay.",
+    "5": "Pháo ăn Mã chiếu.",
+    "7": "Mã ăn Tượng.",
+    "10": "Đen bình Pháo, ngầm phục Xe 3 bình 8 (bình Xe trung lộ thì Đỏ ưu).",
+    "17": "Pháo ăn Tượng chiếu.",
+    "19": "Đen nhiều quân nhưng thất thế, thế công Đỏ rất mạnh — nhất định thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ đổi thành Pháo 6 tiến 5...",
+     "2": "...Xe tiến bỏ trước lấy sau, Đen không thiệt."
+    },
+    "1": {
+     "1": "Nếu Đen bình Xe trung lộ...",
+     "4": "...Đỏ ưu."
+    }
+   },
+   "fen": "r1b1kab2/4a4/ncNc2n2/p1p1p1p1p/2r6/3N2P2/P3P3P/3CC4/4A4/1RBAK1BR1"
+  },
+  {
+   "order": 2050,
+   "slug": "trung-cuoc-bao-dien-t1-phuong-phap-danh-gia-tim-diem-yeu",
+   "title": "Chương 2 · Phương Pháp Đánh Giá: Tìm Điểm Yếu Rồi Tính Toán",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-t3v1",
+   "summary": "Bản chất cờ tướng là tính toán. Cách đánh giá đúng: thẩm quân, thẩm thế để tìm điểm yếu tất tranh, rồi tính kỹ từng phương án. Ví dụ so sánh hai kế hoạch tấn công — một bị phá, một thành công.",
+   "seo_title": "Cách Đánh Giá Thế Cờ: Tìm Điểm Yếu Và Tính Toán",
+   "seo_description": "Phương pháp đánh giá thế cờ trung cuộc: thẩm quân thẩm thế tìm điểm yếu, so sánh các phương án tấn công, tính toán từng biến. Ví dụ hai kế hoạch có bàn cờ.",
+   "content": "<h2>Đánh giá không rời tính toán</h2><p>Bản chất của cờ tướng là tính toán. Có hai điểm cần lưu ý:</p><ul><li>Qua thẩm quân, thẩm thế, xác định ai ưu, rồi tìm ra <strong>yếu điểm tất phải tranh</strong> (một quân hay một tuyến). Dựa vào yếu điểm đó mà tính toán, so sánh tỉ mỉ, tìm phương án tốt nhất — và kiểm tra lại nhiều lần trước khi quyết định.</li><li>Nếu tính các biến mà kết quả không như ý và chưa tìm ra phương án hiệu quả, hãy chặn đối phương tấn công, <strong>củng cố trận thế trước, mưu lợi sau</strong>.</li></ul><h2>Ví dụ: đến lượt Đỏ</h2><p>Đen hơn một Tốt, nhưng ngoài Xe giữa, các quân mạnh của Đen đứng không lý tưởng. Đỏ song Xe chiếm hai sườn, song Pháo và Mã lộ 3 đứng đẹp — Đỏ đang ưu. Phân tích điểm yếu: cánh trái Đen phòng thủ mỏng (quân đều dồn sang phải, lại lên Tượng trái); Xe Đỏ lộ 6 cản mắt Tượng khiến hai Tượng mất liên lạc, hai Pháo Đỏ và hai Tượng Đen cùng một đường.</p><h2>Kế hoạch 1: Mã 3 tiến 4 — bị phá</h2><p>Mã tiến vừa chặn đòn bình Pháo ăn Xe, vừa dọa ăn Tốt 7, bắt đôi hoặc ngọa tào. Nhưng Đen lùi Pháo 4 vừa tránh bị bắt vừa giữ Tốt 7; Đỏ lùi Pháo 5 chuẩn bị đóng Pháo đầu thì Đen bình Pháo giải quyết chuyện Tượng bị cản, nguy hiểm trung lộ biến mất. Kế hoạch này không dùng được.</p><h2>Kế hoạch 2: tiến Tốt 7 — thành công</h2><p>Mục tiêu chuyển sang Tượng đáy, phát huy uy lực Pháo lộ 7. Đen có bốn cách đáp, cách nào cũng thua thiệt:</p><ul><li>Bình Xe 1 sang 3: Đỏ nhảy Mã, tiếp theo vẫn phục Tốt 7 tiến, Đỏ ưu (mạch chính).</li><li>Nhảy Mã ăn Tốt: sau khi đổi Pháo, Đỏ có Tốt qua hà, chiếm ưu.</li><li>Lùi Pháo 2 bước: Đỏ tiến Xe, rồi có Mã 3 tiến 5, Đen khó đỡ. (Lùi Pháo 1 bước còn tệ hơn: Đen thua ngay.)</li><li>Bình Pháo 2 sang 3: Đỏ tiến Xe, vẫn phục Mã 3 tiến 5, Đỏ ưu.</li></ul><p>Chỉ cần phân tích hình cờ, tìm ra phương hướng và nhược điểm của đối phương, kèm một kế hoạch chính xác, thì không khó biến tiên thủ thành ưu thế.</p>",
+   "captions": {
+    "1": "Kế hoạch 2: tiến Tốt 7 nhắm Tượng đáy, phát huy Pháo lộ 7.",
+    "2": "Đen bình Xe sang 3...",
+    "5": "...Đỏ vẫn phục Tốt 7 tiến, Đỏ ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen nhảy Mã ăn Tốt...",
+     "4": "...đổi Pháo xong Đỏ có Tốt qua hà, chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Đen lùi Pháo 2 bước...",
+     "2": "...Xe tiến, tiếp theo có Mã 3 tiến 5, Đen khó ứng phó."
+    },
+    "2": {
+     "1": "Nếu Đen lùi Pháo 1 bước...",
+     "4": "...Pháo ăn Tượng chiếu — Đen bại trận."
+    },
+    "3": {
+     "1": "Nếu Đen bình Pháo 2 sang 3...",
+     "2": "...Xe tiến, vẫn phục Mã 3 tiến 5, Đỏ ưu."
+    },
+    "4": {
+     "1": "Kế hoạch 1: Mã 3 tiến 4...",
+     "2": "Đen lùi Pháo tránh bắt, giữ Tốt 7.",
+     "4": "Đen bình Pháo giải quyết chuyện Tượng bị cản — kế hoạch 1 phá sản."
+    }
+   },
+   "fen": "2bak4/3Ra4/1c2b1n2/r3p1p1p/pnpcr4/6P2/P1P5P/N1C1C1N2/5R3/2BAKAB2"
+  },
+  {
+   "order": 2060,
+   "slug": "trung-cuoc-bao-dien-t1-phuong-phap-tinh-nguoc",
+   "title": "Chương 2 · Phương Pháp Tính Ngược — Đặt Mình Vào Vị Trí Đối Phương",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-t3v2",
+   "summary": "Khi đang ưu nhẹ mà chưa tìm ra cách mở rộng, hãy giả sử đến lượt đối phương đi: họ sẽ phòng thủ thế nào cho tốt nhất? Biết được nước đó, ta vận quân chặn trước — biến ưu thế vị trí thành ưu thế thực.",
+   "seo_title": "Phương Pháp Tính Ngược Trong Trung Cuộc Cờ Tướng",
+   "seo_description": "Phương pháp tính ngược: giả sử đến lượt đối phương, tìm nước phòng thủ hay nhất của họ rồi vận quân chặn trước. Cách biến ưu thế vị trí thành ưu thế hơn Tốt.",
+   "content": "<h2>Khi ưu thế nhỏ mà chưa có kế hoạch</h2><p>Trong thế cờ trên bàn, Đỏ dồn Xe, Mã, song Pháo về cánh phải; trực giác cho thấy cánh trái Đen đang chịu sức ép. Dù Đen đã lên Tượng trái, các quân mạnh của Đen vẫn đứng ở vị trí phòng thủ tốt, bù đắp cho khoảng trống bên trái. Tổng thể Đỏ ưu một chút — nhưng nhất thời rất khó tìm ra phương án mở rộng tiên thủ.</p><h2>Tính ngược là gì?</h2><p>Hãy thử <strong>giả sử đến lượt Đen đi</strong>: Đen sẽ làm gì để tiêu trừ tiên thủ của Đỏ? Tiêu điểm tranh chấp nằm ở cánh phải. Nước phòng thủ hay nhất của Đen là thông qua đổi quân (lùi Pháo 8) để triệt tiêu sự phối hợp các quân Đỏ ở cánh phải, giảm áp lực cho cánh trái.</p><h2>Từ đó suy ra kế hoạch của Đỏ</h2><p>Biết được nước phòng thủ ấy, Đỏ đi trước một bước: bình Xe ép Mã Đen về vị trí cũ, sau đó tiến Xe chiếm lợi, chuyển ưu thế vị trí thành ưu thế thực là hơn Tốt. Nếu Đen bình Pháo tính Pháo, Đỏ bình Xe rồi tiến Xe — bỏ trước lấy sau, chiếm chút tiện nghi, thế cờ dễ đi.</p><h2>Bài học</h2><p>Dù cục diện khó khăn phức tạp đến đâu, khi nhất thời chưa tìm ra phương án tấn công hay phòng thủ, hãy <strong>đặt mình vào vị trí đối phương</strong>. Tìm nước tốt nhất của họ thường chỉ ra nước tốt nhất của mình.</p>",
+   "fen": "2bak4/1c2an3/4b2c1/p3p3p/1n1r5/7R1/P3P1N1P/2N1BCC2/9/2BAKA3"
+  },
+  {
+   "order": 2070,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-cong-vi-du-1",
+   "title": "Chương 2 · Loại Hình Cục Diện Đối Công (Cục Diện Động) — Ví Dụ 1",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dc1",
+   "summary": "Cục diện đối công phức tạp đa biến, được những người thích tấn công ưa dùng. Ví dụ từ thế Đại liệt thủ Pháo: Đen nhảy Mã tạo thế đối xứng, mỗi bên công một cánh — và vì sao bên đi trước luôn có lợi.",
+   "seo_title": "Cục Diện Đối Công Trong Trung Cuộc — Đại Liệt Thủ Pháo",
+   "seo_description": "Loại hình cục diện đối công (cục diện động) trong trung cuộc cờ tướng, ví dụ thế Đại liệt thủ Pháo: đối xứng hình, mỗi bên công một cánh. Bàn cờ tương tác.",
+   "content": "<h2>Các loại cục diện bắt nguồn từ khai cuộc</h2><p>Trung cuộc khác nhau sinh ra từ những khai cuộc khác nhau. Khai cuộc đối công — Pháo đầu đối Thuận Pháo, Nghịch Pháo; Pháo đầu quá hà Xe đối Bình phong Mã; Pháo đầu thất lộ Mã đối Bình phong Mã song Pháo quá hà... — vừa vào trận đã \"đoản binh tương kiến\", đánh đến trung cuộc vẫn rất hỗn loạn. Ngược lại, các khai cuộc chậm (Tiên nhân chỉ lộ, Phi Tượng...) giống Thái cực quyền, hai bên so công lực, trung cuộc thường đan xen cài răng lược.</p><p>Có thể chia đại thể thành mấy loại: <strong>đối công, bình ổn, đồng dạng, đối xứng, đã kết luận, đợi thẩm</strong>. Bài này bắt đầu với loại thứ nhất.</p><h2>Cục diện đối công — \"Cục diện Động\"</h2><p>Phức tạp, đa biến, thường gây cảm giác hỗn loạn — người thích tấn công hay chọn loại này.</p><h2>Ví dụ: thế Đại liệt thủ Pháo</h2><p>Đến lượt Đen, có ba lựa chọn: Tốt 3 tiến 1, Mã 9 tiến 8, hoặc Xe 8 tiến 1. Bàn cờ minh họa biến <strong>Mã 9 tiến 8</strong>: thế cờ thành <em>đối xứng hình</em>, mỗi bên công một cánh — về lý luận bên đi trước luôn có lợi. Nếu sau đó Đen không lên Sĩ mà tiến Tốt 3, nhảy Mã 8 tiến 7 hay lùi Mã 3 đều bất lợi. Hai bên đổi quân dồn dập, Pháo Đen ăn Tốt chiếu, Đỏ ra Tướng; sau loạt Xe ăn qua lại, Đỏ chiếm ưu thế lớn.</p>",
+   "captions": {
+    "1": "Mã 9 tiến 8 — thành thế đối xứng, mỗi bên công một cánh; về lý luận bên tiên luôn có lợi.",
+    "3": "Lên Sĩ (tiến Tốt 3, Mã 8 tiến 7 hay lùi Mã 3 đều bất lợi).",
+    "6": "Pháo ăn Mã.",
+    "13": "Pháo ăn Tốt chiếu.",
+    "16": "Ra Tướng.",
+    "19": "Xe ăn Pháo.",
+    "20": "Xe ăn Mã.",
+    "21": "Pháo ăn Xe.",
+    "22": "Mã ăn lại Xe.",
+    "26": "Đỏ chiếm ưu lớn."
+   },
+   "fen": "2bakabr1/9/2n1c2cn/p1p1p1p2/5r2p/PN1R5/2P1P1P1P/1C2C1N2/9/1RBAKAB2"
+  },
+  {
+   "order": 2080,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-cong-vi-du-2",
+   "title": "Chương 2 · Cục Diện Đối Công — Ví Dụ 2: Xe Ăn Tượng Đáy Đối Sát",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dc2",
+   "summary": "Từ thế Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo, Xe mỗi bên đều đã ăn Tượng đáy. Đỏ tiến Tốt phế Mã đoạt thế; Đen hóa giải được thế công nhưng Đỏ vẫn giữ chủ động.",
+   "seo_title": "Cục Diện Đối Công — Liệt Pháo, Xe Ăn Tượng Đáy Đối Sát",
+   "seo_description": "Ví dụ cục diện đối công trung cuộc: Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo, hai Xe ăn Tượng đáy đối sát, tiến Tốt phế Mã đoạt thế. Có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ hình thành từ trận \"Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo\". Xe mỗi bên đều đã ăn Tượng đáy đối phương — thế đối sát điển hình. Đến lượt Đen, có ba lựa chọn: Pháo 7 bình 8, Xe 7 bình 8, hoặc Pháo 7 tiến 1. Bàn cờ minh họa biến <strong>Pháo 7 bình 8</strong> (hai cách kia Đỏ vẫn nhiều cơ hội hơn).</p><h2>Phế Mã đoạt thế</h2><p>Đỏ tiến Pháo ăn Tốt, rồi <strong>tiến Tốt 7</strong> — phế Mã đoạt thế, nước cờ hay. Nếu Đen bình Pháo ăn Mã, Đỏ bình Tốt, Pháo Đen ăn Tốt chiếu... sau một loạt nước Đỏ vẫn ưu (biến trên bàn cờ).</p><h2>Kết thúc Tiền trung cuộc</h2><p>Thực chiến Đen lùi Xe ăn Tốt, hai bên đổi chiếu qua lại. Đen tạm hóa giải được thế công, nhưng sau loạt đổi quân, Xe Đỏ chuyển sang cánh phải ăn Pháo, Đỏ vẫn nắm thế chủ động. Ví dụ cho thấy đặc trưng cục diện đối công: hai bên tấn công trực diện, mỗi nước đều có thể quyết định.</p>",
+   "captions": {
+    "1": "Pháo 7 bình 8 — biến được minh họa.",
+    "2": "Pháo ăn Tốt.",
+    "4": "Tiến Tốt — phế Mã đoạt thế, nước cờ hay!",
+    "5": "Xe lùi ăn Tốt.",
+    "9": "Pháo tiến chiếu.",
+    "11": "Xe tiến chiếu.",
+    "21": "Xe ăn Mã.",
+    "22": "Xe ăn Pháo — Đỏ chuyển Xe sang cánh phải.",
+    "24": "Đen tạm giải thế công, nhưng Đỏ vẫn giữ chủ động."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo ăn Mã...",
+     "3": "Pháo ăn Tốt chiếu.",
+     "14": "...Đỏ ưu."
+    }
+   },
+   "fen": "2Rakab2/9/4c1n2/p3p1p1p/9/2P3P2/P3P1c1P/C1N1C4/9/2BAKAr2"
+  },
+  {
+   "order": 2090,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-cong-vi-du-3",
+   "title": "Chương 2 · Cục Diện Đối Công — Ví Dụ 3: Công Trung Lộ, Phản Công Cánh",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dc3",
+   "summary": "Đỏ dùng Mã ăn Sĩ tấn công gấp trung lộ nhưng xem nhẹ phản kích cánh trái của Đen. Đen liên tục hóa giải, phá Sĩ Tượng và thắng — một kiểu đối công rất hay gặp.",
+   "seo_title": "Cục Diện Đối Công — Công Trung Lộ, Phản Công Cánh",
+   "seo_description": "Ví dụ trung cuộc Trung Pháo quá hà Xe cấp tiến trung binh đối Bình phong Mã: Đỏ ăn Sĩ công gấp trung lộ, Đen phản công cánh phá Sĩ Tượng thắng. Có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ từ trận \"Trung Pháo quá hà Xe cấp tiến trung binh đối Bình phong Mã bình Pháo tính Xe\". Đỏ chọn cách tấn công gấp, đột phá trung lộ.</p><h2>Ăn Sĩ công gấp — không như ý</h2><p><strong>Mã trước tiến 5 ăn Sĩ</strong>: Đỏ công trung lộ nhưng xem nhẹ khả năng phản kích ở cánh trái của Đen. Cách ổn định hơn là Mã 7 thoái 5: sau loạt đổi quân Đỏ dùng Xe đổi Pháo Mã, lại có Tốt qua hà, thế cờ không khó đi (biến trên bàn cờ).</p><h2>Đen phản kích</h2><p>Đen ăn lại, Pháo đánh Tượng chiếu, rồi <strong>bình Xe chiếm lộ 4</strong> — nước có lực. Nếu Đen tiến Xe 8 thay vào đó thì bất lợi; còn bình Pháo 7 sang 9 thì Đỏ ra Tướng có thế công. Từ đó Đen liên tục hóa giải thế công, Pháo ăn Sĩ, ăn Tượng, Pháo ăn Pháo — phá tan Sĩ Tượng Đỏ, giành thắng lợi.</p><h2>Bài học</h2><p>Kiểu \"một bên công trung lộ, một bên công cánh\" rất thường gặp. Trước khi dốc toàn lực vào trung lộ, hãy kiểm tra cánh nào của mình đang bỏ trống trước đòn phản kích.</p>",
+   "captions": {
+    "1": "Mã ăn Sĩ công gấp trung lộ — xem nhẹ phản kích cánh trái của Đen.",
+    "2": "Sĩ ăn Mã.",
+    "5": "Xe ăn Mã.",
+    "6": "Pháo ăn Tượng chiếu.",
+    "8": "Bình Xe chiếm lộ 4 — nước đi có lực.",
+    "16": "Pháo ăn Sĩ chiếu.",
+    "18": "Pháo ăn Sĩ.",
+    "20": "Pháo ăn Tượng chiếu.",
+    "24": "Pháo ăn Pháo — Đen phá được Sĩ Tượng, giành thắng lợi."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Ổn định hơn: Mã 7 thoái 5...",
+     "11": "...Đỏ dùng Xe đổi Pháo Mã, có Tốt qua hà, thế cờ không khó đi."
+    },
+    "1": {
+     "1": "Nếu Đen tiến Xe 8...",
+     "6": "...Đen bất lợi."
+    },
+    "2": {
+     "1": "Nếu bình Pháo 7 sang 9...",
+     "2": "...Đỏ ra Tướng, có thế công."
+    }
+   },
+   "fen": "2r1kab2/4a1c2/1cN1b1n2/p1p1pR2p/4P4/2P6/P5p1P/1CN1C4/7r1/R1BAKAB2"
+  },
+  {
+   "order": 2100,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-binh-on-vi-du-1",
+   "title": "Chương 2 · Cục Diện Bình Ổn (Cục Diện Tĩnh) — Ví Dụ 1: Đổi Xe Giản Hóa",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-bo1",
+   "summary": "Khi trung cuộc không có đoản binh tương kiến mà tương đối yên ổn, ta có cục diện bình ổn — sân chơi của những người công phu trung tàn cuộc thâm hậu. Ví dụ: Đen đổi Xe giản hóa thế cờ.",
+   "seo_title": "Cục Diện Bình Ổn (Cục Diện Tĩnh) Trong Trung Cuộc",
+   "seo_description": "Loại hình cục diện bình ổn - cục diện tĩnh trong trung cuộc cờ tướng: đổi Xe giản hóa, tiến Tốt thông đường Xe, đổi Pháo. Ví dụ có bàn cờ và biến.",
+   "content": "<h2>Cục diện bình ổn là gì?</h2><p>Nếu trung cuộc không xảy ra những trận \"đoản binh tương kiến\" mà tương đối yên ổn, đơn giản, ta gọi là loại hình bình ổn, hay <strong>\"Cục diện Tĩnh\"</strong>. Những kỳ thủ có công phu trung – tàn cuộc thâm hậu thường thích loại cục diện này.</p><h2>Ví dụ: Đen đổi Xe</h2><p>Đen bình Xe chiếm lộ 6, đổi Xe, giản hóa thế cờ. Đỏ <strong>tiến Tốt đầu</strong>, chuẩn bị tiến Xe hàng Tốt cho thông đường Xe — một nước linh hoạt. Nếu Đỏ tiến Tốt 9 thay vào đó, Đen lại bình Xe lộ 6 mời đổi, thế cờ vẫn bình ổn. Đen cũng có thể bình Pháo 2 sang 1 để Đỏ chỉ nhỉnh hơn chút ít. Ở nước 6, nếu Đỏ tiến Xe thì Đen lùi Xe rồi lại mời đổi, vẫn chống đỡ được. Thực chiến hai bên đổi Pháo, cục diện bình ổn.</p><h2>Đặc điểm</h2><p>Trong cục diện tĩnh, mỗi nước đi không quyết định ngay thắng thua, nhưng tích lũy dần những lợi thế nhỏ: một Tốt, một vị trí Xe tốt hơn, một quân phối hợp nhịp nhàng hơn.</p>",
+   "captions": {
+    "1": "Bình Xe chiếm lộ 6, chuẩn bị đổi Xe.",
+    "3": "Xe ăn Xe.",
+    "4": "Xe ăn lại — đổi Xe, giản hóa cục diện.",
+    "6": "Tiến Tốt đầu, chuẩn bị đưa Xe lên hàng Tốt — nước linh hoạt.",
+    "16": "Pháo ăn Pháo.",
+    "17": "Đổi Pháo xong, cục diện bình ổn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu tiến Tốt 9...",
+     "4": "...Đen lại bình Xe lộ 6 mời đổi, cục diện bình ổn."
+    },
+    "1": {
+     "1": "Đen có thể bình Pháo 2 sang 1...",
+     "6": "...Đỏ chỉ nhỉnh hơn chút ít."
+    },
+    "2": {
+     "1": "Nếu Đỏ tiến Xe 4...",
+     "4": "...Đen lùi Xe rồi lại mời đổi, chống đỡ được."
+    }
+   },
+   "fen": "2baka3/r7r/1cn1b1n2/p3p1p1p/2p4c1/6P2/P1P1P3P/N2CB1NC1/4AR3/2BAK3R"
+  },
+  {
+   "order": 2110,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-binh-on-vi-du-2",
+   "title": "Chương 2 · Cục Diện Bình Ổn — Ví Dụ 2: Nước Chờ Tiến Tốt Biên",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-bo2",
+   "summary": "Từ trận Ngũ thất Pháo đối Bình phong Mã tiến Tốt 7: Đen tiến Tốt biên — một nước chờ hay, ngồi quan sát động tĩnh. Hai bên vận quân thận trọng rồi đổi quân, thế hòa định hình.",
+   "seo_title": "Cục Diện Bình Ổn — Nước Chờ Tiến Tốt Biên",
+   "seo_description": "Ví dụ cục diện bình ổn trong trung cuộc cờ tướng: Ngũ thất Pháo đối Bình phong Mã, nước chờ tiến Tốt biên, vận quân thận trọng, đổi quân giản hóa đến hòa.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ từ trận \"Ngũ thất Pháo đối Bình phong Mã tiến Tốt 7\", đến lượt Đen.</p><h2>Nước chờ</h2><p><strong>Tốt 9 tiến 1</strong> — tiến Tốt biên là một nước chờ hay: không lộ ý đồ, ngồi quan sát động tĩnh của Đỏ. Trong cục diện tĩnh, những nước như vậy giữ thế trận linh hoạt mà không tạo nhược điểm.</p><h2>Vận quân và đổi quân</h2><p>Hai bên lần lượt điều chỉnh: Mã lùi, Sĩ lên xuống, Pháo bình qua bình lại, Xe nhích từng bước. Không có đòn đánh trực diện nào, mỗi bên chỉ tìm cách đặt quân vào vị trí tối ưu. Cuối cùng hai bên đổi quân, giản hóa thế cục, thế hòa đã định.</p><h2>Cục diện bình ổn — xu hướng hiện đại</h2><p>Cục diện bình ổn, quân thế cài răng lược duy trì cân bằng, dễ dẫn đến hòa; nhưng ai phá được thế cân bằng thì quyết được thắng thua. Đây là phép thử thật sự cho công phu và bản lĩnh. Xu hướng phát triển của kỳ thủ là đi từ lối đánh \"hoa mỹ\" sang thực dụng, từ thuần tấn công sang biết đánh cả cục diện bình ổn — vì chỉ dựa vào đòn hoa mỹ thì khó thắng được những đối thủ đã nghiên cứu kỹ.</p>",
+   "captions": {
+    "1": "Tiến Tốt biên — nước chờ hay, quan sát động tĩnh của Đỏ.",
+    "19": "Mã Đen ăn Mã.",
+    "20": "Pháo ăn lại.",
+    "29": "Pháo ăn Pháo.",
+    "30": "Xe ăn lại.",
+    "31": "Xe ăn Xe.",
+    "32": "Xe ăn lại — đổi quân, giản hóa.",
+    "33": "Thế hòa đã định."
+   },
+   "fen": "1cr1kab2/4a4/1R2b2r1/p3pn1cp/2p3p2/P4N1R1/2P1P3P/N2AB3B/3CA4/4K4"
+  },
+  {
+   "order": 2120,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-dong-dang",
+   "title": "Chương 2 · Cục Diện Đồng Dạng — Thứ Tự Nước Đi Quyết Định Tất Cả",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dd",
+   "summary": "Hai ván Ngũ cửu Pháo quá hà Xe đối Bình phong Mã bình Pháo tính Xe đến cùng một thế cờ 'gần giống nhau' qua thứ tự nước khác nhau. Cùng một nước Xe 7 tiến 1 ăn Mã — một ván Đỏ thắng, ván kia Đen thắng.",
+   "seo_title": "Cục Diện Đồng Dạng — Thứ Tự Nước Đi Trong Trung Cuộc",
+   "seo_description": "Cục diện đồng dạng: hai ván Ngũ cửu Pháo quá hà Xe đối Bình phong Mã khác thứ tự nước, cùng nước Xe ăn Mã cho kết quả trái ngược. Bàn cờ hai nhánh.",
+   "content": "<h2>Đồng dạng không phải tương đồng</h2><p>Cục diện đồng dạng là những thế cờ <strong>trông giống nhau</strong> nhưng hình thành qua thứ tự nước đi hoặc số nước khác nhau — và chính sự khác biệt nhỏ ấy làm kết quả khác hẳn.</p><h2>Hai ván, một khai cuộc</h2><p>Cả hai ván đều là \"Ngũ cửu Pháo quá hà Xe đối Bình phong Mã bình Pháo tính Xe\" và giống hệt nhau 10 nước đầu:</p><ul><li><strong>Mạch chính</strong> — Quách Trường Thuận gặp Vương Bỉnh Quốc (giải đồng đội 1983): nước 11 Đỏ tiến Xe 8 tiến 6 trước, rồi mới lùi Mã giữa.</li><li><strong>Nhánh B</strong> — Từ Lợi Mộc gặp Triệu Quốc Vinh (Á châu bôi lần 3, 1984): nước 11 Đỏ lùi Mã giữa trước, tiến Xe sau; Đen tiến Tốt 7 hai lần thay vì lên Tượng sớm.</li></ul><p>Sau 14–15 nước, hai thế cờ trông gần như nhau và đều đến lượt Đỏ.</p><h2>Cùng một nước, kết quả trái ngược</h2><p>Nếu Đỏ đi <strong>Xe 7 tiến 1 ăn Mã</strong>:</p><ul><li>Ở ván thứ nhất: sau loạt biến dài, Đỏ nhiều quân, chắc thắng (nếu Đen nhảy Mã thay vì bình Xe thì Đỏ vẫn hơn quân).</li><li>Ở ván thứ hai: Đen Pháo nhảy vào, chiếu liên tục, Đen thắng.</li></ul><p>Nghiên cứu cục diện đồng dạng dạy ta hiểu <strong>tầm quan trọng của thứ tự đi quân</strong> và vị trí các quân lúc chuyển từ khai cuộc sang trung cuộc. Hãy so sánh hai nhánh trên bàn cờ.</p>",
+   "captions": {
+    "20": "Hai ván giống hệt nhau đến đây — nước 11 bắt đầu khác (xem nhánh B).",
+    "21": "Ván 1: Xe tiến trước.",
+    "30": "Thế cờ ván 1 (hết nước 15), đến lượt Đỏ.",
+    "31": "Giả định: Xe 7 tiến 1 ăn Mã...",
+    "55": "...Đỏ nhiều quân, chắc thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen nhảy Mã thay vì bình Xe...",
+     "6": "...Đỏ hơn quân."
+    },
+    "1": {
+     "1": "Ván 2: lùi Mã giữa trước.",
+     "8": "Thế cờ ván 2 (hết nước 14), đến lượt Đỏ.",
+     "9": "Cũng Xe 7 tiến 1 ăn Mã...",
+     "32": "...nhưng lần này Đen thắng."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 2130,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-xung-vi-du-1",
+   "title": "Chương 2 · Cục Diện Đối Xứng — Ví Dụ 1: Nghịch Tượng Cục",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dx1",
+   "summary": "Loại hình đối xứng (loại hình 'làm theo'): bên Hậu bắt chước bên Tiên, chờ thời cơ cầu biến. Trong Nghịch tượng cục, Đen tiến Tốt 7 phá thế đối xứng thay vì bắt chước.",
+   "seo_title": "Cục Diện Đối Xứng — Nghịch Tượng Cục Trung Cuộc",
+   "seo_description": "Loại hình cục diện đối xứng (làm theo) trong trung cuộc cờ tướng: bên hậu bắt chước bên tiên, khi nào nên phá thế đối xứng. Ví dụ Nghịch tượng cục.",
+   "content": "<h2>Loại hình đối xứng</h2><p>Đối xứng (còn gọi là loại hình \"làm theo\") là khi hai bên dùng nước đi giống nhau để bày trận — thêm tính nghệ thuật và thú vị. Bên Hậu đi theo bên Tiên, chờ thời cơ cầu biến, đối công cướp tiên; bên Tiên bị \"bắt chước\" thì phải giữ được tiên thủ, càng cần kế hoạch chính xác. Đối binh cục, Nghịch tượng cục, Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo... đều dễ hình thành loại hình này.</p><h2>Ví dụ: Nghịch tượng cục</h2><p>Đến lượt Đỏ, Đỏ bình Xe 8 sang 7. Đen <strong>tiến Tốt 7</strong>, không bắt chước Xe 8 bình 7, phá vỡ thế đối xứng. Nếu Đen cứ bắt chước, Đỏ bình Pháo trung lộ, đi trước một nước và phát triển thế công ở cánh.</p><p>Sau đó hai bên đổi Xe, ăn Tốt qua lại. Kết quả Đỏ hơn một Tốt, ưu chút ít. Loại đối xứng này thuộc cục diện bình ổn.</p>",
+   "captions": {
+    "2": "Tiến Tốt 7, không bắt chước — phá thế đối xứng.",
+    "7": "Xe ăn Tốt.",
+    "8": "Xe ăn Xe.",
+    "9": "Xe ăn lại.",
+    "13": "Đỏ hơn một Tốt, ưu chút ít."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen cứ bắt chước bình Xe...",
+     "2": "...Đỏ bình Pháo trung lộ, đi trước một nước, phát triển công sát ở cánh."
+    }
+   },
+   "fen": "4kab2/4a4/2n1bc2n/1Rp1p1p1C/r7P/p7R/c1P1P1Pr1/N2CB1N2/4A4/2BAK4"
+  },
+  {
+   "order": 2140,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-xung-vi-du-2",
+   "title": "Chương 2 · Cục Diện Đối Xứng — Ví Dụ 2: Thế Cờ Pháo Mã Sau Khi Đổi Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dx2",
+   "summary": "Từ Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo, hai bên đổi hết Xe chỉ còn Pháo Mã. Nước nào cũng được bắt chước, thế đối xứng hình thành — và bên đi trước vẫn hơn một nước.",
+   "seo_title": "Cục Diện Đối Xứng — Cờ Pháo Mã Sau Khi Đổi Hết Xe",
+   "seo_description": "Ví dụ cục diện đối xứng trong trung cuộc cờ tướng: sau khi đổi hết Xe chỉ còn Pháo Mã, hai bên đi đối xứng, bên tiên vẫn đi trước một nước chiếm tiên.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ từ trận \"Trung Pháo đối Tả Pháo phong Xe chuyển Liệt Pháo\", hai bên đã đổi hết Xe, chỉ còn Pháo Mã. Đến lượt Đỏ.</p><h2>Đối xứng hình thành</h2><p>Đỏ tiến Tốt 9 (cũng có thể đi Tượng 3 tiến 1 hoặc Tượng 7 tiến 9), Đen lên Sĩ. Đỏ lên Sĩ, Đen bình Pháo; Đỏ bình Pháo, Đen phi Tượng; Đỏ phi Tượng, Đen tiến Tốt 9. Thế cờ thành đối xứng hoàn toàn — nhưng <strong>Đỏ vẫn đi trước một nước</strong>, chiếm tiên.</p><h2>Ý nghĩa</h2><p>Loại hình đối xứng do khai cuộc đối công diễn biến thành cờ Pháo Mã sau khi đổi hết Xe vẫn thuộc cục diện quân thế cân bằng, bình ổn. Ưu thế duy nhất là quyền đi trước — biết tận dụng nó là công phu của bên Tiên.</p>",
+   "captions": {
+    "1": "Tiến Tốt 9 (có thể đổi thành Tượng 3 tiến 1 hoặc Tượng 7 tiến 9).",
+    "8": "Thế đối xứng hình thành — Đỏ vẫn đi trước một nước, chiếm tiên."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cách khác: Tượng 3 tiến 1."
+    },
+    "1": {
+     "1": "Cách khác: Tượng 7 tiến 9."
+    }
+   },
+   "fen": "1nbakab2/9/4c1n2/p1C1p1p1p/2p6/6P2/P1P1P1c1P/2N1C4/9/2BAKABN1"
+  },
+  {
+   "order": 2150,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-da-ket-luan-phe-ma-ham-xe",
+   "title": "Chương 2 · Cục Diện Đã Kết Luận — Phế Mã Hãm Xe Cục",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-kl1",
+   "summary": "Có những cục diện vừa nhìn là thấy rõ ai tiên ai hậu, ai ưu ai kém — vì đã được nghiên cứu kỹ qua nhiều thập kỷ. Thế 'Phế Mã hãm Xe' là ví dụ: kết luận cũ 'mỗi bên có chỗ kỵ' đã được sửa thành 'bên Bình phong Mã dễ đi hơn'.",
+   "seo_title": "Cục Diện Đã Kết Luận — Phế Mã Hãm Xe Cục",
+   "seo_description": "Cục diện đã kết luận trong trung cuộc cờ tướng: những thế cờ đã được nghiên cứu đến kết luận. Ví dụ thế Phế Mã hãm Xe cục và sự thay đổi kết luận qua thời gian.",
+   "content": "<h2>Cục diện đã kết luận</h2><p>Có những cục diện hình thành từ khai cuộc chuyển sang trung cuộc mà chỉ cần nhìn hình cờ là thấy rõ: tiên thủ hay hậu thủ, chủ động hay bị động, ưu hay kém; đường tấn công và mục tiêu dễ xác định, hướng phát triển nhìn là biết. Chúng được gọi là <strong>cục diện đã kết luận</strong> — thường vì đã trải qua nghiên cứu và thực chiến rất lâu.</p><h2>Ví dụ: Phế Mã hãm Xe cục</h2><p>Thế cờ trên bàn đã thu hút sự chú ý của giới cờ từ hơn bốn mươi năm trước. Khi ấy nhiều người cho rằng bên Pháo đầu nếu tiến Xe ăn Mã thì chiếm ưu. Vì biến hóa rất phức tạp, chỉ một nước kém là thua, nên kết luận chung lúc đó là \"<em>mỗi bên có chỗ kỵ riêng</em>\".</p><p>Về sau, các nghiên cứu tiếp nối chỉ ra rằng dù biến hóa thế nào, <strong>bên Bình phong Mã vẫn chiếm thế thượng phong, dễ đi</strong>. Kết luận được sửa lại — và chính vì đã có kết luận rõ ràng sau thời gian dài kiểm nghiệm, thế cờ này được xếp vào loại \"cục diện đã kết luận\".</p><h2>Ý nghĩa với người học</h2><p>Biết những cục diện đã có kết luận giúp ta tránh đi vào thế bất lợi đã được chứng minh, và tự tin chọn những thế đã được kiểm nghiệm là tốt. Nhưng cũng nhớ rằng kết luận có thể thay đổi khi có biến mới.</p>",
+   "fen": "r2akabr1/4n4/4b1Rc1/p3C3p/9/9/P3P1P1P/2C3N2/9/cN1AKAB2"
+  },
+  {
+   "order": 2160,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-da-ket-luan-vi-du-2",
+   "title": "Chương 2 · Cục Diện Đã Kết Luận — Ví Dụ 2: Trung Pháo Quá Hà Xe Cấp Tiến Trung Binh",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-kl2",
+   "summary": "Đỏ tiến Mã ngoài, có ý phế Pháo tranh tiên; Đen tiến Mã đuổi Xe — nước đã được thực tiễn kiểm nghiệm. Sau loạt đổi quân, thực lực hai bên cân bằng: một kết luận đã định.",
+   "seo_title": "Cục Diện Đã Kết Luận — Trung Pháo Quá Hà Xe Cấp Tiến",
+   "seo_description": "Ví dụ cục diện đã kết luận: Trung Pháo quá hà Xe cấp tiến trung binh đối Bình phong Mã bình Pháo tính Xe, đổi quân dẫn đến thế cân bằng. Có các biến sách nêu.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ điển hình từ trận \"Trung Pháo quá hà Xe cấp tiến trung binh công Bình phong Mã bình Pháo tính Xe\".</p><h2>Diễn biến đã được kiểm nghiệm</h2><p>Đỏ <strong>tiến Mã ngoài</strong>, có ý phế Pháo tranh tiên. Đen tiến Mã đuổi Xe — nước đi lý tưởng đã được thực tiễn kiểm chứng, thể hiện phán đoán chính xác về cục diện. Nếu Đen đổi thành Pháo 2 tiến 5 ăn Pháo, Đỏ bỏ trước lấy sau, ưu hơn chút ít (biến trên bàn cờ).</p><p>Hai bên đổi Pháo, đổi Mã; Đỏ bình Xe — chính xác (nếu tiến Tốt 7 thay vào đó, Đen ưu). Đến đây thực lực hai bên tương đương, cân bằng.</p><h2>Vì sao gọi là \"đã kết luận\"?</h2><p>Chuỗi nước này đã được lặp lại và phân tích nhiều lần, ai cũng biết kết cục là cân bằng. Người chơi chọn trận này cần biết trước điều đó để không kỳ vọng sai.</p>",
+   "captions": {
+    "1": "Tiến Mã ngoài, có ý phế Pháo tranh tiên.",
+    "2": "Tiến Mã đuổi Xe — nước lý tưởng đã được thực tiễn kiểm nghiệm.",
+    "5": "Xe ăn Pháo.",
+    "6": "Pháo ăn Pháo.",
+    "8": "Mã ăn Mã.",
+    "9": "Tốt ăn Mã.",
+    "13": "Bình Xe — chính xác.",
+    "14": "Thực lực hai bên tương đương, cân bằng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen ăn Pháo ngay...",
+     "8": "...Đỏ bỏ trước lấy sau, ưu hơn chút ít."
+    },
+    "1": {
+     "1": "Nếu Đỏ tiến Tốt 7...",
+     "6": "...Đen ưu."
+    }
+   },
+   "fen": "r3kab2/4a1c2/1cn1b1n2/p1p1pR2p/3NP4/2P6/P5p1P/1CN1C4/7r1/R1BAKAB2"
+  },
+  {
+   "order": 2170,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-tham-cao-ta-phao",
+   "title": "Chương 2 · Cục Diện Đợi Thẩm — Những Thế Cờ Chưa Có Lời Giải",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt1",
+   "summary": "Nhiều thế trung cuộc đến nay vẫn chưa ai kết luận được ai ưu ai kém — gọi là cục diện đợi thẩm. Thế 'Cao tả Pháo' thịnh hành thập niên 60 và 'Bình phong Mã quá hà Pháo' là hai ví dụ.",
+   "seo_title": "Cục Diện Đợi Thẩm — Trung Cuộc Chưa Có Kết Luận",
+   "seo_description": "Cục diện đợi thẩm (trung cuộc chưa kết luận) trong cờ tướng: vì sao nhiều thế cờ chưa phân được ưu kém, ví dụ Cao tả Pháo cục và Bình phong Mã quá hà Pháo.",
+   "content": "<h2>Vì sao có những thế chưa kết luận?</h2><p>Cờ tướng không ngừng phát triển. Nghiên cứu khai cuộc ngày càng sâu, nhiều trận thế được phân tích đến mười mấy, hai mươi mấy nước — tức đã đi sâu vào trung cuộc. Những gì được khẳng định một thời gian lại bị biến mới đẩy lùi. Vì vậy có rất nhiều thế cờ mà nhất thời không thể kết luận, chỉ có thể dự đoán; ngay cả kỳ thủ cao tay cũng phải dựa vào kinh nghiệm để chọn đối sách. Chúng được gọi là <strong>trung cuộc chưa kết luận</strong>, hay <strong>cục diện đợi thẩm</strong>.</p><h2>Ví dụ</h2><ul><li><strong>Cao tả Pháo cục</strong> (thế cờ trên bàn): rất thịnh hành thập niên 60, nhưng ai ưu ai kém đến nay vẫn chưa có kết luận.</li><li><strong>Bình phong Mã quá hà Pháo cục</strong>: lưu hành từ hơn hai mươi năm trước, vẫn thường được các danh thủ sử dụng, liên tục xuất hiện biến mới; thực tiễn hai bên đều có thắng có thua.</li></ul><p>Cả hai đều là cục diện đối công kịch liệt, biến hóa phức tạp.</p><h2>Học gì từ cục diện đợi thẩm?</h2><p>Nghiên cứu nhiều lần và kiểm nghiệm qua thực tiễn những bố cục này giúp nâng cao nhận thức về hai loại cục diện \"đã kết luận\" và \"đợi thẩm\" — từ đó bồi dưỡng trực giác cục diện và năng lực \"thẩm cục độ thế\".</p>",
+   "fen": "r2akabr1/9/2n1b4/p1p1pR2p/1c7/2PN2p2/PC2P1n1P/3CB1Nc1/9/R2AKAB2"
+  },
+  {
+   "order": 2180,
+   "slug": "trung-cuoc-bao-dien-t1-cuc-dien-doi-tham-bien-moi",
+   "title": "Chương 2 · Cục Diện Đợi Thẩm — Biến Mới Qua Từng Thời Kỳ",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt2",
+   "summary": "Trung Pháo quá hà Xe thất lộ Pháo đối Bình phong Mã: thập niên 50 kết luận Đen ưu; năm 1980 xuất hiện biến 'phi Pháo ăn Tốt phế Mã' giúp Đỏ ưu lớn; năm 1991 Đen lại tìm ra cách đáp. Một thế cờ vẫn đang chờ phán xét.",
+   "seo_title": "Cục Diện Đợi Thẩm — Biến Mới Trung Pháo Thất Lộ Pháo",
+   "seo_description": "Lịch sử một cục diện đợi thẩm: Trung Pháo quá hà Xe thất lộ Pháo đối Bình phong Mã, kết luận thập niên 50, biến mới 1980, cách đáp 1991. Bàn cờ ba nhánh.",
+   "content": "<h2>Bối cảnh</h2><p>Thế cờ từ trận \"Trung Pháo quá hà Xe thất lộ Pháo đối Bình phong Mã bình Pháo tính Xe\". Từ thập niên 50 thế kỷ 20, trận này đã được kết luận là bên Bình phong Mã chiếm ưu.</p><h2>Kết luận thời kỳ đầu</h2><p>Những nước tiếp theo của Đỏ được nêu khi đó: phi Tượng 7, nhảy Mã; Đen dùng Pháo đánh Tượng, Pháo ăn Tượng chiếu, có thế công và chiếm ưu (mạch chính). Phi Tượng 3 thay vào đó cũng không khá hơn. Vì vậy mấy chục năm, rất ít người cầm Tiên dùng trận này.</p><h2>Biến mới năm 1980</h2><p>Tại giải toàn quốc ở Phúc Châu (1980), một kỳ thủ An Huy đưa ra biến mới: <strong>Pháo 7 tiến 4 ăn Tốt, phế Mã</strong>, lùi Pháo, bình Pháo trung lộ... Đỏ chiếm ưu lớn. Biến này thu hút sự chú ý, nhưng về sau ít được dùng.</p><h2>Cách đáp năm 1991</h2><p>Mười năm sau, tại giải vô địch cá nhân toàn quốc 1991 ở Đại Liên, bên Hậu đưa ra nước ứng phó mới: bình Pháo 9 sang 7. Đỏ tiến Xe là chính xác (nếu vẫn lùi Pháo, Đen bình Pháo trước vào trung lộ phản đoạt tiên). Hình thành thế \"mỗi bên có chỗ kỵ riêng\" — kết quả thực chiến Đen thắng.</p><h2>Kết luận: vẫn đợi thẩm</h2><p>Trận này trong thực tiễn chưa nhiều, quân hai bên còn đông, biến hóa phức tạp, nhất thời khó phân ưu kém — đúng là một \"cục diện đợi thẩm\". So sánh ba nhánh trên bàn cờ để thấy lý luận cờ thay đổi thế nào qua thời gian.</p>",
+   "captions": {
+    "1": "Kết luận thập niên 50: phi Tượng 7...",
+    "4": "Pháo trước tiến 7 ăn Tượng chiếu.",
+    "6": "Pháo ăn Tượng chiếu.",
+    "8": "Đen có thế công, chiếm ưu — Đỏ khó chống đỡ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Phi Tượng 3 cũng không khá hơn...",
+     "8": "...Đen ưu."
+    },
+    "1": {
+     "1": "Biến mới 1980: Pháo ăn Tốt, phế Mã!",
+     "2": "Pháo Đen ăn Mã.",
+     "5": "Pháo bình trung lộ.",
+     "9": "Đỏ chiếm ưu lớn."
+    },
+    "2": {
+     "2": "Cách đáp 1991: bình Pháo 9 sang 7.",
+     "3": "Đỏ tiến Xe — chính xác.",
+     "6": "Mỗi bên có chỗ kỵ riêng (thực chiến Đen thắng)."
+    }
+   },
+   "fen": "r1bakabr1/4n3c/6c2/p1p1R3p/9/2P3P2/P3P3P/2C3N2/9/RNBAKAB2"
+  },
+  {
+   "order": 2190,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-1-duoc-quan-duoc-the",
+   "title": "Chương 2 · Phân Tích Định Lượng (1): Được Quân, Được Thế, Nhiều Tốt",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl1",
+   "summary": "'Lượng' là tỷ lệ lực lượng vật chất hai bên. Trường hợp đầu tiên: hơn Tốt, Tốt áp sát cửu cung — dùng chiến thuật đổi quân giản hóa để mở rộng ưu thế đến thắng lợi.",
+   "seo_title": "Phân Tích Định Lượng Trung Cuộc: Hơn Tốt, Đổi Quân Thắng",
+   "seo_description": "Phân tích định lượng trong thẩm cục trung cuộc cờ tướng: khi được quân được thế nhiều Tốt, dùng đổi quân giản hóa để mở rộng ưu thế. Ví dụ Đối binh cục.",
+   "content": "<h2>Định lượng là gì?</h2><p>\"Lượng\" trong một ván cờ chủ yếu là <strong>tỷ lệ lực lượng vật chất</strong> của hai bên. Trung cuộc thường xuất hiện sáu tình huống điển hình về lượng; nhận ra mình đang ở tình huống nào giúp chọn đúng đối sách. Bài này và năm bài tiếp theo đi qua từng tình huống.</p><h2>Tình huống 1: được quân, được thế, nhiều Tốt</h2><p>Khi đã có ưu thế lực lượng vật chất, xu hướng ván cờ là thắng — việc còn lại là <strong>đừng cho đối phương cơ hội</strong>.</p><h2>Ví dụ: Đối binh cục</h2><p>Quân hai bên tương đương, nhưng Đỏ hơn một Tốt và Tốt đã áp sát cửu cung — hơi ưu. Đỏ tận dụng nước đi trước, <strong>tiến Mã ép đổi</strong>, giản hóa cục thế, tiêu trừ sức mạnh đối phương. Nếu Đen không đổi mà tiến Pháo, Đỏ vẫn nhiều Tốt chiếm ưu (biến trên bàn cờ).</p><p>Sau đó Đỏ dùng <strong>Tốt phá Sĩ</strong> — hiệu lệnh tấn công. Sĩ vỡ, Mã Đỏ lập tức xuất kích như mãnh hổ hạ sơn, phối hợp Xe Pháo chiếu liên tục, cuối cùng Đỏ thắng.</p>",
+   "captions": {
+    "1": "Tiến Mã ép đổi — giản hóa, không cho đối thủ cơ hội.",
+    "2": "Mã ăn Mã.",
+    "3": "Xe ăn lại.",
+    "13": "Tốt phá Sĩ — hiệu lệnh tấn công!",
+    "15": "Mã xuất kích như mãnh hổ hạ sơn.",
+    "23": "Xe chiếu.",
+    "25": "Xe ăn Sĩ chiếu.",
+    "35": "Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen không đổi Mã mà tiến Pháo...",
+     "6": "...Đỏ nhiều Tốt chiếm ưu."
+    }
+   },
+   "fen": "3ckab2/4a1P2/4b4/p1p5c/4r1n2/2P6/PR4C2/2N1B4/4A1N2/4KAB2"
+  },
+  {
+   "order": 2200,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-2-duoc-quan-kem-the",
+   "title": "Chương 2 · Phân Tích Định Lượng (2): Được Quân Nhưng Kém Thế, Kém Tốt",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl2",
+   "summary": "Hơn một Pháo nhưng đối phương hơn Tốt giữa và quân đứng đẹp: xu hướng là hòa hoặc thua. Đỏ lẽ ra nên dùng Mã đổi Tốt cầu hòa — thực chiến lại giữ quân và thua.",
+   "seo_title": "Định Lượng Trung Cuộc: Được Quân Nhưng Kém Thế",
+   "seo_description": "Phân tích định lượng trung cuộc cờ tướng: hơn quân nhưng kém thế kém Tốt thì nên cầu hòa, ví dụ Thuận Pháo trực Xe đối chậm khai Xe. Bàn cờ có biến.",
+   "content": "<h2>Tình huống 2: được quân nhưng kém thế, kém Tốt</h2><p>Lực lượng vật chất tuy hơn, nhưng xu hướng ván cờ lại là <strong>hòa hoặc thua</strong>. Lúc này đừng ôm khư khư quân hơn.</p><h2>Ví dụ: Thuận Pháo trực Xe đối chậm khai Xe</h2><p>Đỏ hơn một Pháo; Đen hơn Tốt giữa và các quân chủ lực đứng đẹp. Đến lượt Đỏ. Nếu Đỏ <strong>dùng Mã đổi Tốt</strong> (Mã 7 tiến 5), rồi bình Xe phục tiến Xe bắt Mã, chiếm hàng Tốt — làm chậm tốc độ tấn công của đối phương, cục thế cân bằng, có thể hòa (biến trên bàn cờ).</p><p>Thực chiến Đỏ lại lùi Mã giữ quân. Đen dùng Tốt giữa tiến dần, Pháo tiến, Mã lùi rồi nhảy vào, Tướng ra trợ chiến... Tốt Đen ăn Tượng, phục tiếp Tốt 5 tiến 1 rồi Xe bình trung lộ — Đen nhất định thắng.</p><h2>Bài học</h2><p>Ván này bên Đỏ nên dùng Mã đổi Tốt, đừng sợ mất quân — <strong>cầu hòa mới là thượng sách</strong>.</p>",
+   "captions": {
+    "1": "Lùi Mã giữ quân — thực chiến chọn sai hướng.",
+    "2": "Tốt giữa bình tiến dần.",
+    "12": "Ra Tướng trợ chiến.",
+    "16": "Mã chiếu.",
+    "18": "Tốt ăn Tượng — Đen phục Tốt 5 tiến 1 rồi Xe bình trung, nhất định thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nên dùng Mã đổi Tốt...",
+     "3": "...phục tiến Xe bắt Mã, chiếm hàng Tốt — cục thế cân bằng, có thể hòa."
+    }
+   },
+   "fen": "2b1kab2/4a4/4c4/p7p/1n7/PCB1C4/2r1p3P/2N1B4/R3A4/4KA3"
+  },
+  {
+   "order": 2210,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-3-mat-quan-chiem-uu",
+   "title": "Chương 2 · Phân Tích Định Lượng (3): Mất Quân Mà Vẫn Chiếm Ưu — Lấy Nhanh Đánh Chậm",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl3",
+   "summary": "Đen hơn song Mã, nhưng Đỏ có Pháo trống, Tốt qua hà và song Xe rất uy lực. Lợi dụng nước đi trước, Đỏ 'lấy nhanh đánh chậm' bằng những nước tiến Tốt dồn dập và giành thắng lợi.",
+   "seo_title": "Định Lượng Trung Cuộc: Mất Quân Vẫn Chiếm Ưu",
+   "seo_description": "Phân tích định lượng trung cuộc cờ tướng: mất quân nhưng thế mạnh, chiến thuật lấy nhanh đánh chậm, Tốt qua hà phối hợp song Xe Pháo. Ví dụ có nhiều biến.",
+   "content": "<h2>Tình huống 3: mất quân nhưng chiếm ưu thế</h2><p>Lực lượng không cân bằng, nhưng ván cờ phát triển có lợi cho bên ít quân — nhờ thế và tốc độ.</p><h2>Ví dụ: Ngũ thất Pháo tiến tam binh đối Bình phong Mã</h2><p>Đen hơn song Mã, nhưng Đỏ có Pháo trống trung lộ, Tốt qua hà trợ chiến, song Xe rất uy lực. Đỏ đi trước và áp dụng chiến thuật <strong>\"lấy nhanh đánh chậm\"</strong>.</p><ul><li><strong>Tiến Tốt</strong> đẩy nhanh tốc độ tấn công. Nếu Đen bình Pháo sang 6, Xe Đỏ tiến xuống đáy rồi bình sang, Đỏ ưu.</li><li>Xe ăn Xe chiếu, Đen dùng Mã ăn lại; Đỏ tiếp tục tiến Tốt. Nếu Đen tiến Pháo thay vì lùi, Đỏ bình Xe chiếu và thắng.</li><li>Đỏ tiến Tốt lần nữa — nước chặt chẽ. Nóng vội tiến Xe thì vẫn ưu nhưng muốn thắng phải kéo dài.</li></ul><p>Cuối cùng Xe Đỏ bình trung chiếu, ăn Sĩ, ăn Pháo, Pháo ăn Sĩ — Đỏ thắng.</p>",
+   "captions": {
+    "1": "Tiến Tốt — đẩy nhanh tốc độ tấn công.",
+    "3": "Xe ăn Xe chiếu.",
+    "5": "Lại tiến Tốt.",
+    "9": "Tiến Tốt — nước chặt chẽ (nóng vội tiến Xe thì thắng chậm hơn).",
+    "13": "Xe lùi — nước tinh tế.",
+    "15": "Xe bình trung chiếu.",
+    "17": "Xe ăn Sĩ chiếu.",
+    "19": "Xe ăn Pháo.",
+    "23": "Pháo ăn Sĩ.",
+    "25": "Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen bình Pháo sang 6...",
+     "2": "...Xe xuống đáy rồi bình sang, Đỏ ưu."
+    },
+    "1": {
+     "1": "Nếu Đen tiến Pháo...",
+     "2": "Xe bình trung chiếu.",
+     "5": "...Đỏ thắng."
+    },
+    "2": {
+     "1": "Nếu Sĩ lên chặn...",
+     "2": "...Xe bình chiếu, tiếp theo ăn Xe."
+    },
+    "3": {
+     "1": "Nóng vội tiến Xe...",
+     "4": "...Đỏ vẫn ưu, nhưng muốn thắng phải kéo dài hơn."
+    }
+   },
+   "fen": "3ak2r1/7c1/3a2n2/6p1p/2p2P3/2n3P2/5R2P/4C4/1r2A4/2BAK1BR1"
+  },
+  {
+   "order": 2220,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-4-quan-ngang-nhau",
+   "title": "Chương 2 · Phân Tích Định Lượng (4): Quân Ngang Nhau — Tiên Phế Hậu Đoạt",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl4",
+   "summary": "Quân mạnh và Tốt hai bên ngang nhau, cục thế bình ổn. Đỏ phế Tốt, để Pháo Đen ăn Mã, rồi bình Pháo đuổi Mã đoạt lại quân — dùng quân ít nước đổi quân nhiều nước của đối phương để giành chủ động.",
+   "seo_title": "Định Lượng Trung Cuộc: Quân Ngang Nhau, Tiên Phế Hậu Đoạt",
+   "seo_description": "Phân tích định lượng trung cuộc cờ tướng khi quân ngang nhau: tiên phế hậu đoạt, đổi quân vị xấu lấy quân vị đẹp để giành quyền chủ động. Ví dụ có bàn cờ.",
+   "content": "<h2>Tình huống 4: quân và Tốt ngang nhau, cục thế bình ổn</h2><p>Nhất thời khó phân cao thấp. Đây là lúc cần những chiến pháp tranh tiên đoạt thế tinh tế.</p><h2>Ví dụ: Trung Pháo đối Tam bộ hổ chuyển Liệt Pháo</h2><p>Hậu trung cuộc, hai bên đã đổi một Xe, quân mạnh và Tốt ngang nhau, nhòm ngó nhau qua sông. Đến lượt Đỏ. Đỏ <strong>tiến Tốt 7</strong> ăn Tốt, chấp nhận để Pháo Đen ăn Mã. Mã còn lại lùi về giữa, Mã Đen ăn Tốt; rồi Đỏ <strong>bình Pháo đuổi Mã</strong> và Pháo ăn Mã — đoạt lại quân đã phế, chiến thuật tinh xảo. Đỏ tiếp tục tiến Tốt, bình Pháo, phục Pháo 8 tiến 5 — thế cờ dễ đi.</p><h2>Nguyên lý</h2><p>Trong cục diện tương đương, hãy dùng <strong>quân đã đi ít nước đổi lấy quân đã đi nhiều nước</strong> của đối phương (tranh tiên cướp nước), hoặc dùng quân vị xấu đổi quân vị đẹp của đối phương (đoạt thế). Quân vẫn ngang nhau, nhưng quyền chủ động đã về tay mình.</p>",
+   "captions": {
+    "1": "Tiến Tốt ăn Tốt — chấp nhận phế Mã.",
+    "2": "Pháo Đen ăn Mã.",
+    "5": "Bình Pháo đuổi Mã...",
+    "7": "...Pháo ăn Mã — đoạt lại quân đã phế, chiến thuật tinh xảo.",
+    "11": "Đỏ phục Pháo 8 tiến 5, thế cờ dễ đi."
+   },
+   "fen": "2bakab2/9/2c3n1c/p3p3p/1np3pr1/2P2RP2/P3P3P/B1N1C1N2/2C6/3AKAB2"
+  },
+  {
+   "order": 2230,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-5-kem-quan-kem-the",
+   "title": "Chương 2 · Phân Tích Định Lượng (5): Kém Quân Kém Thế — Bối Thủy Nhất Chiến",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl5",
+   "summary": "Đen hơn một Xe, Xe lộ 4 của Đỏ bị kìm. Thay vì phòng thủ chờ thua, Đỏ phế Xe phế Tốt mở đường cho Pháo Mã công sát, làm rối cục thế và giữ được hòa.",
+   "seo_title": "Định Lượng Trung Cuộc: Kém Quân Kém Thế, Phế Xe Cầu Hòa",
+   "seo_description": "Phân tích định lượng trung cuộc cờ tướng khi kém quân kém thế: dũng cảm phế quân làm rối cục diện, Pháo Mã công sát giữ hòa. Ví dụ thực chiến nhiều biến.",
+   "content": "<h2>Tình huống 5: mất quân, mất thế, kém Tốt</h2><p>Lực lượng chênh lệch lớn, chỉ có thể ngoan cường chống đỡ, chờ thời cơ.</p><h2>Ví dụ thực chiến</h2><p>Đen hơn một Xe; Xe lộ 4 của Đỏ đang bị khống chế. Đến lượt Đỏ. Nếu Đỏ tiến Xe 2 bước, sau loạt nước Đen lùi Xe bắt Pháo giải vây, vẫn nhiều quân chiếm ưu (nếu Đen đi nhầm Mã 7 tiến 9 thì Đỏ lại thắng — biến phụ). Tiến Xe 4 bước thì bị Đen lùi Xe bắt Pháo, khó ứng phó.</p><h2>Phá phủ trầm chu</h2><p>Thực chiến Đỏ chọn <strong>Xe 4 tiến 5 ăn Pháo</strong>, chấp nhận Tướng Đen ăn Xe — phế Xe! Tiếp đó Tốt ăn Mã chiếu, Tốt bình chiếu, Mã chiếu, Tướng Đen bị đẩy lên cao. Đen phải trả lại quân, Pháo Mã Đỏ đuổi chiếu liên tục, cuối cùng ổn định cục diện và thành hòa.</p><h2>Bài học</h2><p>Trước tình thế kém quân kém thế, hãy dũng cảm phế quân để làm nhiễu cục diện, \"thừa nước đục thả câu\". Phương pháp <em>phá phủ trầm chu, bối thủy nhất chiến</em> này thường đem lại hiệu quả bất ngờ.</p>",
+   "captions": {
+    "1": "Xe ăn Pháo chiếu — phế Xe, bối thủy nhất chiến!",
+    "2": "Tướng ăn Xe.",
+    "3": "Tốt ăn Mã chiếu.",
+    "5": "Tốt bình chiếu.",
+    "7": "Mã chiếu, Tướng Đen bị đẩy lên.",
+    "10": "Xe ăn Mã chiếu.",
+    "11": "Sĩ ăn Xe.",
+    "13": "Pháo ăn Pháo.",
+    "29": "Ổn định cục diện — hòa cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu tiến Xe 2 bước...",
+     "8": "...Đen lùi Xe bắt Pháo giải vây, nhiều quân chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Đen đi nhầm Mã 7 tiến 9...",
+     "6": "...Đỏ thắng."
+    },
+    "2": {
+     "1": "Nếu tiến Xe 4 bước...",
+     "2": "...Xe lùi bắt Pháo, Đỏ khó ứng phó."
+    }
+   },
+   "fen": "2bakcn2/4a1P2/4b4/4C1N2/4p4/2Br1RP2/4P3P/4BA3/2crA4/3N1K3"
+  },
+  {
+   "order": 2240,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-luong-6-kem-quan-hon-tot",
+   "title": "Chương 2 · Phân Tích Định Lượng (6): Kém Quân Hơn Tốt",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dl6",
+   "summary": "Đỏ hơn một Mã, Đen hơn Tốt giữa đã qua hà, quân hai bên còn nhiều. Đen bình Pháo đè Mã tính Xe, ăn Tượng, dùng Tốt khống chế quân chưa qua sông — cục diện mở ra lạc quan cho bên ít quân.",
+   "seo_title": "Định Lượng Trung Cuộc: Kém Quân Hơn Tốt",
+   "seo_description": "Phân tích định lượng trung cuộc cờ tướng khi kém quân nhưng hơn Tốt: phát huy Tốt qua hà, Pháo đè Mã tính Xe, ăn Tượng. Ví dụ Trung Pháo tiến trung binh.",
+   "content": "<h2>Tình huống 6: kém quân hơn Tốt, quân còn nhiều</h2><p>Cục thế có thể phát triển theo cả ba hướng thắng, thua, hòa.</p><h2>Ví dụ: Trung Pháo tiến trung binh đối Bình phong Mã Tả Pháo phong Xe</h2><p>Quân hai bên đã sẵn sàng; Đỏ hơn một Mã, Đen hơn Tốt giữa đã qua hà — cục diện còn kéo dài. Đến lượt Đen. Đen <strong>bình Pháo đè Mã tính Xe</strong>, có thể ăn Tượng chiếm thực lợi. Sau khi Pháo ăn Tượng, Đen lại bình Pháo tính Xe, tạo áp lực lên lộ 7 của Đỏ — thủ đoạn \"hậu phát chế nhân\". Hai bên đổi Xe; Đỏ tuy hơn quân nhưng khuyết Tượng, kém Tốt — Đen có thể lạc quan.</p><h2>Bài học</h2><p>Khi kém quân hơn Tốt mà lực lượng còn nhiều: phát huy hết tác dụng Tốt qua hà, cho Tốt liên kết, dùng Tốt khống chế các quân chưa qua sông của đối phương (ví dụ khống chế Mã). Khi có cơ hội thì tổ chức phản kích.</p><h2>Tổng kết sáu tình huống</h2><p>Quan hệ cân bằng hay mất cân bằng về lượng là quy luật khách quan của trung cuộc. Chỉ có nghiên cứu chăm chỉ, nhận thức từ lý luận và rèn luyện nhiều lần trong thực chiến mới nâng cao nhanh thực lực trung cuộc.</p>",
+   "captions": {
+    "1": "Bình Pháo đè Mã tính Xe — có thể ăn Tượng chiếm thực lợi.",
+    "2": "Xe ăn Xe.",
+    "3": "Pháo ăn Tượng chiếu.",
+    "5": "Mã ăn Xe.",
+    "9": "Bình Pháo tính Xe, tạo áp lực lộ 7 — hậu phát chế nhân.",
+    "10": "Xe ăn Xe chiếu.",
+    "11": "Tướng ăn Xe.",
+    "13": "Pháo ăn Tốt — Đỏ hơn quân nhưng khuyết Tượng kém Tốt, Đen có thể lạc quan."
+   },
+   "fen": "3rkabr1/4a4/1c2b1n2/p5p1p/2pC5/4p1P2/P1P4cP/2N1C1N2/3R3R1/2BAKAB2"
+  },
+  {
+   "order": 2250,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-tinh-gia-tri-cac-quan",
+   "title": "Chương 2 · Định Tính Thẩm Quân: Giá Trị Thực Của Từng Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt-v2",
+   "summary": "Xe, Pháo, Mã, Sĩ, Tượng, Tốt đáng giá bao nhiêu và giá trị thay đổi ra sao theo giai đoạn ván cờ. Ví dụ: Xe chưa xuất của Đen chỉ có một nước đúng — mời đổi lấy Xe sáng của Đỏ.",
+   "seo_title": "Giá Trị Các Quân Cờ Tướng: Xe, Pháo, Mã, Tốt Trong Trung Cuộc",
+   "seo_description": "Giá trị các quân cờ tướng theo giai đoạn: Xe bằng Pháo Mã, khai cuộc Pháo hơn Mã, tàn cuộc Mã hơn Pháo, giá trị lưu động của Tốt, khái niệm được quân.",
+   "content": "<h2>Căn cứ để định giá quân</h2><p>Giá trị sức chiến đấu của các quân không phải luật cờ quy định, mà là tổng kết của người đi sau, dựa trên hai căn cứ:</p><ul><li><strong>Cách đi và ăn quân có linh hoạt không</strong>: Xe, Pháo, Mã tung hoành khắp bàn — \"quân mạnh\". Sĩ, Tượng không qua sông, là cấm vệ quân — \"quân yếu\". Tốt chưa qua sông yếu nhất, qua sông rồi thì mạnh lên tùy vị trí, nằm giữa quân yếu và quân mạnh. Tướng là mục tiêu, không định giá.</li><li><strong>So sánh trong thực chiến</strong>: thông qua được – mất ở trung cuộc mà rút ra giá trị thực tế.</li></ul><h2>Vài so sánh kinh nghiệm</h2><ul><li>Đổi Xe lấy Pháo Mã (hoặc song Mã, song Pháo) sớm ở khai cuộc thường không lý tưởng; nhưng ở tàn cuộc khi đối phương mất Sĩ Tượng, Pháo Mã thường giữ hòa được với một Xe — có thể coi <strong>một Xe ≈ Pháo + Mã</strong>.</li><li>Khi có điều kiện nhập cuộc, dùng một Pháo hoặc một Mã đổi song Sĩ (hoặc song Tượng) không bị coi là thiệt — vì một Xe khó thắng Sĩ Tượng toàn.</li><li>Khai cuộc Pháo đi nhanh, khống chế rộng: <strong>Pháo hơn Mã</strong>. Tàn cuộc Pháo thiếu ngòi, Mã \"uy phong tám hướng\": <strong>Mã hơn Pháo</strong>. Trung cuộc hai quân tương đương.</li><li>Tốt có <strong>\"giá trị lưu động\"</strong>: khai cuộc rẻ, qua sông thì mạnh lên nhiều; hơn một Tốt đã có thể thắng, hơn hai ba Tốt thì gần như chắc thắng; Tốt áp cung có thể \"húc bay đại Xe\".</li></ul><h2>Khái niệm \"được quân\" — và giới hạn của nó</h2><p>Được – mất quân là lúc cân bằng lực lượng bị phá vỡ: bên được quân thường lộ ưu thế công thủ, bên mất quân bị động. Nhưng đừng máy móc: nếu sau khi đổi quân, quân mình đứng kém, hoặc cửu cung bị đe dọa, thì dù \"lời\" về giá trị vẫn có thể \"được một mất mười\". Phải xử lý tốt quan hệ giữa <strong>Quân</strong> và <strong>Tiên</strong>.</p><h2>Ví dụ: Xe tối đổi Xe sáng</h2><p>Thế cờ từ trận \"Ngũ lục Pháo chính Mã đối Phản cung Mã\". Song Pháo song Mã hai bên ngang nhau, nhưng Xe lộ 2 của Đỏ có thể qua sông tấn công bất cứ lúc nào, còn Xe lộ 9 của Đen còn chưa động. Thực chiến từng có các nước Tốt 9 tiến 1, lên Tượng, tiến Xe 2... nhưng đi như vậy Xe lộ 2 Đỏ phát huy rất mạnh. Nước đúng duy nhất: <strong>Xe 9 bình 8</strong> — lấy Xe tối đổi Xe sáng, tiêu trừ uy lực tấn công của đối phương.</p>",
+   "captions": {
+    "1": "Xe 9 bình 8 — lấy Xe tối đổi Xe sáng, nước đúng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Tiến Tốt biên — Xe lộ 2 Đỏ phát huy mạnh, Đỏ dễ nắm tiên."
+    },
+    "1": {
+     "1": "Lên Tượng — cũng để Xe Đỏ tự do hoạt động."
+    },
+    "2": {
+     "1": "Lên Tượng phía kia — tương tự."
+    },
+    "3": {
+     "1": "Tiến Xe 2 — chưa giải quyết được Xe chưa xuất."
+    }
+   },
+   "fen": "1rbak1b1r/4a4/c1n2cn2/p1p1p3p/6p2/2PN5/P3P1P1P/R2CC1N2/9/2BAKABR1"
+  },
+  {
+   "order": 2260,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-tinh-so-sanh-so-nuoc-di",
+   "title": "Chương 2 · Định Tính Thẩm Quân: So Sánh Số Nước Đi Và Vị Trí Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt-v3",
+   "summary": "Quân hai bên tương đương, nhưng Xe Pháo Đỏ đứng đẹp hơn, Mã Đỏ phục ngọa tào, và Đỏ đã đi 11 nước so với 8 của Đen. Cộng tất cả lại: Đỏ thắng thế — và thực chiến chứng minh điều đó.",
+   "seo_title": "So Sánh Số Nước Đi Và Vị Trí Quân Trong Trung Cuộc",
+   "seo_description": "Cách định tính thẩm quân trong trung cuộc cờ tướng: so sánh vị trí quân và số nước đi của hai bên. Ví dụ Ngũ cửu Pháo quá hà Xe, Mã ngọa tào thắng thế.",
+   "content": "<h2>Hai thước đo</h2><p>Khi quân hai bên tương đương, cần so sánh hai thứ: <strong>giá trị vị trí</strong> của các quân và <strong>số nước đi</strong> đã đầu tư vào phát triển. Bên có quân đứng đẹp hơn và đã đi nhiều nước \"hữu ích\" hơn thường là bên ưu.</p><h2>Ví dụ: hậu trung cuộc Ngũ cửu Pháo quá hà Xe</h2><p>Xe Pháo Đỏ chiếm vị đẹp hơn Xe Pháo Đen. Mã Đen tuy có thể ăn Tốt, ăn Tượng chiếm thực lợi, nhưng Mã Đỏ đứng rất đẹp, phục nước tiến ngọa tào, thế công rất mạnh. Đếm số nước: Đỏ 11, Đen chỉ 8. Tổng hợp lại, Đỏ thắng thế.</p><h2>Thực chiến</h2><p>Mã Đỏ nhảy biên rồi vào <strong>ngọa tào chiếu</strong>, Tướng Đen phải bình. Đỏ bình Xe trung lộ bắt Mã, phục Pháo bình sang chiếu — thế thắng đã định. Đen dùng Xe đổi Pháo, Sĩ Đỏ ăn lại, Đỏ nhất định thắng.</p>",
+   "captions": {
+    "1": "Mã nhảy biên chuẩn bị ngọa tào.",
+    "3": "Mã ngọa tào chiếu.",
+    "5": "Bình Xe tróc Mã, phục Pháo bình 6 — thế thắng đã định.",
+    "7": "Pháo bình chiếu.",
+    "8": "Xe ăn Pháo.",
+    "9": "Sĩ ăn Xe.",
+    "11": "Đỏ nhất định thắng."
+   },
+   "fen": "4kab2/4a4/3cb4/p1N1pn1rp/9/2P1P1B2/3R4P/6C2/4A4/2B1KA3"
+  },
+  {
+   "order": 2270,
+   "slug": "trung-cuoc-bao-dien-t1-dinh-tinh-tot-ap-sat-cuu-cung",
+   "title": "Chương 2 · Định Tính Thẩm Quân: Tốt Áp Sát Cửu Cung",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt-v4",
+   "summary": "Quân lớn tương đương, Đen còn hơn một Tốt — nhưng Tốt Đỏ đã áp sát cửu cung, giá trị tăng vọt. Đỏ phế Tốt phá Sĩ, Đen không giải được nước gọi cục Pháo bình 6.",
+   "seo_title": "Tốt Áp Sát Cửu Cung — Giá Trị Tốt Trong Trung Cuộc",
+   "seo_description": "Định tính thẩm quân trung cuộc cờ tướng: Tốt áp sát cửu cung có giá trị lớn hơn Tốt thường, ví dụ Phi Tượng đối Hữu Pháo quá cung, phế Tốt phá Sĩ thắng.",
+   "content": "<h2>Giá trị của một Tốt tùy vị trí</h2><p>Thế cờ từ trận \"Phi Tượng đối Hữu Pháo quá cung\". Quân lớn hai bên tương đương; Mã Đỏ đã chiếm ưu so với Pháo Đen; Đen hơn một Tốt. Cả hai bên đều có Tốt qua hà, nhưng <strong>Tốt Đỏ đã áp sát cửu cung</strong>, trực tiếp đe dọa an toàn của Tướng Đen — giá trị của nó tăng lên rất nhiều, đủ điều kiện để mở rộng ưu thế.</p><h2>Thực chiến</h2><p>Đỏ <strong>bình Pháo 7 sang 3</strong>!, Xe bình trung, Pháo bình 2, Xe lùi ăn Tốt... rồi <strong>Pháo 2 bình 5</strong>! — trấn trung lộ. Đen bình Tướng tránh, Đỏ lùi Mã, và cuối cùng <strong>Tốt 4 tiến 1 phá Sĩ</strong>! Đen không có cách nào giải nước gọi cục Pháo 5 bình 6. Nếu Đen lùi Sĩ ăn Tốt, Xe Đỏ tiến ăn Pháo — hơn quân, nhất định thắng.</p><h2>Bài học</h2><p>Khi đếm Tốt, đừng chỉ đếm số lượng: một Tốt áp cung có thể đáng giá hơn hai Tốt ở xa.</p>",
+   "captions": {
+    "1": "Bình Pháo 7 sang 3! — nước hay.",
+    "3": "Xe bình trung lộ.",
+    "7": "Xe lùi ăn Tốt.",
+    "11": "Pháo bình trung lộ! — trấn giữ cửu cung.",
+    "17": "Tốt phá Sĩ! — Đen không giải được nước gọi cục Pháo 5 bình 6.",
+    "18": "Sĩ lùi ăn Tốt...",
+    "19": "...Xe ăn Pháo — Đỏ hơn quân, nhất định thắng."
+   },
+   "fen": "4kab2/4aP3/2r1b4/pN3R3/4p1c2/2C6/4p2cP/4B4/4A4/2BAK4"
+  },
+  {
+   "order": 2280,
+   "slug": "trung-cuoc-bao-dien-t1-duoc-quan-that-tien-phi-thuong-sach",
+   "title": "Chương 2 · Được Quân Thất Tiên Phi Thượng Sách",
+   "level": "trung-cap",
+   "draft": "t1-ch12#c2-dt-v5",
+   "summary": "Đen tiến Xe bắt Pháo, tính rằng nếu Đỏ đánh Tượng thì mình hơn quân. Đúng là hơn quân — nhưng mất tiên, chịu đánh và thua. Tốt hơn là tiến Tốt biên quan sát.",
+   "seo_title": "Được Quân Thất Tiên Phi Thượng Sách — Trung Cuộc",
+   "seo_description": "Bài học trung cuộc cờ tướng: được quân mà mất tiên không phải thượng sách. Ví dụ Ngũ bát Pháo tiến tam binh đối Bình phong Mã, có đủ các biến phân tích.",
+   "content": "<h2>Bối cảnh</h2><p>Tiền trung cuộc từ trận \"Ngũ bát Pháo tiến tam binh đối Bình phong Mã\". Xét số nước đi, Đỏ hơn; quân hai bên ngang nhau, công thủ tương đương. Đến lượt Đen.</p><h2>Đen tính hai khả năng</h2><p>Đen tiến <strong>Xe 2 tiến 3 bắt Pháo</strong>, nghĩ tới hai khả năng:</p><ul><li>Đỏ bình Pháo 7 sang 1: Đen tiến Tốt giữa..., các quân Đen linh hoạt, Đen hài lòng (nếu Đỏ lùi Pháo 1 bước thì Đen còn được quân).</li><li>Đỏ tiến Pháo đánh Tượng: Đen lùi Tượng ăn Pháo, sau đó có thể hơn quân.</li></ul><p>Phân tích sau ván: khả năng thứ nhất đúng, nhưng khả năng thứ hai có vấn đề. Hơn quân rồi thì sao? Đen <strong>đoạt quân mất tiên</strong>, bị đánh liên tục và thua. Kết luận: <em>được quân thất tiên phi thượng sách</em>. Nước hay hơn cho Đen là tiến Tốt 9, quan sát động tĩnh.</p><h2>Thực chiến</h2><p>Đỏ tiến Pháo ăn Tượng, Xe tiến, Xe bình sườn, lên Sĩ — tróc Pháo cướp tiên, nước đi chặt chẽ (nếu Đen bình Pháo thay vì bình Xe, Đỏ lại tróc Pháo và chiếm ưu). Đen tiến Tốt (nếu tiến Pháo thì bị bắt chết Pháo). Cuối cùng Đỏ hơn Tốt, hơn Tượng, song Xe Pháo Đỏ có giá trị hơn song Xe Mã Đen — Đỏ thắng thế.</p><h2>Kết luận của tiết</h2><p>Khi quân hai bên tương đương, <strong>so sánh giá trị vị trí của các quân</strong> là căn cứ quan trọng để phán đoán ưu kém.</p>",
+   "captions": {
+    "1": "Tiến Xe bắt Pháo — tính toán chưa đủ sâu.",
+    "2": "Pháo ăn Tượng chiếu.",
+    "3": "Tượng ăn Pháo — Đen sắp hơn quân nhưng mất tiên.",
+    "8": "Lên Sĩ, tróc Pháo cướp tiên — chặt chẽ.",
+    "13": "Pháo ăn Mã.",
+    "14": "Xe ăn Pháo.",
+    "26": "Đỏ hơn Tốt hơn Tượng, song Xe Pháo ưu hơn song Xe Mã — Đỏ thắng thế."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Khả năng 1: Đỏ bình Pháo sang 1...",
+     "6": "...các quân Đen linh hoạt, Đen hài lòng."
+    },
+    "1": {
+     "1": "Nếu Đỏ lùi Pháo 1 bước...",
+     "4": "...Đen được quân."
+    },
+    "2": {
+     "1": "Nước hay: tiến Tốt 9, quan sát động tĩnh."
+    },
+    "3": {
+     "1": "Nếu Đen bình Pháo thay vì bình Xe...",
+     "4": "...Đỏ lại tróc Pháo, chiếm ưu."
+    },
+    "4": {
+     "1": "Nếu Đen tiến Pháo...",
+     "4": "...Pháo bị bắt chết, Đỏ chiếm ưu."
+    }
+   },
+   "fen": "1rbaka1r1/9/2n1b1c2/p1C1p3p/1cp6/1R3R3/P1P1P3P/2N1C4/9/2BAKAB2"
+  }
+ ]
+}
