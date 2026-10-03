@@ -44,11 +44,24 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 
 | Phần | Trạng thái |
 |---|---|
-| Tập 2 — Giới thiệu + Chương 1 (Cuộc 1–26) | ✅ 27 bài (thiếu Cuộc 4) — seed local 03/10/2026 |
-| Tập 2 — Chương 2–12 (Cuộc 27–291) | ⬜ |
-| Tập 1 — Chương 1–9 | ⬜ |
+| Tập 2 — Giới thiệu + Chương 1 (Cuộc 1–26) | ✅ 27 bài (thiếu Cuộc 4) — 03/10/2026 |
+| Tập 2 — Chương 2 (Cuộc 27–55) | ✅ 28 bài (thiếu 39; 45 trùng 34) — 03/10/2026 |
+| Tập 2 — Chương 3–12 (Cuộc 56–291) | ⬜ |
+| Tập 1 — Chương 1–2 (khái luận, thẩm cục) | ✅ 31 bài — 03/10/2026 |
+| Tập 1 — Chương 3–9 | ⬜ |
 
 ## Nợ (không đăng — không đoán nước)
 - **Tập 2 Cuộc 4** (Tôn Chí Vĩ – Ân Quảng Thuận): sơ đồ đọc đúng, nhưng sau 20…S4.5 thì 21…Tg5.1 bất khả
   (Sĩ chiếm ô); vét cạn đổi 1 nước Đen ở ply 10/12/14 đều không ra chuỗi hợp lệ kết thúc chiếu bí.
 - Tập 2 Cuộc 26: bỏ 1 biến "M4.6 đổi Pháo" (không áp được vào thế).
+- Tập 2 Cuộc 31: dừng mạch chính ở nước 54…X4-6 (nước 55 "P7-4" Pháo không ngòi mà ăn Xe — bất khả).
+- Tập 2 Cuộc 39: "X3/6" in 2 lần liền (nước 18–19), `repair` không ra nước nào → hoãn.
+- Tập 2 Cuộc 42/49: cắt nước cuối (repair ra quá nhiều ứng viên, không chọn bừa).
+- Tập 2 Cuộc 45 = Cuộc 34 (cùng sơ đồ, cùng nước; sách ghi bên cầm quân ngược nhau) → chỉ giữ 34, có ghi chú.
+- Tập 1: Ch2 Tiết 1 thiếu sơ đồ (p017 là Hình 3 ván Lý Gia Hoa) → bài chữ; Hình 8 bình ổn (p032) in nhầm hình
+  → bỏ; Tiết 5 ví dụ 1 (p050 trùng p047) → bỏ; tr.15 Hình 2 thiếu Tướng Đen, tr.37 Hình 13 thiếu Tướng Đỏ (fix).
+
+## Mẹo
+- `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
+  Chỉ nhận khi ra ĐÚNG 1 ứng viên (VD Cuộc 32: "M7/9" thiếu chữ "trước" vì 2 Mã cùng lộ 7).
+- Tập 1 caption "Hình N" không tin được (nhãn in đầu trang, có khi lệch) → map theo trang + engine xác nhận.
