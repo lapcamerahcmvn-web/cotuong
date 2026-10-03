@@ -1,0 +1,869 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 2) — Thế Trung Cuộc Danh Thủ",
+  "slug": "trung-cuoc-bao-dien-tap-2",
+  "game_mode": "co-tuong",
+  "phase": "trung-cuoc",
+  "description": "Chuyên đề Trung Cuộc Bảo Điển phần thực chiến: những thế trung cuộc trích từ ván đấu của các đại sư, chia theo 12 binh pháp — xuất chiêu bất ngờ, lấy công chế công, tránh thực đánh hư, đột phá phòng tuyến... Mỗi bài có bàn cờ tương tác, đủ các biến sách nêu, lời giảng viết lại dễ hiểu.",
+  "planned_total": null,
+  "sort_order": 22
+ },
+ "lessons": [
+  {
+   "order": 1,
+   "slug": "trung-cuoc-bao-dien-tap-2-gioi-thieu",
+   "title": "Giới Thiệu: Học Trung Cuộc Từ Ván Đấu Của Đại Sư",
+   "level": "trung-cap",
+   "summary": "Vì sao trung cuộc quyết định phần lớn kết quả ván cờ, và cách chuyên đề này sắp xếp hàng trăm thế trung cuộc thực chiến của các đại sư thành 12 nhóm binh pháp để học có hệ thống.",
+   "seo_title": "Trung Cuộc Bảo Điển — Học Trung Cuộc Cờ Tướng Qua Ván Đại Sư",
+   "seo_description": "Chuyên đề Trung Cuộc Bảo Điển: thế trung cuộc thực chiến của các đại sư cờ tướng, chia 12 binh pháp, bàn cờ tương tác đi từng nước kèm đủ các biến.",
+   "content": "<h2>Trung cuộc — nơi ván cờ thực sự được định đoạt</h2><p>Nhiều người chơi khai cuộc rất chuẩn, cũng có vốn tàn cuộc khá vững, nhưng vẫn thua vì một quyết định sai ở giữa ván. Có khi khai cuộc đẹp đẽ rồi chỉ vì trung cuộc lúng túng mà tụt xuống thế kém; có khi tàn cuộc mình rất giỏi nhưng chưa kịp bước vào tàn cuộc đã bị đối phương đánh gục. Trung cuộc là giai đoạn quân hai bên còn đông, va chạm liên tục, và cơ hội thường chỉ lóe lên trong một hai nước rồi biến mất.</p><h2>Học từ thực chiến thay vì học thuộc</h2><p>Trung cuộc không có \"định thức\" để học thuộc như khai cuộc. Cách học hiệu quả nhất là quan sát cách các đại sư xử lý những thế cờ cụ thể: họ nhìn ra điểm yếu ở đâu, vì sao chọn thí quân thay vì giữ quân, khi nào nên tấn công ngay và khi nào nên chờ. Chuyên đề này tập hợp các thế trung cuộc trích từ những giải đấu lớn suốt hơn ba mươi năm, mỗi thế kèm phân tích chỗ được, chỗ mất.</p><h2>Bốn chữ cốt lõi: Tiên — Quân — Thế — Sát</h2><ul><li><strong>Tiên</strong>: giành quyền chủ động, buộc đối phương phải chạy theo mình.</li><li><strong>Quân</strong>: tính toán được mất về lực lượng, biết khi nào đổi, khi nào thí.</li><li><strong>Thế</strong>: vị trí phối hợp của các quân, thứ có khi đáng giá hơn cả một quân mạnh.</li><li><strong>Sát</strong>: biến ưu thế thành đòn kết thúc.</li></ul><h2>12 nhóm binh pháp</h2><p>Các thế cờ được chia theo ý đồ chính của người cầm quân:</p><ul><li>Xuất chiêu bất ngờ, tấn công chớp nhoáng</li><li>Lấy công chế công, tiên phát chế nhân</li><li>Tránh thực đánh hư, thừa sơ hở đột nhập</li><li>Chọn lấy mục tiêu, đột phá phòng tuyến</li><li>Tương kế tựu kế, xuôi nước đẩy thuyền</li><li>Minh tu sạn đạo, ám độ Trần Thương</li><li>Mất ở góc đông, thu lại góc tây</li><li>Tăng cường kiềm chế, khống chế biến hóa</li><li>Cài đặt cạm bẫy, ngầm phục sát cơ</li><li>Nắm chắc thời cơ, nắm lấy tốc độ</li><li>Dò tìm đường quân, nắm bắt chiến cơ</li><li>Phóng rộng tầm mắt, khai sáng cuộc diện</li></ul><p>Các nhóm này không tách rời tuyệt đối — một đòn hay thường kết hợp nhiều ý. Còn vận quân, đổi quân, thí quân là những thủ đoạn chiến thuật xuyên suốt mọi nhóm.</p><h2>Cách học mỗi bài</h2><p>Mỗi bài bắt đầu từ thế cờ đúng như trong ván thật. Bạn nên tự đặt mình vào vị trí bên sắp đi, nghĩ xem mình sẽ đi gì, rồi mới bấm \"Tiến\" để xem đại sư xử lý. Những chỗ sách phân tích \"nếu đối phương đi khác thì sao\" được dựng thành <strong>các biến A/B</strong> ngay trên bàn cờ để bạn so sánh. Lưu ý: sách gọi bên đi trước là \"Trắng\", trên bàn cờ của trang là bên <strong>Đỏ</strong>.</p>"
+  },
+  {
+   "order": 5,
+   "slug": "trung-cuoc-bao-dien-chuong-1-xuat-chieu-bat-ngo-tan-cong-chop-nhoang",
+   "title": "Chương 1: Xuất Chiêu Bất Ngờ, Tấn Công Chớp Nhoáng",
+   "level": "trung-cap",
+   "summary": "Đòn tấn công hữu lực mà đối phương không lường trước thường đem lại hiệu quả gấp bội. Chương 1 phân tích những nước đi 'ngoài dự tính' của các đại sư và nền tảng tính toán đằng sau chúng.",
+   "seo_title": "Xuất Chiêu Bất Ngờ, Tấn Công Chớp Nhoáng — Trung Cuộc Cờ Tướng",
+   "seo_description": "Chương 1 Trung Cuộc Bảo Điển: nguyên lý xuất chiêu bất ngờ trong trung cuộc cờ tướng, khi nào nên ra đòn ngoài dự tính đối phương, kèm các thế thực chiến.",
+   "content": "<h2>Phòng thủ vững không có nghĩa là không thể đánh</h2><p>Khi đối phương bày trận chặt chẽ, tấn công trực diện thường rất khó: muốn phá thường phải trả giá lớn, mà thành công thì không chắc. Nhưng thực tế thi đấu cho thấy một đòn mạnh <strong>ra ngoài sự chuẩn bị của đối thủ</strong> lại hay mang về kết quả ngoài mong đợi. Người phòng thủ chỉ chuẩn bị cho những gì họ đã nghĩ tới; khi bị đánh vào chỗ họ chưa nghĩ tới, họ dễ lúng túng và phản ứng sai.</p><h2>Yếu tố bất ngờ phải dựa trên tính toán</h2><p>Bất ngờ không có nghĩa là liều. Mọi nước \"xuất chiêu\" trong chương này đều đứng trên một phân tích thấu đáo: người đi đã nhìn sâu vào các đường biến, biết rằng nếu đối phương \"ăn mồi\" thì sẽ trúng đòn, còn nếu từ chối thì mình vẫn lời. Đó là điều kiện tiên quyết. Một nước đi lạ mà không có tính toán đằng sau chỉ là nước đi sai.</p><h2>Những dạng xuất chiêu thường gặp</h2><ul><li><strong>Thí quân mở đường</strong>: bỏ Mã, bỏ Pháo, thậm chí bỏ Xe để mở cửa cung đối phương.</li><li><strong>Biến quân của mình thành ngòi</strong>: nhảy Mã lên làm giá cho Pháo, dâng quân vào miệng đối phương để đổi lấy nước tiên.</li><li><strong>Đổi hướng tấn công đột ngột</strong>: quân đang chuẩn bị đánh một cánh bỗng quay sang cánh kia.</li><li><strong>Nước lặng mang sát cơ</strong>: một nước tiến Chốt, lùi Xe trông vô hại nhưng giăng sẵn đòn.</li></ul><h2>Khi đọc các thế trong chương</h2><p>Hãy chú ý hai câu hỏi: <em>Vì sao nước thông thường lại không đủ?</em> và <em>Nếu đối phương nhận mồi thì chuyện gì xảy ra?</em> Câu trả lời cho câu hỏi thứ hai được dựng thành các biến trên bàn cờ — đó chính là phần tính toán khiến đòn bất ngờ trở nên an toàn.</p>"
+  },
+  {
+   "order": 10,
+   "slug": "trung-cuoc-bao-dien-cuoc-1-bat-ngo-nhay-ma",
+   "title": "Cuộc 1: Bất Ngờ Nhảy Mã — Vu Ấu Hoa vs Đinh Như Ý (1984)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#1",
+   "summary": "Xe Đen dọa bắt Pháo, ai cũng nghĩ Đỏ sẽ lên Sĩ giữ. Vu Ấu Hoa lại nhảy Mã lên làm ngòi cho chính quả Pháo đó đánh ngược Xe — nếu Đen tham ăn Mã sẽ dính đòn sát.",
+   "seo_title": "Cuộc 1: Bất Ngờ Nhảy Mã — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Vu Ấu Hoa - Đinh Như Ý 1984: nhảy Mã làm ngòi cho Pháo đánh Xe thay vì lên Sĩ giữ Pháo. Bàn cờ tương tác, có biến nếu Đen ăn Mã.",
+   "content": "<h2>Bối cảnh</h2><p>Ván đấu tại giải Đồng đội toàn quốc 1984, Vu Ấu Hoa cầm quân Đỏ gặp Đinh Như Ý. Sau 11 nước, Xe Đen ở lộ 6 đang nhắm vào quả Pháo lộ 4 của Đỏ. Phản xạ tự nhiên là lên Sĩ để giữ Pháo — an toàn, nhưng thụ động.</p><h2>Nước đi ngoài dự tính</h2><p>Vu Ấu Hoa không giữ Pháo mà đi <strong>Mã 3 tiến 4</strong>: con Mã nhảy lên chắn ngay giữa Pháo và Xe Đen. Nhìn qua tưởng như Mã bị bỏ không có căn, nhưng thực ra nó trở thành <strong>ngòi</strong> cho chính quả Pháo phía sau — Pháo giờ có thể ăn Xe. Một nước vừa thoát thế bị bắt, vừa phản công.</p><h2>Vì sao Đen không ăn được Mã?</h2><p>Nếu Đen dùng Xe ăn Mã, Đỏ sẽ bình Pháo sang cánh và lập tức tổ chức đòn sát vào Tướng Đen: Tướng phải tránh ra lộ 4, Xe Đỏ bình sang chiếu, Đen phải lấy Pháo che, rồi Pháo Đỏ tiến xuống — thế công không thể chống đỡ. Biến này được dựng sẵn trên bàn cờ để bạn xem.</p><h2>Kết quả</h2><p>Đen đành bình Xe sang lộ 8, coi như mất một nhịp \"giậm chân tại chỗ\". Đỏ thừa thế đẩy Tốt 3 qua sông, vừa có thêm quân qua hà vừa giữ được nước tiên, từ đó chiếm ưu.</p><h2>Bài học</h2><ul><li>Khi quân mình bị tấn công, hãy tìm cách <strong>phản công</strong> trước khi nghĩ tới phòng thủ.</li><li>Một quân \"không có căn\" vẫn an toàn nếu ăn nó sẽ dẫn đến đòn sát — luôn tính hệ quả của nước \"ăn mồi\".</li></ul>",
+   "captions": {
+    "1": "Nhảy Mã lên giữa Pháo lộ 4 và Xe Đen — Mã làm ngòi, Pháo phía sau giờ uy hiếp ngược lại Xe.",
+    "2": "Đen không dám ăn Mã, đành bình Xe tránh — mất trắng một nhịp.",
+    "3": "Tốt 3 qua sông, Đỏ vừa thêm lực lượng qua hà vừa giữ nước tiên, chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen tham ăn Mã...",
+     "2": "Pháo bình sang cánh chuẩn bị tham gia đòn sát.",
+     "4": "Xe Đỏ bình lộ 6 chiếu Tướng.",
+     "6": "Pháo tiến xuống — Đen không gượng nổi thế công."
+    }
+   },
+   "fen": "r1b1ka3/4a1R2/1c2c1n1b/p3p1C2/1np2r2p/6P2/P1P1P3P/1N3CN2/R8/2BAKAB2"
+  },
+  {
+   "order": 20,
+   "slug": "trung-cuoc-bao-dien-cuoc-2-cai-gia",
+   "title": "Cuộc 2: Cái Giá — Triệu Quốc Vinh vs Hồ Vinh Hoa",
+   "level": "nang-cao",
+   "draft": "t2-ch01#2",
+   "summary": "Ván cờ sắp hòa vì lặp nước, Pháo Đỏ bị Xe Đen bắt chết. Triệu Quốc Vinh từ chối đổi Xe cầu hòa, chọn thí Pháo — một cái giá Hồ Vinh Hoa không thể không nhận, và Đỏ thu về ba Chốt hơn.",
+   "seo_title": "Cuộc 2: Cái Giá — Triệu Quốc Vinh vs Hồ Vinh Hoa",
+   "seo_description": "Thế trung cuộc Triệu Quốc Vinh - Hồ Vinh Hoa: thay vì đổi Xe cầu hòa, Đỏ thí Pháo phá tuyến Chốt phòng thủ rồi đoạt lại quân, hơn 3 Chốt. Có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Tam Sở Bôi lần thứ 3: Triệu Quốc Vinh cầm Đỏ thử thế trận mới \"ngũ thất Pháo lưỡng đầu xà\" với thế \"bán bích hà sơn\" của Hồ Vinh Hoa. Suốt ván Đỏ công, Đen thủ. Đến nước thứ 31 hai bên lặp lại nước 29 — Xe Đen bắt chết Pháo Đỏ.</p><h2>Lối thoát dễ dãi: hòa</h2><p>Muốn cứu Pháo, Đỏ chỉ còn cách bình Xe sang lộ 1 mời đổi Xe. Đen không đổi mà tránh, Đỏ lại đuổi, Đen lại tránh — \"Pháo muốn bắt, Xe không đổi\", ván cờ thành hòa. Biến này có trên bàn cờ.</p><h2>Cái giá không thể từ chối</h2><p>Đang nhiều Chốt hơn, Triệu Quốc Vinh không cam tâm. Ông tìm ra <strong>Xe 4 tiến 2</strong> — chấp nhận thí Pháo để đổi lấy Xe Đen phải rời vị trí. Nếu Đen làm ngơ, Mã Đỏ sẽ ăn Tượng giữa rồi nhảy trái phải chiếu Tướng rất phiền. Hồ Vinh Hoa buộc phải <strong>lùi Xe về giữ thành</strong>, và tuyến Chốt phòng thủ của Đen bị bỏ trống.</p><h2>Chuỗi đòn tiếp theo</h2><p>Đỏ tiến Pháo (không được nhảy Mã ngay vì Đen có nước lùi Mã chặn), rồi bình Xe sang lộ 9 ăn Tốt, <strong>bỏ mặc quả Pháo lần nữa</strong>. Đen lùi Xe ăn Pháo thì Đỏ bình Pháo trung lộ dọa sát; Đen nhảy Mã giải; Đỏ nhảy Mã dọa tiếp; Đen lui Sĩ giải lần nữa; cuối cùng Xe Đỏ lùi bắt lại quân. Kết thúc Đỏ hơn hẳn 3 Chốt.</p><h2>Bài học</h2><ul><li>Khi đã có ưu thế nhỏ (nhiều Chốt), đừng vội chấp nhận hòa — hãy tìm cách biến nó thành lợi thế lớn.</li><li>Thí quân để kéo một quân phòng thủ then chốt rời vị trí là thủ đoạn rất mạnh.</li><li>Tính toán chuỗi dọa sát liên tiếp giúp lấy lại quân đã thí mà vẫn giữ nước tiên.</li></ul>",
+   "captions": {
+    "1": "Xe tiến 2 — chấp nhận để mất Pháo nhưng đe dọa Mã ăn Tượng giữa chiếu Tướng.",
+    "2": "Đen buộc phải lùi Xe về giữ thành, bỏ trống tuyến Chốt.",
+    "3": "Tiến Pháo — không nhảy Mã 6 tiến 5 ngay vì Đen có Mã 3 thoái 4 chặn.",
+    "5": "Xe bình lộ 9 ăn Tốt, tiếp tục bỏ mặc quả Pháo — thí Pháo lần nữa!",
+    "6": "Đen lùi Xe ăn Pháo.",
+    "7": "Pháo bình trung lộ dọa chiếu bí.",
+    "8": "Mã Đen về giải sát.",
+    "9": "Nhảy Mã dọa sát tiếp.",
+    "10": "Lui Sĩ giải sát lần nữa.",
+    "11": "Xe lùi bắt quân — Đỏ sẽ đoạt lại quân, hơn 3 Chốt chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cách đi an toàn: mời đổi Xe để cứu Pháo...",
+     "4": "...Đen không đổi, Xe tránh qua tránh lại — hòa cờ."
+    },
+    "1": {
+     "1": "Nhảy Mã ngay?",
+     "2": "Đen lùi Mã chặn, kế hoạch phá sản."
+    }
+   },
+   "fen": "4kac1C/4a4/1c2b1n2/p7r/2nN2b2/5R3/P3P3P/3CB1N2/4A4/2BAK4"
+  },
+  {
+   "order": 30,
+   "slug": "trung-cuoc-bao-dien-cuoc-3-anh-mat-kinh-ngac",
+   "title": "Cuộc 3: Ánh Mắt Kinh Ngạc — Tang Như Ý vs Lâm Hoằng Mẫn",
+   "level": "nang-cao",
+   "draft": "t2-ch01#3",
+   "summary": "Đỏ ăn Chốt giữa, chờ Đen đổi Mã hoặc phong tỏa Xe. Lâm Hoằng Mẫn lại tiến Pháo chấp nhận bỏ Xe Mã lấy một Xe — nước đi hiếm thấy khiến Tang Như Ý phải gật đầu khen.",
+   "seo_title": "Cuộc 3: Ánh Mắt Kinh Ngạc — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Tang Như Ý - Lâm Hoằng Mẫn: Đen dùng Xe Mã đổi Xe để phản kích, phân tích nước Pháo biên tiến 4 lẽ ra mạnh hơn. Bàn cờ có đủ biến.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Tam Sở Bôi lần thứ 3. Tang Như Ý cầm Đỏ chơi \"ngũ cửu Pháo quá hà Xe\", Lâm Hoằng Mẫn đáp bằng \"bình phong Mã tả Mã bàn hà\". Đỏ công trung lộ, Đen phản kích từ cánh. Nước 12 Đỏ nhảy Mã ăn Chốt giữa.</p><h2>Đỏ dự tính gì?</h2><p>Đỏ đoán Đen sẽ hoặc đổi Mã rồi tạo Pháo gánh, hoặc tiến Pháo phong tỏa Xe trái của Đỏ. Cả hai đều là nước \"bình thường\".</p><h2>Nước đi kinh ngạc</h2><p>Đen đi <strong>Pháo 2 tiến 1</strong>, sẵn sàng để mất Xe và Mã chỉ để lấy lại một Xe — tỉ lệ đổi quân rất hiếm thấy. Đỏ buộc phải ăn Mã; nếu tham ăn Sĩ bằng Xe thì Tướng Đen bình tránh, Mã Đỏ đi tiếp rồi Pháo biên Đen tiến, Đỏ còn thiệt nặng hơn. Sau đó Đen bình Pháo ăn Xe, Đỏ dùng Mã ăn lại.</p><h2>Chỗ Đen bỏ lỡ</h2><p>Đến đây nước mạnh nhất của Đen là <strong>Pháo biên tiến 4</strong> tổ chức công thế: Đỏ lùi Mã thì Xe Đen tiến, Đỏ nhảy Mã giữa thì Pháo bình chặn, Đỏ tiến Chốt giữa thì Mã Đen nhảy ra — đều khó chịu. Đỏ chỉ còn cách đưa Xe về giữ Chốt giữa, và Đen giữ tiên trong thế đối công. Thực chiến Đen lại tiến Xe trước, chậm một nhịp và thành bất lợi.</p><h2>Bài học</h2><ul><li>Giá trị của quân không cố định: Xe + Mã đổi Xe có thể đúng nếu đổi lấy được thế phản công.</li><li>Sau khi đã trả giá để lấy thế, phải <strong>tận dụng ngay</strong> — chậm một nhịp là công sức đổ sông.</li></ul>",
+   "captions": {
+    "1": "Pháo tiến 1 — chấp nhận bỏ Xe Mã để lấy Xe, cấu tứ phản kích hiếm thấy.",
+    "2": "Đỏ buộc phải ăn Mã.",
+    "3": "Pháo bình 6 ăn Xe.",
+    "4": "Mã ăn lại Pháo.",
+    "5": "Đen tiến Xe trước — chậm một nhịp; nên tiến Pháo biên trước (xem biến)."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ tham ăn Sĩ...",
+     "6": "...Pháo biên Đen tiến, Đỏ thiệt càng lớn."
+    },
+    "1": {
+     "1": "Nước đúng: tiến Pháo biên trước, tổ chức công thế.",
+     "2": "Đỏ chỉ còn cách đưa Xe giữ Chốt giữa.",
+     "3": "Đối công, Đen giữ tiên."
+    },
+    "2": {
+     "1": "Nếu Đỏ lùi Mã...",
+     "2": "...Xe Đen tiến, khó ứng phó."
+    },
+    "3": {
+     "1": "Nếu Đỏ nhảy Mã giữa...",
+     "2": "...Pháo bình 7 chặn, Đỏ khó chịu."
+    },
+    "4": {
+     "1": "Nếu Đỏ tiến Chốt giữa...",
+     "2": "...Mã Đen nhảy ra uy hiếp."
+    }
+   },
+   "fen": "1r1akabr1/9/1cn1b3c/p1p1NR2p/9/2P4n1/P3P1p1P/C3C4/4N4/1RBAKAB2"
+  },
+  {
+   "order": 50,
+   "slug": "trung-cuoc-bao-dien-cuoc-5-dan-phao-na-vao-cuu-cung",
+   "title": "Cuộc 5: Đạn Pháo Nã Vào Cửu Cung — Hồ Vinh Hoa vs Dương Quan Lân (1966)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#5",
+   "summary": "Hồ Vinh Hoa tiến Pháo đánh Xe, đoán trước Đen sẽ lui Sĩ để song Xe bắt Pháo — rồi bất ngờ bay Pháo vào giữa cung đổi Xe, khống chế cửu cung và từ đó nắm trọn thế cờ.",
+   "seo_title": "Cuộc 5: Đạn Pháo Nã Vào Cửu Cung — Hồ Vinh Hoa",
+   "seo_description": "Thế trung cuộc Hồ Vinh Hoa - Dương Quan Lân 1966: Pháo bay vào giữa cung đổi Xe, khống chế cửu cung, vây khốn Đen. Bàn cờ tương tác có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Giải toàn quốc 1966, Hồ Vinh Hoa (Đỏ) gặp Dương Quan Lân. Đến nước thứ 10, Đỏ hơi chiếm tiên nhưng cục diện chưa rõ ràng.</p><h2>Ý đồ của Đỏ</h2><p>Đỏ tính <strong>tiến Pháo đánh Xe</strong>. Ông dự đoán Đen sẽ không lui Xe (vì lui Xe là rơi vào hậu thủ) mà sẽ <strong>lui Sĩ</strong> để hai Xe cùng bắt ngược quả Pháo — trông có vẻ mạnh. Chính nước \"có vẻ mạnh\" ấy mở ra đường cho Đỏ.</p><h2>Pháo bay vào giữa cung</h2><p>Đen quả nhiên lui Sĩ. Đỏ lập tức <strong>bình Pháo vào trung lộ</strong>, chấp nhận để Xe Đen ăn Xe mình; Pháo lùi ăn Tốt chiếu Tướng rồi Mã lùi ăn lại Xe. Hai bên đổi Xe, nhưng quả Pháo trấn ngay cửa cung khiến cửu cung Đen bị khống chế. Từ đây quân Đen bị trói: Đen nhảy Mã, Đỏ lùi Mã chặn, vòng vây khép lại.</p><h2>Đen có lối thoát không?</h2><p>Nếu Đen lùi Pháo chuẩn bị đổi Xe, Đỏ bình Pháo sang lộ 9, sau loạt đổi quân Đen thiếu ba Chốt, rất khó cầu hòa — biến này có trên bàn cờ. Thực chiến Đen cố vùng vẫy nhưng Đỏ từng bước gom Chốt, cuối cùng nhiều Chốt hơn và thắng.</p><h2>Bài học</h2><ul><li>Dự đoán được nước đáp \"tưởng mạnh\" của đối phương là chìa khóa để giăng bẫy.</li><li>Một quân Pháo trấn giữa cung đối phương có thể làm tê liệt cả một cánh quân.</li></ul>",
+   "captions": {
+    "1": "Tiến Pháo đánh Xe — đoán trước Đen sẽ lui Sĩ phản bắt Pháo.",
+    "2": "Đen lui Sĩ, song Xe bắt ngược Pháo — trúng ý Đỏ.",
+    "3": "Pháo bay vào trung lộ — chấp nhận đổi Xe!",
+    "4": "Xe Đen ăn Xe Đỏ.",
+    "5": "Pháo lùi ăn Tốt chiếu Tướng, trấn giữ cửu cung.",
+    "7": "Mã lùi ăn lại Xe — đổi Xe xong, cửu cung Đen đã bị khống chế.",
+    "8": "Đen bị vây khốn, không thể đột phá.",
+    "21": "Đỏ nhiều Chốt chiếm ưu, kết quả Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen lùi Pháo chuẩn bị đổi Xe...",
+     "6": "...Đen thiếu 3 Chốt, khó cầu hòa."
+    }
+   },
+   "fen": "2bak2r1/r3a4/n3b1c2/p1p1p3p/6p2/1cP6/P3P1P1P/1C2B2C1/3R1N3/2BAKA1R1"
+  },
+  {
+   "order": 60,
+   "slug": "trung-cuoc-bao-dien-cuoc-6-gia-cao-mua-lo-suon",
+   "title": "Cuộc 6: Giá Cao Mua Lộ Sườn — Triệu Quốc Vinh vs Vu Ấu Hoa (1985)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#6",
+   "summary": "Trước đòn công kích nguy hiểm của Đen, Triệu Quốc Vinh không phòng thủ mà tiến Mã mời đổi — bỏ ra cái giá lớn để chiếm lộ sườn, rồi dùng Xe sườn và Pháo trung lộ đánh sập cung Đen.",
+   "seo_title": "Cuộc 6: Giá Cao Mua Lộ Sườn — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Triệu Quốc Vinh - Vu Ấu Hoa 1985: thí Mã chiếm lộ sườn, hiến Pháo trung lộ, Xe sườn đánh Sĩ. Có biến Đen ăn Mã và cách thắng nhanh hơn.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Liễu Tuyền Bôi 1985, Triệu Quốc Vinh (Đỏ) gặp Vu Ấu Hoa. Sau 13 nước, Đen dọa đi Xe 4 bình 2 rất nguy hiểm. Đỏ không lo chống đỡ mà đi tiếp kế hoạch của mình.</p><h2>Tiến Mã mời đổi</h2><p><strong>Mã 3 tiến 4</strong> — một nước khiến người xem khó hiểu. Đỏ chấp nhận trả giá lớn để đổi Mã, làm yếu lực lượng phòng thủ của Đen và đổi lại chiếm được lộ sườn cho Xe. Sau khi Đỏ bình Xe lộ 4 và tiến Xe biên, Xe sườn Đỏ uy hiếp thẳng Sĩ đáy.</p><h2>Vì sao Đen không ăn Mã?</h2><p>Nếu Đen dùng Xe ăn Mã, Đỏ dùng Pháo trung lộ phát động một chuỗi đòn: hai Pháo thay nhau ép, Tướng Đen phải chạy, cuối cùng Đỏ thắng. Biến đầy đủ có trên bàn cờ — đây là lý do Đen phải cảnh giác cao độ.</p><h2>Hiến Pháo trung lộ</h2><p>Thực chiến Đỏ tiếp tục ép, đến nước 22 bình <strong>Pháo vào trung lộ hiến quân</strong> — tuyệt diệu mà hung hãn. Đen tránh Pháo, Đỏ Xe tiến giết Sĩ, thế cờ sắc bén, Đỏ thắng.</p><h2>Chỗ chưa hoàn hảo</h2><p>Giết Sĩ ở nước 23 hơi sớm. Nếu Đỏ <strong>bình Xe 9 sang lộ 2</strong> trước thì còn thắng nhanh hơn — biến này cũng được dựng trên bàn cờ.</p><h2>Bài học</h2><ul><li>Lộ sườn (lộ 4, lộ 6) là con đường ngắn nhất vào cung đối phương — đáng để trả giá.</li><li>Ngay cả khi đã thắng thế, hãy tìm nước <strong>nhanh nhất</strong>, đừng thỏa mãn với nước \"đủ tốt\".</li></ul>",
+   "captions": {
+    "1": "Tiến Mã mời đổi — trả giá lớn để chiếm lộ sườn.",
+    "3": "Xe bình lộ 4, chiếm sườn.",
+    "5": "Xe biên tiến, chuẩn bị chi viện.",
+    "6": "Đen không dám ăn Mã (xem biến), đành tiến Xe.",
+    "7": "Pháo trung lộ tiến, gia tăng sức ép.",
+    "9": "Ra Tướng trợ chiến.",
+    "17": "Hiến Pháo trung lộ — tuyệt diệu lại hung hãn!",
+    "19": "Xe giết Sĩ, Đỏ thắng (nhưng bình Xe 9 sang 2 trước còn nhanh hơn)."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen dùng Xe ăn Mã...",
+     "2": "Pháo trung lộ tiến phát động thế công.",
+     "12": "Đỏ thắng."
+    },
+    "1": {
+     "1": "Cách tốt hơn: bình Xe sang lộ 2 trước — Đỏ tốc thắng."
+    }
+   },
+   "fen": "r1bakab2/4c3n/1c7/p3p1P1p/3n5/2R6/P1p1P3P/1C2C1N2/3rA4/RNBAK1B2"
+  },
+  {
+   "order": 70,
+   "slug": "trung-cuoc-bao-dien-cuoc-7-song-xe-mac-doi-thu-chon-an",
+   "title": "Cuộc 7: Song Xe Mặc Đối Thủ Chọn Ăn — Vu Ấu Hoa vs Quách Trường Thuận (1985)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#7",
+   "summary": "Xe biên bị bắt, Vu Ấu Hoa không lui mà bình Xe kia hiến luôn — hai Xe mặc đối thủ chọn ăn, nhưng ăn Xe nào cũng thua. Bài học về việc từ chối phòng thủ thụ động.",
+   "seo_title": "Cuộc 7: Song Xe Mặc Đối Thủ Chọn Ăn — Vu Ấu Hoa",
+   "seo_description": "Thế trung cuộc Vu Ấu Hoa - Quách Trường Thuận 1985: hiến cả hai Xe, Đen ăn Xe nào cũng bất lợi, Đỏ phản công thắng. Có biến phòng thủ và biến ăn Xe.",
+   "content": "<h2>Bối cảnh</h2><p>Giải toàn quốc tại Tây An 1985, Vu Ấu Hoa (Đỏ) gặp Quách Trường Thuận. Đen đã thí trước một quân trong khai cuộc để tranh tiên, nay Xe đánh Xe biên và bắt Mã để đòi lại quân, nước sau còn dọa bình Pháo đuổi Xe. Song Xe Đen tấn công từ hai cánh rất đáng ngại.</p><h2>Con đường thụ động</h2><p>Nếu Đỏ lùi Xe biên về phòng thủ, Đen nhảy Mã liên tục, tiến Xe, bình Pháo — Đỏ bị dồn vào thế giữ thành hoàn toàn bị động. Biến này có trên bàn cờ.</p><h2>Hiến Xe — hai Xe mặc đối thủ chọn</h2><p>Vu Ấu Hoa không chịu bị động: <strong>Xe 4 bình 8</strong>, để cả hai Xe cùng đứng trong miệng quân Đen. Đen ăn Xe nào cũng không xong. Nếu Đen ăn Xe lộ 8, Xe biên Đỏ tiến xuống chiếu Tướng, Sĩ phải lui, Xe bình sang sườn ăn Sĩ, Tướng phải lên — rồi Mã nhảy vào, Đen khó chống đỡ. Đen đành bình Xe tránh.</p><h2>Phản công</h2><p>Đỏ nhảy Mã, lùi Xe, lên Sĩ, Pháo trung lộ tiến ăn Tốt chiếu Tướng... từng bước dùng thế công áp đảo đè bẹp phản kích của Đen, cuối cùng giành thắng lợi.</p><h2>Bài học</h2><ul><li>Khi phòng thủ chỉ dẫn đến bị động kéo dài, hãy tìm đòn phản công — kể cả phải hiến quân mạnh.</li><li>Một quân bị bắt chưa chắc phải chạy: hãy kiểm tra xem đối phương ăn xong có bị trả giá không.</li></ul>",
+   "captions": {
+    "1": "Bình Xe hiến luôn — hai Xe mặc đối thủ chọn ăn!",
+    "2": "Đen không dám ăn Xe nào, đành bình Xe tránh.",
+    "3": "Nhảy Mã tham chiến.",
+    "11": "Pháo trung lộ tiến ăn Tốt chiếu Tướng, xé toang trung lộ.",
+    "15": "Xe xuống đáy uy hiếp.",
+    "23": "Mã nhập trung — thế công áp đảo, Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lùi Xe phòng thủ...",
+     "8": "...Đỏ bị ép vào thế giữ thành, cuộc diện bị động."
+    },
+    "1": {
+     "1": "Nếu Đen ăn Xe lộ 8...",
+     "2": "Xe biên xuống chiếu Tướng.",
+     "6": "Mã nhảy vào — Đen khó chống đỡ."
+    }
+   },
+   "fen": "1r2kabr1/4a4/R3b3c/2p1p3p/5n3/2PN5/P3P4/3CC1N2/5R3/1cBAKAB2"
+  },
+  {
+   "order": 80,
+   "slug": "trung-cuoc-bao-dien-cuoc-8-tieng-sam-vang-troi",
+   "title": "Cuộc 8: Tiếng Sấm Vang Trời — Lý Viết Thuần vs Tưởng Toàn Thắng (1984)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#8",
+   "summary": "Thế cờ bình lặng, quân lực ngang nhau. Tưởng Toàn Thắng phát hiện Xe Mã Pháo cánh phải đủ yểm trợ, liền dâng Pháo vào miệng Sĩ — một tiếng sấm giữa trời quang.",
+   "seo_title": "Cuộc 8: Tiếng Sấm Vang Trời — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Lý Viết Thuần - Tưởng Toàn Thắng 1984: Pháo dâng miệng Sĩ châm ngòi, Đen đoạt lợi rồi đổi Xe giản hóa, hơn Tượng hơn Chốt thắng.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc 1984. Sau 17 nước, đến lượt Đen (Tưởng Toàn Thắng). Quân lực tương đương, trận hình hai bên chỉnh tề, cục diện bình lặng.</p><h2>Trong bình lặng có phong ba</h2><p>Tưởng Toàn Thắng nhận ra Xe, Mã, Pháo ở cánh phải của mình đủ sức yểm hộ cho quả Pháo cạnh Tướng tấn công sang sườn trái. Ông đi <strong>Pháo 6 tiến 7</strong> — dâng Pháo vào ngay miệng Sĩ Đỏ.</p><h2>Đỏ không thể ăn Pháo</h2><p>Nếu Đỏ lên Sĩ ăn Pháo, Xe Đen tiến phá Sĩ, Tướng Đỏ phải lên, Xe kia bình sang sườn — thành trì Đỏ bị phá nát. Đỏ đành lùi Mã về giữ, chấp nhận \"tiên thí hậu đoạt\".</p><h2>Giản hóa để thắng</h2><p>Đen bình Xe, tiến Xe đoạt lợi, rồi chủ động đổi Xe giản hóa thế cờ. Kết quả Đen hơn Tượng, hơn Chốt, chuyển sang tàn cuộc thuận lợi và thắng.</p><h2>Bài học</h2><ul><li>Cục diện bình lặng chưa chắc là cục diện hòa — hãy quét tìm chỗ quân mình đông hơn đối phương ở một khu vực.</li><li>Sau khi đoạt lợi, chủ động đổi quân giản hóa là cách chắc chắn nhất để biến ưu thế thành thắng lợi.</li></ul>",
+   "captions": {
+    "1": "Pháo dâng miệng Sĩ — tiếng sấm giữa trời quang, châm ngòi cuộc chiến.",
+    "2": "Đỏ không dám ăn Pháo (xem biến), đành lùi Mã giữ thành.",
+    "3": "Đen bình Xe ăn Pháo, bắt đầu đoạt lợi.",
+    "9": "Đổi Xe giản hóa — Đen hơn Tượng hơn Chốt, kết quả Đen thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ lên Sĩ ăn Pháo...",
+     "2": "Xe tiến phá Sĩ.",
+     "4": "Xe bình sườn — thành trì Đỏ bị phá hủy."
+    }
+   },
+   "fen": "2bakc2r/4a4/3cb1n2/4p1p1p/2pn5/1R4P2/2P1P2RP/N3C1N2/2CrA4/2BAK1B2"
+  },
+  {
+   "order": 90,
+   "slug": "trung-cuoc-bao-dien-cuoc-9-phong-van-dot-bien",
+   "title": "Cuộc 9: Phong Vân Đột Biến — Tang Như Ý vs Triệu Quốc Vinh (1983)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#9",
+   "summary": "Thế cờ tưởng như yên ổn, Triệu Quốc Vinh bất ngờ thí Mã vào Tượng. Không trực tiếp ăn Tượng mà giữ nó làm mục tiêu cho Pháo — một cách đánh rất có tiết tấu.",
+   "seo_title": "Cuộc 9: Phong Vân Đột Biến — Triệu Quốc Vinh",
+   "seo_description": "Thế trung cuộc Tang Như Ý - Triệu Quốc Vinh 1983: thí Mã đánh Tượng, giữ Tượng làm mục tiêu cho Pháo, Xe Mã song Pháo phối hợp. Bàn cờ tương tác.",
+   "content": "<h2>Bối cảnh</h2><p>Giải toàn quốc tại Côn Minh 1983, Tang Như Ý (Đỏ) gặp Triệu Quốc Vinh. Nước 17 Đỏ tiến Xe 4 tiến 6. Thế cờ tương đối yên ổn — khó ai nhìn ra Đen có cách tấn công nào.</p><h2>Thí Mã đánh Tượng</h2><p>Triệu Quốc Vinh đi <strong>Mã 7 tiến 5</strong>, thí Mã vào Tượng. Đòn thí Mã phá Tượng không hiếm, nhưng thường có các nước tiếp theo rõ ràng; còn ở đây cái hay nằm ở sự phân tích chính xác cấu trúc lực lượng hai bên.</p><h2>Đỏ không ăn được Mã</h2><p>Nếu Đỏ phi Tượng ăn Mã, Pháo Đen bình sang, vừa có thế công vừa phục lùi Pháo đoạt lại quân — Đen chiếm tiện nghi. Vì vậy Đỏ phải lùi Mã cửa hà về ăn Mã.</p><h2>Giữ Tượng làm mục tiêu</h2><p>Đen không vội dùng Xe ăn Tượng mà đi <strong>Xe 3 tiến 3</strong>, để quân Tượng còn đó làm bia cho Pháo — rất có tiết tấu. Sau đó Xe, Mã và song Pháo Đen phối hợp nhịp nhàng, thế cờ hung hãn.</p><h2>Bài học</h2><ul><li>Không phải lúc nào cũng nên ăn ngay: một quân yếu của đối phương còn đứng đó có thể là mục tiêu để dắt quân mình vào thế công.</li><li>Đòn thí quân hay nhất là đòn dựa trên đánh giá đúng sức chiến đấu của từng nhóm quân.</li></ul>",
+   "captions": {
+    "1": "Thí Mã đánh Tượng — phong vân đột biến!",
+    "2": "Đỏ lùi Mã cửa hà về ăn Mã (không dùng Tượng ăn — xem biến).",
+    "3": "Không ăn Tượng ngay mà tiến Xe — để Tượng làm mục tiêu cho Pháo.",
+    "5": "Pháo bình sang nhắm Tượng.",
+    "21": "Xe Mã song Pháo Đen phối hợp tác chiến, thế cờ hung hãn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ phi Tượng ăn Mã...",
+     "2": "...Pháo bình sang, vừa có công thế vừa phục lùi Pháo đoạt lại quân."
+    }
+   },
+   "fen": "4kab2/4a4/2n1b2c1/p3pR2C/2r3p2/c2N5/4P1n1P/C3B1N2/4A4/2BAK4"
+  },
+  {
+   "order": 100,
+   "slug": "trung-cuoc-bao-dien-cuoc-10-khao-nghiem",
+   "title": "Cuộc 10: Khảo Nghiệm — Dương Quan Lân vs Hồ Vinh Hoa (1979)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#10",
+   "summary": "Hồ Vinh Hoa nhảy Mã ăn Pháo giữa, bỏ ngỏ Xe cho đối phương ăn. Ăn hay không ăn — một bài khảo nghiệm. Dương Quan Lân suy nghĩ hồi lâu và từ chối, tránh được một đòn sát bằng Mã cực đẹp.",
+   "seo_title": "Cuộc 10: Khảo Nghiệm — Dương Quan Lân vs Hồ Vinh Hoa",
+   "seo_description": "Thế trung cuộc Dương Quan Lân - Hồ Vinh Hoa 1979: Đen thí Xe giết Pháo, nếu Đỏ tham ăn Xe sẽ bị song Mã chiếu bí. Phân tích đủ các nhánh biến.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội Vận hội toàn quốc lần thứ 4 (1979). Nước 21 Dương Quan Lân (Đỏ) xuất Tướng sang lộ 4 — giúp Pháo giữa hoạt động và kiềm chế Xe Mã Đen.</p><h2>Thí Xe giết Pháo</h2><p>Hồ Vinh Hoa đáp bằng <strong>Mã 3 tiến 5</strong>, nhảy Mã ăn Pháo giữa và để mặc Xe của mình đứng trong tầm Pháo Đỏ. Ăn Xe hay không là một phép thử thực sự.</p><h2>Nếu Đỏ tham ăn Xe</h2><p>Pháo Đỏ ăn Xe, Mã Đen lùi rồi liên tục chiếu: Tướng Đỏ bị đẩy qua lại, hai Mã Đen thay nhau chiếu, cuối cùng <strong>chiếu bí</strong>. Đỏ cũng không có đường khác: nếu thay vì lên Sĩ mà tiến Xe chống đỡ thì Đen vẫn đoạt lại Xe và thắng; nếu Tướng né sang lộ 4 ở giữa chừng thì Đen dựng thế \"tiền Mã hậu Pháo\". Tất cả các nhánh này được dựng trên bàn cờ — rất đáng để đi từng nước.</p><h2>Lựa chọn của danh thủ</h2><p>Dương Quan Lân không ăn Xe mà <strong>phi Tượng ăn Mã</strong> — chỉ là một cuộc trao đổi ngang giá. Ván cờ sau đó trở lại thế cân bằng kéo dài.</p><h2>Bài học</h2><ul><li>Quân \"cho không\" của đối thủ mạnh thường là mồi. Trước khi ăn, hãy tìm xem đối phương được gì sau đó.</li><li>Ở trình độ cao, người phòng thủ giỏi là người ngăn tai họa <strong>trước khi</strong> nó xảy ra.</li></ul>",
+   "captions": {
+    "1": "Mã ăn Pháo giữa, mặc Xe đứng trong tầm Pháo Đỏ — thí Xe tranh sát!",
+    "2": "Không tham Xe, phi Tượng ăn Mã — trao đổi ngang giá, hóa giải nguy cơ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu tham ăn Xe...",
+     "2": "Mã lùi chuẩn bị liên hoàn chiếu.",
+     "4": "Mã chiếu Tướng.",
+     "8": "Mã ăn Tượng chiếu.",
+     "12": "Chiếu bí — Đen thắng."
+    },
+    "1": {
+     "1": "Thay vì lên Sĩ, tiến Xe 2...",
+     "4": "...Đen đoạt lại Xe, nhất định thắng."
+    },
+    "2": {
+     "1": "Tiến Xe 3...",
+     "6": "...Đen ăn Xe rồi lùi Tượng khử Pháo, nhất định thắng."
+    },
+    "3": {
+     "1": "Nếu Tướng bình sang lộ 4...",
+     "4": "...dựng thế tiền Mã hậu Pháo chờ sát."
+    }
+   },
+   "fen": "2r1kab2/1N2a4/4b4/p3p3p/5n3/P1P1c1P2/2n6/B1C1C4/4A4/1R1A1KB2"
+  },
+  {
+   "order": 110,
+   "slug": "trung-cuoc-bao-dien-cuoc-11-hoa-lua-ben-song",
+   "title": "Cuộc 11: Hoa Lửa Bên Sông — Quách Trường Thuận vs Đới Vinh Quang (1980)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#11",
+   "summary": "Bị kiềm chế Xe Mã ở lộ 2, Đỏ tiến Tốt qua sông đuổi Xe, rồi dùng một Xe đổi Mã Pháo để lấy thế. Chuỗi Tốt lộ 7 tiến dần trở thành mũi nhọn bắt chết Xe Đen.",
+   "seo_title": "Cuộc 11: Hoa Lửa Bên Sông — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Quách Trường Thuận - Đới Vinh Quang 1980: Tốt qua sông giải phong tỏa, đổi Xe lấy Mã Pháo, Tốt lộ 7 tiến dần, bắt chết Xe Đen.",
+   "content": "<h2>Bối cảnh</h2><p>Giải giao hữu 12 tỉnh thành tại Phong Phụ (1980). Sau 11 nước, chưa bên nào mất Chốt, nhưng Đen đang kiềm chế Xe Mã của Đỏ ở lộ 2. Đỏ cần mở đường tiến quân.</p><h2>Tốt qua sông phá vòng kiềm chế</h2><p><strong>Tốt 7 tiến 1</strong> qua sông, đuổi Xe Đen. Đen không dám bình Xe ăn Tốt: Đỏ sẽ tiến Pháo ăn Mã, thí Xe để dựng thế \"tiền Mã hậu Pháo\" và đoạt quân. Đen đành lùi Xe.</p><h2>Một Xe đổi Mã Pháo</h2><p>Đỏ tiến Pháo ăn Mã, Pháo Đen ăn Xe Đỏ, Pháo Đỏ lùi ăn lại Pháo. Kết quả Đỏ mất một Xe nhưng được Mã Pháo, lại có một Tốt qua sông và thế công. Đỏ tiếp tục hy sinh Tốt lộ 3 để Tốt lộ 7 tiến lên — nếu Đen không ăn Tốt mà bình Xe, Đỏ vẫn chiếm ưu sau loạt đổi quân.</p><h2>Nước dụ và cái bẫy cuối</h2><p>Nước 19 Đỏ tiến Pháo là <strong>nước dụ</strong>: nếu Xe Đen tiến lên chặn, Mã Đỏ sẽ nhảy liên tục tới thế lưỡng chiếu thắng ngay. Đen phải lui Xe ngăn Mã. Cuối cùng Tốt lộ 7 len vào, Đỏ bình Pháo bắt chết Xe Đen, thắng thế.</p><h2>Bài học</h2><ul><li>Một Tốt qua sông đúng lúc có thể phá vỡ thế kiềm chế mà quân mạnh không làm được.</li><li>Đổi Xe lấy hai quân nhẹ là đáng khi đi kèm Tốt qua hà và thế công.</li></ul>",
+   "captions": {
+    "1": "Tốt qua sông đuổi Xe, phá thế kiềm chế lộ 2.",
+    "2": "Đen không dám ăn Tốt (xem biến), đành lùi Xe.",
+    "3": "Pháo tiến ăn Mã.",
+    "4": "Pháo Đen ăn Xe.",
+    "5": "Pháo lùi ăn lại Pháo — Đỏ đổi 1 Xe lấy Mã Pháo, thêm Tốt qua sông.",
+    "7": "Hy sinh Tốt lộ 3 để giữ Tốt lộ 7 tiến lên.",
+    "11": "Mã tiến chiếu Tướng.",
+    "15": "Tiến Pháo — nước dụ Xe Đen tiến chặn.",
+    "16": "Đen buộc phải lui Xe ngăn Mã.",
+    "25": "Bình Pháo bắt chết Xe Đen — Đỏ thắng thế."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen bình Xe ăn Tốt...",
+     "2": "...Pháo ăn Mã, thí Xe dựng thế tiền Mã hậu Pháo, Đỏ đoạt quân."
+    },
+    "1": {
+     "1": "Nếu Đen không ăn Tốt mà bình Xe...",
+     "10": "...Đỏ vẫn chiếm ưu."
+    },
+    "2": {
+     "1": "Nếu Xe tiến lên chặn...",
+     "4": "...Mã tiếp tục nhảy tới thế lưỡng chiếu, Đỏ thắng."
+    },
+    "3": {
+     "1": "Nếu Đen bình Xe 8 sang 3...",
+     "12": "...Đen ít quân, trận hình xấu, khó chống đỡ."
+    }
+   },
+   "fen": "1nbakabr1/1c7/1C4n2/pNp1p1p1p/3r5/2P3P2/P3P2cP/2N1C4/9/1RBAKABR1"
+  },
+  {
+   "order": 120,
+   "slug": "trung-cuoc-bao-dien-cuoc-12-phat-dan-vo-thanh",
+   "title": "Cuộc 12: Phát Đạn Vô Thanh — Thượng Uy vs Tào Lâm (1990)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#12",
+   "summary": "Một nước tiến Chốt giữa lặng lẽ, tưởng chỉ để giải phong tỏa của song Pháo Đen, thực chất là viên đạn không tiếng nổ. Đen không nhận ra và rơi vào thế mất quân.",
+   "seo_title": "Cuộc 12: Phát Đạn Vô Thanh — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Thượng Uy - Tào Lâm 1990: nước tiến Chốt lặng lẽ giăng bẫy, Đen mất quân, Đỏ cưỡng đoạt Xe giải sát và kết thúc. Có biến chi tiết.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc tại Hàm Đan (1990). Nước 16 Thượng Uy (Đỏ) tiến Tốt giữa. Nhìn qua nước này chỉ để hóa giải thế phong tỏa của song Pháo Đen đã qua sông.</p><h2>Viên đạn không tiếng nổ</h2><p>Thực ra nước tiến Chốt còn dọn đường cho Xe và Pháo Đỏ. Đen không phát giác, bình Pháo ăn Tốt biên. Đỏ tiến Xe, Đen nhảy Mã, rồi Đỏ <strong>bình Pháo sang lộ 2</strong> — Đen bỗng thấy mình rơi vào thế mất quân.</p><h2>Đen không cứu được</h2><p>Nếu Đen nhảy Mã ăn Mã, Xe Đỏ ăn Pháo, Xe Đen chiếu một nước rồi sau loạt đổi quân Đỏ vẫn được quân chiếm ưu (biến trên bàn cờ). Đen đành bình Pháo, chấp nhận thiệt.</p><h2>Kết thúc</h2><p>Sau đó Đỏ dùng Mã, Pháo, Xe từng bước áp sát. Nước 31 Đỏ <strong>bình Xe cưỡng đoạt Xe Đen</strong> vừa giải sát vừa phục giết Tướng; Đen chống thêm một nước rồi nhận thua. Nếu Đen cố ăn Pháo, Đỏ lùi Tượng ăn Xe, sau loạt ăn qua lại Mã Đỏ chiếu Tướng không thể cứu — nhánh này cũng có trên bàn cờ.</p><h2>Bài học</h2><ul><li>Nước đi lặng lẽ của đối phương luôn cần được hỏi: \"nó chuẩn bị cho cái gì?\"</li><li>Một nước có hai mục đích (giải phong tỏa + mở đường tấn công) là dấu hiệu của tay cờ giỏi.</li></ul>",
+   "captions": {
+    "1": "Đen bình Pháo ăn Tốt biên, chưa thấy nguy hiểm.",
+    "2": "Xe tiến sâu.",
+    "4": "Pháo bình sang lộ 2 — Đen rơi vào thế mất quân.",
+    "5": "Đen đành bình Pháo, chấp nhận thiệt (ăn Mã còn tệ hơn — xem biến).",
+    "30": "Bình Xe cưỡng đoạt Xe — vừa giải sát vừa phục giết Tướng.",
+    "32": "Pháo lùi — Đen chấp nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen nhảy Mã ăn Mã...",
+     "8": "...Đỏ được quân chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Đen ăn Pháo...",
+     "2": "Tượng lùi ăn Xe.",
+     "6": "Mã chiếu — Đen không thể cứu."
+    }
+   },
+   "fen": "1r1ak1br1/4a4/4b3n/p1n1C3p/9/4P1B2/P1c4cP/2N1B1C1N/4A4/3RKA1R1"
+  },
+  {
+   "order": 130,
+   "slug": "trung-cuoc-bao-dien-cuoc-13-tin-mung-tot-dep",
+   "title": "Cuộc 13: Tin Mừng Tốt Đẹp — Lữ Khâm vs Lý Hồng Tân (1989)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#13",
+   "summary": "Kỳ thủ nghiệp dư Lý Hồng Tân cầm Đen đánh bại đặc cấp đại sư Lữ Khâm: giải sát bằng nước lùi Xe chặn đường, mời đổi Xe hóa nguy thành an, rồi phản công bằng Xe Mã Chốt.",
+   "seo_title": "Cuộc 13: Tin Mừng Tốt Đẹp — Lữ Khâm vs Lý Hồng Tân",
+   "seo_description": "Thế trung cuộc Lữ Khâm - Lý Hồng Tân 1989: Đen giải sát bằng lùi Xe chặn đường, mời đổi Xe hóa nguy thành an rồi phản công thắng đặc cấp đại sư.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Cá nhân toàn quốc tại Trùng Khánh (1989). Kỳ thủ nghiệp dư Lý Hồng Tân (Đen) gặp đặc cấp đại sư Lữ Khâm — người thích công sát, sẵn sàng bỏ Mã đổi lấy thế công. Đến nước 19, Pháo Đỏ đã chìm đáy, song Xe liên kết lộ sườn chuẩn bị giết Tướng. Đến lượt Đen giải sát.</p><h2>Giải vây bằng nước lùi Xe</h2><p>Đen lên Sĩ, Đỏ Xe trước ăn Sĩ. Đen <strong>lùi Xe chặn đường</strong>, cắt sự liên lạc của song Xe Đỏ — nước giải vây hay. Đỏ tiếp tục chiếu, Tướng Đen lên, Đỏ lùi Pháo đánh Mã để phá phòng tuyến; Đen bất ngờ <strong>lùi Xe mời đổi</strong>, hóa nguy thành an.</p><h2>Đỏ buộc phải đổi</h2><p>Tuyến đáy Đen đã được bảo vệ, Đỏ đành đổi Xe. Nếu Đỏ lùi Xe tránh đổi, Pháo Đen về trung lộ, Mã nhảy ra — Đen nhiều quân lại có thế công (biến trên bàn cờ).</p><h2>Phản công và Chốt giữa</h2><p>Sau đổi quân, Đỏ đoạt lại một quân nhưng rơi vào hậu thủ. Xe Đen ăn Sĩ, chiếu liên tục, Mã tham chiến, rồi <strong>Chốt giữa ba lần tiến</strong> áp sát cung Đỏ. Đỏ không ngăn được, chấp nhận thua. Nếu Đỏ thay nước 34 bằng tiến Pháo sau, Đen vẫn có đòn chiếu liên hoàn khó ứng phó.</p><h2>Bài học</h2><ul><li>Khi bị tấn công dồn dập, tìm nước <strong>cắt liên lạc</strong> giữa các quân tấn công của đối phương.</li><li>Mời đổi đúng quân tấn công nguy hiểm nhất của đối phương là cách phòng thủ hữu hiệu nhất.</li></ul>",
+   "captions": {
+    "1": "Lên Sĩ giải sát.",
+    "2": "Xe trước ăn Sĩ.",
+    "3": "Lùi Xe chặn đường — cắt liên lạc song Xe Đỏ, nước giải vây hay!",
+    "8": "Lùi Pháo đánh Mã, mưu phá phòng tuyến.",
+    "9": "Bất ngờ lùi Xe mời đổi — hóa nguy thành an.",
+    "10": "Đỏ buộc phải đổi Xe.",
+    "16": "Đỏ đoạt lại quân nhưng rơi vào hậu thủ.",
+    "21": "Xe ăn Sĩ chiếu, Đen chuyển sang phản công.",
+    "29": "Chốt giữa tiến.",
+    "41": "Chốt giữa áp sát — Đỏ không thể ngăn, nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ lùi Xe tránh đổi...",
+     "4": "...Đen nhiều quân lại có thế công."
+    },
+    "1": {
+     "1": "Nếu Đỏ tiến Pháo sau...",
+     "8": "...Đen chiếu liên hoàn, Đỏ khó ứng phó."
+    }
+   },
+   "fen": "1C2kab2/4a4/4b1n2/p3p3p/2r1P1c1c/3R5/P3r3P/4C4/3R5/2BAKAB2"
+  },
+  {
+   "order": 140,
+   "slug": "trung-cuoc-bao-dien-cuoc-14-hai-lang-pha-ngan-can",
+   "title": "Cuộc 14: Hai Lạng Phá Ngàn Cân — Liễu Đại Hoa vs Lâm Hoằng Mẫn (1983)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#14",
+   "summary": "Một nước tiến Chốt biên nhẹ như hai lạng mà có lực ngàn cân. Liễu Đại Hoa còn lùi Xe vào miệng Pháo chiếu Tướng — nước đi khiến ai cũng kinh ngạc — để Chốt biên ăn Xe.",
+   "seo_title": "Cuộc 14: Hai Lạng Phá Ngàn Cân — Liễu Đại Hoa",
+   "seo_description": "Thế trung cuộc Liễu Đại Hoa - Lâm Hoằng Mẫn 1983: tiến Chốt biên, lùi Xe vào miệng Pháo chiếu Tướng, Chốt ăn Xe, bắt chết Pháo Đen. Có biến chi tiết.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Cá nhân toàn quốc 1983. Liễu Đại Hoa — kỳ thủ thiên về tấn công, hai lần vô địch toàn quốc — cầm Đỏ gặp Lâm Hoằng Mẫn. Thế cờ đã thưa quân, Xe Đen đứng ở lộ 9.</p><h2>Nhẹ như hai lạng</h2><p><strong>Tốt 1 tiến 1</strong> — một bước Chốt nhẹ nhàng nhưng uy hiếp Xe. Đen không còn cách nào khác ngoài tiến Pháo chiếu. Nếu Đen lùi Xe, Đỏ lùi Pháo phục chiếu bí bắt Xe; dù sau đó Đen chống bằng cách nào (hai nhánh trên bàn cờ) cũng mất Pháo.</p><h2>Lùi Xe vào miệng Pháo</h2><p>Đỏ đáp <strong>Xe 4 thoái 8</strong>: lùi Xe đúng vào miệng Pháo Đen để chiếu Tướng. Mọi người đều kinh ngạc, nghĩ lại mới thấy tuyệt vời: Tướng Đen phải lùi, và Chốt biên Đỏ <strong>tiến lên ăn Xe</strong>.</p><h2>Kết thúc</h2><p>Đỏ lùi Pháo về giữ, Đen cố đẩy Chốt và bình Pháo ăn lại Xe, nhưng Tướng Đỏ lùi một bước là quả Pháo Đen bị bắt chết. Đỏ nhất định thắng.</p><h2>Bài học</h2><ul><li>Trong cờ tàn trung, một Tốt đúng chỗ có giá trị không kém quân mạnh.</li><li>Nước chiếu \"vô lý\" (đưa quân vào miệng đối phương) có thể là cách duy nhất để buộc đối phương đi đúng nước mình cần.</li></ul>",
+   "captions": {
+    "1": "Tốt biên tiến — nhẹ như hai lạng mà lực ngàn cân.",
+    "2": "Đen buộc phải tiến Pháo chiếu.",
+    "3": "Lùi Xe vào miệng Pháo chiếu Tướng — nước đi tuyệt vời!",
+    "4": "Tướng buộc phải lùi.",
+    "5": "Chốt biên ăn Xe!",
+    "7": "Pháo lùi về giữ — đến đây Đỏ nhất định thắng.",
+    "12": "Pháo Đen ăn lại Xe.",
+    "13": "Tướng lùi — bắt chết Pháo Đen."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen lùi Xe...",
+     "2": "Pháo lùi, phục chiếu bí bắt Xe.",
+     "8": "...Đen mất Pháo."
+    },
+    "1": {
+     "1": "Hoặc Đen tiến Pháo chiếu...",
+     "12": "...Tốt giữa tiến bắt chết Pháo Đen."
+    }
+   },
+   "fen": "2b6/3kaRC2/3a5/9/p6cr/4P4/8P/4B4/9/4K1B2"
+  },
+  {
+   "order": 150,
+   "slug": "trung-cuoc-bao-dien-cuoc-15-vui-mung-qua-som",
+   "title": "Cuộc 15: Vui Mừng Quá Sớm — Lý Lai Quần vs Hứa Ba (1987)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#15",
+   "summary": "Hứa Ba nghĩ chỉ cần đổi Pháo là hòa. Lý Lai Quần bình Pháo về trung lộ giăng bẫy, rồi bay Pháo ăn Sĩ — đòn tấn công bất ngờ khiến Đen mất thế.",
+   "seo_title": "Cuộc 15: Vui Mừng Quá Sớm — Lý Lai Quần vs Hứa Ba",
+   "seo_description": "Thế trung cuộc Lý Lai Quần - Hứa Ba 1987: Đen tưởng đổi Pháo là hòa, Đỏ bình Pháo trung lộ giăng bẫy rồi bay Pháo ăn Sĩ. Có biến Tướng né sớm.",
+   "content": "<h2>Bối cảnh</h2><p>Vòng loại giải Đồng đội Vận hội lần thứ 6 (1987). Sau 24 nước, Đỏ (Lý Lai Quần) chỉ hơn Chốt giữa. Đại sư trẻ Hứa Ba (Đen) tính rằng nước sau chỉ cần tiến Pháo đổi Pháo là hòa đã định.</p><h2>Cạm bẫy</h2><p>Đỏ đi <strong>Pháo 7 bình 5</strong>. Đen vẫn theo kế hoạch tiến Pháo đổi Pháo — không nhận ra bẫy. Nếu Đen cảnh giác mà bình Tướng tránh sớm, cầu hòa không khó.</p><h2>Pháo bay vào cung</h2><p>Đỏ <strong>Pháo trước tiến 2 ăn Sĩ</strong>! Đòn bất ngờ khiến Đen toát mồ hôi. Đen đành bình Tướng; nếu dùng Mã ăn Pháo thì Xe Đỏ tiến, sau loạt đổi quân Đỏ ưu thế lớn (biến trên bàn cờ). Đỏ tiếp tục bình Pháo, ăn Tượng, lùi Mã phòng thủ chắc chắn rồi tiến Chốt giữa — đại thế đã mất, Đen nhận thua.</p><h2>Bài học</h2><ul><li>Đừng \"vui mừng quá sớm\": khi thấy hòa trong tầm tay, hãy kiểm tra lại nước vừa đi của đối phương có giăng bẫy gì không.</li><li>Pháo trung lộ cộng thêm Pháo thứ hai có thể phá Sĩ Tượng rất nhanh khi đối phương mất cảnh giác.</li></ul>",
+   "captions": {
+    "1": "Bình Pháo trung lộ — giăng bẫy.",
+    "2": "Đen theo kế hoạch đổi Pháo, không thấy bẫy (nên bình Tướng tránh — xem biến).",
+    "3": "Pháo bay vào ăn Sĩ!",
+    "4": "Đen đành bình Tướng (ăn Pháo còn tệ hơn).",
+    "7": "Pháo ăn Tượng, phòng tuyến Đen tan rã.",
+    "15": "Tiến Chốt giữa — đại thế đã mất, Đen nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cảnh giác hơn: bình Tướng tránh sớm, không khó cầu hòa."
+    },
+    "1": {
+     "1": "Nếu Đen dùng Mã ăn Pháo...",
+     "12": "...Đỏ đại chiếm ưu thế."
+    }
+   },
+   "fen": "2bak1c2/4a4/4b4/1cC2n2p/pr2C4/2R1P1B2/P3N3P/4B4/4A4/4KA3"
+  },
+  {
+   "order": 160,
+   "slug": "trung-cuoc-bao-dien-cuoc-16-xa-kich-uy-manh",
+   "title": "Cuộc 16: Xạ Kích Uy Mãnh — Lữ Khâm vs Lưu Điện Trung (1984)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#16",
+   "summary": "Đen tấn Mã nhắm Pháo giữa để chặn thế công. Lữ Khâm đáp bằng cú sút thẳng vào khung thành: thí Xe giết Sĩ, Mã đạp Tượng, Xe ăn Tượng — dựng thế huyền câu sát.",
+   "seo_title": "Cuộc 16: Xạ Kích Uy Mãnh — Lữ Khâm vs Lưu Điện Trung",
+   "seo_description": "Thế trung cuộc Lữ Khâm - Lưu Điện Trung 1984: thí Xe giết Sĩ, Mã ăn Tượng, Xe ăn Tượng chiếu, dựng thế huyền câu sát. Có biến Đen ăn Pháo giữa.",
+   "content": "<h2>Bối cảnh</h2><p>Giải toàn quốc tại Dương Thành (1984). Nước 22 Lưu Điện Trung (Đen) tấn Mã nhắm bắt Pháo giữa, mong chặn thế công ở trung lộ và cánh phải của Đỏ.</p><h2>Thí Xe giết Sĩ</h2><p>Lữ Khâm đáp ngay bằng <strong>Xe 4 tiến 3</strong> ăn Sĩ chiếu Tướng — thí Xe, như một cú sút cực mạnh dội thẳng vào khung thành. Tướng Đen ăn Xe.</p><h2>Liên hoàn đòn</h2><p>Mã Đỏ nhảy vào ăn Tượng giữa; Đen chỉ biết tiến Pháo (nếu Mã Đen ăn Pháo giữa, Xe Đỏ ăn Tượng chiếu, Tướng phải lên, Mã lùi chiếu tiếp — Đỏ vẫn thắng, biến trên bàn cờ). Mã lùi về, Đen bình Pháo, rồi <strong>Xe 2 bình 3 ăn Tượng chiếu</strong>, Tướng lên, Xe lùi ăn Pháo — hình thành thế <strong>huyền câu sát</strong>: Tướng Đen treo lơ lửng không đường thoát, Đỏ thắng.</p><h2>Bài học</h2><ul><li>Khi đối phương dùng nước đi chậm để phòng thủ, đó là lúc tung đòn quyết định trước khi họ củng cố xong.</li><li>Thí Xe phá Sĩ chỉ đúng khi các quân còn lại (Mã, Xe thứ hai) sẵn sàng nối tiếp — hãy đếm đủ lực lượng trước khi thí.</li></ul>",
+   "captions": {
+    "1": "Thí Xe giết Sĩ chiếu Tướng — đầy uy mãnh!",
+    "2": "Tướng ăn Xe.",
+    "3": "Mã nhảy vào ăn Tượng giữa.",
+    "4": "Nước bất đắc dĩ (Mã ăn Pháo giữa cũng thua — xem biến).",
+    "7": "Xe ăn Tượng chiếu.",
+    "8": "Tướng buộc phải lên.",
+    "9": "Xe lùi ăn Pháo — thế huyền câu sát, Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Mã Đen ăn Pháo giữa...",
+     "2": "Xe ăn Tượng chiếu.",
+     "8": "...Đỏ cũng thắng."
+    }
+   },
+   "fen": "2r1kabR1/2c1a3c/4b4/p4RN1p/6p2/3n5/P1r5P/B2CC4/4A4/3AK1B2"
+  },
+  {
+   "order": 170,
+   "slug": "trung-cuoc-bao-dien-cuoc-17-vien-binh-voi-den",
+   "title": "Cuộc 17: Viện Binh Vội Đến — Từ Thiên Hồng vs Bốc Phong Ba (1987)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#17",
+   "summary": "Đỏ tưởng song Xe Đen chết chắc, nhưng Đen bất ngờ nhảy Mã ăn Chốt biên. Đỏ phản ứng non (ăn Mã), và Đen dùng nước tiến Pháo tiếp theo đoạt lại quân, mở rộng thế công đến khi phá thành.",
+   "seo_title": "Cuộc 17: Viện Binh Vội Đến — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Từ Thiên Hồng - Bốc Phong Ba 1987: Đen thí Mã ăn Chốt biên, Đỏ ăn Mã là nước non, Đen tiến Pháo đoạt lại quân rồi phá thành.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội Vận hội toàn quốc lần thứ 6 tại Phúc Châu (1987). Nước 16 Từ Thiên Hồng (Đỏ) bình Pháo sang lộ 4 để giải sát, chuẩn bị lùi Pháo góc Sĩ — song Xe Đen bị trói, tưởng chết Xe là chắc.</p><h2>Mã ăn Chốt biên</h2><p>Đen bất ngờ <strong>nhảy Mã ăn Chốt biên</strong>. Đỏ lưỡng lự rồi mới nhận ra mình đã rơi vào thế hạ phong.</p><h2>Nước đi non của Đỏ</h2><p>Đỏ nhảy Mã ăn Mã — nước non yếu. Lẽ ra Đỏ nên theo kế hoạch ban đầu lùi Pháo góc Sĩ; dù vẫn ở thế dưới nhưng tốt hơn nhiều so với thực chiến (biến trên bàn cờ).</p><h2>Viện binh đến</h2><p>Đen lùi Xe ăn Tốt, rồi <strong>tiến Pháo</strong> — thủ đoạn nối tiếp nước thí Mã: vừa đoạt lại quân, vừa mở rộng thế công. Chuỗi nước tiếp theo của Đen như mây trôi nước chảy: Xe chiếu, Xe bình, Pháo lùi về trung lộ, cuối cùng Pháo Đen đánh Sĩ, thành trì Đỏ sụp đổ hoàn toàn.</p><h2>Bài học</h2><ul><li>Khi bị dồn ép, một đòn thí quân tạo phản kích có thể lật ngược thế cờ.</li><li>Đối diện nước thí bất ngờ, đừng vội \"ăn cho chắc\" — hãy giữ đúng kế hoạch nếu kế hoạch đó còn hiệu lực.</li></ul>",
+   "captions": {
+    "1": "Mã ăn Chốt biên — nước thí mãnh công bất ngờ.",
+    "2": "Đỏ ăn Mã — nước non yếu (nên lùi Pháo góc Sĩ, xem biến).",
+    "3": "Xe lùi ăn Tốt.",
+    "5": "Tiến Pháo — vừa đoạt lại quân vừa mở rộng thế công.",
+    "7": "Xe lùi ăn Pháo, Đen đã lấy lại quân.",
+    "35": "Pháo đánh Sĩ — thành trì Đỏ sụp đổ, bại cục đã định."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Theo kế hoạch ban đầu: lùi Pháo góc Sĩ...",
+     "9": "...Đỏ tuy ở thế dưới nhưng vẫn tốt hơn thực chiến."
+    }
+   },
+   "fen": "2ba1k3/4a4/1c2b2c1/5CCRp/1np6/6P2/P1P1P3P/2N1r4/4Ar3/2R1KAB2"
+  },
+  {
+   "order": 180,
+   "slug": "trung-cuoc-bao-dien-cuoc-18-phan-phong-toa",
+   "title": "Cuộc 18: Phản Phong Tỏa — Lý Lai Quần vs Tưởng Chí Lương (1983)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#18",
+   "summary": "Xe Pháo cánh trái bị phong tỏa, Đỏ tấn Mã vào miệng Xe để giải. Đen buộc dùng một Xe đổi hai quân, Đỏ bình Xe khống chế cửa Tướng, từng bước gom Tượng Chốt rồi vây Mã Đen.",
+   "seo_title": "Cuộc 18: Phản Phong Tỏa — Lý Lai Quần vs Tưởng Chí Lương",
+   "seo_description": "Thế trung cuộc Lý Lai Quần - Tưởng Chí Lương 1983: tấn Mã miệng Xe phá phong tỏa, Xe khống chế cửa Tướng, gom Tượng Chốt, vây chết Mã Đen.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc 1983. Sau 13 nước, Pháo đầu Đỏ khống chế Pháo đầu Đen rất có uy lực, nhưng Xe Pháo cánh trái của Đỏ bị phong tỏa ở cự ly ngắn, lại đối mặt các đòn bình Pháo, tiến Xe của Đen.</p><h2>Tấn Mã miệng Xe</h2><p><strong>Mã 3 tiến 4</strong> — đưa Mã vào ngay miệng Xe, nước đi tinh diệu. Lo cho an nguy hai cánh, Đen đành dùng một Xe đổi hai quân: Xe ăn Pháo, Xe Đỏ ăn lại, Xe kia của Đen ăn Mã. Nếu Đen ăn Mã ngay, Pháo Đỏ bình sang phục chiếu bí đoạt Xe — Đen càng khó (biến trên bàn cờ).</p><h2>Khống chế cửa Tướng</h2><p>Đỏ <strong>bình Xe sang lộ 6</strong> khống chế cửa Tướng, thống ngự cục diện. Sau đổi quân, Xe Đỏ chiếm tuyến Chốt, ăn Chốt, giết Tượng, tạo điều kiện thủ thắng.</p><h2>Vây Mã</h2><p>Mã Đen vất vả chạy khắp nơi, cuối cùng bị Xe Đỏ <strong>cấm ở nơi bom đạn</strong>. Đỏ tiến Chốt, thắng lợi trong tầm tay.</p><h2>Bài học</h2><ul><li>Phá phong tỏa bằng cách thí quân vào chỗ đối phương buộc phải phản ứng — biến thế bị động thành chủ động.</li><li>Sau khi được thế, Xe chiếm tuyến Chốt và gom quân yếu là con đường chắc chắn đến thắng lợi.</li></ul>",
+   "captions": {
+    "1": "Tấn Mã miệng Xe — nước đi tinh diệu phá phong tỏa!",
+    "2": "Xe Đen ăn Pháo trước.",
+    "3": "Xe ăn lại Xe.",
+    "4": "Xe Đen ăn Mã — Đen dùng 1 Xe đổi 2 quân.",
+    "5": "Bình Xe khống chế cửa Tướng, thống ngự cuộc diện.",
+    "13": "Đổi quân xong, Xe chiếm tuyến Chốt.",
+    "23": "Ăn Tượng, tạo điều kiện thủ thắng.",
+    "39": "Cấm Mã ở nơi bom đạn.",
+    "41": "Tiến Chốt — Đỏ nhất định thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen ăn Mã ngay...",
+     "2": "...Pháo bình sang phục chiếu bí đoạt Xe.",
+     "8": "Đen vị trí Xe không tốt, càng khó ứng phó."
+    }
+   },
+   "fen": "2b1ka3/4ar3/n1c1c4/p1p1C1R1p/6b2/1rP6/P3P3P/1C4N2/9/1RBAKAB2"
+  },
+  {
+   "order": 190,
+   "slug": "trung-cuoc-bao-dien-cuoc-19-thien-quan-van-ma-xuong-giang-nam",
+   "title": "Cuộc 19: Thiên Quân Vạn Mã Xuống Giang Nam — Vương Vinh Tháp vs Hồ Vinh Hoa (1985)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#19",
+   "summary": "Pháo Đỏ đánh Xe, ai cũng nghĩ Đen sẽ chạy Xe. Hồ Vinh Hoa lại tiến Chốt giữa, chấp nhận thiệt thêm quân để đổi lấy thế — rồi cho Chốt ồ ạt qua sông như thiên quân vạn mã.",
+   "seo_title": "Cuộc 19: Thiên Quân Vạn Mã — Hồ Vinh Hoa Quân và Thế",
+   "seo_description": "Thế trung cuộc Vương Vinh Tháp - Hồ Vinh Hoa 1985: chấp nhận mất quân để lấy thế, Chốt ồ ạt qua sông khống chế Mã, Đen hơn 3 Chốt nhất định thắng.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc tại Tây An (1985), Vương Vinh Tháp (Đỏ) gặp Hồ Vinh Hoa. Sau 15 nước, Pháo Đỏ đánh Xe Đen. Chạy Xe là nước tự nhiên, không ai chê trách.</p><h2>Quân hay Thế?</h2><p>Hồ Vinh Hoa đi <strong>Tốt 5 tiến 1</strong>. Trong loạt đổi quân sau đó (Xe Đỏ ăn Pháo, Xe Đen ăn Xe, Pháo Đỏ ăn Tốt chiếu rồi bình ăn Xe), Đen thiệt thêm một quân mạnh nhưng chiếm được thế thượng phong. Hồ Vinh Hoa nổi tiếng xử lý rất tốt quan hệ giữa \"quân\" và \"thế\" — đây là một ví dụ điển hình.</p><h2>Chốt qua sông khống chế Mã</h2><p>Đen tiến Chốt 7 qua sông khống chế Mã — nước hay trong kế hoạch. Đỏ tuy nhiều quân nhưng các quân đứng kém, năng lượng không bằng Đen. Đỏ lại lùi Mã vào giữa cung, \"làm kén tự trói mình\" (lẽ ra nên lùi Mã về biên). Đen tiến thêm Chốt 3 qua sông — như thiên quân vạn mã tràn xuống Giang Nam.</p><h2>Kết thúc</h2><p>Mã Đen ghìm mà không phát, Xe bình về khống chế chặt Xe Mã Đỏ. Đen ra Tướng, nhảy Mã ăn Chốt giữa phục giết Tướng, ép Đỏ phải hiến Mã. Quân mạnh hai bên ngang nhau, nhưng Đen hơn 3 Chốt qua sông — nhất định thắng.</p><h2>Bài học</h2><ul><li>Đếm quân chưa đủ: hãy đếm <strong>năng lượng</strong> — quân nào đang thực sự hoạt động.</li><li>Nhiều Chốt qua sông liên kết với nhau có thể bóp nghẹt quân mạnh của đối phương.</li></ul>",
+   "captions": {
+    "1": "Tiến Chốt giữa — thà thiệt thêm quân mạnh, đổi lấy thế thượng phong.",
+    "2": "Xe Đỏ ăn Pháo.",
+    "3": "Xe Đen ăn Xe.",
+    "4": "Pháo ăn Tốt chiếu.",
+    "6": "Pháo ăn Xe — Đỏ nhiều quân hơn.",
+    "7": "Chốt qua sông khống chế Mã — nước hay trong kế hoạch.",
+    "12": "Lùi Mã giữa cung làm kén tự trói (nên lùi Mã về biên — xem biến).",
+    "13": "Chốt 3 qua sông — thiên quân vạn mã tràn xuống Giang Nam.",
+    "19": "Bình Xe khống chế chặt Xe Mã Đỏ.",
+    "21": "Ra Tướng.",
+    "23": "Mã ăn Chốt giữa phục giết Tướng.",
+    "27": "Đen hơn 3 Chốt qua sông, nhất định thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Tốt hơn: lùi Mã về biên, không tự trói quân mình."
+    }
+   },
+   "fen": "3akabr1/9/4b4/r3p1C1p/2pn2pc1/pc7/2P1P3P/4C1N2/9/1RBAKABR1"
+  },
+  {
+   "order": 200,
+   "slug": "trung-cuoc-bao-dien-cuoc-20-xoay-tro-mui-giao",
+   "title": "Cuộc 20: Xoay Trở Mũi Giáo — Trương Hiểu Bình vs Vu Ấu Hoa (1989)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#20",
+   "summary": "Đen lên hoành Xe trước khi xuất Mã, dụ Đỏ bình Xe sườn. Hoành Xe Đỏ lại bất ngờ quay mũi giáo đánh vào Mã đáy chưa xuất của Đen — hoành Xe hóa trực Xe, điều Đen không ngờ tới.",
+   "seo_title": "Cuộc 20: Xoay Trở Mũi Giáo — Ngũ Thất Pháo Hoành Xe",
+   "seo_description": "Thế trung cuộc Trương Hiểu Bình - Vu Ấu Hoa 1989: ngũ thất Pháo hoành Xe đánh bán bích hà sơn, hoành Xe quay mũi giáo công Mã đáy. Có biến.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Cá nhân toàn quốc tại Trùng Khánh (1989). Trương Hiểu Bình (Đỏ) dùng \"ngũ thất Pháo hoành Xe\" đánh thế \"bán bích hà sơn\" của Vu Ấu Hoa. Thế cờ bắt đầu từ sau nước thứ 6.</p><h2>Ý đồ của Đen</h2><p>Đen chưa xuất Mã trái mà lên hoành Xe trước, mong dụ Đỏ bình Xe sang sườn để Đen bình Xe đối diện, tăng tốc phản kích.</p><h2>Quay mũi giáo</h2><p>Đỏ lên hoành Xe rồi <strong>bình sang lộ 2</strong> — quay ngược mũi giáo đánh vào Mã đáy Đen. Nhược điểm Mã trái của Đen không những không được cải thiện, mà hoành Xe của Đen cũng mất tác dụng. Hoành Xe biến thành trực Xe — điều Đen không lường trước.</p><h2>Diễn biến</h2><p>Đỏ đổi Xe, nhảy Mã biên vòng lên, Đen vất vả bảo vệ cánh trái. Nước 18 Đen bình Pháo dẫn đến mất quân (nếu tiến Chốt 3 thì Đỏ vẫn ưu — biến trên bàn cờ). Sau đó Đỏ chủ động <strong>thí lại một quân</strong>, quay Mã ăn Tượng tổ chức thế công vào cánh trống của Đen, Mã ăn Pháo chiếu, cuối cùng Pháo trung lộ ăn Tốt chiếu — ưu thế rõ rệt, Đỏ thắng.</p><h2>Bài học</h2><ul><li>Một quân chưa xuất (Mã đáy) là điểm yếu thực sự — hãy tấn công nó trước khi đối phương kịp sửa.</li><li>Hoành Xe linh hoạt: cùng một quân có thể đổi hướng tấn công tùy nhược điểm đối phương.</li></ul>",
+   "captions": {
+    "1": "Lên hoành Xe.",
+    "3": "Hoành Xe bất ngờ quay mũi giáo, bình sang lộ 2 công Mã đáy!",
+    "4": "Đen buộc phải xuất Mã.",
+    "15": "Xe ăn Xe, đổi Xe.",
+    "24": "Bình Pháo dẫn đến mất quân (xem biến tiến Chốt).",
+    "27": "Pháo tiến ăn Mã.",
+    "31": "Lùi Mã — chuẩn bị thí lại một quân, quay Mã đánh Tượng.",
+    "33": "Mã ăn Tượng, tổ chức thế công vào cánh trống.",
+    "35": "Mã ăn Pháo chiếu Tướng.",
+    "41": "Pháo trung lộ ăn Tốt chiếu — Đỏ ưu thế rõ rệt, kết quả Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen tiến Chốt 3...",
+     "8": "...Đỏ vẫn chiếm ưu."
+    }
+   },
+   "fen": "1rbaka1nr/9/2n1bc3/p3p1p1p/2p6/6P2/PcP1P3P/N1C1C1N2/9/1RBAKAB1R"
+  },
+  {
+   "order": 210,
+   "slug": "trung-cuoc-bao-dien-cuoc-21-xoay-tro-mui-giao-2",
+   "title": "Cuộc 21: Xoay Trở Mũi Giáo (2) — Tiền Hồng Phát vs Hứa Văn Học (1990)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#21",
+   "summary": "Cùng ý tưởng với Cuộc 20: hoành Xe Đỏ quay mũi giáo tấn công Mã trái yếu của Đen. Đen chống bằng nhiều biện pháp, nhưng Đỏ điều Pháo công cánh trái, đoạt Mã rồi chuẩn bị đoạt thêm Pháo.",
+   "seo_title": "Cuộc 21: Xoay Trở Mũi Giáo (2) — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Tiền Hồng Phát - Hứa Văn Học 1990: hoành Xe công Mã trái của phản cung Mã, Xe sâu tranh tiên, Mã ngọa tào đoạt Mã đoạt Pháo.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc tại Hàm Đan (1990), Tiền Hồng Phát (Đỏ) gặp Hứa Văn Học. Thế cờ sau nước 6, cùng hệ thống với Cuộc 20.</p><h2>Nhược điểm Mã trái của phản cung Mã</h2><p>Trong thế trận phản cung Mã chống Pháo đầu, Mã trái vốn là điểm yếu. Thập niên 70 người ta khắc phục bằng tiến Chốt 7, thập niên 80 bằng phi Tượng trái. Ở đây Đen lên hoành Xe khi Mã trái chưa xuất, phá vỡ kết cấu lực lượng hợp lý — tạo cơ hội cho Đỏ.</p><h2>Diễn biến</h2><p>Đỏ lên hoành Xe, bình sang lộ 2 quay mũi giáo công Mã Đen; Đen kịp xuất Mã. Đỏ lên Sĩ, tiến Chốt giữa, lùi Mã biên, rồi <strong>Xe 2 tiến 7</strong> — nước hay, công Mã trái để tranh tiên đoạt thế. Đen dùng hàng loạt biện pháp bảo vệ Mã trái; Đỏ điều Pháo sang cánh trái và cuối cùng <strong>đoạt được một Mã</strong>.</p><h2>Kết thúc</h2><p>Đen tiến Pháo sườn chặn lưng Tượng rồi bình Xe đánh Tượng, Đỏ bình Xe bắt Pháo buộc Đen lùi Pháo. Mã Đỏ nhảy vào dọa ngọa tào, Đen bình Xe chặn — Mã Đỏ quay về, sẽ đoạt thêm Pháo, Đỏ nhất định thắng.</p><h2>Bài học</h2><ul><li>Hiểu nhược điểm cố hữu của từng thế khai cuộc giúp định hướng tấn công ở trung cuộc.</li><li>Áp lực liên tục vào một quân yếu buộc đối phương dồn quân bảo vệ, tạo kẽ hở ở nơi khác.</li></ul>",
+   "captions": {
+    "1": "Lên hoành Xe.",
+    "3": "Hoành Xe quay mũi giáo công Mã Đen — cấu tứ mới mẻ.",
+    "4": "Đen kịp xuất Mã trái.",
+    "11": "Xe tiến sâu — nước hay, công Mã trái tranh tiên đoạt thế.",
+    "17": "Xe ăn Xe.",
+    "29": "Mã ăn Mã — Đỏ đoạt được một quân, chiếm ưu.",
+    "33": "Bình Xe bắt Pháo, nước hữu lực.",
+    "35": "Mã dọa ngọa tào.",
+    "37": "Mã quay về chuẩn bị đoạt thêm Pháo — Đỏ nhất định thắng."
+   },
+   "fen": "1rbaka1nr/9/2n1bc3/p3p1p1p/2p6/6P2/PcP1P3P/N1C1C1N2/9/1RBAKAB1R"
+  },
+  {
+   "order": 220,
+   "slug": "trung-cuoc-bao-dien-cuoc-22-manh-ho-xuat-dong",
+   "title": "Cuộc 22: Mãnh Hổ Xuất Động — Phương Nhị Khiết vs Đan Hà Lệ (1985)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#22",
+   "summary": "Đỏ hơn một Sĩ, Mã giữa bắt chết Chốt qua sông, thế cờ tưởng tốt. Đan Hà Lệ đột nhiên hiến Xe vì nắm được nhược điểm chí mạng: Xe trái Đỏ không được rời tuyến đáy. Đen dồn sát đến chiếu bí.",
+   "seo_title": "Cuộc 22: Mãnh Hổ Xuất Động — Đan Hà Lệ Hiến Xe",
+   "seo_description": "Thế trung cuộc Phương Nhị Khiết - Đan Hà Lệ 1985: Đen hiến Xe khai thác Xe đáy Đỏ, liên sát đến chiếu bí. Phân tích đủ các biến Đỏ chống đỡ.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc tại Tây An (1985). Sau 16 nước, Phương Nhị Khiết (Đỏ) đã ăn được một Sĩ, Mã giữa lại bắt chết Chốt qua sông của Đen — hình thế có vẻ không tồi. Đến lượt Đan Hà Lệ (Đen).</p><h2>Hiến Xe</h2><p>Đen đi <strong>Xe 1 bình 2</strong>, đưa Xe vào miệng Xe Đỏ. Đen đã phân tích ra nhược điểm chí mạng: Xe trái của Đỏ không được rời tuyến áp đáy. Nếu Đỏ dám ăn Xe, Mã Đen chiếu, Xe Đen xuống ăn Sĩ, rồi liên tục chiếu đến <strong>chiếu bí</strong>.</p><h2>Đỏ chống đỡ thế nào?</h2><p>Đỏ đành nhường lộ 8. Nếu Đỏ lùi Xe để đổi, Đen vẫn ưu thế rõ (có cả một nhánh phụ trong đó) — tất cả được dựng trên bàn cờ. Sau đó Xe Đen tiến sâu; Đỏ phi Tượng ăn Tốt (nếu dùng Mã ăn Chốt thí Mã biên thì Đen sát nhanh). Nước 19, nếu Đỏ lên Sĩ hoặc lùi Mã thì Đen bình Xe 7 cũng thắng thế.</p><h2>Kết thúc bằng chiếu bí</h2><p>Đen bình Pháo trung lộ, tiến Pháo ăn Mã. Bại thế đã rõ — Đỏ lùi Pháo hay lùi Xe đều không cứu được. Xe Đen bình chiếu, Mã chiếu, Xe xuống ăn Sĩ chiếu, và <strong>Xe 5 tiến 2 chiếu bí</strong>.</p><h2>Bài học</h2><ul><li>Hãy tìm quân \"không được phép rời vị trí\" của đối phương — đó là mục tiêu để hiến quân.</li><li>Khi đối phương đã thiếu Sĩ, một đòn thí đúng chỗ thường dẫn thẳng đến chiếu bí.</li></ul>",
+   "captions": {
+    "1": "Hiến Xe — nắm được nhược điểm chí mạng: Xe trái Đỏ không được rời tuyến đáy.",
+    "2": "Đỏ đành nhường lộ 8 (ăn Xe sẽ bị sát — xem biến).",
+    "3": "Xe tiến sâu.",
+    "4": "Phi Tượng ăn Tốt (thí Mã biên còn tệ hơn).",
+    "7": "Pháo bình trung lộ.",
+    "9": "Pháo ăn Mã — bại thế Đỏ đã rõ.",
+    "11": "Xe bình chiếu.",
+    "13": "Mã chiếu.",
+    "15": "Xe ăn Sĩ chiếu.",
+    "17": "Chiếu bí — Đen thắng!"
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ dám ăn Xe...",
+     "2": "Mã chiếu.",
+     "4": "Xe ăn Sĩ.",
+     "12": "Chiếu bí — Đen liên sát thắng cờ."
+    },
+    "1": {
+     "1": "Nếu Đỏ lùi Xe...",
+     "12": "...Đen ưu thế rõ rệt."
+    },
+    "2": {
+     "1": "Nếu bình Pháo sang 8...",
+     "10": "...Đen thắng thế."
+    },
+    "3": {
+     "1": "Nếu dùng Mã ăn Chốt thí Mã biên...",
+     "10": "Chiếu bí — Đen thắng."
+    },
+    "4": {
+     "1": "Nếu lên Sĩ...",
+     "2": "...Xe bình 7, Đen thắng thế."
+    },
+    "5": {
+     "1": "Nếu lùi Mã...",
+     "2": "...Xe bình 7, Đen thắng thế."
+    },
+    "6": {
+     "1": "Nếu lùi Pháo...",
+     "8": "...Đen thắng."
+    },
+    "7": {
+     "1": "Nếu lùi Xe...",
+     "4": "...Đen cũng thắng."
+    }
+   },
+   "fen": "r1bakr3/2C6/3cb4/p5p1p/9/2pnP2R1/P3NnP1P/N3B4/1R7/3AKAB2"
+  },
+  {
+   "order": 230,
+   "slug": "trung-cuoc-bao-dien-cuoc-23-hoan-doi-vi-tri",
+   "title": "Cuộc 23: Hoán Đổi Vị Trí — Tưởng Chí Lương vs Tưởng Toàn Thắng (1983)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#23",
+   "summary": "Pháo Đen sắp bị bắt bên sông. Không chạy mà cũng không chịu chết, Đen cho Pháo nhảy từ miệng Mã sang miệng Pháo — hoán đổi vị trí. Ván cờ dài với nhiều bài học về chọn nước khi đã thiệt.",
+   "seo_title": "Cuộc 23: Hoán Đổi Vị Trí — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Tưởng Chí Lương - Tưởng Toàn Thắng 1983: Pháo từ miệng Mã chạy sang miệng Pháo để đổi quân, thí Mã đoạt Chốt; phân tích nhiều sai lầm.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Đồng đội toàn quốc tại Cáp Nhĩ Tân (1983). Nước 12 Tưởng Chí Lương (Đỏ) tiến Tốt 3 để Xe Mã bắt Pháo Đen. Nếu Đen chạy Pháo, Tốt Đỏ qua sông chiếm ưu.</p><h2>Hoán đổi vị trí</h2><p>Đen không muốn cứu Pháo, cũng không muốn Pháo chết vô ích bên sông: <strong>Pháo 8 tiến 2</strong>, từ miệng Mã chạy sang miệng Pháo — nước hay khiến Đỏ bất ngờ. Nếu Đen ăn Chốt thì Đỏ nhảy Mã, và dù Đen chọn đường nào (ba nhánh trên bàn cờ), Đỏ đều ưu.</p><h2>Đỏ không nên ăn Pháo ngay</h2><p>Nếu Đỏ bình Pháo ăn Pháo, Xe Đen tiến đánh Mã, cánh phải Đỏ tắc nghẽn, phải thí lại một quân. Đỏ đúng đắn tiến Tốt ăn Tốt; Đen bình Pháo ăn Pháo chiếu, hai bên đổi Pháo, đổi Xe.</p><h2>Những nước đi đáng bàn</h2><ul><li>Nước 17 Đỏ thí Chốt để Pháo giữa có căn (nếu lùi Mã thì Đen ưu).</li><li>Đen tính chính xác: thí Mã ăn Chốt rồi đoạt lại quân.</li><li>Nước 23 Đen tiến Pháo chiếu là non — nên lùi Xe, biến hóa nhiều hơn.</li><li>Nước 26 Đen lùi Tượng vừa mất quân vừa mất thế — nên lùi Mã, còn tranh chấp được.</li></ul><h2>Kết thúc</h2><p>Đỏ dùng Xe Pháo Tốt ép sát, Pháo Đỏ ăn Sĩ, Tốt lộ 3 bình vào giữa ăn Tượng, cuối cùng Xe bình sườn — Đỏ thắng.</p><h2>Bài học</h2><ul><li>Khi một quân đã không thể cứu, hãy cho nó \"chết có giá\" — đổi lấy quân của đối phương.</li><li>Ở thế dưới, hãy chọn nước giữ được độ phức tạp thay vì nước đơn giản mà mất cả quân lẫn thế.</li></ul>",
+   "captions": {
+    "1": "Pháo từ miệng Mã chạy sang miệng Pháo — hoán đổi vị trí, nước cờ hay!",
+    "2": "Tốt ăn Tốt (không ăn Pháo ngay — xem biến).",
+    "3": "Pháo ăn Pháo chiếu.",
+    "5": "Đổi Xe.",
+    "10": "Thí Chốt để giữ Pháo giữa có căn.",
+    "15": "Thí Mã ăn Chốt — tính toán chính xác, sẽ đoạt lại quân.",
+    "21": "Xe ăn Mã đoạt lại quân.",
+    "23": "Tiến Pháo chiếu — nước non (nên lùi Xe).",
+    "29": "Lùi Tượng — vừa mất quân vừa mất thế (nên lùi Mã).",
+    "32": "Xe ăn Tượng.",
+    "54": "Pháo ăn Sĩ.",
+    "58": "Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen ăn Chốt...",
+     "2": "Mã nhảy, Đen có ba cách đi.",
+     "8": "Đỏ ưu."
+    },
+    "1": {
+     "1": "Nếu Xe tiến...",
+     "2": "...Mã ăn, Đỏ được quân."
+    },
+    "2": {
+     "1": "Nếu lùi Pháo...",
+     "4": "...Đỏ ưu."
+    },
+    "3": {
+     "1": "Nếu Xe tiến 4...",
+     "14": "...Đỏ ưu."
+    },
+    "4": {
+     "1": "Nếu Đỏ ăn Pháo ngay...",
+     "4": "...cánh phải Đỏ bế tắc, phải thí lại quân."
+    },
+    "5": {
+     "1": "Nếu lùi Mã...",
+     "2": "...Xe đuổi Pháo giữa, Đen ưu."
+    },
+    "6": {
+     "1": "Nên lùi Xe, biến hóa nhiều hơn."
+    },
+    "7": {
+     "1": "Nên lùi Mã...",
+     "6": "...Đen còn tranh chấp được ở thế dưới."
+    }
+   },
+   "fen": "3akabr1/3r5/4b1n2/p1p1n3p/4C1p2/2P3Pc1/Pc2N3P/4C1N2/4A4/R1BAK1BR1"
+  },
+  {
+   "order": 240,
+   "slug": "trung-cuoc-bao-dien-cuoc-24-ma-khong-qua-ha",
+   "title": "Cuộc 24: Mã Không Qua Hà — Liễu Đại Hoa vs Hồ Vinh Hoa (1989)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#24",
+   "summary": "Hồ Vinh Hoa lên Pháo đánh Mã ngay từ nước 6 — nước hiếm thấy. Mã Đỏ không dám qua hà, lùi về. Đen từ đó kết song Chốt liên hoàn khống chế cục diện, cuối cùng bắt được Xe.",
+   "seo_title": "Cuộc 24: Mã Không Qua Hà — Liễu Đại Hoa vs Hồ Vinh Hoa",
+   "seo_description": "Thế trung cuộc Liễu Đại Hoa - Hồ Vinh Hoa 1989: lên Pháo đánh Mã, Mã không dám qua hà, song Chốt liên kết khống chế, Đen đoạt Xe thắng.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Kim Giác Bôi tại Tuyền Thành (1989). Nước 6 Liễu Đại Hoa (Đỏ) tiến Mã lên cửa hà — có vẻ tác dụng không lớn.</p><h2>Lên Pháo đánh Mã</h2><p>Hồ Vinh Hoa đi <strong>Pháo 8 tiến 3</strong> — lên Pháo đánh Mã, nước ít thấy. Mã Đỏ không dám qua hà mà lùi về lộ 3. Nếu Đỏ cho Mã ăn Chốt qua sông, cục diện trở nên phức tạp, khó nắm bắt (biến trên bàn cờ) — Đỏ thà mất một nhịp để giữ thế ổn định.</p><h2>Song Chốt liên kết</h2><p>Đen phát triển quân, đẩy Chốt biên, nhảy Mã ăn Chốt, rồi <strong>bình Chốt 3 sang lộ 2</strong> nối với Chốt biên thành song Chốt liên kết — từ đó Đen khống chế cục thế.</p><h2>Những chỗ Đỏ có thể làm tốt hơn</h2><ul><li>Nước 25: bình Xe 5 sang 3 trước sẽ giảm áp lực.</li><li>Nước 36: bình Pháo sang 7 thì chưa đến nỗi thua nhanh.</li></ul><h2>Kết thúc</h2><p>Mã Đen nhảy vào ăn Tượng, Pháo ăn Sĩ, Mã chiếu buộc Pháo Đỏ ăn Mã, rồi Xe Đen ăn Xe. Đỏ không dám dùng Xe ăn Mã giữ Xe, vì Pháo Đen sẽ chiếu và dựng thế tiền Mã hậu Pháo chiếu bí.</p><h2>Bài học</h2><ul><li>Một nước đánh quân sớm có thể khiến đối phương \"mất một nhịp\" — đủ để bên kia nắm quyền chủ động.</li><li>Hai Chốt qua sông đứng cạnh nhau bảo vệ lẫn nhau, mạnh hơn nhiều so với hai Chốt rời rạc.</li></ul>",
+   "captions": {
+    "1": "Lên Pháo đánh Mã — nước ít thấy, đầy bất ngờ.",
+    "2": "Mã không dám qua hà, lùi về (xem biến Mã ăn Chốt).",
+    "13": "Mã ăn Chốt biên.",
+    "25": "Bình Chốt — song Chốt liên kết, Đen khống chế cục thế.",
+    "38": "Bình Xe sang 3 (bình Xe 5 sang 3 trước sẽ đỡ áp lực hơn).",
+    "59": "Mã ăn Tượng.",
+    "61": "Pháo ăn Sĩ.",
+    "63": "Mã chiếu.",
+    "65": "Xe ăn Xe — Đen thắng cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Mã qua hà ăn Chốt...",
+     "6": "...cục diện phức tạp, khó nắm bắt."
+    },
+    "1": {
+     "1": "Nên bình Xe 5 sang 3 trước...",
+     "5": "...sức ép giảm đi."
+    },
+    "2": {
+     "1": "Bình Pháo sang 7 — chưa đến nỗi tốc bại."
+    },
+    "3": {
+     "1": "Nếu Xe ăn Mã giữ Xe...",
+     "6": "Tiền Mã hậu Pháo — chiếu bí."
+    }
+   },
+   "fen": "r1b1kabr1/4a4/1cn3nc1/p3p1p1p/2p6/5NP2/P1P1P3P/2C1C4/9/RNBAKABR1"
+  },
+  {
+   "order": 250,
+   "slug": "trung-cuoc-bao-dien-cuoc-25-tot-dep-doi-ben",
+   "title": "Cuộc 25: Tốt Đẹp Đôi Bên — Liễu Đại Hoa vs Hồ Vinh Hoa (1983)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#25",
+   "summary": "Mất một Xe, Đen có thể đi Chốt ăn lại Xe theo trực giác. Hồ Vinh Hoa lại tiến Xe ăn Pháo, khiến cục diện căng thẳng phức tạp. Hai bên đi cẩn thận đến cuối, kết quả hòa — tốt đẹp đôi bên.",
+   "seo_title": "Cuộc 25: Tốt Đẹp Đôi Bên — Liễu Đại Hoa vs Hồ Vinh Hoa",
+   "seo_description": "Thế trung cuộc Liễu Đại Hoa - Hồ Vinh Hoa 1983 Ngũ Dương Bôi: Đen bỏ qua ăn lại Xe, tiến Xe ăn Pháo, cuộc chiến phức tạp kết thúc hòa cờ.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Ngũ Dương Bôi lần 3 (1983), Liễu Đại Hoa (Đỏ) gặp Hồ Vinh Hoa. Sau 13 nước, Đen đã mất một Xe nhưng Chốt Đen đang bắt Xe Đỏ, Xe Đen lại bắt Pháo.</p><h2>Không đi theo trực giác</h2><p>Nước tự nhiên là dùng Chốt ăn lại Xe. Hồ Vinh Hoa lại <strong>tiến Xe ăn Pháo</strong>, khiến cuộc thế lập tức căng thẳng: Xe Đen bình ăn Pháo chiếu, Đỏ phải lùi Mã vào giữa cung (nếu không Đen dùng một Xe đổi ba quân). Đen kịp lùi Xe ăn Tốt, phòng Đỏ tiến Xe phá Sĩ đổi Xe.</p><h2>Cuộc chiến phức tạp</h2><p>Đen dựng Pháo giữa nhắm vào Mã Đỏ nhập cung, bình Xe ăn Chốt \"thuận tay dắt dê\", rồi Xe Đen liên tục chiếu buộc Mã Đỏ chạy. Đen ra Mã, tiến Chốt giữa từng bước.</p><h2>Quyết sách cầu hòa</h2><p>Hai bên đều đi rất cẩn thận. Đỏ tuy hơn một quân nhưng vị trí kém, không còn hy vọng thắng nên chọn cầu hòa: đổi Xe, rồi đổi tiếp quân để giảm hỏa lực Đen. Cuối cùng hòa thế đã định.</p><h2>Bài học</h2><ul><li>Khi đang thiếu quân, đôi khi giữ thế công quan trọng hơn lập tức gỡ lại quân.</li><li>Biết nhận định đúng lúc nên chuyển sang cầu hòa cũng là một kỹ năng trung cuộc.</li></ul>",
+   "captions": {
+    "1": "Bất ngờ tiến Xe ăn Pháo thay vì dùng Chốt ăn lại Xe.",
+    "3": "Xe bình ăn Pháo chiếu.",
+    "4": "Lùi Mã giữa cung — bất đắc dĩ.",
+    "5": "Lùi Xe ăn Tốt, phòng Đỏ phá Sĩ đổi Xe.",
+    "9": "Dựng Pháo giữa nhắm Mã nhập cung.",
+    "13": "Bình Xe ăn Chốt — thuận tay dắt dê.",
+    "35": "Xe ăn Mã.",
+    "36": "Xe ăn lại Mã — Đỏ chọn cầu hòa.",
+    "50": "Hòa thế đã định."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cách đi trực quan: Chốt ăn lại Xe."
+    }
+   },
+   "fen": "2bakabr1/9/2n1c1n2/p1p1p1N1p/2c3p2/6R2/P3P3P/B1N1C2C1/5R3/3AKAB2"
+  },
+  {
+   "order": 260,
+   "slug": "trung-cuoc-bao-dien-cuoc-26-co-thang-khong-bai",
+   "title": "Cuộc 26: Có Thắng Không Bại — Lý Vọng Tường vs Dụ Chi Thanh (1984)",
+   "level": "nang-cao",
+   "draft": "t2-ch01#26",
+   "summary": "Trong thế cân bằng Xe song Pháo đối Xe song Mã, Đen liên tiếp thí Mã phá Tượng, phá Sĩ để tranh sát. Đỏ phòng thủ chính xác, ép đổi quân và giữ hòa.",
+   "seo_title": "Cuộc 26: Có Thắng Không Bại — Trung Cuộc Bảo Điển",
+   "seo_description": "Thế trung cuộc Lý Vọng Tường - Dụ Chi Thanh 1984: Đen thí Mã phá Tượng phá Sĩ tranh sát, Đỏ phòng thủ chính xác ép đổi quân, kết quả hòa.",
+   "content": "<h2>Bối cảnh</h2><p>Giải Tỵ Thử Sơn Trang Bôi lần 2 (1984). Sau 32 nước, hai bên còn Xe song Pháo song Chốt (Đỏ) đối Xe song Mã song Chốt (Đen) — cân bằng. Đến lượt Đen.</p><h2>Thí Mã giết Tượng</h2><p>Đen bất ngờ <strong>Mã 6 tiến 5 ăn Tượng</strong>, thế công hung mãnh. Đỏ chỉ có thể bổ Sĩ: nếu phi Tượng ăn Mã thì Mã Đen nhảy bắt hai quân, Đen viễn cảnh tốt (biến trên bàn cờ).</p><h2>Không chịu hòa</h2><p>Đen nhảy Mã ngọa tào chiếu, vẫn muốn quyết cao thấp (nếu đổi Mã lấy Pháo thì thành hòa nhanh). Rồi Đen tiếp tục <strong>thí Mã phá Sĩ</strong> tranh sát — dám thể hiện phong cách bạt sát.</p><h2>Phòng thủ chính xác</h2><p>Đỏ dùng Xe ăn Mã, Tướng lên tránh, Pháo về trung lộ chiếu, Pháo kia lùi về phòng thủ. Mã Đen chiếu liên tục, Tướng Đỏ di chuyển qua lại. Đến nước 45, Đỏ lùi Xe bắt Mã, ép Mã Đen đổi Pháo — từ đó ổn định cục thế. Hai bên tiến thoái lưỡng nan, hòa cờ.</p><h2>Bài học</h2><ul><li>\"Có thắng không bại\": khi tấn công mạo hiểm, hãy chắc rằng tệ nhất mình vẫn hòa.</li><li>Người phòng thủ không có Sĩ Tượng vẫn giữ được thế nếu biết dùng quân mạnh ép đổi quân tấn công của đối phương.</li></ul>",
+   "captions": {
+    "1": "Thí Mã ăn Tượng — thế công hung mãnh!",
+    "2": "Chỉ có thể bổ Sĩ (phi Tượng ăn Mã thì bị bắt đôi — xem biến).",
+    "5": "Mã ngọa tào chiếu — vẫn muốn quyết cao thấp.",
+    "7": "Lại thí Mã phá Sĩ tranh sát!",
+    "8": "Xe ăn Mã.",
+    "9": "Xe ăn Sĩ chiếu.",
+    "12": "Pháo về trung lộ chiếu.",
+    "26": "Lùi Xe bắt Mã, ép Mã đổi Pháo.",
+    "27": "Mã ăn Pháo.",
+    "34": "Xe ăn Mã chiếu — đổi quân, cục thế ổn định.",
+    "37": "Tiến thoái lưỡng nan, hòa cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu phi Tượng ăn Mã...",
+     "2": "Mã nhảy bắt hai quân.",
+     "6": "...Đen viễn cảnh tốt."
+    }
+   },
+   "fen": "2bak1b2/4aC3/9/p1p6/9/2Pn1n1R1/P8/3CB4/9/2BAKA2r"
+  }
+ ]
+}
