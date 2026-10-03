@@ -47,7 +47,10 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 2 — Giới thiệu + Chương 1 (Cuộc 1–26) | ✅ 27 bài (thiếu Cuộc 4) — 03/10/2026 |
 | Tập 2 — Chương 2 (Cuộc 27–55) | ✅ 28 bài (thiếu 39; 45 trùng 34) — 03/10/2026 |
 | Tập 2 — Chương 3 (Cuộc 56–83) | ✅ 29 bài — 03/10/2026 |
-| Tập 2 — Chương 4–12 (Cuộc 84–291) | ⬜ |
+| Tập 2 — Chương 4 (Cuộc 84–110) | ✅ 28 bài — 03/10/2026 |
+| Tập 2 — Chương 5 (Cuộc 111–132) | ✅ 23 bài — 03/10/2026 |
+| Tập 2 — Chương 6 (Cuộc 133–155) | ✅ 23 bài (thiếu 154) — 03/10/2026 |
+| Tập 2 — Chương 7–12 (Cuộc 156–291) | ⬜ |
 | Tập 1 — Chương 1–2 (khái luận, thẩm cục) | ✅ 31 bài — 03/10/2026 |
 | Tập 1 — Chương 3–4 (tư tưởng + mục tiêu chiến lược) | ✅ 22 bài — 03/10/2026 |
 | Tập 1 — Chương 5–9 | ⬜ |
@@ -65,6 +68,10 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - Tập 1 Ch3 Tiết 3 "Ngụ thủ vu công": sơ đồ p058 không khớp lời giải (nước 1 "P7.4" không có quân) → bài chữ,
   liệt kê nước dạng văn bản. Ch3 Tiết 2 cắt 2 biến (X1-3…, X4-2…) ở chỗ nước kế tiếp bất khả.
 - Tập 1 Ch4 Tiết 4 ví dụ 1: mạch chính là biến "tấn công mạnh" của sách; nước thực chiến M9/7 để ở nhánh biến.
+
+- Tập 2 Ch4: Cuộc 96 dừng ở nước 15 ("X3/4" mơ hồ, 2 Xe cùng lộ); 87/104/110/90 sửa sơ đồ (thiếu Tướng / Pháo đọc thành Xe).
+- Tập 2 Ch5: 111 "P9-3"→P8-3, 120 "B1.1"→B7.1, 123 "S6.5"→S4.5 (repair duy nhất); cắt 112 (14), 113 (21), 117 (10), 121 (36).
+- Tập 2 Ch6: bỏ Cuộc 154 ("Mt/2" không có 2 Mã cùng lộ, repair không ra); 145 "B3.4"→B3-4, 148 "P4-1"→P3-1; cắt 137 (9), 147 (7), 149 (26), 151 (23); 136 biến 2 sửa vị trí ply.
 
 ## Mẹo
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
