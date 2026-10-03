@@ -1,0 +1,178 @@
+{
+  "_engine-PL7W2vZX.js": {
+    "file": "assets/engine-PL7W2vZX.js",
+    "name": "engine"
+  },
+  "_notation-BMhHBC3j.js": {
+    "file": "assets/notation-BMhHBC3j.js",
+    "name": "notation",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_puzzle-check-s4z8ZG-u.js": {
+    "file": "assets/puzzle-check-s4z8ZG-u.js",
+    "name": "puzzle-check",
+    "assets": [
+      "assets/worker-aJLJr_MM.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Dy-XkI8S.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BAP6Klj9.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/lesson.js",
+      "resources/js/practice.js",
+      "resources/js/display-settings.js",
+      "resources/js/countdown.js",
+      "resources/js/play-bot.js",
+      "resources/js/play-pvp.js",
+      "resources/js/review.js",
+      "resources/js/weekly.js",
+      "resources/js/board-scan.js",
+      "resources/js/mistakes.js",
+      "resources/js/social.js",
+      "resources/js/share.js"
+    ]
+  },
+  "resources/js/board-scan.js": {
+    "file": "assets/board-scan-uAe60KpX.js",
+    "name": "board-scan",
+    "src": "resources/js/board-scan.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "assets": [
+      "assets/worker-aJLJr_MM.js"
+    ]
+  },
+  "resources/js/countdown.js": {
+    "file": "assets/countdown-BNeq65sB.js",
+    "name": "countdown",
+    "src": "resources/js/countdown.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/display-settings.js": {
+    "file": "assets/display-settings-DBPyjhgI.js",
+    "name": "display-settings",
+    "src": "resources/js/display-settings.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/lesson.js": {
+    "file": "assets/lesson-uImG7XVB.js",
+    "name": "lesson",
+    "src": "resources/js/lesson.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_puzzle-check-s4z8ZG-u.js"
+    ]
+  },
+  "resources/js/mistakes.js": {
+    "file": "assets/mistakes-BOFCzNJj.js",
+    "name": "mistakes",
+    "src": "resources/js/mistakes.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/play-bot.js": {
+    "file": "assets/play-bot-B5vYySvx.js",
+    "name": "play-bot",
+    "src": "resources/js/play-bot.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_engine-PL7W2vZX.js",
+      "_notation-BMhHBC3j.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ],
+    "assets": [
+      "assets/worker-aJLJr_MM.js"
+    ]
+  },
+  "resources/js/play-pvp.js": {
+    "file": "assets/play-pvp-DItSkK9j.js",
+    "name": "play-pvp",
+    "src": "resources/js/play-pvp.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_notation-BMhHBC3j.js"
+    ]
+  },
+  "resources/js/practice.js": {
+    "file": "assets/practice-Iq0jfUqj.js",
+    "name": "practice",
+    "src": "resources/js/practice.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_puzzle-check-s4z8ZG-u.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ]
+  },
+  "resources/js/review.js": {
+    "file": "assets/review-MeqCo0rn.js",
+    "name": "review",
+    "src": "resources/js/review.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_engine-PL7W2vZX.js"
+    ],
+    "assets": [
+      "assets/worker-aJLJr_MM.js"
+    ]
+  },
+  "resources/js/share.js": {
+    "file": "assets/share-Bei6lJb8.js",
+    "name": "share",
+    "src": "resources/js/share.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/social.js": {
+    "file": "assets/social-B6vehKeQ.js",
+    "name": "social",
+    "src": "resources/js/social.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/weekly.js": {
+    "file": "assets/weekly-CxtuApSM.js",
+    "name": "weekly",
+    "src": "resources/js/weekly.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ]
+  }
+}

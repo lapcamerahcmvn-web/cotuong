@@ -219,7 +219,7 @@
     <footer class="site-footer">
         <div class="wrap">
             <div class="site-footer__grid">
-                <div>
+                <div class="site-footer__about">
                     <a href="{{ route('home') }}" class="brand"><span class="brand__logo">車</span><span class="brand__text">Học Cờ Tướng</span></a>
                     <p class="mt-3 max-w-sm">Học cờ tướng và cờ úp bằng bàn cờ tương tác: bài học có lộ trình, thế cờ mỗi ngày, luyện tập như chơi game. Miễn phí.</p>
                 </div>
@@ -241,7 +241,9 @@
                         <li><a href="{{ route('practice.hub') }}">Luyện theo chủ đề</a></li>
                         <li><a href="{{ route('leaderboard') }}">Bảng xếp hạng</a></li>
                     </ul>
-                    <h3 class="mt-5">Chơi</h3>
+                </div>
+                <div>
+                    <h3>Chơi</h3>
                     <ul>
                         <li><a href="{{ route('play.bot') }}">Chơi cờ tướng với máy</a></li>
                         <li><a href="{{ route('pvp.lobby') }}">Thách đấu bạn bè</a></li>
@@ -255,12 +257,17 @@
                         <li><a href="{{ route('posts.index') }}">Tin tức cờ tướng</a></li>
                         <li><a href="{{ route('search') }}">Tìm kiếm</a></li>
                         <li><a href="{{ route('sitemap.page') }}">Sơ đồ trang</a></li>
+                        <li><a href="{{ route('display') }}">Giao diện &amp; âm thanh</a></li>
                     </ul>
                 </div>
             </div>
             <div class="site-footer__bottom">
                 <span>© {{ date('Y') }} Học Cờ Tướng — bàn cờ tương tác, diễn giải từng nước.</span>
                 <span>Cấp độ & XP chỉ để tạo động lực, không phải đẳng cấp cờ chính thức.</span>
+            </div>
+            <div class="site-footer__sponsor">
+                Tài trợ bởi <a href="https://lapcamerahcm.vn" target="_blank" rel="noopener" title="LapCameraHCM — lắp đặt camera an ninh tại TP.HCM">LapCameraHCM</a>
+                <span class="site-footer__sponsor-note">— lắp đặt camera an ninh tại TP.HCM</span>
             </div>
         </div>
     </footer>

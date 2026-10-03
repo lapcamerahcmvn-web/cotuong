@@ -109,12 +109,17 @@
 
     /* ---------- Footer ---------- */
     .site-footer { margin-top: 56px; border-top: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); font-size: 14px; }
-    .site-footer__grid { display: grid; gap: 28px; padding: 36px 0 20px; grid-template-columns: 1fr; }
-    @media (min-width: 768px) { .site-footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+    /* Điện thoại: giới thiệu 1 hàng + 4 nhóm link xếp 2 cột (Học | Luyện tập, Chơi | Khám phá) cho ngắn. */
+    .site-footer__grid { display: grid; gap: 24px 20px; padding: 32px 0 18px; grid-template-columns: 1fr 1fr; }
+    .site-footer__about { grid-column: 1 / -1; }
+    @media (min-width: 1024px) { .site-footer__grid { grid-template-columns: 1.5fr repeat(4, 1fr); } .site-footer__about { grid-column: auto; } }
+    @media (min-width: 768px) and (max-width: 1023px) { .site-footer__grid { grid-template-columns: repeat(4, 1fr); } }
     .site-footer h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); margin: 0 0 10px; font-family: var(--font-sans); font-weight: 700; }
     .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
     .site-footer a { color: var(--ink-soft); }
     .site-footer a:hover { color: var(--primary-ink); }
+    .site-footer__sponsor { padding: 0 0 22px; font-size: 13.5px; color: var(--ink-faint); text-align: center; }
+    .site-footer__sponsor a { font-weight: 800; color: var(--primary-ink); }
     .site-footer__bottom { border-top: 1px solid var(--line); padding: 16px 0 20px; font-size: 13px; color: var(--ink-faint); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
     /* ---------- Page scaffolding ---------- */
