@@ -52,7 +52,8 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 2 — Chương 6 (Cuộc 133–155) | ✅ 23 bài (thiếu 154) — 03/10/2026 |
 | Tập 2 — Chương 7 (Cuộc 156–171) | ✅ 17 bài — 03/10/2026 |
 | Tập 2 — Chương 8 (Cuộc 172–201) | ✅ 31 bài — 03/10/2026 |
-| Tập 2 — Chương 9–12 (Cuộc 202–291) | ⬜ |
+| Tập 2 — Chương 9 (Cuộc 202–232) | ✅ 32 bài — 03/10/2026 |
+| Tập 2 — Chương 10–12 (Cuộc 233–291) | ⬜ |
 | Tập 1 — Chương 1–2 (khái luận, thẩm cục) | ✅ 31 bài — 03/10/2026 |
 | Tập 1 — Chương 3–4 (tư tưởng + mục tiêu chiến lược) | ✅ 22 bài — 03/10/2026 |
 | Tập 1 — Chương 5–9 | ⬜ |
@@ -76,6 +77,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - Tập 2 Ch6: bỏ Cuộc 154 ("Mt/2" không có 2 Mã cùng lộ, repair không ra); 145 "B3.4"→B3-4, 148 "P4-1"→P3-1; cắt 137 (9), 147 (7), 149 (26), 151 (23); 136 biến 2 sửa vị trí ply.
 - Tập 2 Ch7: 156 "T3.5"→T3/5, 157 "M5/6"→M5/7 (repair duy nhất); cắt 159 (9), 160 (64), 162 (12), 170 (27); 159 sơ đồ thiếu Tốt i3.
 - Tập 2 Ch8: 180 "P2.3"→P2.2 (engine xác nhận cả chuỗi), 200 "B7-5"→B7-6; cắt 180 (30), 182 (5), 183 (7), 188 (22), 193 (8), 194 (40), 195 (36); sửa Tướng ở 192/194/197.
+- Tập 2 Ch9: 217 "X4-8"→P4-8, 220 "X7.4"→X6.4 (duy nhất khớp); cắt 210 (25), 215 (50), 228 (8 — "X1.2" không có Xe lộ 1), 229 (40); bỏ nước cuối biến 215 "P9.6" (phạm luật); sửa Tướng/Sĩ hàng đáy 219, 228. Sách in tiêu đề "Cuộc 131" cho Cuộc 231.
 
 ## Mẹo
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
