@@ -46,9 +46,11 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 |---|---|
 | Tập 2 — Giới thiệu + Chương 1 (Cuộc 1–26) | ✅ 27 bài (thiếu Cuộc 4) — 03/10/2026 |
 | Tập 2 — Chương 2 (Cuộc 27–55) | ✅ 28 bài (thiếu 39; 45 trùng 34) — 03/10/2026 |
-| Tập 2 — Chương 3–12 (Cuộc 56–291) | ⬜ |
+| Tập 2 — Chương 3 (Cuộc 56–83) | ✅ 29 bài — 03/10/2026 |
+| Tập 2 — Chương 4–12 (Cuộc 84–291) | ⬜ |
 | Tập 1 — Chương 1–2 (khái luận, thẩm cục) | ✅ 31 bài — 03/10/2026 |
-| Tập 1 — Chương 3–9 | ⬜ |
+| Tập 1 — Chương 3–4 (tư tưởng + mục tiêu chiến lược) | ✅ 22 bài — 03/10/2026 |
+| Tập 1 — Chương 5–9 | ⬜ |
 
 ## Nợ (không đăng — không đoán nước)
 - **Tập 2 Cuộc 4** (Tôn Chí Vĩ – Ân Quảng Thuận): sơ đồ đọc đúng, nhưng sau 20…S4.5 thì 21…Tg5.1 bất khả
@@ -60,6 +62,9 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - Tập 2 Cuộc 45 = Cuộc 34 (cùng sơ đồ, cùng nước; sách ghi bên cầm quân ngược nhau) → chỉ giữ 34, có ghi chú.
 - Tập 1: Ch2 Tiết 1 thiếu sơ đồ (p017 là Hình 3 ván Lý Gia Hoa) → bài chữ; Hình 8 bình ổn (p032) in nhầm hình
   → bỏ; Tiết 5 ví dụ 1 (p050 trùng p047) → bỏ; tr.15 Hình 2 thiếu Tướng Đen, tr.37 Hình 13 thiếu Tướng Đỏ (fix).
+- Tập 1 Ch3 Tiết 3 "Ngụ thủ vu công": sơ đồ p058 không khớp lời giải (nước 1 "P7.4" không có quân) → bài chữ,
+  liệt kê nước dạng văn bản. Ch3 Tiết 2 cắt 2 biến (X1-3…, X4-2…) ở chỗ nước kế tiếp bất khả.
+- Tập 1 Ch4 Tiết 4 ví dụ 1: mạch chính là biến "tấn công mạnh" của sách; nước thực chiến M9/7 để ở nhánh biến.
 
 ## Mẹo
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
