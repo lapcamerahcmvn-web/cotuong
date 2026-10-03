@@ -266,7 +266,7 @@
                 <span>Cấp độ & XP chỉ để tạo động lực, không phải đẳng cấp cờ chính thức.</span>
             </div>
             <div class="site-footer__sponsor">
-                Tài trợ bởi <a href="https://lapcamerahcm.vn" target="_blank" rel="noopener" title="LapCameraHCM — lắp đặt camera an ninh tại TP.HCM">LapCameraHCM</a>
+                Một dự án của <a href="https://lapcamerahcm.vn" target="_blank" rel="noopener" title="LapCameraHCM — lắp đặt camera an ninh tại TP.HCM">LapCameraHCM</a>
                 <span class="site-footer__sponsor-note">— lắp đặt camera an ninh tại TP.HCM</span>
             </div>
         </div>
