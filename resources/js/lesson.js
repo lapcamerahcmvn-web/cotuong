@@ -21,7 +21,7 @@ export function init() {
 function initModeToggle() {
     const btns = document.querySelectorAll('[data-board-mode]');
     if (!btns.length) return;
-    const boxes = { view: document.getElementById('lesson-board-view'), puzzle: document.getElementById('lesson-board-puzzle') };
+    const boxes = { view: document.getElementById('lesson-board-view'), guess: document.getElementById('lesson-board-guess'), puzzle: document.getElementById('lesson-board-puzzle') };
     const set = (mode) => {
         Object.entries(boxes).forEach(([k, el]) => { if (el) el.hidden = k !== mode; });
         btns.forEach((b) => {
@@ -30,8 +30,10 @@ function initModeToggle() {
             b.setAttribute('aria-selected', on ? 'true' : 'false');
         });
         if (mode === 'puzzle') track('puzzle_start', { mode: 'lesson' });
+        if (mode === 'guess') track('guess_start');
     };
     btns.forEach((b) => b.addEventListener('click', () => set(b.dataset.boardMode)));
+    document.addEventListener('xq:guess-done', (e) => track('guess_done', { hits: e.detail.hits, total: e.detail.total }));
     if (location.hash === '#giai-do') set('puzzle');
 }
 

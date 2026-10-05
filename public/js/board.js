@@ -463,6 +463,39 @@
       holder.innerHTML = renderBoard(startFen, null);
       return;
     }
+    if (cfg.mode === 'guess' && steps.length > 1) {
+      // ĐOÁN NƯỚC: người học cầm 1 bên, tự đi trước khi xem nước trong bài; sai thì máy chỉ đáp án rồi đi tiếp.
+      var gdom = { holder: holder, capStep: capStep, capText: capText, pill: pill, capBox: root.querySelector('.caption-box') };
+      var cfgFor = function (side) {
+        var k = 0; while (k < steps.length && steps[k].side !== side) k++;
+        if (k >= steps.length) k = 0;
+        var rest = steps.slice(k);
+        return {
+          fen: k === 0 ? startFen : steps[k - 1].fen, side: side, guess: true, failOnWrong: false,
+          solution: rest.map(function (x) { return x.iccs; }),
+          notes: rest.map(function (x) { return x.wxf || ''; }),
+          captions: rest.map(function (x) { return x.caption || ''; })
+        };
+      };
+      var gside = 'do';
+      try { gside = localStorage.getItem('guess_side') || steps[0].side || 'do'; } catch (e) {}
+      if (!steps.some(function (x) { return x.side === gside; })) gside = steps[0].side || 'do';
+      var gEngine = createPuzzle(root, gdom, cfgFor(gside));
+      var markSide = function () { root.querySelectorAll('[data-xq-guess-side]').forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-xq-guess-side') === gside); }); };
+      root.querySelectorAll('[data-xq-guess-side]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          gside = b.getAttribute('data-xq-guess-side');
+          try { localStorage.setItem('guess_side', gside); } catch (e) {}
+          markSide(); gEngine.load(cfgFor(gside));
+        });
+      });
+      markSide();
+      attachCopyFen(root, gEngine.fen);
+      bind(root, 'reset', function () { gEngine.load(cfgFor(gside)); });
+      bind(root, 'hint', gEngine.hint);
+      root.__xqPuzzle = gEngine;
+      return;
+    }
     if (cfg.mode === 'puzzle' && cfg.puzzleSide && steps.length) {
       var dom = { holder: holder, capStep: capStep, capText: capText, pill: pill, capBox: root.querySelector('.caption-box') };
       var engine = createPuzzle(root, dom, {
@@ -735,7 +768,7 @@
       flip = cfg.side === 'den';
       state = {
         board: Rules.loadFen(cfg.fen), ply: 0, selected: -1, dots: [], solved: false, failed: false, locked: false,
-        moves: [], mistakes: 0, revealed: false, hint: -1, t0: Date.now(), last: null, arrows: null,
+        moves: [], mistakes: 0, revealed: false, hint: -1, t0: Date.now(), last: null, arrows: null, hits: 0, guesses: 0,
         // Đường thắng KHÁC đáp án (đã được bộ giải chứng minh): dyn = true, đối phương đỡ theo máy, left = số nước còn lại.
         line: [], dyn: false, left: 0, next: null, mateGoal: endsInMate()
       };
@@ -777,7 +810,8 @@
       if (!opts.noAnim) playAnim(dom.holder);
       dom.holder.classList.toggle('is-interactive', isSolverTurn());
       var done = Math.ceil(state.ply / 2), total = state.dyn ? done + state.left : Math.ceil(cfg.solution.length / 2);
-      if (dom.pill) dom.pill.textContent = state.solved ? 'Đã giải xong!' : ('Nước ' + Math.min(done + 1, total) + '/' + total + ' · ' + (solverRed() ? 'Đỏ' : 'Đen') + ' đi');
+      if (dom.pill && cfg.guess) guessPill();
+      else if (dom.pill) dom.pill.textContent = state.solved ? 'Đã giải xong!' : ('Nước ' + Math.min(done + 1, total) + '/' + total + ' · ' + (solverRed() ? 'Đỏ' : 'Đen') + ' đi');
     }
 
     function legalTargets(from) {
@@ -810,6 +844,62 @@
       return false;
     }
 
+    // ---- Chế độ ĐOÁN NƯỚC ----
+    function sideName(red) { return red ? 'Đỏ' : 'Đen'; }
+    function guessPill() { if (dom.pill) dom.pill.textContent = 'Đoán đúng ' + state.hits + '/' + state.guesses; }
+    function guessAttempt(from, to) {
+      if (!isSolverTurn()) return;
+      var got = Rules.toIccs(from) + Rules.toIccs(to), exp = expected(), k = state.ply;
+      state.selected = -1; state.dots = []; state.hint = -1;
+      if (!Rules.legalNoSelfCheck(state.board, from, to)) { draw({ noAnim: true }); return; }
+      var ok = got === exp;
+      state.guesses++;
+      if (ok) state.hits++; else state.mistakes++;
+      emit(root, 'xq:puzzle-move', { ok: ok, ply: k, move: got, expected: exp, guess: true });
+      if (ok) { guessStep(exp, true); return; }
+      Sound.bad();
+      if (dom.holder.animate && !REDUCE) dom.holder.classList.remove('xq-shake'), void dom.holder.offsetWidth, dom.holder.classList.add('xq-shake');
+      var em = iccsToIdx(exp);
+      state.arrows = em ? [{ from: em.from, to: em.to, color: '#2f6b5e' }] : null;
+      state.locked = true;
+      setCaption('Chưa trùng — trong bài: ' + (cfg.notes[k] || exp), 'Mũi tên xanh là nước trong bài. Xem lời giảng để hiểu vì sao…', 'err');
+      draw({ noAnim: true });
+      guessPill();
+      reply = setTimeout(function () { state.arrows = null; state.locked = false; guessStep(exp, false); }, 1500);
+    }
+    function guessStep(mv, ok) {
+      var k = state.ply;
+      applyIccs(mv);
+      state.moves.push(mv);
+      guessPill();
+      var cap = cfg.captions[k] || '';
+      setCaption((ok ? 'Đúng! ' : '') + sideName(solverRed()) + ': ' + (cfg.notes[k] || mv), cap || (ok ? 'Chính xác như trong bài.' : ''), ok ? 'ok' : null);
+      if (state.ply >= cfg.solution.length) { draw(); guessDone(); return; }
+      draw();
+      state.locked = true;
+      reply = setTimeout(function () {
+        var r = state.ply;
+        applyIccs(cfg.solution[r]);
+        var rc = cfg.captions[r] || '';
+        // Lời giảng nước của mình + nước đáp của đối phương (nếu có) — đọc nối tiếp.
+        setCaption(sideName(!solverRed()) + ' đáp: ' + (cfg.notes[r] || cfg.solution[r]), [cap, rc].filter(Boolean).join(' — '), null);
+        state.locked = false;
+        if (state.ply >= cfg.solution.length) { draw(); guessDone(); return; }
+        draw();
+        guessPill();
+      }, ok ? 650 : 400);
+    }
+    function guessDone() {
+      state.solved = true;
+      var pct = state.guesses ? Math.round(100 * state.hits / state.guesses) : 0;
+      Sound.end(pct >= 70 ? 'win' : 'draw');
+      setCaption('Hết bài — bạn đoán đúng ' + state.hits + '/' + state.guesses + ' nước (' + pct + '%)',
+        pct >= 80 ? 'Xuất sắc! Bạn đã nắm rất chắc ván này.' : pct >= 50 ? 'Khá tốt — bấm “Làm lại” để đoán lại, hoặc thử cầm bên còn lại.' : 'Xem lại lời giảng rồi đoán lại nhé — đoán lại vài lần là nhớ ván rất lâu.', 'ok');
+      guessPill();
+      emit(root, 'xq:guess-done', { hits: state.hits, total: state.guesses, side: cfg.side });
+      emit(root, 'xq:viewed-all-moves');
+    }
+
     function finishSolved() {
       state.solved = true;
       Sound.good();
@@ -822,6 +912,7 @@
     }
 
     function attempt(from, to) {
+      if (cfg.guess) return guessAttempt(from, to);
       if (!isSolverTurn()) return;
       var got = Rules.toIccs(from) + Rules.toIccs(to);
       var exp = expected();
@@ -989,7 +1080,8 @@
     function start(c) {
       if (reply) clearTimeout(reply);
       initState(c);
-      setCaption('Đến lượt bạn', 'Tìm nước đi mạnh nhất cho bên ' + (solverRed() ? 'Đỏ' : 'Đen') + '. Bấm hoặc kéo quân để đi.', null);
+      if (cfg.guess) setCaption('Đoán nước — bạn cầm ' + (solverRed() ? 'Đỏ' : 'Đen'), 'Hãy đi nước bạn nghĩ cao thủ trong bài đã chọn. Đoán xong máy hiện lời giảng rồi đi nước của đối phương.', null);
+      else setCaption('Đến lượt bạn', 'Tìm nước đi mạnh nhất cho bên ' + (solverRed() ? 'Đỏ' : 'Đen') + '. Bấm hoặc kéo quân để đi.', null);
       draw();
     }
 

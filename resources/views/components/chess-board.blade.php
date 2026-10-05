@@ -4,7 +4,7 @@
     'tree' => null,      // cây biến (variation_tree) — nếu có → bàn cờ hiện mũi tên chọn biến
     'showList' => true,  // hiện cột danh sách nước bên phải
     'caption' => null,   // chú thích tĩnh (bài minh hoạ không có nước đi)
-    'mode' => 'view',    // 'view' (mặc định) | 'puzzle' (giải đố — tự đi quân, máy đáp trả)
+    'mode' => 'view',    // 'view' (mặc định) | 'puzzle' (giải đố — tự đi quân, máy đáp trả) | 'guess' (đoán nước — học chủ động)
     'puzzleSide' => null, // 'do' | 'den' — bên người dùng tự giải (bắt buộc khi mode=puzzle)
     'sourceLessonId' => null, // id bài học (nếu có) — gắn kèm khi lưu FEN vào thư viện cá nhân
     'compact' => false,  // ẩn hàng nút phụ (dùng cho bàn cờ minh hoạ nhỏ ở trang chủ)
@@ -18,14 +18,15 @@
         'side'    => is_array($s) ? ($s['move_side'] ?? null) : $s->move_side,
         'caption' => is_array($s) ? ($s['caption'] ?? null) : $s->caption,
     ])->values();
-    $isPuzzle = $mode === 'puzzle' && $puzzleSide && $payload->count() > 0;
+    $isGuess = $mode === 'guess' && $payload->count() > 1;
+    $isPuzzle = ($mode === 'puzzle' && $puzzleSide && $payload->count() > 0) || $isGuess;
     $hasList = $showList && $payload->count() > 0 && !$isPuzzle;
     $isStatic = $payload->count() === 0;   // bàn cờ minh hoạ tĩnh (không có nước đi)
     $jsonConfig = [
         'initialFen' => $initialFen,
         'steps'      => $payload,
         'tree'       => $isPuzzle ? null : ($tree ?: null),
-        'mode'       => $isPuzzle ? 'puzzle' : 'view',
+        'mode'       => $isGuess ? 'guess' : ($isPuzzle ? 'puzzle' : 'view'),
         'puzzleSide' => $puzzleSide,
     ];
 @endphp
@@ -59,7 +60,16 @@
                 <div class="board-holder" data-xq-holder></div>
             </div>
 
-            @if($isPuzzle)
+            @if($isGuess)
+                <div class="controls flex-wrap">
+                    <span class="seg !mb-0" role="group" aria-label="Bên bạn đoán">
+                        <button type="button" class="seg__btn" data-xq-guess-side="do"><span class="side-dot do"></span> Đoán bên Đỏ</button>
+                        <button type="button" class="seg__btn" data-xq-guess-side="den"><span class="side-dot den"></span> Đoán bên Đen</button>
+                    </span>
+                    <button type="button" class="btn btn--ghost" data-xq-hint data-xq-icon="bulb" data-xq-label="Gợi ý">Gợi ý</button>
+                    <button type="button" class="btn" data-xq-reset data-xq-icon="reset" data-xq-label="Làm lại" aria-label="Làm lại từ đầu">↺ Làm lại</button>
+                </div>
+            @elseif($isPuzzle)
                 <div class="controls">
                     <button type="button" class="btn btn--ghost" data-xq-hint data-xq-icon="bulb" data-xq-label="Gợi ý">Gợi ý</button>
                     <button type="button" class="btn" data-xq-reset data-xq-icon="reset" data-xq-label="Làm lại" aria-label="Làm lại từ đầu">↺ Làm lại</button>
@@ -81,7 +91,12 @@
                 @endunless
             @endif
 
-            @if($isPuzzle)
+            @if($isGuess)
+            <div class="caption-box" aria-live="polite">
+                <div class="cap-step" data-xq-capstep>Đoán nước</div>
+                <div class="cap-text" data-xq-captext>Đến lượt bên bạn chọn, hãy đi nước bạn nghĩ là đúng — máy so với ván trong bài.</div>
+            </div>
+            @elseif($isPuzzle)
             <div class="caption-box" aria-live="polite">
                 <div class="cap-step" data-xq-capstep>Đang giải…</div>
                 <div class="cap-text" data-xq-captext>Bấm hoặc kéo quân của bạn để đi.</div>

@@ -372,3 +372,12 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   1 nước", nghe thử) — ở Cài đặt tài khoản và trang công khai `/giao-dien-ban-co` (khách dùng được); menu "⋯" mọi bàn cờ
   có lối tắt "Giao diện & âm thanh".
 - Màn hoàn thành bài: vượt mục tiêu ngày hiện "Đã đạt mục tiêu hôm nay ✓ 143 XP / 50" thay vì "143/50 XP".
+
+## Đợt 20 (06/10/2026) — Footer 2 cột + "Một dự án của LapCameraHCM" + chế độ "Đoán nước"
+- Footer: điện thoại 2 cột (Học | Luyện tập, Chơi | Khám phá), máy tính 5 cột; dòng cuối "Một dự án của LapCameraHCM"
+  → https://lapcamerahcm.vn (dofollow, anchor thương hiệu — tránh chữ "tài trợ" để Google không coi là link trả tiền).
+- **Đoán nước** (học chủ động, tab trên trang bài học cho mọi bài cờ tướng ≥ 4 nước): chọn cầm Đỏ/Đen (nhớ localStorage
+  `guess_side`), tới lượt mình thì đi nước nghĩ là đúng → đúng: "Đúng!" + lời giảng; sai: mũi tên xanh chỉ nước trong bài
+  1,5s rồi đi tiếp; máy đi nước đối phương + nối lời giảng; hết bài "đoán đúng X/Y (Z%)", âm báo, phát
+  `xq:guess-done` (GA `guess_done`) + `xq:viewed-all-moves` (tính là đã xem hết bài). Code: `createPuzzle` cfg.guess
+  (guessAttempt/guessStep/guessDone) trong public/js/board.js; component chess-board mode="guess".

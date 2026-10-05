@@ -3,8 +3,8 @@
     "file": "assets/engine-PL7W2vZX.js",
     "name": "engine"
   },
-  "_notation-_hHh0QtC.js": {
-    "file": "assets/notation-_hHh0QtC.js",
+  "_notation-PvCoumRB.js": {
+    "file": "assets/notation-PvCoumRB.js",
     "name": "notation",
     "imports": [
       "resources/js/app.js"
@@ -27,7 +27,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-hcFSYK_x.js",
+    "file": "assets/app-20LHT5Z7.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -47,7 +47,7 @@
     ]
   },
   "resources/js/board-scan.js": {
-    "file": "assets/board-scan-B3JAFovF.js",
+    "file": "assets/board-scan-nC0DoDd5.js",
     "name": "board-scan",
     "src": "resources/js/board-scan.js",
     "isDynamicEntry": true,
@@ -65,7 +65,7 @@
     "isDynamicEntry": true
   },
   "resources/js/display-settings.js": {
-    "file": "assets/display-settings-D_oC-VIk.js",
+    "file": "assets/display-settings-DKDrijw8.js",
     "name": "display-settings",
     "src": "resources/js/display-settings.js",
     "isDynamicEntry": true,
@@ -74,7 +74,7 @@
     ]
   },
   "resources/js/lesson.js": {
-    "file": "assets/lesson-Bw99bwjN.js",
+    "file": "assets/lesson-BFLm_2ep.js",
     "name": "lesson",
     "src": "resources/js/lesson.js",
     "isDynamicEntry": true,
@@ -84,7 +84,7 @@
     ]
   },
   "resources/js/mistakes.js": {
-    "file": "assets/mistakes-CW64feBa.js",
+    "file": "assets/mistakes-BEtywQ9_.js",
     "name": "mistakes",
     "src": "resources/js/mistakes.js",
     "isDynamicEntry": true,
@@ -93,14 +93,14 @@
     ]
   },
   "resources/js/play-bot.js": {
-    "file": "assets/play-bot-D-9Vl5V5.js",
+    "file": "assets/play-bot-CNDijF2Y.js",
     "name": "play-bot",
     "src": "resources/js/play-bot.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_engine-PL7W2vZX.js",
-      "_notation-_hHh0QtC.js"
+      "_notation-PvCoumRB.js"
     ],
     "dynamicImports": [
       "resources/js/share.js"
@@ -110,17 +110,17 @@
     ]
   },
   "resources/js/play-pvp.js": {
-    "file": "assets/play-pvp-BgWEKs3A.js",
+    "file": "assets/play-pvp-DQ0HgCMf.js",
     "name": "play-pvp",
     "src": "resources/js/play-pvp.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_notation-_hHh0QtC.js"
+      "_notation-PvCoumRB.js"
     ]
   },
   "resources/js/practice.js": {
-    "file": "assets/practice-JIsdjhPj.js",
+    "file": "assets/practice-BI64GVNy.js",
     "name": "practice",
     "src": "resources/js/practice.js",
     "isDynamicEntry": true,
@@ -133,7 +133,7 @@
     ]
   },
   "resources/js/review.js": {
-    "file": "assets/review-CiAKYYbo.js",
+    "file": "assets/review-CkEnqW2i.js",
     "name": "review",
     "src": "resources/js/review.js",
     "isDynamicEntry": true,
@@ -146,7 +146,7 @@
     ]
   },
   "resources/js/share.js": {
-    "file": "assets/share-CmNy-Ua8.js",
+    "file": "assets/share-C7HPHcXh.js",
     "name": "share",
     "src": "resources/js/share.js",
     "isDynamicEntry": true,
@@ -155,7 +155,7 @@
     ]
   },
   "resources/js/social.js": {
-    "file": "assets/social-BsPdEamg.js",
+    "file": "assets/social-23cUVzpN.js",
     "name": "social",
     "src": "resources/js/social.js",
     "isDynamicEntry": true,
@@ -164,7 +164,7 @@
     ]
   },
   "resources/js/weekly.js": {
-    "file": "assets/weekly-DwfYR2Rl.js",
+    "file": "assets/weekly-BiN4Hs46.js",
     "name": "weekly",
     "src": "resources/js/weekly.js",
     "isDynamicEntry": true,

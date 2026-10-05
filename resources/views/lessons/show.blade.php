@@ -69,6 +69,8 @@
 @php
     $hasBoard = $lesson->initial_fen || $lesson->steps->isNotEmpty();
     $canPuzzle = $lesson->puzzle_side && $lesson->steps->isNotEmpty();
+    // Đoán nước (học chủ động): mọi ván cờ tướng có từ 4 nước — cờ úp không áp dụng (nước lật quân không đoán được).
+    $canGuess = $lesson->game_mode !== 'co-up' && $lesson->steps->count() >= 4;
     $practiceUrl = $practiceSkill ? route('practice.topic', $practiceSkill) : ($canPuzzle ? route('practice.hub') : null);
 @endphp
 <div data-lesson-page
@@ -106,21 +108,31 @@
     </header>
 
     @if($hasBoard)
-        @if($canPuzzle)
+        @if($canPuzzle || $canGuess)
             <div class="seg" role="tablist" aria-label="Chế độ bàn cờ">
                 <button type="button" class="seg__btn is-on" data-board-mode="view" role="tab" aria-selected="true"><x-icon name="book" /> Xem lời giảng</button>
-                <button type="button" class="seg__btn" data-board-mode="puzzle" role="tab" aria-selected="false"><x-icon name="puzzle" /> Thử tự giải</button>
+                @if($canGuess)<button type="button" class="seg__btn" data-board-mode="guess" role="tab" aria-selected="false"><x-icon name="target" /> Đoán nước</button>@endif
+                @if($canPuzzle)<button type="button" class="seg__btn" data-board-mode="puzzle" role="tab" aria-selected="false"><x-icon name="puzzle" /> Thử tự giải</button>@endif
             </div>
             <div id="lesson-board-view">
                 <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" :tree="$lesson->variation_tree"
                     :show-list="true" :source-lesson-id="$lesson->id" />
             </div>
-            <div id="lesson-board-puzzle" hidden>
-                <div class="max-w-xl">
-                    <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" mode="puzzle"
-                        :puzzle-side="$lesson->puzzle_side" :source-lesson-id="$lesson->id" />
+            @if($canGuess)
+                <div id="lesson-board-guess" hidden>
+                    <div class="max-w-xl">
+                        <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" mode="guess" :source-lesson-id="$lesson->id" />
+                    </div>
                 </div>
-            </div>
+            @endif
+            @if($canPuzzle)
+                <div id="lesson-board-puzzle" hidden>
+                    <div class="max-w-xl">
+                        <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" mode="puzzle"
+                            :puzzle-side="$lesson->puzzle_side" :source-lesson-id="$lesson->id" />
+                    </div>
+                </div>
+            @endif
         @else
             <x-chess-board :initial-fen="$lesson->initial_fen" :steps="$lesson->steps" :tree="$lesson->variation_tree"
                 :show-list="$lesson->steps->isNotEmpty()"
