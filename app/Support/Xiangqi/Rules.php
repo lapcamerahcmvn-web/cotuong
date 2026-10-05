@@ -8,7 +8,7 @@ namespace App\Support\Xiangqi;
  * (bên Đen), giá trị là 1 ký tự quân (chữ HOA = Đỏ) hoặc null.
  *
  * Cờ úp ($coup = true): 'X'/'x' = quân úp, đi theo binh chủng của ô xuất phát (role()); Sĩ/Tượng đã
- * lật không bị giới hạn cung/sông. Hết nước đi mà không bị chiếu = hoà (xử lý ở GameService).
+ * lật không bị giới hạn cung/sông. Hết nước đi = thua như cờ tướng (xử lý ở GameService).
  */
 final class Rules
 {

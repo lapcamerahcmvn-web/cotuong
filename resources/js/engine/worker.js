@@ -2,14 +2,21 @@
 // Cờ úp: `fen` là bàn công khai (quân úp = X/x), `pools` = binh chủng chưa lộ của mỗi bên.
 // Phân tích ván: { id, review: true, fen, red, pools?, timeMs? } → { id, best, score, scores, depth }.
 // Giải đố: { id, puzzle: true, fen, red, move, expected, n } → kết quả checkPuzzleMove (nước khác đáp án có thắng không).
-import { think, thinkCoup, search, stateFrom, loadFen, review, checkPuzzleMove } from './engine';
+import { think, thinkCoup, search, stateFrom, loadFen, review, checkPuzzleMove, equivMove } from './engine';
 import { pickBook } from './book';
 
 self.onmessage = (e) => {
     const { id, fen, red, level, analyse, coup, pools } = e.data;
     const avoid = e.data.avoid?.length ? new Set(e.data.avoid) : null;   // nước bị cấm (chiếu dai lần thứ 3)
     if (e.data.puzzle) {
-        const { move, expected, n } = e.data;
+        const { move, expected, n, mateGoal } = e.data;
+        const later = e.data.later || [];
+        // Thế không phải chiếu hết (tàn cuộc thắng thế…) → chỉ so nước tương đương.
+        if (mateGoal === false) {
+            const eq = expected && expected !== move ? equivMove(fen, red, move, expected, 1500, 12, false, later) : null;
+            self.postMessage({ id, ...(eq ? { status: 'equiv', ...eq } : { status: 'no' }) });
+            return;
+        }
         // Chuẩn công bằng: nước khác đáp án được nhận nếu thắng KHÔNG CHẬM HƠN nước đáp án khi đối phương đỡ tốt nhất
         // (nhiều thế trong sách cho bên thua đỡ chưa tốt → đáp án thật ra cần nhiều nước hơn số nước ghi trong bài).
         let budget = n;
@@ -17,7 +24,13 @@ self.onmessage = (e) => {
             const ex = checkPuzzleMove(fen, red, expected, n + 2, 1500);
             budget = ex.status === 'win' ? n : ex.status === 'slow' ? ex.k : n + 2;
         }
-        self.postMessage({ id, ...checkPuzzleMove(fen, red, move, budget, 2500), budget });
+        let res = checkPuzzleMove(fen, red, move, budget, 2500);
+        // Bộ giải chưa chứng minh được (nước êm sâu, đổi thứ tự…) → thử so nước TƯƠNG ĐƯƠNG nước trong bài.
+        if (res.status !== 'win' && res.status !== 'slow' && expected && expected !== move) {
+            const eq = equivMove(fen, red, move, expected, 1500, 12, true, later);
+            if (eq) res = { status: 'equiv', ...eq };
+        }
+        self.postMessage({ id, ...res, budget });
         return;
     }
     if (e.data.review) {

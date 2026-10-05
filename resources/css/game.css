@@ -113,8 +113,14 @@
     .timer-bar__fill { height: 100%; background: linear-gradient(90deg, var(--jade), var(--gold)); transition: width .25s linear; }
     .timer-bar.is-low .timer-bar__fill { background: var(--danger); }
     .lives { display: inline-flex; gap: 4px; }
-    .lives svg { width: 24px; height: 24px; color: var(--danger); }
-    .lives .is-lost { color: var(--surface-3); }
+    /* Mạng còn: tim đỏ đặc · mạng mất: chỉ còn viền mờ (trước đây màu đặt thẳng lên svg nên tim mất vẫn đỏ). */
+    .lives > span { display: inline-flex; color: var(--danger); }
+    .lives svg { width: 24px; height: 24px; fill: currentColor; transition: color .2s, fill .2s, opacity .2s; }
+    .lives > span.is-lost { color: var(--ink-faint); opacity: .55; }
+    .lives > span.is-lost svg { fill: none; }
+    .lives > span.just-lost { animation: lifeLost .6s ease; }
+    @keyframes lifeLost { 0% { transform: scale(1.35); color: var(--danger); } 30% { transform: translateX(-4px) scale(1.1); } 60% { transform: translateX(4px); } 100% { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .lives > span.just-lost { animation: none; } }
     .score-pop { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); font-family: var(--font-display); font-weight: 800; font-size: 40px; pointer-events: none; animation: scorePop .7s ease forwards; z-index: 5; }
     @keyframes scorePop { from { opacity: 1; transform: translate(-50%, -30%) scale(.8); } to { opacity: 0; transform: translate(-50%, -110%) scale(1.15); } }
     .result-hero { text-align: center; padding: 8px 0 4px; }

@@ -113,12 +113,8 @@ class GameService
             $opp = $side === 'do' ? 'den' : 'do';
             if (! Rules::hasLegalMove($b, $opp === 'do', $coup)) {
                 $mated = Rules::inCheck($b, $opp === 'do', $coup);
-                // Cờ úp: hết nước mà không bị chiếu → hoà (cờ tướng: thua).
-                if ($mated || ! $coup) {
-                    $this->finish($g, $side, $mated ? 'chiếu hết' : 'hết nước đi');
-                } else {
-                    $this->finish($g, 'hoa', 'hết nước đi (hoà theo luật cờ úp)');
-                }
+                // Hết nước đi = thua (cờ tướng lẫn cờ úp).
+                $this->finish($g, $side, $mated ? 'chiếu hết' : 'hết nước đi');
             } elseif ($this->repeated($g)) {
                 $this->finish($g, 'hoa', 'lặp lại thế cờ 3 lần');
             } elseif (count($moves) >= self::MAX_PLIES) {

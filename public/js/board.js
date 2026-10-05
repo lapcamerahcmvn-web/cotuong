@@ -215,7 +215,8 @@
   var PREF = {};
   function loadPrefs() {
     function rd(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
-    PREF = { set: rd('piece_set', 'han'), style: rd('piece_style', 'flat'), coords: rd('board_coords', '0') === '1' };
+    PREF = { set: rd('piece_set', 'han'), style: rd('piece_style', 'flat'), coords: rd('board_coords', '0') === '1',
+      lastFx: rd('last_fx', 'pulse'), lastArrow: rd('last_arrow', '0') === '1' };
     try { document.documentElement.dataset.boardCoords = PREF.coords ? '1' : '0'; } catch (e) {}
   }
   loadPrefs();
@@ -315,11 +316,22 @@
     var midY = (M + 4 * CH + M + 5 * CH) / 2 + 6;
     s += '<text x="' + (M + 2 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">' + (flip ? '漢界' : '楚河') + '</text>';
     s += '<text x="' + (M + 6 * CW) + '" y="' + midY + '" font-size="20" fill="var(--xq-line,#7c5a2c)" opacity=".5" font-family="' + PIECE_FONT + '" letter-spacing="6" text-anchor="middle">' + (flip ? '楚河' : '漢界') + '</text>';
+    var spinAt = null;
     if (lastMove) {
       [lastMove.from, lastMove.to].forEach(function (sq) {
         if (sq) s += '<circle cx="' + X(sq[0]) + '" cy="' + Y(sq[1]) + '" r="22" fill="var(--xq-hl,rgba(200,69,31,.30))"/>';
       });
-      if (lastMove.to) s += '<circle class="xq-pulse" cx="' + X(lastMove.to[0]) + '" cy="' + Y(lastMove.to[1]) + '" r="22" fill="none" stroke="var(--xq-red,#c0392b)" stroke-width="2.5" opacity="0"/>';
+      // Cài đặt "Đánh dấu nước vừa đi": pulse (loé 1 lần) · spin (vòng nét đứt xoay quanh quân vừa đi) · none.
+      if (lastMove.to && PREF.lastFx === 'pulse') s += '<circle class="xq-pulse" cx="' + X(lastMove.to[0]) + '" cy="' + Y(lastMove.to[1]) + '" r="22" fill="none" stroke="var(--xq-red,#c0392b)" stroke-width="2.5" opacity="0"/>';
+      if (lastMove.to && PREF.lastFx === 'spin') spinAt = lastMove.to;
+      // Mũi tên mờ từ ô cũ tới ô mới (vẽ DƯỚI quân để không che chữ).
+      if (PREF.lastArrow && lastMove.from && lastMove.to && !opts.thumb) {
+        var lx1 = X(lastMove.from[0]), ly1 = Y(lastMove.from[1]), lx2 = X(lastMove.to[0]), ly2 = Y(lastMove.to[1]);
+        var ldx = lx2 - lx1, ldy = ly2 - ly1, ll = Math.sqrt(ldx * ldx + ldy * ldy) || 1, lux = ldx / ll, luy = ldy / ll;
+        var lex = lx2 - lux * 22, ley = ly2 - luy * 22, lbx = lex - lux * 13, lby = ley - luy * 13;
+        s += '<g opacity=".55"><line x1="' + (lx1 + lux * 8) + '" y1="' + (ly1 + luy * 8) + '" x2="' + lbx + '" y2="' + lby + '" stroke="var(--xq-last-arrow,#c8451f)" stroke-width="6" stroke-linecap="round"/>'
+          + '<polygon points="' + lex + ',' + ley + ' ' + (lbx - luy * 9) + ',' + (lby + lux * 9) + ' ' + (lbx + luy * 9) + ',' + (lby - lux * 9) + '" fill="var(--xq-last-arrow,#c8451f)"/></g>';
+      }
     }
     if (typeof opts.check === 'number' && opts.check >= 0) {
       s += '<circle cx="' + X(opts.check % 9) + '" cy="' + Y((opts.check / 9) | 0) + '" r="25" fill="rgba(220,38,38,.28)" stroke="#dc2626" stroke-width="2"/>';
@@ -333,6 +345,9 @@
       var dx = 0, dy = 0;
       if (moved && lastMove.from) { dx = X(lastMove.from[0]) - cx; dy = Y(lastMove.from[1]) - cy; }
       s += '<g class="xq-pc' + (moved ? ' xq-pc-moved' : '') + '"' + (moved ? ' style="--fx:' + dx + 'px;--fy:' + dy + 'px"' : '') + '>' + pieceSvg(p, cx, cy) + '</g>';
+    }
+    if (spinAt && !opts.thumb) {
+      s += '<circle class="xq-spin" cx="' + X(spinAt[0]) + '" cy="' + Y(spinAt[1]) + '" r="24.5" fill="none" stroke="var(--xq-red,#c0392b)" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/>';
     }
     if (typeof selected === 'number' && selected >= 0) {
       s += '<circle cx="' + X(selected % 9) + '" cy="' + Y((selected / 9) | 0) + '" r="23.5" fill="none" stroke="var(--xq-select,#2563eb)" stroke-width="3"/>';
@@ -790,6 +805,8 @@
     }
 
     function solverRed() { return cfg.side === 'do'; }
+    // Các nước SAU của bên giải trong lời giải (đi trước = đổi thứ tự nước — có thể tương đương).
+    function laterMoves() { var out = []; for (var i = state.ply + 2; i < cfg.solution.length; i += 2) out.push(cfg.solution[i]); return out; }
     function expected() { return state.dyn ? state.next : (cfg.solution[state.ply] || null); }
     function remaining() { return state.dyn ? state.left : Math.ceil((cfg.solution.length - state.ply) / 2); }
     function isSolverTurn() { return !state.solved && !state.failed && !state.locked && (state.dyn || state.ply < cfg.solution.length) && state.ply % 2 === 0; }
@@ -853,10 +870,30 @@
       state.selected = -1; state.dots = []; state.hint = -1;
       if (!Rules.legalNoSelfCheck(state.board, from, to)) { draw({ noAnim: true }); return; }
       var ok = got === exp;
+      var checker = cfg.checkMove || window.XiangqiPuzzleCheck;
+      if (!ok && checker && !state.checking) {
+        // Khác bài → hỏi máy nước này có TƯƠNG ĐƯƠNG không (khoá bàn trong lúc chờ).
+        var mine = state;
+        state.locked = true; state.checking = true;
+        setCaption('Đang so với nước trong bài…', '', null);
+        draw({ noAnim: true });
+        Promise.resolve(checker({ fen: fen(), red: solverRed(), move: got, expected: exp, n: 1, mateGoal: false, later: laterMoves() })).then(function (r) {
+          if (state !== mine) return;
+          state.locked = false; state.checking = false;
+          if (r && r.status === 'equiv') { state.guesses++; state.hits++; emit(root, 'xq:puzzle-move', { ok: true, ply: k, move: got, expected: exp, guess: true, equiv: true }); guessStep(exp, 'equiv'); return; }
+          state.guesses++; emit(root, 'xq:puzzle-move', { ok: false, ply: k, move: got, expected: exp, guess: true });
+          guessMiss(got, exp, k);
+        }, function () { if (state !== mine) return; state.locked = false; state.checking = false; state.guesses++; guessMiss(got, exp, k); });
+        return;
+      }
       state.guesses++;
-      if (ok) state.hits++; else state.mistakes++;
+      if (ok) state.hits++;
       emit(root, 'xq:puzzle-move', { ok: ok, ply: k, move: got, expected: exp, guess: true });
       if (ok) { guessStep(exp, true); return; }
+      guessMiss(got, exp, k);
+    }
+    function guessMiss(got, exp, k) {
+      state.mistakes++;
       Sound.bad();
       if (dom.holder.animate && !REDUCE) dom.holder.classList.remove('xq-shake'), void dom.holder.offsetWidth, dom.holder.classList.add('xq-shake');
       var em = iccsToIdx(exp);
@@ -873,7 +910,8 @@
       state.moves.push(mv);
       guessPill();
       var cap = cfg.captions[k] || '';
-      setCaption((ok ? 'Đúng! ' : '') + sideName(solverRed()) + ': ' + (cfg.notes[k] || mv), cap || (ok ? 'Chính xác như trong bài.' : ''), ok ? 'ok' : null);
+      setCaption((ok === 'equiv' ? 'Tương đương ✓ — bài đi ' : ok ? 'Đúng! ' : '') + sideName(solverRed()) + ': ' + (cfg.notes[k] || mv),
+        cap || (ok === 'equiv' ? 'Nước của bạn cùng mục đích với nước trong bài.' : ok ? 'Chính xác như trong bài.' : ''), ok ? 'ok' : null);
       if (state.ply >= cfg.solution.length) { draw(); guessDone(); return; }
       draw();
       state.locked = true;
@@ -932,15 +970,18 @@
       }
       // Khác đáp án / đang đi đường riêng → nhờ bộ giải chiếu hết kiểm chứng (bất đồng bộ, khoá bàn trong lúc chờ).
       var checker = cfg.checkMove || window.XiangqiPuzzleCheck;
-      if (!mates && !isFinal && (state.dyn || got !== exp) && state.mateGoal && checker) {
+      // Thế chiếu hết: kiểm đường thắng khác (không áp nước cuối — nước cuối phải chiếu hết, đã xét ở trên).
+      // Thế khác (tàn cuộc thắng thế…): chỉ kiểm nước TƯƠNG ĐƯƠNG nước trong bài.
+      if (!mates && (state.dyn || got !== exp) && checker && (state.mateGoal ? !isFinal : !state.dyn)) {
         var before = fen(), mine = state;
         state.locked = true;
-        if (!state.dyn) setCaption('Đang kiểm tra…', 'Nước này khác lời giải trong sách — máy đang kiểm chứng xem có còn thắng không.', null);
+        if (!state.dyn) setCaption('Đang kiểm tra…', 'Nước này khác lời giải trong sách — máy đang kiểm chứng xem có tương đương / còn thắng không.', null);
         draw({ noAnim: true });
-        Promise.resolve(checker({ fen: before, red: solverRed(), move: got, expected: exp, n: remaining() })).then(function (r) {
+        Promise.resolve(checker({ fen: before, red: solverRed(), move: got, expected: exp, n: remaining(), mateGoal: state.mateGoal, later: laterMoves() })).then(function (r) {
           if (state !== mine || state.solved) return;   // đã bị đặt lại / chuyển thế trong lúc chờ
           state.locked = false;
           if (r && r.status === 'win') return acceptLine(got, exp, r);
+          if (r && r.status === 'equiv' && !state.dyn) return acceptEquiv(got, exp);
           if (r && r.status === 'slow') {
             setCaption('Vẫn thắng — nhưng chưa nhanh nhất', 'Nước này vẫn dẫn tới chiếu hết nhưng cần ' + r.k + ' nước. Hãy tìm đường ngắn hơn.', null);
             draw({ noAnim: true });
@@ -970,6 +1011,29 @@
         setCaption('Đến lượt bạn', 'Tìm nước tiếp theo.', null);
         draw();
       }, 520);
+    }
+
+    // Nước TƯƠNG ĐƯƠNG nước trong bài (cùng mục đích: Xe thoái 3/4/5, đổi thứ tự nước…): tính đúng, rồi đi tiếp theo
+    // đúng lời giải của bài (bàn chuyển sang nước trong bài) — kết quả gửi server vẫn là lời giải chuẩn.
+    function acceptEquiv(got, exp) {
+      var info = { ok: true, ply: state.ply, move: got, expected: exp, equiv: true };
+      emit(root, 'xq:puzzle-move', info);
+      if (cfg.onMove) cfg.onMove(info);
+      var em = iccsToIdx(exp);
+      var note = (cfg.notes && cfg.notes[state.ply]) || (em && Rules.notation ? Rules.notation(state.board, em.from, em.to) : exp);
+      state.moves.push(exp);
+      applyIccs(exp);
+      if (state.ply >= cfg.solution.length) { draw(); finishSolved(); return; }
+      setCaption('Nước tương đương ✓', 'Nước của bạn cùng mục đích — bài chọn ' + (note || exp) + ' (bàn đi theo bài). Đối phương đang đáp trả…', 'ok');
+      draw();
+      state.locked = true;
+      reply = setTimeout(function () {
+        state.locked = false;
+        applyIccs(cfg.solution[state.ply]);
+        if (state.ply >= cfg.solution.length) { draw(); finishSolved(); return; }
+        setCaption('Đến lượt bạn', 'Tìm nước tiếp theo.', null);
+        draw();
+      }, 900);
     }
 
     // Nước được bộ giải chứng minh vẫn thắng: đi tiếp theo đường riêng, đối phương đỡ DAI nhất (máy chọn).

@@ -9,7 +9,7 @@
         ['Máy chơi mạnh cỡ nào?', 'Có 4 cấp: Tập sự (thỉnh thoảng đi bừa, hợp người mới), Dễ, Vừa và Khó (tính trước nhiều nước). Thắng cấp thấp rồi hãy thử cấp cao hơn.'],
         ['Có được đi lại hoặc xin gợi ý không?', 'Có. Nút "Đi lại" lùi lại nước vừa đi, nút "Gợi ý" chỉ nước máy cho là tốt nhất. Dùng trợ giúp thì ván thắng chỉ được nửa XP.'],
         ['Có tính giờ khi chơi với máy không?', 'Có. Chọn 5, 10, 15 hoặc 30 phút mỗi bên — cố định (không cộng giờ) hoặc kèm cộng giây sau mỗi nước — hoặc không giới hạn. Bên nào hết giờ trước là thua — máy cũng bị tính giờ.'],
-        ['Khi nào ván cờ hoà?', 'Khi cùng một thế cờ lặp lại 3 lần mà không bên nào chiếu liên tục, hoặc ván kéo dài quá 150 nước mỗi bên. Chiếu dai thì KHÔNG xử hoà: bên chiếu không được chiếu lặp lại thế cờ lần thứ 3, phải đổi nước. Cờ tướng: hết nước đi hợp lệ là thua. Cờ úp: hết nước mà không bị chiếu là hoà.'],
+        ['Khi nào ván cờ hoà?', 'Khi cùng một thế cờ lặp lại 3 lần mà không bên nào chiếu liên tục, hoặc ván kéo dài quá 150 nước mỗi bên. Chiếu dai thì KHÔNG xử hoà: bên chiếu không được chiếu lặp lại thế cờ lần thứ 3, phải đổi nước. Hết nước đi hợp lệ (bị chiếu hết hoặc bị khốn, không còn quân nào đi được) là thua — cả cờ tướng lẫn cờ úp.'],
         ['Có chơi cờ úp với máy được không?', 'Có. Chọn biến thể "Cờ úp": 30 quân được úp và tráo ngẫu nhiên, lật mặt khi đi. Máy cũng không biết quân úp là gì — nó chỉ biết mỗi bên còn những quân nào chưa lộ, giống hệt bạn.'],
     ];
 @endphp
@@ -59,7 +59,7 @@
                         <li>Quân úp đi theo binh chủng của ô đang đứng, lật lộ mặt ngay nước đầu.</li>
                         <li>Sĩ, Tượng đã lật được ra khỏi cung và qua sông.</li>
                         <li>Ăn quân đang úp ("ăn nắp"): chỉ bên ăn biết đó là quân gì — bên kia chỉ biết đã mất mấy nắp. Hết ván bấm vào nắp để lật xem.</li>
-                        <li>Chiếu bí thắng; hết nước mà không bị chiếu là hoà.</li>
+                        <li>Chiếu bí thắng; bên hết nước đi (kể cả khi chỉ còn Tướng không đi được) là thua.</li>
                         <li>Chiếu dai: không được chiếu lặp lại thế cờ lần thứ 3 — phải đổi nước (không xử hoà).</li>
                     </ul>
                     <p class="text-[12.5px] text-ink-faint mt-2 mb-0">Máy không nhìn trộm quân úp — nó chỉ biết mỗi bên còn những quân gì chưa lộ.</p>

@@ -381,8 +381,8 @@ export function search(input, red, opts = {}) {
     }
 
     function terminal(side, ply) {
-        // Cờ tướng: hết nước = thua. Cờ úp: hết nước mà không bị chiếu = hoà.
-        return st.coup && !inCheckSt(st, side) ? 0 : -MATE + ply;
+        // Hết nước đi = THUA (cờ tướng lẫn cờ úp — bị chiếu hết hay bị "khốn" đều thua).
+        return -MATE + ply;
     }
 
     function quiesce(alpha, beta, side, qd) {
@@ -663,7 +663,6 @@ export function gameOver(board, redToMove, coup) {
     const st = stateFrom(board, coup);
     if (legalMovesSt(st, redToMove).length) return null;
     const check = inCheckSt(st, redToMove);
-    if (!check && st.coup) return { winner: null, reason: 'hết nước đi (hoà theo luật cờ úp)' };
     return { winner: redToMove ? 'den' : 'do', reason: check ? 'chiếu hết' : 'hết nước đi' };
 }
 
@@ -850,4 +849,32 @@ export function checkPuzzleMove(fen, red, mv, n, timeMs = 2500) {
     } finally {
         unmake(st, [f, t], u);
     }
+}
+
+/**
+ * Nước `move` có TƯƠNG ĐƯƠNG nước trong bài `expected` không (`later` = các nước sau của bên giải trong lời giải) (luyện tập: "Xe thoái 3/4/5 cùng mục đích", đổi thứ tự
+ * nước…)? Tìm sâu có điểm chính xác từng nước gốc rồi so:
+ *  - nước bài chiếu hết → nước người chơi cũng phải chiếu hết, chậm nhất 1 nước;
+ *  - nước người chơi tìm ra chiếu hết → nhận;
+ *  - còn lại: điểm kém nước bài không quá `tol` (mặc định 35 ≈ 1/3 Tốt).
+ * → { diff } nếu tương đương, null nếu không.
+ */
+export function equivMove(fen, red, move, expected, timeMs = 1500, tol = 12, requireMate = false, later = []) {
+    // Chỉ xét "cùng mục đích": CÙNG QUÂN với nước bài (Xe/Pháo thoái 3-4-5…) hoặc nước sau của lời giải đi trước (đổi thứ tự).
+    if (move.slice(0, 2) !== expected.slice(0, 2) && !later.includes(move)) return null;
+    const r = search(stateFrom(loadFen(fen)), red, { depth: 30, timeMs, exactRoot: true });
+    const sm = r.scores?.[move], se = r.scores?.[expected];
+    if (sm === undefined || se === undefined) return null;
+    const M = MATE - 1000;
+    if (se >= M) return sm >= M && sm >= se - 2 ? { diff: se - sm, mate: true } : null;
+    // Thế chiếu hết mà máy CHƯA thấy nước bài chiếu hết → không đủ cơ sở so (đo trên kho: lúc đó nước bài bị chấm thấp
+    // hơn hàng loạt nước khác → so điểm sẽ nhận nhầm nước không chiếu hết).
+    if (requireMate) return null;
+    if (sm >= M) return { diff: 0, mate: true };
+    // Chỉ chấm khi máy ĐỒNG Ý nước bài là nước tốt (không kém nước tốt nhất của máy quá 150) — máy bất đồng với sách
+    // thì giữ chấm chặt theo sách.
+    // Phán đoán cần đủ sâu (thế phức tạp tính 1,5s chỉ được 3 nước → mọi nước điểm như nhau) và máy phải coi nước bài
+    // là nước tốt nhất / gần tốt nhất.
+    if (r.depth < 6 || se < r.score - 30) return null;
+    return sm >= se - tol ? { diff: Math.max(0, se - sm) } : null;
 }

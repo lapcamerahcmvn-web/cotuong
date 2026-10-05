@@ -28,6 +28,19 @@ class CoupRulesTest extends TestCase
         return [$a, $b, $g->fresh()];
     }
 
+    public function test_coup_no_legal_move_without_check_is_a_loss_not_draw(): void
+    {
+        // Đen chỉ còn Tướng d9: Xe a8 đi a7 → Tướng không còn nước (d8 bị Xe i8 khống chế, e9 lộ mặt Tướng) dù không bị
+        // chiếu → theo luật cờ úp bên hết nước đi THUA (trước đây xử hoà — sai).
+        [$a, $b, $g] = $this->game('co-up');
+        $g->forceFill(['fen' => '3k5/R7R/9/9/9/9/9/9/9/4K4', 'moves' => [], 'reveals' => [], 'captured' => []])->save();
+        $this->actingAs($a)->postJson(route('pvp.move', $g->code), ['move' => 'a8a7'])->assertOk();
+        $g->refresh();
+        $this->assertSame('finished', $g->status);
+        $this->assertSame('do', $g->result);
+        $this->assertSame('hết nước đi', $g->reason);
+    }
+
     public function test_captured_hidden_piece_identity_only_known_to_capturer(): void
     {
         [$a, $b, $g] = $this->game('co-up');

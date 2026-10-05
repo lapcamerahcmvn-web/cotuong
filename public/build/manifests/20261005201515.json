@@ -3,22 +3,22 @@
     "file": "assets/engine-Bop88o4S.js",
     "name": "engine"
   },
-  "_notation-IMtNaHL3.js": {
-    "file": "assets/notation-IMtNaHL3.js",
+  "_notation-BOuCB86J.js": {
+    "file": "assets/notation-BOuCB86J.js",
     "name": "notation",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_puzzle-check-CSa9nmJB.js": {
-    "file": "assets/puzzle-check-CSa9nmJB.js",
+  "_puzzle-check-BcRY4Vm1.js": {
+    "file": "assets/puzzle-check-BcRY4Vm1.js",
     "name": "puzzle-check",
     "assets": [
-      "assets/worker-DyZAIPc0.js"
+      "assets/worker-CJkvkZEZ.js"
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app-B_7f_LUO.css",
+    "file": "assets/app-yUw9QQWD.css",
     "name": "app",
     "names": [
       "app.css"
@@ -27,7 +27,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-B3qi8AKU.js",
+    "file": "assets/app-DPDKK5BE.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -47,7 +47,7 @@
     ]
   },
   "resources/js/board-scan.js": {
-    "file": "assets/board-scan-DT-tQqeI.js",
+    "file": "assets/board-scan-C6I9KP11.js",
     "name": "board-scan",
     "src": "resources/js/board-scan.js",
     "isDynamicEntry": true,
@@ -55,7 +55,7 @@
       "resources/js/app.js"
     ],
     "assets": [
-      "assets/worker-DyZAIPc0.js"
+      "assets/worker-CJkvkZEZ.js"
     ]
   },
   "resources/js/countdown.js": {
@@ -65,7 +65,7 @@
     "isDynamicEntry": true
   },
   "resources/js/display-settings.js": {
-    "file": "assets/display-settings-_NIpfHB-.js",
+    "file": "assets/display-settings-DPvTtW2C.js",
     "name": "display-settings",
     "src": "resources/js/display-settings.js",
     "isDynamicEntry": true,
@@ -74,17 +74,17 @@
     ]
   },
   "resources/js/lesson.js": {
-    "file": "assets/lesson-CPF7RGsD.js",
+    "file": "assets/lesson-BE5axID4.js",
     "name": "lesson",
     "src": "resources/js/lesson.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_puzzle-check-CSa9nmJB.js"
+      "_puzzle-check-BcRY4Vm1.js"
     ]
   },
   "resources/js/mistakes.js": {
-    "file": "assets/mistakes-DqFOwbl8.js",
+    "file": "assets/mistakes-DL02l4A-.js",
     "name": "mistakes",
     "src": "resources/js/mistakes.js",
     "isDynamicEntry": true,
@@ -93,47 +93,47 @@
     ]
   },
   "resources/js/play-bot.js": {
-    "file": "assets/play-bot-BDsvl_VX.js",
+    "file": "assets/play-bot-BBf8V8Lz.js",
     "name": "play-bot",
     "src": "resources/js/play-bot.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_engine-Bop88o4S.js",
-      "_notation-IMtNaHL3.js"
+      "_notation-BOuCB86J.js"
     ],
     "dynamicImports": [
       "resources/js/share.js"
     ],
     "assets": [
-      "assets/worker-DyZAIPc0.js"
+      "assets/worker-CJkvkZEZ.js"
     ]
   },
   "resources/js/play-pvp.js": {
-    "file": "assets/play-pvp-C5DJ551s.js",
+    "file": "assets/play-pvp-B4-2Y_d6.js",
     "name": "play-pvp",
     "src": "resources/js/play-pvp.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_notation-IMtNaHL3.js"
+      "_notation-BOuCB86J.js"
     ]
   },
   "resources/js/practice.js": {
-    "file": "assets/practice-C7nYl4Dj.js",
+    "file": "assets/practice-D6wK2yXq.js",
     "name": "practice",
     "src": "resources/js/practice.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_puzzle-check-CSa9nmJB.js"
+      "_puzzle-check-BcRY4Vm1.js"
     ],
     "dynamicImports": [
       "resources/js/share.js"
     ]
   },
   "resources/js/review.js": {
-    "file": "assets/review-j_w7_ezU.js",
+    "file": "assets/review-xY30wskF.js",
     "name": "review",
     "src": "resources/js/review.js",
     "isDynamicEntry": true,
@@ -142,11 +142,11 @@
       "_engine-Bop88o4S.js"
     ],
     "assets": [
-      "assets/worker-DyZAIPc0.js"
+      "assets/worker-CJkvkZEZ.js"
     ]
   },
   "resources/js/share.js": {
-    "file": "assets/share-CVK9h-B6.js",
+    "file": "assets/share-BD9xSGGL.js",
     "name": "share",
     "src": "resources/js/share.js",
     "isDynamicEntry": true,
@@ -155,7 +155,7 @@
     ]
   },
   "resources/js/social.js": {
-    "file": "assets/social-fPUu9ipP.js",
+    "file": "assets/social-nd95yk2p.js",
     "name": "social",
     "src": "resources/js/social.js",
     "isDynamicEntry": true,
@@ -164,7 +164,7 @@
     ]
   },
   "resources/js/weekly.js": {
-    "file": "assets/weekly-Mo_4DhOw.js",
+    "file": "assets/weekly-zL3i5pEH.js",
     "name": "weekly",
     "src": "resources/js/weekly.js",
     "isDynamicEntry": true,

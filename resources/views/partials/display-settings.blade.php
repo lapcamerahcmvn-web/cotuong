@@ -34,6 +34,18 @@
                     <button type="button" class="chip" data-pref="piece_style" data-val="3d">Nổi (3D)</button>
                 </div>
             </div>
+            <div>
+                <div class="label mb-2">Đánh dấu nước vừa đi</div>
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" class="chip" data-pref="last_fx" data-val="pulse">Loé sáng</button>
+                    <button type="button" class="chip" data-pref="last_fx" data-val="spin">Vòng xoay</button>
+                    <button type="button" class="chip" data-pref="last_fx" data-val="none">Chỉ tô ô</button>
+                </div>
+            </div>
+            <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" class="mt-1 w-5 h-5 accent-[var(--primary)]" data-pref-check="last_arrow">
+                <span><span class="font-semibold block">Mũi tên nước vừa đi</span><span class="text-[13px] text-ink-soft">Mũi tên mờ từ ô cũ tới ô mới — dễ theo dõi khi xem bài, chơi nhanh.</span></span>
+            </label>
             <label class="flex items-start gap-3 cursor-pointer">
                 <input type="checkbox" class="mt-1 w-5 h-5 accent-[var(--primary)]" data-pref-check="board_coords">
                 <span><span class="font-semibold block">Hiện số cột 1–9 quanh bàn</span><span class="text-[13px] text-ink-soft">Giúp đọc ký hiệu kiểu “Pháo 2 bình 5”: mỗi bên đếm cột từ phải sang trái theo hướng ngồi của mình.</span></span>

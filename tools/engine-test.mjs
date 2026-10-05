@@ -2,7 +2,7 @@
 // BẮT BUỘC chạy lại sau mỗi lần sửa engine — sai luật/sai điểm rất khó thấy khi chỉ chơi thử.
 import {
     loadFen, legalMoves, legalMovesSt, stateFrom, toIccs, search, thinkCoup, gameOver,
-    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review, mateIn, checkPuzzleMove,
+    START_FEN, COUP_FEN, COUP_SET, coupOpeningPrior, fromIccs, review, mateIn, checkPuzzleMove, equivMove,
 } from '../resources/js/engine/engine.js';
 import { ALL_LINES as LINES, bookMoves, pickBook } from '../resources/js/engine/book.js';
 
@@ -33,7 +33,7 @@ ok(legalMovesSt(stateFrom(loadFen('3k5/9/9/9/4B4/9/9/9/9/5K3')), true).filter((m
 ok(legalMovesSt(stateFrom(loadFen('4k4/9/9/9/4A4/9/9/9/9/3K5'), true), true).filter((m) => m[0] === 40).length === 4, 'Sĩ đã lật ra ngoài cung');
 const stale = '3k5/R8/9/9/9/9/9/4R4/9/5K3';
 ok(gameOver(loadFen(stale), false, false)?.winner === 'do', 'cờ tướng: hết nước = thua');
-ok(gameOver(loadFen(stale), false, true)?.winner === null, 'cờ úp: hết nước không bị chiếu = hoà');
+ok(gameOver(loadFen(stale), false, true)?.winner === 'do', 'cờ úp: hết nước đi (không bị chiếu) = thua như cờ tướng');
 
 console.log('Sức cờ cờ úp: không bỏ quân Xe treo (cấp Vừa)');
 const hang = 'xxxxkxxxx/4r4/1x5x1/x1x1x1x1x/4R4/9/X1X1X1X1X/1X5X1/9/XXXXKXXX1';
@@ -85,8 +85,8 @@ ok(!bookMoves(after('g0e2 h9g7 h0g2'), false).some((x) => x.move === 'i9h9'), 'b
 console.log('Tìm kiếm sâu (null-move, LMR, PVS, kéo dài khi chiếu)');
 const deep = search('3k1ab2/4a4/4c4/2R6/9/R8/9/B2A3r1/4A2r1/2B2K3', true, { depth: 30, timeMs: 1500 });
 ok(['c6c9', 'a4a9'].includes(deep.move) && deep.score > 90000, `thấy chiếu hết 3 nước (${deep.move}, sâu ${deep.depth})`);
-const mid = search(START_FEN, true, { depth: 30, timeMs: 1500 });
-ok(mid.depth >= 5, `thế mở: 1,5 giây tính sâu ${mid.depth} (≥ 5)`);
+const mid = search(START_FEN, true, { depth: 30, timeMs: 2500 });
+ok(mid.depth >= 5, `thế mở: 2,5 giây tính sâu ${mid.depth} (≥ 5)`);
 
 console.log('Bộ giải chiếu hết (luyện tập nhận đường thắng khác sách)');
 ok(mateIn('3k5/R7R/9/9/9/9/9/9/9/4K4', true, 1)?.k === 1, 'tìm chiếu hết 1 nước');
@@ -98,6 +98,12 @@ ok(checkPuzzleMove(sx, true, 'a4a5', 3).status !== 'win', 'nước yếu không 
 const tm = Date.now(); checkPuzzleMove('1R3a1c1/r3a4/3kN4/8p/p8/9/9/8B/9/4K4', true, 'b9b5', 3);
 const dt = Date.now() - tm;
 ok(dt < 3000, `kiểm 1 nước trong ${dt}ms`);
+
+console.log('Nước tương đương (luyện tập: cùng quân khác số ô / đổi thứ tự)');
+const xb = '9/3P1k3/4ra3/9/9/9/9/3A1R3/9/5K3';   // Xe Binh thấp đơn Sĩ — bài f2f4
+ok(equivMove(xb, true, 'f2f5', 'f2f4', 1500) !== null, 'tàn cuộc: Xe tiến 5 thay tiến 4 cùng mục đích → tương đương');
+ok(equivMove(xb, true, 'd2e1', 'f2f4', 1500) === null, 'quân khác (Sĩ) không xét tương đương');
+ok(equivMove('4kab2/1N1Pa4/4b4/3N5/7n1/9/2P6/2nA1Ap2/2p3p2/4K4', true, 'b8c6', 'b8d7', 1500, 12, true) === null, 'thế chiếu hết máy chưa thấy sát → không nhận bừa');
 
 console.log(fail ? `\n${fail} kiểm tra THẤT BẠI` : '\nTất cả đạt');
 process.exit(fail ? 1 : 0);

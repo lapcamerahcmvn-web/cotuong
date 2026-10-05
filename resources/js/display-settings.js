@@ -36,15 +36,26 @@ function setup(box) {
 
     // Bộ chữ / kiểu quân
     const prefs = box.querySelectorAll('[data-pref]');
-    const DEF = { piece_set: 'han', piece_style: 'flat' };
+    const DEF = { piece_set: 'han', piece_style: 'flat', last_fx: 'pulse' };
     const markPrefs = () => prefs.forEach((b) => b.classList.toggle('is-on', get(b.dataset.pref, DEF[b.dataset.pref]) === b.dataset.val));
-    prefs.forEach((b) => b.addEventListener('click', () => { set(b.dataset.pref, b.dataset.val); markPrefs(); draw(); }));
+    prefs.forEach((b) => b.addEventListener('click', () => {
+        set(b.dataset.pref, b.dataset.val); markPrefs();
+        if (b.dataset.pref === 'last_fx' && !demoLast) { demoFen = AFTER; demoLast = LAST; }   // hiện nước mẫu để thấy hiệu ứng
+        draw();
+    }));
     markPrefs();
 
-    // Số cột
-    const coords = box.querySelector('[data-pref-check="board_coords"]');
-    coords.checked = get('board_coords', '0') === '1';
-    coords.addEventListener('change', () => { set('board_coords', coords.checked ? '1' : '0'); html.dataset.boardCoords = coords.checked ? '1' : '0'; draw(); });
+    // Ô tích: số cột, mũi tên nước vừa đi
+    box.querySelectorAll('[data-pref-check]').forEach((cb) => {
+        const k = cb.dataset.prefCheck;
+        cb.checked = get(k, '0') === '1';
+        cb.addEventListener('change', () => {
+            set(k, cb.checked ? '1' : '0');
+            if (k === 'board_coords') html.dataset.boardCoords = cb.checked ? '1' : '0';
+            if (k === 'last_arrow' && !demoLast) { demoFen = AFTER; demoLast = LAST; }
+            draw();
+        });
+    });
 
     // Giảm hiệu ứng
     const fx = box.querySelector('[data-reduce-fx]');

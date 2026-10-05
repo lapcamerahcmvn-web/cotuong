@@ -14,6 +14,6 @@ export function installPuzzleCheck() {
         const id = ++seq;
         waiters.set(id, resolve);
         setTimeout(() => { if (waiters.has(id)) { waiters.delete(id); resolve(null); } }, 9000);
-        worker.postMessage({ id, puzzle: true, fen: q.fen, red: q.red, move: q.move, expected: q.expected, n: q.n });
+        worker.postMessage({ id, puzzle: true, fen: q.fen, red: q.red, move: q.move, expected: q.expected, n: q.n, mateGoal: q.mateGoal, later: q.later || [] });
     });
 }

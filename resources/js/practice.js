@@ -193,7 +193,12 @@ function initSession(root) {
 
     function apply(st) {
         if (scoreEl) scoreEl.textContent = st.score;
-        if (livesEl) livesEl.innerHTML = [0, 1, 2].map((i) => `<span class="${i < st.lives ? '' : 'is-lost'}">${icon('heart')}</span>`).join('');
+        if (livesEl) {
+            const before = livesEl.dataset.n === undefined ? st.lives : +livesEl.dataset.n;
+            livesEl.innerHTML = [0, 1, 2].map((i) => `<span class="${i < st.lives ? '' : 'is-lost'}${i === st.lives && st.lives < before ? ' just-lost' : ''}">${icon('heart')}</span>`).join('');
+            livesEl.dataset.n = st.lives;
+            livesEl.setAttribute('aria-label', `Còn ${st.lives}/3 mạng`);
+        }
         if (typeof st.remaining_ms === 'number' && mode === 'rush') deadline = Date.now() + st.remaining_ms;
         if (st.over) return end(st);
         puzzle = st.puzzle;

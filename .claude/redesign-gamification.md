@@ -95,7 +95,7 @@ nút "Đề nghị hoà" (429), khách luyện tập nhiều có thể bị ch�
 
 Luật theo bài "Luật chơi cờ úp" của site: 2 Tướng ngửa; 15 quân/bên úp & tráo trên ô xuất phát của bên mình;
 quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; **Sĩ/Tượng đã lật không bị giới hạn cung/sông**
-(và vì thế có thể chiếu Tướng); chiếu bí = thắng; **hết nước mà không bị chiếu = HOÀ** (cờ tướng: thua);
+(và vì thế có thể chiếu Tướng); chiếu bí = thắng; ~~hết nước mà không bị chiếu = hoà~~ → SỬA 06/10/2026: **hết nước đi = THUA** như cờ tướng (Đợt 21);
 ăn quân úp → quân bị ăn lộ mặt (vào khay quân bị ăn).
 
 - **Engine** `resources/js/engine/engine.js`: trạng thái `{b, h, coup}`, ROLE theo ô; `thinkCoup()` dùng
@@ -381,3 +381,17 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   1,5s rồi đi tiếp; máy đi nước đối phương + nối lời giảng; hết bài "đoán đúng X/Y (Z%)", âm báo, phát
   `xq:guess-done` (GA `guess_done`) + `xq:viewed-all-moves` (tính là đã xem hết bài). Code: `createPuzzle` cfg.guess
   (guessAttempt/guessStep/guessDone) trong public/js/board.js; component chess-board mode="guess".
+
+## Đợt 21 (06/10/2026) — 4 sửa theo phản hồi người dùng
+1. **Luật cờ úp hết nước đi = THUA** (không phải hoà): bên chỉ còn Tướng / mọi quân bị khốn mà không bị chiếu vẫn thua —
+   khớp bài "Cờ tàn cờ úp" trên site ("thắng = diệt hết quân hoặc ép hết nước đi"). Sửa engine (`terminal`, `gameOver`),
+   server đấu bạn (`GameService`), luật trên trang chơi máy; test `CoupRulesTest::test_coup_no_legal_move...` + engine-test.
+2. **Đánh dấu nước vừa đi** (Cài đặt → Giao diện): Loé sáng (mặc định) / **Vòng xoay** (vòng nét đứt xoay quanh quân vừa
+   đi, `.xq-spin`) / Chỉ tô ô; ô tích **Mũi tên nước vừa đi** (mờ, vẽ dưới quân). localStorage `last_fx`, `last_arrow`.
+3. **Nước tương đương trong luyện tập** (`equivMove` trong engine.js, worker `puzzle` trả `status:'equiv'`): chỉ xét nước
+   CÙNG QUÂN với nước bài (Xe/Pháo thoái 3-4-5…) hoặc nước SAU của lời giải đi trước (đổi thứ tự); thế chiếu hết: chỉ nhận
+   khi máy thấy cả 2 đều chiếu hết (chậm ≤ 1 nước); thế khác: máy tính ≥ 6 nước, coi nước bài gần tốt nhất (≤ 30), nước
+   người chơi kém ≤ 12. Nhận → "Nước tương đương ✓", bàn đi theo bài (kết quả gửi server = lời giải chuẩn). Áp cả "Đoán
+   nước". Đo kho: bản đầu (tol 35, không giới hạn quân) nhận nhầm ở thế chiếu hết máy chưa thấy sát (#433, #217) → siết.
+4. **3 mạng**: trái tim không đổi màu — CSS đặt `color` thẳng lên svg nên `.is-lost` (đặt trên span) vô tác dụng;
+   server vẫn trừ mạng đúng. Giờ tim còn = đỏ đặc, mất = viền mờ, vừa mất thì rung.

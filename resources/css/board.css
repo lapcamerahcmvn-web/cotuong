@@ -132,3 +132,9 @@
 [data-board-coords="1"] .board-holder { aspect-ratio: 468 / 550; }
 [data-board-coords="1"] [data-fen-thumb] .board-holder, [data-board-coords="1"] .board-holder[data-fen-thumb] { aspect-ratio: 468 / 520; }
 [data-board-theme="wood"] { --xq-wood: #e9cf9c; --xq-wood-edge: #dcb97e; --xq-line: #7c5a2c; --xq-disc: #f6ecd6; --xq-red: #c0392b; --xq-black: #24333f; }
+
+/* Vòng xoay đánh dấu nước vừa đi (Cài đặt → Đánh dấu nước vừa đi: Vòng xoay). */
+.xq-spin { transform-box: fill-box; transform-origin: center; animation: xqSpin 2.6s linear infinite; }
+@keyframes xqSpin { to { transform: rotate(360deg); } }
+.reduce-fx .xq-spin { animation: none; }
+@media (prefers-reduced-motion: reduce) { .xq-spin { animation: none; } }
