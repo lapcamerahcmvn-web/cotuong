@@ -54,7 +54,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 2 — Chương 8 (Cuộc 172–201) | ✅ 31 bài — 03/10/2026 |
 | Tập 2 — Chương 9 (Cuộc 202–232) | ✅ 32 bài — 03/10/2026 |
 | Tập 2 — Chương 10 (Cuộc 233–267) | ✅ 36 bài — 06/10/2026 |
-| Tập 2 — Chương 11–12 (Cuộc 268–291) | ⬜ |
+| Tập 2 — Chương 11–12 (Cuộc 268–291) | ✅ 26 bài — 06/10/2026 — **Tập 2 xong (300 bài)** |
 | Tập 1 — Chương 1–2 (khái luận, thẩm cục) | ✅ 31 bài — 03/10/2026 |
 | Tập 1 — Chương 3–4 (tư tưởng + mục tiêu chiến lược) | ✅ 22 bài — 03/10/2026 |
 | Tập 1 — Chương 5–9 | ⬜ |
@@ -80,6 +80,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - Tập 2 Ch8: 180 "P2.3"→P2.2 (engine xác nhận cả chuỗi), 200 "B7-5"→B7-6; cắt 180 (30), 182 (5), 183 (7), 188 (22), 193 (8), 194 (40), 195 (36); sửa Tướng ở 192/194/197.
 - Tập 2 Ch9: 217 "X4-8"→P4-8, 220 "X7.4"→X6.4 (duy nhất khớp); cắt 210 (25), 215 (50), 228 (8 — "X1.2" không có Xe lộ 1), 229 (40); bỏ nước cuối biến 215 "P9.6" (phạm luật); sửa Tướng/Sĩ hàng đáy 219, 228. Sách in tiêu đề "Cuộc 131" cho Cuộc 231.
 - Tập 2 Ch10: nhiều cuộc chỉ phân tích bằng lời → mạch chính = phương án đề xuất, thực chiến ở nhánh biến (257, 258, 260, 261, 255…). Sửa: 237 "P4.4"→Pt.4 và "X8/1"→X8/3, 242 "B6.5"→B6-5, 263 "X3.1"→X1.3 (bài nói Xe chiếu rồi lui về); sửa Tướng 259 (d1). Cắt 241 (21), 242 (23), 243 (52), 253 (16); bỏ cách 4 của 260 (P1-9 bị chặn) và cắt đuôi nhiều nhánh biến phạm luật (255, 258, 261, 266, 267).
+- Tập 2 Ch11–12: sửa hình 268 (Tướng/Sĩ đáy + Pháo c1), 271 (Tướng f0), 285 (Tướng/Sĩ đáy); sửa nước 269 "X9.3"→P9.3, 274 "S4.5"→S5.4, 278 "S5.4"→Ss.5 (nước duy nhất khớp); cắt đuôi biến 286. Không cuộc nào phải cắt mạch chính.
 
 ## Mẹo
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
