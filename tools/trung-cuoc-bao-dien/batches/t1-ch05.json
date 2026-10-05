@@ -1,0 +1,1076 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+  "slug": "trung-cuoc-bao-dien-tap-1"
+ },
+ "lessons": [
+  {
+   "order": 5010,
+   "slug": "trung-cuoc-bao-dien-t1-phan-loai-chien-thuat-trung-cuoc",
+   "title": "Chương 5 · Phân Loại Chiến Thuật Trung Cuộc — Tổng Quan",
+   "level": "trung-cap",
+   "summary": "Chương 5 hệ thống hóa các chiến thuật trung cuộc thường gặp: đổi quân (để giành tiên, giành quân, giành thế, giành thắng), bỏ quân (để vây quân, cầu hòa, nhập cuộc, giành quân/thế), điều quân, và tận dụng luật cờ.",
+   "seo_title": "Phân Loại Chiến Thuật Trung Cuộc Cờ Tướng",
+   "seo_description": "Tổng quan Chương 5 Trung Cuộc Bảo Điển Tập 1: đổi quân, bỏ quân, điều quân và tận dụng luật cờ — mười nhóm chiến thuật trung cuộc với ví dụ thực chiến.",
+   "content": "<h2>Mười nhóm chiến thuật</h2><p>Chương này chia chiến thuật trung cuộc thành các nhóm, mỗi nhóm minh họa bằng vài ván thực chiến:</p><ul><li><strong>Đổi quân</strong> (tiết 1–4): đổi để <em>giành tiên</em>, <em>giành quân</em>, <em>giành thế</em>, và đổi “nặng nhẹ” (quân giá trị lớn lấy quân giá trị nhỏ) để <em>giành thắng</em>.</li><li><strong>Bỏ quân</strong> (tiết 5, 7–9): bỏ quân để <em>vây hãm quân</em> đối phương, để <em>cầu hòa</em>, để <em>nhập cuộc</em> (tạo thế sát), để <em>giành quân, giành thế</em>.</li><li><strong>Điều quân</strong> (tiết 6): điều quân giành tiên, giành thế, nhập cuộc, giành quân.</li><li><strong>Tận dụng luật cờ</strong> (tiết 10): trường bắt, nước chờ, “một chặn một chiếu”, luật 60 nước.</li></ul><p>Sách gọi bên đi trước là “Tiên”, bên đi sau là “Hậu”; trên bàn cờ của trang, Tiên = <strong>Đỏ</strong>, Hậu = <strong>Đen</strong>.</p>"
+  },
+  {
+   "order": 5020,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-tien-vi-du-1",
+   "title": "Chương 5 · Đổi Quân Giành Tiên (Ví Dụ 1) — Đổi Tốt Biên",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t1a",
+   "summary": "Xe trái bị phong tỏa, Pháo lộ 3 bị Xe sau kiềm. Đỏ đổi Tốt biên, đổi Xe, Pháo dạt biên — Mã lộ 7 của Đen lộ nhược điểm.",
+   "seo_title": "Đổi Quân Giành Tiên: Đổi Tốt Biên Mở Xe",
+   "seo_description": "Ví dụ đổi quân giành tiên trong trung cuộc: Đỏ đổi Tốt biên, đổi Xe, Pháo dạt biên làm lộ nhược điểm Mã lộ 7 của Đen.",
+   "content": "<p>Đổi quân giành tiên: dùng quân yếu đổi quân mạnh hơn, hoặc qua trao đổi phá vỡ sự phối hợp tốt của đối phương.</p><h2>Thế cờ</h2><p>Hai bên đã đổi một Xe, thế ngang. Xe trái Đỏ bị phong tỏa; Pháo lộ 3 bị Xe sau của Đen kiềm, không dễ ăn Tốt — ăn thì Đen tiến Tốt 3 qua sông giành tiên.</p><h2>Diễn biến</h2><ul><li>Đỏ <strong>tiến Tốt biên</strong> đổi Tốt, Xe biên ra ăn Tốt; Đen buộc đổi Xe.</li><li>Nếu Đen không đổi mà bình Xe, Xe Đỏ xuống sâu, cánh phải Đen bị khống chế (nhánh biến).</li><li><strong>Pháo bình 9</strong> ăn Xe — Mã lộ 7 của Đen lộ nhược điểm, Đỏ dễ đi.</li></ul><h2>Bài học</h2><p>Khi một quân lớn bị phong tỏa, đổi Tốt mở đường cho nó là cách rẻ nhất để giành lại thế chủ động.</p>",
+   "captions": {
+    "1": "Tiến Tốt biên đổi Tốt.",
+    "2": "Tốt ăn Tốt.",
+    "3": "Xe biên ra ăn Tốt.",
+    "4": "Đổi Xe.",
+    "5": "Pháo ăn Xe — Mã lộ 7 Đen lộ nhược điểm."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen bình Xe tránh đổi…",
+     "4": "Cánh phải Đen bị khống chế."
+    }
+   },
+   "fen": "1n2kab2/1c2a4/1c2b1n2/r1p3p1p/p3p4/2PC2P2/P3P3P/2N3C2/4A4/R1BAK1BN1"
+  },
+  {
+   "order": 5030,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-tien-vi-du-2",
+   "title": "Chương 5 · Đổi Quân Giành Tiên (Ví Dụ 2) — Mã Ăn Tốt Đổi Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t1b",
+   "summary": "Mã Đỏ đe Xe Đen, chạy Xe thì mất quân. Đen dùng Mã ăn Tốt giữa, đổi Xe, liên tiếp đổi Mã — phá vỡ sự phối hợp của Đỏ và giành tiên.",
+   "seo_title": "Đổi Quân Giành Tiên: Mã Ăn Tốt Giữa Đổi Xe",
+   "seo_description": "Ví dụ đổi quân giành tiên: Đen Mã ăn Tốt giữa đổi Xe, chuỗi đổi Mã phá kết cấu Đỏ, Mã chiếu và Pháo tiến giành tiên thủ.",
+   "content": "<h2>Thế cờ</h2><p>Quân mạnh và Tốt hai bên ngang nhau, Đen đi. Mã lộ 2 của Đỏ đe Xe lộ 7 Đen; chạy Xe thì mất quân.</p><h2>Diễn biến</h2><ul><li><strong>Mã 6 tiến 5 ăn Tốt giữa</strong> — đổi Xe, nước tranh tiên hay.</li><li>Đỏ đành đổi Xe (lui Xe bắt Mã thì Đen vẫn giành tiên — nhánh biến).</li><li>Chuỗi đổi Mã ở trung lộ; Mã Đen chiếu, Pháo tiến — Đen giành tiên thủ.</li></ul><h2>Bài học</h2><p>Khi quân mình bị đe, tìm nước vừa thoát vừa đổi quân để phá kết cấu đối phương thay vì chỉ chạy.</p>",
+   "captions": {
+    "1": "Mã ăn Tốt giữa — đổi Xe, tranh tiên.",
+    "2": "Đỏ đành Mã ăn Xe.",
+    "3": "Mã ăn Xe.",
+    "5": "Đổi Mã.",
+    "7": "Mã chiếu.",
+    "9": "Pháo tiến — Đen giành tiên."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đỏ lui Xe bắt Mã…",
+     "6": "Đen tiên thủ."
+    }
+   },
+   "fen": "3rkab2/4a4/2n1b1c2/pc2p3p/5nr2/2RN5/P3P2NP/1C2C3B/5R3/2BAKA3"
+  },
+  {
+   "order": 5040,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-tien-vi-du-3",
+   "title": "Chương 5 · Đổi Quân Giành Tiên (Ví Dụ 3) — Đổi Pháo Lấy Mã",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t1c",
+   "summary": "Mã hà khẩu và Pháo giữa Đỏ muốn đánh trung lộ nhưng bị Mã lộ 7 và Xe Đen cản. Đỏ bình Pháo đổi Pháo, ăn Mã lộ 7 rồi Mã ăn Tốt giữa.",
+   "seo_title": "Đổi Quân Giành Tiên: Đổi Pháo Ăn Mã Mở Trung Lộ",
+   "seo_description": "Ví dụ đổi quân giành tiên: Đỏ bình Pháo 7 sang 3 đổi Pháo, Xe ăn Mã lộ 7, Mã ăn Tốt giữa phát động thế công.",
+   "content": "<h2>Thế cờ</h2><p>Thế đối nhau, Đen thủ Đỏ công. Mã hà khẩu và Pháo giữa Đỏ muốn đánh trung lộ nhưng bị Mã lộ 7 và Xe tuyến Tốt của Đen cản.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 7 bình 3</strong> mời đổi Pháo; Pháo Đen ăn Pháo.</li><li>Xe Đỏ <strong>ăn Mã lộ 7</strong> — chính xác. Lui Xe ăn Pháo thì thế cờ chỉ bình ổn (nhánh biến).</li><li>Mã ăn Tốt giữa — Đỏ chiếm ưu rõ.</li></ul><h2>Bài học</h2><p>Đổi quân giành tiên thường nhằm vào quân đang làm lá chắn: loại nó đi là mở đường cho thế công.</p>",
+   "captions": {
+    "1": "Bình Pháo mời đổi.",
+    "2": "Pháo ăn Pháo.",
+    "3": "Xe ăn Mã — chính xác.",
+    "5": "Mã ăn Tốt giữa — Đỏ chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lui Xe ăn Pháo…",
+     "8": "Thế cờ bình ổn."
+    },
+    "1": {
+     "1": "Nếu Xe Đen tiến…",
+     "2": "Mã tiến — Đen bị vây."
+    }
+   },
+   "fen": "1r2kab2/3Ra4/4b1n2/1c2p2rp/pnp3c2/4PNR2/P1P5P/N3C4/2C6/2BAKAB2"
+  },
+  {
+   "order": 5050,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-quan-vi-du-1",
+   "title": "Chương 5 · Đổi Quân Giành Quân (Ví Dụ 1) — Bình Xe Mời Đổi",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t2a",
+   "summary": "Đen thiếu một Tượng. Đỏ bình Xe mời đổi, buộc Xe Đen né, rồi Xe lui bắt chết Pháo lộ 6 — giành quân.",
+   "seo_title": "Đổi Quân Giành Quân: Mời Đổi Xe Rồi Bắt Pháo",
+   "seo_description": "Ví dụ đổi quân giành quân: Đỏ bình Xe mời đổi buộc Đen né, Xe lui bắt chết Pháo, Đỏ hơn quân chiếm ưu.",
+   "content": "<p>Đổi quân giành quân: trong quá trình mời đổi, tùy cơ mưu đoạt quân mạnh của đối phương.</p><h2>Thế cờ</h2><p>Quân mạnh và Tốt ngang nhau, Đen thiếu một Tượng, Đỏ đi. Xe trái Đỏ khống chế Mã.</p><h2>Diễn biến</h2><ul><li><strong>Xe 2 bình 3</strong> mời đổi; Đen phải né (đổi thì Pháo dọa, ăn không Mã; bình Xe khác thì Pháo đáy chiếu ăn Pháo — nhánh biến).</li><li>Xe lui, Xe bình 4 <strong>bắt chết Pháo</strong>; Tốt Đen tiến ăn Tốt, Đỏ lên Tượng, Mã lui.</li><li>Đỏ giành quân, chiếm ưu.</li></ul><h2>Bài học</h2><p>Lời mời đổi quân là một nước ép buộc: đối phương né thì phải trả giá ở chỗ khác.</p>",
+   "captions": {
+    "1": "Mời đổi Xe.",
+    "2": "Né đổi.",
+    "3": "Xe lui.",
+    "5": "Xe bình bắt chết Pháo.",
+    "9": "Đỏ giành quân, chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe Đen bình 8…",
+     "4": "Đỏ trầm Pháo chiếu ăn Pháo — Đen khó đỡ."
+    }
+   },
+   "fen": "2baka3/1C2c2R1/1Rn3r2/p1p1p3p/9/2P1P4/P1r5P/2N1BC2B/4Ac3/4KA3"
+  },
+  {
+   "order": 5060,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-quan-vi-du-2",
+   "title": "Chương 5 · Đổi Quân Giành Quân (Ví Dụ 2) — Ép Đổi Xe, Xe Mã Cùng Bắt",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t2b",
+   "summary": "Đen tận dụng nước đi trước: bình Xe ép đổi, rồi Xe lộ 2 và Mã lộ 6 cùng bắt quân — Đỏ không tránh khỏi mất quân.",
+   "seo_title": "Đổi Quân Giành Quân: Ép Đổi Xe, Xe Mã Cùng Bắt Quân",
+   "seo_description": "Ví dụ đổi quân giành quân: Đen bình Xe ép đổi, Xe Mã cùng bắt quân, Xe ăn Pháo, Mã lui — Đen hơn quân chiếm ưu.",
+   "content": "<h2>Thế cờ</h2><p>Quân mạnh hai bên đủ, quân Đen ở vị trí đẹp, Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 7 bình 6</strong> ép đổi; Đỏ phải đổi (tiến Tốt giữa thì Đen được quân — nhánh biến).</li><li>Xe Đen lui, Xe Đỏ ăn Pháo; Xe Đen bình ăn Pháo — chính xác (Mã ăn Xe thì Đỏ dùng Xe đổi Mã Pháo).</li><li>Pháo Đỏ đuổi, Xe Đen tiến (lui ăn Tốt thì Đỏ phản bắt giải vây — nhánh biến); Mã lui ăn Mã — Đen hơn quân.</li></ul><h2>Bài học</h2><p>Khi có hai quân cùng nhắm vào một chỗ, ép đổi để buộc đối phương không thể bảo vệ tất cả.</p>",
+   "captions": {
+    "1": "Bình Xe ép đổi.",
+    "2": "Đỏ phải đổi Xe.",
+    "3": "Mã ăn Xe.",
+    "6": "Xe Đỏ ăn Pháo.",
+    "7": "Xe ăn Pháo — chính xác.",
+    "11": "Mã lui ăn Mã.",
+    "13": "Đen hơn quân chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu tiến Tốt giữa…",
+     "4": "Đen được quân chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Xe lui ăn Tốt…",
+     "2": "Mã lui phản bắt — kế hoạch Đen hỏng."
+    }
+   },
+   "fen": "2baka3/9/2n1c3b/p7p/5Rn2/2PNP4/P5r1P/C3B1Nc1/1r3C3/3AKABR1"
+  },
+  {
+   "order": 5070,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-quan-vi-du-3",
+   "title": "Chương 5 · Đổi Quân Giành Quân (Ví Dụ 3) — Phi Pháo Mời Đổi",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t2c",
+   "summary": "Xe trái Đỏ đang kiềm Pháo Mã Đen. Đỏ quả quyết phi Pháo mời đổi, lên Sĩ lão luyện rồi nhảy Mã — chắc chắn giành quân.",
+   "seo_title": "Đổi Quân Giành Quân: Phi Pháo Mời Đổi",
+   "seo_description": "Ví dụ đổi quân giành quân: Đỏ phi Pháo mời đổi, đổi Pháo, lên Sĩ lão luyện, nhảy Mã — Pháo Mã Đen bị kiềm phải mất quân.",
+   "content": "<h2>Thế cờ</h2><p>Quân hai bên ngang nhau, Đỏ đi. Xe trái Đỏ đang kiềm Pháo Mã Đen.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 6 tiến 4</strong> mời đổi — ẩn thủ đoạn đoạt quân. Nếu Đen bình Pháo đổi thì Mã Đen hết đường (nhánh biến).</li><li>Pháo Đỏ ăn Tốt, Pháo Đen ăn Pháo, Xe ăn Pháo; Xe Đen xuống đáy.</li><li><strong>Lên Sĩ</strong> — lão luyện; vội Xe ăn Mã thì Đen có phản kích (nhánh biến). Mã tiến — Đỏ chắc giành quân.</li></ul><h2>Bài học</h2><p>Khi đã kiềm được quân đối phương, không vội ăn: củng cố trước để đối phương không có phản đòn.</p>",
+   "captions": {
+    "1": "Phi Pháo mời đổi — ẩn thủ đoạn đoạt quân.",
+    "3": "Pháo ăn Tốt.",
+    "4": "Pháo ăn Pháo.",
+    "5": "Xe ăn Pháo.",
+    "7": "Lên Sĩ — lão luyện.",
+    "9": "Mã tiến — chắc chắn giành quân."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu bình Pháo đổi…",
+     "4": "Mã Đen hết đường — Đỏ được quân."
+    },
+    "1": {
+     "1": "Nếu vội ăn Mã…",
+     "2": "Đen có cơ hội phản kích."
+    }
+   },
+   "fen": "3ak2r1/1R2a4/4b1n2/pc2p2cp/6b2/1n7/P1N1P3P/3CC1N2/9/2BAKAB2"
+  },
+  {
+   "order": 5080,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-the-vi-du-1",
+   "title": "Chương 5 · Đổi Quân Giành Thế (Ví Dụ 1) — Đổi Mã Phá Phòng Thủ",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t3a",
+   "summary": "Đỏ hơn một Tượng, Đen hơn Tốt giữa. Đỏ dùng hai Mã chưa phát huy đổi lấy Mã đầu hà và Pháo — hai quân phòng thủ mạnh nhất của Đen.",
+   "seo_title": "Đổi Quân Giành Thế: Song Mã Đổi Quân Phòng Thủ",
+   "seo_description": "Ví dụ đổi quân giành thế: Đỏ dùng hai Mã đổi Mã đầu hà và Pháo của Đen, làm yếu phòng thủ, Đen thiếu Tượng, Mã lộ 3 bị công.",
+   "content": "<p>Đổi quân giành thế: dùng trao đổi tiêu diệt lực lượng phòng thủ, phá kết cấu quân của đối phương, khiến quân mình có sức tấn công hơn.</p><h2>Thế cờ</h2><p>Quân mạnh hai bên đủ; Đỏ hơn một Tượng, Đen hơn Tốt giữa.</p><h2>Diễn biến</h2><ul><li><strong>Mã 3 tiến 5</strong> ép đổi — nước hay; Mã đổi Mã.</li><li>Pháo Đen buộc ăn Mã (Xe tiến thì thế Đỏ sụp — nhánh biến ngược lại).</li><li>Pháo Đỏ ăn Pháo, Pháo bình 7 ăn Pháo; Tượng lên — Đen thiếu Tượng, Mã lộ 3 bị công, Đỏ chiếm ưu.</li></ul><h2>Bài học</h2><p>Quân đang “ngủ” của mình đổi được quân phòng thủ chủ chốt của đối phương là một cuộc đổi rất có lời.</p>",
+   "captions": {
+    "1": "Mã tiến ép đổi — nước hay.",
+    "2": "Mã ăn Mã.",
+    "3": "Mã ăn Mã.",
+    "4": "Pháo ăn Mã chiếu — bất đắc dĩ.",
+    "5": "Pháo ăn Pháo.",
+    "7": "Pháo ăn Pháo.",
+    "9": "Đỏ chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe tiến 2…",
+     "2": "Pháo chiếu — thế Đỏ nguy."
+    }
+   },
+   "fen": "3k1abr1/4aR3/2n1C4/p1p1p3p/3r1np2/2P6/P1c3PcP/C1N3N2/4A4/1RB1KAB2"
+  },
+  {
+   "order": 5090,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-the-vi-du-2",
+   "title": "Chương 5 · Đổi Quân Giành Thế (Ví Dụ 2) — Thí Tốt 3",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t3b",
+   "summary": "Hai bên kiềm nhau. Đỏ đột phá bằng Tốt 3 tiến 1, đẩy lui Mã, Pháo tiến dọa chiếu bắt Xe — Đen bị động đổi quân, Tốt qua sông Đỏ rất mạnh.",
+   "seo_title": "Đổi Quân Giành Thế: Thí Tốt 3 Đột Phá",
+   "seo_description": "Ví dụ đổi quân giành thế: Tốt 3 tiến 1 đẩy lui Mã, Pháo tiến dọa chiếu bắt Xe, Tốt qua sông mạnh, Đỏ chiếm ưu lớn.",
+   "content": "<h2>Thế cờ</h2><p>Quân mạnh và Tốt ngang nhau, khống chế lẫn nhau, Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Tốt 3 tiến 1</strong> — thí Tốt, đẩy lui Mã lộ 6. Nếu Đen ăn Tốt khác thì Đỏ buộc Đen dùng Xe đổi Pháo Mã (nhánh biến).</li><li><strong>Pháo 8 tiến 1</strong> thoát Mã, dọa chiếu bắt Xe; Đen lên Tượng.</li><li>Tốt qua sông liên tục, ăn quân — Đỏ chiếm ưu lớn.</li></ul><h2>Bài học</h2><p>Một nước Tốt có thể làm thay đổi kết cấu cả hai bên: nó đẩy lui quân đối phương và mở đường cho quân mình.</p>",
+   "captions": {
+    "1": "Thí Tốt 3 — nước hay.",
+    "2": "Mã lui.",
+    "3": "Pháo tiến dọa chiếu bắt Xe.",
+    "5": "Tốt ăn Tốt qua sông.",
+    "6": "Pháo ăn Mã.",
+    "9": "Tốt ăn Mã.",
+    "11": "Đỏ chiếm ưu lớn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen tiến Tốt 7…",
+     "6": "Đen buộc dùng Xe đổi Pháo Mã — Đỏ ưu."
+    }
+   },
+   "fen": "1rb1kab2/4a4/3c1cn2/p3p1p1p/1C1N1n3/2P3P2/PR6P/N3B4/2C1A4/4KAB2"
+  },
+  {
+   "order": 5100,
+   "slug": "trung-cuoc-bao-dien-t1-tinh-quan-doat-the-vi-du-3",
+   "title": "Chương 5 · Đổi Quân Giành Thế (Ví Dụ 3) — Pháo Ăn Tượng Giữa",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t3c",
+   "summary": "Tốt giữa Đỏ đã qua sông, song Pháo Đen nhắm Xe Đỏ và chực bình Pháo chiếu. Đỏ phi Pháo ăn Tượng giữa đổi Pháo, phá thế đối công và chiếm ưu.",
+   "seo_title": "Đổi Quân Giành Thế: Phi Pháo Ăn Tượng Giữa",
+   "seo_description": "Ví dụ đổi quân giành thế: Đỏ phi Pháo ăn Tượng giữa đổi Pháo, Xe chiếm đường, Mã tiến, Đen thiếu Tượng và quân xấu.",
+   "content": "<h2>Thế cờ</h2><p>Quân mạnh ngang nhau, Đỏ có Tốt giữa qua sông; song Pháo Đen nhắm Xe Đỏ, chực bình Pháo chiếu — thế đối công.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 5 tiến 5 ăn Tượng</strong> đổi Pháo — nước có lực. Không phi Pháo thì Đen giành lại tiên (nhánh biến). Đen ra Tướng thay vì ăn Pháo thì Xe Đen khó ra (nhánh biến).</li><li>Xe Đỏ ăn Pháo, Xe Đen chiếu, Sĩ lên; Xe Đen lui ăn Tốt (Mã tiến thì Pháo bình — Đen cô quân, nhánh biến).</li><li>Đổi Xe, Mã tiến; Đen thiếu Tượng, Pháo Mã ở chỗ xấu — Đỏ ưu.</li></ul><h2>Bài học</h2><p>Trong thế đối công, đổi quân để loại trừ đòn của đối phương đồng thời làm yếu phòng tuyến của họ là nước giành thế mạnh nhất.</p>",
+   "captions": {
+    "1": "Phi Pháo ăn Tượng — đổi Pháo giành thế.",
+    "2": "Tượng ăn Pháo.",
+    "3": "Xe ăn Pháo.",
+    "6": "Xe lui ăn Tốt.",
+    "7": "Đổi Xe.",
+    "8": "Mã ăn Xe.",
+    "15": "Đỏ ưu thế."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe bình 9…",
+     "4": "Đen giành lại tiên."
+    },
+    "1": {
+     "1": "Nếu Đen ra Tướng…",
+     "6": "Xe Đen khó ra — Đỏ ưu."
+    },
+    "2": {
+     "1": "Nếu Mã tiến…",
+     "2": "Pháo bình — Đen cô quân."
+    }
+   },
+   "fen": "1r2kab2/4a4/2n1b4/p1p1PR2p/1c7/1cPr5/P7P/C3C1N2/9/1RBAKAB2"
+  },
+  {
+   "order": 5110,
+   "slug": "trung-cuoc-bao-dien-t1-doi-quan-nang-nhe-vi-du-1",
+   "title": "Chương 5 · Đổi Quân “Nặng Nhẹ” (Ví Dụ 1) — Bỏ Pháo Phá Trận",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t4a",
+   "summary": "Đỏ có một Mã đơn độc trong trận địch nhưng các quân khác linh hoạt. Để phá trận, Đỏ bỏ Pháo ăn Tốt, phi Pháo ăn Tượng, ăn Mã — rồi thí thêm Tốt 7 và thắng.",
+   "seo_title": "Đổi Quân Nặng Nhẹ: Bỏ Pháo Ăn Tốt Phá Trận",
+   "seo_description": "Đổi quân không ngang giá: Đỏ bỏ Pháo ăn Tốt, phi Pháo ăn Tượng, ăn Mã, thí Tốt 7 chặn Xe trái Đen, Xe Pháo Tốt thắng.",
+   "content": "<p>Đổi quân “nặng nhẹ” (không ngang giá): có kế hoạch dùng quân giá trị lớn đổi quân giá trị nhỏ — Xe đổi Mã Pháo Tốt Sĩ Tượng, Mã Pháo đổi Tốt Sĩ Tượng. Nó gần với bỏ quân nhưng vẫn là đổi quân.</p><h2>Thế cờ</h2><p>Đỏ đi, có Mã lộ 3 đơn độc trong trận địch nhưng các quân tấn công linh hoạt; vấn đề là đột phá.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 7 tiến 3 ăn Tốt</strong> — bỏ Pháo, Tượng ăn Pháo. Pháo kia ăn Tượng, ăn Mã; nếu Đen lui Tượng thì Đỏ lấy lại quân còn hơn Tốt hơn Tượng (nhánh biến).</li><li>Đen cũng bỏ quân trầm Pháo chiếu, nhưng không điều được song Xe sang trợ công.</li><li><strong>Thí Tốt 7</strong> chặn Đen điều Xe trái; Xe xuống, Pháo bình 4, Tốt giữa tiến — Đỏ thắng (Pháo bình 6 thì Xe lui bắt Xe — nhánh biến).</li></ul><h2>Bài học</h2><p>Đổi quân nặng nhẹ chỉ đáng khi nó mở được trận địch. Hãy đếm xem sau khi đổi, đối phương còn bao nhiêu quân phòng thủ.</p>",
+   "captions": {
+    "1": "Bỏ Pháo ăn Tốt — phá trận.",
+    "2": "Tượng ăn Pháo.",
+    "3": "Pháo ăn Tượng.",
+    "5": "Pháo ăn Mã.",
+    "6": "Đen trầm Pháo chiếu.",
+    "17": "Thí Tốt 7 — chặn Xe trái Đen.",
+    "19": "Xe chiếu.",
+    "21": "Pháo chiếu.",
+    "23": "Tốt giữa tiến — Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lui Tượng…",
+     "4": "Đỏ lấy lại quân, hơn Tốt hơn Tượng."
+    },
+    "1": {
+     "1": "Nếu Pháo bình 6…",
+     "2": "Xe lui bắt Xe — Đỏ thắng."
+    }
+   },
+   "fen": "3ak4/c3a4/n2cb1n2/4p1N1p/2pR2br1/1NP2r3/4P1R1P/2C1B1C2/4A4/2B1KA3"
+  },
+  {
+   "order": 5120,
+   "slug": "trung-cuoc-bao-dien-t1-doi-quan-nang-nhe-vi-du-2",
+   "title": "Chương 5 · Đổi Quân “Nặng Nhẹ” (Ví Dụ 2) — Mã Đổi Song Tượng",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t4b",
+   "summary": "Hai Mã Đỏ đã xông vào trận và đang bị bắt. Thay vì cứu, Đỏ dùng Mã đổi hai Tượng, Pháo ăn Tượng chiếu, rồi Tốt qua sông, Xe Pháo dồn ép và thắng.",
+   "seo_title": "Đổi Quân Nặng Nhẹ: Một Mã Đổi Hai Tượng",
+   "seo_description": "Đổi quân không ngang giá: Đỏ dùng Mã đổi song Tượng, Pháo ăn Tượng chiếu, Tốt qua sông, Xe Pháo Tốt dồn ép, Đỏ thắng.",
+   "content": "<h2>Thế cờ</h2><p>Đỏ đi; hai Mã Đỏ đã xông trận và đang bị bắt chết. Mã 6 tiến 7 thì Xe Đen đổi quân, Đỏ mất tiên. (Sơ đồ bản in thiếu một Tốt Đỏ ở cột 7; trang đã bổ sung, toàn bộ 31 nước sau đều khớp.)</p><h2>Diễn biến</h2><ul><li><strong>Mã 6 tiến 5 ăn Tượng</strong> — đổi quân nặng nhẹ: Mã đổi song Tượng. Pháo ăn Tượng chiếu, Tướng Đen ra (lui Sĩ thì Đỏ ưu — nhánh biến).</li><li>Xe bình chiếu, Xe ăn Pháo; <strong>Tốt qua sông</strong> mở rộng tiên thủ.</li><li>Đen đành đổi Xe lấy Pháo; Tốt Đỏ đẩy vào cung, Xe chiếu — Đỏ thắng.</li></ul><h2>Bài học</h2><p>Hai Tượng của đối phương có thể đáng giá hơn một Mã của mình khi Tướng họ bị phơi ra.</p>",
+   "captions": {
+    "1": "Mã ăn Tượng — đổi nặng nhẹ.",
+    "2": "Tượng ăn Mã.",
+    "3": "Pháo ăn Tượng chiếu.",
+    "6": "Xe Đen ăn Mã.",
+    "9": "Xe ăn Pháo.",
+    "13": "Tốt qua sông.",
+    "22": "Xe Đen ăn Pháo.",
+    "23": "Sĩ ăn Xe — Đen đổi Xe lấy Pháo.",
+    "29": "Tốt ăn Sĩ chiếu.",
+    "31": "Xe chiếu — Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lui Sĩ…",
+     "4": "Đỏ ưu."
+    }
+   },
+   "fen": "4ka3/2Nra4/2n1b1n2/p6Rp/2pNp1b2/2P6/1c3c3/1C2C4/4A4/2BAK1B2"
+  },
+  {
+   "order": 5130,
+   "slug": "trung-cuoc-bao-dien-t1-doi-quan-nang-nhe-vi-du-3",
+   "title": "Chương 5 · Đổi Quân “Nặng Nhẹ” (Ví Dụ 3) — Bỏ Xe Hóa Nguy",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t4c",
+   "summary": "Đỏ đang có thế công mạnh. Đen quyết bỏ Xe ăn Pháo, nhảy Mã, bình Pháo, phi Tượng cản Xe — lật ngược thế cờ và thắng.",
+   "seo_title": "Đổi Quân Nặng Nhẹ: Bỏ Xe Ăn Pháo Hóa Nguy",
+   "seo_description": "Đổi quân không ngang giá: Đen bỏ Xe ăn Pháo, Mã tiến, phi Tượng cản Xe, Xe Mã liên hoàn chiếu — hóa nguy thành an rồi thắng.",
+   "content": "<h2>Thế cờ</h2><p>Đỏ đang có thế công mạnh, Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 1 lui 8 ăn Pháo</strong> — bỏ Xe; Xe Đỏ ăn Xe. Mã Đen nhảy lên tiếp nối nước bỏ Xe.</li><li>Pháo bình mở đường tấn công, chuẩn bị bình Xe phối hợp; <strong>phi Tượng cản Xe</strong> — tinh hoa ván này.</li><li>Xe tiến chiếu chặt chẽ; Mã lui phá Tượng phục sát, Xe Mã liên hoàn — Đen thắng.</li></ul><h2>Bài học</h2><p>Trả lại quân lớn để chặt quân tấn công chủ chốt là cách phòng thủ chủ động nhất.</p>",
+   "captions": {
+    "1": "Bỏ Xe ăn Pháo.",
+    "2": "Xe ăn Xe.",
+    "3": "Mã nhảy lên.",
+    "5": "Bình Pháo mở đường.",
+    "9": "Phi Tượng cản Xe — tinh hoa.",
+    "13": "Mã chiếu.",
+    "15": "Xe tiến dọa — thế thắng nắm trong tay.",
+    "21": "Mã lui phá Tượng phục sát.",
+    "39": "Đen thắng."
+   },
+   "var_caps": {},
+   "fen": "3R1a3/CR1n1k2c/4b4/4n4/4C1b2/9/3r4P/4B4/4A4/r2AK1B2"
+  },
+  {
+   "order": 5140,
+   "slug": "trung-cuoc-bao-dien-t1-doi-quan-nang-nhe-vi-du-4",
+   "title": "Chương 5 · Đổi Quân “Nặng Nhẹ” (Ví Dụ 4) — Một Xe Đổi Hai Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t4d",
+   "summary": "Mỗi bên có một Tốt qua sông, Đen chuẩn bị đổi Xe mở đường Mã biên. Đỏ dùng Xe đổi Pháo Mã, Mã tiến bắt Xe, Tốt dồn vào cung trống và thắng.",
+   "seo_title": "Đổi Quân Nặng Nhẹ: Xe Đổi Pháo Mã",
+   "seo_description": "Đổi quân không ngang giá: Đỏ dùng Xe đổi Pháo Mã, Mã tiến bắt Xe giành tiên, Xe Tốt dồn vào cửu cung trống của Đen.",
+   "content": "<h2>Thế cờ</h2><p>Quân chủ lực ngang nhau, mỗi bên một Tốt qua sông, Đỏ đi. Đen chuẩn bị đổi Xe mở đường Mã biên.</p><h2>Diễn biến</h2><ul><li><strong>Xe 2 bình 4 ăn Pháo</strong> — Xe đổi Pháo Mã, hung mãnh.</li><li><strong>Mã 3 tiến 4</strong> bắt Xe giành tiên; Xe ăn Mã. (Đen bình Xe 1 thay vì 7 thì Đỏ vẫn ưu — nhánh biến.)</li><li>Xe chiếu, Tốt vào giữa, Xe chiếu liên tục; cửu cung Đen trống, khó chống.</li></ul><h2>Bài học</h2><p>Dù Xe mạnh hơn Pháo hay Mã, thậm chí hơn Mã Pháo, cục diện mới quyết định giá trị. Khi thế cờ cho phép đổi nặng nhẹ, hãy đổi.</p>",
+   "captions": {
+    "1": "Xe ăn Pháo — đổi Xe lấy Pháo Mã.",
+    "2": "Sĩ ăn Xe.",
+    "3": "Mã tiến bắt Xe — tranh tiên.",
+    "5": "Xe ăn Mã.",
+    "9": "Xe chiếu.",
+    "13": "Tốt vào giữa.",
+    "17": "Xe chiếu.",
+    "21": "Xe ăn Sĩ.",
+    "25": "Xe ăn Sĩ — cửu cung Đen trống."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe bình 1…",
+     "6": "Đỏ ưu."
+    }
+   },
+   "fen": "3k1ab2/4a4/1n2bc1Rn/3r2p2/1R3P1r1/C2p5/P3N4/4B1N2/4A4/3AK1B2"
+  },
+  {
+   "order": 5150,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-ham-quan-vi-du-1",
+   "title": "Chương 5 · Bỏ Quân Vây Quân (Ví Dụ 1) — Thế Mạnh Hơn Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t5a",
+   "summary": "Đỏ dọa Mã 6 tiến 5. Đen bình Pháo đuổi Xe, bỏ quân để Mã Đỏ ăn Xe rồi kẹt ở chỗ xấu; Xe Đen chiếm tuyến Tốt Đỏ và giành ưu thế lớn.",
+   "seo_title": "Bỏ Quân Vây Quân: Để Mã Đối Phương Kẹt",
+   "seo_description": "Bỏ quân vây quân: Đen bình Pháo bỏ Xe, Mã Đỏ ăn Xe đáy rồi kẹt; Xe Đen chiếm tuyến Tốt, Mã Pháo tấn công, Đen ưu thế lớn.",
+   "content": "<p>Bỏ quân vây quân có hai tác dụng: (1) quân đối phương ăn quân mình xong bị kẹt, không phát huy được, ta tranh thủ điều quân hơn nước; (2) sau khi bỏ quân, điều quân khống chế hoặc uy hiếp quân mạnh của đối phương.</p><h2>Thế cờ</h2><p>Đỏ dọa Mã 6 tiến 5 chiếm tiên, Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 2 bình 7</strong> đuổi Xe — bỏ quân. Mã Đỏ ăn Tốt, Pháo ăn Xe; Mã Đỏ ăn Mã chiếu, rồi ăn Xe đáy — nhưng kẹt ở chỗ rất xấu.</li><li><strong>Xe Đen chiếm tuyến Tốt Đỏ</strong> — “thế” mạnh hơn “quân”.</li><li>Xe tiến bắt Mã chặt chẽ, không cho Đỏ đổi Pháo; Pháo tiến, Mã nhảy — Đen ưu thế lớn.</li></ul><h2>Bài học</h2><p>Một quân ăn được nhiều nhưng đứng ở góc chết thì giá trị gần như bằng không.</p>",
+   "captions": {
+    "1": "Bình Pháo đuổi Xe — bỏ quân.",
+    "3": "Pháo ăn Xe.",
+    "4": "Mã ăn Mã chiếu.",
+    "6": "Mã ăn Xe đáy — kẹt ở chỗ xấu.",
+    "7": "Xe chiếm tuyến Tốt — thế mạnh hơn quân.",
+    "15": "Xe tiến bắt Mã — chặt chẽ.",
+    "19": "Đen ưu thế lớn."
+   },
+   "var_caps": {},
+   "fen": "2bakabr1/1c7/2n2rn2/p1p1p1R1p/4c1p2/2PN5/P5P1P/C3C1N2/4A4/R1B1KAB2"
+  },
+  {
+   "order": 5160,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-ham-quan-vi-du-2",
+   "title": "Chương 5 · Bỏ Quân Vây Quân (Ví Dụ 2) — Bỏ Mã Vây Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t5b",
+   "summary": "Xe Đỏ bắt Mã Đen. Đen lên Sĩ bỏ Mã, bình Pháo, phi Tượng vây Xe; Xe Đỏ ăn Mã xong rơi vào đường cùng, Đen lấy lại quân.",
+   "seo_title": "Bỏ Quân Vây Quân: Lên Sĩ Bỏ Mã Vây Xe",
+   "seo_description": "Bỏ quân vây quân: Đen lên Sĩ bỏ Mã, bình Pháo 6, phi Tượng vây Xe Đỏ, Pháo tiến bắt đôi, lấy lại quân chiếm ưu.",
+   "content": "<h2>Thế cờ</h2><p>Quân và Tốt hai bên đủ, Đen đi. Xe lộ 6 của Đỏ bắt Mã lộ 3 của Đen.</p><h2>Diễn biến</h2><ul><li><strong>Lên Sĩ bỏ Mã</strong> — chính xác; lui Mã thì Đỏ ưu (nhánh biến).</li><li>Xe Đỏ ăn Mã — bất đắc dĩ (lui Xe thì Đen bỏ trước lấy sau — nhánh biến). Pháo bình 6, phi Tượng vây Xe.</li><li>Xe Đỏ ăn Tượng (lên Sĩ thì Đen vẫn ưu — nhánh biến); Pháo tiến bắt đôi, Mã nhảy — Đen lấy lại quân, chiếm ưu.</li></ul><h2>Bài học</h2><p>Bỏ quân để kéo quân lớn của đối phương vào chỗ hẹp, rồi đóng cửa lại.</p>",
+   "captions": {
+    "1": "Lên Sĩ bỏ Mã — chính xác.",
+    "2": "Xe ăn Mã — bất đắc dĩ.",
+    "3": "Bình Pháo vây Xe.",
+    "4": "Xe ăn Tượng.",
+    "5": "Phi Tượng vây Xe.",
+    "7": "Pháo tiến bắt đôi.",
+    "11": "Mã nhảy — Đen lấy lại quân, chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lui Mã…",
+     "4": "Đỏ chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Xe lui…",
+     "6": "Đen bỏ trước lấy sau, chiếm ưu."
+    },
+    "2": {
+     "1": "Nếu lên Sĩ…",
+     "8": "Đen chiếm ưu."
+    }
+   },
+   "fen": "2bakab1r/9/2nRc1n2/p1p1p3p/6p2/2P6/Prc1P1P1P/BCN1C1N2/9/3AKABR1"
+  },
+  {
+   "order": 5170,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-ham-quan-vi-du-3",
+   "title": "Chương 5 · Bỏ Quân Vây Quân (Ví Dụ 3) — Mã Phá Song Tượng",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t5c",
+   "summary": "Song Xe Mã Pháo Đỏ tập trung một cánh, dọa Xe 6 bình 7. Đen đi trước: Mã phá song Tượng, Pháo bình dọa, buộc Mã Đỏ nhảy cho Tướng ra — kiềm Xe Mã lộ 6.",
+   "seo_title": "Bỏ Quân Vây Quân: Mã Đổi Song Tượng Kiềm Xe Mã",
+   "seo_description": "Bỏ quân vây quân: Đen Mã ăn Tượng đổi song Tượng, Pháo dọa, ép Tướng Đỏ ra, Xe chiếu liên tục khống chế Xe Mã lộ 6, Đen ưu.",
+   "content": "<h2>Thế cờ</h2><p>Quân mạnh ngang nhau. Song Xe Mã Pháo Đỏ tập trung một cánh, dọa Xe 6 bình 7. Đen nhiều Tốt hơn, Xe Pháo Mã cánh trái cũng có thế, Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Mã 7 tiến 5</strong> — bỏ Mã đổi song Tượng, cách đánh trả duy nhất.</li><li>Pháo bình (linh hoạt hơn ăn Tốt vì còn giữ Mã phải); Đỏ phải nhảy Mã, Tướng ra.</li><li>Xe Đen chiếu liên tục, Pháo lui rồi trầm đáy, khống chế Xe Mã lộ 6 (hai cách khác của Đỏ đều không khá hơn — nhánh biến). Đen chiếm ưu.</li></ul><h2>Bài học</h2><p>Bỏ quân để làm Tướng đối phương phải ra khỏi cung thường biến quân của họ thành quân giữ Tướng thay vì quân tấn công.</p>",
+   "captions": {
+    "1": "Bỏ Mã đổi song Tượng — đánh trả duy nhất.",
+    "2": "Tượng ăn Mã.",
+    "3": "Xe ăn Tượng.",
+    "5": "Bình Pháo — giữ cả Mã phải.",
+    "6": "Tướng ra.",
+    "9": "Xe chiếu.",
+    "21": "Pháo trầm đáy chiếu.",
+    "29": "Đen chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo tiến 2…",
+     "8": "Đen nhiều Tốt chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu Xe tiến 1…",
+     "2": "Pháo tiến — Đen lấy lại quân."
+    }
+   },
+   "fen": "3ckab2/3Ra4/1Cn1b3c/p1R1p3p/2p3p2/1N7/P3P1n1P/4B1r2/4A4/4KAB2"
+  },
+  {
+   "order": 5180,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-tien-vi-du-1",
+   "title": "Chương 5 · Điều Quân Giành Tiên (Ví Dụ 1) — Rời Pháo Đầu",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6a",
+   "summary": "Đối công, quân đủ. Đỏ khéo đưa Pháo giữa sang lộ 4: vừa phục Mã đánh Xe tuần hà, vừa đổi Pháo dọa Mã lộ 7 — Tốt qua sông, Đỏ ưu.",
+   "seo_title": "Điều Quân Giành Tiên: Pháo Giữa Sang Lộ 4",
+   "seo_description": "Điều quân giành tiên: Đỏ dạt Pháo giữa sang lộ 4, Xe bình 3, đổi Pháo về giữa, Tốt 3 tiến đổi Xe, Tốt qua sông trợ chiến.",
+   "content": "<p>Điều quân là đưa quân tới mắt xích yếu của đối phương để tập trung binh lực. Nó đòi hỏi phân tích chính xác. Tiết này chia bốn dạng: điều quân giành tiên, giành thế, nhập cuộc, giành quân.</p><h2>Thế cờ</h2><p>Quân và Tốt đủ, thế đối công, Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 5 bình 4</strong> — rời Pháo đầu đúng lúc: phục Mã 3 tiến 4 đánh Xe tuần hà, phục đổi Pháo dọa Mã lộ 7. Đen bình Xe 5 phòng Mã.</li><li>Xe bình 3 ăn Tốt (Pháo 7 bình 5 đổi Xe cũng ưu nhưng kém hơn — nhánh biến); Pháo về giữa.</li><li>Tốt 3 tiến, đổi Xe; Tốt 7 qua sông — Đỏ ưu rõ.</li></ul><h2>Bài học</h2><p>Pháo đầu không phải lúc nào cũng nên ở giữa. Đưa nó đi đúng lúc có thể tạo ra hai đe dọa cùng lúc.</p>",
+   "captions": {
+    "1": "Rời Pháo đầu — điều quân giành tiên.",
+    "2": "Bình Xe 5 phòng Mã.",
+    "3": "Xe ăn Tốt.",
+    "5": "Pháo về giữa.",
+    "7": "Tốt 3 tiến.",
+    "9": "Đổi Xe.",
+    "11": "Tốt qua sông — Đỏ ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo bình 5 đổi Xe…",
+     "6": "Đỏ ưu nhưng kém nước thực chiến."
+    }
+   },
+   "fen": "r3kab2/4a4/2n1bcn2/p3p1pRp/2pr5/P1P3P2/1c2P3P/N1C1C1N1B/4A4/R1BAK4"
+  },
+  {
+   "order": 5190,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-tien-vi-du-2",
+   "title": "Chương 5 · Điều Quân Giành Tiên (Ví Dụ 2) — Xe Biên Chưa Ra",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6b",
+   "summary": "Xe lộ 1 của Đen tạm chưa tham chiến. Đỏ nhảy Mã, tiến Xe, bình Pháo, điều chỉnh trận thế đánh cánh phải Đen và giành tiên.",
+   "seo_title": "Điều Quân Giành Tiên: Đánh Khi Xe Đối Phương Chưa Ra",
+   "seo_description": "Điều quân giành tiên: Đỏ nhảy Mã, tiến Xe, bình Pháo, Mã công Tượng buộc Xe Đen về chỗ cũ, Tốt qua sông, Đỏ giành tiên.",
+   "content": "<h2>Thế cờ</h2><p>Quân ngang nhau; Đỏ hơn Tốt 7, Đen hơn Tốt giữa; Đỏ đi. Xe lộ 1 của Đen tạm chưa tham chiến.</p><h2>Diễn biến</h2><ul><li><strong>Mã 3 tiến 4</strong> phục ăn Tốt giành tiên; Đen lui Mã.</li><li>Xe tiến, Pháo bình 7; Mã tiến chuẩn bị công Tượng, buộc Xe Đen về chỗ cũ — điều quân đẹp.</li><li>Hai bên lên Sĩ, Pháo trước bình 8, Tốt qua sông — Đỏ chiếm tiên.</li></ul><h2>Bài học</h2><p>Đánh vào cánh mà quân đối phương chưa kịp ra là cách điều quân hiệu quả nhất.</p>",
+   "captions": {
+    "1": "Mã tiến — phục ăn Tốt giành tiên.",
+    "3": "Xe tiến.",
+    "5": "Bình Pháo.",
+    "9": "Mã tiến công Tượng.",
+    "10": "Xe Đen phải về chỗ cũ.",
+    "15": "Tốt qua sông.",
+    "19": "Đỏ chiếm tiên."
+   },
+   "var_caps": {},
+   "fen": "r1bakab2/4c4/4c1n2/p3p1p1p/2C6/6P2/P1P1n3P/N3B1N2/4C4/1R1AKAB2"
+  },
+  {
+   "order": 5200,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-the-vi-du-1",
+   "title": "Chương 5 · Điều Quân Giành Thế (Ví Dụ 1) — Xe Lộ 8 Vị Trí Xấu",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6c",
+   "summary": "Xe lộ 8 của Đen ở chỗ rất xấu. Đỏ tiến Pháo, bình Pháo dọa, nhảy Mã giữa rồi lui Mã — Xe Mã song Pháo ở vị trí đẹp, Đỏ ưu thế lớn.",
+   "seo_title": "Điều Quân Giành Thế: Khai Thác Xe Vị Trí Xấu",
+   "seo_description": "Điều quân giành thế: Pháo tiến chặn Mã, Pháo bình 3 dọa, Mã nhảy ngọa tào rồi lui, Đỏ Xe Mã song Pháo vị trí đẹp, ưu thế lớn.",
+   "content": "<h2>Thế cờ</h2><p>Quân ngang nhau, Đỏ đi; Xe lộ 8 của Đen ở vị trí rất xấu. Điều quân giành thế: khi hơi ưu, điều quân đánh vào điểm yếu để mở rộng tiên thủ.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 6 tiến 6</strong>: vừa có thể bình chặn Mã, vừa có thể bình 3 dọa. Đen tiến Tốt giữa mở đường Xe trái.</li><li>Pháo bình 3 dọa, ép Đen phi Tượng biên — tạo điều kiện Mã lộ 7 nhảy ngọa tào.</li><li>Mã nhảy giữa, rồi <strong>lui Mã</strong> — lấy lui làm công (hoặc Xe bình 8 bắt Mã — nhánh biến). Đỏ ưu thế lớn.</li></ul><h2>Bài học</h2><p>Một quân đối phương ở chỗ xấu là lời mời tấn công phía đó: mỗi nước điều quân nên khiến nó càng khó ra.</p>",
+   "captions": {
+    "1": "Tiến Pháo — hai mục đích.",
+    "2": "Tiến Tốt mở đường Xe.",
+    "3": "Bình Pháo dọa.",
+    "4": "Phi Tượng biên.",
+    "5": "Mã nhảy giữa.",
+    "7": "Lui Mã — lấy lui làm công.",
+    "9": "Đỏ ưu thế lớn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Cũng có thể Xe bình 8 bắt Mã."
+    }
+   },
+   "fen": "1nb1kab2/4a4/2c6/p1N2R3/4p2rp/P1P3Pc1/2C6/3CB4/4A4/4KAB2"
+  },
+  {
+   "order": 5210,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-the-vi-du-2",
+   "title": "Chương 5 · Điều Quân Giành Thế (Ví Dụ 2) — Bình Pháo Đuổi Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6d",
+   "summary": "Đỏ có thế công trung lộ, Đen dồn đánh cánh trái. Đỏ bình Pháo đuổi Xe, điều chỉnh trận thế; Đen buộc dùng Xe đổi Pháo Mã, Đỏ ưu lớn.",
+   "seo_title": "Điều Quân Giành Thế: Bình Pháo Đuổi Xe Chặn Phản Kích",
+   "seo_description": "Điều quân giành thế: Đỏ bình Pháo đuổi Xe thay vì tiến Tốt giữa, Đen buộc dùng Xe đổi Pháo Mã, Đỏ chiếm ưu thế lớn.",
+   "content": "<h2>Thế cờ</h2><p>Quân và Tốt ngang nhau, Đỏ đi. Đỏ có thế ở trung lộ, Đen dồn lực cánh trái.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 5 bình 3</strong> đuổi Xe — chính xác. Tiến Tốt giữa thì Đen Pháo bình 6, phục Mã chiếu, Đỏ bị động (nhánh biến).</li><li>Pháo bình 2 tiếp; Đen bất đắc dĩ dùng Xe đổi Pháo Mã (bình Xe nữa thì Xe Đỏ bắt chết Mã).</li><li>Xe Đỏ ra, Mã tiến — Đỏ ưu thế lớn.</li></ul><h2>Bài học</h2><p>Đôi khi điều quân giành thế không phải là tấn công mà là đuổi quân tấn công của đối phương khỏi vị trí.</p>",
+   "captions": {
+    "1": "Bình Pháo đuổi Xe — chính xác.",
+    "3": "Pháo bình 2.",
+    "4": "Bất đắc dĩ: Xe đổi Pháo Mã.",
+    "5": "Mã ăn Xe.",
+    "11": "Đỏ ưu thế lớn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu tiến Tốt giữa…",
+     "2": "Pháo bình 6 — Đỏ bị động."
+    }
+   },
+   "fen": "2baka1r1/1c4r2/2n1b4/p1p1p3p/4P4/1CP3N2/P3NR2P/4C4/4A2n1/R1BAK1c2"
+  },
+  {
+   "order": 5220,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-nhap-cuoc-vi-du-1",
+   "title": "Chương 5 · Điều Quân Nhập Cuộc (Ví Dụ 1) — Mã Ngọa Tào Tuyệt Sát",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6e",
+   "summary": "Pháo đầu Đỏ khống chế thế cờ. Đỏ điều Pháo dọa, rồi Mã đi từng bước — hiến Pháo, nhảy tiếp — tới vị trí ngọa tào tuyệt sát.",
+   "seo_title": "Điều Quân Nhập Cuộc: Mã Đi Đến Ngọa Tào",
+   "seo_description": "Điều quân nhập cuộc: Pháo bình dọa, Mã đi từng bước tới ngọa tào, Đen không giải được tuyệt sát. Các nhánh biến cũng dẫn tới sát.",
+   "content": "<p>Điều quân nhập cuộc: điều quân tấn công chính xác tới điểm yếu chiến lược, hoặc chuyển quân từ cánh thừa sang cánh thiếu — rất hay dùng ở hậu trung cuộc.</p><h2>Thế cờ</h2><p>Quân ngang nhau, Pháo đầu Đỏ khống chế, Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo sau bình 8</strong> dọa — chặt chẽ (Mã giữa thì Pháo chiếu, Xe tiến tuyệt sát — nhánh biến).</li><li>Mã nhảy lên — hiến Pháo, vì Xe Đỏ có nước dọa xuống đáy; Đen Pháo chạy qua lại.</li><li>Mã tới vị trí phục ngọa tào tuyệt sát — Đen không giải được. (Một đường khác cũng dẫn tới tuyệt sát — nhánh biến.)</li></ul><h2>Bài học</h2><p>Nhập cuộc là đưa quân cuối cùng vào đúng ô. Mỗi nước trên đường đi đều nên kèm một đe dọa để đối phương không kịp chuẩn bị.</p>",
+   "captions": {
+    "1": "Bình Pháo dọa — chặt chẽ.",
+    "3": "Mã nhảy — hiến Pháo.",
+    "5": "Mã tiến tiếp.",
+    "7": "Mã phục ngọa tào — tuyệt sát, Đỏ thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Mã giữa…",
+     "6": "Chiếu bí."
+    },
+    "1": {
+     "1": "Cũng có thể Mã 8 tiến 9…",
+     "7": "Tuyệt sát."
+    }
+   },
+   "fen": "c1b1kab2/4a4/4c1n2/p3C3p/2p6/P3P1r2/2P5P/N3C4/3RA4/2BK1AB2"
+  },
+  {
+   "order": 5230,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-nhap-cuoc-vi-du-2",
+   "title": "Chương 5 · Điều Quân Nhập Cuộc (Ví Dụ 2) — Tam Tử Quy Biên",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6f",
+   "summary": "Đỏ đang thủ; Xe Pháo Mã Đen vị trí đẹp, Tốt giữa rất mạnh. Đen tiến Tốt giữa trợ công, phi Pháo sang cánh — “ám độ Trần Thương” — ba quân dồn biên và thắng.",
+   "seo_title": "Điều Quân Nhập Cuộc: Tam Tử Quy Biên",
+   "seo_description": "Điều quân nhập cuộc: Đen tiến Tốt giữa, Pháo tiến cấm Sĩ, Pháo sang cánh trái thành tam tử quy biên, Xe Mã Pháo thắng.",
+   "content": "<h2>Thế cờ</h2><p>Quân ngang nhau nhưng Đỏ đang thủ; Xe Pháo Mã Đen vị trí đẹp, Tốt giữa rất mạnh. (Bản in ghi nước Tướng Đỏ trước; sơ đồ đã ở sau nước đó, nên bàn cờ bắt đầu từ nước của Đen.)</p><h2>Diễn biến</h2><ul><li>Tốt giữa tiến trợ công; Xe Đỏ tiến (Xe ăn Tốt thì Xe Đen chiếu ăn lại Xe, Đen ưu lớn — nhánh biến).</li><li>Đỏ bất đắc dĩ lên Sĩ; <strong>Pháo tiến cấm Sĩ</strong>, rồi Pháo sang cánh trái.</li><li><strong>Tam tử quy biên</strong>: Xe Mã Pháo dồn biên, Xe chiếu, Mã tiến — Đen thắng.</li></ul><h2>Bài học</h2><p>Ba quân tập trung một cánh khi cánh đó của đối phương không có quân giữ là đủ để kết thúc ván cờ.</p>",
+   "captions": {
+    "1": "Tốt giữa tiến trợ công.",
+    "3": "Tốt tiến tiếp.",
+    "4": "Bất đắc dĩ lên Sĩ.",
+    "5": "Pháo tiến cấm Sĩ.",
+    "11": "Pháo sang cánh — tam tử quy biên.",
+    "13": "Xe chiếu.",
+    "19": "Mã tiến — Đen thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe ăn Tốt…",
+     "5": "Đen sắp ăn lại Xe, chiếm ưu lớn."
+    }
+   },
+   "fen": "4ka3/4a4/2c1b4/p7N/4p1b2/P2R4P/3n3r1/4B4/4A1C2/2BAK4"
+  },
+  {
+   "order": 5240,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-quan-vi-du-1",
+   "title": "Chương 5 · Điều Quân Giành Quân (Ví Dụ 1) — Dương Đông Kích Tây",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6g",
+   "summary": "Đỏ hơn hai Tốt, Xe đang kiềm Xe Mã Đen, nhưng Pháo lộ 7 bị Mã Đen hạn chế. Đen bình Pháo ăn Tượng đáy, lui Pháo ăn quân — giương đông kích tây.",
+   "seo_title": "Điều Quân Giành Quân: Giương Đông Kích Tây",
+   "seo_description": "Điều quân giành quân: Đen bình Pháo ăn Tượng đáy phục lui Pháo ăn quân, Pháo đuổi Mã, Xe bắt Mã đổi quân, Đen nhiều quân thắng.",
+   "content": "<p>Điều quân giành quân: trong lúc điều quân tấn công, nắm chiến cơ đoạt quân — thường xuất hiện khi mình tương đối tiên thủ.</p><h2>Thế cờ</h2><p>Đỏ hơn hai Tốt, Xe đang kiềm Xe Mã Đen — trông như ưu; nhưng Pháo lộ 7 bị Mã Đen hạn chế không đi được. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo bình 8</strong> dọa; Pháo lui ăn Tượng đáy, phục lui Pháo ăn quân — giương đông kích tây.</li><li>Pháo bình đuổi Mã tấn công cánh; Xe tiến, Pháo trước bình 3.</li><li>Xe bắt Mã đổi quân chặt chẽ — Đen ưu; nhiều quân, có thế công, thắng.</li></ul><h2>Bài học</h2><p>Một quân bị kẹt của đối phương là mục tiêu cố định: điều quân sao cho mỗi nước vừa dọa chỗ khác vừa siết quân đó.</p>",
+   "captions": {
+    "1": "Bình Pháo dọa.",
+    "3": "Lui Pháo ăn Tượng đáy — giương đông kích tây.",
+    "5": "Bình Pháo đuổi Mã.",
+    "9": "Pháo trước bình 3.",
+    "13": "Xe bắt Mã đổi quân — Đen ưu.",
+    "25": "Đen nhiều quân, thắng."
+   },
+   "var_caps": {},
+   "fen": "3akab2/9/b1n1c4/2C1p3p/1R1n2r2/2P6/P3P1c1P/2N6/9/2BAKABN1"
+  },
+  {
+   "order": 5250,
+   "slug": "trung-cuoc-bao-dien-t1-dieu-quan-doat-quan-vi-du-2",
+   "title": "Chương 5 · Điều Quân Giành Quân (Ví Dụ 2) — Bẫy Đoạt Quân",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t6h",
+   "summary": "Xe Pháo Đen tập trung cánh trái chuẩn bị tập kích. Đỏ tiến Pháo dọa, dụ Pháo Đen ăn Tốt rồi rơi vào bẫy; Mã phế Tượng lão luyện, Đỏ đoạt quân thắng.",
+   "seo_title": "Điều Quân Giành Quân: Dụ Pháo Vào Bẫy",
+   "seo_description": "Điều quân giành quân: Pháo 6 tiến 1 dụ Pháo Đen ăn Tốt vào bẫy, Mã nhảy phế Tượng, đoạt quân và chắc thắng.",
+   "content": "<h2>Thế cờ</h2><p>Thế đối nhau; Xe Pháo Đen dồn cánh trái chuẩn bị tập kích trung lộ và cánh phải Đỏ. Đỏ đi — đã bày sẵn bẫy.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 6 tiến 1</strong> dọa ăn Xe Pháo, khiến Pháo Đen ăn Tốt rồi rơi vào bẫy. (Pháo lui thì Đỏ ưu — nhánh biến.)</li><li>Lên Sĩ, Xe bình giữa; Mã nhảy (Tượng lên thì Đỏ được quân — nhánh biến).</li><li><strong>Mã 5 tiến 3</strong> phế Tượng — lão luyện (Xe ăn Tượng thì Đỏ thắng nhanh — nhánh biến). Đỏ đoạt quân, chắc thắng.</li></ul><h2>Bài học</h2><p>Đoạt quân thường bắt đầu từ việc cho đối phương một miếng ăn dễ, rồi cắt đường lui của quân ăn.</p>",
+   "captions": {
+    "1": "Tiến Pháo — bày bẫy.",
+    "2": "Pháo ăn Tốt chiếu — vào bẫy.",
+    "5": "Xe bình giữa.",
+    "7": "Mã nhảy.",
+    "19": "Mã phế Tượng — lão luyện.",
+    "21": "Mã tiến.",
+    "23": "Đỏ đoạt quân, chắc thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo lui…",
+     "4": "Đỏ chiếm ưu."
+    },
+    "1": {
+     "1": "Nếu lên Tượng…",
+     "4": "Đỏ được quân."
+    },
+    "2": {
+     "1": "Nếu Xe ăn Tượng…",
+     "16": "Đỏ thắng."
+    }
+   },
+   "fen": "1rbakab2/9/2n6/p1p1p3p/1c4P2/PR3R3/2P1P1r1c/N2CC4/9/2BAKAB2"
+  },
+  {
+   "order": 5260,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-cau-hoa-vi-du-1",
+   "title": "Chương 5 · Bỏ Quân Cầu Hòa (Ví Dụ 1) — Ba Tốt Đối Mã Tốt",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t7a",
+   "summary": "Đỏ hơn hai Tốt nhưng quân Đen đẹp, Pháo công Mã, Mã trái có thế. Đỏ bỏ Mã lui Xe, lại bỏ Mã nữa — đưa về thế ba Tốt Sĩ Tượng toàn chắc hòa.",
+   "seo_title": "Bỏ Quân Cầu Hòa: Đưa Về Tàn Cuộc Chắc Hòa",
+   "seo_description": "Bỏ quân cầu hòa: Đỏ bỏ hai Mã, đổi Xe, giữ ba Tốt Sĩ Tượng toàn đối Mã Tốt Sĩ Tượng toàn — thế hòa chắc chắn.",
+   "content": "<p>Bỏ quân cầu hòa: khi rơi vào thế dưới, bỏ quân để hóa giải tiên thủ hoặc tiêu trừ thế công của đối phương, đưa về hòa — một chiến thuật phòng ngự tốt, gần với “bỏ quân giải vây”.</p><h2>Thế cờ</h2><p>Thế đối nhau; Đỏ hơn hai Tốt nhưng quân Đen vị trí đẹp: Pháo công Mã, Mã trái có thế. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 8 lui 3</strong> — bỏ Mã, chính xác; chạy Mã thì Đen nhảy ngọa tào (nhánh biến).</li><li>Đổi Xe; Đỏ lại bỏ Mã, Xe ăn Tốt — đơn giản (lui Mã thì Đỏ hơn Tốt nhưng Mã xấu, Đen dễ đi — nhánh biến).</li><li>Về tàn cuộc ba Tốt Sĩ Tượng toàn đối Mã Tốt Sĩ Tượng toàn — chắc hòa.</li></ul><h2>Bài học</h2><p>Biết tàn cuộc nào chắc hòa giúp ta tính được cái giá có thể trả để thoát thế bị công.</p>",
+   "captions": {
+    "1": "Lui Xe — bỏ Mã, chính xác.",
+    "2": "Pháo ăn Mã.",
+    "6": "Đổi Xe.",
+    "9": "Lại bỏ Mã, Xe ăn Tốt — đơn giản.",
+    "10": "Xe ăn Mã.",
+    "17": "Thế cờ chắc hòa."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Đen nhảy Mã ngọa tào…",
+     "2": "Mã lui phòng — Đen không còn đường đánh."
+    },
+    "1": {
+     "1": "Nếu lui Mã…",
+     "2": "Đỏ hơn Tốt nhưng Mã xấu, Đen dễ đi."
+    }
+   },
+   "fen": "1R1akab2/9/3cb4/6p2/n2r4p/C1PN5/P3P1n1P/4B1N2/4A4/2BAK4"
+  },
+  {
+   "order": 5270,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-cau-hoa-vi-du-2",
+   "title": "Chương 5 · Bỏ Quân Cầu Hòa (Ví Dụ 2) — Lui Xe Mời Đổi",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t7b",
+   "summary": "Xe Pháo Tốt Đen vị trí đẹp, Mã trái Đỏ khó tham chiến. Đỏ lui Xe mời đổi, bình Xe khống chế Tướng, bỏ Mã trái, tiến Tốt — buộc Đen trả quân, thành hòa.",
+   "seo_title": "Bỏ Quân Cầu Hòa: Bỏ Trước Lấy Sau",
+   "seo_description": "Bỏ quân cầu hòa: Đỏ lui Xe mời đổi, bỏ Mã trái, Tốt tiến trợ chiến buộc Đen trả lại quân, hai bên cân bằng.",
+   "content": "<h2>Thế cờ</h2><p>Thực lực tương đương nhưng Xe Pháo Tốt Đen vị trí đẹp, Mã trái Đỏ khó tham chiến — Đen ưu. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 8 lui 4</strong> mời đổi — chuẩn bị bỏ Mã cầu hòa, nước sáng suốt.</li><li>Xe bình khống chế Tướng; Đen ăn Mã (lên Tượng phòng Tốt thì Mã Đỏ nhảy, Đen bất lợi — nhánh biến).</li><li>Tốt tiến, Xe chiếu; Đen trả lại quân — hai bên cân bằng.</li></ul><h2>Bài học</h2><p>Bỏ trước lấy sau, lấy lui làm công: cái giá bỏ ra có thể đổi lấy thế cân bằng nếu đối phương phải trả lại.</p>",
+   "captions": {
+    "1": "Lui Xe mời đổi — sáng suốt.",
+    "3": "Xe bình khống chế Tướng.",
+    "4": "Xe ăn Mã.",
+    "5": "Tốt tiến trợ chiến.",
+    "7": "Xe chiếu.",
+    "10": "Hai bên cân bằng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lên Tượng phòng Tốt…",
+     "2": "Mã nhảy — Đen bất lợi."
+    }
+   },
+   "fen": "2ck1ab2/4a4/bR3c3/3PC4/p8/8P/P1r6/4B4/N3A1p2/2B1KA3"
+  },
+  {
+   "order": 5280,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-cau-hoa-vi-du-3",
+   "title": "Chương 5 · Bỏ Quân Cầu Hòa (Ví Dụ 3) — Bỏ Xe Giải Vây",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t7c",
+   "summary": "Song Xe Pháo Đen có thế công. Đỏ bình tĩnh bình Xe bắt Pháo, chuẩn bị bỏ Xe, rồi lui Pháo bắt Xe — giải vây, hai bên đồng ý hòa.",
+   "seo_title": "Bỏ Quân Cầu Hòa: Bỏ Xe Rồi Bắt Xe",
+   "seo_description": "Bỏ quân cầu hòa: Đỏ bình Xe bắt Pháo bỏ Xe, lui Pháo bắt Xe giải vây thế công song Xe Pháo, hai bên đồng ý hòa.",
+   "content": "<h2>Thế cờ</h2><p>Thực lực tương đương; song Xe Pháo Đen có thế công. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 1 bình 3</strong> bắt Pháo — chuẩn bị bỏ Xe; Pháo Đen ăn Xe chiếu.</li><li>Xe Đỏ ăn Pháo, Pháo lui bắt Xe; Xe Đen né, Sĩ lui.</li><li>Đổi chác giải vây thế công — hai bên đồng ý hòa.</li></ul><h2>Bài học</h2><p>Khi bị song Xe Pháo vây, trả lại một Xe để chặt quân công chủ chốt thường đủ để thoát.</p>",
+   "captions": {
+    "1": "Bình Xe bắt Pháo — chuẩn bị bỏ Xe.",
+    "2": "Pháo ăn Xe chiếu.",
+    "3": "Xe ăn Pháo.",
+    "5": "Pháo lui bắt Xe — giải vây.",
+    "12": "Hai bên đồng ý hòa."
+   },
+   "var_caps": {},
+   "fen": "1R1ckab2/4a4/4b4/p7R/9/P2CC4/4P1c2/4B4/4Ar3/2B1KA1r1"
+  },
+  {
+   "order": 5290,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-nhap-cuoc-vi-du-1",
+   "title": "Chương 5 · Bỏ Quân Nhập Cuộc (Ví Dụ 1) — Bỏ Xe Ăn Tượng",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t8a",
+   "summary": "Song Xe Đỏ dọa ăn Pháo Đen để hòa hoãn. Đen tương kế tựu kế: Pháo ăn Pháo đầu, bỏ Xe ăn Tượng biên — Xe song Pháo tạo thế sát cánh phải Đỏ.",
+   "seo_title": "Bỏ Quân Nhập Cuộc: Bỏ Xe Tạo Thế Sát",
+   "seo_description": "Bỏ quân nhập cuộc: Đen Pháo ăn Pháo đầu, bỏ Xe ăn Tượng biên, Xe song Pháo tạo thế sát cánh phải Đỏ, Đen thắng.",
+   "content": "<p>Bỏ quân nhập cuộc: ở thời khắc quan trọng, bỏ quân đột phá phòng tuyến đối phương để tạo thế sát — thường là những nước hấp dẫn nhất.</p><h2>Thế cờ</h2><p>Hai bên nhòm ngó nhau; song Xe Đỏ dọa ăn Pháo Đen để làm dịu thế cờ. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 2 bình 5 ăn Pháo đầu</strong>; Xe Đỏ ăn Xe.</li><li><strong>Pháo bình 9 ăn Tượng</strong> — bỏ Xe, tinh diệu ngoài dự đoán. Xe Đỏ lui, Pháo tiến chiếu, Sĩ lên, Xe bình 6.</li><li>Đỏ không ngăn được Pháo 7 bình 8 dọa sát — Đen thắng. (Mã lui thay Sĩ lên thì Đen được quân — nhánh biến.)</li></ul><h2>Bài học</h2><p>Bỏ quân nhập cuộc thành công khi số quân còn lại đủ tạo thế sát mà đối phương không đủ nhịp để phòng.</p>",
+   "captions": {
+    "1": "Pháo ăn Pháo đầu.",
+    "2": "Xe ăn Xe.",
+    "3": "Pháo ăn Tượng — bỏ Xe, tinh diệu.",
+    "5": "Pháo chiếu.",
+    "7": "Xe bình 6 — Đỏ không ngăn được đòn Pháo, Đen thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Mã lui…",
+     "8": "Đen được quân chắc thắng."
+    }
+   },
+   "fen": "1r1akab2/9/2n1b4/p1p1p3p/9/2P6/P3P1c1P/Nc1RC1N1B/7r1/1RBAKA3"
+  },
+  {
+   "order": 5300,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-nhap-cuoc-vi-du-2",
+   "title": "Chương 5 · Bỏ Quân Nhập Cuộc (Ví Dụ 2) — Bỏ Xe Phá Sĩ",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t8b",
+   "summary": "Song Xe Mã Pháo Đen đã chiếm hàng thứ hai của Đỏ. Đen bỏ Xe phá Sĩ, Tướng Đỏ rơi vào lưới bốn quân, Xe Mã chiếu liên hoàn đến bí.",
+   "seo_title": "Bỏ Quân Nhập Cuộc: Bỏ Xe Phá Sĩ, Xe Mã Liên Hoàn",
+   "seo_description": "Bỏ quân nhập cuộc: Đen bỏ Xe ăn Sĩ, Xe chiếu, Mã lui chiếu, Xe Mã liên hoàn đuổi Tướng Đỏ tới chiếu bí.",
+   "content": "<h2>Thế cờ</h2><p>Thế đối nhau; song Xe Mã Pháo Đen đã chiếm hàng thứ hai của Đỏ, uy hiếp rất lớn. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 6 bình 5 ăn Sĩ</strong> — bỏ Xe phá Sĩ, tinh xảo.</li><li>Sĩ ăn Xe; Xe Đen ăn Sĩ chiếu, Tướng chạy.</li><li>Xe Mã chiếu liên hoàn, đuổi Tướng Đỏ qua lại — chiếu bí.</li></ul><h2>Bài học</h2><p>Khi bốn quân đã áp sát, một nước bỏ quân phá lớp bảo vệ cuối cùng thường là nước kết thúc.</p>",
+   "captions": {
+    "1": "Bỏ Xe ăn Sĩ — tinh xảo.",
+    "2": "Sĩ ăn Xe.",
+    "3": "Xe ăn Sĩ chiếu.",
+    "7": "Mã lui chiếu.",
+    "11": "Mã chiếu.",
+    "15": "Xe ăn Xe.",
+    "25": "Chiếu bí."
+   },
+   "var_caps": {},
+   "fen": "2b1k4/4a4/3ab4/2PNp3p/p4R3/4PC3/P8/4B4/3rAr1nc/2B1KAR2"
+  },
+  {
+   "order": 5310,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-nhap-cuoc-vi-du-3",
+   "title": "Chương 5 · Bỏ Quân Nhập Cuộc (Ví Dụ 3) — Song Xe Pháo Cánh Phải",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t8c",
+   "summary": "Cánh phải Đen trống. Đỏ đi trước, bỏ Pháo, chuyển Xe sang cánh trái, tạo thế sát song Xe Pháo — Đen không chống nổi.",
+   "seo_title": "Bỏ Quân Nhập Cuộc: Song Xe Pháo Đánh Cánh Trống",
+   "seo_description": "Bỏ quân nhập cuộc: Đỏ Xe chiếu, chuyển Xe, Pháo ăn Sĩ ăn Tượng, Pháo chiếu rút, song Xe Pháo thắng cánh phải trống của Đen.",
+   "content": "<h2>Thế cờ</h2><p>Thực lực ngang nhau nhưng cánh phải Đen trống, bị song Xe Pháo Tốt Đỏ uy hiếp. Đỏ đi.</p><h2>Diễn biến</h2><ul><li>Xe chiếu, Đen lui Sĩ; Xe chuyển sang, Pháo bình 6.</li><li>Đen buộc lui Tượng (để Xe trái sang giữ); <strong>Pháo ăn Sĩ</strong>, Pháo bình ăn Tượng, Tướng chạy (Xe bình 3 thì Đỏ vẫn chiếu rút — nhánh biến).</li><li>Pháo lui, Xe bình 1 — song Xe Pháo thắng.</li></ul><h2>Bài học</h2><p>Khi một cánh của đối phương trống, bỏ một quân để kéo quân giữ còn lại khỏi đó là đủ mở đường cho song Xe.</p>",
+   "captions": {
+    "1": "Xe chiếu.",
+    "3": "Chuyển Xe.",
+    "6": "Lui Tượng — bất đắc dĩ.",
+    "7": "Pháo ăn Sĩ.",
+    "9": "Pháo ăn Tượng.",
+    "11": "Pháo ăn Tượng.",
+    "13": "Pháo lui chiếu.",
+    "17": "Song Xe Pháo thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe bình 3…",
+     "2": "Pháo ăn Tượng — vẫn có chiếu rút."
+    }
+   },
+   "fen": "4kabr1/4a4/4b2C1/pR5Rp/2p1P1p2/4r4/2n1n1P1P/C8/4A4/2BAK1B2"
+  },
+  {
+   "order": 5320,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-quan-vi-du-1",
+   "title": "Chương 5 · Bỏ Quân Giành Quân (Ví Dụ 1) — Tốt Qua Sông, Hiến Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9a",
+   "summary": "Hai bên giao chiến ở sông. Đỏ tương kế tựu kế, tiến Tốt bỏ Pháo, đổi Xe, đẩy Tốt dồn dập, hiến Xe tuyệt diệu — ăn lại Pháo Mã, thế thắng đã định.",
+   "seo_title": "Bỏ Quân Giành Quân: Bỏ Pháo, Tốt Dồn, Hiến Xe",
+   "seo_description": "Bỏ quân giành quân: Đỏ tiến Tốt bỏ Pháo, đổi Xe, Tốt qua sông dồn dập, hiến Xe tuyệt diệu, ăn lại Pháo Mã thắng thế.",
+   "content": "<p>Bỏ quân giành quân: khi đang chủ động, bỏ một hoặc vài quân để ép đổi theo kế hoạch, cuối cùng đoạt được nhiều quân hơn.</p><h2>Thế cờ</h2><p>Quân đủ, giao chiến ở sông. Pháo lộ 8 Đen kiềm Pháo Mã tuần hà Đỏ, chực tiến Tốt 3 tranh tiên. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Tốt 7 tiến 1</strong> — bỏ Pháo. Pháo Đen ăn Pháo, Xe đổi Xe.</li><li>Tốt Đỏ tiến dồn dập qua sông, Xe bình giữ Tốt; Tốt bình 6 — hung, phục Xe xuống chiếu.</li><li><strong>Xe 7 bình 8</strong> hiến Xe — tuyệt diệu, Pháo Đen không dám ăn (ăn thì Đỏ Mã ăn lại Xe, nhiều quân). Mã ăn Mã, Tốt ăn Mã, Xe ăn Pháo — thắng định.</li></ul><h2>Bài học</h2><p>Bỏ quân để có nhịp đẩy Tốt chỉ hiệu quả khi Tốt đó thật sự đe dọa. Đếm các mối đe dọa trước khi bỏ.</p>",
+   "captions": {
+    "1": "Tiến Tốt — bỏ Pháo.",
+    "2": "Pháo ăn Pháo.",
+    "3": "Xe ăn Xe.",
+    "4": "Xe ăn Xe.",
+    "15": "Tốt bình 6 — hung.",
+    "17": "Hiến Xe — tuyệt diệu.",
+    "19": "Mã ăn Mã.",
+    "21": "Tốt ăn Mã chiếu.",
+    "23": "Xe ăn Pháo — thế thắng đã định."
+   },
+   "var_caps": {},
+   "fen": "2baka1r1/7r1/1cn1b1n2/p3p3p/2p3p2/1CPN3c1/P3P1P1P/3CB1N2/R8/2BAKA1R1"
+  },
+  {
+   "order": 5330,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-quan-vi-du-2",
+   "title": "Chương 5 · Bỏ Quân Giành Quân (Ví Dụ 2) — Mã Miệng Tượng, Mã Ngọa Tào",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9b",
+   "summary": "Mỗi bên đánh một cánh. Đỏ nhảy Mã vào miệng Tượng, rồi Mã ngọa tào phát động thế công, lui Xe bắt đôi đòi lại quân.",
+   "seo_title": "Bỏ Quân Giành Quân: Mã Miệng Tượng Rồi Ngọa Tào",
+   "seo_description": "Bỏ quân giành quân: Đỏ nhảy Mã vào miệng Tượng, Mã ngọa tào, Xe lui bắt đôi đòi lại quân, Mã ăn Mã, Xe ăn Pháo.",
+   "content": "<h2>Thế cờ</h2><p>Thế đối nhau, mỗi bên tấn công một cánh. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Mã 7 tiến 9</strong> vào miệng Tượng — Tượng ăn Mã.</li><li>Mã ngọa tào phát động thế công; <strong>Xe lui bắt đôi</strong> đòi lại quân.</li><li>Mã ăn Mã, Xe ăn Pháo — “bỏ quân giành quân” thành công.</li></ul><h2>Bài học</h2><p>Bỏ một Mã để Mã kia vào ô then chốt có thể tạo ra bắt đôi lấy lại nhiều hơn.</p>",
+   "captions": {
+    "1": "Mã vào miệng Tượng.",
+    "2": "Tượng ăn Mã.",
+    "3": "Mã ngọa tào.",
+    "5": "Xe lui bắt đôi.",
+    "7": "Mã ăn Mã.",
+    "11": "Xe ăn Pháo — thành công."
+   },
+   "var_caps": {},
+   "fen": "2b1ka3/n3a4/4b4/C1N6/3Np1p1p/P1P2R3/6c1n/4BC1r1/4A4/4KAB1c"
+  },
+  {
+   "order": 5340,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-quan-vi-du-3",
+   "title": "Chương 5 · Bỏ Quân Giành Quân (Ví Dụ 3) — Điệu Hổ Ly Sơn",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9c",
+   "summary": "Đen thiếu Tượng nhưng Mã dọa ăn Tốt ăn Pháo. Đỏ bỏ Xe — “điệu hổ ly sơn” — kéo Xe Đen đi, Mã ngọa tào, lui Pháo dọa sát, đoạt lại Xe.",
+   "seo_title": "Bỏ Quân Giành Quân: Điệu Hổ Ly Sơn",
+   "seo_description": "Bỏ quân giành quân: Đỏ bỏ Xe kéo Xe Đen rời chỗ, Mã ngọa tào, Pháo lui dọa sát buộc Đen bỏ Xe, Đỏ hơn quân chắc thắng.",
+   "content": "<h2>Thế cờ</h2><p>Thực lực ngang; Đen thiếu Tượng nhưng Mã lộ 3 dọa ăn Tốt ăn Pháo. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Xe 7 tiến 2</strong> — bỏ Xe, điệu hổ ly sơn. Tốt Đen ăn Sĩ chiếu, Sĩ ăn Tốt.</li><li>Xe Đen phải rời chỗ ăn Xe, nhường đường cho Mã Đỏ; Mã tiến chiếu, Tướng chạy.</li><li><strong>Pháo lui dọa sát</strong>; Đen buộc bỏ Xe (Tướng lên thì Đỏ thắng — nhánh biến). Mã ăn Xe — Đỏ hơn quân chắc thắng.</li></ul><h2>Bài học</h2><p>Kéo quân phòng thủ chủ chốt của đối phương đi chỗ khác — dù phải trả bằng Xe — có thể mở ra đòn sát lấy lại nhiều hơn.</p>",
+   "captions": {
+    "1": "Bỏ Xe — điệu hổ ly sơn.",
+    "2": "Tốt ăn Sĩ chiếu.",
+    "4": "Xe ăn Xe.",
+    "5": "Mã chiếu.",
+    "7": "Pháo lui dọa sát.",
+    "8": "Đen bất đắc dĩ bỏ Xe.",
+    "9": "Mã ăn Xe — Đỏ hơn quân chắc thắng."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Tướng lên…",
+     "8": "Chiếu bí — Đỏ thắng."
+    }
+   },
+   "fen": "4kab2/2n1a1c2/1c5r1/pC1P3Np/2R6/9/P3N3P/4B3B/4Ap3/4KA3"
+  },
+  {
+   "order": 5350,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-the-vi-du-1",
+   "title": "Chương 5 · Bỏ Quân Giành Thế (Ví Dụ 1) — Bỏ Mã Tấn Công Tướng",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9d",
+   "summary": "Đỏ hơn Tốt đầu nhưng kết cấu Đen đẹp hơn. Đen bỏ Mã ăn Tốt đầu, song Xe song Pháo tấn công Tướng Đỏ, cuối cùng bỏ Xe chiếu — Đỏ khó đỡ.",
+   "seo_title": "Bỏ Quân Giành Thế: Bỏ Mã Song Xe Song Pháo Công",
+   "seo_description": "Bỏ quân giành thế: Đen bỏ Mã ăn Tốt đầu, Pháo chiếu, song Xe song Pháo công Tướng, Xe vào tuyến Tốt bỏ Xe dọa, Đỏ khó ứng phó.",
+   "content": "<p>Bỏ quân giành thế: bỏ quân để đổi lấy ưu thế lớn hơn nhiều so với giá trị quân bỏ ra.</p><h2>Thế cờ</h2><p>Quân mạnh ngang; Đỏ hơn Tốt đầu nhưng kết cấu quân Đen đẹp hơn, đã thành thế phản công. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Mã 6 tiến 5 ăn Tốt đầu</strong> — bỏ Mã cướp công. (Xe Đỏ lui thì Đen vẫn ưu — nhánh biến.)</li><li>Pháo chiếu tiếp nối; Đỏ lên Sĩ (Sĩ khác thì Đen có thế sát — nhánh biến).</li><li>Song Xe song Pháo dồn Tướng; cuối cùng <strong>Xe vào tuyến Tốt, bỏ Xe dọa</strong> — Đỏ khó ứng phó.</li></ul><h2>Bài học</h2><p>Giá trị của quân bỏ ra phải được đo bằng sức ép lên Tướng đối phương sau đó, không bằng số quân trên bàn.</p>",
+   "captions": {
+    "1": "Bỏ Mã ăn Tốt đầu — cướp công.",
+    "2": "Mã ăn Mã.",
+    "3": "Pháo chiếu.",
+    "5": "Pháo ăn Tượng chiếu.",
+    "11": "Xe xuống đáy.",
+    "23": "Xe vào tuyến Tốt — bỏ Xe dọa, Đỏ khó ứng phó."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe lui 3…",
+     "10": "Đen ưu."
+    },
+    "1": {
+     "1": "Nếu Sĩ 5 tiến 4…",
+     "4": "Đen có thế công."
+    }
+   },
+   "fen": "2r1kabr1/4a4/4b4/p4R2p/4cnpc1/9/PC2P1P2/4B1N2/N2R5/2BAKA3"
+  },
+  {
+   "order": 5360,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-the-vi-du-2",
+   "title": "Chương 5 · Bỏ Quân Giành Thế (Ví Dụ 2) — Bỏ Xe Ăn Mã",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9e",
+   "summary": "Mới đổi một Tốt; Mã Pháo Đỏ phong Xe, Xe Đỏ qua hà kiềm Xe Pháo Đen — trông Đen bất lợi. Đen bỏ Xe ăn Mã, bình Pháo đuổi Xe, điều quân giành thế.",
+   "seo_title": "Bỏ Quân Giành Thế: Bỏ Xe Ăn Mã Mở Thế",
+   "seo_description": "Bỏ quân giành thế: Đen Pháo ăn Mã bỏ Xe, bình Pháo đuổi Xe, Mã lui, Pháo bình 3, Xe ra — Đen chiếm ưu.",
+   "content": "<h2>Thế cờ</h2><p>Hai bên mới đổi một Tốt. Cánh trái Đỏ có Mã Pháo phong Xe, cánh phải có Xe qua hà kiềm Xe Pháo Đen — trông Đen bất lợi. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 8 tiến 3 ăn Mã</strong> — bỏ Xe, hung hãn. Xe Đỏ ăn Xe.</li><li>Pháo bình đuổi Xe; Đỏ buộc lui Xe ăn Pháo (Xe bình 1 thì Mã Đen ăn Tượng, tam tử quy biên — nhánh biến).</li><li>Mã lui, Pháo bình 3, Xe ra — Đen chiếm ưu.</li></ul><h2>Bài học</h2><p>Khi bị kiềm chặt, bỏ quân lớn để phá thế kiềm và giành nhịp có thể là cách duy nhất để quân còn lại hoạt động.</p>",
+   "captions": {
+    "1": "Pháo ăn Mã — bỏ Xe.",
+    "2": "Xe ăn Xe.",
+    "3": "Bình Pháo đuổi Xe.",
+    "4": "Lui Xe ăn Pháo.",
+    "7": "Pháo bình 3.",
+    "11": "Đen chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe bình 1…",
+     "2": "Mã ăn Tượng — tam tử quy biên, Đen ưu lớn."
+    }
+   },
+   "fen": "3rkabr1/4a4/2n1b2c1/p1p1p2Rp/6c2/1CPN3N1/P3P1n1P/4C3B/9/R1BAKA3"
+  },
+  {
+   "order": 5370,
+   "slug": "trung-cuoc-bao-dien-t1-phe-quan-doat-the-vi-du-3",
+   "title": "Chương 5 · Bỏ Quân Giành Thế (Ví Dụ 3) — Bỏ Pháo Ăn Tượng",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t9f",
+   "summary": "Sau 21 hiệp, quân và Tốt ngang nhau. Đỏ bỏ Pháo ăn Tượng, phơi Tượng giữa của Đen, buộc Mã Đen về cản — rồi Mã ăn Tượng, Xe ăn Mã, Đỏ ưu lớn.",
+   "seo_title": "Bỏ Quân Giành Thế: Bỏ Pháo Ăn Tượng Phá Thủ",
+   "seo_description": "Bỏ quân giành thế: Đỏ Pháo ăn Tượng phá kết cấu phòng thủ, Mã tiến ăn Tượng, Xe ăn Mã, Pháo bình giữa — ưu thế lớn.",
+   "content": "<h2>Thế cờ</h2><p>Hình thành sau 21 hiệp; quân và Tốt ngang nhau. Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo 7 tiến 4 ăn Tượng</strong> — bỏ Pháo, phá kết cấu phòng thủ. (Đen Tốt ăn Pháo thì Đỏ ưu lớn — nhánh biến.)</li><li>Mã Đen về cản trung lộ; Pháo bình 8, <strong>Mã tiến ăn Tượng</strong> — chặt chẽ.</li><li>Xe trước ăn Mã, Pháo ăn Tốt — Đỏ ưu lớn.</li></ul><h2>Bài học</h2><p>Tượng giữa là nút liên kết phòng thủ. Bỏ quân để phá nút đó thường đáng giá.</p>",
+   "captions": {
+    "1": "Pháo ăn Tượng — bỏ Pháo phá thủ.",
+    "2": "Mã về cản trung lộ.",
+    "5": "Mã tiến.",
+    "7": "Xe ăn Mã.",
+    "9": "Pháo ăn Tốt.",
+    "11": "Đỏ ưu thế lớn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Tốt ăn Pháo…",
+     "8": "Đỏ chiếm ưu thế lớn."
+    }
+   },
+   "fen": "4ka3/4a1c2/2n1b1nrc/p1p2R3/2b1p4/3r2P2/P1N2R2P/4C1N2/2C1A4/2BAK1B2"
+  },
+  {
+   "order": 5380,
+   "slug": "trung-cuoc-bao-dien-t1-loi-dung-luat-co-vi-du-1",
+   "title": "Chương 5 · Tận Dụng Luật Cờ (Ví Dụ 1) — Trường Bắt Xe",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t10a",
+   "summary": "Đỏ kém quân nhưng có thế công. Đen dùng nước “trường bắt” Xe — luật cho phép — buộc Đỏ (đang “trường đánh” bị cấm) phải đổi nước và mất Xe.",
+   "seo_title": "Tận Dụng Luật Cờ: Trường Bắt Xe Ép Đối Phương Đổi Nước",
+   "seo_description": "Tận dụng luật cờ: Đen lặp nước bắt Xe hợp lệ, Đỏ lặp nước dọa quân bị cấm nên phải đổi nước, mất Xe, Đen nhiều quân chiếm ưu.",
+   "content": "<p>Nắm luật giúp rất nhiều trong thực chiến: (1) khi kém thế, ép đổi và lợi dụng quy định “bất biến thành hòa”; (2) khi ưu thế, luật có thể giúp mở rộng tiên thủ; (3) phòng thủ ngoan cường — theo luật, 60 nước không ăn quân có thể xử hòa (ví dụ Xe Mã Tốt không thắng nổi Xe Sĩ Tượng toàn nếu bên công đánh không chính xác); (4) khi thời gian gấp: nếu đối phương ít thời gian, chọn nước phức tạp.</p><h2>Thế cờ</h2><p>Đỏ kém quân nhưng có thế công, chực Pháo ăn Tượng hoặc lui Pháo ăn Mã. Đen đi.</p><h2>Diễn biến</h2><ul><li>Đen <strong>Xe bình bắt Xe Đỏ lặp đi lặp lại</strong> — “trường bắt” Xe để giải vây, luật cho phép.</li><li>Đỏ né Xe nhưng các nước đó dọa ăn Tượng/Mã — thuộc “trường đánh”, bị cấm; Đỏ phải đổi nước.</li><li>Đỏ Pháo ăn Tượng, Xe Đen ăn Xe — Đen nhiều quân chiếm ưu lớn.</li></ul><h2>Bài học</h2><p>Hiểu luật lặp nước giúp ta biết khi nào bên mình được lặp và đối phương bắt buộc phải đổi.</p>",
+   "captions": {
+    "1": "Xe bắt Xe — bắt đầu “trường bắt”.",
+    "8": "Lặp lại lần bốn.",
+    "11": "Đỏ không được lặp tiếp nữa.",
+    "12": "Pháo ăn Tượng chiếu — bắt buộc đổi nước.",
+    "13": "Xe ăn Xe.",
+    "14": "Đen nhiều quân, chiếm ưu lớn."
+   },
+   "var_caps": {},
+   "fen": "R1C1k1b2/1r2a3c/4c1n2/p3p3p/5rp2/3R5/P3P1P1P/4B1N2/4A4/2BAK4"
+  },
+  {
+   "order": 5390,
+   "slug": "trung-cuoc-bao-dien-t1-loi-dung-luat-co-vi-du-2",
+   "title": "Chương 5 · Tận Dụng Luật Cờ (Ví Dụ 2) — Liên Hoàn Bắt Có Nước Chờ",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t10b",
+   "summary": "Đen kém quân nhưng đi trước, dùng Xe Mã liên hoàn bắt Pháo Đỏ; trong chuỗi có nước Mã lui là “nước chờ” hợp lệ, nên không bị coi là trường bắt — hai bên bất biến thành hòa.",
+   "seo_title": "Tận Dụng Luật Cờ: Liên Hoàn Bắt Và Nước Chờ",
+   "seo_description": "Tận dụng luật cờ: Xe Mã Đen liên hoàn bắt Pháo, có nước Mã lui là nước chờ hợp lệ, Đỏ không có đường khác, bất biến thành hòa.",
+   "content": "<h2>Thế cờ</h2><p>Đen kém quân nhưng đi trước.</p><h2>Diễn biến</h2><ul><li>Xe bắt Pháo — bắt đầu kế hoạch bắt quân liên hoàn; Pháo Đỏ chạy qua lại.</li><li>Xe và Mã luân phiên đe ăn Pháo; nước <strong>Mã 8 lui 6</strong> là “nước chờ” — được phép, nên chuỗi này không phải “trường bắt”.</li><li>Sau 10 nước, thế cờ trở về như cũ; Đỏ không có đường khác dù nhiều quân — bất biến thành hòa.</li></ul><h2>Bài học</h2><p>Theo luật, “bắt” là đe ăn quân ở nước sau; chuỗi bắt có xen nước chờ hợp lệ thì không bị xử thua.</p>",
+   "captions": {
+    "1": "Xe bắt Pháo — bắt đầu chuỗi.",
+    "3": "Mã lui — nước chờ hợp lệ.",
+    "5": "Xe bắt Pháo.",
+    "11": "Lặp lại.",
+    "19": "Thế cờ trở về như cũ — bất biến thành hòa."
+   },
+   "var_caps": {},
+   "fen": "2bak1r2/4a2C1/c3b4/4p2np/p5p2/3R5/2N1P1P1P/4B1N2/9/2BAKA3"
+  },
+  {
+   "order": 5400,
+   "slug": "trung-cuoc-bao-dien-t1-loi-dung-luat-co-vi-du-3",
+   "title": "Chương 5 · Tận Dụng Luật Cờ (Ví Dụ 3) — Hai Đánh Đối Hai Đánh",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t10c",
+   "summary": "Đen kém thế muốn tạo thế “hai đánh đối hai đánh” để hòa. Nhưng theo luật mới, khi Đỏ dùng Xe Pháo liên thủ bắt, Đen phải đổi nước — Đỏ nắm chủ động.",
+   "seo_title": "Tận Dụng Luật Cờ: Hai Đánh Đối Hai Đánh Theo Luật Mới",
+   "seo_description": "Tận dụng luật cờ: Đen Pháo ăn Sĩ, Xe Mã đánh qua lại; theo luật mới Đen phải đổi nước vì Đỏ Xe Pháo liên thủ bắt, Đỏ chủ động.",
+   "content": "<h2>Thế cờ</h2><p>Đỏ nhiều Tốt chiếm ưu; Đen đi, đang kém thế.</p><h2>Diễn biến</h2><ul><li>Đen <strong>Pháo ăn Sĩ</strong>; Xe Đỏ xuống chiếu, Sĩ lui; Xe Đỏ tránh Mã.</li><li>Mã Đen tiến lui đe bắt Xe, Xe Đỏ bình qua lại vừa tránh vừa dọa Pháo đánh Sĩ.</li><li>Luật cũ: “hai đánh đối hai đánh” thì hòa. Luật mới: Đỏ dùng Xe Pháo liên thủ bắt, Đen bắt buộc đổi nước — sau đó Đỏ nắm hoàn toàn chủ động.</li></ul><h2>Bài học</h2><p>Luật cờ thay đổi theo thời gian. Biết luật hiện hành giúp tránh tính toán sai về khả năng cầu hòa.</p>",
+   "captions": {
+    "1": "Pháo ăn Sĩ.",
+    "2": "Xe chiếu.",
+    "5": "Mã tiến — phục Tượng bắt Xe.",
+    "7": "Mã lui bắt Xe.",
+    "11": "Theo luật mới, Đen phải đổi nước."
+   },
+   "var_caps": {},
+   "fen": "C3kab1r/r3a4/2n1b1n2/2p5p/6p2/2P6/P3P1P1P/1c2CAN2/9/1RBAK1BR1"
+  },
+  {
+   "order": 5410,
+   "slug": "trung-cuoc-bao-dien-t1-loi-dung-luat-co-vi-du-4",
+   "title": "Chương 5 · Tận Dụng Luật Cờ (Ví Dụ 4) — Một Chặn Một Chiếu",
+   "level": "trung-cap",
+   "draft": "t1-ch05#c5-t10d",
+   "summary": "Hai bên đều có thế sát. Đỏ ra Tướng vừa giải vừa dọa; Đen chiếu rồi dọa xen kẽ — luật không cho “một chặn một chiếu” mãi, Đen phải đổi nước và thua.",
+   "seo_title": "Tận Dụng Luật Cờ: Cấm Một Chặn Một Chiếu",
+   "seo_description": "Tận dụng luật cờ: Đỏ ra Tướng, Đen Xe chiếu rồi dọa xen kẽ bị luật cấm lặp, Đen phải đổi nước, Đỏ ăn Sĩ chiếu nhanh chóng thắng.",
+   "content": "<h2>Thế cờ</h2><p>Hai bên đều có thế sát, Đỏ đi.</p><h2>Diễn biến</h2><ul><li><strong>Tướng 5 bình 6</strong> vừa giải vừa dọa; Xe Đen chiếu, rồi bình lại dọa — lặp nhiều lần.</li><li>Luật không cho “một chặn một chiếu” lặp mãi: Đen phải đổi nước.</li><li>Đen đổi nước, Đỏ Tốt ăn Sĩ chiếu, Xe ăn Sĩ chiếu — nhanh chóng thắng.</li></ul><h2>Bài học</h2><p>Biết luật cấm lặp của đối phương giúp ta chọn chuỗi nước khiến họ buộc phải từ bỏ cách phòng thủ tốt nhất.</p>",
+   "captions": {
+    "1": "Ra Tướng — vừa giải vừa dọa.",
+    "2": "Xe chiếu.",
+    "4": "Bình Xe dọa.",
+    "8": "Lặp lần bốn — Đen phải đổi nước.",
+    "10": "Đổi nước.",
+    "11": "Tốt ăn Sĩ chiếu.",
+    "13": "Xe ăn Sĩ chiếu — Đỏ thắng nhanh."
+   },
+   "var_caps": {},
+   "fen": "CR1aka3/5P3/4b4/9/2r3b2/P3c4/5p3/4B4/4A4/4KA3"
+  }
+ ]
+}
