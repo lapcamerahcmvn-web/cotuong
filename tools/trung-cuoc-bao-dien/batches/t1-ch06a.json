@@ -1,0 +1,409 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+  "slug": "trung-cuoc-bao-dien-tap-1"
+ },
+ "lessons": [
+  {
+   "order": 6010,
+   "slug": "trung-cuoc-bao-dien-t1-chien-phap-tran-thuc-trung-cuoc",
+   "title": "Chương 6 · Chiến Pháp Trận Thức Trung Cuộc — Tổng Quan",
+   "level": "trung-cap",
+   "summary": "Chương 6 áp dụng lý luận năm chương trước vào các hệ thống khai cuộc cụ thể: theo dõi trọn ván danh thủ từ khai cuộc, qua trung cuộc, tới tàn cuộc, để thấy trận thức nào dẫn tới kiểu trung cuộc nào.",
+   "seo_title": "Chiến Pháp Trận Thức Trung Cuộc Cờ Tướng",
+   "seo_description": "Chương 6 Trung Cuộc Bảo Điển Tập 1: đấu pháo cục (thuận pháo, liệt pháo), quá cung pháo, sĩ giác pháo… qua các ván danh thủ trọn vẹn từ khai cuộc tới tàn cuộc.",
+   "content": "<h2>Từ khai cuộc tới trung cuộc</h2><p>Năm chương đầu trình bày khái luận, thẩm cục, tư tưởng chiến lược, mục tiêu và chiến thuật trung cuộc. Chương 6 áp dụng chúng vào <strong>chiến pháp theo từng trận thức</strong>: mỗi hệ thống khai cuộc dẫn tới một kiểu trung cuộc riêng.</p><h2>Tiết 1 — Đấu pháo cục</h2><p>Khi cả hai bên đều mở Pháo đầu gọi là “đấu pháo cục”. Tùy vị trí hai Pháo mà chia ra <strong>thuận pháo</strong> (cùng phía) và <strong>liệt pháo</strong> (ngược phía). Đặc điểm: tính đối công rất mạnh, lấy công đáp công, mong thắng nhanh; giai đoạn khai cuộc đã rất căng, sơ suất một chút là thua.</p><p>Các bài tiếp theo là những ván danh thủ tiêu biểu: thuận pháo trực xe đối hoành xe, đối chậm khai xe, thuận pháo hoành xe đối trực xe, trung pháo đối tả pháo phong xe chuyển liệt pháo, trung pháo đối tam bộ hổ, liệt thủ pháo, quá cung pháo, sĩ giác pháo… Mỗi bài theo dõi trọn ván: khai cuộc → trung cuộc → tàn cuộc.</p>"
+  },
+  {
+   "order": 6020,
+   "slug": "trung-cuoc-bao-dien-t1-thuan-phao-truc-xe-doi-hoanh-xe",
+   "title": "Chương 6 · Thuận Pháo Trực Xe Đối Hoành Xe — Lữ Khâm vs Hồ Vinh Hoa (1992)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-1",
+   "summary": "Thuận pháo trực xe lưỡng đầu xà đối song hoành xe. Lữ Khâm (Đỏ) đánh chắc vì chỉ cần hòa; Hồ Vinh Hoa đổi Pháo kém hiệu quả, rồi bổ Sĩ sai — Đỏ hơn Tốt hơn Tượng thắng.",
+   "seo_title": "Thuận Pháo Trực Xe Đối Hoành Xe — Lữ Khâm Thắng Hồ Vinh Hoa",
+   "seo_description": "Ván Ngũ Dương Bôi 1992: thuận pháo trực xe lưỡng đầu xà đối song hoành xe, Đỏ đánh chắc, Đen bổ Sĩ sai, Đỏ hơn Tốt hơn Tượng thắng.",
+   "content": "<h2>Khai cuộc</h2><p>Giải “Ngũ Dương Bôi” lần 13 (1992), Lữ Khâm (Đỏ) gặp Hồ Vinh Hoa. Thế “thuận pháo trực xe lưỡng đầu xà đối song hoành xe”: song Mã Đỏ thông, Đen nhanh chóng ra hai Xe, sẵn sàng phản kích.</p><h2>Trung cuộc</h2><ul><li>Đỏ <strong>lên Sĩ</strong> — chắc chắn; cuối giải, Lữ hơn điểm nhiều, hòa cũng có lợi, nên tư tưởng là đánh chắc tiến chắc.</li><li>Đen đổi Pháo kém hiệu quả; Pháo lui thì thành thế hỗn chiến mỗi bên có cái kỵ (nhánh biến). Đen Xe bình bắt Pháo là cải tiến; Xe bình 1 thì Đỏ có đường thắng dài (nhánh biến).</li><li>Đen lui Xe phòng Đỏ dùng Xe đổi hai quân; bình Pháo cầu biến vì muốn thắng.</li><li>Nước 26 Đen <strong>bổ Sĩ</strong> định bỏ trước lấy sau — dễ bất lợi; nên Xe tiến 7 để giữ thế (nhánh biến). Đỏ lui Xe khóa Xe Mã Đen.</li></ul><h2>Tàn cuộc</h2><p>Đỏ hơn Tốt hơn Tượng chiếm ưu; Đen hết giờ và thua.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "12": "Hết khai cuộc (Hình 1): thuận pháo trực xe lưỡng đầu xà đối song hoành xe.",
+    "13": "Lên Sĩ — đánh chắc tiến chắc.",
+    "24": "Đổi Pháo — hiệu quả không tốt.",
+    "26": "Xe bình bắt Pháo — cải tiến của Đen.",
+    "36": "Lui Xe — phòng Xe đổi hai quân.",
+    "44": "Bình Pháo cầu biến.",
+    "52": "Bổ Sĩ — dễ bất lợi.",
+    "61": "Lui Xe khóa Xe Mã — vững chắc; vào tàn cuộc.",
+    "69": "Xe ăn Mã.",
+    "77": "Hình 2: Đỏ hơn Tốt hơn Tượng, Đen hết giờ thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo lui 1…",
+     "7": "Mỗi bên có cái kỵ — hỗn chiến."
+    },
+    "1": {
+     "1": "Nếu Xe bình 1…",
+     "26": "Đỏ thắng."
+    },
+    "2": {
+     "1": "Nên Xe tiến 7…",
+     "5": "Thế ổn định, Đen chống được."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6030,
+   "slug": "trung-cuoc-bao-dien-t1-thuan-phao-truc-xe-doi-cham-khai-xe",
+   "title": "Chương 6 · Thuận Pháo Trực Xe Đối Chậm Khai Xe — Bốc Phong Ba vs Lý Lai Quần (1991)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-2",
+   "summary": "Đen ra Xe chậm, bình Pháo ăn Tốt — nước mới. Đỏ tùy tiện bình Pháo để lộ hai Tượng rời rạc; Lý Lai Quần tiến Xe mời đổi, bỏ quân và dùng Xe song Pháo tấn công thắng.",
+   "seo_title": "Thuận Pháo Đối Chậm Khai Xe — Lý Lai Quần Bỏ Mã Thắng",
+   "seo_description": "Ván giải Cá nhân 1991: thuận pháo trực xe đối chậm khai xe, Đen khai thác hai Tượng rời rạc, bỏ Mã, Xe song Pháo công kích, chiếu ăn Xe thắng.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Cá nhân toàn quốc 1991, Bốc Phong Ba (Đỏ) gặp Lý Lai Quần. Đen chậm ra Xe, <strong>Pháo bình 7 ăn Tốt</strong> — nước mới; hai bên công thủ ở lộ 3 và 7.</p><h2>Trung cuộc</h2><ul><li>Đỏ lên Sĩ cầu ổn — khá chậm; về sau thường dùng Xe 9 tiến 1 có lực hơn (nhánh biến). Đỏ bình Pháo dọa Mã lộ 3.</li><li>Nước 15 Đỏ tùy tiện bình Pháo theo thói quen, để cánh trái bị công; nên Xe bình 4.</li><li>Hình 4: Đen nắm điểm yếu hai Tượng Đỏ rời rạc, <strong>Xe trước tiến 5</strong> mời đổi, quấy cánh trái — rồi bỏ quân, mở loạt tấn công chặt chẽ. Hai cách khác của Đỏ đều để Đen ưu (nhánh biến).</li></ul><h2>Tàn cuộc</h2><p>Đen khéo dùng Xe song Pháo; Mã Đỏ chạy vòng mà không thoát được. Cuối cùng Pháo chiếu ăn Xe, Đỏ nhận thua.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "12": "Hình 3: Pháo bình 7 ăn Tốt — nước mới.",
+    "13": "Lên Sĩ cầu ổn — khá chậm.",
+    "15": "Bình Pháo dọa Mã lộ 3.",
+    "29": "Bình Pháo theo thói quen — nên Xe bình 4.",
+    "32": "Hình 4: Xe tiến mời đổi, quấy cánh trái.",
+    "34": "Xe ăn Xe.",
+    "39": "Xe ăn Mã.",
+    "40": "Pháo bình 2 — bỏ quân tính sâu; vào tàn cuộc.",
+    "46": "Xe ăn Tượng.",
+    "48": "Pháo chiếu.",
+    "96": "Hình 5: Pháo chiếu ăn — Đỏ nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe 9 tiến 1…",
+     "3": "Chuyển sang các biến công thủ khác."
+    },
+    "1": {
+     "1": "Nếu Xe lui 1…",
+     "6": "Đen bỏ quân có thế công."
+    },
+    "2": {
+     "1": "Nếu Mã lui 7…",
+     "4": "Đen ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6040,
+   "slug": "trung-cuoc-bao-dien-t1-thuan-phao-hoanh-xe-doi-truc-xe",
+   "title": "Chương 6 · Thuận Pháo Hoành Xe Đối Trực Xe — Hồ Vinh Hoa vs Tôn Thụ Thành (1991)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-3",
+   "summary": "Đỏ dùng bốn nước hoành Xe ăn Tốt đè Mã; Đen ra quân nhanh, bỏ Tốt giữa mở đường Xe Mã. Cuối cùng Đỏ dùng luật cho Tốt “trường bắt”, hai bên bất biến thành hòa.",
+   "seo_title": "Thuận Pháo Hoành Xe Đối Trực Xe — Hòa Nhờ Luật Cờ",
+   "seo_description": "Ván giải Cá nhân 1991: thuận pháo hoành xe đối trực xe tuần hà, Đen bỏ Tốt giữa, phi Tượng biên hóa giải, Đỏ dùng Tốt trường bắt, hòa.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Cá nhân toàn quốc 1991, Hồ Vinh Hoa (Đỏ) gặp Tôn Thụ Thành. “Thuận pháo hoành xe chính mã đối trực xe tuần hà”: Đen nhảy Mã trong tăng công thủ trung lộ. Đỏ dùng bốn nước hoành Xe ăn Tốt đè Mã chiếm thực lợi, Đen ung dung ra quân nhanh.</p><h2>Trung cuộc</h2><ul><li>Đỏ hoành Xe tăng quân chủ lực nhưng xem nhẹ nước Pháo lui phản kích; nên tiến Tốt 7 (nhánh biến). Đen lên Sĩ làm chậm nhịp; nên Pháo lui 3 phản tiên (nhánh biến).</li><li>Đỏ tiến Tốt 3 — nước nhạt (Tốt 7 thì Đen ưu — nhánh biến). Đen dựng Pháo đầu đối kháng.</li><li>Nước 17 Đen <strong>bỏ Tốt giữa</strong> thông đường Xe Mã — một nước nhiều tác dụng; Tốt 7 Đỏ qua sông ngầm đòn, Đen phi Tượng biên hóa giải.</li></ul><h2>Kết thúc</h2><p>Hình 7: Mã lộ 3 Đỏ bị công. Đỏ dùng luật: Tốt được phép “trường bắt” Xe, Xe Đen chỉ có thể bình lộ 3 (không thì Pháo Đỏ dọa). Hai bên bất biến thành hòa.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "14": "Hình 6: bốn nước hoành Xe ăn Tốt đè Mã.",
+    "15": "Hoành Xe — xem nhẹ Pháo lui phản kích.",
+    "16": "Lên Sĩ — làm chậm nhịp.",
+    "21": "Tiến Tốt 3 — nước nhạt.",
+    "26": "Dựng Pháo đầu đối kháng.",
+    "34": "Bỏ Tốt giữa — một nước nhiều tác dụng.",
+    "38": "Phi Tượng biên — hóa giải thế công.",
+    "41": "Tốt bắt Xe.",
+    "49": "Hình 7: Tốt trường bắt hợp luật — bất biến thành hòa."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nên tiến Tốt 7…",
+     "9": "Đỏ hơn Tốt 7, lợi thế hơn."
+    },
+    "1": {
+     "1": "Nên Pháo lui 3…",
+     "3": "Phục Mã tiến — Đen phản tiên."
+    },
+    "2": {
+     "1": "Nếu Tốt 7 tiến…",
+     "2": "Đen ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6050,
+   "slug": "trung-cuoc-bao-dien-t1-trung-phao-doi-ta-phao-phong-xe",
+   "title": "Chương 6 · Trung Pháo Đối Tả Pháo Phong Xe Chuyển Liệt Pháo — Ngô Linh Huy vs Vương Hâm Hải (1993)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-4",
+   "summary": "Lưỡng đầu xà đối tuần hà xe trong liệt pháo — đối công dữ dội. Đỏ tiến Xe ăn Tượng giữ tiên, bỏ Mã tiến Tốt giành thế, Pháo đáy và Tốt qua sông quyết định.",
+   "seo_title": "Trung Pháo Đối Tả Pháo Phong Xe — Ngô Linh Huy Thắng",
+   "seo_description": "Ván Đồng đội 1993: liệt pháo lưỡng đầu xà đối tuần hà xe, Xe ăn Tượng giữ tiên, Tốt 7 tiến bỏ Mã giành thế, Pháo đáy Tốt qua sông thắng.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Đồng đội toàn quốc 1993, Ngô Linh Huy (Đỏ) gặp Vương Hâm Hải. Đen tả pháo phong xe rồi chuyển liệt pháo; thế này hay dẫn tới đổi hai Xe thành cục diện không Xe (cách khác ở nhánh biến). Hình 8: “lưỡng đầu xà đối tuần hà xe”, mỗi bên đã ra sáu quân mạnh.</p><h2>Trung cuộc</h2><ul><li>Đen bình Pháo đè Mã tính Xe — chiến pháp đối công (Pháo bình 6 thì mỗi bên có công thủ — nhánh biến). Đỏ <strong>ăn Tốt đè Mã</strong> mở màn đối sát (Xe bình 1 thì Đen đỡ được — nhánh biến).</li><li>Hai bên đổi Xe dồn dập; <strong>Xe tiến ăn Tượng</strong> là nước hay giữ tiên (Pháo 9 tiến 4 thì Đen ưu — nhánh biến).</li><li>Nước 15 <strong>Tốt 7 tiến, bỏ Mã</strong> — then chốt giành thế (nhầm nhảy Mã thì Đen phản tiên — nhánh biến).</li><li>Đỏ chiếu điều Xe Pháo vừa công vừa thủ; Đen phải bình Pháo biên phòng Mã lui.</li></ul><h2>Tàn cuộc</h2><p>Hình 9: Đỏ có Pháo đáy và Tốt qua sông, bắt Tốt phục chiếu ăn Pháo; Đen còn một Sĩ, cửu cung trống — đại thế đã mất.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "16": "Hình 8: lưỡng đầu xà đối tuần hà xe.",
+    "18": "Bình Pháo đè Mã — chiến pháp đối công.",
+    "19": "Ăn Tốt đè Mã — mở màn đối sát.",
+    "25": "Xe ăn Tượng — giữ tiên trong đối công.",
+    "26": "Bình Pháo định trầm đáy.",
+    "28": "Pháo đuổi Mã.",
+    "29": "Tiến Tốt bỏ Mã — then chốt giành thế.",
+    "41": "Điều Xe vừa công vừa thủ.",
+    "42": "Bình Pháo biên — bất đắc dĩ.",
+    "48": "Đỏ có Pháo đáy, Tốt qua sông — vào tàn cuộc.",
+    "61": "Hình 9: bắt Tốt phục chiếu ăn Pháo — Đen hết đường."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe 9 bình 8…",
+     "6": "Thành thế trận khác."
+    },
+    "1": {
+     "1": "Nếu Pháo bình 6…",
+     "7": "Mỗi bên có công thủ."
+    },
+    "2": {
+     "1": "Nếu Xe bình 1…",
+     "2": "Đen chống được."
+    },
+    "3": {
+     "1": "Nếu Pháo 9 tiến 4…",
+     "16": "Đen ưu."
+    },
+    "4": {
+     "1": "Nếu nhầm nhảy Mã…",
+     "4": "Đen phản tiên."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6060,
+   "slug": "trung-cuoc-bao-dien-t1-trung-phao-doi-tam-bo-ho",
+   "title": "Chương 6 · Trung Pháo Đối Tam Bộ Hổ Chuyển Liệt Pháo",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-5",
+   "summary": "Trung pháo lưỡng đầu xà đối tam bộ hổ chuyển liệt pháo hữu hoành xe. Pháo kỵ hà đuổi Xe, cuộc chiến ở đầu sông; Đen tiến Tốt mới, ăn Tốt đầu tiên phát chế nhân và thắng.",
+   "seo_title": "Trung Pháo Đối Tam Bộ Hổ — Đen Ăn Tốt Đầu Phản Công",
+   "seo_description": "Ván trung pháo lưỡng đầu xà đối tam bộ hổ chuyển liệt pháo: Đỏ nhảy Mã bị động, Đen Pháo ăn Tốt đầu, Pháo bình hay, Xe chiếu, Đen thắng.",
+   "content": "<h2>Khai cuộc</h2><p>“Trung pháo lưỡng đầu xà đối tam bộ hổ chuyển liệt pháo hữu hoành xe”. Hình 10: cả sáu quân mạnh đã ra, trực xe đối hoành xe.</p><h2>Trung cuộc</h2><ul><li>Đỏ tiến <strong>Pháo kỵ hà đuổi Xe</strong> — cách rất thịnh hành; cuộc chiến bùng ở đầu sông.</li><li>Đen tiến Tốt — cải tiến, bình ổn; rồi đẩy mạnh Tốt 3 — biến mới.</li><li>Nước 14 Đỏ nhảy Mã — bị động; nên Pháo bình 7 (nhánh biến).</li><li>Đen <strong>Pháo ăn Tốt đầu</strong> — tiên phát chế nhân, cơ mẫn. Đỏ ra Tướng; Đen <strong>Pháo bình 6</strong> — nước hay (Pháo Đỏ ăn Tốt thì mất quân — nhánh biến).</li></ul><h2>Kết thúc</h2><p>Hình 11: Đen phục Xe bình 7 dọa sát, Đỏ buông cờ.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "14": "Hình 10: sáu quân mạnh đã ra.",
+    "19": "Pháo kỵ hà đuổi Xe — rất thịnh hành.",
+    "22": "Tiến Tốt — cải tiến bình ổn.",
+    "26": "Đẩy Tốt 3 — biến mới.",
+    "27": "Nhảy Mã — bị động.",
+    "34": "Pháo ăn Tốt đầu — tiên phát chế nhân.",
+    "39": "Ra Tướng.",
+    "42": "Pháo bình 6 — nước hay.",
+    "50": "Hình 11: Đen phục Xe bình 7 dọa sát — Đỏ buông cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nên Pháo bình 7…",
+     "5": "Đỏ dễ đi."
+    },
+    "1": {
+     "1": "Nếu Pháo ăn Tốt…",
+     "2": "Mã lui — Đỏ mất quân."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6070,
+   "slug": "trung-cuoc-bao-dien-t1-liet-thu-phao",
+   "title": "Chương 6 · Liệt Thủ Pháo — Trương Ảnh Phúc vs Đào Hán Minh (1993)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-6",
+   "summary": "Đại liệt thủ pháo, tả pháo phong xe. Đen ăn Tốt đầu cân bằng; Đỏ tiến Mã ép đổi giản hóa, hai bên đổi dồn dập vào tàn cuộc và nghị hòa.",
+   "seo_title": "Liệt Thủ Pháo — Đổi Quân Giản Hóa Hòa",
+   "seo_description": "Ván giải Cá nhân 1993: đại liệt thủ pháo, tả pháo phong xe, Đen Pháo ăn Tốt đầu cân bằng, Đỏ ép đổi giản hóa, tàn cuộc hòa.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Cá nhân toàn quốc 1993, Trương Ảnh Phúc (Đỏ) gặp Đào Hán Minh. Hình 12: “Đại liệt thủ pháo”, các quân mạnh đã ra, Đỏ tả pháo phong xe có lợi. (Sách còn nêu hai cách đi khác của Đỏ ở nước 4.)</p><h2>Trung cuộc</h2><ul><li>Đỏ nhảy Mã (Xe tiến 5 thì Đen khống chế đường Mã — nhánh biến); Xe bình 7 (Pháo bình 3 thì Đen tiên — nhánh biến).</li><li>Đen <strong>Pháo ăn Tốt đầu</strong> — cân bằng.</li><li>Đỏ <strong>tiến Mã ép đổi</strong>, giản hóa (ra Tướng sẽ nhiều biến hơn). Một loạt đổi quân, quân mạnh giảm dần.</li></ul><h2>Tàn cuộc</h2><p>Hai bên đổi tiếp, Hình 13: thế cân bằng, đồng ý hòa.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "14": "Hình 12: đại liệt thủ pháo, tả pháo phong xe.",
+    "15": "Nhảy Mã.",
+    "19": "Xe bình 7 ăn Tốt.",
+    "22": "Pháo ăn Tốt đầu — cân bằng.",
+    "27": "Tiến Mã ép đổi — giản hóa.",
+    "37": "Mã ăn Mã.",
+    "39": "Xe ăn Pháo.",
+    "40": "Cân bằng — vào tàn cuộc.",
+    "60": "Hình 13: hai bên đồng ý hòa."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe tiến 5…",
+     "2": "Khống chế đường Mã — Đen không khó."
+    },
+    "1": {
+     "1": "Nếu Pháo bình 3…",
+     "6": "Đen tiên thủ."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6080,
+   "slug": "trung-cuoc-bao-dien-t1-qua-cung-phao-doi-trung-phao-hua-ngan-xuyen",
+   "title": "Chương 6 · Quá Cung Pháo Đối Trung Pháo — Hứa Ngân Xuyên vs Ô Chính Vĩ (1993)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-7",
+   "summary": "Quá cung pháo chính mã tuần hà xe đối trung pháo hoành xe. Đỏ tiến Pháo làm yếu bàn đầu Mã, đổi Tốt phát huy Pháo tuần hà, rồi tấn công đến khi Đen hết giờ.",
+   "seo_title": "Quá Cung Pháo Đối Trung Pháo — Hứa Ngân Xuyên Thắng",
+   "seo_description": "Ván Gia Ngọc Bôi 1993: quá cung pháo tuần hà xe đối trung pháo hoành xe, Pháo tuần hà, Tốt 3 qua sông, Đỏ ưu, Đen hết giờ thua.",
+   "content": "<h2>Khai cuộc</h2><p>Giải “Gia Ngọc Bôi” 1993, Hứa Ngân Xuyên (Đỏ) gặp Ô Chính Vĩ. Hình 14: “Quá cung pháo chính mã tuần hà xe đối trung pháo hoành xe”; Đen tiến Tốt đầu chuẩn bị bàn đầu Mã (Xe 4 tiến 5 thì Đỏ dễ đi — nhánh biến).</p><h2>Trung cuộc</h2><ul><li>Đỏ <strong>Pháo tiến tuyến Tốt</strong> làm yếu bàn đầu Mã — công thủ đều tiện.</li><li>Đen đổi Pháo — nước mới (Tốt 1 tiến thì Đỏ có tiên — nhánh biến).</li><li>Đỏ đổi Tốt phát huy Pháo tuần hà — tranh tiên; Đen lui Pháo bỏ Tốt, không vững bằng lên Tượng.</li><li>Tốt Đỏ qua sông bình 4, rồi vào giữa; Pháo ăn Xe, Tượng ăn Pháo.</li></ul><h2>Kết thúc</h2><p>Hình 15: Đen hết giờ nhận thua. Nếu đánh tiếp, Đỏ vẫn chiếm ưu lớn (nhánh biến).</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "12": "Hình 14: quá cung pháo tuần hà xe đối trung pháo hoành xe.",
+    "13": "Pháo tiến tuyến Tốt — làm yếu bàn đầu Mã.",
+    "18": "Đổi Pháo — nước mới.",
+    "23": "Đổi Tốt — phát huy Pháo tuần hà.",
+    "26": "Lui Pháo bỏ Tốt.",
+    "29": "Tốt bình 4.",
+    "38": "Pháo ăn Mã.",
+    "39": "Pháo ăn Xe.",
+    "41": "Tượng ăn Pháo.",
+    "43": "Tốt ăn Tốt.",
+    "49": "Hình 15: Đen hết giờ nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Xe 4 tiến 5…",
+     "14": "Đỏ dễ đi."
+    },
+    "1": {
+     "1": "Nếu Tốt 1 tiến…",
+     "8": "Đỏ phục nước tiên."
+    },
+    "2": {
+     "1": "Nếu đánh tiếp: Mã tiến…",
+     "10": "Đỏ chiếm ưu lớn."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6090,
+   "slug": "trung-cuoc-bao-dien-t1-qua-cung-phao-doi-trung-phao-hoang-dung",
+   "title": "Chương 6 · Quá Cung Pháo Đối Trung Pháo — Hoàng Dũng vs Trương Ảnh Phúc (1988)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-8",
+   "summary": "Quá cung pháo quá hà xe đối trung pháo hoành xe. Đen lui Pháo, nâng Xe giữ quân kín đáo, chuyển Pháo đuổi Xe; Đỏ đi lỏng vài nước, mất quân, Đen thắng.",
+   "seo_title": "Quá Cung Pháo Quá Hà Xe — Trương Ảnh Phúc Thắng",
+   "seo_description": "Ván Đồng đội 1988: quá cung pháo quá hà xe đối trung pháo hoành xe, Đen chuyển Pháo đuổi Xe linh hoạt, Đỏ đi lỏng, Pháo công cánh, Đen thắng.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Đồng đội toàn quốc 1988, Hoàng Dũng (Đỏ) gặp Trương Ảnh Phúc. Hình 16: “Quá cung pháo quá hà xe đối trung pháo hoành xe”. Ở các nước 7–9 Đen lui Pháo rồi nâng Xe giữ Mã giữ Pháo — kín đáo; quân Đen liên kết tốt.</p><h2>Trung cuộc</h2><ul><li>Đen bình Pháo đuổi Xe hai lần — rất linh hoạt. Đỏ buộc lui Xe (lên Tượng thì Đen được quân — nhánh biến).</li><li>Hai Xe Đỏ bị đẩy lui, Tốt giữa mất rễ — Đen đạt thế ưng ý.</li><li>Nước 20 Đỏ tiến Pháo — tưởng hay nhưng kém, cho Xe Đen tiến; nên lui Pháo (nhánh biến).</li><li>Nước 26 Đỏ bình Xe giữ Tốt — nước thua; nên Xe tiến 1 còn chống (nhánh biến). Đen <strong>Pháo bình 1</strong> công cánh — nhập cuộc đẹp.</li></ul><h2>Kết thúc</h2><p>Hình 17: Đỏ chắc chắn mất Xe, buông cờ.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "18": "Hình 16: quá cung pháo quá hà xe đối trung pháo hoành xe.",
+    "19": "Bình Pháo đuổi Xe.",
+    "22": "Bình Pháo 3 — rất linh hoạt.",
+    "25": "Bất đắc dĩ lui Xe.",
+    "36": "Đen đạt thế ưng ý.",
+    "39": "Tiến Pháo — tưởng hay mà kém.",
+    "41": "Xe ăn Tốt.",
+    "51": "Bình Xe giữ Tốt — nước thua.",
+    "54": "Pháo bình 1 — nhập cuộc đẹp.",
+    "64": "Hình 17: Đỏ mất Xe — buông cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu lên Tượng…",
+     "6": "Đen được quân."
+    },
+    "1": {
+     "1": "Nên lui Pháo — bình ổn có lực."
+    },
+    "2": {
+     "1": "Nên Xe tiến 1 — còn chống được."
+    },
+    "3": {
+     "1": "Nếu Sĩ lên…",
+     "2": "Mã chiếu — Đen chắc được quân."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6100,
+   "slug": "trung-cuoc-bao-dien-t1-sy-giac-phao-doi-trung-phao-ly-lai-quan",
+   "title": "Chương 6 · Sĩ Giác Pháo Đối Trung Pháo — Lý Lai Quần vs Lữ Khâm (1979)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-9",
+   "summary": "Đen bình Pháo tính Xe — thế cũ. Đỏ bình Pháo di hình hoán ảnh, nhiều Tốt khống chế trung cuộc, đoạt quân rồi bỏ Pháo nhập cục, Mã Xe tuyệt sát.",
+   "seo_title": "Sĩ Giác Pháo Đối Trung Pháo — Lý Lai Quần Thắng Lữ Khâm",
+   "seo_description": "Ván Giang Môn 1979: sĩ giác pháo đối trung pháo, Pháo bình 6 di hình hoán ảnh, nhiều Tốt khống chế, đoạt quân, bỏ Pháo nhập cuộc, tuyệt sát.",
+   "content": "<h2>Khai cuộc</h2><p>Giải giao hữu bốn tỉnh Giang Môn 1979, Lý Lai Quần (Đỏ) gặp Lữ Khâm. Hình 18: Đen bình Pháo tính Xe — thế đã có từ lâu; ngày nay thường tiến Tốt 7 bỏ Tốt chặn Xe (xem bài sau).</p><h2>Trung cuộc</h2><ul><li>Đen tiến Xe hàng hai quấy hai Mã (Pháo bình 6 thì Đỏ hơi ưu — nhánh biến).</li><li>Đỏ <strong>Pháo 4 bình 6</strong> — di hình hoán ảnh, chống nguy cơ Mã phải; chiến pháp quan trọng (Xe bình 3 ăn Tượng thì Xe Đen bị vây — nhánh biến).</li><li>Đen bố trận không thỏa đáng; Đỏ nhiều Tốt khống chế, ưu rõ. Pháo tiến dọa sát Mã, Đen đành tiến Tốt quyết chiến; Xe ăn Mã — Đỏ đoạt quân (Tốt tiến thay thì Đỏ nhiều quân — nhánh biến).</li></ul><h2>Tàn cuộc</h2><p>Đỏ <strong>Xe ăn Tượng, bỏ Pháo</strong> chuẩn bị nhập cuộc; Xe Mã chiếu, Tốt giữa tiến — Hình 19: tuyệt sát.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "14": "Hình 18: Đen bình Pháo tính Xe.",
+    "16": "Xe tiến hàng hai quấy hai Mã.",
+    "17": "Pháo bình 6 — di hình hoán ảnh.",
+    "30": "Đỏ nhiều Tốt khống chế — ưu rõ.",
+    "37": "Pháo tiến dọa sát Mã.",
+    "38": "Đành tiến Tốt quyết chiến.",
+    "39": "Xe ăn Mã — đoạt quân.",
+    "41": "Pháo ăn Xe.",
+    "73": "Xe ăn Tượng chiếu.",
+    "83": "Xe lui — bỏ Pháo chuẩn bị nhập cuộc.",
+    "85": "Xe ăn Tượng chiếu.",
+    "89": "Xe ăn Sĩ chiếu.",
+    "105": "Hình 19: tuyệt sát — Đen nhận thua."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Nếu Pháo bình 6…",
+     "8": "Đỏ tương đối ưu."
+    },
+    "1": {
+     "1": "Nếu Xe bình 3…",
+     "6": "Đen được Tượng nhưng Xe bị vây — Đỏ dễ đi."
+    },
+    "2": {
+     "1": "Nếu Tốt tiến…",
+     "4": "Đỏ nhiều quân chiếm ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6110,
+   "slug": "trung-cuoc-bao-dien-t1-sy-giac-phao-doi-trung-phao-tu-thien-hong",
+   "title": "Chương 6 · Sĩ Giác Pháo Đối Trung Pháo — Trần Khởi Minh vs Từ Thiên Hồng (1993)",
+   "level": "nang-cao",
+   "draft": "t1-ch06a#c6-t1-10",
+   "summary": "Đen bỏ Tốt 7 chặn Xe, thành lưỡng đầu xà — trận cải tiến chống trung pháo. Đen đổi Pháo hay, tiến Pháo tranh tiên, bình Xe hiến Xe — hơn quân và thắng tàn cuộc.",
+   "seo_title": "Sĩ Giác Pháo Đối Trung Pháo — Từ Thiên Hồng Hiến Xe Thắng",
+   "seo_description": "Ván giải Cá nhân 1993: sĩ giác pháo đối trung pháo, Đen bỏ Tốt 7 chặn Xe, đổi Pháo, tiến Pháo tranh tiên, bình Xe hiến Xe, hơn quân thắng.",
+   "content": "<h2>Khai cuộc</h2><p>Giải Cá nhân toàn quốc 1993, Trần Khởi Minh (Đỏ) gặp Từ Thiên Hồng. Hình 20: Đen <strong>bỏ Tốt 7 chặn Xe</strong>, thành trận “lưỡng đầu xà” — cải tiến để đối phó trung pháo; biến hóa phức tạp, công thủ dữ dội.</p><h2>Trung cuộc</h2><ul><li>Đỏ Xe ăn Tốt — đưa thế cờ vào phức tạp, khó kiểm soát; có thể Pháo bình 5 (nhánh biến). Đen <strong>Pháo đổi Pháo</strong> — nước hay (Pháo bình 6 thì Đỏ hơi ưu — nhánh biến).</li><li>Đỏ Xe tiến giữ Mã — cải tiến; trước đây hay lui Mã (nhánh biến).</li><li>Đen <strong>Pháo 7 tiến 1</strong> tranh tiên hay; Đỏ bị buộc bỏ quân (lên Sĩ thì vẫn có thể mất quân — nhánh biến).</li><li>Đen <strong>Xe bình 6 hiến Xe</strong> — cơ mẫn, không cho Đỏ phản kháng, giành ưu thế hơn quân. Rồi đổi quân giản hóa.</li></ul><h2>Tàn cuộc</h2><p>Hình 21: Xe Đen bắt Mã, Đỏ chắc mất Sĩ Tượng, buông cờ.</p><p><em>Bàn cờ chạy cả ván từ nước 1; các mốc “Hình” trong sách được ghi trong chú thích từng nước.</em></p>",
+   "captions": {
+    "14": "Hình 20: Đen bỏ Tốt 7 chặn Xe — lưỡng đầu xà.",
+    "15": "Xe ăn Tốt — vào thế phức tạp.",
+    "16": "Pháo đổi Pháo — nước hay.",
+    "27": "Xe tiến giữ Mã — cải tiến.",
+    "32": "Pháo tiến tranh tiên — nước hay.",
+    "37": "Bị buộc bỏ quân.",
+    "38": "Xe ăn Mã.",
+    "40": "Bình Xe hiến Xe — cơ mẫn.",
+    "41": "Xe ăn Xe.",
+    "42": "Xe ăn Xe — Đen hơn quân.",
+    "59": "Xe ăn Mã — giản hóa, tàn cuộc tất thắng.",
+    "104": "Hình 21: Xe bắt Mã — Đỏ buông cờ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Có thể Pháo bình 5…",
+     "7": "Hai bên đối công."
+    },
+    "1": {
+     "1": "Nếu Pháo bình 6…",
+     "8": "Đỏ hơi ưu."
+    },
+    "2": {
+     "1": "Trước đây hay lui Mã…",
+     "10": "Pháo trái Đỏ bị vây."
+    },
+    "3": {
+     "1": "Nếu lên Sĩ…",
+     "2": "Phục Mã tiến — Đỏ vẫn có thể mất quân."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  }
+ ]
+}

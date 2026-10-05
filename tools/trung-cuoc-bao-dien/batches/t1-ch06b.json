@@ -1,0 +1,255 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+  "slug": "trung-cuoc-bao-dien-tap-1"
+ },
+ "lessons": [
+  {
+   "order": 6120,
+   "slug": "trung-cuoc-bao-dien-t1-chien-phap-tran-thuc-ma-phao",
+   "title": "Chương 6 · Chiến Pháp Trận Thức Mã Pháo — Tổng Quan",
+   "level": "trung-cap",
+   "summary": "Bình phong mã, Phản cung mã, Đơn đề mã là ba trận chủ yếu bên đi sau dùng chống Trung pháo. Tiết 2 giới thiệu các biến mới có ảnh hưởng lớn qua cây biến danh cục.",
+   "seo_title": "Trung Pháo Đối Bình Phong Mã, Phản Cung Mã, Đơn Đề Mã",
+   "seo_description": "Tổng quan Tiết 2 Chương 6: trung pháo đối bình phong mã, phản cung mã (giáp pháo bình phong), đơn đề mã — các biến mới qua danh cục thực chiến.",
+   "content": "<h2>Ba trận phòng thủ chính trước Trung pháo</h2><ul><li><strong>Bình phong mã</strong>: được dùng nhiều nhất trong những năm gần đây.</li><li><strong>Phản cung mã</strong> (còn gọi “giáp pháo bình phong”): rất thịnh hành, mở ra cuộc “Pháo Mã tranh hùng” thứ hai.</li><li><strong>Đơn đề mã</strong>: lịch sử lâu đời nhưng cơ hội phản công ít, nay ít dùng hơn — dù vẫn có sức chiến đấu ngoan cường.</li></ul><p>Nghiên cứu không ngừng khiến nhiều điều tiền nhân cho là cấm kỵ lại hồi sinh, xuất hiện nhiều biến mới. Các bài sau là cây biến của bảy hệ thống tiêu biểu: hai biến Bình phong mã song pháo quá hà / bình pháo tính xe, ngũ thất pháo tiến tam binh; hai biến Phản cung mã; hai biến Đơn đề mã (cũ và mới).</p>"
+  },
+  {
+   "order": 6130,
+   "slug": "trung-cuoc-bao-dien-t1-binh-phong-ma-song-phao-qua-ha",
+   "title": "Chương 6 · Bình Phong Mã Song Pháo Quá Hà — Cây Biến Bốn Hướng",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-1",
+   "summary": "Song pháo quá hà khống chế tuyến Tốt. Đen bình Pháo lộ 6 — “trong thủ có công”. Đỏ có bốn hướng: hai cách lên Sĩ (chậm công), Xe tiến 6 và Tốt giữa (trực công, cấp công).",
+   "seo_title": "Trung Pháo Đối Bình Phong Mã Song Pháo Quá Hà",
+   "seo_description": "Cây biến trung pháo thất lộ mã đối bình phong mã song pháo quá hà: Đen bình Pháo 6, Đỏ có bốn cách — lên Sĩ, Xe tiến 6, tiến Tốt giữa — với các phản kích mới.",
+   "content": "<h2>Thế cờ (Hình 1)</h2><p>Song pháo quá hà khống chế tuyến Tốt là một trong những trận Bình phong mã đối phó Trung pháo thất lộ mã, lưu hành từ thập niên 1950. Đen bình Pháo đè Mã công Tượng không cho Xe phải Đỏ ra — biến mới (trước đây hay lên Tượng). Rồi <strong>Pháo bình 6</strong>: tránh Tốt 3 tiến 1, chuẩn bị bỏ Mã và phục Pháo 6 tiến 1 — “trong thủ có công”.</p><h2>Bốn hướng của Đỏ</h2><ul><li><strong>Biến 1 — Sĩ 4 tiến 5</strong> (mạch chính): chậm công; Đen hơn Tượng chiếm ưu.</li><li><strong>Biến 2 — Sĩ 6 tiến 5</strong>: cải tiến; Đen lên Sĩ trái, Xe qua hà, Pháo mời đổi — Đen ưu.</li><li><strong>Biến 3 — Xe 6 tiến 6</strong> (Hình 2): Đen có bốn cách — lui Pháo 4 (Đen nhiều quân, tàn cuộc dễ), tiến Tốt giữa (Đỏ Mã ngọa tào, thắng thế), lên Sĩ (hòa), Xe tiến 2 giữ Mã (Đỏ hơi ưu).</li><li><strong>Biến 4 — Tốt 5 tiến 1</strong> (Hình 3): công gấp. Đen lên Sĩ cầu ổn (cân bằng hoặc thủ hòa), hoặc <strong>Pháo 6 tiến 1</strong> đuổi Mã — đối công kịch liệt, với nước lui Pháo phản kích rất có lực.</li></ul><h2>Lời bàn</h2><p>Hai cách lên Sĩ thuộc chậm công, hai cách sau là trực công và cấp công. Thế trận này vẫn không ngừng được cải tiến.</p><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Pháo bình 3 đè Mã công Tượng — biến mới.",
+    "18": "Hình 1: Pháo bình 6 — trong thủ có công.",
+    "19": "Biến 1: Sĩ 4 tiến 5 — chậm công.",
+    "46": "Đen hơn Tượng chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Sĩ 6 tiến 5 — cải tiến.",
+     "4": "Xe qua hà — Đen phản tiên.",
+     "8": "Pháo mời đổi — nước hay.",
+     "26": "Đen ưu."
+    },
+    "1": {
+     "1": "Biến 3: Xe 6 tiến 6 (Hình 2).",
+     "4": "Đen cách 1: Pháo lui 4.",
+     "32": "Đen nhiều quân, tàn cuộc dễ đi."
+    },
+    "2": {
+     "1": "Đen cách 2: tiến Tốt giữa.",
+     "8": "Mã ngọa tào — vững chắc.",
+     "30": "Tốt 7 qua sông — Đỏ thắng thế."
+    },
+    "3": {
+     "1": "Đen cách 3: lên Sĩ.",
+     "27": "Sắp Pháo đổi Mã — hòa."
+    },
+    "4": {
+     "1": "Đen cách 4: Xe tiến 2 giữ Mã — nước mới.",
+     "26": "Đỏ hơi ưu."
+    },
+    "5": {
+     "1": "Biến 4: tiến Tốt đầu — công gấp (Hình 3).",
+     "2": "Lên Sĩ cầu ổn."
+    },
+    "6": {
+     "17": "Cân bằng."
+    },
+    "7": {
+     "1": "Xe tiến 6.",
+     "31": "Đen có thể thủ hòa."
+    },
+    "8": {
+     "1": "Pháo 6 tiến 1 — biến mới, đối công kịch liệt.",
+     "19": "Hình 5: Pháo lui 1 — phản kích rất có lực."
+    },
+    "9": {
+     "1": "Pháo lui chuẩn bị bình giữa chiếu.",
+     "21": "Đen phản kích có lực."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6140,
+   "slug": "trung-cuoc-bao-dien-t1-binh-phong-ma-binh-phao-tinh-xe",
+   "title": "Chương 6 · Trung Pháo Quá Hà Xe Đối Bình Phong Mã Bình Pháo Tính Xe",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-2",
+   "summary": "Hệ thống công thủ phức tạp với tỷ lệ dùng rất cao. Ngũ cửu pháo, Mã phải nhảy — tiêu điểm là Đen đối phó Mã 3 tiến 4 thế nào: lui Pháo vững chắc hay nhảy Mã quá hà bỏ quân.",
+   "seo_title": "Bình Phong Mã Bình Pháo Tính Xe — Ngũ Cửu Pháo",
+   "seo_description": "Cây biến trung pháo quá hà xe đối bình phong mã bình pháo tính xe: Đỏ ngũ cửu pháo nhảy Mã phải; Đen lui Pháo hoặc nhảy Mã quá hà bỏ quân — nước mới.",
+   "content": "<h2>Thế cờ (Hình 6)</h2><p>Bố cục “trung pháo quá hà xe đối bình phong mã bình pháo tính xe” có từ thập niên 1950, thịnh hành từ thập niên 1960, qua hơn 30 năm thành một hệ thống công thủ phức tạp. Đỏ bình Pháo 9 thành thế <strong>ngũ cửu pháo</strong>, rồi nhảy Mã phải — cải tiến so với tiến Tốt đầu, chuẩn bị ăn hoặc tiến Tốt đầu rồi nhảy qua hà bắt đôi. Tiêu điểm: Đen đối phó <strong>Mã 3 tiến 4</strong> ra sao.</p><h2>Hai cách của Đen</h2><ul><li><strong>Biến 1 — Pháo 2 lui 5</strong> (mạch chính): Đỏ lui Mã lấy lui làm công — tinh hoa; Đen lên Tượng phải vững chắc; Đỏ tiến Tốt đầu đánh trung lộ; Đen nhảy Mã cải tiến. Đỏ dùng một Xe đổi hai quân, cuộc chiến còn dài.</li><li><strong>Biến 2 — Mã 8 tiến 7</strong> (Hình 7): nhảy Mã quá hà, nước mới. Đỏ tiến Tốt giữa thì Đen bỏ quân công sát, hơi ưu; Đỏ Mã 4 tiến 5 thì Đen bỏ Mã ăn Tốt ngoài dự liệu, cuối cùng Tốt bắt chết Mã, tàn cuộc chiếm ưu.</li></ul><h2>Lời bàn</h2><p>Nước nhảy Mã quá hà thiết kế phương án bỏ quân phức tạp, hiệu quả thực chiến rất tốt, hứa hẹn đẩy cuộc chiến Pháo Mã lên cao hơn.</p><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "26": "Ngũ cửu pháo, Đen bình Pháo tính Xe.",
+    "27": "Hình 6: Mã 3 tiến 4 — tiêu điểm.",
+    "28": "Biến 1: Pháo 2 lui 5.",
+    "29": "Lui Mã — lấy lui làm công.",
+    "51": "Đỏ dùng Xe đổi hai quân — cuộc chiến còn dài."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Mã 8 tiến 7 quá hà — nước mới (Hình 7).",
+     "2": "Đỏ cách 1: Tốt giữa.",
+     "33": "Đen hơi ưu."
+    },
+    "1": {
+     "1": "Đỏ cách 2: Mã 4 tiến 5.",
+     "2": "Bỏ Mã ăn Tốt — ngoài dự liệu.",
+     "28": "Tốt bắt chết Mã — Đen tàn cuộc chiếm ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6150,
+   "slug": "trung-cuoc-bao-dien-t1-ngu-that-phao-tien-tam-binh-doi-binh-phong-ma",
+   "title": "Chương 6 · Ngũ Thất Pháo Tiến Tam Binh Đối Bình Phong Mã",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-3",
+   "summary": "Hai Xe Đỏ tập trung cánh phải vững bước; Xe Mã Pháo cánh phải Đen tích cực phòng thủ. Đỏ có ba cách: đổi Xe (đơn giản, dễ hòa), Xe vào tuyến Tốt (phức tạp), lui Pháo 7 (chiến pháp mới).",
+   "seo_title": "Ngũ Thất Pháo Tiến Tam Binh Đối Bình Phong Mã Tả Tượng",
+   "seo_description": "Cây biến ngũ thất pháo tiến tam binh trực hoành xe đối bình phong mã tả tượng: đổi Xe dễ hòa, Xe tiến tuyến Tốt phức tạp, Pháo 7 lui 1 chiến pháp mới.",
+   "content": "<h2>Thế cờ (Hình 8)</h2><p>“Ngũ thất pháo tiến tam binh trực hoành xe đối bình phong mã tả tượng” — thế thường gặp. Hai Xe Đỏ tập trung cánh phải, vững bước tiến; Xe Mã Pháo cánh phải Đen tích cực phòng thủ.</p><h2>Ba cách của Đỏ</h2><ul><li><strong>Biến 1 — Xe 4 tiến 3</strong> (mạch chính): đổi Xe, biến hóa đơn giản — thế bình ổn, hòa.</li><li><strong>Biến 2 — Xe 4 tiến 5</strong>: Xe vào tuyến Tốt, phức tạp hơn; Đỏ nhảy Mã đầu hà (sáng tạo năm 1989), Đen tiến Pháo giữ Tốt đầu — hai bên đối công.</li><li><strong>Biến 3 — Pháo 7 lui 1</strong> (Hình 9, chiêu mới 1992): Đen bình Pháo 9 thì Đỏ hơi ưu và từng thắng; Đen <strong>Xe 1 bình 4</strong> — cải tiến hay, cân bằng, hòa.</li></ul><h2>Lời bàn</h2><p>Cách thứ ba giữ được lợi thế đi trước, nhưng Đen dùng cách ứng phó thứ hai vẫn đối kháng được.</p><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "20": "Hình 8: ngũ thất pháo tiến tam binh đối bình phong mã tả tượng.",
+    "21": "Biến 1: Xe 4 tiến 3 — đổi Xe.",
+    "28": "Thế bình ổn, hòa."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Xe 4 tiến 5 — vào tuyến Tốt.",
+     "26": "Hai bên đối công."
+    },
+    "1": {
+     "1": "Biến 3: Pháo 7 lui 1 — chiêu mới (Hình 9).",
+     "2": "Đen cách 1: Pháo bình 9.",
+     "13": "Đỏ hơi ưu."
+    },
+    "2": {
+     "1": "Đen cách 2: Xe 1 bình 4 — cải tiến hay.",
+     "17": "Cân bằng, hòa."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6160,
+   "slug": "trung-cuoc-bao-dien-t1-trung-phao-hoanh-xe-ban-dau-ma-doi-phan-cung-ma",
+   "title": "Chương 6 · Trung Pháo Hoành Xe Bàn Đầu Mã Đối Phản Cung Mã",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-4",
+   "summary": "Đỏ tiến Tốt đầu, chuẩn bị hoành Xe bàn đầu Mã tấn công trung lộ ngay. Đen chủ yếu có hai cách: Xe 8 tiến 4 hoặc Mã 3 tiến 4 đổi Mã giản hóa.",
+   "seo_title": "Trung Pháo Hoành Xe Bàn Đầu Mã Đối Phản Cung Mã",
+   "seo_description": "Cây biến trung pháo hoành xe bàn đầu mã đối phản cung mã: tấn công trung lộ trực tiếp; Đen Xe 8 tiến 4 hoặc Mã 3 tiến 4 đổi Mã, Đỏ đều giữ chủ động.",
+   "content": "<h2>Thế cờ (Hình 10)</h2><p>Đỏ tiến Tốt đầu, chuẩn bị dùng ngay hoành Xe bàn đầu Mã — một trong những cách tấn công trực tiếp. Đen tiến Tốt mở đường Mã. Tiêu điểm: tấn công gấp trung lộ có hiệu quả không?</p><h2>Hai cách của Đen</h2><ul><li><strong>Biến 1 — Xe 8 tiến 4</strong> (mạch chính): sau một loạt đổi quân, lực lượng ngang nhau, mở ra cuộc chiến mới — Đỏ tương đối chủ động.</li><li><strong>Biến 2 — Mã 3 tiến 4</strong>: đổi Mã giản hóa. Đỏ tiến Xe giữ Tốt 3 làm Xe Đen mất vị trí; Đen phản dựng Pháo giữa — nước hay; Đỏ bỏ Mã ăn Tốt rồi tiến Xe ăn lại — Đỏ hơi ưu.</li></ul><h2>Lời bàn</h2><p>Hoành Xe bàn đầu Mã hợp nhất để đánh Bình phong mã, nhưng với Phản cung mã cũng có thể phát động thế công hoặc nắm chủ động.</p><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Hình 10: hoành Xe bàn đầu Mã đối phản cung mã.",
+    "14": "Biến 1: Xe 8 tiến 4.",
+    "38": "Đỏ tương đối chủ động."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Mã 3 tiến 4 — đổi Mã giản hóa.",
+     "28": "Đỏ hơi ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6170,
+   "slug": "trung-cuoc-bao-dien-t1-ngu-that-phao-phe-song-tot-doi-phan-cung-ma",
+   "title": "Chương 6 · Ngũ Thất Pháo Phế Song Tốt Đối Phản Cung Mã",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-5",
+   "summary": "Đỏ bỏ Tốt 3 và Tốt 7, nhanh chóng lên Xe tuần hà bắt Tốt, phối hợp Pháo 7 đánh cánh phải Đen — đối công kịch liệt. Đỏ có ba lựa chọn ở thế Hình 11.",
+   "seo_title": "Ngũ Thất Pháo Phế Song Tốt Đối Phản Cung Mã",
+   "seo_description": "Cây biến ngũ thất pháo phế song tốt đối phản cung mã tả tượng: Xe tuần hà, Pháo 7 công cánh phải; Đỏ lên Tượng, tiến Pháo hoặc nhảy Mã ăn Tượng.",
+   "content": "<h2>Thế cờ (Hình 11)</h2><p>“Ngũ thất pháo phế song tốt đối phản cung mã tả tượng”: Đỏ bỏ Tốt 3, Tốt 7, nhanh chóng lên Xe tuần hà bắt Tốt, cùng Pháo 7 đánh cánh phải Đen — đối công kịch liệt. Đen có thể lấy công làm thủ, tránh mũi nhọn chờ phản kích, hoặc đổi quân chủ lực về tàn cuộc Pháo Mã.</p><h2>Ba lựa chọn của Đỏ</h2><ul><li><strong>Biến 1 — Tượng 3 tiến 1</strong> (mạch chính): Đỏ dễ đi.</li><li><strong>Biến 2 — Pháo 7 tiến 4</strong>: Đen nhảy Mã trái lên hà — sáng tạo mới; hai bên đối công.</li><li><strong>Biến 3 — Mã 8 tiến 7</strong>: Mã dọa Mã phải Đen; Đen ăn Tượng nhận khiêu chiến; Đỏ Mã ăn Tượng tranh công; Đen bỏ Mã đối sát; Đỏ tiến Xe bắt Pháo — nước mới. Cuối cùng Đỏ có Tốt đầu qua sông, nhiều quân thắng thế (Hình 12).</li></ul><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "26": "Hình 11: ngũ thất pháo phế song tốt.",
+    "27": "Biến 1: Tượng 3 tiến 1.",
+    "43": "Đỏ dễ đi."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Pháo 7 tiến 4.",
+     "2": "Mã trái lên hà — sáng tạo mới.",
+     "16": "Hai bên đối công."
+    },
+    "1": {
+     "1": "Biến 3: Mã 8 tiến 7.",
+     "2": "Pháo ăn Tượng — nhận khiêu chiến.",
+     "10": "Đỏ nhiều quân thắng thế (Hình 12)."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6180,
+   "slug": "trung-cuoc-bao-dien-t1-don-de-ma-hoanh-xe-chien-phap-cu",
+   "title": "Chương 6 · Đơn Đề Mã Hoành Xe Phế Không Đầu Pháo — Chiến Pháp Cũ",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-6",
+   "summary": "Đen để Đỏ có Pháo không đầu, đổi lại quân linh hoạt và Tốt 3 qua sông phản kích. Đen có các cách: Tốt 3 tiến (với ba cách đáp của Đỏ), Tốt 7 tiến, Pháo 2 tiến 5.",
+   "seo_title": "Đơn Đề Mã Hoành Xe Phế Không Đầu Pháo — Chiến Pháp Cũ",
+   "seo_description": "Cây biến trung pháo tiến thất binh đối đơn đề mã hoành xe: Đen chịu Pháo không đầu đổi lấy quân linh hoạt, Tốt 3 qua sông; các biến dẫn tới cân bằng hoặc Đen phản tiên.",
+   "content": "<h2>Thế cờ (Hình 12)</h2><p>“Trung pháo tiến thất binh đối đơn đề mã hoành xe”: Đen để mặc Đỏ có Pháo không đầu, đổi lấy sự linh hoạt của các quân và Tốt 3 có thể qua sông — sức phản kích lớn.</p><h2>Các cách của Đen</h2><ul><li><strong>Biến 1 — Tốt 3 tiến 1</strong> (mạch chính): đẩy Tốt qua sông gây áp lực. Đỏ có ba cách (theo Giả Đề Thao): <strong>Xe 2 tiến 4</strong> — Đen bắt buộc tiến Tốt, lên Tướng, cuối cùng biến nguy thành yên, ưu thế Pháo không đầu của Đỏ mất; <strong>Pháo 7 bình 5</strong> — cân bằng; <strong>Tốt 5 tiến 1</strong> — đẩy nhanh trung lộ, thứ tự khác nhưng kết quả tương tự.</li><li><strong>Biến 2 — Tốt 7 tiến 1</strong>: Đen ra Xe giữ Pháo vững chắc; sau đổi quân Đỏ mất tiên — Đen phản tiên.</li><li><strong>Biến 3 — Pháo 2 tiến 5</strong>: dọa ăn Mã, đẩy thế cờ vào phức tạp — Đen phản tiên.</li></ul><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Hình 12: đơn đề mã hoành xe phế không đầu pháo.",
+    "14": "Biến 1: Tốt 3 tiến 1.",
+    "15": "Đỏ cách 1: Xe 2 tiến 4.",
+    "30": "Đen biến nguy thành yên."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Đỏ cách 2: Pháo 7 bình 5.",
+     "30": "Cân bằng."
+    },
+    "1": {
+     "1": "Đỏ cách 3: Tốt 5 tiến 1.",
+     "12": "Kết quả tương tự cách 2."
+    },
+    "2": {
+     "1": "Biến 2: Tốt 7 tiến 1.",
+     "11": "Đen phản tiên."
+    },
+    "3": {
+     "1": "Biến 3: Pháo 2 tiến 5 — dọa ăn Mã.",
+     "7": "Đen phản tiên."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6190,
+   "slug": "trung-cuoc-bao-dien-t1-don-de-ma-hoanh-xe-chien-phap-moi",
+   "title": "Chương 6 · Đơn Đề Mã Hoành Xe Phế Không Đầu Pháo — Chiến Pháp Mới",
+   "level": "nang-cao",
+   "draft": "t1-ch06b#c6-t2-7",
+   "summary": "Đen hoành Xe quá cung tranh thế — cách mới; lui Mã chuẩn bị đuổi Pháo không đầu, tiến Tốt bỏ Mã. Ở Hình 13, Đen lui Pháo ăn lại quân (thành hậu thủ) hoặc tiến Pháo dọa Tốt (phản tiên).",
+   "seo_title": "Đơn Đề Mã Hoành Xe Quá Cung — Chiến Pháp Mới",
+   "seo_description": "Cây biến đơn đề mã hoành xe quá cung phế không đầu pháo: Đen lui Mã đuổi Pháo, tiến Tốt bỏ Mã; Pháo 2 lui 1 hay Pháo 2 tiến 4 tích cực phản tiên.",
+   "content": "<h2>Thế cờ (Hình 13)</h2><p>Đen <strong>hoành Xe quá cung</strong> tranh thế — cách mới (cách cũ lên Tượng hoặc Pháo bình 5, Đỏ ăn Tốt đầu nắm chủ động). Đen lui Mã làm công, chuẩn bị đuổi Pháo không đầu — tinh diệu; rồi tiến Tốt bỏ Mã tranh tiên. Hình 13: Đỏ nhiều quân, Đen quân linh hoạt chiếm tiên.</p><h2>Hai cách của Đen</h2><ul><li><strong>Một là — Pháo 2 lui 1</strong> (mạch chính): ăn lại quân đã bỏ nhưng rơi vào hậu thủ — Đỏ chiếm ưu.</li><li><strong>Hai là — Pháo 2 tiến 4</strong>: dọa ăn Tốt, chuẩn bị lấy lại quân — tích cực, Đen phản tiên.</li></ul><h2>Lời bàn</h2><p>Đơn đề mã đối trung pháo có từ cổ phổ Minh Thanh; quan niệm truyền thống cho rằng Đỏ chủ động, kém linh hoạt hơn Bình phong mã hay Phản cung mã — nhưng trận này vẫn có sức chiến đấu ngoan cường, không thể xem thường.</p><p><em>Bài này là một cây biến khai cuộc: mạch chính đi theo biến thứ nhất, các biến còn lại nằm ở nhánh biến tại đúng điểm rẽ.</em></p>",
+   "captions": {
+    "25": "Hình 13: Đỏ nhiều quân, Đen quân linh hoạt.",
+    "26": "Một là: Pháo 2 lui 1 — ăn lại quân nhưng hậu thủ.",
+    "35": "Đỏ chiếm ưu."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Hai là: Pháo 2 tiến 4 — tích cực.",
+     "15": "Đen phản tiên."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  }
+ ]
+}

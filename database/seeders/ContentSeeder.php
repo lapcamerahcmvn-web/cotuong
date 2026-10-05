@@ -21,6 +21,9 @@ class ContentSeeder extends Seeder
             return;
         }
 
+        // content.json đã vượt 40MB (cây biến có FEN từng nút) — json_decode cần nhiều hơn 128MB mặc định.
+        ini_set('memory_limit', '1536M');
+
         $data = json_decode(file_get_contents($path), true);
         if (! is_array($data)) {
             $this->command?->error('content.json không hợp lệ.');

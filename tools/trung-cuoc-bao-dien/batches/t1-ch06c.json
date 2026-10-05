@@ -1,0 +1,390 @@
+{
+ "series": {
+  "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+  "slug": "trung-cuoc-bao-dien-tap-1"
+ },
+ "lessons": [
+  {
+   "order": 6200,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-cuc-tran-thuc",
+   "title": "Chương 6 · Phi Tượng Cục — Các Trận Thức Cơ Bản",
+   "level": "trung-cap",
+   "summary": "Phi Tượng cục (nước đầu lên Tượng) thuộc bố cục “nhu”: lấy nhàn đợi mệt, đánh chắc tiến chắc, sẵn sàng so công lực tàn cuộc. Tùy ứng pháp của đối phương mà chuyển thành bình phong mã, phản cung mã, đơn đề mã, quải giác mã…",
+   "seo_title": "Phi Tượng Cục — Tám Trận Thức Thường Gặp",
+   "seo_description": "Tiết 3 Chương 6: phi tượng cục — bình phong mã trực xe, phản cung mã trực xe, đơn đề mã trực xe, các trận hoành xe, đạn tử pháo; tư tưởng lấy nhàn đợi mệt.",
+   "content": "<h2>Phi Tượng cục</h2><p>Nước đầu lên Tượng nên gọi là Phi Tượng cục — có từ cổ phổ Minh Thanh. Đây là bố cục “nhu”: <strong>lấy nhàn đợi mệt, đánh chắc tiến chắc</strong>, sẵn sàng so công lực tàn cuộc. Vì không đe dọa trực tiếp, bên đi sau có nhiều cách đáp; bên lên Tượng tùy đó chuyển thành bình phong mã, phản cung mã, đơn đề mã, quải giác mã…</p><h2>Tám trận thức thường gặp</h2><ul><li><strong>Bình phong mã trực xe</strong>: đối phó ngũ lục pháo, ngũ thất pháo; tiến Tốt 3 hoặc 7 mở đường Mã.</li><li><strong>Phản cung mã trực xe (1)</strong>: đối phó tả trung pháo; Xe phải ra chậm, Xe trái ra nhanh.</li><li><strong>Phản cung mã trực xe (2)</strong>: dùng được trong mọi tình huống.</li><li><strong>Đơn đề mã trực xe</strong>: khi đối phương không đi trung pháo.</li><li><strong>Bình phong mã hoành xe</strong>: Xe phải hoành sang lộ 6, thường chống tả quá cung pháo.</li><li><strong>Đơn đề mã hoành xe</strong>: khi đối phương không trung pháo hoặc hậu bổ pháo.</li><li><strong>Quải giác mã hoành xe</strong>: khi đối phương tiến Tốt 3; ý đồ Xe bình 3 rồi tiến Tốt 3.</li><li><strong>Đạn tử pháo hoành xe quá cung</strong>: chống hữu pháo quá cung hoặc thất lộ mã bàn hà.</li></ul><p>Tám bài sau là cây biến cụ thể của các trận này.</p>"
+  },
+  {
+   "order": 6210,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-ta-trung-phao-binh-phong-ma",
+   "title": "Chương 6 · Phi Tượng Đối Tả Trung Pháo — Bình Phong Mã Tam Binh Đối Ngũ Tứ Pháo",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-1",
+   "summary": "Bình phong mã tiến tam binh đối ngũ tứ pháo: Đỏ muốn tiến Pháo phong Xe, Đen muốn tiến Xe đè Xe Pháo. Đen có ba cách: Xe 2 tiến 6, Xe 8 tiến 6, Xe 2 tiến 4.",
+   "seo_title": "Phi Tượng Đối Tả Trung Pháo — Bình Phong Mã Tam Binh",
+   "seo_description": "Cây biến phi tượng: bình phong mã tiến tam binh đối ngũ tứ pháo; Đen Xe 2 tiến 6 (Đỏ tốt hơn), Xe 8 tiến 6 (Đen chiếm tiên), Xe 2 tiến 4 (cân bằng).",
+   "content": "<h2>Thế trận</h2><p>Đen nhảy Mã trong tăng phòng thủ trung lộ. Hình 5: bình phong mã tiến tam binh đối ngũ tứ pháo, quân mạnh hai bên đã ra. Tiêu điểm: Đỏ định tiến Pháo phong Xe, Đen muốn tiến Xe đè Xe Pháo.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Xe 2 tiến 6</strong> (mạch chính): Đỏ tốt hơn.</li><li><strong>Biến 2 — Xe 8 tiến 6</strong>: Đỏ tiến Xe qua hà tác dụng không lớn (nên Pháo bình) — Đen chiếm tiên (ván Triệu Quốc Vinh – Lữ Khâm, 12/1993).</li><li><strong>Biến 3 — Xe 2 tiến 4</strong>: Xe tuần hà vững chắc, tiến Tốt 3 tiếp nối — cân bằng.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Hình 5: bình phong mã tam binh đối ngũ tứ pháo.",
+    "14": "Biến 1: Xe 2 tiến 6.",
+    "35": "Đỏ tốt hơn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Xe 8 tiến 6.",
+     "25": "Đen chiếm tiên."
+    },
+    "1": {
+     "1": "Biến 3: Xe 2 tiến 4 — vững chắc.",
+     "23": "Cân bằng."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6220,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-ta-trung-phao-phan-cung-ma",
+   "title": "Chương 6 · Phi Tượng Đối Tả Trung Pháo — Phản Cung Mã Đối Trung Pháo Tiến Tam Binh",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-2",
+   "summary": "Đỏ dùng tiên thủ phản cung mã, lấy tĩnh chế động nhưng hai Xe ra chậm. Đỏ có ba cách: tiến Tốt 3 đối công, Pháo 8 bình 9 ra Xe nhanh, lên Sĩ lấy nhàn đợi mệt.",
+   "seo_title": "Phi Tượng — Tiên Thủ Phản Cung Mã Đối Trung Pháo",
+   "seo_description": "Cây biến phi tượng chuyển tiên thủ phản cung mã đối trung pháo tiến tam binh: Tốt 3 tiến đối công, Pháo bình 9 ra Xe, lên Sĩ — đều dẫn tới đối công hoặc cân bằng.",
+   "content": "<h2>Thế trận</h2><p>Đỏ bình Pháo góc Sĩ, thành tiên thủ phản cung mã đối tả trung pháo (Hình 6). Lấy tĩnh chế động, nhưng nhược điểm là hai Xe ra chậm, Đen có thể ung dung đối kháng.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Tốt 3 tiến 1</strong> (mạch chính): Pháo tiến dọa Tốt hoặc đè Mã — đối công, bỏ trước lấy sau, hai bên tranh tiên.</li><li><strong>Biến 2 — Pháo 8 bình 9</strong>: ra Xe trái nhanh, khống chế Mã phải Đen — cách mới; hai bên vây nhau (Hồ Vinh Hoa – Dương Quan Lân, 1987).</li><li><strong>Biến 3 — Sĩ 4 tiến 5</strong>: củng cố trung lộ, lấy nhàn đợi mệt, nhưng bị Đen tiến Tốt đè hai Mã; Đen nhảy Mã tích cực — cân bằng.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "8": "Hình 6: tiên thủ phản cung mã đối trung pháo tiến tam binh.",
+    "9": "Biến 1: Tốt 3 tiến 1.",
+    "28": "Hai bên đối công tranh tiên."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Pháo 8 bình 9 — cách mới.",
+     "30": "Hai bên vây nhau."
+    },
+    "1": {
+     "1": "Biến 3: Sĩ 4 tiến 5 — lấy nhàn đợi mệt.",
+     "32": "Cân bằng."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6230,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-huu-phao-qua-cung",
+   "title": "Chương 6 · Phi Tượng Đối Hữu Pháo Quá Cung — Phản Cung Mã Đối Quá Cung Pháo",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-3",
+   "summary": "Thế trận tương đối bình ổn. Đen bình Xe bắt Pháo; Đỏ có hai cách: Pháo 2 bình 1 mời đổi Xe, hoặc Xe 1 bình 2 giữ Pháo đa biến.",
+   "seo_title": "Phi Tượng Đối Hữu Pháo Quá Cung",
+   "seo_description": "Cây biến phi tượng đối hữu pháo quá cung: phản cung mã đối quá cung pháo; Pháo 2 bình 1 mời đổi Xe (bình ổn) hay Xe 1 bình 2 giữ Pháo (Đỏ linh hoạt).",
+   "content": "<h2>Thế trận</h2><p>Hình 7: phản cung mã đối quá cung pháo — thế tương đối bình ổn. Đen bình Xe bắt Pháo; Đỏ phải thoát.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Pháo 2 bình 1</strong> (mạch chính): mời đổi Xe — chính xác vì hai Xe Đen đã ra. Cuối cùng cục diện bình ổn.</li><li><strong>Biến 2 — Xe 1 bình 2</strong>: giữ Pháo, thế đa biến, hàm súc — quân Đỏ linh hoạt, dễ đi.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "10": "Hình 7: Đen bình Xe bắt Pháo.",
+    "11": "Biến 1: Pháo bình 1 mời đổi Xe — chính xác.",
+    "28": "Cục diện bình ổn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Xe 1 bình 2 giữ Pháo — hàm súc.",
+     "19": "Quân Đỏ linh hoạt, dễ đi."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6240,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-tien-tot-3",
+   "title": "Chương 6 · Phi Tượng Đối Tiến Tốt 3 — Đơn Đề Mã Tốt Để Pháo Đối Đơn Đề Mã",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-4",
+   "summary": "Quân mạnh đã ra, song trực Xe Đỏ nhắm song Xe giữ Pháo của Đen; tranh chấp ở cả hai cánh. Đen tiến Tốt biên hoặc Pháo 2 tiến 6 — Đỏ đều giữ ưu.",
+   "seo_title": "Phi Tượng Đối Tiến Tốt 3 — Đơn Đề Mã Tốt Để Pháo",
+   "seo_description": "Cây biến đơn đề mã tốt để pháo đối đơn đề mã: Đỏ tiến Tốt 7 lên Xe tuần hà bỏ trước lấy sau; Đen Pháo 2 tiến 6 thì Đỏ có Tốt 7 qua sông, ưu.",
+   "content": "<h2>Thế trận</h2><p>Hình 8: đơn đề mã tốt để pháo đối đơn đề mã. Song trực Xe Đỏ nhắm song Xe giữ Pháo của Đen; tranh chấp ở cả hai cánh.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Tốt 1 tiến 1</strong> (mạch chính): Đỏ tiến Tốt 7, chuẩn bị Xe tuần hà, bỏ trước lấy sau — phát huy Pháo đáy; cánh phải Đen dễ bị công, Đỏ khống chế.</li><li><strong>Biến 2 — Pháo 2 tiến 6</strong>: sau đổi quân Đỏ có Tốt 7 qua sông, tương đối ưu.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Hình 8: tốt để pháo đối đơn đề mã.",
+    "14": "Biến 1: Tốt biên tiến.",
+    "15": "Tiến Tốt 7 — bỏ trước lấy sau.",
+    "27": "Đỏ khống chế cục diện."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Pháo 2 tiến 6.",
+     "20": "Đỏ có Tốt 7 qua sông, tương đối ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6250,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-ta-phao-qua-cung",
+   "title": "Chương 6 · Phi Tượng Đối Tả Pháo Quá Cung — Bình Phong Mã Hoành Xe Đối Quá Cung Pháo",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-5",
+   "summary": "Đỏ hoành Xe chiếm lộ 6 khống chế cánh phải Đen, Pháo 2 có thể qua hà phong Xe trái; Đen hai cánh vững, lấy nhàn đợi mệt. Ba cách: Xe 6 tiến 3, Xe 6 tiến 4, Pháo 2 tiến 4.",
+   "seo_title": "Phi Tượng Đối Tả Pháo Quá Cung — Bình Phong Mã Hoành Xe",
+   "seo_description": "Cây biến bình phong mã hoành xe đối quá cung pháo: Xe tuần hà (Đen phản tiên nếu Đỏ sai), Xe kỵ hà (bình ổn), Pháo tiến phong Xe (Đỏ hơn Tốt, bình ổn).",
+   "content": "<h2>Thế trận</h2><p>Hình 13: bình phong mã hoành xe đối quá cung pháo. Đỏ hoành Xe chiếm lộ 6 khống chế cánh phải Đen, Pháo 2 có thể qua hà phong Xe trái; Đen vững hai cánh — cuộc chiến khống chế và phản khống chế.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Xe 6 tiến 3</strong> (mạch chính): Xe tuần hà vững chắc, định đổi Tốt 3 mở đường Mã; Đen cũng lên Xe tuần hà tránh bị phong. Đỏ nên Pháo bình 1 đổi Xe — nếu không Đen phản tiên.</li><li><strong>Biến 2 — Xe 6 tiến 4</strong>: Xe kỵ hà khống chế; Đen kịp lui Pháo phục Tốt 3 cản Xe — đổi Xe, bình ổn.</li><li><strong>Biến 3 — Pháo 2 tiến 4</strong>: phong Xe; Đen đổi Tốt 3 phục Pháo bình 3; Đỏ Pháo ăn Tốt biên — nước mới; Đỏ hơn một Tốt nhưng bình ổn (Hình 14).</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "14": "Hình 13: bình phong mã hoành xe đối quá cung pháo.",
+    "15": "Biến 1: Xe 6 tiến 3 — tuần hà.",
+    "30": "Đen phản tiên."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Xe 6 tiến 4 — kỵ hà.",
+     "17": "Đổi Xe — bình ổn."
+    },
+    "1": {
+     "1": "Biến 3: Pháo 2 tiến 4 phong Xe.",
+     "22": "Đỏ hơn một Tốt nhưng bình ổn."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6260,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-huu-chinh-ma",
+   "title": "Chương 6 · Phi Tượng Đối Hữu Chính Mã — Đơn Đề Mã Hoành Xe Đối Hậu Bổ Trung Pháo",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-6",
+   "summary": "Đỏ nhảy Mã trong — cải tiến tích cực; Đen dựng Pháo đầu rất mạnh. Đỏ hoành Xe (nước mới), Đen nhảy Mã đầu hà dọa trung lộ. Đen bình Pháo góc Sĩ hoặc nhảy Mã.",
+   "seo_title": "Phi Tượng Đối Hữu Chính Mã — Đơn Đề Mã Hoành Xe",
+   "seo_description": "Cây biến đơn đề mã hoành xe đối hậu bổ trung pháo: Đen Pháo 2 bình 4 (đối công) hoặc Mã 8 tiến 7; Đỏ ăn Tốt bỏ Tượng có đảm lược, ưu hơn (Hồ Vinh Hoa – Lữ Khâm 1993).",
+   "content": "<h2>Thế trận</h2><p>Đỏ nhảy Mã trong — cải tiến tích cực (trước đây hay tiến Tốt 7 hoặc 3, thành các thế bình phong mã khác). Đen dựng Pháo đầu nhằm vào đơn đề mã — rất mạnh. Đỏ hoành Xe — nước mới. Hình 14: đơn đề mã hoành xe đối hậu bổ trung pháo.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Pháo 2 bình 4</strong> (mạch chính): phòng Đỏ bình Xe 6 bắt Mã — hai bên đối công.</li><li><strong>Biến 2 — Mã 8 tiến 7</strong>: Đỏ ăn Tốt bỏ Tượng có đảm lược; Đen ăn Tượng quá vội — Đỏ ưu hơn (Hồ Vinh Hoa – Lữ Khâm, Ngũ Dương Bôi 1993).</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "9": "Hình 14: đơn đề mã hoành xe đối hậu bổ trung pháo.",
+    "10": "Biến 1: Pháo 2 bình 4.",
+    "26": "Hai bên đối công."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Mã 8 tiến 7.",
+     "24": "Đỏ ưu hơn."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6270,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doi-tien-that-binh",
+   "title": "Chương 6 · Phi Tượng Đối Tiến Thất Binh Chuyển Đối Binh Cục — Quải Giác Mã Hoành Xe",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-7",
+   "summary": "Hai bên hình dạng giống nhau; về lý luận bên đi trước một nước luôn có lợi. Đỏ đổi Tốt 3 chuẩn bị ra Xe. Đen tiến Tốt 7 hoặc nhảy Mã 4 tiến 6.",
+   "seo_title": "Phi Tượng Đối Tiến Thất Binh — Quải Giác Mã Hoành Xe",
+   "seo_description": "Cây biến quải giác mã hoành xe: hình cờ đối xứng, Đỏ đi trước có lợi; Đen nhảy Mã ngoài đổi Pháo (biến mới, Đen tiên nếu Đỏ đổi Pháo sai) hoặc Mã 4 tiến 6 (Đỏ ưu).",
+   "content": "<h2>Thế trận</h2><p>Đỏ ra Xe lộ 3, ý đổi Tốt 3 tranh tiên. Hình 15: quải giác mã hoành xe, hai bên hình dạng tương đồng — về lý luận, bên đi trước một nước luôn có lợi. Tiêu điểm: Đỏ đổi Tốt 3, chuẩn bị ra Xe.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Tốt 7 tiến 1</strong> (mạch chính): Đen nhảy Mã ngoài đổi Pháo — biến mới. Đỏ đổi Pháo không thỏa đáng (nên Xe tiến bắt Mã — cân bằng); Đen tiên thủ (Lý Lai Quần – Ô Chính Vĩ, 1987).</li><li><strong>Biến 2 — Mã 4 tiến 6</strong>: Đỏ lui Xe chính xác (tiến Xe thì Xe Mã bị cô) — Đỏ chiếm ưu.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "13": "Hình 15: quải giác mã hoành xe — đối xứng.",
+    "14": "Biến 1: Tốt 7 tiến 1.",
+    "38": "Đen tiên thủ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Mã 4 tiến 6.",
+     "16": "Đỏ chiếm ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6280,
+   "slug": "trung-cuoc-bao-dien-t1-phi-tuong-doan-tu-phao-hoanh-xe",
+   "title": "Chương 6 · Phi Tượng Đối Hữu Pháo Quá Cung — Đạn Tử Pháo Hoành Xe Quá Cung",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t3-8",
+   "summary": "Đỏ nhảy Mã biên, tiến Tốt khống chế Mã; thế tương đối bình ổn. Đỏ hoành Xe khống chế Xe trái Đen; Đen tìm cân bằng hai cánh với ba cách.",
+   "seo_title": "Phi Tượng — Đạn Tử Pháo Hoành Xe Quá Cung Đối Quá Cung Pháo",
+   "seo_description": "Cây biến đạn tử pháo hoành xe quá cung đối quá cung pháo: Đen lên Tượng phải (tương đương), tiến Tốt biên (đối công), Pháo 8 bình 7 (Đỏ ưu rõ).",
+   "content": "<h2>Thế trận</h2><p>Đỏ nhảy Mã biên; tiến Tốt khống chế Mã — hợp kỳ lý. Hình 16: đạn tử pháo hoành xe quá cung đối quá cung pháo, thế tương đối bình ổn. Đỏ hoành Xe khống chế Xe trái Đen; Đen tìm phát triển cân bằng hai cánh.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Tượng 3 tiến 5</strong> (mạch chính): củng cố trung lộ, chuẩn bị ra Xe — hai bên tương đương.</li><li><strong>Biến 2 — Tốt 1 tiến 1</strong>: khống chế Mã, quan sát — hai bên đối công.</li><li><strong>Biến 3 — Pháo 8 bình 7</strong>: thế Đỏ thông thoáng, quân linh hoạt — Đỏ rõ ưu.</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "9": "Hình 16: đạn tử pháo hoành xe quá cung đối quá cung pháo.",
+    "10": "Biến 1: Tượng 3 tiến 5.",
+    "26": "Hai bên tương đương."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Tốt biên tiến khống chế Mã.",
+     "17": "Hai bên đối công."
+    },
+    "1": {
+     "1": "Biến 3: Pháo 8 bình 7.",
+     "10": "Đỏ thông thoáng, rõ ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6290,
+   "slug": "trung-cuoc-bao-dien-t1-xe-ma-cuc-tran-thuc",
+   "title": "Chương 6 · Xe Mã Cục — Tổng Quan",
+   "level": "trung-cap",
+   "summary": "Vào trung cuộc hoặc trung tàn cuộc, thế quyết đấu Xe song Mã hoặc Xe Mã rất thường gặp. Xe tung hoành, Mã bát diện uy phong — biến hóa linh hoạt, sát lực mạnh. Năm ván thực chiến minh họa.",
+   "seo_title": "Xe Mã Cục — Chiến Pháp Xe Song Mã, Xe Mã",
+   "seo_description": "Tiết 4 Chương 6: chiến pháp Xe song Mã đối Xe song Mã, Xe Mã đối Xe Mã qua năm ván Hồ Vinh Hoa, Vương Gia Lương, Lữ Khâm… từ trung cuộc vào tàn cuộc.",
+   "content": "<h2>Xe Mã — cặp quân sát lực mạnh</h2><p>Dù đối công kịch liệt hay bình ổn, khi vào trung cuộc hoặc trung tàn cuộc thường gặp thế quyết đấu <strong>Xe song Mã</strong> hoặc <strong>Xe Mã</strong>. Xe tung hoành ngang dọc, Mã có “bát diện uy phong” — phối hợp được nhiều biến linh hoạt, sát lực rất mạnh.</p><p>Năm bài sau là năm ván thực chiến: hai ván Xe song Mã đối Xe song Mã (một thắng nhờ hơn Tốt, một hòa nhờ lấy công làm thủ), ba ván Xe Mã đối Xe Mã (có Pháo hoặc không).</p>"
+  },
+  {
+   "order": 6300,
+   "slug": "trung-cuoc-bao-dien-t1-xe-song-ma-doi-xe-song-ma-1",
+   "title": "Chương 6 · Xe Song Mã Đối Xe Song Mã (1) — Hồ Vinh Hoa vs Lý Lai Quần",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t4-1",
+   "summary": "Sau 17 hiệp, hai bên Xe song Mã Sĩ Tượng toàn, bốn Tốt; Sĩ Tượng Đen rời rạc, hai Mã xấu. Đỏ điều Mã sang trái tránh Xe, “trước an mình sau đánh địch”, rồi ăn Tượng, hơn Tốt thắng.",
+   "seo_title": "Xe Song Mã Đối Xe Song Mã — Trước An Mình Sau Đánh Địch",
+   "seo_description": "Ván Ngũ Dương Bôi lần 7: Xe song Mã đối Xe song Mã, Đỏ điều Mã tránh Xe, lui Mã lấy lui làm công, ăn Tượng đổi Xe, Tốt đầu qua sông, thắng.",
+   "content": "<h2>Thế cờ (Hình 1)</h2><p>Ngũ Dương Bôi lần 7, sau 17 hiệp từ “trung pháo tiến thất binh đối tam bộ hổ”. Hai bên còn Xe song Mã, Sĩ Tượng toàn, bốn Tốt; nhưng Sĩ Tượng Đen rời rạc, hai Mã ở chỗ xấu — Đen đã ở thế dưới. Đỏ đi.</p><h2>Diễn biến</h2><ul><li>Đỏ điều Mã phải sang trái, tránh Xe Đen — <strong>trước an mình, sau đánh địch</strong>. Xe chuyển chỗ đẹp chuẩn bị đánh cánh trái Đen.</li><li>Đỏ <strong>lui Mã lấy lui làm công</strong> — nước hay. Đen bỏ Tốt mở đường Xe (nên nhảy Mã 7 tiến 6 cho Mã phải ra); bình Xe — yếu (nên nhảy Mã giữ Tượng, có hi vọng hòa).</li><li>Đỏ ăn Tượng đổi Xe (Hình 2): hơn Tượng, Tốt đầu sắp qua sông. Đen tiến Xe bắt Mã — vô ích. Đỏ lên Sĩ chính xác (tham ăn Tốt có thể dẫn tới hòa).</li><li>Tướng Đỏ an toàn; ưu thế nhiều Tốt mang lại chiến thắng.</li></ul>",
+   "captions": {
+    "1": "Hình 1: Đỏ điều Mã tránh Xe — trước an mình.",
+    "107": "Đỏ hơn Tốt, chắc thắng."
+   },
+   "var_caps": {},
+   "fen": "3ak1br1/9/n2a2n2/4p3p/p1b3p2/3N5/P3P1P1P/4B1N2/1R7/3AKAB2"
+  },
+  {
+   "order": 6310,
+   "slug": "trung-cuoc-bao-dien-t1-xe-song-ma-doi-xe-song-ma-2",
+   "title": "Chương 6 · Xe Song Mã Đối Xe Song Mã (2) — Vương Gia Lương vs Vương Bân (1993)",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t4-2",
+   "summary": "Đen hơn một Tốt nhưng Tướng bất an, Đỏ phục sát chiếm tiên. Đen lấy công làm thủ: đổi Xe, tiến Tốt bức Xe, hai Mã liên kết phòng thủ — Đỏ không công phá được, hòa.",
+   "seo_title": "Xe Song Mã Đối Xe Song Mã — Lấy Công Làm Thủ Giữ Hòa",
+   "seo_description": "Ván giải Cá nhân 1993: Xe song Mã Sĩ Tượng toàn, Đen hơn Tốt Tướng bất an; đổi Xe, Tốt bức Xe, hai Mã liên kết, lên Sĩ lão luyện — hòa.",
+   "content": "<h2>Thế cờ (Hình 3)</h2><p>Giải Cá nhân 1993, sau 25 hiệp từ “tốt để pháo đối tả trung pháo”. Mỗi bên Xe song Mã Sĩ Tượng toàn; Đen hơn một Tốt nhưng Tướng bất an, Đỏ phục sát chiếm tiên một chút. Đen đi.</p><h2>Diễn biến</h2><ul><li>Đen <strong>đổi Xe</strong> — chính xác (ra Tướng thì Đỏ có thế công).</li><li>Tiến Tốt bức Xe giải vây — tinh xảo; hai Mã Đen liên kết phòng thủ.</li><li>Hình 4: đổi một Mã, thế đơn điệu, khả năng hòa rất cao. Đen lên Sĩ điều chỉnh phòng ngự — lão luyện (Hình 5).</li><li>Đen phòng thủ chắc chắn, Đỏ không công phá được — đồng ý hòa.</li></ul><h2>Bài học</h2><p>Khi Tướng bất an, “lấy công làm thủ” — chủ động đổi quân và tạo đe dọa — giúp gỡ áp lực tốt hơn phòng thủ bị động.</p>",
+   "captions": {
+    "1": "Hình 3: Đen đổi Xe — chính xác.",
+    "71": "Đen phòng thủ chắc — hòa."
+   },
+   "var_caps": {},
+   "fen": "2ba1a3/4k4/n1n1b4/2p1p2Np/p2r5/6R2/P3P3P/4B1N2/4A4/3AK1B2"
+  },
+  {
+   "order": 6320,
+   "slug": "trung-cuoc-bao-dien-t1-xe-ma-doi-xe-ma-1",
+   "title": "Chương 6 · Xe Mã Đối Xe Mã (1) — Lữ Khâm vs Triệu Quốc Vinh (1981)",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t4-3",
+   "summary": "Hai bên Xe Mã ba Tốt Sĩ Tượng toàn; Xe Mã Tốt Đỏ đẹp, Mã Đen xấu. Đen lui Xe thủ rồi phản công; giằng co qua nhiều cơ hội bỏ lỡ của cả hai, cuối cùng Đỏ có sát cục.",
+   "seo_title": "Xe Mã Đối Xe Mã — Lữ Khâm vs Triệu Quốc Vinh",
+   "seo_description": "Ván liên tái 1981: Xe Mã ba Tốt Sĩ Tượng toàn, Đỏ tiến Tốt biên tinh tế, Đen lui Xe thủ rồi phản công, cả hai bỏ lỡ cơ hội, Đỏ thắng.",
+   "content": "<h2>Thế cờ (Hình 5)</h2><p>Giải liên tái 1981, sau 22 hiệp từ “trung pháo thất lộ mã đối bình phong mã song pháo quá hà”. Hai bên Xe Mã, ba Tốt, Sĩ Tượng toàn; Xe Mã Tốt Đỏ vị trí đẹp, Mã Đen xấu. Đen đi.</p><h2>Diễn biến</h2><ul><li>Đen <strong>lui Xe phòng thủ</strong> — tiên thủ hậu công. Đỏ tiến Tốt biên tinh tế (vội ăn Tốt thì Mã Đen ra).</li><li>Đỏ bình Tốt — yếu (nên nhảy Mã, vững ưu). Đen bình Xe khống chế Mã Tốt, buộc Mã lui — lão luyện.</li><li>Đỏ bình Xe bắt Mã làm tắc đường Xe (nên Xe tiến 1, bỏ Mã có sát thế). Hình 6: Đen nhảy Mã biên, bỏ Tốt phá Tượng — sinh động.</li><li>Đen Xe giữ sườn bắt Tốt — sai, mất cơ hội thắng (nên Xe tiến 3). Cuối cùng Đỏ phục sát Xe Mã — Đỏ thắng (Hình 7).</li></ul><h2>Bài học</h2><p>Trong cuộc chiến Xe Mã, cơ hội đến và đi rất nhanh; mỗi nước phải kiểm tra cả đòn sát của mình lẫn của đối phương.</p>",
+   "captions": {
+    "1": "Hình 5: Đen lui Xe phòng thủ.",
+    "2": "Tiến Tốt biên — tinh tế.",
+    "72": "Đỏ có sát cục — thắng."
+   },
+   "var_caps": {},
+   "fen": "2bak2n1/4a4/4b4/p1R3P1p/3Np4/2P6/8P/Br2B4/4A4/3AK4"
+  },
+  {
+   "order": 6330,
+   "slug": "trung-cuoc-bao-dien-t1-xe-ma-doi-xe-ma-2",
+   "title": "Chương 6 · Xe Mã Đối Xe Mã (2) — Hồ Vinh Hoa vs Vương Gia Lương (1974)",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t4-4",
+   "summary": "Hai bên Xe Pháo Mã Sĩ Tượng toàn; Đen có hai Tốt qua sông liên thủ. Đen tiến Pháo đổi Pháo, lên Sĩ góc, Xe Mã hai Tốt dồn ép đến thắng.",
+   "seo_title": "Xe Mã Đối Xe Mã — Đổi Pháo, Xe Mã Song Tốt Thắng",
+   "seo_description": "Ván giao hữu 1974: Đen hai Tốt qua sông, tiến Pháo đổi Pháo, lên Sĩ góc công thủ đều lợi, Xe Mã song Tốt dồn ép, Đen thắng.",
+   "content": "<h2>Thế cờ (Hình 7)</h2><p>Giao hữu Hắc Long Giang – Thượng Hải 1974, sau 28 hiệp từ “trung pháo quá hà xe chính mã đối bình phong mã lưỡng đầu xà”. Hai bên Xe Pháo Mã Sĩ Tượng toàn; Đen hai Tốt qua sông liên thủ — chiếm ưu. Đen đi.</p><h2>Diễn biến</h2><ul><li><strong>Pháo tiến đổi Pháo</strong> — quả quyết; Đỏ bị buộc đổi.</li><li>Đen lên Sĩ góc — lợi cả công lẫn thủ, chiến pháp Xe Mã lý tưởng (Hình 8).</li><li>Đỏ lấy Mã đổi Tốt mưu hòa; nhưng Xe Mã song Tốt Đen tiếp tục dồn, Đỏ đành bình Xe (Hình 9) rồi lui Sĩ — Đen thắng.</li></ul><h2>Bài học</h2><p>Khi có hai Tốt qua sông liên thủ, đổi bớt quân chủ lực giúp Tốt phát huy — miễn là Xe Mã còn đủ để hộ tống.</p>",
+   "captions": {
+    "1": "Hình 7: Pháo tiến đổi Pháo — quả quyết.",
+    "57": "Đen thắng."
+   },
+   "var_caps": {},
+   "fen": "3rkab2/4a1c2/4b4/2R6/4Cn2p/P8/N2pp4/8B/9/2BAKA3"
+  },
+  {
+   "order": 6340,
+   "slug": "trung-cuoc-bao-dien-t1-xe-ma-doi-xe-ma-3",
+   "title": "Chương 6 · Xe Mã Đối Xe Mã (3) — Tiền Hồng Phát vs Vương Gia Lương (1984)",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t4-5",
+   "summary": "Đỏ thiếu một Sĩ, Đen thiếu hai Tượng — đối công. Đen chiếu ăn Sĩ bắt Pháo, đổi Pháo; Xe Mã hai bên tung hoành, cuối cùng Đỏ chủ động đổi Xe giản hóa và hòa.",
+   "seo_title": "Xe Mã Đối Xe Mã — Cuộc Chiến Xe Mã Cam Go",
+   "seo_description": "Ván Đồng đội 1984: Xe Pháo Mã ba Tốt, Đỏ thiếu Sĩ, Đen thiếu Tượng; Đen nhảy Mã đối công, Đỏ bỏ Tượng công sát, Xe Mã tung hoành, đổi Xe hòa.",
+   "content": "<h2>Thế cờ (Hình 9)</h2><p>Giải Đồng đội 1984, sau 32 hiệp. Hai bên Xe Pháo Mã ba Tốt; Đỏ thiếu một Sĩ, Đen thiếu hai Tượng — thế đối công. Đen đi.</p><h2>Diễn biến</h2><ul><li>Đen <strong>Xe chiếu ăn Sĩ bắt Pháo</strong>, đổi Pháo — vào cuộc chiến Xe Mã. Đen nhảy Mã đối công — có đảm lược (lui Xe thì cơ bản hòa).</li><li>Hình 10: Đỏ Xe chiếm yếu đạo, bỏ Tượng công sát; Đen không đổi Xe mà liều sát Tượng. Đỏ chiếu chính xác; Đen bình Tướng đúng (Hình 11).</li><li>Đỏ tiến Mã phục sát — nước hay; Đen lui Xe chính xác. Đỏ tàn Sĩ thiếu Tượng chủ động đổi Xe giản hóa — sáng suốt. Hòa.</li></ul><h2>Bài học</h2><p>Cuộc chiến Xe Mã đầy chuyển biến; biết lúc nào giản hóa để giữ kết quả cũng quan trọng như biết lúc nào tấn công.</p>",
+   "captions": {
+    "1": "Hình 9: Xe chiếu ăn Sĩ bắt Pháo.",
+    "70": "Đổi Xe giản hóa — hòa."
+   },
+   "var_caps": {},
+   "fen": "4kaR2/4a4/4n4/p1p4rp/9/2PN5/P3P4/3CB4/5c3/2BAK4"
+  },
+  {
+   "order": 6350,
+   "slug": "trung-cuoc-bao-dien-t1-doi-binh-cuc-tran-thuc",
+   "title": "Chương 6 · Đối Binh Cục — Tổng Quan",
+   "level": "trung-cap",
+   "summary": "Hai bên cùng mở bằng tiến Tốt — “đối binh cục”, biến hóa đa đoan, cương nhu đủ cả, thường là cuộc so công phu. Chia hai loại: Tốt Mã cục và Tốt để pháo cục.",
+   "seo_title": "Đối Binh Cục — Tốt Mã Cục Và Tốt Để Pháo",
+   "seo_description": "Tiết 5 Chương 6: đối binh cục — tốt mã cục (chuyển tam bộ hổ, tiên phong mã, quải giác mã) và tốt để pháo cục (chuyển thuận pháo, liệt pháo) qua cây biến.",
+   "content": "<h2>Đối binh cục</h2><p>Nước đầu hai bên đều tiến Tốt — gọi là đối binh cục. Biến hóa đa đoan, cương nhu đủ cả; thập niên 1930–40 rất được ưa chuộng; thường là cuộc so công phu.</p><ul><li><strong>Tốt Mã cục</strong>: hai bên tiến Tốt, tiến Mã; bên đi trước có thể chuyển trung pháo (thành trung pháo đối bình phong mã tiến thất binh), nhưng thường chọn các trận ôn hòa như tiên phong mã, quải giác mã, đơn đề mã hoành xe.</li><li><strong>Tốt để pháo cục</strong>: nước 2 bên đi trước bình Pháo dọa Tốt — kịch liệt hơn, dễ chuyển thuận pháo, liệt pháo, đơn đề mã, quải giác mã.</li></ul>"
+  },
+  {
+   "order": 6360,
+   "slug": "trung-cuoc-bao-dien-t1-tot-ma-cuc-tran-thuc",
+   "title": "Chương 6 · Tốt Mã Cục — Tam Bộ Hổ Đối Bình Phong Mã",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t5-1",
+   "summary": "Từ đối binh cục chuyển tam bộ hổ đối bình phong mã: cánh trái Đỏ đã ra đủ, tiết tấu nhanh; Đen hai cánh cân bằng. Đỏ có bốn cách điều quân cánh phải.",
+   "seo_title": "Đối Binh Cục Chuyển Tam Bộ Hổ Đối Bình Phong Mã",
+   "seo_description": "Cây biến tốt mã cục: tam bộ hổ đối bình phong mã, Đỏ nhảy Mã (Đen tiên), Pháo tiến (Đỏ ưu), Pháo bình giữa (cân bằng), chuyển quá cung pháo (ba cách của Đen).",
+   "content": "<h2>Thế trận</h2><p>Đỏ bình Pháo nhanh mở đường Xe — nước mới (trước đây hay chuyển trung pháo hoặc lên Tượng). Hình 1: từ đối binh cục thành tam bộ hổ đối bình phong mã — cánh trái Đỏ Xe Mã Pháo Tốt đã ra, tiết tấu nhanh; Đen hai cánh cân bằng. Vấn đề: Đỏ điều quân cánh phải giành tiên thế nào.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Mã 2 tiến 3</strong> (mạch chính): Đen tiến Pháo phong Xe kịp thời, tiến Tốt đầu chuẩn bị Xe bắt chết Pháo — Đen tiên thủ.</li><li><strong>Biến 2 — Pháo 2 tiến 4</strong>: Đen lên Tượng bị Pháo đè Mã; Xe bắt Pháo bị Xe Đỏ qua hà khống chế — Đỏ tương đối ưu.</li><li><strong>Biến 3 — Pháo 2 bình 5</strong>: Đen Pháo phong Xe trái — nước quan trọng; cân bằng.</li><li><strong>Biến 4 — Pháo 2 bình 6</strong>: chuyển quá cung pháo — cách mới. Đen: Pháo 2 tiến 2 (Đỏ bỏ Tốt ra Xe bắt Pháo — dễ đi), Mã 7 tiến 6 (Đen dựng Pháo đầu phản kích — cân bằng), Tượng 7 tiến 5 (Đỏ nhiều Tốt ưu).</li></ul><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "7": "Bình Pháo mở đường Xe — nước mới.",
+    "8": "Hình 1: tam bộ hổ đối bình phong mã.",
+    "9": "Biến 1: Mã 2 tiến 3.",
+    "26": "Đen tiên thủ."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Pháo 2 tiến 4.",
+     "17": "Đỏ tương đối ưu."
+    },
+    "1": {
+     "1": "Biến 3: Pháo 2 bình 5.",
+     "20": "Cân bằng."
+    },
+    "2": {
+     "1": "Biến 4: Pháo 2 bình 6 — chuyển quá cung pháo.",
+     "2": "Đen cách 1: Pháo 2 tiến 2.",
+     "17": "Đỏ dễ đi."
+    },
+    "3": {
+     "1": "Đen cách 2: Mã 7 tiến 6.",
+     "4": "Cân bằng."
+    },
+    "4": {
+     "1": "Đen cách 3: Tượng 7 tiến 5.",
+     "12": "Đỏ nhiều Tốt chiếm ưu."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  },
+  {
+   "order": 6370,
+   "slug": "trung-cuoc-bao-dien-t1-tot-de-phao-tran-thuc",
+   "title": "Chương 6 · Tốt Để Pháo — Đen Dựng Pháo Đầu",
+   "level": "nang-cao",
+   "draft": "t1-ch06c#c6-t5-2",
+   "summary": "Đen dựng Pháo đầu đối phó tốt để pháo — tích cực hơn các cách khác. Đỏ bỏ Tốt đầu, “vây Ngụy cứu Triệu”: nhảy Mã đuổi Pháo hoặc tiến Tốt 3 công Tượng đáy.",
+   "seo_title": "Tốt Để Pháo — Vây Ngụy Cứu Triệu",
+   "seo_description": "Cây biến tốt để pháo: Đen dựng Pháo đầu, Đỏ bỏ Tốt đầu; nhảy Mã (Đen lui Pháo, cơ hội thắng nhiều hơn) hoặc tiến Tốt 3 (Đen chiếu bình Pháo mắc bẫy, Đỏ thắng).",
+   "content": "<h2>Thế trận</h2><p>Đen dựng Pháo đầu — tích cực hơn Pháo bình 5 hay lên Tượng. Hình 2: Đỏ đẩy mạnh Tốt 3, cho Đen có Pháo không đầu, ý đưa ván cờ vào đối công kịch liệt (hai cách khác: chuyển liệt pháo, hoặc tiến Mã giữ Tốt giữa). Đỏ bỏ Tốt đầu, tiến Tốt 3 đánh Tượng đáy hoặc tiến Mã đuổi Pháo — “vây Ngụy cứu Triệu”; Đen dựa Pháo không đầu tốc chiến.</p><h2>Các biến</h2><ul><li><strong>Biến 1 — Mã 8 tiến 7</strong> (mạch chính): Đen lui Pháo cương cường; thế phức tạp, đối công — Đen phục Pháo 2 bình 5 đối sát, cơ hội thắng nhiều hơn.</li><li><strong>Biến 2 — Tốt 3 tiến 1</strong>: Đen tiến Pháo tuần hà mặc Đỏ ăn Tượng đáy; Đen tiến Xe chiếu rồi bình Pháo bắt Mã — tưởng hay mà kém, rơi vào bẫy; Đỏ thắng (nên lên Tượng).</li></ul><h2>Ghi nhớ</h2><p>Từ đối binh cục có thể chuyển thành các trận kịch liệt; ở Hình 2, hai cách đi của Đỏ cho kết quả khác hẳn — chọn đúng nước trong trung cuộc quan trọng biết bao.</p><p><em>Cây biến khai cuộc: mạch chính theo biến thứ nhất, các biến khác ở nhánh biến tại điểm rẽ.</em></p>",
+   "captions": {
+    "5": "Đen dựng Pháo đầu.",
+    "6": "Hình 2: Đỏ đẩy Tốt 3, bỏ Tốt đầu.",
+    "7": "Biến 1: Mã 8 tiến 7.",
+    "20": "Đối công — Đen nhiều cơ hội hơn."
+   },
+   "var_caps": {
+    "0": {
+     "1": "Biến 2: Tốt 3 tiến 1.",
+     "23": "Đen mắc bẫy — Đỏ thắng."
+    }
+   },
+   "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR"
+  }
+ ]
+}
