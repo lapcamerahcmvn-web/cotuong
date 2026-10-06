@@ -142,6 +142,16 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
 
         Route::get('users', [AdminUserController::class, 'index'])->name('users.index');
         Route::get('users/{user}', [AdminUserController::class, 'show'])->name('users.show');
+        Route::put('users/{user}/vai-tro', [AdminUserController::class, 'updateRole'])->name('users.role');
+        Route::post('users/{user}/khoa', [AdminUserController::class, 'ban'])->name('users.ban');
+        Route::post('users/{user}/mo-khoa', [AdminUserController::class, 'unban'])->name('users.unban');
+        Route::delete('users/{user}', [AdminUserController::class, 'destroy'])->name('users.destroy');
+
+        // Cài đặt web & SEO + chuyển hướng 301 — CHỈ admin.
+        Route::get('cai-dat', [\App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings.index');
+        Route::post('cai-dat', [\App\Http\Controllers\Admin\SettingsController::class, 'update'])->name('settings.update');
+        Route::post('cai-dat/chuyen-huong', [\App\Http\Controllers\Admin\SettingsController::class, 'storeRedirect'])->name('settings.redirects.store');
+        Route::delete('cai-dat/chuyen-huong/{redirect}', [\App\Http\Controllers\Admin\SettingsController::class, 'destroyRedirect'])->name('settings.redirects.destroy');
         Route::get('nguon', [SourceAssetController::class, 'index'])->name('source-assets.index');
         Route::get('nguon/{sourceAsset}', [SourceAssetController::class, 'show'])->name('source-assets.show');
     });

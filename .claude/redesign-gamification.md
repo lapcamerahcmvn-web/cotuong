@@ -395,3 +395,18 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
    nước". Đo kho: bản đầu (tol 35, không giới hạn quân) nhận nhầm ở thế chiếu hết máy chưa thấy sát (#433, #217) → siết.
 4. **3 mạng**: trái tim không đổi màu — CSS đặt `color` thẳng lên svg nên `.is-lost` (đặt trên span) vô tác dụng;
    server vẫn trừ mạng đúng. Giờ tim còn = đỏ đặc, mất = viền mờ, vừa mất thì rung.
+
+## Đợt 22 (06/10/2026) — Luật lặp nước + pháp lý/SEO + nâng cấp Admin
+1. **Lặp nước 3 lần** (`app/Support/Xiangqi/Repetition.php` ↔ `resources/js/repetition.js`): lần 2 hiện thông báo;
+   nước gây lần 3 phải xác nhận (đấu bạn: HTTP 409 `confirm` → gửi lại `confirm=1`; chơi máy: `window.confirm`).
+   Phán quyết lần 3: bên mà MỌI nước trong vòng lặp là chiếu/bắt (đuổi quân không được bảo vệ, Mã/Pháo đuổi Xe) còn bên kia
+   không → bên đó THUA; còn lại hoà. Chiếu mãi vẫn cấm như cũ (`forbiddenCheck`). Máy tránh lặp khi sẽ thua / khi đang hơn quân.
+2. **Pháp lý + SEO**: `/dieu-khoan-su-dung`, `/chinh-sach-bao-mat` (theo NĐ 13/2023), link footer + trang đăng ký + sitemap;
+   JSON-LD Organization thêm email + parentOrganization LapCameraHCM; `SoftwareApplication` (`Seo::appLd`) cho chơi máy,
+   sảnh đấu bạn, quét ảnh, luyện tập; `llms.txt` thêm mục công cụ; log truy cập giữ 180 ngày.
+3. **Admin**: bảng `login_events` (ghi từ 10/2026), khoá/mở khoá tài khoản (`users.banned_at`, middleware `EnsureNotBanned`),
+   xoá tài khoản (gõ lại email), đổi vai trò; trang người dùng có bộ lọc/sắp xếp, trang chi tiết nhiều tab (đăng nhập, học tập,
+   luyện tập, ván đấu, bình luận, truy cập, heatmap 28 ngày). Thống kê: người dùng/học tập/luyện tập/chơi máy theo cấp/đấu bạn/
+   đăng nhập/top tuần. **Cài đặt web & SEO** (`site_settings` ghi đè `config('site.*')` trong `AppServiceProvider`): tên, mô tả,
+   email, title/description trang chủ, GA4, GSC, mạng xã hội + quản lý chuyển hướng 301 (404 tự tra `UrlRedirect`).
+   ⚠️ Deploy cần `php artisan migrate --force`.

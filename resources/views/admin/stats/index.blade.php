@@ -1,8 +1,71 @@
 @extends('admin.layout')
-@section('title', 'Thống kê truy cập')
-@section('heading', 'Thống kê truy cập')
+@section('title', 'Thống kê')
+@section('heading', 'Thống kê')
 
 @section('content')
+@php
+    $lm = ['password' => 'Mật khẩu', 'google' => 'Google', 'register' => 'Đăng ký'];
+    $pm = ['daily' => 'Thế hôm nay', 'rush' => '60 giây', 'survival' => '3 mạng', 'topic' => 'Chủ đề', 'review' => 'Ôn lỗi', 'lesson' => 'Trong bài học', 'placement' => 'Kiểm tra trình độ'];
+    $lv = [1 => 'Tập sự', 2 => 'Dễ', 3 => 'Vừa', 4 => 'Khó'];
+    $max = fn ($k) => max(1, collect($learn14)->max($k));
+@endphp
+<h2 style="font-size:17px;font-weight:800;margin:0 0 10px;">Người dùng &amp; học tập</h2>
+<div class="mini-stats">
+    <div><b>{{ number_format($users['total']) }}</b><span>Tổng tài khoản ({{ number_format($users['google']) }} Google)</span></div>
+    <div><b>{{ $users['new7'] }} · {{ $users['new30'] }}</b><span>Đăng ký mới 7 · 30 ngày</span></div>
+    <div><b>{{ $users['dau'] }}</b><span>Học hôm nay (có XP)</span></div>
+    <div><b>{{ $users['wau'] }} · {{ $users['mau'] }}</b><span>Hoạt động 7 · 30 ngày</span></div>
+    <div><b>{{ $learn['lessons7'] }} · {{ $learn['lessons30'] }}</b><span>Bài hoàn thành 7 · 30 ngày</span></div>
+    <div><b>{{ number_format($learn['xp30']) }}</b><span>XP phát 30 ngày</span></div>
+    <div><b>{{ $pvp['finished30'] }}</b><span>Ván đấu bạn 30 ngày ({{ $pvp['coup30'] }} cờ úp) · {{ $pvp['playing'] }} đang chơi</span></div>
+    <div><b>{{ $users['banned'] }}</b><span>Tài khoản bị khoá</span></div>
+</div>
+
+<div class="split-2">
+    @foreach([['new', 'Đăng ký mới'], ['active', 'Người học hoạt động'], ['lessons', 'Bài hoàn thành'], ['puzzles', 'Lượt giải thế cờ']] as [$k, $label])
+        <div class="card" style="padding:14px 16px;">
+            <div style="font-weight:800;font-size:14px;margin-bottom:6px;">{{ $label }} — 14 ngày</div>
+            <div class="bars">
+                @foreach($learn14 as $d)
+                    <div title="{{ $d['date'] }}: {{ $d[$k] }}"><em>{{ $d[$k] ?: '' }}</em><i style="height:{{ max(2, round($d[$k] / $max($k) * 85)) }}%"></i><small>{{ substr($d['date'], 0, 2) }}</small></div>
+                @endforeach
+            </div>
+        </div>
+    @endforeach
+</div>
+
+<div class="stats-2col">
+    <div class="card" style="padding:18px 20px;">
+        <h2 style="font-size:16px;font-weight:800;margin:0 0 12px;">Luyện tập 30 ngày</h2>
+        @forelse($puzzleModes as $m)
+            <div class="rank-row"><span>{{ $pm[$m->mode] ?? $m->mode }}</span><span class="rank-num">{{ number_format($m->c) }} lượt · {{ $m->c ? round(100 * $m->ok / $m->c) : 0 }}% đúng</span></div>
+        @empty <p class="muted">Chưa có lượt giải.</p> @endforelse
+        @foreach(['rush' => '60 giây', 'survival' => '3 mạng'] as $k => $label)
+            @if(isset($sessions[$k]))<div class="rank-row"><span>Phiên {{ $label }}</span><span class="rank-num">{{ $sessions[$k]->c }} phiên · kỷ lục {{ $sessions[$k]->best }}</span></div>@endif
+        @endforeach
+    </div>
+    <div class="card" style="padding:18px 20px;">
+        <h2 style="font-size:16px;font-weight:800;margin:0 0 12px;">Chơi với máy 30 ngày (người chơi thắng–thua–hoà)</h2>
+        @forelse($botByLevel as $b)
+            <div class="rank-row"><span>{{ $b->variant === 'co-up' ? 'Cờ úp' : 'Cờ tướng' }} · {{ $lv[$b->level] ?? 'Cấp ' . $b->level }}</span>
+                <span class="rank-num">{{ $b->c }} ván · {{ $b->w }}–{{ $b->l }}–{{ $b->d }} <span class="muted" style="font-weight:400;">({{ $b->c ? round(100 * $b->w / $b->c) : 0 }}% thắng máy)</span></span></div>
+        @empty <p class="muted">Chưa có ván với máy (chỉ ván của người đã đăng nhập được lưu).</p> @endforelse
+    </div>
+    <div class="card" style="padding:18px 20px;">
+        <h2 style="font-size:16px;font-weight:800;margin:0 0 12px;">Đăng nhập 7 ngày</h2>
+        @forelse($logins as $l)
+            <div class="rank-row"><span>{{ $lm[$l->method] ?? $l->method }} · {{ $l->success ? 'thành công' : 'thất bại' }}</span><span class="rank-num">{{ number_format($l->c) }}</span></div>
+        @empty <p class="muted">Chưa có dữ liệu (ghi từ 10/2026).</p> @endforelse
+    </div>
+    <div class="card" style="padding:18px 20px;">
+        <h2 style="font-size:16px;font-weight:800;margin:0 0 12px;">Học chăm nhất tuần (XP)</h2>
+        @forelse($topLearners as $t)
+            <div class="rank-row"><a href="{{ route('admin.users.show', $t->id) }}">{{ $t->name }}</a><span class="rank-num">{{ number_format($t->xp) }} XP</span></div>
+        @empty <p class="muted">Chưa có.</p> @endforelse
+    </div>
+</div>
+
+<h2 style="font-size:17px;font-weight:800;margin:26px 0 10px;">Lượt xem trang</h2>
 <div class="stat-grid">
     <div class="card stat-card"><div class="sc-num">{{ number_format($kpi['views_today']) }}</div><div class="sc-label">Lượt xem hôm nay</div><div class="sc-sub">{{ number_format($kpi['visitors_today']) }} khách</div></div>
     <div class="card stat-card"><div class="sc-num">{{ number_format($kpi['views_7']) }}</div><div class="sc-label">Lượt xem 7 ngày</div><div class="sc-sub">{{ number_format($kpi['visitors_7']) }} khách</div></div>

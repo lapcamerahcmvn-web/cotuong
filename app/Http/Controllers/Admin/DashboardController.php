@@ -29,6 +29,10 @@ class DashboardController extends Controller
             'views_today' => DB::table('page_visits')->where('visited_on', $today->toDateString())->count(),
             'views_7'   => DB::table('page_visits')->where('visited_on', '>=', $today->copy()->subDays(6)->toDateString())->count(),
             'visitors_today' => DB::table('page_visits')->where('visited_on', $today->toDateString())->distinct('visitor_hash')->count('visitor_hash'),
+            'learners_today' => DB::table('user_daily_activity')->where('date', $today->toDateString())->count(),
+            'new_users_7' => DB::table('users')->where('created_at', '>=', $today->copy()->subDays(6))->count(),
+            'games_7' => DB::table('game_records')->where('created_at', '>=', $today->copy()->subDays(6))->count(),
+            'puzzles_7' => DB::table('puzzle_attempts')->where('created_at', '>=', $today->copy()->subDays(6))->count(),
         ];
 
         $recent = Lesson::latest('updated_at')->take(6)->get();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoginEvent;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,11 +31,19 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($data, $request->boolean('remember'))) {
+            if (Auth::user()->banned_at) {
+                LoginEvent::record($request, Auth::user(), 'password', false);
+                Auth::logout();
+                return back()->withErrors(['email' => 'Tài khoản đã bị khoá. Liên hệ ' . config('site.contact_email') . ' nếu cần hỗ trợ.'])->onlyInput('email');
+            }
             $request->session()->regenerate();
             Auth::user()->forceFill(['last_login_at' => now()])->saveQuietly();
+            LoginEvent::record($request, Auth::user(), 'password');
             session()->flash('ga_event', 'login');
             return redirect()->intended(Auth::user()->isAdmin() ? route('admin.dashboard') : route('account.index'));
         }
+
+        LoginEvent::record($request, User::where('email', $data['email'])->first(), 'password', false, $data['email']);
 
         return back()->withErrors(['email' => 'Email hoặc mật khẩu không đúng.'])->onlyInput('email');
     }
@@ -72,6 +81,7 @@ class AuthController extends Controller
 
         Auth::login($user, true);
         $request->session()->regenerate();
+        LoginEvent::record($request, $user, 'register');
         session()->flash('ga_event', 'sign_up');
 
         // Người mới về trang chủ — nơi có thẻ "Bạn muốn bắt đầu từ đâu?" (onboarding).
@@ -116,7 +126,12 @@ class AuthController extends Controller
             ]);
         }
 
+        if ($user->banned_at) {
+            LoginEvent::record(request(), $user, 'google', false);
+            return redirect()->route('login')->withErrors(['email' => 'Tài khoản đã bị khoá. Liên hệ ' . config('site.contact_email') . ' nếu cần hỗ trợ.']);
+        }
         Auth::login($user, true);
+        LoginEvent::record(request(), $user, $user->wasRecentlyCreated ? 'register' : 'google');
         return redirect()->intended($user->onboarding_level ? route('account.index') : route('home'));
     }
 

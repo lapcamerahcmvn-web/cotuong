@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Học Cờ Tướng — Bàn Cờ Tương Tác, Diễn Giải Từng Nước')
-@section('description', 'Học cờ tướng bài bản từ khai cuộc đến tàn cuộc và cờ úp. Bàn cờ tương tác đi từng nước có diễn giải, dễ hiểu cho người mới lẫn kỳ thủ.')
+@section('title', config('site.home_title') ?: 'Học Cờ Tướng — Bàn Cờ Tương Tác, Diễn Giải Từng Nước')
+@section('description', config('site.home_description') ?: 'Học cờ tướng bài bản từ khai cuộc đến tàn cuộc và cờ úp. Bàn cờ tương tác đi từng nước có diễn giải, dễ hiểu cho người mới lẫn kỳ thủ.')
 
 @push('head')
 @php

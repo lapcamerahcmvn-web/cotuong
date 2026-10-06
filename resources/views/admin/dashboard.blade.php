@@ -11,6 +11,13 @@
 </div>
 
 <div class="stat-grid" style="margin-top:14px;">
+    <div class="card stat-card"><div class="sc-num" style="color:var(--jade)">{{ $stats['learners_today'] }}</div><div class="sc-label">Người học hôm nay</div><div class="sc-sub"><a href="{{ route('admin.users.index', ['loc' => 'active']) }}">Người dùng →</a></div></div>
+    <div class="card stat-card"><div class="sc-num">{{ $stats['new_users_7'] }}</div><div class="sc-label">Đăng ký mới 7 ngày</div></div>
+    <div class="card stat-card"><div class="sc-num">{{ number_format($stats['games_7']) }}</div><div class="sc-label">Ván đấu đã lưu 7 ngày</div></div>
+    <div class="card stat-card"><div class="sc-num">{{ number_format($stats['puzzles_7']) }}</div><div class="sc-label">Lượt giải thế cờ 7 ngày</div></div>
+</div>
+
+<div class="stat-grid" style="margin-top:14px;">
     <div class="card stat-card"><div class="sc-num" style="color:var(--jade)">{{ $stats['published'] }}</div><div class="sc-label">Bài đã xuất bản</div></div>
     <div class="card stat-card"><div class="sc-num">{{ $stats['draft'] }}</div><div class="sc-label">Bài nháp</div></div>
     <div class="card stat-card"><div class="sc-num">{{ $stats['series'] }}</div><div class="sc-label">Chuỗi bài</div></div>

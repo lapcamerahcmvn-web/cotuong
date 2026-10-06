@@ -38,6 +38,16 @@ class User extends Authenticatable
         return $this->hasMany(LessonProgress::class);
     }
 
+    public function loginEvents(): HasMany
+    {
+        return $this->hasMany(LoginEvent::class);
+    }
+
+    public function gameRecords(): HasMany
+    {
+        return $this->hasMany(GameRecord::class);
+    }
+
     public function accessLogs(): HasMany
     {
         return $this->hasMany(AccessLog::class);
@@ -111,6 +121,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'streak_last_date' => 'date',
             'leaderboard_opt_out' => 'boolean',
+            'banned_at' => 'datetime',
         ];
     }
 

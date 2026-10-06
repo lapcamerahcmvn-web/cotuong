@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Cài đặt web & SEO sửa trong Admin ghi đè giá trị .env / config/site.php (rỗng = giữ mặc định).
+        \App\Models\SiteSetting::applyToConfig();
+
         // WAMP MySQL local mặc định storage engine = MyISAM (key tối đa 1000 byte). Các
         // migration khung của Laravel (users/cache/jobs) không khai báo InnoDB nên bị MyISAM;
         // VARCHAR(255) utf8mb4 = 1020 byte > 1000 → lỗi index. Giới hạn 191 để an toàn.

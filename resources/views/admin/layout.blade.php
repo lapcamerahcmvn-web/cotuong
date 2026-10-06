@@ -41,9 +41,10 @@
                 <a href="{{ route('admin.comments.index') }}" class="{{ request()->routeIs('admin.comments.*') ? 'active' : '' }}">
                     Bình luận @if($navPending)<span class="nav-badge">{{ $navPending }}</span>@endif
                 </a>
-                <a href="{{ route('admin.stats.index') }}" class="{{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">Thống kê truy cập</a>
+                <a href="{{ route('admin.stats.index') }}" class="{{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">Thống kê</a>
                 <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">Người dùng</a>
                 <a href="{{ route('admin.source-assets.index') }}" class="{{ request()->routeIs('admin.source-assets.*') ? 'active' : '' }}">Nguồn tài liệu</a>
+                <a href="{{ route('admin.settings.index') }}" class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">Cài đặt web &amp; SEO</a>
             @endif
             <a href="{{ route('home') }}" target="_blank">Xem site ↗</a>
         </nav>
