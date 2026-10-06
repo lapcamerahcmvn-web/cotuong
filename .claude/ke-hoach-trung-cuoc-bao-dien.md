@@ -59,7 +59,8 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 1 — Chương 3–4 (tư tưởng + mục tiêu chiến lược) | ✅ 22 bài — 03/10/2026 |
 | Tập 1 — Chương 5 (phân loại chiến thuật, 10 tiết) | ✅ 41 bài — 06/10/2026 |
 | Tập 1 — Chương 6 (chiến pháp trận thức: 10 ván đầy đủ + 22 cây biến khai cuộc + 5 ván Xe Mã) | ✅ 37 bài — 06/10/2026 |
-| Tập 1 — Chương 7–9 | ⬜ |
+| Tập 1 — Chương 7 (thiết kế chiến dịch, 5 tiết + 1 ván 99 nước) | ✅ 24 bài — 06/10/2026 |
+| Tập 1 — Chương 8–9 | ⬜ |
 
 ## Nợ (không đăng — không đoán nước)
 - **Tập 2 Cuộc 4** (Tôn Chí Vĩ – Ân Quảng Thuận): sơ đồ đọc đúng, nhưng sau 20…S4.5 thì 21…Tg5.1 bất khả
@@ -86,6 +87,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - Tập 1 Ch5: sơ đồ tr.91 (t4b) thiếu Tốt Đỏ c4 → `fix:{c4:'P'}` (31 nước sau khớp); t6f sơ đồ đã ở sau nước Tg4-5 → mạch chính bắt đầu từ Đen; bỏ biến t9a "P8.8" (không có quân); tiết 10 ví dụ 5–6 (luật 60 nước, chỉ có hình) tóm tắt bằng lời.
 - Tập 1 Ch6: ván/cây biến tách TỰ ĐỘNG bằng `scratchpad/tcbd/parse_games.py` (ván đánh số) và `parse_tree.py` (Ví dụ → Biến/Một là/“1. Pháo…” → mạch chính + nhánh, gốc nhánh = nhánh trước cắt tại điểm rẽ), `mkd6.cjs`/`mktree.cjs` → drafts (+ `.vars.cjs`/`.fix.cjs` bổ sung tay). Sửa lỗi in trong tap1.txt: "5. B7."→B7.1, "4. P9.4"→14., "0. ….."→10.
 - ⚠️ content.json vượt 45MB → `ContentSeeder` thêm `ini_set('memory_limit','1536M')`. Trên hosting nếu ini_set bị chặn: `php -d memory_limit=1536M artisan db:seed --class=ContentSeeder`.
+- Tập 1 Ch7: sơ đồ tr.217 thiếu Tốt Đen e6 → `fix:{e6:'p'}` (62 nước khớp); VD6 tiết 1 bản in dùng lại hình VD5 → bài chữ; cắt nước cuối VD5; tiết 3 VD3/VD4 lệch 1 sơ đồ (p237/p238).
 
 ## Mẹo
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
