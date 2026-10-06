@@ -181,3 +181,65 @@ textarea.input { resize: vertical; min-height: 80px; }
 .form-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 900px) { .split-2 { grid-template-columns: 1fr; } }
+
+/* ===== Tối ưu điện thoại (10/2026) ===== */
+.m-savebar { display: none; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 50; }
+.m-savebar .btn { width: 100%; min-height: 48px; font-size: 15px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+@media (max-width: 900px) {
+    .m-savebar.is-on { display: block; }
+    .admin-content:has(.form-grid) { padding-bottom: 84px; }
+}
+@media (max-width: 900px) {
+    /* Thanh tiêu đề trang: không dính (thanh menu đen đã dính), nút thao tác xuống dòng gọn */
+    .admin-top { position: static; flex-wrap: wrap; gap: 10px; }
+    .admin-top h1 { font-size: 18px; flex: 1 1 auto; min-width: 0; }
+    .admin-top > :not(h1) { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tabs-nav { top: 58px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -15px; margin-right: -15px; padding: 8px 15px; }
+    .tabs-nav::-webkit-scrollbar { display: none; }
+    .tabs-nav a { white-space: nowrap; flex: none; }
+    .stats-2col, .split-2 { grid-template-columns: minmax(0, 1fr); }
+    .stats-2col > *, .split-2 > * { min-width: 0; }
+    .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+    .chips a { white-space: nowrap; flex: none; }
+}
+@media (max-width: 640px) {
+    /* iOS không tự phóng to khi bấm vào ô nhập (cần ≥ 16px) */
+    .input, select.input, textarea.input, .be-input, .be-cap { font-size: 16px; }
+    .admin-content { padding: 14px 12px; }
+    .panel { padding: 14px; }
+    .stat-grid { gap: 10px; }
+    .stat-card, .stat { padding: 13px 14px; }
+    .sc-num, .stat .n { font-size: 22px; }
+    .chart-14 { gap: 2px; }
+    .chart-col { min-width: 0; }
+    .chart-x { font-size: 9px; }
+    .tabs-nav { margin-left: -12px; margin-right: -12px; padding-left: 12px; padding-right: 12px; }
+    .chart-col:nth-child(even) .chart-x { visibility: hidden; }
+    .mini-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kv { grid-template-columns: 1fr; }
+
+    /* Form lọc đầu trang danh sách: ô tìm full dòng, các ô chọn chia đều */
+    .admin-content form[method="GET"] .input { max-width: none !important; flex: 1 1 140px; min-width: 0; }
+    .admin-content form[method="GET"] input[type="search"].input { flex-basis: 100%; }
+    .admin-content form[method="GET"] > .check { flex-basis: 100%; }
+    .admin-content form[method="GET"] > .btn { flex: 1 1 auto; justify-content: center; }
+    .form-row .input { max-width: none !important; flex: 1 1 100%; }
+    .form-row > .btn, .form-row > button { flex: 1 1 auto; }
+
+    /* Bảng → dạng thẻ: mỗi dòng một thẻ, nhãn cột lấy từ <th> (data-label gắn ở layout) */
+    .tbl-wrap { overflow: visible; }
+    table.admin-table { min-width: 0 !important; }
+    .admin-table thead { display: none; }
+    .admin-table, .admin-table tbody, .admin-table tr, .admin-table td { display: block; width: 100%; }
+    .admin-table tr { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .admin-table tr:last-child { border-bottom: none; }
+    .admin-table tr:hover td { background: none; }
+    .admin-table td { border: none; padding: 3px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: right; overflow-wrap: anywhere; white-space: normal !important; }
+    .admin-table td::before { content: attr(data-label); flex: none; max-width: 42%; text-align: left; font-size: 12px; font-weight: 600; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .02em; }
+    .admin-table td.t-title { display: block; text-align: left; font-size: 15px; padding-bottom: 6px; }
+    .admin-table td.t-title::before, .admin-table td[data-label=""]::before { display: none; }
+    .admin-table td[data-label=""] { justify-content: flex-start; flex-wrap: wrap; padding-top: 8px; }
+    .admin-table td[data-label=""]:empty { display: none; }
+    .admin-table td[colspan] { justify-content: center; text-align: center; }
+    .admin-table td form { display: inline-flex; }
+}

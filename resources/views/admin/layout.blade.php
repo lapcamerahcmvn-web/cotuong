@@ -67,6 +67,29 @@
         </div>
     </main>
 </div>
+<script>
+// Bảng admin trên điện thoại hiển thị dạng thẻ: gắn nhãn cột (từ <th>) vào từng ô để CSS hiện "NHÃN  giá trị".
+document.querySelectorAll('table.admin-table').forEach(function (t) {
+    var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function (th) { return th.textContent.trim(); });
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+        Array.prototype.forEach.call(tr.children, function (td, i) {
+            if (!td.hasAttribute('data-label')) td.setAttribute('data-label', td.colSpan > 1 ? '' : (heads[i] || ''));
+        });
+    });
+});
+// Form dài (bài học, tin tức): trên điện thoại hiện nút Lưu nổi ở đáy khi nút Lưu gốc đã cuộn khuất.
+(function () {
+    var orig = document.querySelector('.form-grid button.btn.primary[type=submit]');
+    if (!orig || !('IntersectionObserver' in window)) return;
+    var bar = document.createElement('div');
+    bar.className = 'm-savebar';
+    bar.innerHTML = '<button type="button" class="btn primary"></button>';
+    bar.firstChild.textContent = orig.textContent.trim();
+    bar.firstChild.addEventListener('click', function () { orig.click(); });   // bấm nút gốc: giữ nguyên xử lý đồng bộ editor trước khi gửi
+    document.body.appendChild(bar);
+    new IntersectionObserver(function (es) { bar.classList.toggle('is-on', !es[0].isIntersecting); }).observe(orig);
+})();
+</script>
 <script src="{{ asset('js/board.js') }}?v={{ @filemtime(public_path('js/board.js')) }}" defer></script>
 @stack('scripts')
 </body>
