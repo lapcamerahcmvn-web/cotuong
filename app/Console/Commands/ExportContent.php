@@ -4,22 +4,20 @@ namespace App\Console\Commands;
 
 use App\Models\Lesson;
 use App\Models\LessonSeries;
+use App\Support\ContentStore;
 use Illuminate\Console\Command;
 
-// Xuất nội dung đã BIÊN SOẠN (series + lessons published + steps) ra 1 file JSON ship theo git,
+// Xuất nội dung đã BIÊN SOẠN (series + lessons published + steps) ra JSON ship theo git (tách theo chuyên đề),
 // để hosting tái tạo qua ContentSeeder (KHÔNG cần file .xqf gốc — vốn bị gitignore vì bản quyền).
 // Chỉ xuất dữ liệu đã viết lại (bài/caption) + nước đi/FEN (dữ kiện ván cờ) — KHÔNG xuất
 // source_assets (annotation gốc bản quyền).
 class ExportContent extends Command
 {
-    protected $signature = 'cotuong:export-content {--out=database/seeders/data/content.json}';
+    protected $signature = 'cotuong:export-content';
     protected $description = 'Xuất series + bài học published + nước đi ra JSON (ship theo git để seed trên hosting)';
 
     public function handle(): int
     {
-        $out = base_path($this->option('out'));
-        @mkdir(dirname($out), 0777, true);
-
         $seriesList = LessonSeries::orderBy('id')->get()->map(fn ($s) => [
             'name' => $s->name, 'slug' => $s->slug, 'game_mode' => $s->game_mode,
             'phase' => $s->phase, 'description' => $s->description,
@@ -54,10 +52,10 @@ class ExportContent extends Command
                 ];
             })->values();
 
-        $payload = ['exported_at' => now()->toIso8601String(), 'series' => $seriesList, 'lessons' => $lessons];
-        file_put_contents($out, json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+        // Ghi tách file theo chuyên đề (database/seeders/data/content/) — xem App\Support\ContentStore.
+        $files = ContentStore::write($seriesList->toArray(), json_decode(json_encode($lessons), true));
 
-        $this->info("Xuất {$seriesList->count()} chuỗi + {$lessons->count()} bài → {$out}");
+        $this->info("Xuất {$seriesList->count()} chuỗi + {$lessons->count()} bài → ".count($files).' file trong '.ContentStore::dir());
         return self::SUCCESS;
     }
 }

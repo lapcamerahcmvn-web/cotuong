@@ -1,0 +1,140 @@
+{
+    "exported_at": "2026-09-29T13:58:36+00:00",
+    "series": [
+        {
+            "name": "48 Bài Nguyên Lý Khai Cuộc",
+            "slug": "48-bai-nguyen-ly-khai-cuoc",
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "description": "Giáo trình nguyên lý khai cuộc cờ tướng: cách xuất Xe, Mã, Pháo, tranh tiên và bố cục hợp lý ngay từ đầu ván. Mỗi bài có bàn cờ đi lại từng nước.",
+            "planned_total": 48,
+            "sort_order": 1
+        },
+        {
+            "name": "48 Bài Nguyên Lý Tàn Cuộc",
+            "slug": "48-bai-nguyen-ly-tan-cuoc",
+            "game_mode": "co-tuong",
+            "phase": "tan-cuoc",
+            "description": "Giáo trình tàn cuộc cờ tướng từ cơ bản đến nâng cao: nguyên lý binh lực, sĩ tượng, các kỹ thuật chiến thuật, và những danh cuộc kinh điển. Mỗi bài có bàn cờ đi lại từng nước.",
+            "planned_total": 48,
+            "sort_order": 2
+        },
+        {
+            "name": "Sát Pháp Thực Dụng — 13 Đội Hình",
+            "slug": "sat-phap-13-doi-hinh",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "13 đội hình sát chiêu thực dụng — từ hai Xe mạnh mẽ đến các đòn quân nhẹ Mã, Pháo, Chốt. Mỗi bài một thế sát điển hình có biến, kèm bàn cờ tương tác đi từng nước tới chiếu hết.",
+            "planned_total": 13,
+            "sort_order": 0
+        },
+        {
+            "name": "Nhập Môn Cờ Úp",
+            "slug": "nhap-mon-co-up",
+            "game_mode": "co-up",
+            "phase": "nhap-mon",
+            "description": "Học cờ úp từ số 0: luật chơi, cách đi quân úp, lật quân, khác biệt với cờ tướng và những mẹo nền tảng cho người mới.",
+            "planned_total": 6,
+            "sort_order": 1
+        },
+        {
+            "name": "Cờ Úp Sơ Cấp 1",
+            "slug": "co-up-so-cap-1",
+            "game_mode": "co-up",
+            "phase": null,
+            "description": "Khóa cờ úp sơ cấp: cách khai thác lợi thế khi mở Xe\/Pháo sớm, định hình chiến thuật, xác định điểm yếu, chuyển hóa cơ hội thành chiến thắng và cờ tàn thực dụng cờ úp.",
+            "planned_total": 10,
+            "sort_order": 2
+        },
+        {
+            "name": "Nhập Môn Cờ Tướng",
+            "slug": "nhap-mon-co-tuong",
+            "game_mode": "co-tuong",
+            "phase": "nhap-mon",
+            "description": "Học cờ tướng từ số 0: luật chơi cơ bản và cách đi từng quân (Xe, Pháo, Mã, Tượng, Sĩ, Tướng, Tốt) — mỗi bài có bàn cờ tương tác minh hoạ từng nước.",
+            "planned_total": 8,
+            "sort_order": 0
+        },
+        {
+            "name": "Cờ Úp Sơ Cấp 2",
+            "slug": "co-up-so-cap-2",
+            "game_mode": "co-up",
+            "phase": null,
+            "description": "Khóa cờ úp sơ cấp 2: phòng thủ khi đối phương lộ quân mạnh sớm, xử lý quân úp hài hòa với quân ngửa, phản công từ thế yếu, trung cuộc loạn chiến, phá cách và tàn cuộc.",
+            "planned_total": 10,
+            "sort_order": 3
+        },
+        {
+            "name": "Cờ Úp Nâng Cao 1",
+            "slug": "co-up-nang-cao-1",
+            "game_mode": "co-up",
+            "phase": null,
+            "description": "Khóa cờ úp nâng cao 1: phân tích chuyên sâu úp kết hợp ngửa trong hình phức tạp, chiến lược theo quân đã ăn, xử lý khi ưu\/kém thế và cái giá của sai lầm chiến lược.",
+            "planned_total": 10,
+            "sort_order": 4
+        },
+        {
+            "name": "Cờ Úp Nâng Cao 2",
+            "slug": "co-up-nang-cao-2",
+            "game_mode": "co-up",
+            "phase": null,
+            "description": "Khóa cờ úp nâng cao 2: khái niệm cờ chấp (ba trên\/hai trên một dưới\/ba dưới...), đánh giá và chấm điểm hình mở quân, kỹ năng đánh giá trung cuộc và giá trị con Pháo.",
+            "planned_total": 10,
+            "sort_order": 5
+        },
+        {
+            "name": "Tượng Kỳ Kinh Điển Sát Pháp Đại Toàn",
+            "slug": "sat-phap-dai-toan",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "Chuyên đề sát pháp cờ tướng biên soạn theo giáo trình kinh điển: từ cơ bản đến nâng cao, mỗi bài có bàn cờ tương tác và các biến. Viết lại bằng lời riêng.",
+            "planned_total": null,
+            "sort_order": 60
+        },
+        {
+            "name": "Nền Tảng Nguyên Lý Khai Cuộc",
+            "slug": "nen-tang-nguyen-ly-khai-cuoc",
+            "game_mode": "co-tuong",
+            "phase": "khai-cuoc",
+            "description": "Chuỗi bài xây dựng tư duy khai cuộc từ gốc: ba nguyên tắc bày binh, bốn kiểu bố cuộc thường gặp, và các định thức thực chiến minh hoạ cho từng kiểu — viết lại theo lối hiểu riêng, có bàn cờ tương tác từng ví dụ.",
+            "planned_total": null,
+            "sort_order": 20
+        },
+        {
+            "name": "Nền Tảng Nguyên Lý Trung Cuộc",
+            "slug": "nen-tang-nguyen-ly-trung-cuoc",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "Chuỗi bài xây dựng tư duy trung cuộc từ gốc: quan hệ khắc chế giữa các binh chủng, cách đánh giá thế trận, chiến thuật phối hợp — qua các ván đấu thực chiến điển hình.",
+            "planned_total": null,
+            "sort_order": 20
+        },
+        {
+            "name": "Trung Cuộc Bảo Điển (Tập 2) — Thế Trung Cuộc Danh Thủ",
+            "slug": "trung-cuoc-bao-dien-tap-2",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "Chuyên đề Trung Cuộc Bảo Điển phần thực chiến: những thế trung cuộc trích từ ván đấu của các đại sư, chia theo 12 binh pháp — xuất chiêu bất ngờ, lấy công chế công, tránh thực đánh hư, đột phá phòng tuyến... Mỗi bài có bàn cờ tương tác, đủ các biến sách nêu, lời giảng viết lại dễ hiểu.",
+            "planned_total": null,
+            "sort_order": 22
+        },
+        {
+            "name": "Trung Cuộc Bảo Điển (Tập 1) — Lý Luận Trung Cuộc",
+            "slug": "trung-cuoc-bao-dien-tap-1",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "description": "Chuyên đề Trung Cuộc Bảo Điển phần lý luận: trung cuộc là gì, cách thẩm cục (đánh giá thế cờ), tư tưởng và mục tiêu chiến lược, các chiến thuật trung cuộc, chiến pháp theo từng loại trận, thiết kế chiến dịch... Mỗi luận điểm minh họa bằng ván thực chiến trên bàn cờ tương tác, lời giảng viết lại dễ hiểu.",
+            "planned_total": null,
+            "sort_order": 21
+        },
+        {
+            "name": "Cờ Tàn Có Khẩu Quyết",
+            "slug": "co-tan-co-khau-quyet",
+            "game_mode": "co-tuong",
+            "phase": "tan-cuoc",
+            "sort_order": 3,
+            "planned_total": 329,
+            "description": "Hơn 300 thế cờ tàn thực dụng từ tàn Chốt, Mã, Pháo đến Xe — mỗi thế có khẩu quyết dễ nhớ, biến hóa nước đi trên bàn cờ tương tác và nút cho máy tự giải."
+        }
+    ]
+}

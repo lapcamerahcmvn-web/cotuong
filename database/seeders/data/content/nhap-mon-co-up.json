@@ -1,0 +1,92 @@
+[
+    {
+        "series_slug": "nhap-mon-co-up",
+        "order_in_series": 1,
+        "game_mode": "co-up",
+        "phase": null,
+        "title": "Cờ Úp Là Gì? Luật Chơi Cờ Úp Đầy Đủ Cho Người Mới",
+        "slug": "co-up-la-gi-luat-choi-co-up",
+        "level": "co-ban",
+        "source_type": "manual",
+        "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
+        "move_count": 6,
+        "variation_tree": null,
+        "puzzle_side": "do",
+        "summary": "Cờ úp là gì, luật chơi cờ úp từ A–Z: cách bày quân úp, cách đi quân úp theo ô xuất phát, luật lật quân lộ mặt thật và cách phân thắng bại. Hướng dẫn dễ hiểu cho người mới.",
+        "content": "<p><strong>👉 Bấm “Tiến” trên bàn cờ phía trên<\/strong> để xem minh hoạ 6 nước khai cuộc cờ úp: quân úp đi theo binh chủng của ô xuất phát, và <strong>lật lộ mặt thật ngay khi đi nước đầu<\/strong>.<\/p><p><strong>Cờ úp<\/strong> (còn gọi là cờ úp bí) là một biến thể của cờ tướng: chơi trên cùng bàn cờ và cùng bộ 32 quân, nhưng phần lớn quân được <strong>úp sấp mặt và tráo ngẫu nhiên<\/strong> — bạn không biết quân của mình và của đối thủ thật sự là gì cho đến khi chúng được lật. Chính yếu tố bất ngờ này khiến cờ úp hấp dẫn, giàu tính toán xác suất và cân bằng hơn giữa người chơi mạnh và yếu.<\/p><h2>Cờ úp là gì?<\/h2><p>Cờ úp giữ nguyên luật đi quân, luật chiếu tướng và mục tiêu của cờ tướng, chỉ thêm một lớp \"che giấu\": danh tính các quân bị úp. Người chơi phải vừa tính nước đi, vừa suy đoán quân úp của mình mạnh hay yếu, và khai thác thời điểm lật quân sao cho có lợi nhất. Vì thế cờ úp thường được xem là môn cờ của <strong>bản lĩnh và may rủi có kiểm soát<\/strong>.<\/p><h2>Cách bày quân cờ úp<\/h2><ul><li>Hai <strong>Tướng<\/strong> (Soái\/Tướng) để <strong>ngửa<\/strong> ngay từ đầu, đặt đúng vị trí gốc trong cung như cờ tướng — Tướng không bao giờ bị úp.<\/li><li>30 quân còn lại của hai bên (mỗi bên 15 quân: 2 Xe, 2 Pháo, 2 Mã, 2 Tượng, 2 Sĩ và 5 Tốt) được <strong>tráo ngẫu nhiên rồi đặt úp<\/strong> lên đúng 15 ô xuất phát còn lại của cờ tướng.<\/li><li>Kết quả: bàn cờ nhìn y hệt thế khai cuộc cờ tướng, nhưng mỗi ô (trừ hai Tướng) là một quân úp bí ẩn.<\/li><\/ul><h2>Cách đi quân úp (khi chưa lật)<\/h2><p>Đây là quy tắc cốt lõi, khác biệt lớn nhất của cờ úp: <strong>quân úp đi theo binh chủng của Ô XUẤT PHÁT mà nó đang đứng<\/strong>, chứ không theo mặt thật (vì mặt thật còn giấu).<\/p><ul><li>Quân úp ở ô góc (vị trí Xe gốc) → đi như <strong>Xe<\/strong>.<\/li><li>Quân úp ở ô cạnh góc (vị trí Mã gốc) → đi như <strong>Mã<\/strong>.<\/li><li>Tương tự cho các ô Tượng, Sĩ, Pháo gốc → đi như Tượng \/ Sĩ \/ Pháo.<\/li><li>Năm quân úp ở hàng Tốt → đi như <strong>Tốt<\/strong> (tiến thẳng, qua sông mới đi ngang).<\/li><\/ul><h2>Lật quân — lộ mặt thật<\/h2><p>Khi một quân úp <strong>đi nước đầu tiên<\/strong>, nó được <strong>lật ngửa để lộ binh chủng thật<\/strong>. Từ nước đi sau trở đi, nó di chuyển theo đúng quân thật của mình.<\/p><p>Ví dụ: một quân đứng ở ô Mã gốc — nước đầu nó đi như Mã; khi lật ra hoá là <strong>Pháo<\/strong>, thì từ đó nó đi và ăn như Pháo. Nghệ thuật của cờ úp nằm ở chỗ chọn <strong>đúng quân, đúng thời điểm để lật<\/strong>: lật trúng Xe, Pháo, Mã mạnh và triển khai được ngay thì chiếm ưu thế lớn.<\/p><h2>Cách phân thắng bại<\/h2><ul><li>Mục tiêu như cờ tướng: <strong>chiếu bí<\/strong> Tướng đối phương (Tướng bị chiếu mà không còn nước gỡ) là thắng.<\/li><li>Vẫn áp dụng luật cấm <strong>lộ mặt Tướng<\/strong> (hai Tướng không được đối mặt trực tiếp trên cùng một cột trống).<\/li><li>Hết nước đi hợp lệ mà không bị chiếu thì xử hoà theo thông lệ; các luật cấm chiếu\/đuổi lặp vô hạn cũng được áp dụng (xem bài riêng về luật đuổi trong cờ úp).<\/li><\/ul><h2>Vì sao cờ úp ngày càng được ưa chuộng<\/h2><p>Cờ úp giữ được chiều sâu chiến thuật của cờ tướng nhưng thêm yếu tố ẩn thông tin, nên mỗi ván là một trải nghiệm mới. Người mới không bị \"chấp\" quá nặng vì ai cũng phải dò quân, còn cao thủ vẫn thắng nhờ tính toán xác suất và khai thác thế cờ tốt hơn. Đây cũng là lý do cờ úp là mảng nội dung còn rất ít nơi hướng dẫn bài bản — và là chỗ để bạn học nhanh, vượt lên.<\/p>",
+        "status": "published",
+        "decode_confidence": null,
+        "thumbnail": null,
+        "seo_title": "Cờ Úp Là Gì? Luật Chơi Cờ Úp Cho Người Mới",
+        "seo_description": "Luật chơi cờ úp đầy đủ cho người mới: cách bày quân úp, đi quân theo ô xuất phát, lật quân lộ mặt thật, cách thắng thua. Giải thích rõ ràng, dễ hiểu.",
+        "is_featured": false,
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Đấm tốt Biên",
+                "move_notation_iccs": "i3i4",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đấm tốt Biên: quân úp ở hàng Tốt đi thẳng 1 ô như Tốt. Đi nước đầu nên nó LẬT lộ mặt — hoá ra là con Pháo! (Từ giờ nó đi như Pháo.)",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Đen mở Xe biên",
+                "move_notation_iccs": "i9i7",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đen mở quân ở ô góc: ô này là vị trí Xe gốc nên đi như Xe. Lật ra đúng là Xe thật.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxx1\/9\/1x5xr\/x1x1x1x1x\/9\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                "move_notation_wxf": "Đỏ mở Xe (góc trái)",
+                "move_notation_iccs": "a0a2",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Ô góc trái đi như Xe (thẳng 2 ô), nhưng khi lật lại là… Mã! Đó là bất ngờ của cờ úp — bạn không biết mặt thật cho tới khi lật.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 4,
+                "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/NX5X1\/9\/1XXXKXXXX",
+                "move_notation_wxf": "Đen đấm tốt Biên",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đen cũng đấm tốt Biên; lật ra đúng là Tốt. Ưu tiên đấm tốt Biên hơn tốt trung lộ để không thủng cánh sớm.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 5,
+                "fen": "xxxxkxxx1\/9\/1x5xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                "move_notation_wxf": "Đỏ mở Pháo",
+                "move_notation_iccs": "b2e2",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Ô vị trí Pháo gốc đi như Pháo (thẳng khi không ăn), đưa về trung lộ. Pháo rất uy lực trong cờ úp.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxx1\/9\/1xc4xr\/2x1x1x1x\/p8\/8C\/X1X1X1X2\/N3C2X1\/9\/1XXXKXXXX",
+                "move_notation_wxf": "Đen mở Mã→hoá Pháo",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Ô vị trí Mã gốc đi hình chữ nhật như Mã, nhưng lật ra lại là Pháo. Sau vài nước, các quân dần lộ mặt và cuộc chơi thật bắt đầu — hãy ưu tiên mở quân hàng trên và giữ Pháo, Xe cơ động.",
+                "is_flip_reveal": false
+            }
+        ]
+    }
+]

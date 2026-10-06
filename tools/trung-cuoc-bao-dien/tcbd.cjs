@@ -4,7 +4,7 @@
  *        đưa vào, kiểm vị trí, đi thử từng nước (in ký hiệu VN), báo nước phạm luật/tự chiếu, chiếu bí.
  *        <diagram> = "t2/p003_0" (tương đối thư mục work, mặc định scratchpad — đặt TCBD_WORK).
  *   node tcbd.cjs build <batch.json> [...batch.json]      → dựng + kiểm TOÀN BỘ bài; bài nào có cảnh
- *        báo thì BỎ QUA (không ghi dữ liệu hỏng); upsert series + lesson theo slug vào content.json
+ *        báo thì BỎ QUA (không ghi dữ liệu hỏng); upsert series + lesson theo slug vào database/seeders/data/content/
  *        (giữ nguyên định dạng file, xem content-io.cjs).
  *
  * Định nghĩa 1 bài (batch.lessons[]):

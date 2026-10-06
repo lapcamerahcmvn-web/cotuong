@@ -5,7 +5,7 @@
  *
  *   node tools/og-image/generate.cjs                 # sinh toàn bộ
  *   node tools/og-image/generate.cjs --only=<slug>   # 1 bài/chuỗi
- *   node tools/og-image/generate.cjs --changed       # bỏ qua PNG mới hơn content.json
+ *   node tools/og-image/generate.cjs --changed       # bỏ qua PNG mới hơn kho nội dung
  *   node tools/og-image/generate.cjs --missing       # CHỈ sinh bài chưa có PNG (nhanh, dùng khi có bài mới)
  *
  * CHỈ CHẠY LOCAL. Kết quả public/og/lessons/*.png + public/og/series/*.png được COMMIT vào git;
@@ -24,7 +24,7 @@ const { compose, OG_W } = require('./compose.cjs');
 const { composeThumb, SIZE: THUMB_SIZE } = require('./compose-thumb.cjs');
 
 const ROOT = path.resolve(__dirname, '../..');
-const CONTENT = path.join(ROOT, 'database/seeders/data/content.json');
+const IO = require('../trung-cuoc-bao-dien/content-io.cjs');
 const FONT_TTF = path.join(ROOT, 'public/fonts/xiangqi-kai.ttf');
 const OUT = { lesson: path.join(ROOT, 'public/og/lessons'), series: path.join(ROOT, 'public/og/series') };
 const OUT_THUMB = { lesson: path.join(ROOT, 'public/og/thumbs/lessons'), series: path.join(ROOT, 'public/og/thumbs/series') };
@@ -39,7 +39,7 @@ fs.mkdirSync(OUT.series, { recursive: true });
 fs.mkdirSync(OUT_THUMB.lesson, { recursive: true });
 fs.mkdirSync(OUT_THUMB.series, { recursive: true });
 
-const content = JSON.parse(fs.readFileSync(CONTENT, 'utf8'));
+const content = IO.read();
 let jobs = buildJobs(content);
 if (only) jobs = jobs.filter((j) => j.slug === only);
 
@@ -52,7 +52,7 @@ let made = 0, skipped = 0, failed = 0;
 function shouldSkip(outPath) {
   const exists = fs.existsSync(outPath);
   if (missingOnly && exists) return true;
-  if (changedOnly && exists && fs.statSync(outPath).mtimeMs >= fs.statSync(CONTENT).mtimeMs) return true;
+  if (changedOnly && exists && fs.statSync(outPath).mtimeMs >= IO.mtimeMs()) return true;
   return false;
 }
 

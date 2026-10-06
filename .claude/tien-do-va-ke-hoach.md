@@ -17,7 +17,7 @@
 
 ## Trạng thái tổng quan
 
-- **12 chương trình học / 720 bài published** (nội dung trong `content.json`, seed bằng `ContentSeeder`).
+- **12 chương trình học / 720 bài published** (nội dung trong `database/seeders/data/content/` — 1 file/chuyên đề, seed bằng `ContentSeeder`).
 - Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to + quân úp), đăng nhập Google + email/mật khẩu,
   đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap XML + HTML.
 

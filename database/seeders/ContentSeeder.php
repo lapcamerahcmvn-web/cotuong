@@ -6,31 +6,32 @@ use App\Models\Lesson;
 use App\Models\LessonSeries;
 use App\Models\LessonStep;
 use Illuminate\Database\Seeder;
+use App\Support\ContentStore;
 use Illuminate\Support\Facades\DB;
 
-// Nạp nội dung bài học từ database/seeders/data/content.json (do cotuong:export-content xuất).
+// Nạp nội dung bài học từ database/seeders/data/content/ (series.json + 1 file/chuyên đề — xem App\Support\ContentStore).
 // Dùng trên hosting để tái tạo bài học qua git mà KHÔNG cần file .xqf gốc.
 // Chạy: php artisan db:seed --class=Database\\Seeders\\ContentSeeder
 class ContentSeeder extends Seeder
 {
     public function run(): void
     {
-        $path = base_path('database/seeders/data/content.json');
-        if (! is_file($path)) {
-            $this->command?->warn('Không thấy content.json — chạy cotuong:export-content trước.');
+        if (! ContentStore::exists()) {
+            $this->command?->warn('Không thấy database/seeders/data/content/ (hay content.json) — chạy cotuong:export-content trước.');
             return;
         }
 
-        // content.json đã vượt 40MB (cây biến có FEN từng nút) — json_decode cần nhiều hơn 128MB mặc định.
+        // Dữ liệu tách theo chuyên đề (ContentStore) — mỗi file vài MB; vẫn nới bộ nhớ cho file cũ 1 khối.
         ini_set('memory_limit', '1536M');
 
-        $data = json_decode(file_get_contents($path), true);
+        $data = ContentStore::seriesFile();
         if (! is_array($data)) {
-            $this->command?->error('content.json không hợp lệ.');
+            $this->command?->error('Dữ liệu nội dung không hợp lệ.');
             return;
         }
 
-        DB::transaction(function () use ($data) {
+        $total = 0;
+        DB::transaction(function () use ($data, &$total) {
             $seriesBySlug = [];
             foreach (($data['series'] ?? []) as $s) {
                 $series = LessonSeries::updateOrCreate(
@@ -40,7 +41,8 @@ class ContentSeeder extends Seeder
                 $seriesBySlug[$s['slug']] = $series->id;
             }
 
-            foreach (($data['lessons'] ?? []) as $l) {
+            foreach (ContentStore::lessonChunks() as $chunk) foreach ($chunk as $l) {
+                $total++;
                 $steps = $l['steps'] ?? [];
                 $lessonData = collect($l)->except(['steps', 'series_slug'])->toArray();
                 $lessonData['series_id'] = $seriesBySlug[$l['series_slug']] ?? null;
@@ -59,6 +61,6 @@ class ContentSeeder extends Seeder
             }
         });
 
-        $this->command?->info('Đã nạp ' . count($data['lessons'] ?? []) . ' bài học từ content.json.');
+        $this->command?->info("Đã nạp {$total} bài học.");
     }
 }

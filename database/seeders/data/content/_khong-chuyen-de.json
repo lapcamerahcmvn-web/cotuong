@@ -1,0 +1,210 @@
+[
+    {
+        "series_slug": null,
+        "order_in_series": null,
+        "game_mode": "co-tuong",
+        "phase": "khai-cuoc",
+        "title": "Trung Pháo Đối Bình Phong Mã — Khai Cuộc Có Biến",
+        "slug": "trung-phao-doi-binh-phong-ma-co-bien",
+        "level": "co-ban",
+        "source_type": "manual",
+        "initial_fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C5C1\/9\/RNBAKABNR",
+        "move_count": 6,
+        "variation_tree": [
+            {
+                "from": 70,
+                "to": 67,
+                "iccs": "h2e2",
+                "wxf": "Pháo 2 bình 5",
+                "side": "do",
+                "reveal": null,
+                "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                "caption": "Đỏ khai Pháo đầu (Trung Pháo) uy hiếp trực tiếp Tốt đầu và trung lộ Đen — thế công phổ biến và sắc bén bậc nhất.",
+                "children": [
+                    {
+                        "from": 7,
+                        "to": 24,
+                        "iccs": "h9g7",
+                        "wxf": "Mã 8 tiến 7",
+                        "side": "den",
+                        "reveal": null,
+                        "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                        "caption": "Đen lên Bình Phong Mã giữ Tốt đầu, phòng thủ vững chắc, chờ phản công hai cánh.",
+                        "children": [
+                            {
+                                "from": 88,
+                                "to": 69,
+                                "iccs": "h0g2",
+                                "wxf": "Mã 2 tiến 3",
+                                "side": "do",
+                                "reveal": null,
+                                "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                                "caption": "Đỏ xuất Mã cùng cánh với Pháo đầu, chuẩn bị khai Xe nhanh để chiếm tiên.",
+                                "children": [
+                                    {
+                                        "from": 8,
+                                        "to": 7,
+                                        "iccs": "i9h9",
+                                        "wxf": "Xe 9 bình 8",
+                                        "side": "den",
+                                        "reveal": null,
+                                        "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                                        "caption": "Đen bình Xe qua lộ 8, mở đường cho Xe hoạt động và liên kết quân cánh phải.",
+                                        "children": [
+                                            {
+                                                "from": 89,
+                                                "to": 88,
+                                                "iccs": "i0h0",
+                                                "wxf": "Xe 1 bình 2",
+                                                "side": "do",
+                                                "reveal": null,
+                                                "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                                                "caption": "Đỏ bình Xe lộ 2 — thế \"Xe nhanh\" tranh tiên, gây sức ép cột dọc.",
+                                                "children": [
+                                                    {
+                                                        "from": 29,
+                                                        "to": 38,
+                                                        "iccs": "c6c5",
+                                                        "wxf": "Tốt 3 tiến 1",
+                                                        "side": "den",
+                                                        "reveal": null,
+                                                        "fen": "rnbakabr1\/9\/1c4nc1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                                                        "caption": "Đen tấn Tốt 3 thoáng Mã, giải phóng Mã cánh phải và giành không gian.",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "from": 25,
+                        "to": 22,
+                        "iccs": "h7e7",
+                        "wxf": "Pháo 8 bình 5",
+                        "side": "den",
+                        "reveal": null,
+                        "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                        "caption": "Biến khác cho Đen: Đối Pháo (Pháo 8 bình 5) — phản công trung lộ đối xứng, tranh tiên trực diện thay vì phòng thủ Bình Phong Mã.",
+                        "children": [
+                            {
+                                "from": 88,
+                                "to": 69,
+                                "iccs": "h0g2",
+                                "wxf": "Mã 2 tiến 3",
+                                "side": "do",
+                                "reveal": null,
+                                "fen": "rnbakabnr\/9\/1c2c4\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                                "caption": "Đỏ lên Mã trước, giữ nhịp phát triển và không cho Đen phản đòn trung lộ dễ dàng.",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "from": 88,
+                "to": 69,
+                "iccs": "h0g2",
+                "wxf": "Mã 2 tiến 3",
+                "side": "do",
+                "reveal": null,
+                "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C4NC1\/9\/RNBAKAB1R",
+                "caption": "Biến khác cho nước 1: Đỏ Khởi Mã Cuộc — vào trận chậm mà chắc, linh hoạt, tránh lý thuyết Pháo đầu quá sâu.",
+                "children": [
+                    {
+                        "from": 7,
+                        "to": 24,
+                        "iccs": "h9g7",
+                        "wxf": "Mã 8 tiến 7",
+                        "side": "den",
+                        "reveal": null,
+                        "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C4NC1\/9\/RNBAKAB1R",
+                        "caption": "Đen đối lại cũng lên Mã, giữ thế cân bằng, chờ xem ý đồ Đỏ.",
+                        "children": []
+                    }
+                ]
+            }
+        ],
+        "puzzle_side": "do",
+        "summary": "Khai cuộc Trung Pháo đối Bình Phong Mã trình bày dạng cây biến: mỗi nước rẽ chọn mũi tên A\/B để xem hướng đi khác nhau, hiểu ưu nhược từng phương án.",
+        "content": "<h2>Ý tưởng khai cuộc<\/h2><p>Đây là bài minh hoạ <strong>khai cuộc có nhiều biến<\/strong>: ở mỗi nước rẽ, bạn chọn một mũi tên (A\/B) để xem hướng đi khác nhau. Mạch chính đi theo thế <strong>Trung Pháo đối Bình Phong Mã<\/strong> — một trong những khai cuộc kinh điển và cân bằng nhất.<\/p><h2>Các hướng rẽ đáng chú ý<\/h2><ul><li><strong>Nước 1 (Đỏ):<\/strong> ngoài Pháo đầu (biến A) còn có Khởi Mã Cuộc (biến B) — vào trận chậm mà chắc.<\/li><li><strong>Sau Pháo đầu, Đen đáp:<\/strong> Bình Phong Mã (biến A, phòng thủ vững) hoặc Đối Pháo (biến B, phản công trực diện).<\/li><\/ul><p>Hãy bấm từng mũi tên để so sánh ưu nhược mỗi phương án.<\/p>",
+        "status": "published",
+        "decode_confidence": null,
+        "thumbnail": null,
+        "seo_title": "Trung Pháo Đối Bình Phong Mã — Khai Cuộc Có Biến",
+        "seo_description": "Học khai cuộc Trung Pháo đối Bình Phong Mã qua bàn cờ tương tác nhiều biến: chọn mũi tên A\/B ở mỗi nước rẽ để so sánh các hướng đi.",
+        "is_featured": true,
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "rnbakabnr\/9\/1c5c1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                "move_notation_wxf": "Pháo 2 bình 5",
+                "move_notation_iccs": "h2e2",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đỏ khai Pháo đầu (Trung Pháo) uy hiếp trực tiếp Tốt đầu và trung lộ Đen — thế công phổ biến và sắc bén bậc nhất.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 2,
+                "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C4\/9\/RNBAKABNR",
+                "move_notation_wxf": "Mã 8 tiến 7",
+                "move_notation_iccs": "h9g7",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đen lên Bình Phong Mã giữ Tốt đầu, phòng thủ vững chắc, chờ phản công hai cánh.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 3,
+                "fen": "rnbakab1r\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                "move_notation_wxf": "Mã 2 tiến 3",
+                "move_notation_iccs": "h0g2",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đỏ xuất Mã cùng cánh với Pháo đầu, chuẩn bị khai Xe nhanh để chiếm tiên.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 4,
+                "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKAB1R",
+                "move_notation_wxf": "Xe 9 bình 8",
+                "move_notation_iccs": "i9h9",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đen bình Xe qua lộ 8, mở đường cho Xe hoạt động và liên kết quân cánh phải.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 5,
+                "fen": "rnbakabr1\/9\/1c4nc1\/p1p1p1p1p\/9\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                "move_notation_wxf": "Xe 1 bình 2",
+                "move_notation_iccs": "i0h0",
+                "move_side": "do",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đỏ bình Xe lộ 2 — thế \"Xe nhanh\" tranh tiên, gây sức ép cột dọc.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 6,
+                "fen": "rnbakabr1\/9\/1c4nc1\/p3p1p1p\/2p6\/9\/P1P1P1P1P\/1C2C1N2\/9\/RNBAKABR1",
+                "move_notation_wxf": "Tốt 3 tiến 1",
+                "move_notation_iccs": "c6c5",
+                "move_side": "den",
+                "moved_piece": null,
+                "captured_piece": null,
+                "caption": "Đen tấn Tốt 3 thoáng Mã, giải phóng Mã cánh phải và giành không gian.",
+                "is_flip_reveal": false
+            }
+        ]
+    }
+]

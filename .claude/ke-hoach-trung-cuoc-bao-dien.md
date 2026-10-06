@@ -29,7 +29,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
    `node tcbd.cjs drafts <file> [id..] [--show]` — áp nước lên FEN (engine `tools/mate-book/gen.cjs`),
    báo nước phạm luật/tự chiếu, in tên nước VN + ăn quân (x) + chiếu (+/#) để viết lời giảng đúng sự thật.
 4. `batches/*.json` — bài học (`draft: "file#id"`, captions theo ply, `var_caps {k:{i:..}}`, content HTML).
-   `node tcbd.cjs build <batch>` — dựng + kiểm lại, BỎ bài có cảnh báo, upsert vào `content.json`
+   `node tcbd.cjs build <batch>` — dựng + kiểm lại, BỎ bài có cảnh báo, upsert vào kho `database/seeders/data/content/` (1 file/chuyên đề)
    (giữ nguyên định dạng PHP pretty-print qua `content-io.cjs` → diff sạch), đóng băng FEN vào batch.
 5. `php artisan db:seed --class=ContentSeeder` (≈2 phút) → kiểm render bằng `app()->handle(Request::create(..))`.
 

@@ -5,10 +5,10 @@
 > `laravel13-shop`: đẩy code lên GitHub, SSH vào hosting pull về.
 
 ## Nội dung ship theo git (KHÔNG cần file .xqf gốc trên hosting)
-- 14 bài học đã biên soạn nằm trong `database/seeders/data/content.json` (do
+- 14 bài học đã biên soạn nằm trong `database/seeders/data/content/` — `series.json` + 1 file/chuyên đề (từ 10/2026, trước đó là 1 file `content.json` 75MB sát giới hạn 100MB của GitHub; đọc/ghi qua `App\Support\ContentStore` / `tools/trung-cuoc-bao-dien/content-io.cjs`) (do
   `php artisan cotuong:export-content` xuất). `ContentSeeder` nạp lại trên hosting.
 - File `.xqf`/`.pgn`/PDF gốc (bản quyền) **bị `.gitignore**` — chỉ dùng local để decode/biên soạn.
-- Khi biên soạn thêm bài ở local → chạy `cotuong:export-content` lại → commit `content.json`.
+- Khi biên soạn thêm bài ở local → chạy `cotuong:export-content` lại → commit thư mục `database/seeders/data/content/`.
 
 ## Lần đầu deploy (SSH vào hosting)
 > Hosting trỏ document root của subdomain vào CHÍNH thư mục web (VD `hoccotuong`), không
@@ -43,7 +43,7 @@ cd ~/hocotuong
 git fetch origin && git reset --hard origin/main
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
-php artisan db:seed --class=ContentSeeder --force   # nếu content.json đổi (KHÔNG kèm namespace — shell nuốt dấu \\ thành DatabaseSeedersContentSeeder)
+php artisan db:seed --class=ContentSeeder --force   # nếu data/content/ đổi (KHÔNG kèm namespace — shell nuốt dấu \\ thành DatabaseSeedersContentSeeder)
 php artisan db:seed --class=PagesSeeder --force     # nếu pages.json đổi (intro trang giai đoạn)
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
@@ -65,7 +65,7 @@ test ! -f public/hot   # file hot (npm run dev) mà lọt lên hosting → toàn
 ```bash
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force                       # migration mới: gamification + puzzles (01/10), games + cờ úp (02/10), game_records + saved_positions longText + review/share (03/10), weekly_awards (04/10), follows (05/10), game_mistakes (06/10)
-php artisan db:seed --class=ContentSeeder --force # nếu content.json đổi (KHÔNG đụng bảng mới)
+php artisan db:seed --class=ContentSeeder --force # nếu data/content/ đổi (KHÔNG đụng bảng mới)
 php artisan cotuong:build-puzzles                 # dựng/cập nhật kho thế cờ — chạy SAU ContentSeeder
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
@@ -106,7 +106,7 @@ php artisan optimize:clear && php artisan config:cache && php artisan route:cach
 ### Quy trình khi biên soạn thêm bài / sửa nội dung (LOCAL)
 ```bash
 php artisan cotuong:lesson-fill <id> --file=<json> --publish   # ghi nội dung (an toàn, không đụng FEN)
-php artisan cotuong:export-content                             # → content.json
+php artisan cotuong:export-content                             # → database/seeders/data/content/*.json
 php artisan cotuong:export-pages                               # → pages.json (nếu sửa intro giai đoạn)
 node tools/og-image/generate.cjs --changed                     # ảnh OG bài mới/đổi thế cờ
 git add database/seeders/data public/og public/fonts <code> && git commit && git push
@@ -126,5 +126,5 @@ git add database/seeders/data public/og public/fonts <code> && git commit && git
 - Assets CSS/JS là file TĨNH trong `public/css`, `public/js`, `public/tinymce` — commit sẵn,
   KHÔNG cần `npm run build`.
 - Nếu hosting tắt `shell_exec()`: các lệnh `cotuong:import-xqf`/`backfill-notation` (gọi node)
-  sẽ KHÔNG chạy được trên hosting — nhưng KHÔNG cần, vì nội dung đã seed từ `content.json`.
+  sẽ KHÔNG chạy được trên hosting — nhưng KHÔNG cần, vì nội dung đã seed từ `database/seeders/data/content/`.
   Việc decode/biên soạn luôn làm ở LOCAL rồi export.

@@ -1,5 +1,5 @@
 /* tools/mate-book/build-batch.cjs — Dựng 1 lô bài sát pháp từ định nghĩa (FEN + nước + lời giảng
-   viết lại), merge vào database/seeders/data/content.json (upsert series + lessons theo slug).
+   viết lại), merge vào kho database/seeders/data/content/ (upsert series + lessons theo slug).
    An toàn: bài nào có warning (nước phạm luật ⇒ FEN sai) sẽ BỎ QUA, không ghi dữ liệu hỏng.
    Cách dùng: node build-batch.cjs <batch.json>  (hoặc require + gọi buildBatch). */
 'use strict';
@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const { makeBuilder } = require('./gen.cjs');
 
-const CONTENT = path.resolve(__dirname, '../../database/seeders/data/content.json');
+const IO = require('../trung-cuoc-bao-dien/content-io.cjs');   // kho tách theo chuyên đề (database/seeders/data/content/)
 
 function buildLesson(L, seriesSlug) {
   // Bài chỉ có văn bản (VD Lời Nói Đầu) — không bàn cờ.
@@ -54,7 +54,7 @@ function buildLesson(L, seriesSlug) {
 }
 
 function buildBatch(batch) {
-  const data = JSON.parse(fs.readFileSync(CONTENT, 'utf8'));
+  const data = IO.read();
   data.series = data.series || []; data.lessons = data.lessons || [];
   // upsert series
   const s = batch.series;
@@ -71,8 +71,8 @@ function buildBatch(batch) {
     ok++;
     console.log(`  ✓ ${rec.title}  (${rec.move_count} nước${rec.variation_tree ? ', có biến' : ''})`);
   });
-  fs.writeFileSync(CONTENT, JSON.stringify(data, null, 2) + '\n');
-  console.log(`\nĐã ghi ${ok} bài (${skip} bỏ qua) vào content.json.`);
+  IO.write(data);
+  console.log(`\nĐã ghi ${ok} bài (${skip} bỏ qua) vào database/seeders/data/content/.`);
   return { ok, skip };
 }
 

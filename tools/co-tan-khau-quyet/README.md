@@ -15,7 +15,7 @@ Trang bài tàn cuộc (`phase = tan-cuoc`) có khối **Máy tự giải / Đá
 node tools/co-tan-khau-quyet/extract.cjs
 # 2) kiểm toàn bộ nước + nhánh bằng engine
 node tools/trung-cuoc-bao-dien/tcbd.cjs drafts tools/trung-cuoc-bao-dien/drafts/ctkq.json
-# 3) sinh batch từ data-*.cjs (tên bài, kết quả, khẩu quyết, lời giảng) rồi ghi content.json
+# 3) sinh batch từ data-*.cjs (tên bài, kết quả, khẩu quyết, lời giảng) rồi ghi vào database/seeders/data/content/
 node tools/co-tan-khau-quyet/gen.cjs
 node tools/trung-cuoc-bao-dien/tcbd.cjs build tools/trung-cuoc-bao-dien/batches/co-tan-khau-quyet.json
 php artisan db:seed --class=ContentSeeder
