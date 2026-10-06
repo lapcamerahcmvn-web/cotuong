@@ -145,8 +145,11 @@
             $engineSide = optional($lesson->steps->first())->move_side ?: ($lesson->puzzle_side ?: 'do');
         @endphp
         @if($engineFen)
-            <div class="engine-tools card mt-3 max-w-[740px]" style="padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                <span class="text-ink-soft" style="flex:1 1 220px;font-size:13.5px"><x-icon name="cpu" /> Thẩm thế cờ này với máy ({{ $engineSide === 'den' ? 'Đen' : 'Đỏ' }} đi trước)</span>
+            <div class="engine-tools card mt-3 max-w-[740px]" style="padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center">
+                <span style="flex:1 1 220px;display:flex;align-items:center;gap:12px;min-width:0">
+                    <x-mini-board :fen="$engineFen" :size="64" style="flex:none;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.25)" />
+                    <span class="text-ink-soft" style="font-size:13.5px;line-height:1.45">Thẩm thế cờ này với máy<br>({{ $engineSide === 'den' ? 'Đen' : 'Đỏ' }} đi trước)</span>
+                </span>
                 <a class="btn btn--primary" rel="nofollow" href="{{ route('play.bot', ['tu-the' => $engineFen, 'luot' => $engineSide, 'cam' => 'may', 'cap' => 4, 'bai' => $lesson->slug]) }}"><x-icon name="cpu" /> Máy tự giải</a>
                 <a class="btn" rel="nofollow" href="{{ route('play.bot', ['tu-the' => $engineFen, 'luot' => $engineSide, 'cam' => $engineSide, 'cap' => 4, 'bai' => $lesson->slug]) }}"><x-icon name="play" /> Đánh thử với máy</a>
             </div>

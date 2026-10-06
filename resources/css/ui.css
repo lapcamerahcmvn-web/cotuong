@@ -161,6 +161,12 @@
     .share-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .share-label { font-size: 13px; font-weight: 700; color: var(--ink-faint); }
     .share-btn { display: inline-flex; align-items: center; gap: 6px; border: 0; cursor: pointer; font-size: 13px; font-weight: 700; height: 38px; padding: 0 14px; border-radius: 10px; color: #fff; line-height: 1; }
+    @media (max-width: 480px) {
+        .share-row { gap: 6px; flex-wrap: nowrap; }
+        .share-label { font-size: 12px; white-space: nowrap; }
+        .share-btn { height: 34px; padding: 0 9px; gap: 5px; font-size: 12px; border-radius: 9px; white-space: nowrap; }
+        .share-btn svg { width: 13px; height: 13px; }
+    }
     .share-fb { background: #1877f2; } .share-fb:hover { background: #1568d8; }
     .share-zalo { background: #0068ff; } .share-zalo:hover { background: #0057d6; }
     .share-copy { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line); }
