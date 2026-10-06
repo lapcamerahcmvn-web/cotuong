@@ -61,7 +61,7 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 1 — Chương 6 (chiến pháp trận thức: 10 ván đầy đủ + 22 cây biến khai cuộc + 5 ván Xe Mã) | ✅ 37 bài — 06/10/2026 |
 | Tập 1 — Chương 7 (thiết kế chiến dịch, 5 tiết + 1 ván 99 nước) | ✅ 24 bài — 06/10/2026 |
 | Tập 1 — Chương 8 (trung biến kỳ lộ: 54 hình cây biến, 6 tiết) | ✅ 61 bài — 06/10/2026 |
-| Tập 1 — Chương 9 (trung cục kinh điển: 135 ván) | ⬜ |
+| Tập 1 — Chương 9 (trung cục kinh điển: 135 ván, 7 tiết) | ✅ 143 bài — 06/10/2026 — **Tập 1 xong (359 bài) · TOÀN BỘ SÁCH XONG** |
 
 ## Nợ (không đăng — không đoán nước)
 - **Tập 2 Cuộc 4** (Tôn Chí Vĩ – Ân Quảng Thuận): sơ đồ đọc đúng, nhưng sau 20…S4.5 thì 21…Tg5.1 bất khả
@@ -95,3 +95,4 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
   Chỉ nhận khi ra ĐÚNG 1 ứng viên (VD Cuộc 32: "M7/9" thiếu chữ "trước" vì 2 Mã cùng lộ 7).
 - Tập 1 caption "Hình N" không tin được (nhãn in đầu trang, có khi lệch) → map theo trang + engine xác nhận.
 - Tập 1 Ch8: 54 cây biến tách bằng `parse_tree.py`, gán sơ đồ tuần tự theo tiết (`ch8map.py`) + `findimg.cjs` cho tiết 1 VD11–18; sửa nước VD13 ply 5 → P8.6; cắt VD3/12/13 (nhánh), Tiết 4 VD3. Tiết 2 VD6 (sơ đồ có Tốt Đỏ c3 chặn "M7.6") và Tiết 3 VD5 (không sơ đồ nào khớp) → bài chữ. Lời giảng đặt tự động ở nút rẽ nhánh đầu tiên của từng biến (`gen_t1c8.cjs`).
+- Tập 1 Ch9: 135 ván tách bằng `parse_games.py` (Ví dụ = Hình 1–135 đánh số liên tục, gán sơ đồ tuần tự theo trang). 128/135 khớp ngay; 6 ván sửa sơ đồ bằng dò engine thêm/bớt đúng 1 quân (`findfix.cjs`): 11 thiếu Tốt Đen c4, 73 thiếu Tốt Đỏ i3 (lời dẫn "Đen hơn 2 Tốt"; hàng không xác định được, chọn vị trí xuất phát), 81 thiếu Xe Đen f8, 114 thiếu Xe Đỏ g7 (g8 sẽ ăn không Pháo — trái lời bình), 103/135 Xe Đen nhận dạng lệch cột (h9/h5). Ván 56 cắt sau nước 12 (bản in lệch nhiều chỗ). Biến phụ viết liền trong lời bình ("Nếu đổi thành…: X2.6, P8-9…") tách bằng `parse_vars9.py` + gắn tự động bằng engine (`attach9.cjs`: thử điểm rẽ p-1, p-2, p, p-3, p-4 theo bên được nhắc) — 216 nhánh (195 trọn, 21 cắt đuôi), 65 nhánh lồng/không xác định được điểm rẽ thì bỏ; nhận định "-> …" của sách gắn ở cuối nhánh (đổi Tiên/Hậu → Đỏ/Đen).
