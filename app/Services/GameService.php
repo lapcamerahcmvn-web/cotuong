@@ -125,6 +125,7 @@ class GameService
             $g->fen = Rules::toFen($b);
             $g->turn_started_at = now();
             $g->draw_offer = null;
+            $g->takeback_offer = null;      // đi nước mới = bỏ qua lời xin đi lại đang chờ
             $g->version++;
 
             $opp = $side === 'do' ? 'den' : 'do';
@@ -180,6 +181,98 @@ class GameService
                 $g->version++;
             }
         });
+    }
+
+    /**
+     * Xin đi lại: mỗi người tối đa Game::MAX_TAKEBACKS lần/ván (chỉ tính lần được đồng ý). Bị từ chối thì phải chờ có
+     * nước mới mới xin lại được. @return array{ok:bool, error?:string, game:Game}
+     */
+    public function requestTakeback(Game $g, User $u): array
+    {
+        $err = null;
+        $g = $this->locked($g, function (Game $g) use ($u, &$err) {
+            $this->checkTimeout($g);
+            $side = $g->sideOf($u);
+            $n = count($g->moves ?? []);
+            $mine = $side === 'do' ? intdiv($n + 1, 2) : intdiv($n, 2);
+            $err = match (true) {
+                $g->status !== 'playing' || ! $side => 'Ván không còn diễn ra.',
+                $mine === 0 => 'Bạn chưa đi nước nào để xin đi lại.',
+                $g->takebacksLeft($side) === 0 => 'Bạn đã dùng hết ' . Game::MAX_TAKEBACKS . ' lần xin đi lại trong ván này.',
+                $g->takeback_offer === $side => 'Bạn đã xin đi lại — chờ đối thủ trả lời.',
+                $g->takeback_block !== null && (int) $g->takeback_block === $n => 'Đối thủ vừa từ chối — chờ có nước mới rồi xin lại.',
+                default => null,
+            };
+            if ($err) return;
+            $g->takeback_offer = $side;
+            $g->version++;
+        });
+
+        return $err ? ['ok' => false, 'error' => $err, 'game' => $g] : ['ok' => true, 'game' => $g];
+    }
+
+    /** Đối thủ trả lời lời xin đi lại. Đồng ý: lùi nước của người xin (kèm nước đáp của mình nếu đã đi). */
+    public function answerTakeback(Game $g, User $u, bool $accept): Game
+    {
+        return $this->locked($g, function (Game $g) use ($u, $accept) {
+            $this->checkTimeout($g);
+            $side = $g->sideOf($u);
+            $offer = $g->takeback_offer;
+            if ($g->status !== 'playing' || ! $side || ! $offer || $offer === $side) return;
+            $g->takeback_offer = null;
+            $g->version++;
+            if (! $accept) {
+                $g->takeback_block = count($g->moves ?? []);
+                return;
+            }
+            $plies = $g->turn() === $offer ? 2 : 1;       // tới lượt người xin = đối thủ đã đáp → lùi 2 nước
+            if (count($g->moves ?? []) < $plies) return;
+            if ($g->time_control) {                        // trừ giờ bên đang tới lượt tới thời điểm này
+                $col = $g->turn() === 'do' ? 'red_ms' : 'black_ms';
+                $g->{$col} = max(0, $g->{$col} - (int) $g->turn_started_at->diffInMilliseconds(now(), true));
+            }
+            $this->undo($g, $plies);
+            $tb = $g->takebacks ?? [];
+            $tb[$offer] = (int) ($tb[$offer] ?? 0) + 1;
+            $g->takebacks = $tb;
+            $g->takeback_block = null;
+            $g->draw_offer = null;
+            $g->turn_started_at = now();
+        });
+    }
+
+    /**
+     * Lùi $n nước cuối. Cờ úp: quân vừa lật được úp lại đúng danh tính (trả về `secret`), nắp bị ăn đặt lại chỗ cũ.
+     * Không tự save.
+     */
+    private function undo(Game $g, int $n): void
+    {
+        $moves = $g->moves ?? [];
+        $reveals = $g->reveals ?? [];
+        $captured = $g->captured ?? [];
+        $secret = $g->secret ?? [];
+        $coup = $g->isCoup();
+        $keep = count($moves) - $n;
+        $b = $before = Rules::loadFen($coup ? Game::COUP_FEN : Game::START_FEN);
+        $caps = $capsKeep = 0;
+        foreach ($moves as $i => $m) {
+            if ($i === $keep) { $before = $b; $capsKeep = $caps; }
+            [$f, $t] = Rules::iccs($m);
+            if ($coup && $i >= $keep) {
+                if ($b[$f] === 'X' || $b[$f] === 'x') $secret[$f] = $reveals[$i] ?? null;
+                if ($b[$t] === 'X' || $b[$t] === 'x') $secret[$t] = $captured[$caps] ?? null;
+            }
+            if ($b[$t] !== null) $caps++;
+            $b = Rules::apply($b, $f, $t);
+            if (! empty($reveals[$i])) $b[$t] = $reveals[$i];
+        }
+        $g->moves = array_slice($moves, 0, $keep);
+        $g->fen = Rules::toFen($before);
+        if ($coup) {
+            $g->reveals = array_slice($reveals, 0, $keep);
+            $g->captured = array_slice($captured, 0, $capsKeep);
+            $g->secret = $secret;
+        }
     }
 
     /** Hết giờ → thua. Gọi khi đọc trạng thái hoặc trước khi đi nước. Không tự save. */

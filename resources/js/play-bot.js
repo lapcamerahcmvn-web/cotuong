@@ -86,6 +86,7 @@ function setup(root) {
     const statusEl = $('[data-bot-status]'), listEl = $('[data-bot-moves]'), levelEl = $('[data-bot-level]');
     let worker = null, reqId = 0, g = null, board = null, view = null;
     let turnStart = Date.now(), tick = null, lastTick = null, lastNotice = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
+    let thinkTok = 0;   // đổi bên / bật-tắt máy tự giải giữa lúc máy đang tính → bỏ kết quả cũ
 
     const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong', time: '600+5' };
     const markOn = (sel, val, attr) => root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x.dataset[attr] === String(val)));
@@ -111,7 +112,7 @@ function setup(root) {
     }
 
     const fresh = (level, human, variant, from = null, tc = pick.time) => ({
-        level, human, variant, moves: [], hints: 0, undos: 0, over: null, t0: Date.now(), clock: newClock(tc),
+        level, human, variant, moves: [], hints: 0, undos: 0, over: null, t0: Date.now(), clock: newClock(tc), auto: false,
         startFen: from?.fen || null, redFirst: from ? from.redFirst : true, custom: from || null,
         layout: variant === 'co-up' ? newLayout(from?.fen || COUP_FEN, from?.pool || null) : null,
     });
@@ -178,6 +179,9 @@ function setup(root) {
         el.innerHTML = '<div class="board-holder" data-xq-holder></div>';
         view = replay(g);
         board = window.XiangqiBoard.mountGame(el, { fen: fen(), red: humanRed(), coup: coup(), onMove: humanMove });
+        // Thế tự chọn (không tính XP): được đổi bên với máy / cho máy tự giải cả hai bên.
+        root.querySelectorAll('[data-custom-only]').forEach((x) => { x.hidden = !g.custom; });
+        syncAuto();
         $('[data-bot-clocks]').classList.toggle('no-clock', !g.clock);
         $('[data-bot-clocks]').classList.remove('is-flipped');
         turnStart = Date.now();
@@ -240,7 +244,7 @@ function setup(root) {
     }
 
     function humanMove(iccs) {
-        if (g.over || turnRed() !== humanRed()) return;
+        if (g.over || g.auto || turnRed() !== humanRed()) return;
         if (forbidden(iccs)) {
             status('Luật chiếu dai: không được chiếu lặp lại lần thứ 3 — hãy đi nước khác', 'err');
             toast('Không được chiếu lặp lại thế cờ lần thứ 3 (chiếu dai) — hãy đổi nước.', { kind: 'err', iconName: 'x-circle', timeout: 4500 });
@@ -352,7 +356,8 @@ function setup(root) {
     }
 
     function engineMsg(red, extra = {}) {
-        const avoid = [...forbiddenMoves(red, red === humanRed() ? 2 : 1), ...(red !== humanRed() ? repetitionAvoid(red) : [])];
+        const bot = g.auto || red !== humanRed();
+        const avoid = [...forbiddenMoves(red, bot ? 1 : 2), ...(bot ? repetitionAvoid(red) : [])];
         return coup() ? { fen: fen(), red, coup: true, pools: pools(red), avoid, ...extra } : { fen: fen(), red, avoid, ...extra };
     }
 
@@ -360,10 +365,11 @@ function setup(root) {
         if (g.over) return;
         const r = result();
         if (r) return finish(r);
-        const humanTurn = turnRed() === humanRed();
+        const tok = ++thinkTok;
+        const humanTurn = !g.auto && turnRed() === humanRed();
         board.lock(!humanTurn);
         const check = inCheckSt(stateFrom(view.board, coup()), turnRed());
-        status(humanTurn ? (check ? 'Bạn đang bị chiếu!' : 'Đến lượt bạn') : 'Máy đang suy nghĩ…', humanTurn ? (check ? 'err' : 'ok') : null);
+        status(humanTurn ? (check ? 'Bạn đang bị chiếu!' : 'Đến lượt bạn') : g.auto ? `Máy tự giải · ${turnRed() ? 'Đỏ' : 'Đen'} đang tính…` : 'Máy đang suy nghĩ…', humanTurn ? (check ? 'err' : 'ok') : null);
         if (humanTurn) {
             const n = notice(history(), g.human, 'máy');
             if (n && n !== lastNotice) { lastNotice = n; toast(n, { kind: /THUA/.test(n) ? 'err' : undefined, iconName: 'repeat', timeout: 7000 }); }
@@ -372,11 +378,13 @@ function setup(root) {
         if (humanTurn) return;
         const t0 = Date.now();
         // Máy cũng bị tính giờ: sắp hết giờ thì nghĩ nông hơn cho kịp (cấp Vừa ~1,5s, Dễ ~0,7s mỗi nước).
-        const left = remaining(sideKey(!humanRed()));
+        const moverRed = turnRed();
+        const left = remaining(sideKey(moverRed));
         const level = left < 15000 ? Math.min(g.level, 2) : left < 45000 ? Math.min(g.level, 3) : g.level;
-        const res = await ask(engineMsg(!humanRed(), { level }));
-        await new Promise((ok) => setTimeout(ok, Math.max(0, 450 - (Date.now() - t0))));
-        if (g.over || !res.move) return;
+        const res = await ask(engineMsg(moverRed, { level }));
+        // Máy tự giải: đi chậm hơn để người xem kịp theo dõi.
+        await new Promise((ok) => setTimeout(ok, Math.max(0, (g.auto ? 900 : 450) - (Date.now() - t0))));
+        if (tok !== thinkTok || g.over || !res.move) return;
         apply(res.move);
         next();
     }
@@ -407,6 +415,34 @@ function setup(root) {
         if (res.move && turnRed() === humanRed()) { g.hints++; board.showArrow(res.move, '#d99a1e'); status('Gợi ý: mũi tên vàng', 'ok'); persist(); }
     });
     $('[data-bot-flip]').addEventListener('click', () => { board.flip(); $('[data-bot-clocks]').classList.toggle('is-flipped'); });
+
+    // ---- Thế tự chọn: đổi bên với máy / máy tự giải cả hai bên ----
+    function setHuman(side) {
+        g.human = side;
+        board.setSide(side === 'do');
+        board.setFlip(side !== 'do');      // bên mình luôn ở dưới
+        $('[data-bot-clocks]').classList.remove('is-flipped');
+    }
+    function syncAuto() {
+        const btn = $('[data-bot-auto]');
+        if (!btn || !g) return;
+        btn.innerHTML = g.auto ? `${icon('pause')} Dừng máy giải` : `${icon('cpu')} Máy tự giải`;
+        btn.classList.toggle('btn--primary', !!g.auto);
+        root.querySelectorAll('[data-bot-undo],[data-bot-hint],[data-bot-resign]').forEach((b) => { b.disabled = !!g.auto; });
+    }
+    function rejig() { thinkTok++; syncAuto(); refresh(false); persist(); next(); }
+    $('[data-bot-swap]')?.addEventListener('click', () => {
+        if (!g || g.over || !g.custom) return;
+        if (g.auto) { g.auto = false; setHuman(sideKey(turnRed())); toast('Đã dừng máy giải — bạn cầm bên đang tới lượt.', { iconName: 'repeat' }); }
+        else { setHuman(g.human === 'do' ? 'den' : 'do'); toast(`Đã đổi bên — bạn cầm quân ${g.human === 'do' ? 'Đỏ' : 'Đen'}.`, { iconName: 'repeat' }); }
+        rejig();
+    });
+    $('[data-bot-auto]')?.addEventListener('click', () => {
+        if (!g || g.over || !g.custom) return;
+        g.auto = !g.auto;
+        if (!g.auto) setHuman(sideKey(turnRed()));
+        rejig();
+    });
     $('[data-bot-resign]').addEventListener('click', () => {
         if (g.over || !confirm('Xin thua ván này?')) return;
         finish({ winner: humanRed() ? 'den' : 'do', reason: 'xin thua' });
@@ -427,11 +463,13 @@ function setup(root) {
         refresh(false);           // hết ván: nắp đối phương đã ăn thành "?" bấm để lật
         board.lock(true);
         const outcome = r.winner === null ? 'draw' : (r.winner === g.human ? 'win' : 'loss');
-        window.XiangqiBoard.sound.end(outcome);
-        status(outcome === 'win' ? 'Bạn thắng!' : outcome === 'loss' ? 'Máy thắng' : 'Hoà', outcome === 'win' ? 'ok' : 'err');
+        const sideName = r.winner === 'do' ? 'Đỏ' : 'Đen';
+        window.XiangqiBoard.sound.end(g.auto ? 'draw' : outcome);
+        status(g.auto ? (r.winner ? sideName + ' thắng' : 'Hoà') : outcome === 'win' ? 'Bạn thắng!' : outcome === 'loss' ? 'Máy thắng' : 'Hoà', outcome === 'win' ? 'ok' : 'err');
+        syncAuto();
         track('game_finish', { mode: 'bot', level: g.level, result: outcome, variant: g.variant });
         let res = null;
-        if (window.__xq?.auth) {
+        if (window.__xq?.auth && !g.auto) {   // máy tự giải: không phải ván của người chơi → không lưu lịch sử
             res = await postJson('/choi-voi-may/ket-qua', {
                 level: g.level, result: outcome, plies: g.moves.length, hints: g.hints, undos: g.undos, ms: Date.now() - g.t0, variant: g.variant,
                 side: g.human, reason: String(r.reason || '').slice(0, 60), moves: g.moves,
@@ -440,10 +478,10 @@ function setup(root) {
             }).catch(() => null);
         }
         const kind = coup() ? 'cờ úp' : 'cờ tướng';
-        const title = outcome === 'win' ? 'Bạn đã thắng!' : outcome === 'loss' ? 'Máy thắng ván này' : 'Ván cờ hoà';
+        const title = g.auto ? (r.winner ? `Máy giải xong: ${sideName} thắng` : 'Máy giải xong: hoà') : outcome === 'win' ? 'Bạn đã thắng!' : outcome === 'loss' ? 'Máy thắng ván này' : 'Ván cờ hoà';
         const glyph = outcome === 'win' ? 'trophy' : outcome === 'loss' ? 'shield' : 'repeat';
         const xp = res?.gamification?.xp || 0;
-        const canUp = outcome === 'win' && g.level < 4;
+        const canUp = !g.auto && outcome === 'win' && g.level < 4;
         const dlg = openSheet(`<div class="celebrate">
             <div class="celebrate__burst">${icon(glyph)}</div>
             <h2>${title}</h2>
@@ -455,18 +493,29 @@ function setup(root) {
                 ${canUp ? `<button type="button" class="btn btn--primary btn--lg" data-again="${g.level + 1}">${icon('zap')} Thử cấp ${escapeHtml(LEVELS[g.level + 1].name)}</button>` : ''}
                 <button type="button" class="btn ${canUp ? '' : 'btn--primary'} btn--lg" data-again="${g.level}">${icon('repeat')} Chơi lại</button>
                 ${res?.record_url ? `<a class="btn btn--ghost" href="${escapeHtml(res.record_url)}">${icon('eye')} Xem lại ván · thêm biến</a>` : ''}
+                ${g.custom ? `<a class="btn btn--ghost" href="/luyen-tap/xep-co?fen=${encodeURIComponent(g.startFen || '')}&luot=${redFirstOf(g) ? 'do' : 'den'}">${icon('edit')} Sửa thế cờ</a>` : ''}
                 <button type="button" class="btn btn--ghost" data-share>${icon('share')} Chia sẻ kết quả</button>
             </div>
             ${!window.__xq?.auth ? '<p class="text-[13px] text-ink-soft mt-2">Đăng nhập để tự lưu lịch sử ván đấu và xem lại.</p>' : ''}</div>`);
         if (outcome === 'win') confetti(dlg.querySelector('.celebrate'));
         dlg.querySelectorAll('[data-again]').forEach((b) => b.addEventListener('click', () => {
             dlg.close();
-            start(fresh(+b.dataset.again, g.human, g.variant, g.custom, g.clock?.tc || '0'));
+            const ng = fresh(+b.dataset.again, g.human, g.variant, g.custom, g.clock?.tc || '0');
+            ng.auto = g.auto;
+            start(ng);
         }));
         dlg.querySelector('[data-share]').addEventListener('click', () => {
             const verb = outcome === 'win' ? 'thắng' : outcome === 'loss' ? 'thua' : 'hoà';
             import('./share').then((m) => m.share(`♟ Tôi vừa ${verb} máy ván ${kind} cấp ${LEVELS[g.level].name} sau ${Math.ceil(g.moves.length / 2)} nước trên Học Cờ Tướng!`, location.origin + '/choi-voi-may' + (coup() ? '?bien-the=co-up' : '')));
         });
         if (res?.gamification) handleGamification(res.gamification, { silent: true });
+    }
+
+    // Từ "Xếp cờ để thẩm" (?cam=do|den|may): vào ván ngay, không tính giờ (đặt cuối hàm — start() dùng các hằng khai báo ở trên).
+    if (custom?.autostart) {
+        const auto = custom.human === 'may';
+        const ng = fresh(custom.level || 4, auto ? (custom.redFirst ? 'do' : 'den') : custom.human, pick.variant, custom, '0');
+        ng.auto = auto;
+        start(ng);
     }
 }

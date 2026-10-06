@@ -56,7 +56,8 @@ Bắt đầu từ luật chơi cơ bản và cách đi từng quân (Xe, Pháo, 
 - **Đoán nước**: trong mỗi bài cờ tướng, người học cầm 1 bên và tự đoán nước trước khi xem lời giảng (học chủ động), chấm điểm cuối bài.
 - **Luyện tập thế cờ**: thế cờ hôm nay, thử thách 60 giây, chế độ 3 mạng, luyện theo chủ đề sát pháp, ôn lại lỗi sai; nhận cả đường chiếu hết khác sách và nước tương đương: https://hoccotuong.top/luyen-tap
 - **Chơi cờ tướng / cờ úp với máy**: 4 cấp độ, đồng hồ (5–30 phút, có cộng giây), gợi ý, book khai cuộc, luật chiếu dai / đuổi bắt dai / lặp nước có báo trước: https://hoccotuong.top/choi-voi-may
-- **Thách đấu bạn bè qua link** (cờ tướng, cờ úp): https://hoccotuong.top/dau-ban
+- **Thách đấu bạn bè** (cờ tướng, cờ úp): gửi link / mã phòng hoặc mời bạn bè đang online, xin đi lại (3 lần/ván), xin hoà, người đăng nhập xem trực tiếp các ván đang đấu: https://hoccotuong.top/dau-ban
+- **Xếp cờ để thẩm**: tự xếp thế cờ tướng / cờ úp, cho máy tự giải cả hai bên hoặc đánh với máy, đổi bên bất cứ lúc nào, lưu thư viện: https://hoccotuong.top/luyen-tap/xep-co
 - **Phân tích ván** bằng máy: độ chính xác, nước sách, sai lầm, "luyện lại sai lầm của tôi".
 - **Nhận diện bàn cờ từ ảnh** (ảnh chụp bàn thật hoặc ảnh màn hình phần mềm cờ) → ra thế cờ để máy đánh giá / chơi tiếp: https://hoccotuong.top/nhan-dien-ban-co
 - **Giao diện bàn cờ**: 8 màu bàn, chữ Hán hoặc chữ Việt trên quân, quân 3D, số cột, âm thanh & giọng đọc nước đi tiếng Việt: https://hoccotuong.top/giao-dien-ban-co

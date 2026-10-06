@@ -1287,6 +1287,7 @@
       },
       lock: function (v) { st.locked = !!v; if (v) { st.selected = -1; st.dots = []; } draw({ noAnim: true }); },
       setFlip: function (v) { st.flip = !!v; draw({ noAnim: true }); },
+      setSide: function (red) { cfg.red = !!red; st.selected = -1; st.dots = []; draw({ noAnim: true }); },   // đổi bên người đi (Xếp cờ để thẩm)
       flip: function () { st.flip = !st.flip; draw({ noAnim: true }); },
       fen: function () { return Rules.toFen(st.board); }
     };

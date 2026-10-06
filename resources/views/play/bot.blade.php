@@ -136,6 +136,8 @@
                         <button type="button" class="btn" data-bot-undo><x-icon name="undo" /> Đi lại</button>
                         <button type="button" class="btn" data-bot-hint><x-icon name="bulb" /> Gợi ý</button>
                         <button type="button" class="btn btn--ghost" data-bot-flip><x-icon name="flip" /> Lật bàn</button>
+                        <button type="button" class="btn" data-bot-swap data-custom-only hidden title="Bạn và máy đổi quân cho nhau"><x-icon name="repeat" /> Đổi bên</button>
+                        <button type="button" class="btn" data-bot-auto data-custom-only hidden title="Máy đi cả hai bên để thẩm thế cờ"><x-icon name="cpu" /> Máy tự giải</button>
                     </div>
                 </div>
             </div>

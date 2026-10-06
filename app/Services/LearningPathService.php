@@ -17,11 +17,11 @@ class LearningPathService
     public function structure(): array
     {
         // Không dùng lessons.updated_at — tăng view_count cũng chạm updated_at, sẽ phá cache mỗi lượt xem.
-        $stamp = Lesson::published()->count() . '|' . Lesson::published()->max('published_at') . '|' . LessonSeries::max('updated_at');
+        $stamp = Lesson::published()->count() . '|' . Lesson::published()->max('published_at') . '|' . LessonSeries::max('updated_at') . '|' . LessonSeries::count();
 
         return Cache::remember('learning-path:' . md5($stamp), 3600, function () {
             $courses = [];
-            foreach (config('learning-path.courses') as $key => $c) {
+            foreach ($this->courseSeries() as $key => $c) {
                 $series = LessonSeries::whereIn('slug', $c['series'])->get()->sortBy(fn ($s) => array_search($s->slug, $c['series'], true));
                 $list = [];
                 foreach ($series as $s) {
@@ -38,6 +38,29 @@ class LearningPathService
 
             return $courses;
         });
+    }
+
+    /**
+     * Chặng từ config + tự thêm chương trình MỚI chưa khai báo (VD Trung Cuộc Bảo Điển): xếp vào chặng theo
+     * game_mode (cờ úp) → phase của series → phase phổ biến nhất của bài; đứng sau các chương trình đã khai báo,
+     * theo sort_order. Chỉ series có bài published mới hiện (structure() bỏ series rỗng).
+     */
+    public function courseSeries(): array
+    {
+        $courses = config('learning-path.courses');
+        $known = array_merge(...array_values(array_map(fn ($c) => $c['series'], $courses)));
+        $extra = LessonSeries::whereNotIn('slug', $known)->whereHas('publishedLessons')
+            ->orderBy('sort_order')->orderBy('id')->get();
+        foreach ($extra as $s) {
+            $key = $s->game_mode === 'co-up' ? 'co-up' : $s->phase;
+            if (! isset($courses[$key])) {
+                $key = Lesson::published()->where('series_id', $s->id)->whereNotNull('phase')
+                    ->groupBy('phase')->selectRaw('phase, COUNT(*) c')->orderByDesc('c')->value('phase');
+            }
+            $courses[isset($courses[$key]) ? $key : 'trung-cuoc']['series'][] = $s->slug;
+        }
+
+        return $courses;
     }
 
     /** Cấu trúc + trạng thái từng node cho 1 người học (null = khách). */

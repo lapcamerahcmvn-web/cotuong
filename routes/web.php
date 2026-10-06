@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\InviteController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeaderboardController;
@@ -173,6 +174,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/dau-ban/{code}/nuoc', [GameController::class, 'move'])->name('pvp.move')->middleware('throttle:60,1,pvp-move');
     Route::post('/dau-ban/{code}/xin-thua', [GameController::class, 'resign'])->name('pvp.resign');
     Route::post('/dau-ban/{code}/hoa', [GameController::class, 'draw'])->name('pvp.draw')->middleware('throttle:20,1,pvp-draw');
+    Route::post('/dau-ban/{code}/di-lai', [GameController::class, 'takeback'])->name('pvp.takeback')->middleware('throttle:20,1,pvp-takeback');
+    Route::get('/dau-ban/sanh', [GameController::class, 'lobbyData'])->name('pvp.lobby.data')->middleware('throttle:30,1,pvp-lobby');
+    // Mời bạn bè online vào ván (giới hạn 3 lời/10 phút kiểm trong InviteController).
+    Route::post('/loi-moi', [InviteController::class, 'store'])->name('invites.store')->middleware('throttle:10,1,invite');
+    Route::get('/loi-moi', [InviteController::class, 'poll'])->name('invites.poll')->middleware('throttle:60,1,invite-poll');
+    Route::post('/loi-moi/{invite}/dong-y', [InviteController::class, 'accept'])->name('invites.accept');
+    Route::post('/loi-moi/{invite}/tu-choi', [InviteController::class, 'decline'])->name('invites.decline');
 });
 
 // ---- Lộ trình + Luyện tập + Xếp hạng ----
@@ -200,6 +208,7 @@ Route::prefix('luyen-tap')->name('practice.')->group(function () {
     Route::get('/60-giay', [PracticeController::class, 'rush'])->name('rush');
     Route::get('/3-mang', [PracticeController::class, 'survival'])->name('survival');
     Route::get('/kiem-tra', [PracticeController::class, 'placement'])->name('placement');
+    Route::view('/xep-co', 'practice.setup')->name('setup');   // Xếp cờ để thẩm (bàn xếp quân + máy giải)
     Route::get('/chu-de/{skill}', [PracticeController::class, 'topic'])->name('topic');
     Route::get('/loi-sai', [PracticeController::class, 'review'])->name('review')->middleware('auth');
     Route::get('/sai-lam-cua-toi', [MistakeController::class, 'index'])->name('mistakes')->middleware('auth');

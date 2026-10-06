@@ -17,7 +17,13 @@
         @if($errors->any())<div class="alert alert--err mt-4"><x-icon name="x-circle" />{{ $errors->first() }}</div>@endif
 
         @auth
-        <form method="POST" action="{{ route('pvp.store') }}" class="card card--pad mt-5">
+        <section class="card overflow-hidden mt-5" data-lobby>
+            <div class="side-head"><span class="flex items-center gap-2"><span class="online-dot"></span> Bạn bè đang online</span><span class="muted text-[13px]" data-lobby-left></span></div>
+            <div data-lobby-friends><p class="px-4 py-3 m-0 text-ink-faint text-[14px]">Đang tải…</p></div>
+            <p class="px-4 py-2 m-0 text-[12.5px] text-ink-faint border-t border-line">Bấm "Mời" — bạn ấy nhận thông báo, đồng ý là tự vào ván (dùng biến thể, bên và thời gian đang chọn ở form "Tạo phòng" bên dưới). Bạn bè = người bạn theo dõi hoặc theo dõi bạn — xem <a href="{{ route('friends') }}">Bạn bè</a>.</p>
+        </section>
+
+        <form method="POST" action="{{ route('pvp.store') }}" class="card card--pad mt-5" data-create-form>
             @csrf
             <h2 class="text-lg font-extrabold mb-3">Tạo phòng mới</h2>
             <div class="label mb-2">Biến thể</div>
@@ -46,7 +52,7 @@
         <form method="POST" action="{{ route('pvp.join') }}" class="card card--pad mt-4 flex flex-wrap gap-2 items-end">
             @csrf
             <div class="field !mb-0 flex-1 min-w-[180px]">
-                <label class="label" for="code">Đã có mã phòng?</label>
+                <label class="label" for="code">Có mã phòng? Vào chơi hoặc xem ván</label>
                 <input class="input uppercase tracking-[.2em] font-bold" id="code" name="code" maxlength="8" placeholder="VD: K7QH2M" required>
             </div>
             <button class="btn" type="submit">Vào phòng</button>
@@ -66,6 +72,14 @@
             <span class="mode-card__icon tone-primary"><x-icon name="shield" /></span>
             <span><h3>Chơi với máy</h3><p>4 cấp độ, có gợi ý — luyện tay trước khi thách đấu.</p></span>
         </a>
+        <section class="card overflow-hidden">
+            <div class="side-head"><span class="flex items-center gap-2"><x-icon name="eye" class="w-4 h-4" /> Phòng đang thi đấu</span></div>
+            @auth
+                <div data-lobby-live><p class="px-4 py-3 m-0 text-ink-faint text-[14px]">Đang tải…</p></div>
+            @else
+                <p class="px-4 py-3 m-0 text-[14px] text-ink-soft"><a href="{{ route('login') }}" class="font-bold">Đăng nhập</a> để xem trực tiếp các ván đang diễn ra.</p>
+            @endauth
+        </section>
         @if($u && $mine->isNotEmpty())
             <section class="card overflow-hidden">
                 <div class="side-head"><span>Ván của tôi</span></div>

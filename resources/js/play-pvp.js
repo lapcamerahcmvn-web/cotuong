@@ -27,6 +27,7 @@ function run(root) {
     const board = window.XiangqiBoard.mountGame(el, { fen: s.fen, red: youRed(), coup, onMove: send });
     board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
     render(true);
+    renderWatchers(s.watchers || 0);
     poll();
     setInterval(tickClocks, 250);
 
@@ -58,17 +59,33 @@ function run(root) {
     }
 
     function apply(n) {
+        if (n && n.watchers !== undefined) renderWatchers(n.watchers);
         if (!n || n.same) {
             if (n && n.clocks) { s.clocks = n.clocks; clockAt = Date.now(); }
             return;
         }
         const wasWaiting = s.status === 'waiting';
         const moved = n.moves.length !== s.moves.length;
+        const undone = n.moves.length < s.moves.length;
+        const prevTake = s.takeback_offer;
         s = n;
         clockAt = Date.now();
         if (wasWaiting && s.status !== 'waiting') { location.reload(); return; }
-        if (moved) board.set(s.fen, s.moves[s.moves.length - 1] || null);
+        if (undone) {
+            // Đi lại được đồng ý: lùi bàn cờ, không phát tiếng đặt quân.
+            seenPlies = s.moves.length;
+            board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
+            toast(s.you ? 'Đã đi lại theo lời xin — ván tiếp tục từ thế trước.' : 'Một bên đã được đi lại.', { iconName: 'undo', timeout: 3500 });
+        } else if (moved) board.set(s.fen, s.moves[s.moves.length - 1] || null);
+        else if (prevTake && !s.takeback_offer && prevTake === s.you) toast('Đối thủ không đồng ý cho đi lại.', { kind: 'err', iconName: 'x-circle' });
         render();
+    }
+
+    function renderWatchers(n) {
+        const box = $('[data-pvp-watchers]');
+        if (!box) return;
+        box.hidden = !n;
+        box.querySelector('span').textContent = n + ' người đang xem';
     }
 
     function act(url, body) {
@@ -113,6 +130,7 @@ function run(root) {
             if (s.notice) status(s.notice, /THUA/.test(s.notice) ? 'err' : null);
         }
         renderDraw();
+        renderTakeback();
         renderMoves();
         const acts = $('[data-pvp-actions]');
         if (acts) acts.hidden = s.status !== 'playing';
@@ -142,6 +160,27 @@ function run(root) {
             <button type="button" class="btn btn--sm" data-dec>Từ chối</button></div>`;
         box.querySelector('[data-acc]').onclick = () => act(`/dau-ban/${code}/hoa`);
         box.querySelector('[data-dec]').onclick = () => act(`/dau-ban/${code}/hoa`, { decline: true });
+    }
+
+    function renderTakeback() {
+        const box = $('[data-pvp-takeback-box]'), btn = $('[data-pvp-takeback]');
+        const left = s.you && s.takebacks_left ? s.takebacks_left[s.you] : 0;
+        if (btn) {
+            const mine = s.you === 'do' ? Math.ceil(s.moves.length / 2) : Math.floor(s.moves.length / 2);
+            btn.querySelector('[data-pvp-takeback-left]').textContent = `(còn ${left})`;
+            btn.disabled = !left || !mine || s.takeback_offer === s.you;
+        }
+        if (!box) return;
+        if (s.status !== 'playing' || !s.takeback_offer || !s.you) { box.hidden = true; return; }
+        box.hidden = false;
+        if (s.takeback_offer === s.you) { box.innerHTML = '<span class="text-ink-soft">Bạn đã xin đi lại — chờ đối thủ trả lời.</span>'; return; }
+        const n = s.turn === s.takeback_offer ? 2 : 1;
+        box.innerHTML = `<div class="font-bold mb-1">Đối thủ xin đi lại</div>
+            <p class="text-[13.5px] text-ink-soft mt-0 mb-2">Đồng ý thì lùi ${n} nước (${n === 2 ? 'nước của đối thủ và nước bạn vừa đáp' : 'nước đối thủ vừa đi'}). Đối thủ còn ${s.takebacks_left?.[s.takeback_offer] ?? 0} lần xin.</p>
+            <div class="flex gap-2"><button type="button" class="btn btn--primary btn--sm" data-acc>${icon('check')} Đồng ý</button>
+            <button type="button" class="btn btn--sm" data-dec>Không đồng ý</button></div>`;
+        box.querySelector('[data-acc]').onclick = () => act(`/dau-ban/${code}/di-lai`, { accept: 1 });
+        box.querySelector('[data-dec]').onclick = () => act(`/dau-ban/${code}/di-lai`, { accept: 0 });
     }
 
     function renderMoves() {
@@ -200,6 +239,13 @@ function run(root) {
     $('[data-pvp-resign]')?.addEventListener('click', () => {
         if (confirm('Xin thua ván này?')) act(`/dau-ban/${code}/xin-thua`);
     });
-    $('[data-pvp-offer]')?.addEventListener('click', () => act(`/dau-ban/${code}/hoa`));
+    $('[data-pvp-offer]')?.addEventListener('click', () => {
+        if (s.draw_offer === s.you) return toast('Bạn đã xin hoà — chờ đối thủ trả lời.');
+        act(`/dau-ban/${code}/hoa`).then(() => { if (s.status === 'playing' && s.draw_offer === s.you) toast('Đã gửi lời xin hoà.', { iconName: 'repeat' }); });
+    });
+    $('[data-pvp-takeback]')?.addEventListener('click', () => {
+        postJson(`/dau-ban/${code}/di-lai`, {}).then((r) => { apply(r); toast('Đã gửi lời xin đi lại — chờ đối thủ đồng ý.', { iconName: 'undo' }); })
+            .catch((e) => toast(e.data?.error || 'Không gửi được — thử lại.', { kind: 'err', iconName: 'x-circle' }));
+    });
     $('[data-pvp-flip]')?.addEventListener('click', () => { flipped = !flipped; board.flip(); render(); });
 }

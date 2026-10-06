@@ -122,7 +122,16 @@ class User extends Authenticatable
             'streak_last_date' => 'date',
             'leaderboard_opt_out' => 'boolean',
             'banned_at' => 'datetime',
+            'last_seen_at' => 'datetime',
         ];
+    }
+
+    /** Coi là "đang online" nếu có hoạt động trong N phút gần nhất (TouchLastSeen + poll lời mời 20s). */
+    public const ONLINE_MINUTES = 3;
+
+    public function isOnline(): bool
+    {
+        return $this->last_seen_at && $this->last_seen_at->gte(now()->subMinutes(self::ONLINE_MINUTES));
     }
 
     /** Người mình theo dõi. */

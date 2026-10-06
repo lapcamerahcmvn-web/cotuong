@@ -361,4 +361,28 @@
     .clock-strip.is-low .clock-strip__time { background: var(--danger); color: #fff; border-color: var(--danger); animation: clockLow 1s steps(2) infinite; }
     @keyframes clockLow { 50% { opacity: .65; } }
     @media (prefers-reduced-motion: reduce) { .clock-strip.is-low .clock-strip__time { animation: none; } }
+
+    /* Xếp cờ để thẩm: bảng quân */
+    .setup-palette { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; margin-top: 12px; }
+    .pal { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0 4px; min-height: 56px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .pal span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-piece); font-size: 19px; line-height: 1; background: var(--xq-disc); box-shadow: inset 0 0 0 2px currentColor; }
+    .pal small { font-size: 11px; font-weight: 700; color: var(--ink-faint); }
+    .pal.is-red { color: var(--xq-red); }
+    .pal.is-black { color: var(--xq-black); }
+    .pal.is-up span { background: currentColor; }
+    .pal.is-up span { color: var(--xq-disc); box-shadow: none; }
+    .pal.is-red.is-up span { background: var(--xq-red); }
+    .pal.is-black.is-up span { background: var(--xq-black); }
+    .pal.is-erase { color: var(--danger); }
+    .pal.is-erase span { background: var(--danger-soft); box-shadow: none; font-family: inherit; font-size: 15px; }
+    .pal.is-on { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
+    .setup-hit { cursor: pointer; }
+    @media (max-width: 420px) { .setup-palette { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+
+    /* Đấu bạn: bạn bè online, phòng đang đấu, lời mời */
+    .online-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--jade); box-shadow: 0 0 0 2px var(--surface); flex: none; }
+    .invite-pop { position: fixed; z-index: 90; right: 16px; bottom: 84px; width: min(360px, calc(100vw - 32px)); padding: 16px; border-radius: var(--radius-card, 18px); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-lg); animation: invitePop .25s ease-out; }
+    @keyframes invitePop { from { transform: translateY(12px); opacity: 0; } }
+    @media (min-width: 1024px) { .invite-pop { bottom: 24px; } }
+    @media (prefers-reduced-motion: reduce) { .invite-pop { animation: none; } }
 }

@@ -1,7 +1,7 @@
 <?php
 
 // Lộ trình học (/lo-trinh): thứ tự chặng → chương trình. Không khoá cứng: mọi bài vẫn mở,
-// lộ trình chỉ gợi ý thứ tự. unit_size = số bài mỗi "chặng nhỏ" (unit) khi hiển thị node.
+// lộ trình chỉ gợi ý thứ tự. Chương trình mới chưa liệt kê ở đây vẫn TỰ hiện (LearningPathService::courseSeries). unit_size = số bài mỗi "chặng nhỏ" (unit) khi hiển thị node.
 return [
     'unit_size' => 20,
     'courses' => [
@@ -18,7 +18,7 @@ return [
         'trung-cuoc' => [
             'name' => 'Trung cuộc', 'glyph' => '炮', 'black' => false,
             'desc' => 'Nguyên lý trung cuộc và các đội hình sát pháp then chốt.',
-            'series' => ['nen-tang-nguyen-ly-trung-cuoc', 'sat-phap-13-doi-hinh', 'sat-phap-dai-toan'],
+            'series' => ['nen-tang-nguyen-ly-trung-cuoc', 'sat-phap-13-doi-hinh', 'trung-cuoc-bao-dien-tap-1', 'trung-cuoc-bao-dien-tap-2', 'sat-phap-dai-toan'],
         ],
         'tan-cuoc' => [
             'name' => 'Tàn cuộc', 'glyph' => '將', 'black' => true,

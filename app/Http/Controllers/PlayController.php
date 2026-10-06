@@ -25,6 +25,10 @@ class PlayController extends Controller
                 $tui = (string) $request->query('tui', '');
                 $pool = preg_match('/^([RNBACP]{0,15})-([rnbacp]{0,15})$/', $tui, $m) ? ['red' => str_split($m[1]), 'black' => str_split(strtoupper($m[2]))] : null;
                 $custom = ['fen' => $fen, 'redFirst' => $redFirst, 'pool' => $pool];
+                // Từ "Xếp cờ để thẩm": &cam=do|den|may (may = máy tự giải cả hai bên) &cap=1..4 → vào ván ngay.
+                if (in_array($request->query('cam'), ['do', 'den', 'may'], true)) {
+                    $custom += ['human' => $request->query('cam'), 'level' => max(1, min(4, (int) $request->query('cap', 4))), 'autostart' => true];
+                }
             } else {
                 $custom = ['invalid' => true];
             }

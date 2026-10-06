@@ -23,13 +23,21 @@ class Game extends Model
     protected $fillable = [
         'code', 'variant', 'creator_id', 'red_user_id', 'black_user_id', 'status', 'fen', 'moves', 'time_control',
         'red_ms', 'black_ms', 'turn_started_at', 'result', 'reason', 'draw_offer', 'version',
-        'secret', 'reveals', 'captured',
+        'secret', 'reveals', 'captured', 'takeback_offer', 'takebacks', 'takeback_block',
     ];
+
+    /** Số lần mỗi người được xin đi lại trong 1 ván. */
+    public const MAX_TAKEBACKS = 3;
 
     // `secret` (danh tính quân úp) KHÔNG được đưa vào state()/JSON — chỉ GameService đọc.
     protected $hidden = ['secret'];
 
-    protected $casts = ['moves' => 'array', 'secret' => 'array', 'reveals' => 'array', 'captured' => 'array', 'turn_started_at' => 'datetime'];
+    protected $casts = ['moves' => 'array', 'secret' => 'array', 'reveals' => 'array', 'captured' => 'array', 'takebacks' => 'array', 'turn_started_at' => 'datetime'];
+
+    public function takebacksLeft(string $side): int
+    {
+        return max(0, self::MAX_TAKEBACKS - (int) (($this->takebacks ?? [])[$side] ?? 0));
+    }
 
     public function isCoup(): bool
     {
@@ -130,6 +138,8 @@ class Game extends Model
             'result' => $this->result,
             'reason' => $this->reason,
             'draw_offer' => $this->draw_offer,
+            'takeback_offer' => $this->takeback_offer,
+            'takebacks_left' => ['do' => $this->takebacksLeft('do'), 'den' => $this->takebacksLeft('den')],
             'version' => $this->version,
             // Báo trước luật lặp nước (thế đã lặp 2 lần).
             'notice' => $this->status === 'playing' ? \App\Support\Xiangqi\Repetition::notice(\App\Support\Xiangqi\Repetition::history($this), $this->sideOf($viewer)) : null,

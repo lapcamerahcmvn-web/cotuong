@@ -162,11 +162,16 @@ class SitemapController extends Controller
     // /so-do-trang — sơ đồ trang cho người dùng (HTML sitemap).
     public function page()
     {
-        $series = LessonSeries::with(['publishedLessons' => fn ($q) => $q->orderBy('order_in_series')])
-            ->orderBy('sort_order')->orderBy('id')->get()
-            ->filter(fn ($s) => $s->publishedLessons->isNotEmpty())
-            ->values();
+        // Nhóm chương trình theo chặng của lộ trình (tự gồm chương trình mới chưa khai báo trong config).
+        $all = LessonSeries::with(['publishedLessons' => fn ($q) => $q->orderBy('order_in_series')])
+            ->get()->filter(fn ($s) => $s->publishedLessons->isNotEmpty())->keyBy('slug');
+        $groups = [];
+        foreach (app(\App\Services\LearningPathService::class)->courseSeries() as $key => $c) {
+            $list = collect($c['series'])->map(fn ($slug) => $all->pull($slug))->filter()->values();
+            if ($list->isNotEmpty()) $groups[] = ['key' => $key, 'name' => $c['name'], 'series' => $list];
+        }
+        if ($all->isNotEmpty()) $groups[] = ['key' => null, 'name' => 'Chương trình khác', 'series' => $all->sortBy('sort_order')->values()];
 
-        return view('lessons.sitemap', compact('series'));
+        return view('lessons.sitemap', compact('groups'));
     }
 }

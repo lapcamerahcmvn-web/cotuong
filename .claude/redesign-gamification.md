@@ -410,3 +410,19 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
    đăng nhập/top tuần. **Cài đặt web & SEO** (`site_settings` ghi đè `config('site.*')` trong `AppServiceProvider`): tên, mô tả,
    email, title/description trang chủ, GA4, GSC, mạng xã hội + quản lý chuyển hướng 301 (404 tự tra `UrlRedirect`).
    ⚠️ Deploy cần `php artisan migrate --force`.
+
+## Đợt 23 (06/10/2026) — Đấu bạn xã hội + Xếp cờ để thẩm + lộ trình tự động
+1. **Đấu bạn**: xin đi lại (`games.takeback_offer/takebacks/takeback_block`, tối đa `Game::MAX_TAKEBACKS`=3 lần ĐƯỢC ĐỒNG Ý/người/ván;
+   bị từ chối phải chờ nước mới; tới lượt người xin = lùi 2 nước, không thì 1; cờ úp trả quân lật/nắp bị ăn về `secret`
+   — `GameService::undo`). "Đề nghị hoà" đổi tên "Xin hoà". Xem ván cần đăng nhập (khách bị chuyển tới đăng nhập, trừ phòng
+   chờ); đếm người xem bằng cache 20s. Online = `users.last_seen_at` (middleware `TouchLastSeen` ≤1 lần/phút + poll lời mời)
+   trong `User::ONLINE_MINUTES`=3. Mời bạn bè (theo dõi 1 chiều bất kỳ) đang online: bảng `game_invites`, 3 lời/10 phút,
+   hết hạn 2 phút; người nhận thấy thẻ `.invite-pop` ở MỌI trang (`resources/js/invites.js`, poll `/loi-moi` 20s, 3s sau khi
+   vừa mời) → Đồng ý tự tạo phòng + vào ván, người mời tự chuyển vào ván. Sảnh: bạn online + phòng đang đấu (`/dau-ban/sanh`).
+2. **Xếp cờ để thẩm** `/luyen-tap/xep-co` (`setup-board.js`): bàn xếp quân cờ tướng/cờ úp (kiểm vị trí, số quân, Tướng đối
+   mặt, bên vừa đi bị chiếu, hết nước) → sang `/choi-voi-may?tu-the=…&cam=do|den|may&cap=N` tự vào ván không giờ. Ván thế tự
+   chọn có nút **Đổi bên** (`board.setSide`) và **Máy tự giải** (`g.auto`, máy đi cả hai bên, không lưu lịch sử). Lưu thư viện
+   (ghi "Đen đi trước" vào note); Thư viện có nút "Thẩm".
+3. **Lộ trình + sơ đồ trang tự động**: `LearningPathService::courseSeries()` thêm series có bài published chưa khai báo trong
+   config (theo game_mode → phase → phase phổ biến của bài). `/so-do-trang` nhóm theo chặng + mục công cụ.
+   ⚠️ Deploy cần `php artisan migrate --force`.

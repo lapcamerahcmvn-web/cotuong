@@ -61,6 +61,10 @@
         <span class="mode-card__icon tone-ink"><x-icon name="shield" /></span>
         <span><h3>Chơi với máy</h3><p>Áp dụng thế cờ vào ván thật — 4 cấp độ, có gợi ý.</p></span>
     </a>
+    <a href="{{ route('practice.setup') }}" class="card mode-card">
+        <span class="mode-card__icon tone-gold"><x-icon name="grid" /></span>
+        <span><h3>Xếp cờ để thẩm</h3><p>Tự xếp thế cờ tướng hoặc cờ úp, cho máy giải hay đánh với máy, đổi bên tuỳ ý, lưu vào thư viện.</p></span>
+    </a>
     <a href="{{ route('practice.placement') }}" class="card mode-card">
         <span class="mode-card__icon tone-ink"><x-icon name="target" /></span>
         <span><h3>Kiểm tra trình độ</h3><p>5 thế từ dễ đến khó — gợi ý bạn nên bắt đầu học từ đâu.</p></span>

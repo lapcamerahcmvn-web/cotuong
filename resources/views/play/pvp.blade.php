@@ -55,6 +55,8 @@
         </div>
         <div class="grid gap-3 content-start">
             <div class="card card--pad" data-pvp-status>Đang tải…</div>
+            <div class="text-[13px] text-ink-soft flex items-center gap-1" data-pvp-watchers hidden><x-icon name="eye" class="w-4 h-4" /> <span></span></div>
+            <div class="card card--pad" data-pvp-takeback-box hidden></div>
             <div class="card card--pad" data-pvp-draw hidden></div>
             <div class="card card--pad !py-3" data-pvp-captured></div>
             <div class="card overflow-hidden">
@@ -63,10 +65,20 @@
             </div>
             @if($you)
             <div class="flex flex-wrap gap-2" data-pvp-actions>
-                <button type="button" class="btn" data-pvp-offer><x-icon name="repeat" /> Đề nghị hoà</button>
+                <button type="button" class="btn" data-pvp-takeback><x-icon name="undo" /> Xin đi lại <span class="text-ink-faint text-[13px]" data-pvp-takeback-left></span></button>
+                <button type="button" class="btn" data-pvp-offer><x-icon name="repeat" /> Xin hoà</button>
                 <button type="button" class="btn btn--ghost btn--danger" data-pvp-resign><x-icon name="x-circle" /> Xin thua</button>
                 <button type="button" class="btn btn--ghost" data-pvp-flip><x-icon name="flip" /> Lật bàn</button>
             </div>
+            @endif
+            @if(! $you && $game->status !== 'waiting')
+            <div class="flex flex-wrap gap-2">
+                <button type="button" class="btn btn--ghost" data-pvp-flip><x-icon name="flip" /> Lật bàn</button>
+                <a href="{{ route('pvp.lobby') }}" class="btn btn--ghost"><x-icon name="sword" /> Các phòng khác</a>
+            </div>
+            @endif
+            @if($you)
+            <p class="text-[13px] text-ink-faint m-0">Mỗi người được xin đi lại {{ \App\Models\Game::MAX_TAKEBACKS }} lần/ván (khi đối thủ đồng ý). Bạn bè có mã phòng <b>{{ $game->code }}</b> có thể vào xem ván.</p>
             @endif
         </div>
     </div>
