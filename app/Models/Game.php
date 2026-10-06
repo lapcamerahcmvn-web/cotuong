@@ -131,6 +131,8 @@ class Game extends Model
             'reason' => $this->reason,
             'draw_offer' => $this->draw_offer,
             'version' => $this->version,
+            // Báo trước luật lặp nước (thế đã lặp 2 lần).
+            'notice' => $this->status === 'playing' ? \App\Support\Xiangqi\Repetition::notice(\App\Support\Xiangqi\Repetition::history($this), $this->sideOf($viewer)) : null,
         ];
     }
 }

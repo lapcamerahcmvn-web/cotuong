@@ -77,10 +77,12 @@ class GameController extends Controller
     public function move(Request $request, string $code): JsonResponse
     {
         $mv = $request->validate(['move' => ['required', 'regex:/^[a-i]\d[a-i]\d$/']])['move'];
-        $res = $this->games->move($this->find($code), Auth::user(), $mv);
+        $res = $this->games->move($this->find($code), Auth::user(), $mv, $request->boolean('confirm'));
         $g = $res['game']->load(['red', 'black']);
 
-        return response()->json(['ok' => $res['ok'], 'error' => $res['error'] ?? null] + $g->state(Auth::user()), $res['ok'] ? 200 : 422);
+        // 409 + confirm: nước gây lặp thế lần 3 — client hỏi người chơi rồi gửi lại kèm confirm=1.
+        return response()->json(['ok' => $res['ok'], 'error' => $res['error'] ?? null, 'confirm' => $res['confirm'] ?? null] + $g->state(Auth::user()),
+            $res['ok'] ? 200 : (isset($res['confirm']) ? 409 : 422));
     }
 
     public function resign(Request $request, string $code)

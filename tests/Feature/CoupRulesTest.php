@@ -28,6 +28,30 @@ class CoupRulesTest extends TestCase
         return [$a, $b, $g->fresh()];
     }
 
+    public function test_perpetual_chase_loses_on_third_repetition(): void
+    {
+        // Xe Đỏ đuổi Mã Đen KHÔNG được bảo vệ: Xe b0→a0 (dọa Mã a9), Mã a9→b7, Xe a0→b0 (dọa Mã b7), Mã b7→a9 … lặp 3
+        // lần → bên đuổi bắt (Đỏ) THUA.
+        $fen = 'n2k5/9/9/9/9/9/9/9/9/1R3K3';
+        $plies = ['b0a0', 'a9b7', 'a0b0', 'b7a9', 'b0a0', 'a9b7', 'a0b0', 'b7a9'];
+        $b = \App\Support\Xiangqi\Rules::loadFen($fen);
+        $h = [['key' => \App\Support\Xiangqi\Rules::toFen($b) . 'r', 'check' => false, 'side' => null]];
+        foreach ($plies as $i => $m) {
+            $sq = \App\Support\Xiangqi\Rules::iccs($m);
+            $before = $b;
+            $b = \App\Support\Xiangqi\Rules::apply($b, $sq[0], $sq[1]);
+            $red = $i % 2 === 0;
+            $h[] = ['key' => \App\Support\Xiangqi\Rules::toFen($b) . ($red ? 'b' : 'r'), 'check' => \App\Support\Xiangqi\Rules::inCheck($b, ! $red),
+                'side' => $red ? 'do' : 'den', 'before' => $before, 'after' => $b, 'from' => $sq[0], 'to' => $sq[1], 'coup' => false];
+            if ($i === 0) $this->assertTrue(\App\Support\Xiangqi\Repetition::chase($before, $b, $sq[0], $sq[1], true, false));    // Xe dọa Mã
+            if ($i === 1) $this->assertFalse(\App\Support\Xiangqi\Repetition::chase($before, $b, $sq[0], $sq[1], false, false)); // Mã chạy
+            if ($i === 4) $this->assertStringContainsString('XỬ THUA', (string) \App\Support\Xiangqi\Repetition::notice($h, 'do'));
+        }
+        $v = \App\Support\Xiangqi\Repetition::verdict($h);
+        $this->assertSame('den', $v['result']);
+        $this->assertStringContainsString('đuổi bắt', $v['reason']);
+    }
+
     public function test_coup_no_legal_move_without_check_is_a_loss_not_draw(): void
     {
         // Đen chỉ còn Tướng d9: Xe a8 đi a7 → Tướng không còn nước (d8 bị Xe i8 khống chế, e9 lộ mặt Tướng) dù không bị
@@ -82,9 +106,15 @@ class CoupRulesTest extends TestCase
     {
         [$a, $b, $g] = $this->game('co-tuong');
         // Hai bên đi Mã qua lại, không chiếu.
-        foreach (['h0g2', 'h9g7', 'g2h0', 'g7h9', 'h0g2', 'h9g7', 'g2h0', 'g7h9'] as $i => $m) {
+        foreach (['h0g2', 'h9g7', 'g2h0', 'g7h9', 'h0g2', 'h9g7', 'g2h0'] as $i => $m) {
             $this->actingAs($i % 2 ? $b : $a)->postJson(route('pvp.move', $g->code), ['move' => $m])->assertOk();
         }
+        // Đã lặp 2 lần → có thông báo trước; nước lặp lần 3 phải được người chơi xác nhận.
+        $this->assertStringContainsString('lặp lại 2 lần', (string) $this->actingAs($b)->getJson(route('pvp.state', $g->code))->json('notice'));
+        $res = $this->actingAs($b)->postJson(route('pvp.move', $g->code), ['move' => 'g7h9'])->assertStatus(409);
+        $this->assertStringContainsString('HOÀ', $res->json('confirm'));
+        $this->assertSame('playing', $g->fresh()->status);
+        $this->actingAs($b)->postJson(route('pvp.move', $g->code), ['move' => 'g7h9', 'confirm' => 1])->assertOk();
         $g->refresh();
         $this->assertSame('finished', $g->status);
         $this->assertSame('hoa', $g->result);

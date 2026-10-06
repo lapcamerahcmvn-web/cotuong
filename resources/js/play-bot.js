@@ -5,6 +5,7 @@ import { loadBoard, postJson, track, icon, escapeHtml, store, save, toast } from
 import { handleGamification, openSheet, confetti } from './gamification';
 import { START_FEN, COUP_FEN, COUP_SET, loadFen, toFen, fromIccs, gameOver, stateFrom, inCheckSt, legalMovesSt, toIccs, isRed, LEVELS } from './engine/engine';
 import { analyse, renderNotes, renderCaptured, lastNap, NAME } from './notation';
+import { verdict, notice } from './repetition';
 
 const poolCounts = (pool) => {
     const c = (list) => list.reduce((o, t) => ({ ...o, [t]: (o[t] || 0) + 1 }), { R: 0, C: 0, N: 0, A: 0, B: 0, P: 0 });
@@ -84,7 +85,7 @@ function setup(root) {
     const setupBox = $('[data-bot-setup]'), playBox = $('[data-bot-play]');
     const statusEl = $('[data-bot-status]'), listEl = $('[data-bot-moves]'), levelEl = $('[data-bot-level]');
     let worker = null, reqId = 0, g = null, board = null, view = null;
-    let turnStart = Date.now(), tick = null, lastTick = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
+    let turnStart = Date.now(), tick = null, lastTick = null, lastNotice = null;   // mốc bắt đầu lượt hiện tại (KHÔNG lưu — rời trang thì đồng hồ dừng)
 
     const pick = { level: 2, side: 'do', variant: root.dataset.defaultVariant === 'co-up' ? 'co-up' : 'co-tuong', time: '600+5' };
     const markOn = (sel, val, attr) => root.querySelectorAll(sel).forEach((x) => x.classList.toggle('is-on', x.dataset[attr] === String(val)));
@@ -246,21 +247,48 @@ function setup(root) {
             board.set(fen(), g.moves[g.moves.length - 1] || null, { noAnim: true, silent: true });
             return;
         }
+        // Luật lặp nước: nước này làm thế cờ lặp lần 3 → hỏi trước (chịu hoà / chấp nhận bị xử thua).
+        const h = withMove(history(), iccs);
+        const v = h.filter((x) => x.key === h[h.length - 1].key).length >= 3 ? verdict(h) : null;
+        if (v && v.result !== g.human) {
+            const msg = v.result === 'hoa'
+                ? 'Nước này làm thế cờ lặp lại lần thứ 3 — ván sẽ xử HOÀ. Bạn đồng ý hoà? (Bấm Huỷ để đi nước khác.)'
+                : `Nước này là lần thứ 3 lặp lại khi bạn ${v.reason.startsWith('chiếu') ? 'chiếu' : 'đuổi bắt quân'} liên tục — theo luật bạn sẽ bị XỬ THUA. Vẫn đi?`;
+            if (!confirm(msg)) {
+                board.set(fen(), g.moves[g.moves.length - 1] || null, { noAnim: true, silent: true });
+                status('Hãy đi nước khác để tránh lặp thế cờ.', 'ok');
+                return;
+            }
+        }
         apply(iccs);
         next();
     }
 
-    /** Lịch sử thế công khai: [khoá thế (bàn + lượt), nước vừa đi có chiếu không, bên vừa đi]. */
+    /**
+     * Lịch sử thế công khai: { key: bàn + lượt, check: nước vừa đi chiếu, side: bên vừa đi, before/after/from/to: để xét
+     * "đuổi bắt" (luật lặp nước — resources/js/repetition.js) }.
+     */
     function history() {
         const b = loadFen(startOf(g));
-        const out = [[toFen(b) + (turnRedAt(0) ? 'r' : 'b'), false, null]];
+        const out = [{ key: toFen(b) + (turnRedAt(0) ? 'r' : 'b'), check: false, side: null }];
         g.moves.forEach((m, i) => {
             const [f, t] = fromIccs(m);
+            const before = b.slice();
             b[t] = view.reveals[i] || b[f]; b[f] = null;
             const moverRed = turnRedAt(i);
-            out.push([toFen(b) + (moverRed ? 'b' : 'r'), inCheckSt(stateFrom(b, coup()), !moverRed), moverRed ? 'do' : 'den']);
+            out.push({ key: toFen(b) + (moverRed ? 'b' : 'r'), check: inCheckSt(stateFrom(b, coup()), !moverRed), side: moverRed ? 'do' : 'den', before, after: b.slice(), from: f, to: t, coup: coup() });
         });
         return out;
+    }
+    /** Lịch sử giả định nếu đi thêm nước `iccs` (trên bàn công khai; quân úp lật theo layout). */
+    function withMove(hist, iccs) {
+        const [f, t] = fromIccs(iccs);
+        const before = view.board.slice(), b = view.board.slice();
+        let p = b[f];
+        if (p === 'X' || p === 'x') p = g.layout[f];
+        b[t] = p; b[f] = null;
+        const moverRed = isRed(p);
+        return [...hist, { key: toFen(b) + (moverRed ? 'b' : 'r'), check: inCheckSt(stateFrom(b, coup()), !moverRed), side: moverRed ? 'do' : 'den', before, after: b, from: f, to: t, coup: coup() }];
     }
 
     /**
@@ -276,7 +304,7 @@ function setup(root) {
         const moverRed = isRed(p);
         if (!inCheckSt(stateFrom(b, coup()), !moverRed)) return false;
         const key = toFen(b) + (moverRed ? 'b' : 'r');
-        return hist.filter((h) => h[0] === key).length >= limit;
+        return hist.filter((h) => h.key === key).length >= limit;
     }
     const forbiddenMoves = (red, limit = 2) => {
         const hist = history();
@@ -286,15 +314,9 @@ function setup(root) {
     function result() {
         const end = gameOver(view.board, turnRed(), coup());
         if (end) return end;
-        // Lặp thế 3 lần → hoà, trừ khi 1 bên chiếu liên tục trong chu kỳ (chiếu dai: bên đó bị cấm chiếu tiếp).
-        const hist = history();
-        const last = hist[hist.length - 1][0];
-        const idx = hist.map((h, i) => (h[0] === last ? i : -1)).filter((i) => i >= 0);
-        if (idx.length >= 3) {
-            const span = hist.slice(idx[0] + 1);
-            const perpetual = ['do', 'den'].some((sd) => { const mine = span.filter((h) => h[2] === sd); return mine.length && mine.every((h) => h[1]); });
-            if (!perpetual) return { winner: null, reason: 'lặp lại thế cờ 3 lần' };
-        }
+        // Lặp thế lần 3: bên chiếu / đuổi bắt dai thua, còn lại hoà (repetition.js).
+        const v = verdict(history());
+        if (v) return { winner: v.result === 'hoa' ? null : v.result, reason: v.reason };
         if (g.moves.length >= MAX_PLIES) return { winner: null, reason: 'quá ' + MAX_PLIES / 2 + ' nước' };
         return null;
     }
@@ -315,8 +337,22 @@ function setup(root) {
         return bag;
     }
 
+    function repetitionAvoid(red) {
+        const hist = history(), mine = red ? 'do' : 'den';
+        const V = { R: 9, C: 4.5, N: 4, A: 2, B: 2, P: 1, X: 3, K: 0 };
+        const mat = view.board.reduce((acc, p) => (p ? acc + (isRed(p) === red ? 1 : -1) * V[p.toUpperCase()] : acc), 0);
+        const out = [];
+        for (const [f, t] of legalMovesSt(stateFrom(view.board, coup()), red)) {
+            const mv = toIccs(f, t), h = withMove(hist, mv);
+            if (h.filter((x) => x.key === h[h.length - 1].key).length < 3) continue;
+            const v = verdict(h);
+            if (v && (v.result !== mine && v.result !== 'hoa' || (v.result === 'hoa' && mat >= 2))) out.push(mv);
+        }
+        return out;
+    }
+
     function engineMsg(red, extra = {}) {
-        const avoid = forbiddenMoves(red, red === humanRed() ? 2 : 1);
+        const avoid = [...forbiddenMoves(red, red === humanRed() ? 2 : 1), ...(red !== humanRed() ? repetitionAvoid(red) : [])];
         return coup() ? { fen: fen(), red, coup: true, pools: pools(red), avoid, ...extra } : { fen: fen(), red, avoid, ...extra };
     }
 
@@ -328,6 +364,11 @@ function setup(root) {
         board.lock(!humanTurn);
         const check = inCheckSt(stateFrom(view.board, coup()), turnRed());
         status(humanTurn ? (check ? 'Bạn đang bị chiếu!' : 'Đến lượt bạn') : 'Máy đang suy nghĩ…', humanTurn ? (check ? 'err' : 'ok') : null);
+        if (humanTurn) {
+            const n = notice(history(), g.human, 'máy');
+            if (n && n !== lastNotice) { lastNotice = n; toast(n, { kind: /THUA/.test(n) ? 'err' : undefined, iconName: 'repeat', timeout: 7000 }); }
+            if (n) status(n, /THUA/.test(n) ? 'err' : null);
+        }
         if (humanTurn) return;
         const t0 = Date.now();
         // Máy cũng bị tính giờ: sắp hết giờ thì nghĩ nông hơn cho kịp (cấp Vừa ~1,5s, Dễ ~0,7s mỗi nước).

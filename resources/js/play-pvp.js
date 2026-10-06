@@ -16,7 +16,7 @@ function run(root) {
     const $ = (s) => root.querySelector(s);
     const code = root.dataset.code;
     let s = JSON.parse($('script[data-pvp-state]').textContent);
-    let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false, lastTickSec = null;
+    let clockAt = Date.now(), sending = false, lastShownEnd = false, flipped = false, lastTickSec = null, lastNotice = null;
     let seenPlies = s.moves.length;   // để chỉ báo "ăn nắp" cho nước MỚI, không báo lại khi tải trang
     const R = window.XiangqiRules;
 
@@ -30,15 +30,24 @@ function run(root) {
     poll();
     setInterval(tickClocks, 250);
 
-    async function send(iccs) {
+    async function send(iccs, confirmed = false) {
         if (sending) return;
         sending = true;
         board.lock(true);
         try {
-            const res = await postJson(`/dau-ban/${code}/nuoc`, { move: iccs });
+            const res = await postJson(`/dau-ban/${code}/nuoc`, confirmed ? { move: iccs, confirm: 1 } : { move: iccs });
             apply(res);
             track('pvp_move');
         } catch (e) {
+            // Luật lặp nước: nước gây lặp thế lần 3 → server hỏi trước (chịu hoà / chấp nhận bị xử thua).
+            if (e.data?.confirm) {
+                sending = false;
+                if (window.confirm(e.data.confirm)) return send(iccs, true);
+                board.set(s.fen, s.moves[s.moves.length - 1] || null, { noAnim: true, silent: true });
+                render();
+                status('Hãy đi nước khác để tránh lặp thế cờ.', 'ok');
+                return;
+            }
             const msg = e.data?.error || 'Nước đi không được chấp nhận — thử lại.';
             status(msg, 'err');
             if (e.data?.error) toast(msg, { kind: 'err', iconName: 'x-circle', timeout: 4500 });
@@ -99,6 +108,9 @@ function run(root) {
         else {
             const check = R.inCheck(R.loadFen(s.fen), s.turn === 'do', coup);
             status(myTurn ? (check ? 'Bạn đang bị chiếu!' : 'Tới lượt bạn') : 'Chờ đối thủ đi…', myTurn ? (check ? 'err' : 'ok') : null);
+            // Báo trước luật lặp nước (server gửi khi thế đã lặp 2 lần) — hiện 1 lần mỗi thế.
+            if (s.notice && s.notice !== lastNotice) { lastNotice = s.notice; toast(s.notice, { kind: /THUA/.test(s.notice) ? 'err' : undefined, iconName: 'repeat', timeout: 7000 }); }
+            if (s.notice) status(s.notice, /THUA/.test(s.notice) ? 'err' : null);
         }
         renderDraw();
         renderMoves();
