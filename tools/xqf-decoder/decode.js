@@ -366,7 +366,7 @@ function parseMoves(moveData, header, keys, initialBoard) {
     // Depth-first: continuation follows the position AFTER this move; a variation is an
     // ALTERNATIVE to this move, branching from the SAME position before it (board).
     if (hasNext) node.next = readNode(boardAfter);
-    if (hasVar) { variationCount++; readNode(board); } // parse-through only, discard
+    if (hasVar) { variationCount++; node.alt = readNode(board); } // biến: giữ lại cho `variation_tree` (mạch chính vẫn chỉ đi theo .next)
 
     return node;
   };
@@ -401,7 +401,31 @@ function parseMoves(moveData, header, keys, initialBoard) {
     warnings.push(`${variationCount} variation branch(es) skipped (only main line kept for v1)`);
   }
 
-  return { moves, warnings, fileLevelComment };
+  // Cây biến dạng {main, vars} (định dạng tools/trung-cuoc-bao-dien): nước = ICCS, `after` = số nước của
+  // đường gốc trước điểm rẽ, `from` = 'main' | chỉ số biến gốc; comments theo ply (main) / chỉ số 1-based (biến).
+  const tree = { main: [], comments: {}, vars: [] };
+  const walk = (first, line, startPly, fromKey) => {
+    const out = line === null ? tree.main : null;
+    const mv = [], cm = {};
+    let n = first, ply = startPly, i = 0;
+    const alts = [];
+    while (n) {
+      i++; ply++;
+      if (!n.isSentinel) mv.push(n.from + n.to);
+      if (n.comment) cm[line === null ? ply : i] = n.comment;
+      for (let a = n.alt; a; a = a.alt) alts.push({ node: a, ply });
+      n = n.next;
+    }
+    let key;
+    if (line === null) { tree.main.push(...mv); Object.assign(tree.comments, cm); key = 'main'; }
+    else { key = tree.vars.length; tree.vars.push({ from: fromKey, after: startPly, moves: mv, comments: cm }); }
+    for (const { node, ply: p } of alts) {
+      const single = Object.assign({}, node, { alt: null });
+      walk(single, 'var', p - 1, key);
+    }
+  };
+  if (root && root.next) walk(root.next, null, 0, null);
+  return { moves, warnings, fileLevelComment, tree };
 }
 
 function decodeFile(filePath) {
@@ -414,7 +438,7 @@ function decodeFile(filePath) {
 
   const rawMoveData = buffer.slice(1024);
   const moveData = decryptMoveBlock(rawMoveData, keys, header.version);
-  const { moves, warnings: moveWarnings, fileLevelComment } = parseMoves(moveData, header, keys, board);
+  const { moves, warnings: moveWarnings, fileLevelComment, tree } = parseMoves(moveData, header, keys, board);
 
   const annotations = moves.filter(m => m.comment).map(m => ({ step_order: m.step_order, text: m.comment }));
 
@@ -434,6 +458,7 @@ function decodeFile(filePath) {
     moves,
     annotations,
     decode_warnings: [...pieceWarnings, ...moveWarnings],
+    variation_tree: tree,
   };
 }
 

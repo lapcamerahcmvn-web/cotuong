@@ -1,0 +1,198 @@
+{
+  "_engine-Bop88o4S.js": {
+    "file": "assets/engine-Bop88o4S.js",
+    "name": "engine"
+  },
+  "_notation-DUTHhzaX.js": {
+    "file": "assets/notation-DUTHhzaX.js",
+    "name": "notation",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_puzzle-check-CSa9nmJB.js": {
+    "file": "assets/puzzle-check-CSa9nmJB.js",
+    "name": "puzzle-check",
+    "assets": [
+      "assets/worker-DyZAIPc0.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DXh_M_Qy.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-D8Gw9ZkJ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/lesson.js",
+      "resources/js/practice.js",
+      "resources/js/display-settings.js",
+      "resources/js/countdown.js",
+      "resources/js/play-bot.js",
+      "resources/js/play-pvp.js",
+      "resources/js/review.js",
+      "resources/js/weekly.js",
+      "resources/js/board-scan.js",
+      "resources/js/mistakes.js",
+      "resources/js/setup-board.js",
+      "resources/js/invites.js",
+      "resources/js/social.js",
+      "resources/js/share.js"
+    ]
+  },
+  "resources/js/board-scan.js": {
+    "file": "assets/board-scan-DP4hFsGt.js",
+    "name": "board-scan",
+    "src": "resources/js/board-scan.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "assets": [
+      "assets/worker-DyZAIPc0.js"
+    ]
+  },
+  "resources/js/countdown.js": {
+    "file": "assets/countdown-BNeq65sB.js",
+    "name": "countdown",
+    "src": "resources/js/countdown.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/display-settings.js": {
+    "file": "assets/display-settings-CVMmiA71.js",
+    "name": "display-settings",
+    "src": "resources/js/display-settings.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/invites.js": {
+    "file": "assets/invites-BuvNNZXa.js",
+    "name": "invites",
+    "src": "resources/js/invites.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/lesson.js": {
+    "file": "assets/lesson-Gjz0CL4n.js",
+    "name": "lesson",
+    "src": "resources/js/lesson.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_puzzle-check-CSa9nmJB.js"
+    ]
+  },
+  "resources/js/mistakes.js": {
+    "file": "assets/mistakes-B-jlSH91.js",
+    "name": "mistakes",
+    "src": "resources/js/mistakes.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/play-bot.js": {
+    "file": "assets/play-bot-B5ruuQin.js",
+    "name": "play-bot",
+    "src": "resources/js/play-bot.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_engine-Bop88o4S.js",
+      "_notation-DUTHhzaX.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ],
+    "assets": [
+      "assets/worker-DyZAIPc0.js"
+    ]
+  },
+  "resources/js/play-pvp.js": {
+    "file": "assets/play-pvp-Q7y-Tvby.js",
+    "name": "play-pvp",
+    "src": "resources/js/play-pvp.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_notation-DUTHhzaX.js"
+    ]
+  },
+  "resources/js/practice.js": {
+    "file": "assets/practice-B0GgTShv.js",
+    "name": "practice",
+    "src": "resources/js/practice.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_puzzle-check-CSa9nmJB.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ]
+  },
+  "resources/js/review.js": {
+    "file": "assets/review-B7MyPbVc.js",
+    "name": "review",
+    "src": "resources/js/review.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_engine-Bop88o4S.js"
+    ],
+    "assets": [
+      "assets/worker-DyZAIPc0.js"
+    ]
+  },
+  "resources/js/setup-board.js": {
+    "file": "assets/setup-board-ZTKNGMp4.js",
+    "name": "setup-board",
+    "src": "resources/js/setup-board.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/share.js": {
+    "file": "assets/share-DTZBI3Cj.js",
+    "name": "share",
+    "src": "resources/js/share.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/social.js": {
+    "file": "assets/social-B1ZZSLQF.js",
+    "name": "social",
+    "src": "resources/js/social.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/weekly.js": {
+    "file": "assets/weekly-BfnoGnhD.js",
+    "name": "weekly",
+    "src": "resources/js/weekly.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "dynamicImports": [
+      "resources/js/share.js"
+    ]
+  }
+}

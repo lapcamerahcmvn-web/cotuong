@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lesson;
 use App\Models\XpTransaction;
 use App\Services\GameRecordService;
 use App\Services\Gamification\GamificationService;
@@ -25,6 +26,12 @@ class PlayController extends Controller
                 $tui = (string) $request->query('tui', '');
                 $pool = preg_match('/^([RNBACP]{0,15})-([rnbacp]{0,15})$/', $tui, $m) ? ['red' => str_split($m[1]), 'black' => str_split(strtoupper($m[2]))] : null;
                 $custom = ['fen' => $fen, 'redFirst' => $redFirst, 'pool' => $pool];
+                // Mở từ bài học (&bai=slug, cùng thế mở đầu): kèm "sổ lời giải" của bài → máy đi theo sách khi thế cờ
+                // còn nằm trong cây biến, ra khỏi sách mới để engine tự tính.
+                if ($lesson = $this->lessonFor((string) $request->query('bai', ''), $fen)) {
+                    $custom['book'] = $this->lessonBook($lesson);
+                    $custom['lesson'] = ['title' => $lesson->title, 'url' => route('lessons.show', $lesson->slug)];
+                }
                 // Từ "Xếp cờ để thẩm": &cam=do|den|may (may = máy tự giải cả hai bên) &cap=1..4 → vào ván ngay.
                 if (in_array($request->query('cam'), ['do', 'den', 'may'], true)) {
                     $custom += ['human' => $request->query('cam'), 'level' => max(1, min(4, (int) $request->query('cap', 4))), 'autostart' => true];
@@ -35,6 +42,44 @@ class PlayController extends Controller
         }
 
         return view('play.bot', compact('custom'));
+    }
+
+    private function lessonFor(string $slug, string $fen): ?Lesson
+    {
+        if ($slug === '' || ! preg_match('/^[a-z0-9-]{1,191}$/', $slug)) return null;
+        $lesson = Lesson::published()->where('slug', $slug)->first();
+
+        return $lesson && $lesson->initial_fen === $fen ? $lesson : null;
+    }
+
+    /** Sổ lời giải: "FEN bàn + r|b (bên đi)" → nước ICCS của sách (mạch chính ưu tiên — children[0]). */
+    private function lessonBook(Lesson $lesson): array
+    {
+        $book = [];
+        $put = function (string $fenBefore, string $side, ?string $iccs) use (&$book) {
+            if (! $iccs || ! preg_match('/^[a-i]\d[a-i]\d$/', $iccs)) return;
+            $key = $fenBefore.' '.($side === 'den' ? 'b' : 'r');
+            $book[$key] ??= $iccs;
+        };
+        $tree = $lesson->variation_tree;
+        if (is_string($tree)) $tree = json_decode($tree, true);
+        if (is_array($tree) && $tree) {
+            $walk = function (array $nodes, string $fenBefore) use (&$walk, $put) {
+                foreach ($nodes as $n) {
+                    $put($fenBefore, (string) ($n['side'] ?? ''), $n['iccs'] ?? null);
+                    if (! empty($n['children']) && ! empty($n['fen'])) $walk($n['children'], (string) $n['fen']);
+                }
+            };
+            $walk($tree, (string) $lesson->initial_fen);
+        } else {
+            $before = (string) $lesson->initial_fen;
+            foreach ($lesson->steps()->orderBy('step_order')->get() as $st) {
+                $put($before, (string) $st->move_side, $st->move_notation_iccs);
+                $before = (string) $st->fen;
+            }
+        }
+
+        return array_slice($book, 0, 600, true);
     }
 
     public function botResult(Request $request, GamificationService $gami, GameRecordService $records): JsonResponse

@@ -32,6 +32,7 @@
 | **G – Sát pháp mở rộng** | Tượng Kỳ Kinh Điển Sát Pháp Đại Toàn | 435 | ✅ Series lớn nhất site (`LessonSeries` id=10) |
 | **B2 – Khai cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Khai Cuộc | 45 | ✅ HẾT — id=11, soạn từ sách khai cuộc nội bộ tham khảo (PDF scan, KHÔNG public tên sách/tác giả) |
 | **C2 – Trung cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Trung Cuộc | 48 | ✅ **HẾT 48/48 CHƯƠNG** — id=12, cùng nguồn sách trung cuộc nội bộ tham khảo. Quy trình: `tools/midgame-import/README.md` |
+| **D2 – Tàn cuộc có khẩu quyết** | Cờ Tàn Có Khẩu Quyết | 329 | ✅ 06/10/2026 — 323 thế (Chốt/Mã/Pháo/Xe) từ XQF khẩu quyết + 563 nhánh biến, khẩu quyết viết lại, nút **Máy tự giải / Đánh thử với máy** (máy đi theo sách khi còn trong cây biến). Quy trình: `tools/co-tan-khau-quyet/README.md` |
 
 > Khai cuộc (chương trình B, id=1) dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14
 > bài cũ; các "bài" còn lại trong folder là clip thầy giảng bằng lời (0 nước) — muốn đủ 48 phải tự

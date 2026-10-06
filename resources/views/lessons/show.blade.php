@@ -139,6 +139,18 @@
                 :caption="$lesson->game_mode === 'co-up' && $lesson->steps->isEmpty() ? 'Thế mở cờ úp: 30 quân úp sấp mặt (chưa lộ binh chủng), hai Tướng để ngửa. Quân úp đi theo binh chủng của ô xuất phát cho tới khi lật.' : null"
                 :source-lesson-id="$lesson->id" />
         @endif
+        @php
+            // Bài tàn cuộc: cho máy tự giải / đánh thử với máy ngay từ thế mở đầu của bài.
+            $engineFen = $lesson->game_mode !== 'co-up' && $lesson->phase === 'tan-cuoc' && $lesson->initial_fen ? $lesson->initial_fen : null;
+            $engineSide = optional($lesson->steps->first())->move_side ?: ($lesson->puzzle_side ?: 'do');
+        @endphp
+        @if($engineFen)
+            <div class="engine-tools card mt-3 max-w-[740px]" style="padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                <span class="text-ink-soft" style="flex:1 1 220px;font-size:13.5px"><x-icon name="cpu" /> Thẩm thế cờ này với máy ({{ $engineSide === 'den' ? 'Đen' : 'Đỏ' }} đi trước)</span>
+                <a class="btn btn--primary" rel="nofollow" href="{{ route('play.bot', ['tu-the' => $engineFen, 'luot' => $engineSide, 'cam' => 'may', 'cap' => 4, 'bai' => $lesson->slug]) }}"><x-icon name="cpu" /> Máy tự giải</a>
+                <a class="btn" rel="nofollow" href="{{ route('play.bot', ['tu-the' => $engineFen, 'luot' => $engineSide, 'cam' => $engineSide, 'cap' => 4, 'bai' => $lesson->slug]) }}"><x-icon name="play" /> Đánh thử với máy</a>
+            </div>
+        @endif
     @endif
 
     <div class="lesson-body">

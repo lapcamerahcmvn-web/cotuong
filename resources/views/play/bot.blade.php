@@ -36,6 +36,7 @@
                         <span class="flex-1 min-w-0">
                             <b class="block">Bắt đầu từ thế cờ đã chọn · {{ $custom['redFirst'] ? 'Đỏ' : 'Đen' }} đi trước</b>
                             <span class="block text-[13.5px] text-ink-soft">Chọn cấp độ và bên cầm quân rồi bấm "Bắt đầu". Ván từ thế tự chọn vẫn được lưu lịch sử nhưng không tính XP.</span>
+                            @if(!empty($custom['lesson']))<span class="block text-[13.5px] text-ink-soft">Thế cờ từ bài <a href="{{ $custom['lesson']['url'] }}">{{ $custom['lesson']['title'] }}</a> — máy đi theo lời giải của bài khi còn trong sách, ra khỏi sách thì tự tính.</span>@endif
                             <a href="{{ route('play.bot') }}" class="text-[13.5px] font-bold">Bỏ, chơi từ thế mở chuẩn</a>
                         </span>
                     </div>

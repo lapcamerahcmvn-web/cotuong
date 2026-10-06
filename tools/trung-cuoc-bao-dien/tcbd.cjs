@@ -37,7 +37,10 @@ function norm(tok) { return String(tok).replace(/\s+/g, '').replace(/[，,;]$/, 
 
 function play(board, tok, red) {
   const t = norm(tok);
-  const mv = G.parseMove(board, t, red);
+  // Nước dạng ICCS (vd "c7c8" — từ XQF) dùng thẳng toạ độ; còn lại là ký hiệu sách.
+  const ic = /^([a-i])([0-9])([a-i])([0-9])$/.exec(t);
+  const sq = (f, r) => (9 - +r) * 9 + (f.charCodeAt(0) - 97);
+  const mv = ic ? { from: sq(ic[1], ic[2]), to: sq(ic[3], ic[4]) } : G.parseMove(board, t, red);
   if (!mv) return { err: `không đọc/không tìm thấy quân cho "${t}"` };
   const p = board[mv.from];
   if (!p || isRedCh(p) !== red) return { err: `"${t}": ô xuất phát ${G.toIccs(mv.from)} không phải quân ${red ? 'Đỏ' : 'Đen'}` };

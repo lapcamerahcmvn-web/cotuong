@@ -381,12 +381,39 @@ function setup(root) {
         const moverRed = turnRed();
         const left = remaining(sideKey(moverRed));
         const level = left < 15000 ? Math.min(g.level, 2) : left < 45000 ? Math.min(g.level, 3) : g.level;
-        const res = await ask(engineMsg(moverRed, { level }));
+        const res = await botMove(moverRed, level);
         // Máy tự giải: đi chậm hơn để người xem kịp theo dõi.
         await new Promise((ok) => setTimeout(ok, Math.max(0, (g.auto ? 900 : 450) - (Date.now() - t0))));
         if (tok !== thinkTok || g.over || !res.move) return;
         apply(res.move);
         next();
+    }
+
+    /**
+     * Nước của máy. (1) Mở từ bài học: thế cờ còn trong "sổ lời giải" (cây biến của bài) → đi đúng nước sách.
+     * (2) Ngoài sách: engine tự tính; nếu đang thắng (điểm ≥ 250) mà nước chọn đưa về thế đã gặp thì tính lại
+     * với các nước lặp bị cấm và nhận nước mới khi không kém hơn quá 80 điểm — tránh dậm chân hòa ở thế thắng
+     * mà không thí quân bừa.
+     */
+    async function botMove(moverRed, level) {
+        const legal = legalMovesSt(stateFrom(view.board, coup()), moverRed).map(([f, t]) => toIccs(f, t));
+        const bm = !coup() && g.custom?.book?.[toFen(view.board) + ' ' + (moverRed ? 'r' : 'b')];
+        if (bm && legal.includes(bm) && !forbidden(bm)) {
+            if (g.auto) status(`Máy tự giải · ${moverRed ? 'Đỏ' : 'Đen'} đi theo lời giải trong bài`, null);
+            return { move: bm, book: true };
+        }
+        const res = await ask(engineMsg(moverRed, { level }));
+        if (coup() || !res.move || !(res.score >= 250)) return res;
+        const keys = new Set(history().map((h) => h.key));
+        const hist = history();
+        const repeats = (mv) => keys.has(withMove(hist, mv)[hist.length].key);
+        if (!repeats(res.move)) return res;
+        const rep = legal.filter(repeats);
+        if (rep.length >= legal.length) return res;
+        const msg = engineMsg(moverRed, { level });
+        msg.avoid = [...msg.avoid, ...rep];
+        const alt = await ask(msg);
+        return alt.move && alt.score >= res.score - 80 ? alt : res;
     }
 
     function status(text, kind) {
