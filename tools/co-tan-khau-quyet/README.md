@@ -27,3 +27,11 @@ php artisan db:seed --class=ContentSeeder
 - `data-*.cjs`: `id: [tên bài, 'thang'|'kheo'|'hoa'|'bt', [khẩu quyết], {ply: lời giảng}?, {biến: {i: lời}}?]`.
   Đỏ luôn là bên tấn công trong bộ thế này. 11 thế chỉ có vị trí (bài tập, 0 nước) → giải bằng nút Máy tự giải.
 - Nguồn XQF/PDF có bản quyền — chỉ dùng nội bộ; toàn bộ chữ trên web đã viết lại.
+
+## Giới hạn engine (đo 06/10/2026)
+
+Engine trình duyệt (`resources/js/engine/engine.js`) tự đi từ thế mở đầu, KHÔNG có sổ lời giải: chỉ thắng được
+khoảng 1/4 số thế tàn thắng thử (Hai Chốt thắng hai Sĩ, Mã Chốt thắng khuyết Sĩ, Trắc diện hổ…). Các thế cần kế hoạch
+sâu (đơn Xe thắng Sĩ Tượng toàn, Mã khấu, Song Xe thắng Xe Pháo song Tượng…) đều thành lặp thế hòa, kể cả khi đã cấm
+nước lặp với ngưỡng 80–250 điểm. Vì vậy "Máy tự giải" từ bài dùng sổ lời giải (cây biến) trước, engine chỉ lo phần
+ngoài sách. Đã thử bằng Chrome headless: bài Mã khấu → máy đi hết lời giải rồi chiếu hết, Đỏ thắng.
