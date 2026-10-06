@@ -94,7 +94,31 @@ class Seo
             ],
             'description' => config('site.description'),
             'sameAs' => config('site.social') ?: null,
+            'email' => config('site.contact_email'),
+            // Website là một dự án của LapCameraHCM (khai báo quan hệ tổ chức — khớp dòng cuối footer).
+            'parentOrganization' => config('site.operator') ? ['@type' => 'Organization', 'name' => config('site.operator.name'), 'url' => config('site.operator.url')] : null,
         ]);
+    }
+
+    /**
+     * Ứng dụng web miễn phí (chơi với máy, đấu bạn, nhận dạng ảnh, luyện tập) → schema SoftwareApplication
+     * để Google hiểu đây là công cụ dùng được ngay trên trình duyệt.
+     */
+    public static function appLd(string $name, string $description, string $category = 'GameApplication'): array
+    {
+        return [
+            '@context' => 'https://schema.org',
+            '@type' => 'SoftwareApplication',
+            'name' => $name,
+            'description' => $description,
+            'url' => url()->current(),
+            'applicationCategory' => $category,
+            'operatingSystem' => 'Web (trình duyệt, điện thoại & máy tính)',
+            'inLanguage' => 'vi',
+            'isAccessibleForFree' => true,
+            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'VND'],
+            'publisher' => ['@id' => url('/#org')],
+        ];
     }
 
     public static function websiteLd(): array

@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-// Ghi lịch sử truy cập của USER đã đăng nhập (chỉ GET trang, không ghi asset/api) — cho admin xem.
+// Ghi lịch sử truy cập của USER đã đăng nhập (chỉ GET trang, không ghi asset/api) — cho admin xem. Giữ 180 ngày.
 class LogAccess
 {
     public function handle(Request $request, Closure $next): Response
@@ -25,6 +25,10 @@ class LogAccess
                     'user_agent' => mb_substr((string) $request->userAgent(), 0, 500),
                     'created_at' => now(),
                 ]);
+                // Chính sách bảo mật: nhật ký truy cập chỉ giữ 180 ngày — dọn ngẫu nhiên ~1/200 lượt ghi (không cần cron).
+                if (random_int(1, 200) === 1) {
+                    AccessLog::where('created_at', '<', now()->subDays(180))->delete();
+                }
             } catch (\Throwable $e) {
                 // không chặn request nếu ghi log lỗi
             }

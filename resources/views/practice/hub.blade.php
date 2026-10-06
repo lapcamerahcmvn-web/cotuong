@@ -2,6 +2,10 @@
 @section('title', 'Luyện Cờ Tướng Online — Bài Tập Thế Cờ, Sát Pháp Mỗi Ngày | Học Cờ Tướng')
 @section('description', 'Luyện cờ tướng online miễn phí: thế cờ hôm nay, thử thách 60 giây, chế độ 3 mạng, bài tập sát pháp theo chủ đề và luyện lại thế đã giải sai.')
 
+@push('head')
+{!! \App\Support\Seo::ld(\App\Support\Seo::appLd('Luyện cờ tướng — thế cờ mỗi ngày', 'Luyện thế cờ sát pháp, tàn cuộc: thế cờ hôm nay, thử thách 60 giây, chế độ 3 mạng, theo chủ đề, ôn sai lầm.', 'EducationalApplication')) !!}
+@endpush
+
 @section('content')
 @php $u = auth()->user(); @endphp
 <section class="grid gap-4 md:grid-cols-[1fr_auto] md:items-end mb-6">

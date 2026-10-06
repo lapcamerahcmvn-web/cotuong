@@ -258,6 +258,8 @@
                         <li><a href="{{ route('search') }}">Tìm kiếm</a></li>
                         <li><a href="{{ route('sitemap.page') }}">Sơ đồ trang</a></li>
                         <li><a href="{{ route('display') }}">Giao diện &amp; âm thanh</a></li>
+                        <li><a href="{{ route('legal.terms') }}">Điều khoản sử dụng</a></li>
+                        <li><a href="{{ route('legal.privacy') }}">Chính sách bảo mật</a></li>
                     </ul>
                 </div>
             </div>

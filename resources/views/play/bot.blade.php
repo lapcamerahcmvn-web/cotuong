@@ -3,6 +3,7 @@
 @section('description', 'Chơi cờ tướng và cờ úp với máy online miễn phí, không cần cài đặt: 4 cấp độ từ Tập sự đến Khó, có gợi ý, đi lại, lưu ván đang chơi. Thắng máy để nhận XP.')
 
 @push('head')
+{!! \App\Support\Seo::ld(\App\Support\Seo::appLd('Chơi cờ tướng, cờ úp với máy', 'Chơi cờ tướng và cờ úp với máy ngay trên trình duyệt: 4 cấp độ, đồng hồ, gợi ý, phân tích ván. Miễn phí.', 'GameApplication')) !!}
 @php
     $faqs = [
         ['Chơi cờ tướng với máy có mất phí không?', 'Hoàn toàn miễn phí và không cần cài đặt. Máy chạy ngay trên trình duyệt của bạn, kể cả trên điện thoại.'],

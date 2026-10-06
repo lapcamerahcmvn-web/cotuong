@@ -14,6 +14,7 @@
 @endphp
 
 @push('head')
+{!! \App\Support\Seo::ld(\App\Support\Seo::appLd('Nhận diện bàn cờ tướng từ ảnh', 'Chụp ảnh bàn cờ thật hoặc ảnh màn hình phần mềm cờ, web tự dựng lại thế cờ để máy đánh giá, chơi tiếp, lưu thư viện.', 'UtilitiesApplication')) !!}
 {!! \App\Support\Seo::ld(['@context' => 'https://schema.org', '@type' => 'HowTo', 'name' => 'Nhận diện thế cờ tướng từ ảnh',
     'step' => [
         ['@type' => 'HowToStep', 'name' => 'Chọn ảnh', 'text' => 'Chụp ảnh bàn cờ thật, chọn ảnh có sẵn hoặc dán ảnh chụp màn hình phần mềm cờ khác.'],

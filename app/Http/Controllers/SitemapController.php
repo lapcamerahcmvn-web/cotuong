@@ -67,6 +67,8 @@ class SitemapController extends Controller
             $add(route('play.bot'), now(), 'weekly', '0.8');
             $add(route('pvp.lobby'), now(), 'weekly', '0.6');
             $add(route('scan'), now(), 'monthly', '0.6');
+            $add(route('legal.terms'), now()->setDate(2026, 10, 6), 'yearly', '0.2');
+            $add(route('legal.privacy'), now()->setDate(2026, 10, 6), 'yearly', '0.2');
             foreach ($this->sections() as $s) {
                 if ($s === 'pages') {
                     continue;

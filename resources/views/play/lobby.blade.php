@@ -2,6 +2,10 @@
 @section('title', 'Thách Đấu Cờ Tướng, Cờ Úp Với Bạn Bè Qua Link — Học Cờ Tướng')
 @section('description', 'Tạo phòng cờ tướng hoặc cờ úp, gửi link qua Zalo/Facebook để thách đấu bạn bè. Đồng hồ 5–15 phút, đề nghị hoà, luật kiểm tra tự động, quân úp được giữ bí mật.')
 
+@push('head')
+{!! \App\Support\Seo::ld(\App\Support\Seo::appLd('Thách đấu cờ tướng với bạn bè', 'Tạo phòng và gửi link thách đấu cờ tướng, cờ úp với bạn bè, có đồng hồ. Miễn phí.', 'GameApplication')) !!}
+@endpush
+
 @section('content')
 @php $u = auth()->user(); @endphp
 <div class="grid gap-6 lg:grid-cols-[1fr_400px] items-start">

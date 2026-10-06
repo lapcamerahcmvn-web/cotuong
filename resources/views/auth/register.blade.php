@@ -40,6 +40,7 @@
                 <input class="input" type="password" id="password_confirmation" name="password_confirmation" required minlength="6" autocomplete="new-password">
             </div>
             <button type="submit" class="btn btn--primary btn--lg btn--block mt-2">Tạo tài khoản</button>
+            <p class="text-[12.5px] text-ink-soft mt-3 mb-0 text-center">Khi tạo tài khoản (kể cả bằng Google), bạn đồng ý với <a href="{{ route('legal.terms') }}">Điều khoản sử dụng</a> và <a href="{{ route('legal.privacy') }}">Chính sách bảo mật</a>.</p>
         </form>
 
         <p class="text-center text-[14px] text-ink-soft mt-5 mb-0">

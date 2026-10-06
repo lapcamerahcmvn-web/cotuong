@@ -29,4 +29,8 @@ return [
     // Mã xác minh Google Search Console qua thẻ <meta name="google-site-verification">
     // (chuỗi content lấy từ GSC → Cài đặt → Quyền sở hữu → HTML tag, KHÔNG cần tải file lên server).
     'gsc_verification' => env('SITE_GSC_VERIFICATION'),
+
+    // Email liên hệ (trang Điều khoản / Chính sách bảo mật, yêu cầu xoá dữ liệu). Website là một dự án của LapCameraHCM.
+    'contact_email' => env('SITE_CONTACT_EMAIL', 'lapcamerahcm.vn@gmail.com'),
+    'operator' => ['name' => 'LapCameraHCM', 'url' => 'https://lapcamerahcm.vn'],
 ];
