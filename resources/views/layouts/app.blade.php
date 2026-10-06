@@ -264,6 +264,7 @@
                         <li><a href="{{ route('pvp.lobby') }}">Thách đấu bạn bè</a></li>
                         <li><a href="{{ route('play.bot', ['bien-the' => 'co-up']) }}">Chơi cờ úp với máy</a></li>
                         <li><a href="{{ route('scan') }}">Nhận diện bàn cờ từ ảnh</a></li>
+                        <li><a href="{{ route('practice.setup') }}">Xếp cờ để thẩm</a></li>
                     </ul>
                 </div>
                 <div>
