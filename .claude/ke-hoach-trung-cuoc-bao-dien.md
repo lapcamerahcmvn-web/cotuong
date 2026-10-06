@@ -60,7 +60,8 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 | Tập 1 — Chương 5 (phân loại chiến thuật, 10 tiết) | ✅ 41 bài — 06/10/2026 |
 | Tập 1 — Chương 6 (chiến pháp trận thức: 10 ván đầy đủ + 22 cây biến khai cuộc + 5 ván Xe Mã) | ✅ 37 bài — 06/10/2026 |
 | Tập 1 — Chương 7 (thiết kế chiến dịch, 5 tiết + 1 ván 99 nước) | ✅ 24 bài — 06/10/2026 |
-| Tập 1 — Chương 8–9 | ⬜ |
+| Tập 1 — Chương 8 (trung biến kỳ lộ: 54 hình cây biến, 6 tiết) | ✅ 61 bài — 06/10/2026 |
+| Tập 1 — Chương 9 (trung cục kinh điển: 135 ván) | ⬜ |
 
 ## Nợ (không đăng — không đoán nước)
 - **Tập 2 Cuộc 4** (Tôn Chí Vĩ – Ân Quảng Thuận): sơ đồ đọc đúng, nhưng sau 20…S4.5 thì 21…Tg5.1 bất khả
@@ -93,3 +94,4 @@ Sách gọi bên đi trước là "Trắng"/"Tiên" → trên site luôn gọi *
 - `node tcbd.cjs repair <drafts> <id> <ply>`: vét cạn nước ở ply nghi in sai, giữ nước làm phần còn lại hợp lệ.
   Chỉ nhận khi ra ĐÚNG 1 ứng viên (VD Cuộc 32: "M7/9" thiếu chữ "trước" vì 2 Mã cùng lộ 7).
 - Tập 1 caption "Hình N" không tin được (nhãn in đầu trang, có khi lệch) → map theo trang + engine xác nhận.
+- Tập 1 Ch8: 54 cây biến tách bằng `parse_tree.py`, gán sơ đồ tuần tự theo tiết (`ch8map.py`) + `findimg.cjs` cho tiết 1 VD11–18; sửa nước VD13 ply 5 → P8.6; cắt VD3/12/13 (nhánh), Tiết 4 VD3. Tiết 2 VD6 (sơ đồ có Tốt Đỏ c3 chặn "M7.6") và Tiết 3 VD5 (không sơ đồ nào khớp) → bài chữ. Lời giảng đặt tự động ở nút rẽ nhánh đầu tiên của từng biến (`gen_t1c8.cjs`).
