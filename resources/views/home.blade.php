@@ -12,7 +12,7 @@
         ['Cờ tướng có mấy loại quân và đi thế nào?', 'Có 7 loại quân: Tướng (đi 1 ô trong cung), Sĩ (chéo 1 ô trong cung), Tượng (chéo 2 ô, không qua sông), Mã (hình chữ nhật, bị cản chân mã), Xe (đi thẳng bao xa tuỳ ý), Pháo (đi thẳng như Xe, khi ăn phải có ngòi), Tốt (đi thẳng 1 ô, qua sông được đi ngang, không lùi).'],
         ['Cờ úp là gì?', 'Cờ úp là biến thể của cờ tướng: chơi trên cùng bàn cờ và bộ quân, nhưng 30 quân (trừ hai Tướng) được úp sấp mặt và tráo ngẫu nhiên — bạn không biết quân thật là gì cho tới khi lật. Quân úp đi theo binh chủng của ô xuất phát, khi đi nước đầu sẽ lật lộ mặt thật.'],
         ['Cờ úp khác cờ tướng thế nào?', 'Cờ úp thêm yếu tố ẩn thông tin (không biết quân úp là gì), khai cuộc chỉ gói trong khoảng 5 nước, con Pháo và cửa tướng quan trọng hơn, và rất ít khi hòa. Cờ tàn cờ úp cũng đa dạng hơn vì Sĩ ra được khỏi cung và Tượng qua được sông.'],
-        ['Học cờ ở đây khác gì các trang khác?', 'Học Cờ Tướng có bàn cờ tương tác đi từng nước kèm diễn giải, cùng lộ trình bài học có cấu trúc từ nhập môn đến nâng cao — cho cả cờ tướng lẫn cờ úp. Bạn không chỉ đọc lý thuyết mà thấy trực tiếp từng nước trên bàn cờ.'],
+        ['Học cờ ở đây khác gì các trang khác?', 'Học Cờ Tướng có bàn cờ tương tác đi từng nước kèm diễn giải, cùng lộ trình bài học có cấu trúc từ nhập môn đến nâng cao — cho cả cờ tướng lẫn cờ úp. Bạn không chỉ đọc lý thuyết mà thấy trực tiếp từng nước trên bàn cờ, rồi luyện lại bằng thế cờ, chơi với máy hoặc thách đấu bạn bè ngay trên trình duyệt.'],
     ];
     $ldFaq = [
         '@context' => 'https://schema.org',
@@ -47,7 +47,7 @@
         <div class="hero__proof">
             <span><b>{{ number_format($totalLessons, 0, ',', '.') }}</b>bài học</span>
             <span><b>{{ \App\Models\Puzzle::published()->count() }}</b>thế cờ luyện tập</span>
-            <span><b>5</b>chặng lộ trình</span>
+            <span><b>{{ $series->count() }}</b>chương trình</span>
         </div>
     </div>
     <div class="hero__board">
@@ -162,6 +162,65 @@
     </div>
 </section>
 
+{{-- ================= CHƯƠNG TRÌNH HỌC (tất cả, lọc theo chặng) ================= --}}
+@if($series->isNotEmpty())
+@php $newSince = now()->subDays(21); $showFirst = 6; @endphp
+<section class="section pt-0" id="chuong-trinh" data-series-filter>
+    <div class="section-head">
+        <div><h2>Chương trình học</h2>
+            <p>{{ $series->count() }} chương trình · {{ number_format($totalLessons, 0, ',', '.') }} bài có bàn cờ tương tác — từ luật chơi, khai cuộc, sát pháp, Trung Cuộc Bảo Điển tới tàn cuộc và cờ úp.</p></div>
+        <a href="{{ route('sitemap.page') }}" class="section-head__link">Danh sách mọi bài <x-icon name="arrow-right" /></a>
+    </div>
+    <div class="flex gap-2 overflow-x-auto pb-1 mb-3 -mx-1 px-1" role="tablist" aria-label="Lọc theo chặng">
+        <button type="button" class="chip is-on shrink-0" data-course="">Tất cả <span class="text-ink-faint">{{ $series->count() }}</span></button>
+        @foreach($courseNames as $key => $name)
+            <button type="button" class="chip shrink-0" data-course="{{ $key }}">{{ $name }} <span class="text-ink-faint">{{ $series->where('course_key', $key)->count() }}</span></button>
+        @endforeach
+    </div>
+    <div class="lesson-list lesson-list--grid lg:grid-cols-3" data-series-list>
+        @foreach($series as $i => $s)
+            @php $isNew = $s->created_at?->gte($newSince); @endphp
+            <a href="{{ route('series', $s->slug) }}" class="card series-card" data-course="{{ $s->course_key }}" @if($i >= $showFirst) data-more hidden @endif>
+                <span class="li-thumb"><img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="{{ $s->name }} - Học Cờ Tướng" loading="lazy" width="64" height="64"></span>
+                <span class="min-w-0">
+                    <span class="series-card__name block">{{ $s->name }}@if($isNew) <span class="tag tag--xp !py-0 !text-[11px] align-middle ml-1">Mới</span>@endif</span>
+                    <span class="series-card__meta block">{{ $s->published_lessons_count }} bài · {{ $courseNames[$s->course_key] ?? (\App\Models\Lesson::PHASES[$s->phase] ?? 'Chương trình') }}</span>
+                    <x-series-progress :series="$s" />
+                </span>
+            </a>
+        @endforeach
+    </div>
+    @if($series->count() > $showFirst)
+        <div class="text-center mt-4"><button type="button" class="btn" data-series-more><x-icon name="chev-down" /> Xem tất cả {{ $series->count() }} chương trình</button></div>
+    @endif
+</section>
+<script>
+(function () {
+    var root = document.querySelector('[data-series-filter]');
+    if (!root) return;
+    var cards = root.querySelectorAll('[data-series-list] > a'), more = root.querySelector('[data-series-more]'), expanded = false;
+    function apply(course) {
+        var shown = 0;
+        cards.forEach(function (c) {
+            var ok = !course || c.dataset.course === course;
+            // "Tất cả": thu gọn 6 thẻ đầu cho tới khi bấm "Xem tất cả"; lọc theo chặng thì hiện đủ.
+            c.hidden = !ok || (!course && !expanded && shown >= {{ $showFirst }});
+            if (ok) shown++;
+        });
+        if (more) more.parentElement.hidden = !!course || expanded;
+    }
+    root.querySelectorAll('[data-course]').forEach(function (b) {
+        if (b.tagName !== 'BUTTON') return;
+        b.addEventListener('click', function () {
+            root.querySelectorAll('button[data-course]').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+            apply(b.dataset.course);
+        });
+    });
+    if (more) more.addEventListener('click', function () { expanded = true; apply(''); });
+})();
+</script>
+@endif
+
 @if(!empty($weak))
 <section class="section pt-0">
     <div class="section-head"><div><h2>Luyện điểm yếu</h2><p>Những chủ đề bạn giải đúng ít nhất gần đây.</p></div></div>
@@ -187,7 +246,8 @@
         <a href="{{ route('practice.survival') }}" class="card mode-card"><span class="mode-card__icon tone-primary"><x-icon name="heart" /></span><span><h3>3 mạng</h3><p>Khó dần, sai 3 lần là kết thúc.</p></span></a>
         <a href="{{ route('practice.topic', 'song-xe') }}" class="card mode-card"><span class="mode-card__icon tone-jade"><x-icon name="puzzle" /></span><span><h3>Sát pháp Song Xe</h3><p>Chủ đề được luyện nhiều nhất — 10 thế mỗi lượt.</p></span></a>
         <a href="{{ route('play.bot') }}" class="card mode-card"><span class="mode-card__icon tone-ink"><x-icon name="shield" /></span><span><h3>Chơi với máy</h3><p>4 cấp độ từ Tập sự đến Khó, có gợi ý và đi lại.</p></span></a>
-        <a href="{{ route('pvp.lobby') }}" class="card mode-card"><span class="mode-card__icon tone-primary"><x-icon name="sword" /></span><span><h3>Thách đấu bạn bè</h3><p>Tạo phòng, gửi link qua Zalo — chơi theo lượt có đồng hồ.</p></span></a>
+        <a href="{{ route('pvp.lobby') }}" class="card mode-card"><span class="mode-card__icon tone-primary"><x-icon name="sword" /></span><span><h3>Thách đấu bạn bè</h3><p>Mời bạn đang online hoặc gửi link — xin đi lại, xin hoà, có người xem.</p></span></a>
+        <a href="{{ route('practice.setup') }}" class="card mode-card"><span class="mode-card__icon tone-gold"><x-icon name="grid" /></span><span><h3>Xếp cờ để thẩm</h3><p>Tự xếp thế cờ tướng, cờ úp — cho máy giải hoặc đánh thử, đổi bên tuỳ ý.</p></span></a>
     </div>
 </section>
 
@@ -206,14 +266,29 @@
 </section>
 @endif
 
+@if($latest->isNotEmpty())
+<section class="section pt-0">
+    <div class="section-head"><div><h2>Bài học mới cập nhật</h2><p>Nội dung mới được thêm thường xuyên — mỗi bài đều có bàn cờ đi từng nước.</p></div>
+        <a href="{{ route('search') }}" class="section-head__link">Tìm bài học <x-icon name="arrow-right" /></a></div>
+    <div class="lesson-list lesson-list--grid lg:grid-cols-3">
+        @foreach($latest as $lesson)
+            <a href="{{ route('lessons.show', $lesson->slug) }}" class="lesson-item card has-thumb">
+                <span class="li-thumb"><img src="{{ \App\Support\Seo::ogThumb($lesson) }}" alt="{{ $lesson->title }} - Học Cờ Tướng" loading="lazy" width="56" height="56"></span>
+                <span class="min-w-0"><span class="li-title">{{ $lesson->title }}</span><span class="li-sub">{{ $lesson->series?->name ?? $lesson->phase_label }} · {{ $lesson->created_at?->locale('vi')->diffForHumans() }}</span></span>
+            </a>
+        @endforeach
+    </div>
+</section>
+@endif
+
 <section class="section pt-0">
     <div class="grid gap-4 lg:grid-cols-[1fr_380px]">
         <div>
             <h2 class="text-[clamp(21px,3vw,27px)] font-extrabold mb-3">Vì sao học cờ tướng tại Học Cờ Tướng?</h2>
             <div class="prose">
                 <p><strong>Học Cờ Tướng</strong> giúp bạn học chơi <strong>cờ tướng</strong> và <strong>cờ úp</strong> bài bản, dễ hiểu — từ người mới chưa biết luật đến kỳ thủ muốn nâng cao. Mỗi bài học đều có <strong>bàn cờ tương tác đi từng nước</strong>: bạn không chỉ đọc lý thuyết mà bấm “Tiến” để xem từng nước cờ diễn ra, kèm lời diễn giải vì sao đi nước đó.</p>
-                <p>Lộ trình sắp theo các giai đoạn của ván cờ. <strong>Nhập môn</strong> dạy luật chơi và cách đi từng quân. <strong>Khai cuộc</strong> hướng dẫn bố trí quân, tranh tiên. <strong>Trung cuộc</strong> tập trung vào sát pháp — các đòn phối hợp chiếu hết. <strong>Tàn cuộc</strong> rèn kỹ thuật thắng thế cờ ít quân. Riêng <strong>cờ úp</strong> có cả luật chơi lẫn chiến thuật thực chiến.</p>
-                <p>Sau mỗi bài, bạn có thể <strong>tự giải thế cờ</strong>, luyện chế độ 60 giây hay 3 mạng, nhận XP, giữ chuỗi ngày học và mở huy hiệu. Toàn bộ nội dung miễn phí.</p>
+                <p>Lộ trình sắp theo các giai đoạn của ván cờ. <strong>Nhập môn</strong> dạy luật chơi và cách đi từng quân. <strong>Khai cuộc</strong> hướng dẫn bố trí quân, tranh tiên qua các hệ Pháo đầu, Bình phong mã, Thuận pháo… <strong>Trung cuộc</strong> gồm sát pháp (13 đội hình, Sát pháp đại toàn) và những ván trung cuộc kinh điển có bình giải từng nước. <strong>Tàn cuộc</strong> rèn kỹ thuật thắng – hoà thế cờ ít quân. Riêng <strong>cờ úp</strong> có cả luật chơi lẫn chiến thuật thực chiến.</p>
+                <p>Sau mỗi bài, bạn có thể <strong>tự giải thế cờ</strong> hoặc <strong>đoán nước</strong>, luyện chế độ 60 giây hay 3 mạng, <strong>chơi với máy</strong> 4 cấp độ, <strong>thách đấu bạn bè</strong> trực tuyến, hay <strong>xếp cờ để thẩm</strong> thế cờ của riêng mình. Mỗi ngày học được XP, giữ chuỗi ngày và mở huy hiệu. Toàn bộ nội dung miễn phí.</p>
             </div>
         </div>
         <div class="card overflow-hidden self-start">
@@ -246,22 +321,4 @@
         @endforeach
     </div>
 </section>
-
-@if($series->isNotEmpty())
-<section class="section pt-0">
-    <div class="section-head"><div><h2>Chương trình học</h2><p>Giáo trình có hệ thống, theo từng chuỗi bài.</p></div></div>
-    <div class="lesson-list lesson-list--grid">
-        @foreach($series as $s)
-            <a href="{{ route('series', $s->slug) }}" class="card series-card">
-                <span class="li-thumb"><img src="{{ \App\Support\Seo::ogThumb($s) }}" alt="{{ $s->name }} - Học Cờ Tướng" loading="lazy" width="64" height="64"></span>
-                <span class="min-w-0">
-                    <span class="series-card__name block">{{ $s->name }}</span>
-                    <span class="series-card__meta block">{{ $s->published_lessons_count }} bài · {{ \App\Models\Lesson::PHASES[$s->phase] ?? \App\Models\Lesson::GAME_MODES[$s->game_mode] ?? 'Chương trình' }}</span>
-                    <x-series-progress :series="$s" />
-                </span>
-            </a>
-        @endforeach
-    </div>
-</section>
-@endif
 @endsection

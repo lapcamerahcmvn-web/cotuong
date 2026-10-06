@@ -108,7 +108,7 @@
     @media (min-width: 1024px) { body.has-bottom-nav { padding-bottom: 0; } }
 
     /* ---------- Footer ---------- */
-    .site-footer { margin-top: 56px; border-top: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); font-size: 14px; }
+    .site-footer { margin-top: 32px; border-top: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); font-size: 14px; }
     /* Điện thoại: giới thiệu 1 hàng + 4 nhóm link xếp 2 cột (Học | Luyện tập, Chơi | Khám phá) cho ngắn. */
     .site-footer__grid { display: grid; gap: 24px 20px; padding: 32px 0 18px; grid-template-columns: 1fr 1fr; }
     .site-footer__about { grid-column: 1 / -1; }
@@ -125,6 +125,8 @@
     /* ---------- Page scaffolding ---------- */
     .page { padding-top: 20px; padding-bottom: 24px; }
     @media (min-width: 768px) { .page { padding-top: 28px; } }
+    /* Mục cuối trang không cộng thêm đệm dưới (tránh khoảng trống lớn trước footer). */
+    .page > .section:last-child, .page > section:last-child { padding-bottom: 8px; }
     .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-faint); margin-bottom: 14px; }
     .crumbs a { color: var(--ink-soft); }
     .crumbs a:hover { color: var(--primary-ink); }

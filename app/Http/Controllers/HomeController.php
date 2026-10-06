@@ -22,9 +22,21 @@ class HomeController extends Controller
             $featured = Lesson::published()->where('move_count', '>', 8)->latest('published_at')->take(6)->get();
         }
 
+        // Mọi chương trình có bài, xếp theo chặng lộ trình (tự gồm chuyên đề mới chưa khai báo trong config).
+        $courses = app(\App\Services\LearningPathService::class)->courseSeries();
+        $courseKeys = array_keys($courses);
+        $courseOf = [];
+        foreach ($courses as $key => $c) {
+            foreach ($c['series'] as $i => $slug) $courseOf[$slug] = [$key, $i];
+        }
+        // ⚠️ published_at bị ContentSeeder đặt lại mỗi lần nạp nội dung → "mới" tính theo created_at (ổn định).
         $series = LessonSeries::withCount(['publishedLessons'])
-            ->has('publishedLessons')
-            ->orderBy('sort_order')->take(4)->get();
+            ->has('publishedLessons')->get()
+            ->each(fn ($s) => $s->course_key = $courseOf[$s->slug][0] ?? null)
+            ->sortBy(fn ($s) => [array_search($s->course_key, $courseKeys, true) === false ? 99 : array_search($s->course_key, $courseKeys, true), $courseOf[$s->slug][1] ?? 99])
+            ->values();
+        $courseNames = collect($courses)->filter(fn ($c, $k) => $series->contains('course_key', $k))->map(fn ($c) => $c['name'])->all();
+        $latest = Lesson::published()->with('series:id,name')->latest('created_at')->latest('id')->take(6)->get();
 
         $totalLessons = Lesson::published()->count();
 
@@ -64,7 +76,7 @@ class HomeController extends Controller
         $topWeek = array_slice(app(\App\Services\Gamification\LeaderboardService::class)->top('xp', 'week'), 0, 5);
 
         return view('home', compact(
-            'phases', 'featured', 'series', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree',
+            'phases', 'featured', 'series', 'courseNames', 'latest', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree',
             'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'weekly', 'continue', 'continueSeries', 'weak', 'topWeek',
         ));
     }
