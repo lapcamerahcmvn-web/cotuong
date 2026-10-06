@@ -63,7 +63,8 @@ class PlayTest extends TestCase
         [$a, $b, $g] = $this->playing();
         $seq = ['b0c2', 'b9c7', 'c2b0', 'c7b9', 'b0c2', 'b9c7', 'c2b0', 'c7b9'];
         foreach ($seq as $i => $m) {
-            $r = $this->actingAs($i % 2 ? $b : $a)->postJson(route('pvp.move', $g->code), ['move' => $m])->json();
+            // Nước lặp lần 3 phải được xác nhận (luật lặp nước báo trước) → gửi kèm confirm.
+            $r = $this->actingAs($i % 2 ? $b : $a)->postJson(route('pvp.move', $g->code), ['move' => $m, 'confirm' => $i === 7 ? 1 : 0])->json();
         }
         $this->assertSame('finished', $r['status']);
         $this->assertSame('hoa', $r['result']);
