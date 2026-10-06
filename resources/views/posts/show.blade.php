@@ -4,20 +4,22 @@
 @section('description', \Illuminate\Support\Str::limit(strip_tags($post->seo_description ?: $post->excerpt ?: \App\Support\PostContent::autoExcerpt($post->content)), 155))
 @section('og_title', $post->title)
 @section('og_type', 'article')
-@section('og_image', $post->thumbnail ? \Illuminate\Support\Facades\Storage::url($post->thumbnail) : \App\Support\Seo::ogImage())
+@section('og_image', \App\Support\Seo::postImage($post))
 
 @push('head')
 <meta property="article:published_time" content="{{ $post->published_at?->toIso8601String() }}">
 <meta property="article:modified_time" content="{{ $post->updated_at?->toIso8601String() }}">
 @if($post->category)<meta property="article:section" content="{{ $post->category->name }}">@endif
 @php
-    $_ogImage = $post->thumbnail ? \Illuminate\Support\Facades\Storage::url($post->thumbnail) : \App\Support\Seo::ogImage();
+    $_ogImage = \App\Support\Seo::postImage($post);
+    [$_body, $_toc] = \App\Support\PostContent::withToc(\App\Support\PostContent::render($post->content));
+    $_faq = \App\Support\PostContent::faq($post->content);
 
     $ldArticle = array_filter([
         '@context' => 'https://schema.org',
         '@type' => 'Article',
         'headline' => $post->title,
-        'description' => \Illuminate\Support\Str::limit(strip_tags($post->excerpt ?: ''), 300),
+        'description' => \Illuminate\Support\Str::limit(strip_tags($post->seo_description ?: $post->excerpt ?: ''), 300),
         'inLanguage' => 'vi-VN',
         'image' => $_ogImage,
         'author' => ['@id' => url('/#org')],
@@ -39,6 +41,9 @@
 @endphp
 <script type="application/ld+json">{!! json_encode($ldArticle, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 <script type="application/ld+json">{!! json_encode($ldCrumb, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@if(count($_faq) >= 2)
+<script type="application/ld+json">{!! json_encode(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array_map(fn ($q) => ['@type' => 'Question', 'name' => $q[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $q[1]]], $_faq)], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@endif
 @endpush
 
 @section('content')
@@ -60,10 +65,33 @@
     </header>
 
     @if($post->thumbnail)
-        <img src="{{ \Illuminate\Support\Facades\Storage::url($post->thumbnail) }}" alt="{{ $post->title }}" class="w-full rounded-[18px] my-5">
+        <img src="{{ \Illuminate\Support\Facades\Storage::url($post->thumbnail) }}" alt="{{ $post->title }} - Học Cờ Tướng" class="w-full rounded-[18px] my-5">
     @endif
 
-    <div class="prose !max-w-none">{!! \App\Support\PostContent::render($post->content) !!}</div>
+    @if(count($_toc) >= 3)
+        <nav class="post-toc card" aria-label="Mục lục bài viết">
+            <details open>
+                <summary>Nội dung bài viết</summary>
+                <ol>@foreach($_toc as [$id, $text])<li><a href="#{{ $id }}">{{ $text }}</a></li>@endforeach</ol>
+            </details>
+        </nav>
+    @endif
+
+    <div class="prose !max-w-none">{!! $_body !!}</div>
+
+    @if($lessons->isNotEmpty())
+        <section class="mt-8">
+            <h2 class="text-xl font-extrabold mb-3">Học tiếp trên bàn cờ tương tác</h2>
+            <div class="lesson-list">
+                @foreach($lessons as $l)
+                    <a href="{{ route('lessons.show', $l->slug) }}" class="lesson-item card has-thumb">
+                        <span class="li-thumb"><img src="{{ \App\Support\Seo::ogThumb($l) }}" alt="{{ $l->title }} - Học Cờ Tướng" loading="lazy" width="56" height="56"></span>
+                        <span class="min-w-0"><span class="li-title">{{ $l->title }}</span><span class="li-sub">{{ $l->series?->name ?? $l->phase_label }} · {{ $l->move_count_label }}</span></span>
+                    </a>
+                @endforeach
+            </div>
+        </section>
+    @endif
 
     <div class="mt-8">
         <x-share-buttons :url="url()->current()" :title="$post->title" :image="$_ogImage" />

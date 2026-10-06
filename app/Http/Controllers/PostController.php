@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lesson;
 use App\Models\Post;
 use App\Models\PostCategory;
+use App\Support\PostContent;
 
 class PostController extends Controller
 {
@@ -46,7 +48,17 @@ class PostController extends Controller
         $related = Post::published()->with('category')->where('id', '!=', $post->id)
             ->where('post_category_id', $post->post_category_id)
             ->latest('published_at')->take(4)->get();
+        if ($related->count() < 4) {
+            $related = $related->concat(Post::published()->with('category')
+                ->whereNotIn('id', $related->pluck('id')->push($post->id))
+                ->latest('published_at')->take(4 - $related->count())->get());
+        }
 
-        return view('posts.show', compact('post', 'related'));
+        // Bài học được nhắc trong bài viết → khối "Học tiếp" (giữ thứ tự xuất hiện, tối đa 6).
+        $slugs = array_slice(PostContent::lessonSlugs($post->content), 0, 6);
+        $lessons = Lesson::published()->with('series')->whereIn('slug', $slugs)->get()
+            ->sortBy(fn ($l) => array_search($l->slug, $slugs))->values();
+
+        return view('posts.show', compact('post', 'related', 'lessons'));
     }
 }

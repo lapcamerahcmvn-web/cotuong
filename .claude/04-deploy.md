@@ -45,6 +45,7 @@ composer install --no-dev --optimize-autoloader
 php artisan migrate --force
 php artisan db:seed --class=ContentSeeder --force   # nếu data/content/ đổi (KHÔNG kèm namespace — shell nuốt dấu \\ thành DatabaseSeedersContentSeeder)
 php artisan db:seed --class=PagesSeeder --force     # nếu pages.json đổi (intro trang giai đoạn)
+php artisan db:seed --class=PostSeeder --force      # nếu posts.json đổi (Tin tức). Chỉ ghi đè bài khi bản JSON có updated_at MỚI HƠN DB → không đè bài sửa trên hosting; ngày đăng giữ nguyên
 php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
 

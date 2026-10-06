@@ -37,6 +37,8 @@ class HomeController extends Controller
             ->values();
         $courseNames = collect($courses)->filter(fn ($c, $k) => $series->contains('course_key', $k))->map(fn ($c) => $c['name'])->all();
         $latest = Lesson::published()->with('series:id,name')->latest('created_at')->latest('id')->take(6)->get();
+        // Bài viết kiến thức mới nhất — internal link từ trang chủ (trang có sức mạnh nhất) xuống cụm bài viết.
+        $news = \App\Models\Post::published()->with('category')->latest('published_at')->latest('id')->take(3)->get();
 
         $totalLessons = Lesson::published()->count();
 
@@ -77,7 +79,7 @@ class HomeController extends Controller
 
         return view('home', compact(
             'phases', 'featured', 'series', 'courseNames', 'latest', 'totalLessons', 'heroLesson', 'heroSteps', 'heroTree',
-            'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'weekly', 'continue', 'continueSeries', 'weak', 'topWeek',
+            'dailyPuzzle', 'dailyLesson', 'secondsLeft', 'paths', 'snap', 'weekly', 'continue', 'continueSeries', 'weak', 'topWeek', 'news',
         ));
     }
 }

@@ -29,6 +29,8 @@ class ExportPosts extends Command
             'status' => $p->status,
             'seo_title' => $p->seo_title,
             'seo_description' => $p->seo_description,
+            'published_at' => $p->published_at?->toIso8601String(),
+            'updated_at' => $p->updated_at?->toIso8601String(),
         ])->values();
 
         file_put_contents($out, json_encode(

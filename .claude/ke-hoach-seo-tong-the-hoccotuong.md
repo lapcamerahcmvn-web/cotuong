@@ -120,3 +120,31 @@
 ## 4. Lưu ý
 - Đây là bản kế hoạch dựa trên khảo sát thủ công đối thủ và cấu trúc từ khóa — **chưa có số liệu volume/độ khó chính xác từ công cụ chuyên dụng** (Ahrefs/Semrush/Google Keyword Planner). Nên đối chiếu lại thứ tự ưu tiên khi có dữ liệu thực tế từ Search Console sau 4-6 tuần lên các bài Nhập môn.
 - Ưu tiên xuyên suốt: **lấp khoảng trống Nhập môn → Trung cuộc → Cờ Úp**, vì đây là 3 mảng đối thủ yếu nhất hoặc chưa có, trong khi Khai cuộc/Tàn cuộc đã có nền và có thể mở rộng dần song song.
+
+---
+
+## 5. Đợt nội dung 06/10/2026 — 16 bài "Kiến thức cờ tướng" (tools/news-seo)
+
+| Bài (slug) | Từ khoá chính |
+|---|---|
+| hoc-co-tuong-online-cho-nguoi-moi-lo-trinh-30-ngay (nổi bật) | học cờ tướng online, học cờ tướng cho người mới |
+| gia-tri-cac-quan-co-tuong-quan-nao-manh-nhat | quân nào mạnh nhất cờ tướng, giá trị quân cờ |
+| thuat-ngu-co-tuong-cho-nguoi-moi | thuật ngữ cờ tướng |
+| cach-doc-ghi-ky-hieu-nuoc-di-co-tuong | ký hiệu cờ tướng, cách ghi biên bản |
+| cac-the-khai-cuoc-co-tuong-pho-bien | khai cuộc cờ tướng, các thế khai cuộc |
+| phao-dau-co-tuong-cach-di-va-cach-pha | pháo đầu, cách phá pháo đầu |
+| trung-cuoc-co-tuong-nguyen-tac-chien-thuat | trung cuộc cờ tướng, chiến thuật trung cuộc |
+| cac-the-sat-cuc-co-tuong-kinh-dien | thế sát cờ tướng, sát cục kinh điển |
+| tan-cuoc-co-tuong-co-ban-the-thang-hoa | tàn cuộc cờ tướng cơ bản |
+| luat-chieu-dai-duoi-dai-co-tuong | luật chiếu dài, đuổi dài |
+| meo-choi-co-up-cho-nguoi-moi | mẹo chơi cờ úp, chiến thuật cờ úp |
+| choi-co-tuong-voi-may-online-cach-luyen-tien-bo-nhanh | chơi cờ tướng với máy |
+| bai-tap-co-tuong-giai-the-co-moi-ngay | bài tập cờ tướng, giải thế cờ |
+| day-tre-em-hoc-co-tuong-huong-dan-cho-phu-huynh | dạy trẻ em học cờ tướng |
+| sai-lam-nguoi-moi-choi-co-tuong-hay-mac | sai lầm người mới, chơi cờ tướng giỏi |
+| xep-the-co-va-nho-may-giai-co-tuong | giải thế cờ bằng máy, xếp thế cờ |
+
+Kỹ thuật kèm theo: mục lục + FAQPage tự động cho bài viết, ảnh OG bàn cờ cho bài viết (`Seo::postImage`),
+khối "Học tiếp trên bàn cờ tương tác" (bài học được nhắc trong bài), "Bài viết liên quan" trên trang bài học,
+mục "Kiến thức cờ tướng" ở trang chủ, PostSeeder giữ ngày đăng + không đè bài sửa trên hosting.
+Theo dõi GSC 4–6 tuần theo từng slug trên; bài nào có hiển thị mà CTR thấp → sửa seo_title/description trước khi viết thêm.

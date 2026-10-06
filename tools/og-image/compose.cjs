@@ -55,7 +55,7 @@ function compose(job) {
     .map((ln, i) => `<tspan x="${rightX}" dy="${i === 0 ? 0 : lineH}">${esc(ln)}</tspan>`)
     .join('');
 
-  const kicker = job.kind === 'series' ? 'CHƯƠNG TRÌNH' : phaseLabel.toUpperCase();
+  const kicker = job.kicker || (job.kind === 'series' ? 'CHƯƠNG TRÌNH' : phaseLabel.toUpperCase());
   const metaLine = [kicker, metaRight].filter(Boolean).join('  ·  ');
   const metaY = titleTop + (titleLines.length - 1) * lineH + 62;
 

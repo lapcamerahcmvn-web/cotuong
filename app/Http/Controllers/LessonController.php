@@ -210,8 +210,20 @@ class LessonController extends Controller
         $lessonPuzzleId = $lessonPuzzles->firstWhere('start_ply', 0)?->id;
         $practiceSkill = collect($lessonPuzzles->first()?->skill_tags ?? [])->first();
 
+        // Bài viết (Tin tức) có nhắc tới bài này → rồi tới chương trình / giai đoạn của bài (internal link 2 chiều).
+        $needles = ['lesson="'.$lesson->slug.'"', '/bai-hoc/'.$lesson->slug.'"'];
+        $posts = \App\Models\Post::published()->with('category')
+            ->where(fn ($q) => collect($needles)->each(fn ($n) => $q->orWhere('content', 'like', '%'.$n.'%')))
+            ->latest('published_at')->take(3)->get();
+        $wider = array_filter([$lesson->series?->slug ? '/chuong-trinh/'.$lesson->series->slug.'"' : null, $lesson->phase ? '/'.$lesson->phase.'"' : null]);
+        if ($posts->count() < 3 && $wider) {
+            $posts = $posts->concat(\App\Models\Post::published()->with('category')->whereNotIn('id', $posts->pluck('id'))
+                ->where(fn ($q) => collect($wider)->each(fn ($n) => $q->orWhere('content', 'like', '%'.$n.'%')))
+                ->latest('published_at')->take(3 - $posts->count())->get());
+        }
+
         return view('lessons.show', compact(
-            'lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related', 'suggestNext',
+            'lesson', 'prev', 'next', 'completed', 'comments', 'commentCount', 'likedCommentIds', 'related', 'posts', 'suggestNext',
             'seriesTotal', 'seriesPos', 'seriesDone', 'lessonPuzzleId', 'practiceSkill',
         ));
     }

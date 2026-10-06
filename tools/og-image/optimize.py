@@ -7,6 +7,7 @@ gần như không đổi hình mà nhẹ ~65%. Cần: pip install pillow
 """
 import glob
 import os
+import sys
 from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -16,7 +17,12 @@ DIRS = [
     os.path.join(ROOT, "public", "og", "thumbs", "lessons"),
     os.path.join(ROOT, "public", "og", "thumbs", "series"),
     os.path.join(ROOT, "public", "og"),  # home.png + phase-*.png
+    os.path.join(ROOT, "public", "og", "posts"),
+    os.path.join(ROOT, "public", "og", "thumbs", "posts"),
 ]
+# Chỉ nén vài thư mục (tránh ghi lại hàng nghìn ảnh cũ): python tools/og-image/optimize.py public/og/posts ...
+if len(sys.argv) > 1:
+    DIRS = [os.path.join(ROOT, a) for a in sys.argv[1:]]
 
 before = after = n = 0
 for d in DIRS:

@@ -4,6 +4,8 @@ namespace App\Support;
 
 use App\Models\Lesson;
 use App\Models\LessonSeries;
+use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Tiện ích SEO dùng chung: chọn ảnh OG/preview cho từng trang + dựng JSON-LD
@@ -67,6 +69,28 @@ class Seo
         }
 
         return asset('icon-512.png');
+    }
+
+    /**
+     * Ảnh cho bài Tin tức: ảnh biên tập viên tải lên (storage) → ảnh bàn cờ sinh sẵn
+     * public/og/posts/{slug}.png (tools/news-seo) → ảnh OG của bài học đầu tiên được nhúng → ảnh chung.
+     * $thumb = true: bản vuông nhỏ cho danh sách (public/og/thumbs/posts).
+     */
+    public static function postImage(Post $post, bool $thumb = false): string
+    {
+        if ($post->thumbnail) {
+            return Storage::url($post->thumbnail);
+        }
+        $rel = $thumb ? "og/thumbs/posts/{$post->slug}.png" : "og/posts/{$post->slug}.png";
+        if (is_file(public_path($rel))) {
+            return asset($rel).'?v='.@filemtime(public_path($rel));
+        }
+        $first = PostContent::lessonSlugs($post->content)[0] ?? null;
+        if ($first && ($lesson = Lesson::where('slug', $first)->first(['id', 'slug', 'phase', 'game_mode']))) {
+            return $thumb ? self::ogThumb($lesson) : self::ogImage($lesson);
+        }
+
+        return self::ogImage();
     }
 
     private static function phaseImage(?string $phase, ?string $gameMode): ?string

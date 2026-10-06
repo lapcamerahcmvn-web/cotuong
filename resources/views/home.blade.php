@@ -281,6 +281,16 @@
 </section>
 @endif
 
+@if($news->isNotEmpty())
+<section class="section pt-0">
+    <div class="section-head"><div><h2>Kiến thức cờ tướng</h2><p>Bài viết hướng dẫn, mẹo chơi và phân tích — mỗi bài dẫn thẳng tới bàn cờ để tập ngay.</p></div>
+        <a href="{{ route('posts.index') }}" class="section-head__link">Tất cả bài viết <x-icon name="arrow-right" /></a></div>
+    <div class="news-grid">
+        @foreach($news as $p) @include('posts._card', ['p' => $p]) @endforeach
+    </div>
+</section>
+@endif
+
 <section class="section pt-0">
     <div class="grid gap-4 lg:grid-cols-[1fr_380px]">
         <div>
