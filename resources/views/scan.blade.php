@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nhận Diện Bàn Cờ Tướng Từ Ảnh — Chụp Ảnh Ra Thế Cờ | Học Cờ Tướng')
-@section('description', 'Chụp ảnh bàn cờ tướng thật hoặc ảnh chụp màn hình phần mềm cờ khác, máy tự nhận diện thế cờ (cả cờ úp) để kiểm tra, cho máy đánh giá nước đi và lưu vào thư viện. Miễn phí, chạy ngay trên trình duyệt.')
+@section('description', 'Chụp ảnh bàn cờ tướng thật hoặc màn hình phần mềm cờ, máy tự nhận diện thế cờ (cả cờ úp) để đánh giá nước đi, chơi tiếp và lưu thư viện. Miễn phí.')
 
 @php
     $cfg = [

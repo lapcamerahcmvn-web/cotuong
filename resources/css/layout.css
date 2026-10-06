@@ -129,6 +129,12 @@
     .crumbs a { color: var(--ink-soft); }
     .crumbs a:hover { color: var(--primary-ink); }
     .crumbs svg { width: 14px; height: 14px; opacity: .6; }
+/* Điện thoại: breadcrumb 1 dòng, vuốt ngang khi dài (trước đây chiếm 2–3 dòng trên trang bài học). */
+@media (max-width: 640px) {
+    .crumbs { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+    .crumbs::-webkit-scrollbar { display: none; }
+    .crumbs > * { flex: none; }
+}
     .page-title { font-size: clamp(26px, 4.4vw, 38px); font-weight: 800; margin: 0 0 8px; }
     .page-lede { color: var(--ink-soft); font-size: 16.5px; max-width: 46em; margin: 0; }
 

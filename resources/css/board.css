@@ -100,6 +100,12 @@
     .seg__btn { display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 16px; border-radius: 11px; border: 0; background: none; font-weight: 700; font-size: 14.5px; color: var(--ink-soft); cursor: pointer; }
     .seg__btn svg { width: 18px; height: 18px; }
     .seg__btn.is-on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
+/* Điện thoại: 3 chế độ (Xem lời giảng / Đoán nước / Thử tự giải) chia đều 1 hàng, không gãy dòng. */
+@media (max-width: 640px) {
+    .seg { display: flex; width: 100%; }
+    .seg__btn { flex: 1 1 0; min-width: 0; justify-content: center; padding: 0 6px; gap: 5px; font-size: 13.5px; white-space: nowrap; }
+}
+@media (max-width: 400px) { .seg__btn svg { display: none; } }
 
 }
 

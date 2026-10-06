@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Luyện Cờ Tướng Online — Bài Tập Thế Cờ, Sát Pháp Mỗi Ngày | Học Cờ Tướng')
+@section('title', 'Luyện Cờ Tướng Online — Bài Tập Thế Cờ, Sát Pháp | Học Cờ Tướng')
 @section('description', 'Luyện cờ tướng online miễn phí: thế cờ hôm nay, thử thách 60 giây, chế độ 3 mạng, bài tập sát pháp theo chủ đề và luyện lại thế đã giải sai.')
 
 @push('head')

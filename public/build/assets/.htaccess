@@ -1,0 +1,5 @@
+# Asset Vite có mã hash trong tên file: nội dung không bao giờ đổi → trình duyệt cache 1 năm, không cần hỏi lại server.
+# (LiteSpeed mặc định không gửi Cache-Control cho .js.) Không xoá file này — tools/build-keep.mjs bỏ qua file ẩn.
+<IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

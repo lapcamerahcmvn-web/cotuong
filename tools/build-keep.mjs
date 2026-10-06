@@ -29,6 +29,7 @@ if (process.argv.includes('--prune')) {
     const assetsDir = path.join(buildDir, 'assets');
     let removed = 0;
     for (const f of fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir) : []) {
+        if (f.startsWith('.')) continue;   // giữ .htaccess (cache 1 năm cho asset có hash)
         if (!keep.has('assets/' + f)) { fs.unlinkSync(path.join(assetsDir, f)); removed++; }
     }
     console.log(`build-keep: giữ ${keep.size} file, xoá ${removed} file cũ.`);

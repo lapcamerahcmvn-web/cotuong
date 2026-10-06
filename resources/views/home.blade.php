@@ -119,8 +119,9 @@
 @if($dailyUrl)
 <section class="section pb-0">
     <div class="card daily-card">
-        <a href="{{ $dailyUrl }}" class="daily-card__board" data-fen-thumb="{{ $dailyFen }}" @if($dailyPuzzle?->side === 'den') data-flip="1" @endif aria-label="Mở thế cờ hôm nay">
-            <div class="board-holder"></div>
+        <a href="{{ $dailyUrl }}" class="daily-card__board" data-fen-thumb="{{ $dailyFen }}" @if($dailyPuzzle?->side === 'den') data-flip="1" @endif>
+            <span class="sr-only">Mở thế cờ hôm nay</span>
+            <div class="board-holder" aria-hidden="true"></div>
         </a>
         <div>
             <span class="eyebrow"><x-icon name="calendar" /> Thế cờ hôm nay</span>

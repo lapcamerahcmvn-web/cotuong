@@ -15,6 +15,8 @@
     --primary-hover: #a8371a;
     --primary-ink: #9a3416;   /* chữ đỏ trên nền sáng — tương phản ≥ 4.5:1 */
     --primary-soft: #f9e5dc;
+    --btn-primary: var(--primary);          /* nền nút chính chữ trắng — luôn ≥ 4.5:1 */
+    --btn-primary-hover: var(--primary-hover);
     --jade: #2f6b5e;          /* ngọc bích — đúng / hoàn thành */
     --jade-ink: #24574c;
     --jade-soft: #dfeee8;
@@ -71,6 +73,9 @@
     --primary-hover: #f07b56;
     --primary-ink: #f4a283;
     --primary-soft: #3b2219;
+    /* Nút chữ trắng: #e5663f chỉ đạt ~3.3:1 → dùng chu sa đậm hơn (~4.9:1), hover tối hơn nữa. */
+    --btn-primary: #c24a22;
+    --btn-primary-hover: #a93c18;
     --jade: #5fb39e;
     --jade-ink: #8fd3c1;
     --jade-soft: #16291f;

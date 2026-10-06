@@ -21,6 +21,11 @@
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header unset X-Powered-By
     Header always unset X-Powered-By
+    # JS tĩnh ngoài build (js/board.js…) luôn được gọi kèm ?v=thời-gian-sửa → cache 7 ngày an toàn
+    # (LiteSpeed mặc định chỉ cache CSS/font/ảnh). Asset có hash trong public/build/assets: 1 năm (.htaccess riêng).
+    <FilesMatch "\.(js|mjs)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
 </IfModule>
 
 <IfModule mod_rewrite.c>

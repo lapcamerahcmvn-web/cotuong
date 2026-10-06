@@ -74,12 +74,27 @@
 
     {{-- Google Analytics 4 — chỉ chèn khi đã cấu hình SITE_GA4_ID trong .env. --}}
     @if(config('site.ga4_id'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('site.ga4_id') }}"></script>
+    {{-- gtag.js (~175KB, chặn luồng chính ~0,7s trên điện thoại) nạp TRỄ: sau khi trang tải xong + trình duyệt rảnh,
+         hoặc ngay lần chạm/cuộn đầu tiên. Sự kiện gọi trước đó vẫn xếp hàng trong dataLayer, không mất. --}}
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', '{{ config('site.ga4_id') }}');
+        (function () {
+            var done = false, evs = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+            function load() {
+                if (done) return; done = true;
+                evs.forEach(function (e) { removeEventListener(e, load, { passive: true }); });
+                var s = document.createElement('script');
+                s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id={{ config('site.ga4_id') }}';
+                document.head.appendChild(s);
+            }
+            evs.forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
+            addEventListener('load', function () {
+                setTimeout(function () { window.requestIdleCallback ? requestIdleCallback(load, { timeout: 2000 }) : load(); }, 2500);
+            });
+        })();
     </script>
     @endif
 
@@ -109,7 +124,7 @@
 
     <header class="site-header" data-header>
         <div class="wrap site-header__inner">
-            <a href="{{ route('home') }}" class="brand" aria-label="Học Cờ Tướng — trang chủ">
+            <a href="{{ route('home') }}" class="brand" title="Học Cờ Tướng — trang chủ">
                 <span class="brand__logo">車</span>
                 <span class="brand__text">Học Cờ Tướng<small class="hidden sm:block">Mỗi ngày một nước cờ</small></span>
             </a>
