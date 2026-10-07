@@ -144,6 +144,15 @@
             "sort_order": 4,
             "planned_total": 1176,
             "description": "Hơn 1.100 bài tập chiếu hết liên hoàn từ 1 đến 10 nước: Đỏ đi trước, nước nào cũng chiếu, Đen đỡ thế nào cũng bị hết cờ. Tự giải trên bàn cờ, xem lời giải từng nước — mọi lời giải đều đã được máy kiểm chứng."
+        },
+        {
+            "name": "Sát Chiêu Thực Dụng — 13 Đội Hình",
+            "slug": "sat-chieu-thuc-dung",
+            "game_mode": "co-tuong",
+            "phase": "tan-cuoc",
+            "sort_order": 5,
+            "planned_total": 667,
+            "description": "27 đòn sát chiêu thực dụng có khẩu quyết tấn công và phòng thủ, xếp theo 13 đội hình bộ ba (Xe Pháo Mã, Song Xe Chốt…), kèm hàng trăm bài tập giải trên bàn cờ — lời giải đã được máy kiểm chứng."
         }
     ]
 }
