@@ -92,6 +92,14 @@ const h = {
     if (s && !n) err('sơ đồ: chuyên đề ' + seriesSlug + ' chưa có bài published');
     return `[so-do-tu-duy chuyen-de="${seriesSlug}" ket-qua="${result}"${title ? ` tieu-de="${esc(title)}"` : ''}${intro ? ` gioi-thieu="${esc(intro)}"` : ''}]`;
   },
+  /** Sơ đồ tư duy soạn sẵn theo slug (database/seeders/data/mindmaps.json → MindmapSeeder). */
+  MS(slug, title, intro) {
+    const f = path.join(ROOT, 'database/seeders/data/mindmaps.json');
+    const m = fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, 'utf8')).mindmaps || []).find((x) => x.slug === slug) : null;
+    if (!m) err('sơ đồ: không có ' + slug + ' trong mindmaps.json');
+    else for (const s of m.outline.matchAll(/@([a-z0-9-]+)/g)) if (!lessons.has(s[1])) err('sơ đồ ' + slug + ': không có bài học ' + s[1]);
+    return `[so-do-tu-duy slug="${slug}"${title ? ` tieu-de="${esc(title)}"` : ''}${intro ? ` gioi-thieu="${esc(intro)}"` : ''}]`;
+  },
   START_FEN,
   home: a('/', 'Học Cờ Tướng'),
 };

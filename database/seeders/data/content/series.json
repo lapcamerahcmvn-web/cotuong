@@ -135,6 +135,15 @@
             "sort_order": 3,
             "planned_total": 329,
             "description": "Hơn 300 thế cờ tàn thực dụng từ tàn Chốt, Mã, Pháo đến Xe — mỗi thế có khẩu quyết dễ nhớ, biến hóa nước đi trên bàn cờ tương tác và nút cho máy tự giải."
+        },
+        {
+            "name": "Sát Cục Liên Hoàn 1-10 Nước",
+            "slug": "sat-cuc-lien-hoan",
+            "game_mode": "co-tuong",
+            "phase": "tan-cuoc",
+            "sort_order": 4,
+            "planned_total": 1176,
+            "description": "Hơn 1.100 bài tập chiếu hết liên hoàn từ 1 đến 10 nước: Đỏ đi trước, nước nào cũng chiếu, Đen đỡ thế nào cũng bị hết cờ. Tự giải trên bàn cờ, xem lời giải từng nước — mọi lời giải đều đã được máy kiểm chứng."
         }
     ]
 }

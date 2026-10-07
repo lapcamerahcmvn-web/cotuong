@@ -17,7 +17,7 @@
 
 ## Trạng thái tổng quan
 
-- **12 chương trình học / 720 bài published** (nội dung trong `database/seeders/data/content/` — 1 file/chuyên đề, seed bằng `ContentSeeder`).
+- **16 chương trình học** (thêm Sát Cục Liên Hoàn 1-10 Nước, 1.176 bài — 07/10/2026) (nội dung trong `database/seeders/data/content/` — 1 file/chuyên đề, seed bằng `ContentSeeder`).
 - Nền tảng: bàn cờ tương tác (SVG vanilla JS, đi từng nước + phóng to + quân úp), đăng nhập Google + email/mật khẩu,
   đăng ký tài khoản, theo dõi tiến độ (✓ đã học), bình luận + trả lời + thích, chia sẻ FB/Zalo, sitemap XML + HTML.
 
@@ -33,6 +33,7 @@
 | **B2 – Khai cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Khai Cuộc | 45 | ✅ HẾT — id=11, soạn từ sách khai cuộc nội bộ tham khảo (PDF scan, KHÔNG public tên sách/tác giả) |
 | **C2 – Trung cuộc (nguồn sách khác)** | Nền Tảng Nguyên Lý Trung Cuộc | 48 | ✅ **HẾT 48/48 CHƯƠNG** — id=12, cùng nguồn sách trung cuộc nội bộ tham khảo. Quy trình: `tools/midgame-import/README.md` |
 | **D2 – Tàn cuộc có khẩu quyết** | Cờ Tàn Có Khẩu Quyết | 329 | ✅ 06/10/2026 — 323 thế (Chốt/Mã/Pháo/Xe) từ XQF khẩu quyết + 563 nhánh biến, khẩu quyết viết lại, nút **Máy tự giải / Đánh thử với máy** (máy đi theo sách khi còn trong cây biến). Quy trình: `tools/co-tan-khau-quyet/README.md` |
+| **D3 – Sát cục liên hoàn** | Sát Cục Liên Hoàn 1-10 Nước | 1176 | ✅ 07/10/2026 — 1.165 bài tập chiếu hết liên hoàn (Đỏ đi trước, mọi nước đều chiếu) + 11 bài tổng quan/giới thiệu chặng. FEN trích tự động từ font cờ trong PDF, lời giải do máy **chứng minh** (`tools/sat-cuc-lien-hoan/solve.mjs`), lời giảng tự sinh từ phân tích bàn cờ; bỏ 34 bài sơ đồ lỗi. Kèm bài viết + sơ đồ tư duy "Phương pháp tư duy giải bài tập sát cục" (bảng `mindmaps` → `MindmapSeeder`). Đã vào kho Luyện tập (`puzzle-skills.series_pool`). Quy trình: `tools/sat-cuc-lien-hoan/README.md` |
 
 > Khai cuộc (chương trình B, id=1) dừng ở 29 vì nguồn XQF của thầy chỉ có 15 ván có nước đi ngoài 14
 > bài cũ; các "bài" còn lại trong folder là clip thầy giảng bằng lời (0 nước) — muốn đủ 48 phải tự

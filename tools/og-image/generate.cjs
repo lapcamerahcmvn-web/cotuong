@@ -7,6 +7,7 @@
  *   node tools/og-image/generate.cjs --only=<slug>   # 1 bài/chuỗi
  *   node tools/og-image/generate.cjs --changed       # bỏ qua PNG mới hơn kho nội dung
  *   node tools/og-image/generate.cjs --missing       # CHỈ sinh bài chưa có PNG (nhanh, dùng khi có bài mới)
+ *   node tools/og-image/generate.cjs --missing --shard=0/4   # chia việc cho nhiều tiến trình chạy song song (0/4 … 3/4)
  *
  * CHỈ CHẠY LOCAL. Kết quả public/og/lessons/*.png + public/og/series/*.png được COMMIT vào git;
  * hosting phục vụ tĩnh, KHÔNG cần @resvg.
@@ -42,6 +43,8 @@ fs.mkdirSync(OUT_THUMB.series, { recursive: true });
 const content = IO.read();
 let jobs = buildJobs(content);
 if (only) jobs = jobs.filter((j) => j.slug === only);
+const shard = (args.find((a) => a.startsWith('--shard=')) || '').split('=')[1];
+if (shard) { const [si, sn] = shard.split('/').map(Number); jobs = jobs.filter((_, i) => i % sn === si); }
 
 const fontOpt = { fontFiles: [FONT_TTF], loadSystemFonts: true, defaultFontFamily: 'Segoe UI' };
 const resvgOpts = { fitTo: { mode: 'width', value: OG_W }, font: fontOpt };

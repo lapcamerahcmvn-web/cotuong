@@ -148,6 +148,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 - **Sai lầm của tôi** `/luyen-tap/sai-lam-cua-toi` — luyện lại nước sai từ ván đã phân tích, lặp ngắt quãng — Đợt 11.
 - **Máy đánh đúng lý thuyết** — cờ úp không nhìn trộm quân úp + nguyên lý khai cuộc (không vội vật Pháo giả); cờ tướng có book khai cuộc `resources/js/engine/book.js`, phân tích ghi "Nước sách" — Đợt 13.
 - **Luyện tập nhận mọi đường chiếu hết** — nước khác sách được bộ giải chứng minh thắng thì tính đúng, máy đỡ dai nhất — Đợt 14.
+- **Chuyên đề Sát Cục Liên Hoàn 1-10 Nước** (07/10/2026, phase tàn cuộc, 1.176 bài) + bài viết sơ đồ tư duy "Phương pháp tư duy giải bài tập sát cục" — FEN trích từ font cờ trong PDF, lời giải máy chứng minh. Quy trình: `tools/sat-cuc-lien-hoan/README.md`. Deploy cần thêm `db:seed --class=MindmapSeeder --force`.
 - **Kiểm định thế cờ (Admin) + bộ giải nước êm + book khai cuộc 72 dòng/20 nước** — Đợt 15 (`.claude/puzzle-audit.md`, `.claude/opening-book.md`).
 - **Giao diện bàn cờ & âm thanh** `/giao-dien-ban-co` — 8 màu bàn, chữ Hán/Việt, quân phẳng/3D, số cột, âm lượng/bộ âm/báo chiếu/tích tắc/giọng đọc — Đợt 19.
 

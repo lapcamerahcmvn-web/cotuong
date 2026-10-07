@@ -3,7 +3,7 @@
 // Chủ đề luyện tập (skill) cho thế cờ. `match`: regex trên tiêu đề bài gốc (không dấu, chữ thường)
 // — 1 thế có thể thuộc nhiều chủ đề. `series`: gán theo chương trình. Dùng bởi cotuong:build-puzzles.
 return [
-    'series_pool' => ['sat-phap-13-doi-hinh', 'sat-phap-dai-toan', '48-bai-nguyen-ly-tan-cuoc'],
+    'series_pool' => ['sat-phap-13-doi-hinh', 'sat-phap-dai-toan', '48-bai-nguyen-ly-tan-cuoc', 'sat-cuc-lien-hoan'],
     'max_plies'   => 16,   // thế dài hơn → chỉ cắt thế con ở đoạn cuối
     'tail_solver_moves' => [2, 3],  // cắt thêm thế con gồm N nước cuối của người giải
 
