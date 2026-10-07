@@ -67,9 +67,13 @@ test ! -f public/hot   # file hot (npm run dev) mà lọt lên hosting → toàn
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force                       # migration mới: gamification + puzzles (01/10), games + cờ úp (02/10), game_records + saved_positions longText + review/share (03/10), weekly_awards (04/10), follows (05/10), game_mistakes (06/10)
 php artisan db:seed --class=ContentSeeder --force # nếu data/content/ đổi (KHÔNG đụng bảng mới)
+php artisan optimize:clear                        # xoá cache cấu hình CŨ trước khi dựng kho
 php artisan cotuong:build-puzzles                 # dựng/cập nhật kho thế cờ — chạy SAU ContentSeeder
-php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache
+php artisan config:cache && php artisan route:cache && php artisan view:cache
 ```
+- ⚠️ 08/10/2026: chạy `build-puzzles` khi `config:cache` cũ còn hiệu lực → kho thiếu chủ đề/bậc mới (404 ở
+  `/luyen-tap/sat-phap/10`, `/chu-de/giu-hoa`). Từ bản sau, lệnh đọc thẳng `config/puzzle-skills.php` nên không còn phụ
+  thuộc thứ tự, nhưng vẫn nên `optimize:clear` trước.
 - `cotuong:build-puzzles` thuần PHP (không cần Node/shell_exec), idempotent; mỗi lần nạp nội dung mới
   đều chạy lại. Bài bị gỡ publish → thế cờ chuyển `archived` (không xoá vì có lượt thử).
 - Kiểm tra sau deploy: `/`, 1 bài học, `/luyen-tap`, `/luyen-tap/hom-nay`, `/lo-trinh`, `/xep-hang`,

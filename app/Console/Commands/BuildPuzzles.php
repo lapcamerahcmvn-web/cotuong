@@ -20,11 +20,15 @@ class BuildPuzzles extends Command
 
     protected $description = 'Dựng/cập nhật kho thế cờ luyện tập (puzzles) từ bài học sát pháp & tàn cuộc';
 
+    private array $cfg = [];
+
     private const BASE_RATING = ['co-ban' => 900, 'trung-cap' => 1200, 'nang-cao' => 1500];
 
     public function handle(): int
     {
-        $cfg = config('puzzle-skills');
+        // Đọc THẲNG file cấu hình, bỏ qua `config:cache` cũ: trên hosting lệnh này hay chạy ngay sau `git reset`, trước
+        // khi cache cấu hình được làm mới — đọc cache cũ từng sinh kho thiếu chủ đề/bậc mới (08/10/2026).
+        $cfg = $this->cfg = require config_path('puzzle-skills.php');
         $dry = (bool) $this->option('dry-run');
         $segSeries = array_keys($cfg['segment_series'] ?? []);
         $lessons = Lesson::published()->where('game_mode', 'co-tuong')
@@ -210,7 +214,7 @@ class BuildPuzzles extends Command
     {
         $title = Str::of($lesson->title)->ascii()->lower()->toString();
         $tags = [];
-        foreach (config('puzzle-skills.skills') as $slug => $s) {
+        foreach ($this->cfg['skills'] as $slug => $s) {
             // Đoạn khẩu quyết (không chiếu hết) chỉ thuộc chủ đề nhóm tàn cuộc.
             if ($segment && ($s['group'] ?? null) !== 'tan-cuoc') continue;
             $inSeries = isset($s['series']) && in_array($lesson->series?->slug, $s['series'], true);
@@ -223,7 +227,7 @@ class BuildPuzzles extends Command
             if (isset($s['max_solver']) && $mate && $solver <= $s['max_solver']) $tags[] = $slug;
         }
         // Luyện sát pháp theo bậc: thế chiếu hết gắn số nước của bên giải.
-        $maxLevel = (int) config('puzzle-skills.ladder.levels', 10);
+        $maxLevel = (int) ($this->cfg['ladder']['levels'] ?? 10);
         if ($mate && $solver >= 1 && $solver <= $maxLevel) $tags[] = 'sat-' . $solver;
         if ($segment) $tags[] = 'khau-quyet';
         if (in_array('song-xe', $tags, true)) {
