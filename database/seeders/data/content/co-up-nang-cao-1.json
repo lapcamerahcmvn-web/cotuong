@@ -9,7 +9,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 5,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Cách phân tích một hình cờ úp phức tạp và chơi khi vừa kém quân vừa kém thế: trọng thế hơn trọng quân, chủ động tạo điểm yếu cho đối phương bằng yếu tố bất ngờ của quân úp.",
@@ -20,7 +20,63 @@
         "seo_title": "Xử Lý Quân Úp Kết Hợp Quân Ngửa Phức Tạp — Cờ Úp",
         "seo_description": "Cách xử lý quân úp kết hợp quân ngửa trong hình phức tạp: trọng thế hơn trọng quân, chủ động tạo điểm yếu cho đối phương. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/4P4\/X1X3X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 5 tiến 1 → lật Tốt",
+                "move_notation_iccs": "e3e4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 5 tiến 1 → lật Tốt — Binh 5 tiến 1: tạo điểm chờ ở trung lộ.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/4P4\/X1X3X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1xCx\/9\/4P4\/X1X3X1X\/1X7\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 2 tiến 4 → lật Pháo",
+                "move_notation_iccs": "h2h6",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 2 tiến 4 → lật Pháo — Pháo giả tiến sâu (lật Pháo) ép vào khu Tượng\/Mã Đen: dọa ăn nắp h9 qua ngòi h7 và nắp e6 qua ngòi g6 — đối phương không có điểm yếu thì mình phải tạo ra.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "x1xxkxx1x\/9\/1xn3bx1\/x1x1x1xCx\/9\/4P4\/X1X3X1X\/1X7\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 8 tiến 7 → lật Tượng",
+                "move_notation_iccs": "h9g7",
+                "move_side": "den",
+                "moved_piece": "b",
+                "captured_piece": null,
+                "caption": "Mã úp 8 tiến 7 → lật Tượng — Đen phải chạy nắp h9, lật ra Tượng.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "x1xxkxx1x\/9\/1xn3bx1\/x1x1x1xCx\/4P4\/9\/X1X3X1X\/1X7\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt 5 tiến 1",
+                "move_notation_iccs": "e4e5",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt 5 tiến 1 — Tốt tiến thêm — nhưng nhớ Tốt chỉ là \"vị trí chờ\", tự nó không tấn công; phải huy động quân mạnh phối hợp.",
+                "is_flip_reveal": false
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -32,7 +88,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 5,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Chiến lược thay đổi tuỳ theo quân úp vừa ăn là quân mạnh (Xe, Pháo) hay không, cộng với việc đọc ý đồ đối phương — yếu tố \"tẩy\" tâm lý như chơi poker.",
@@ -43,7 +99,63 @@
         "seo_title": "Chiến Lược Theo Quân Mạnh Đã Ăn — Cờ Úp Nâng Cao",
         "seo_description": "Chiến lược cờ úp theo quân mạnh vừa ăn: ăn được Xe\/Pháo thì đánh chắc, chưa ăn thì tấn công gây áp lực. Đọc ý đồ đối phương. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/6P2\/X1X1X3X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 3 tiến 1 → lật Tốt",
+                "move_notation_iccs": "g3g4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 3 tiến 1 → lật Tốt — Đỏ mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/6P2\/X1X1X3X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 3 tiến 1 → lật Tốt",
+                "move_notation_iccs": "c6c5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 3 tiến 1 → lật Tốt — Đen mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xCxxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/6P2\/X1X1X3X\/7X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 8 tiến 7 → lật Pháo",
+                "move_notation_iccs": "b2b9",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": "x",
+                "caption": "Pháo úp 8 tiến 7 → lật Pháo — Pháo giả 8 vật xuống (lật Pháo) ăn nắp Mã b9 qua ngòi b7. Chỉ Đỏ biết nắp vừa ăn là quân gì: ăn trúng quân mạnh thì đánh chắc, chưa trúng thì phải tấn công gây áp lực ngay.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "1axxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/6P2\/X1X1X3X\/7X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe úp 1 bình 2 → lật Sĩ",
+                "move_notation_iccs": "a9b9",
+                "move_side": "den",
+                "moved_piece": "a",
+                "captured_piece": "C",
+                "caption": "Xe úp 1 bình 2 → lật Sĩ — Đen ăn lại Pháo (nắp Xe giả lật ra Sĩ).",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "1axxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/6P2\/X1X1X3X\/2N4X1\/9\/X1XXKXXXX",
+                "move_notation_wxf": "Mã úp 8 tiến 7 → lật Mã",
+                "move_notation_iccs": "b0c2",
+                "move_side": "do",
+                "moved_piece": "N",
+                "captured_piece": null,
+                "caption": "Mã úp 8 tiến 7 → lật Mã — Đường lộ 8 đã mở cho quân Đỏ phát triển — vật quân đôi khi để mở đường, không chỉ để đổi.",
+                "is_flip_reveal": true
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -55,7 +167,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 6,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Phải đánh giá tình thế rồi lập chiến lược mới chọn nước cờ; khi đang ưu thế lớn thì tuyệt đối không đánh gấp cầu thắng nhanh kẻo mở đường phản đòn.",
@@ -66,7 +178,74 @@
         "seo_title": "Tầm Quan Trọng Của Chiến Lược — Cờ Úp Nâng Cao",
         "seo_description": "Vì sao phải lập chiến lược trước khi đi trong cờ úp: đánh giá tình thế → chiến lược → nước cờ; ưu thế lớn thì không đánh gấp. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 2 bình 5 → lật Pháo",
+                "move_notation_iccs": "h2e2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 2 bình 5 → lật Pháo — Đỏ mở Pháo trung lộ.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X4C2\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo 5 bình 3",
+                "move_notation_iccs": "e2g2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo 5 bình 3 — Đánh giá rồi mới đi: Pháo 5 bình 3 qua ngòi g3 nhắm nắp g6 — cấm quân Đen, đồng thời mở đường.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 4,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x3x\/6p2\/9\/X1X1X1X1X\/1X4C2\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 7 tiến 1 → lật Tốt",
+                "move_notation_iccs": "g6g5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 7 tiến 1 → lật Tốt — Đen đẩy nắp bị cấm ra (lật Tốt).",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x3x\/1R4p2\/9\/X1X1X1X1X\/6C2\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 8 tiến 3 → lật Xe",
+                "move_notation_iccs": "b2b5",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Pháo úp 8 tiến 3 → lật Xe — Pháo 8 tiến 3 lật ra Xe. Đã có quân mạnh thì giữ vị, vừa khống chế vừa mở quân — ưu thế lớn tuyệt đối không đánh gấp.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x3x\/pR4p2\/9\/X1X1X1X1X\/6C2\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Tốt",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Tốt — Đen đấm tốt biên.",
+                "is_flip_reveal": true
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -78,7 +257,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 6,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Phòng ngự khi hơn vật chất nhưng chậm phát triển: tạo liên kết, mở quân cân bằng, duy trì điểm yếu (tốt nhân) của đối phương và ưu tiên tiêu diệt quân tấn công chứ không phải quân phòng ngự.",
@@ -89,7 +268,74 @@
         "seo_title": "Phòng Ngự Khi Chậm Quân — Cờ Úp Nâng Cao",
         "seo_description": "Cách phòng ngự khi chậm quân trong cờ úp: tạo liên kết, diệt quân tấn công của đối phương (Pháo giả), giữ điểm yếu tốt nhân. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/R8\/2X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 9 tiến 1 → lật Xe",
+                "move_notation_iccs": "a3a4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Tốt úp 9 tiến 1 → lật Xe — Đỏ lật Xe.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 3 tiến 1 → lật Tốt",
+                "move_notation_iccs": "c6c5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 3 tiến 1 → lật Tốt — Đen mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxCx\/9\/1x5x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1X7\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 2 tiến 7 → lật Pháo",
+                "move_notation_iccs": "h2h9",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": "x",
+                "caption": "Pháo úp 2 tiến 7 → lật Pháo — Pháo giả của Đỏ vật xuống ăn nắp h9 (lật Pháo) — quân tấn công nhanh nhất của Đỏ.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "xxxxkxxr1\/9\/1x5x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1X7\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe úp 9 bình 8 → lật Xe",
+                "move_notation_iccs": "i9h9",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": "C",
+                "caption": "Xe úp 9 bình 8 → lật Xe — Diệt quân tấn công chứ không đuổi quân phòng ngự: Đen ăn lại ngay Pháo (nắp Xe giả lật ra Xe).",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "xxxxkxxr1\/9\/1x5x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1XN6\/9\/X1XXKXXXX",
+                "move_notation_wxf": "Mã úp 8 tiến 7 → lật Mã",
+                "move_notation_iccs": "b0c2",
+                "move_side": "do",
+                "moved_piece": "N",
+                "captured_piece": null,
+                "caption": "Mã úp 8 tiến 7 → lật Mã — Đỏ ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxr1\/9\/1xn4x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1XN6\/9\/X1XXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã, liên kết, mở quân cân bằng lực lượng — không bỏ thế để đoạt quân.",
+                "is_flip_reveal": true
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -101,7 +347,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 7,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Cách chơi khi đang có lợi thế lớn (mở hai Xe một Pháo sớm): không đánh gấp, đánh chậm chắc, ghim quân đối phương và chuyển lợi thế hình thế thành vật chất.",
@@ -112,7 +358,85 @@
         "seo_title": "Xử Lý Khi Có Lợi Thế Lớn — Cờ Úp Nâng Cao",
         "seo_description": "Cách xử lý khi có lợi thế lớn trong cờ úp: không đánh gấp, đánh chậm chắc, ghim quân đối phương, chuyển hình thế thành vật chất. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/R8\/2X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 9 tiến 1 → lật Xe",
+                "move_notation_iccs": "a3a4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Tốt úp 9 tiến 1 → lật Xe — Đỏ lật Xe.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/R8\/2X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 3 tiến 1 → lật Tốt",
+                "move_notation_iccs": "c6c5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 3 tiến 1 → lật Tốt — Đen mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x1x1x\/2p6\/R7R\/2X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "i3i4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đỏ lật thêm Xe thứ hai.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x3x\/2p3p2\/R7R\/2X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 7 tiến 1 → lật Tốt",
+                "move_notation_iccs": "g6g5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 7 tiến 1 → lật Tốt — Đen mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x3x3x\/2p3p2\/R7R\/2X1X1X2\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 2 bình 5 → lật Pháo",
+                "move_notation_iccs": "h2e2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 2 bình 5 → lật Pháo — Đỏ có hai Xe một Pháo rất sớm — lợi thế lớn. Điều khó bây giờ là giữ, đừng tự đánh mất.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x3x3x\/2p3p2\/R7R\/2X1X1X2\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 7,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x3x3x\/2p3p2\/1R6R\/2X1X1X2\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe 9 bình 8",
+                "move_notation_iccs": "a4b4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Xe 9 bình 8 — Không đánh gấp: Xe bình sang lộ 8 nhắm Pháo giả b7, khống chế cánh trái Đen — Pháo giả đứng yên thì bị dọa, bỏ đi thì vỡ cánh. Đánh chậm chắc, tối ưu vị trí quân mạnh, chuyển lợi thế hình thế thành vật chất. Thắng nhanh hay chậm cũng chỉ một điểm.",
+                "is_flip_reveal": false
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -124,7 +448,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 5,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Chơi khi ưu thế hình thế nhưng kém quân: hai Xe hàng dọc chỉ bằng một Xe, Sĩ chặn cửa tướng, tấn công để gây rối kéo về cân bằng chứ không cầu thắng trực tiếp.",
@@ -135,7 +459,63 @@
         "seo_title": "Ưu Thế Hình Nhưng Kém Quân — Cờ Úp Nâng Cao",
         "seo_description": "Cách chơi khi ưu thế hình nhưng kém quân trong cờ úp: hai Xe hàng dọc chỉ bằng một Xe, tấn công gây rối kéo về cân bằng. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/2P6\/X3X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 7 tiến 1 → lật Tốt",
+                "move_notation_iccs": "c3c4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 7 tiến 1 → lật Tốt — Đỏ mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/2P6\/X3X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đen lật Xe ở tốt biên.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/2P6\/X3X1X1X\/1X5X1\/4A4\/XXX1KXXXX",
+                "move_notation_wxf": "Sĩ úp 6 tiến 5 → lật Sĩ",
+                "move_notation_iccs": "d0e1",
+                "move_side": "do",
+                "moved_piece": "A",
+                "captured_piece": null,
+                "caption": "Sĩ úp 6 tiến 5 → lật Sĩ — Đỏ lên Sĩ chặn cửa tướng — con Sĩ then chốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "1xxxkxxxx\/9\/1x5x1\/r1x1x1x1x\/r8\/2P6\/X3X1X1X\/1X5X1\/4A4\/XXX1KXXXX",
+                "move_notation_wxf": "Xe úp sau tiến 3 → lật Xe",
+                "move_notation_iccs": "a9a6",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Xe úp sau tiến 3 → lật Xe — Đen lật thêm Xe thứ hai, nhưng hai Xe đứng chồng hàng dọc ở lộ biên (a5–a6): hai Xe hàng dọc chỉ bằng khoảng một Xe. Thẩm thế trước, thẩm quân sau — bên \"kém quân\" lại đang ưu thế hình.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "1xxxkxxxx\/9\/1x5x1\/r1x1x1x1x\/r8\/2P6\/X3X1X1X\/1X6C\/4A4\/XXX1KXXXX",
+                "move_notation_wxf": "Pháo úp 2 bình 1 → lật Pháo",
+                "move_notation_iccs": "h2i2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 2 bình 1 → lật Pháo — Pháo bình biên (lật Pháo) đánh vào cánh phải Đen chỗ quân úp. Mục đích là gây rối để kéo ván về cân bằng, không cầu thắng trực tiếp.",
+                "is_flip_reveal": true
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -147,7 +527,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 5,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Lợi thế lâu dài nhờ liên kết tốt và còn nguyên quân, dù ít quân mạnh trên mặt hơn; chỉ dùng Pháo giả tấn công khi đủ lực phối hợp và tạo uy hiếp đa điểm.",
@@ -158,7 +538,63 @@
         "seo_title": "Ưu Thế Lâu Dài Từ Liên Kết — Cờ Úp Nâng Cao",
         "seo_description": "Ưu thế lâu dài từ liên kết trong cờ úp: còn nguyên quân + liên kết chặt thắng ít quân mạnh trên mặt; chỉ vật Pháo giả khi đủ lực. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/8R\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "i3i4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đỏ lật Xe.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/8R\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đen lật Xe ở tốt biên.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/R8\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe 1 bình 9",
+                "move_notation_iccs": "i4a4",
+                "move_side": "do",
+                "moved_piece": "R",
+                "captured_piece": null,
+                "caption": "Xe 1 bình 9 — Xe Đỏ áp sát đánh Xe Đen (Xe a4 có Tốt a3 bảo vệ).",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 4,
+                "fen": "xxxxkxxxx\/r8\/1x5x1\/2x1x1x1x\/9\/R8\/X1X1X1X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe 1 thoái 3",
+                "move_notation_iccs": "a5a8",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Xe 1 thoái 3 — Xe Đen buộc lui về hàng dưới — ở đó Xe chỉ đi được ít nước, hiệu năng giảm.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 5,
+                "fen": "xxxxkxxxx\/r8\/1x5x1\/2x1x1x1x\/9\/R3P4\/X1X3X2\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 5 tiến 1 → lật Tốt",
+                "move_notation_iccs": "e3e4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 5 tiến 1 → lật Tốt — Đỏ không vội vật Pháo giả (chưa đủ lực phối hợp để khai thác, lại tự lộ điểm yếu) mà tiếp tục mở quân, giữ liên kết: còn nguyên quân + liên kết chặt thì đánh lâu dài, tiềm năng lớn.",
+                "is_flip_reveal": true
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -170,7 +606,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 6,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Xử lý hình hai Pháo lộ sớm chưa liên kết khi kém lực: giữ Pháo trống khống chế Trung lộ, không đổi hai Pháo mạnh lấy một Mã, cảnh giác Pháo đối phương xuống Trung lộ.",
@@ -181,7 +617,74 @@
         "seo_title": "Hai Pháo Lộ Sớm Khi Kém Lực — Cờ Úp Nâng Cao",
         "seo_description": "Cách xử lý hai Pháo lộ sớm khi kém lực trong cờ úp: giữ Pháo trống khống chế Trung lộ, không đổi hai Pháo lấy một Mã. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 2 bình 5 → lật Pháo",
+                "move_notation_iccs": "h2e2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 2 bình 5 → lật Pháo — Đỏ lật Pháo trung lộ.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X2C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/2C1C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 8 bình 7 → lật Pháo",
+                "move_notation_iccs": "b2c2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 8 bình 7 → lật Pháo — Đỏ lật thêm Pháo — hai Pháo lộ sớm nhưng chưa liên kết.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/r8\/9\/X1X1X1X1X\/2C1C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đen lật Xe ở tốt biên — Đỏ kém lực.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/r8\/4P4\/X1X3X1X\/2C1C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 5 tiến 1 → lật Tốt",
+                "move_notation_iccs": "e3e4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 5 tiến 1 → lật Tốt — Pháo e2 giờ là \"Pháo trống\" khống chế trung lộ. Giữ Pháo, không đổi hai Pháo lấy một Mã — trong cờ úp hai Pháo còn nhỉnh hơn một Xe.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/4r4\/4P4\/X1X3X1X\/2C1C4\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Xe 1 bình 5",
+                "move_notation_iccs": "a5e5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Xe 1 bình 5 — Đen đưa Xe vào trung lộ ép tốt đầu. Mối nguy lớn nhất của bên kém lực là quân mạnh đối phương xuống trung lộ khi trung lộ mỏng — phải chuẩn bị đỡ từ trước.",
+                "is_flip_reveal": false
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -193,7 +696,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 7,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Khi thất thế nặng ở trung cuộc phải tạo điểm yếu, đột phá, hỗn loạn; giữ Pháo để công vỡ hình đối phương và chấp nhận nước táo bạo tạo bước ngoặt.",
@@ -204,7 +707,85 @@
         "seo_title": "Thế Yếu Trung Cuộc — Tạo Đột Phá Trong Cờ Úp",
         "seo_description": "Cách xử lý thế yếu trung cuộc trong cờ úp: tạo điểm yếu\/đột phá\/hỗn loạn, giữ Pháo để công, chấp nhận nước táo bạo. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/2P6\/X3X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 7 tiến 1 → lật Tốt",
+                "move_notation_iccs": "c3c4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 7 tiến 1 → lật Tốt — Đỏ mở tốt.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/2P6\/X3X1X1X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Xe",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Xe — Đen lật Xe.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x1x\/r8\/2P6\/X3X1X1X\/2C4X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo úp 8 bình 7 → lật Pháo",
+                "move_notation_iccs": "b2c2",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": null,
+                "caption": "Pháo úp 8 bình 7 → lật Pháo — Đỏ lật Pháo.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2x1x1x2\/r7r\/2P6\/X3X1X1X\/2C4X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 9 tiến 1 → lật Xe",
+                "move_notation_iccs": "i6i5",
+                "move_side": "den",
+                "moved_piece": "r",
+                "captured_piece": null,
+                "caption": "Tốt úp 9 tiến 1 → lật Xe — Đen lật thêm Xe thứ hai — Đỏ thất thế nặng.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/2C1x1x2\/r7r\/2P6\/X3X1X1X\/7X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo 7 tiến 4",
+                "move_notation_iccs": "c2c6",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": "x",
+                "caption": "Pháo 7 tiến 4 — Thế yếu thì phải đột phá: Pháo vật xuống ăn nắp c6 qua ngòi c4, tạo hỗn loạn.",
+                "is_flip_reveal": false
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2C1x1x2\/r7r\/2P6\/X3X1X1X\/7X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 7,
+                "fen": "x1Cxkxxxx\/9\/1xn4x1\/4x1x2\/r7r\/2P6\/X3X1X1X\/7X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Pháo 7 tiến 3",
+                "move_notation_iccs": "c6c9",
+                "move_side": "do",
+                "moved_piece": "C",
+                "captured_piece": "x",
+                "caption": "Pháo 7 tiến 3 — Pháo ăn tiếp nắp Tượng c9 qua ngòi Mã c7, lại chiếu Tướng qua ngòi Sĩ d9 — chấp nhận đổi một Pháo lấy hai nắp và phá hình Đen. Thế yếu thì chọn nước táo bạo tạo bước ngoặt, hơn là đánh trầm ổn rồi vẫn thua.",
+                "is_flip_reveal": false
+            }
+        ]
     },
     {
         "series_slug": "co-up-nang-cao-1",
@@ -216,7 +797,7 @@
         "level": "nang-cao",
         "source_type": "manual",
         "initial_fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/9\/X1X1X1X1X\/1X5X1\/9\/XXXXKXXXX",
-        "move_count": 0,
+        "move_count": 6,
         "variation_tree": null,
         "puzzle_side": null,
         "summary": "Chuyển lợi thế hình thế thành thắng lợi và cái giá của một sai lầm chiến lược: hơn thế chưa hơn quân thì phải tấn công nhanh, và Mã là quân cận chiến phải vào trung tâm.",
@@ -227,6 +808,73 @@
         "seo_title": "Chuyển Hoá Ưu Thế Thành Ván Thắng — Cờ Úp Nâng Cao",
         "seo_description": "Cách chuyển hoá ưu thế thành ván thắng trong cờ úp: hơn thế chưa hơn quân thì tấn công nhanh; Mã là quân cận chiến phải vào trung tâm. Bàn cờ úp minh hoạ.",
         "is_featured": false,
-        "steps": []
+        "steps": [
+            {
+                "step_order": 1,
+                "fen": "xxxxkxxxx\/9\/1x5x1\/x1x1x1x1x\/9\/6P2\/X1X1X3X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Tốt úp 3 tiến 1 → lật Tốt",
+                "move_notation_iccs": "g3g4",
+                "move_side": "do",
+                "moved_piece": "P",
+                "captured_piece": null,
+                "caption": "Tốt úp 3 tiến 1 → lật Tốt — Giữ Tốt ở thế \"lửng\" (g4): khống chế và làm bàn đạp cho Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 2,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/6P2\/X1X1X3X\/1X5X1\/9\/XXXXKXXXX",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "b9c7",
+                "move_side": "den",
+                "moved_piece": "n",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Đen ra Mã.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 3,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/x1x1x1x1x\/9\/6P2\/X1X1X3X\/1X4NX1\/9\/XXXXKXX1X",
+                "move_notation_wxf": "Mã úp 2 tiến 3 → lật Mã",
+                "move_notation_iccs": "h0g2",
+                "move_side": "do",
+                "moved_piece": "N",
+                "captured_piece": null,
+                "caption": "Mã úp 2 tiến 3 → lật Mã — Mã lên giữa, sẵn sàng vào khu tấn công.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 4,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/p8\/6P2\/X1X1X3X\/1X4NX1\/9\/XXXXKXX1X",
+                "move_notation_wxf": "Tốt úp 1 tiến 1 → lật Tốt",
+                "move_notation_iccs": "a6a5",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt úp 1 tiến 1 → lật Tốt — Đen đấm tốt biên.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 5,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/p8\/6P2\/X1X1X3X\/NX4NX1\/9\/X1XXKXX1X",
+                "move_notation_wxf": "Mã úp 8 tiến 9 → lật Mã",
+                "move_notation_iccs": "b0a2",
+                "move_side": "do",
+                "moved_piece": "N",
+                "captured_piece": null,
+                "caption": "Mã úp 8 tiến 9 → lật Mã — Sai lầm chí mạng: Mã ra biên. Mã là quân cận chiến, phải vào trung tâm hoặc khu tấn công; đưa ra biên vừa ngược chiến lược vừa trái kỳ lý.",
+                "is_flip_reveal": true
+            },
+            {
+                "step_order": 6,
+                "fen": "x1xxkxxxx\/9\/1xn4x1\/2x1x1x1x\/9\/p5P2\/X1X1X3X\/NX4NX1\/9\/X1XXKXX1X",
+                "move_notation_wxf": "Tốt 1 tiến 1",
+                "move_notation_iccs": "a5a4",
+                "move_side": "den",
+                "moved_piece": "p",
+                "captured_piece": null,
+                "caption": "Tốt 1 tiến 1 — Đen lập tức đẩy Tốt qua sông áp sát đúng cánh có Mã biên — Mã đứng biên ít đường đi, không về giúp được. Một sai lầm chiến lược đủ làm sụp cả ván đang ưu thế.",
+                "is_flip_reveal": false
+            }
+        ]
     }
 ]

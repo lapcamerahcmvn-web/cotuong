@@ -31,7 +31,7 @@
         "slug": "cach-di-quan-xe",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/4R4\/9\/4K4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/4R4\/9\/4K4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -46,7 +46,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/4R4\/9\/9\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/4R4\/9\/9\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Xe 5 tiến 5",
                 "move_notation_iccs": "e2e7",
                 "move_side": "do",
@@ -57,7 +57,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/8R\/9\/9\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/8R\/9\/9\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Xe 5 bình 1",
                 "move_notation_iccs": "e7i7",
                 "move_side": "do",
@@ -123,7 +123,7 @@
         "slug": "cach-di-quan-ma",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/4N4\/9\/9\/9\/9\/4K4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/4N4\/9\/9\/9\/9\/4K4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -138,7 +138,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/3N5\/9\/9\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/3N5\/9\/9\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Mã 5 tiến 6",
                 "move_notation_iccs": "e5d7",
                 "move_side": "do",
@@ -149,7 +149,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/9\/9\/2N6\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/9\/2N6\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Mã 6 thoái 7",
                 "move_notation_iccs": "d7c5",
                 "move_side": "do",
@@ -169,7 +169,7 @@
         "slug": "cach-di-quan-tuong",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/2B1K4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/9\/2B1K4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -184,7 +184,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/9\/9\/9\/9\/9\/4B4\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/4B4\/9\/4K4",
                 "move_notation_wxf": "Tượng 7 tiến 5",
                 "move_notation_iccs": "c0e2",
                 "move_side": "do",
@@ -195,7 +195,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/9\/9\/9\/2B6\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/9\/9\/2B6\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Tượng 5 tiến 7",
                 "move_notation_iccs": "e2c4",
                 "move_side": "do",
@@ -215,7 +215,7 @@
         "slug": "cach-di-quan-si",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/3AK4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/9\/3AK4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -230,7 +230,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/4A4\/4K4",
+                "fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/4A4\/4K4",
                 "move_notation_wxf": "Sĩ 6 tiến 5",
                 "move_notation_iccs": "d0e1",
                 "move_side": "do",
@@ -241,7 +241,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/9\/9\/9\/9\/9\/5A3\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/5A3\/9\/4K4",
                 "move_notation_wxf": "Sĩ 5 tiến 4",
                 "move_notation_iccs": "e1f2",
                 "move_side": "do",
@@ -261,7 +261,7 @@
         "slug": "cach-di-quan-tuong-soai",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/9\/4K4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/9\/4K4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -276,7 +276,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/4K4\/9",
+                "fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/4K4\/9",
                 "move_notation_wxf": "Tướng 5 tiến 1",
                 "move_notation_iccs": "e0e1",
                 "move_side": "do",
@@ -287,7 +287,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/9\/9\/9\/9\/9\/9\/3K5\/9",
+                "fen": "3ak4\/4a4\/9\/9\/9\/9\/9\/9\/3K5\/9",
                 "move_notation_wxf": "Tướng 5 bình 6",
                 "move_notation_iccs": "e1d1",
                 "move_side": "do",
@@ -307,7 +307,7 @@
         "slug": "cach-di-quan-tot",
         "level": "co-ban",
         "source_type": "manual",
-        "initial_fen": "4k4\/9\/9\/9\/4P4\/9\/9\/9\/9\/4K4",
+        "initial_fen": "3ak4\/4a4\/9\/9\/4P4\/9\/9\/9\/9\/4K4",
         "move_count": 2,
         "variation_tree": null,
         "puzzle_side": "do",
@@ -322,7 +322,7 @@
         "steps": [
             {
                 "step_order": 1,
-                "fen": "4k4\/9\/9\/4P4\/9\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/4P4\/9\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Tốt 5 tiến 1",
                 "move_notation_iccs": "e5e6",
                 "move_side": "do",
@@ -333,7 +333,7 @@
             },
             {
                 "step_order": 2,
-                "fen": "4k4\/9\/9\/3P5\/9\/9\/9\/9\/9\/4K4",
+                "fen": "3ak4\/4a4\/9\/3P5\/9\/9\/9\/9\/9\/4K4",
                 "move_notation_wxf": "Tốt 5 bình 6",
                 "move_notation_iccs": "e6d6",
                 "move_side": "do",
