@@ -80,6 +80,18 @@ const h = {
     if (rows.length !== 10 || rows.some((r) => r.replace(/\d/g, (d) => 'x'.repeat(+d)).length !== 9)) err('FEN sai ' + fen);
     return `[co-tuong fen="${fen}"${caption ? ` caption="${esc(caption)}"` : ''}]`;
   },
+  /**
+   * Sơ đồ tư duy tự dựng từ chuyên đề (App\Support\Mindmap::fromSeries): ket-qua = hoa | thang | kheo.
+   * Kiểm tra chuyên đề có thật + đếm số bài khớp (bài có "Kết quả:" và "Khẩu quyết").
+   */
+  MM(seriesSlug, result, title, intro) {
+    const s = series.get(seriesSlug);
+    if (!s) err('sơ đồ: không có chuyên đề ' + seriesSlug);
+    if (!['hoa', 'thang', 'kheo'].includes(result)) err('sơ đồ: kết quả lạ ' + result);
+    const n = [...lessons.values()].filter((l) => l.series_slug === seriesSlug || l.series === seriesSlug).length;
+    if (s && !n) err('sơ đồ: chuyên đề ' + seriesSlug + ' chưa có bài published');
+    return `[so-do-tu-duy chuyen-de="${seriesSlug}" ket-qua="${result}"${title ? ` tieu-de="${esc(title)}"` : ''}${intro ? ` gioi-thieu="${esc(intro)}"` : ''}]`;
+  },
   START_FEN,
   home: a('/', 'Học Cờ Tướng'),
 };
@@ -95,7 +107,7 @@ for (const f of files) {
   if (!p.seo_title || p.seo_title.length > 65) err(`seo_title ${p.seo_title?.length} ký tự (>65)`);
   if (!p.seo_description || p.seo_description.length < 120 || p.seo_description.length > 160) err(`seo_description ${p.seo_description?.length} ký tự (cần 120–160)`);
   if (!p.excerpt || p.excerpt.length > 300) err('excerpt thiếu/dài');
-  const words = p.content.replace(/\[co-tuong[^\]]*\]/g, '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  const words = p.content.replace(/\[(co-tuong|so-do-tu-duy)[^\]]*\]/g, '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
   if (words < 900) err(`chỉ ${words} chữ (<900)`);
   if (!/<h2[^>]*>[^<]*Câu hỏi thường gặp/i.test(p.content)) err('thiếu mục Câu hỏi thường gặp');
   if (/<h1/i.test(p.content)) err('không dùng <h1> trong bài');

@@ -426,3 +426,18 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 3. **Lộ trình + sơ đồ trang tự động**: `LearningPathService::courseSeries()` thêm series có bài published chưa khai báo trong
    config (theo game_mode → phase → phase phổ biến của bài). `/so-do-trang` nhóm theo chặng + mục công cụ.
    ⚠️ Deploy cần `php artisan migrate --force`.
+
+## Đợt 24 (07/10/2026) — Công cụ Sơ đồ tư duy + 3 bài khẩu quyết cờ tàn
+- `App\Support\Mindmap`: cây {t, k[], l, note, c[]}; `fromSeries(chuyên đề, hoa|thang|kheo)` đọc "Kết quả:" + mục
+  "Khẩu quyết" + "Đỏ: …" trong nội dung bài → Chương › lực lượng tấn công (Một/Hai Chốt, Đơn/Song Xe, Mã Chốt…) › thế.
+  Dàn ý chữ ↔ cây (`parseOutline`/`toOutline`, # cấp, `- ` khẩu quyết, `> ` ghi chú, `@slug` ví dụ).
+- Shortcode bài viết (`PostContent::render`): `[so-do-tu-duy chuyen-de=".." ket-qua=".."]` (tự cập nhật) hoặc
+  `[so-do-tu-duy slug=".."]` (bảng `mindmaps`, Admin › Sơ đồ tư duy: soạn dàn ý, tạo từ chuyên đề, xem trước iframe).
+- HTML server-side `<details>` (SEO, không JS vẫn mở được): số 1/1.1/1.1.1, khẩu quyết `<ol>` đánh số, bàn cờ thu nhỏ vẽ
+  khi mở nhánh, "Xem ví dụ" + "Tự đánh kiểm chứng" (thế hòa: cam=den; thắng: cam=do). `resources/js/mindmap.js`: mở/thu,
+  tìm, "Che khẩu quyết" (bấm từng câu để lật), "Đã thuộc" + tiến độ (localStorage `xq.mm.{id}`), "Ôn ngẫu nhiên" (ưu tiên
+  thế chưa thuộc).
+- Bài `tools/news-seo/posts/17–19` (hòa 69 thế, thắng 135, khéo thắng 108) + quy luật chung + cặp thế đối chiếu.
+- Sửa lỗi cũ: `.prose ul/ol` mất dấu đầu dòng/số (Tailwind preflight) → bật lại list-style.
+- ⚠️ `published_at` bài học bị ContentSeeder đặt lại mỗi lần nạp → "mới" dùng `created_at`. Deploy: `migrate --force`
+  + `db:seed --class=PostSeeder --force`.

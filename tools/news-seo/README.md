@@ -13,7 +13,9 @@ php artisan db:seed --class=PostSeeder --force
 
 - Helper trong bài: `h.L(slug)` bài học, `h.T('tên bài')` bài học theo tên, `h.S(slug)` chương trình,
   `h.P(phase)` trang giai đoạn, `h.F('/luyen-tap/...')` trang chức năng, `h.N(slug)` bài viết khác,
-  `h.B(slug)` nhúng bàn cờ của bài học, `h.FEN(fen, chú thích)` bàn cờ tĩnh.
+  `h.B(slug)` nhúng bàn cờ của bài học, `h.FEN(fen, chú thích)` bàn cờ tĩnh,
+  `h.MM(chuyên đề, 'hoa'|'thang'|'kheo', tiêu đề, giới thiệu)` sơ đồ tư duy khẩu quyết tự dựng từ chuyên đề
+  (shortcode `[so-do-tu-duy …]`, xem `App\Support\Mindmap`; sơ đồ soạn tay trong Admin › Sơ đồ tư duy).
 - Link viết tương đối (`/bai-hoc/...`) để chạy cả local lẫn hosting. Trang bài học tự hiện "Bài viết liên quan"
   với bài viết có link tới nó (khớp `/bai-hoc/{slug}"` hoặc `lesson="{slug}"`, rồi tới chương trình/giai đoạn).
 - Mục `<h2>Câu hỏi thường gặp</h2>` + các cặp `<h3>hỏi</h3><p>đáp</p>` → schema FAQPage tự động; ≥3 `<h2>` → mục lục.

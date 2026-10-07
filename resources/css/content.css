@@ -111,6 +111,9 @@
     .prose h3 { font-size: 19px; font-weight: 700; margin: 24px 0 8px; color: var(--ink); }
     .prose p { margin: 0 0 16px; }
     .prose ul, .prose ol { padding-left: 22px; margin: 0 0 16px; }
+    /* Tailwind preflight đặt list-style: none cho mọi ul/ol → bật lại dấu đầu dòng / số thứ tự trong nội dung bài. */
+    .prose ul { list-style: disc; }
+    .prose ol { list-style: decimal; }
     .prose li { margin: 5px 0; }
     .prose li::marker { color: var(--primary); }
     .prose strong { color: var(--ink); }

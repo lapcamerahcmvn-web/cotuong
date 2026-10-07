@@ -37,6 +37,7 @@
             <a href="{{ route('admin.series.index') }}" class="{{ request()->routeIs('admin.series.*') ? 'active' : '' }}">Chuỗi bài học</a>
             <a href="{{ route('admin.puzzle-audit.index') }}" class="{{ request()->routeIs('admin.puzzle-audit.*') ? 'active' : '' }}">Kiểm định thế cờ</a>
             <a href="{{ route('admin.posts.index') }}" class="{{ request()->routeIs('admin.posts.*') || request()->routeIs('admin.post-categories.*') ? 'active' : '' }}">Tin tức</a>
+            <a href="{{ route('admin.mindmaps.index') }}" class="{{ request()->routeIs('admin.mindmaps.*') ? 'active' : '' }}">Sơ đồ tư duy</a>
             @if($isAdmin)
                 <a href="{{ route('admin.comments.index') }}" class="{{ request()->routeIs('admin.comments.*') ? 'active' : '' }}">
                     Bình luận @if($navPending)<span class="nav-badge">{{ $navPending }}</span>@endif

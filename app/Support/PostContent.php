@@ -19,6 +19,13 @@ class PostContent
             return '';
         }
 
+        // Sơ đồ tư duy: [so-do-tu-duy …] (xem App\Support\Mindmap::shortcode). TinyMCE có thể bọc shortcode trong <p>.
+        $html = preg_replace_callback('/(?:<p>\s*)?\[so-do-tu-duy([^\]]*)\](?:\s*<\/p>)?/iu', function ($m) {
+            preg_match_all('/([\w-]+)="([^"]*)"/u', $m[1], $attrs, PREG_SET_ORDER);
+
+            return Mindmap::shortcode(collect($attrs)->mapWithKeys(fn ($x) => [$x[1] => html_entity_decode($x[2], ENT_QUOTES | ENT_HTML5, 'UTF-8')])->all());
+        }, $html);
+
         return preg_replace_callback('/\[co-tuong([^\]]*)\]/i', function ($m) {
             preg_match_all('/(\w+)="([^"]*)"/', $m[1], $attrs, PREG_SET_ORDER);
             $a = collect($attrs)->mapWithKeys(fn ($x) => [$x[1] => $x[2]])->all();

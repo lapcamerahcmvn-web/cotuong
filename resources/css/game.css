@@ -385,4 +385,59 @@
     @keyframes invitePop { from { transform: translateY(12px); opacity: 0; } }
     @media (min-width: 1024px) { .invite-pop { bottom: 24px; } }
     @media (prefers-reduced-motion: reduce) { .invite-pop { animation: none; } }
+
+    /* ===== Sơ đồ tư duy (components/mindmap.blade.php + js/mindmap.js) ===== */
+    .mindmap { margin: 24px 0; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); padding: 14px; }
+    .mindmap ol, .prose .mindmap ol { list-style: none; margin: 0; padding: 0; }
+    .prose .mindmap li { margin: 0; }
+    .mindmap a { text-decoration: none; }
+    .mindmap .btn { color: var(--ink); }
+    .mindmap .btn--primary { color: #fff; }
+    .mm-head { position: sticky; top: calc(var(--header-h) + 4px); z-index: 6; background: var(--surface); padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .mm-root { display: flex; gap: 12px; align-items: center; }
+    .mm-root__glyph { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--btn-primary); color: #fff; font-family: var(--font-piece); font-size: 22px; box-shadow: inset 0 0 0 3px rgb(255 255 255 / .35); }
+    .mm-root__title { display: block; font-family: var(--font-display); font-size: 18px; line-height: 1.25; }
+    .mm-root small { display: block; color: var(--ink-soft); font-size: 13px; line-height: 1.4; margin-top: 2px; }
+    .mm-progress { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
+    .mm-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .mm-search { flex: 1 1 180px; min-height: 36px; padding-block: 6px; }
+    .mm-intro { margin: 10px 0 0; font-size: 14.5px; color: var(--ink-soft); }
+    .mm-tree { margin-top: 12px; }
+    .mm-tree ol { margin: 4px 0 4px 14px; padding-left: 16px; border-left: 2px solid var(--line); }
+    .mm-node { position: relative; margin: 6px 0; }
+    .mm-tree ol > .mm-node::before { content: ""; position: absolute; left: -16px; top: 21px; width: 14px; border-top: 2px solid var(--line); }
+    .mindmap summary { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); font-weight: 700; line-height: 1.35; }
+    .mindmap summary::-webkit-details-marker { display: none; }
+    .mindmap summary::after { content: ""; flex: none; width: 8px; height: 8px; margin-left: 2px; border-right: 2px solid var(--ink-faint); border-bottom: 2px solid var(--ink-faint); transform: rotate(-45deg); transition: transform .15s; }
+    .mindmap details[open] > summary::after { transform: rotate(45deg); }
+    .mindmap summary:hover { border-color: var(--line-strong); }
+    .mm-d1 > details > summary { background: var(--primary-soft); border-color: transparent; font-size: 16.5px; }
+    .mm-num { flex: none; min-width: 28px; height: 24px; padding: 0 7px; border-radius: 999px; background: var(--btn-primary); color: #fff; font-size: 12px; font-weight: 800; display: inline-grid; place-items: center; font-variant-numeric: tabular-nums; }
+    .mm-d2 .mm-num { background: var(--jade); }
+    .mm-d3 .mm-num, .mm-d4 .mm-num { background: var(--gold-soft); color: var(--gold-ink); }
+    .mm-title { flex: 1; min-width: 0; }
+    .mm-meta { font-size: 12.5px; color: var(--ink-faint); font-weight: 600; white-space: nowrap; }
+    .mm-tick { display: none; color: var(--jade); } .mm-tick .ic { width: 18px; height: 18px; }
+    .mm-leaf.is-done .mm-tick { display: inline-flex; }
+    .mm-leaf.is-done > details > summary { border-color: var(--jade); }
+    .mm-branch.is-done > details > summary .mm-meta { color: var(--jade-ink); }
+    .mm-card { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 14px; margin: 8px 0 4px; padding: 12px; border: 1px dashed var(--line-strong); border-radius: 14px; background: var(--surface); }
+    .mm-card:not(:has(.mm-thumb)) { grid-template-columns: minmax(0, 1fr); }
+    .mm-thumb { display: block; align-self: start; aspect-ratio: 468 / 520; border-radius: 8px; overflow: hidden; background: var(--xq-wood); }
+    .mm-thumb svg, .mm-quiz__board svg { width: 100%; height: auto; display: block; }
+    @media (max-width: 520px) { .mm-card { grid-template-columns: 84px minmax(0, 1fr); gap: 10px; padding: 10px; } .mm-tree ol { margin-left: 8px; padding-left: 12px; } .mm-tree ol > .mm-node::before { left: -12px; width: 10px; } }
+    .mm-verse { counter-reset: v; display: grid; gap: 6px; }
+    .mm-verse li { counter-increment: v; position: relative; padding-left: 30px; line-height: 1.5; font-size: 15px; }
+    .mm-verse li::before { content: counter(v); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-ink); font-weight: 800; font-size: 12.5px; display: grid; place-items: center; }
+    .mm-recall .mm-verse li { cursor: pointer; border-radius: 6px; }
+    .mm-recall .mm-verse li:not(.is-shown) { color: transparent; text-shadow: 0 0 9px color-mix(in srgb, var(--ink) 55%, transparent); user-select: none; }
+    .mm-recall .mm-verse li:not(.is-shown):hover { background: var(--surface-2); }
+    .mm-note { font-size: 13.5px; color: var(--ink-soft); font-style: italic; margin: 8px 0 0; }
+    .mm-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .mm-check { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-size: 13.5px; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
+    .mm-check input { width: 18px; height: 18px; accent-color: var(--jade); }
+    .mm-empty { color: var(--ink-faint); text-align: center; padding: 16px; margin: 0; }
+    .mm-quiz__board { width: min(220px, 62vw); margin: 0 auto 12px; border-radius: 10px; overflow: hidden; }
+    .mm-quiz__verse { margin: 12px 0 0; padding: 12px; border-radius: 12px; background: var(--surface-2); }
+    @media print { .mm-head { position: static; } .mm-tools, .mm-progress, .mm-actions, .mm-check { display: none !important; } .mindmap details > *:not(summary) { display: block !important; } }
 }

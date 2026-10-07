@@ -142,6 +142,7 @@ function boot() {
     if (document.querySelector('[data-scan]')) import('./board-scan').then((m) => m.init());
     if (document.querySelector('[data-mistakes]')) import('./mistakes').then((m) => m.init());
     if (document.querySelector('[data-setup]')) import('./setup-board').then((m) => m.init());
+    if (document.querySelector('[data-mindmap]')) import('./mindmap').then((m) => m.init());
     // Lời mời đấu từ bạn bè + giữ trạng thái "đang online" (chỉ khi đã đăng nhập).
     if (window.__xq?.auth) import('./invites').then((m) => m.init());
     document.addEventListener('click', (e) => {

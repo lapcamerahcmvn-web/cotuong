@@ -124,6 +124,15 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
     Route::put('tin-tuc/{post}', [AdminPostController::class, 'update'])->name('posts.update');
     Route::post('tin-tuc/{post}/toggle', [AdminPostController::class, 'togglePublish'])->name('posts.toggle');
     Route::delete('tin-tuc/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy');
+    // Sơ đồ tư duy: soạn dàn ý → xem trước → nhúng vào bài viết bằng shortcode.
+    Route::get('so-do-tu-duy', [\App\Http\Controllers\Admin\MindmapController::class, 'index'])->name('mindmaps.index');
+    Route::get('so-do-tu-duy/tao', [\App\Http\Controllers\Admin\MindmapController::class, 'create'])->name('mindmaps.create');
+    Route::post('so-do-tu-duy', [\App\Http\Controllers\Admin\MindmapController::class, 'store'])->name('mindmaps.store');
+    Route::post('so-do-tu-duy/xem-truoc', [\App\Http\Controllers\Admin\MindmapController::class, 'preview'])->name('mindmaps.preview');
+    Route::get('so-do-tu-duy/tu-chuyen-de', [\App\Http\Controllers\Admin\MindmapController::class, 'generate'])->name('mindmaps.generate');
+    Route::get('so-do-tu-duy/{mindmap}/sua', [\App\Http\Controllers\Admin\MindmapController::class, 'edit'])->name('mindmaps.edit');
+    Route::put('so-do-tu-duy/{mindmap}', [\App\Http\Controllers\Admin\MindmapController::class, 'update'])->name('mindmaps.update');
+    Route::delete('so-do-tu-duy/{mindmap}', [\App\Http\Controllers\Admin\MindmapController::class, 'destroy'])->name('mindmaps.destroy');
 
     Route::get('tin-tuc-danh-muc', [PostCategoryController::class, 'index'])->name('post-categories.index');
     Route::get('tin-tuc-danh-muc/tao', [PostCategoryController::class, 'create'])->name('post-categories.create');
