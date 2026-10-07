@@ -19,7 +19,7 @@ const { auditLesson } = require('../rules-audit/audit.cjs');
 const COUP = 'xxxxkxxxx/9/1x5x1/x1x1x1x1x/9/9/X1X1X1X1X/1X5X1/9/XXXXKXXXX';
 const SET = { R: 2, N: 2, B: 2, A: 2, C: 2, P: 5 };
 const VI = { K: 'Tướng', A: 'Sĩ', B: 'Tượng', N: 'Mã', R: 'Xe', C: 'Pháo', P: 'Tốt' };
-const data = { ...require('./data-1.cjs'), ...require('./data-2.cjs'), ...require('./data-3.cjs') };
+const data = { ...require('./data-1.cjs'), ...require('./data-2.cjs'), ...require('./data-3.cjs'), ...require('./data-4.cjs') };
 const write = process.argv.includes('--write');
 
 const isUp = (p) => p === 'X' || p === 'x';

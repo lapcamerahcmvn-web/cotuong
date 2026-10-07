@@ -1,5 +1,6 @@
 // Ví dụ nước đi cho bài giảng cờ úp — Nâng cao 1 (#5–#10) + Nâng cao 2 (#1–#10).
 // Bài kèo chấp: bên chấp đi liền các nước đầu (đúng cách chơi chấp nước).
+// Soạn lại 07/10/2026: mọi nước được engine chấm (review.mjs --data), không còn nước treo quân / tự sát.
 module.exports = {
   'co-up-xu-ly-khi-co-loi-the-lon': {
     moves: [
@@ -7,27 +8,31 @@ module.exports = {
       ['c6c5', 'p', 'Đen mở tốt.'],
       ['i3i4', 'R', 'Đỏ lật thêm Xe thứ hai.'],
       ['g6g5', 'p', 'Đen mở tốt.'],
-      ['h2e2', 'C', 'Đỏ có hai Xe một Pháo rất sớm — lợi thế lớn. Điều khó bây giờ là giữ, đừng tự đánh mất.'],
-      ['b9c7', 'n', 'Đen ra Mã.'],
-      ['a4b4', null, 'Không đánh gấp: Xe bình sang lộ 8 nhắm Pháo giả b7, khống chế cánh trái Đen — Pháo giả đứng yên thì bị dọa, bỏ đi thì vỡ cánh. Đánh chậm chắc, tối ưu vị trí quân mạnh, chuyển lợi thế hình thế thành vật chất. Thắng nhanh hay chậm cũng chỉ một điểm.'],
+      ['b2b9', 'C', 'có hai Xe rất sớm — lợi thế lớn. Không đánh gấp mà chọn nước phá hình: Pháo giả 8 vật xuống ăn nắp Mã đáy b9 qua ngòi b7 (lật Pháo).'],
+      ['a9b9', 'n', 'Đen ăn lại Pháo (nắp Xe giả lật ra Mã) — nắp rời góc, cột biên a bỏ ngỏ.'],
+      ['a4a6', null, 'Xe tiến lên ăn nắp Tốt a6, ô này không còn quân nào giữ: chuyển lợi thế hình thế thành lợi thế vật chất, Xe vẫn đứng ở ô an toàn. Thắng nhanh hay chậm cũng chỉ một điểm — chọn đường an toàn nhất.'],
     ],
   },
   'co-up-uu-the-hinh-kem-quan-lien-ket': {
     moves: [
       ['c3c4', 'P', 'Đỏ mở tốt.'],
-      ['a6a5', 'r', 'Đen lật Xe ở tốt biên.'],
-      ['d0e1', 'A', 'Đỏ lên Sĩ chặn cửa tướng — con Sĩ then chốt.'],
-      ['a9a6', 'r', 'Đen lật thêm Xe thứ hai, nhưng hai Xe đứng chồng hàng dọc ở lộ biên (a5–a6): hai Xe hàng dọc chỉ bằng khoảng một Xe. Thẩm thế trước, thẩm quân sau — bên "kém quân" lại đang ưu thế hình.'],
-      ['h2i2', 'C', 'Pháo bình biên (lật Pháo) đánh vào cánh phải Đen chỗ quân úp. Mục đích là gây rối để kéo ván về cân bằng, không cầu thắng trực tiếp.'],
+      ['a6a5', 'r', 'Đen lật Xe ở tốt biên — Đen hơn về quân mạnh.'],
+      ['b0c2', 'N', 'thẩm thế trước, thẩm quân sau: Đỏ không đi tìm Xe đấu ngay mà ra Mã (lật Mã) giữ liên kết, che cánh trái.'],
+      ['i6i5', 'a', 'Đen đấm tốt biên còn lại (lật Sĩ).'],
+      ['i3i4', 'C', 'Đỏ lật Pháo biên, nhắm nắp Xe giả i9 qua ngòi Sĩ i5 — đánh vào quân phòng ngự then chốt của Đen.'],
+      ['h9i7', 'p', 'Đen gác Mã 8 tiến 9 chặn cột biên, nhưng lật ra Tốt — Tốt đứng i7 không lùi được, thành quân "chết" trong hình phòng ngự.'],
+      ['a3a4', 'P', 'Đỏ đấm tốt biên đuổi Xe a5 (quân a4 có nắp Xe úp a0 bảo vệ). Ít quân mạnh hơn nhưng Đỏ liên kết tốt, quân Đen lại đứng ô xấu — đó là ưu thế hình.'],
     ],
   },
   'co-up-uu-the-lau-dai-tu-lien-ket': {
     moves: [
       ['i3i4', 'R', 'Đỏ lật Xe.'],
       ['a6a5', 'r', 'Đen lật Xe ở tốt biên.'],
-      ['i4a4', null, 'Xe Đỏ áp sát đánh Xe Đen (Xe a4 có Tốt a3 bảo vệ).'],
-      ['a5a8', null, 'Xe Đen buộc lui về hàng dưới — ở đó Xe chỉ đi được ít nước, hiệu năng giảm.'],
-      ['e3e4', 'P', 'Đỏ không vội vật Pháo giả (chưa đủ lực phối hợp để khai thác, lại tự lộ điểm yếu) mà tiếp tục mở quân, giữ liên kết: còn nguyên quân + liên kết chặt thì đánh lâu dài, tiềm năng lớn.'],
+      ['a3a4', 'P', 'dùng nắp đánh Xe: đấm tốt biên ngay trước Xe Đen (lật Tốt) — Tốt a4 có nắp Xe úp a0 bảo vệ, Xe Đen buộc rời chỗ.'],
+      ['a5h5', null, 'Xe Đen tránh sang lộ 8, nhắm nắp Pháo h2 của Đỏ.'],
+      ['i4c4', null, 'Đỏ không vật Pháo giả cầu may (chưa đủ lực phối hợp), cũng không lùi giữ nắp, mà đưa Xe sang lộ 7 nhắm nắp c6 — tạo uy hiếp đa điểm, đổi nắp lấy nắp mà vẫn giữ liên kết.'],
+      ['h5h2', null, 'Đen ăn nắp h2.'],
+      ['c4c6', null, 'Đỏ ăn lại nắp c6. Bên còn liên kết chặt cứ đánh lâu dài: dùng Xe đánh nắp, giữ quân, không bỏ thế lấy quân.'],
     ],
   },
   'co-up-hai-phao-som-kem-luc-gia-tri-phao': {
@@ -36,8 +41,9 @@ module.exports = {
       ['b9c7', 'n', 'Đen ra Mã.'],
       ['b2c2', 'C', 'Đỏ lật thêm Pháo — hai Pháo lộ sớm nhưng chưa liên kết.'],
       ['a6a5', 'r', 'Đen lật Xe ở tốt biên — Đỏ kém lực.'],
-      ['e3e4', 'P', 'Pháo e2 giờ là "Pháo trống" khống chế trung lộ. Giữ Pháo, không đổi hai Pháo lấy một Mã — trong cờ úp hai Pháo còn nhỉnh hơn một Xe.'],
-      ['a5e5', null, 'Đen đưa Xe vào trung lộ ép tốt đầu. Mối nguy lớn nhất của bên kém lực là quân mạnh đối phương xuống trung lộ khi trung lộ mỏng — phải chuẩn bị đỡ từ trước.'],
+      ['c2c6', null, 'Pháo 7 tiến 4 ăn nắp c6 qua ngòi c3. Pháo e2 vẫn nằm nguyên ở trung lộ làm "Pháo trống" khống chế.'],
+      ['a5c5', null, 'Xe Đen bình sang đuổi Pháo c6.'],
+      ['c6g6', null, 'Pháo không lùi về đổi lỗ mà chạy ngang qua ngòi e6 ăn tiếp nắp g6. Hai Pháo đều được giữ: trong cờ úp hai Pháo còn nhỉnh hơn một Xe, đừng đổi chúng lấy một Mã.'],
     ],
   },
   'co-up-the-yeu-trung-cuoc-tao-dot-pha': {
@@ -48,7 +54,8 @@ module.exports = {
       ['i6i5', 'r', 'Đen lật thêm Xe thứ hai — Đỏ thất thế nặng.'],
       ['c2c6', null, 'Thế yếu thì phải đột phá: Pháo vật xuống ăn nắp c6 qua ngòi c4, tạo hỗn loạn.'],
       ['b9c7', 'n', 'Đen ra Mã.'],
-      ['c6c9', null, 'Pháo ăn tiếp nắp Tượng c9 qua ngòi Mã c7, lại chiếu Tướng qua ngòi Sĩ d9 — chấp nhận đổi một Pháo lấy hai nắp và phá hình Đen. Thế yếu thì chọn nước táo bạo tạo bước ngoặt, hơn là đánh trầm ổn rồi vẫn thua.'],
+      ['a3a4', 'N', 'phải giữ Pháo — không có Pháo thì không công vỡ được hình đối phương, nên chưa ném Pháo vào đổi lấy Tượng. Đỏ đấm tốt biên ngay trước Xe a5 (lật Mã, có nắp Xe úp a0 bảo vệ): vừa mở quân vừa đuổi Xe, gom thêm lực cho đòn đột phá.'],
+      ['i5e5', null, 'Xe Đen vào trung lộ nhắm tốt đầu. Hình yếu chỉ phản được khi hội tụ đủ yếu tố — Đỏ phải tiếp tục huy động quân.'],
     ],
   },
   'co-up-chuyen-hoa-uu-the-mot-sai-lam-chien-luoc': {
@@ -63,11 +70,11 @@ module.exports = {
   },
   'co-up-khai-niem-nen-tang-chap-ba-nuoc': {
     moves: [
-      ['b2a2', 'C', 'Kèo chấp ba nước: Đỏ đi liền ba nước. Nước 1 — Pháo biên (lật Pháo).'],
-      ['h2i2', 'C', 'Nước 2 — Pháo biên còn lại (lật Pháo).'],
-      ['g3g4', 'P', 'Nước 3 — mở một quân lộ 3. "Ba trên" chuẩn: hai Pháo biên + một quân lộ 3/7; hạn chế mở tốt đầu sớm.'],
-      ['b9c7', 'n', 'Đen mới đi nước đầu tiên — Đỏ dẫn trước ba nhịp.'],
-      ['c3c4', 'P', 'Đỏ giữ lợi thế tốc độ: tiếp tục mở quân thay vì ăn nắp (ăn quân là mất một nước). Đừng đổi tốc độ lấy vật chất.'],
+      ['a3a4', 'P', 'Kèo chấp ba nước: Đỏ đi liền ba nước. Nước 1 — tốt biên (lật Tốt).'],
+      ['i3i4', 'P', 'Nước 2 — tốt biên còn lại (lật Tốt). Tốt biên cấm quân, lại khó bị bắt.'],
+      ['g3g4', 'P', 'Nước 3 — tốt lộ 3, hạn chế mở tốt đầu sớm. "Ba trên" lý tưởng là hai Pháo biên + một quân lộ 3/7; lật ra ba Tốt là kém may, nhưng mở ba con tốt vẫn "đẹp nhiều hơn xấu": cả ba đứng ô tốt, không quân nào bị cấm.'],
+      ['c6c5', 'n', 'Đen mới đi nước đầu (lật Mã) — Đỏ vẫn dẫn trước ba nhịp mở quân.'],
+      ['c3c4', 'P', 'Đỏ giữ lợi thế tốc độ: tiếp tục mở quân (Tốt c4 còn dọa ăn Mã c5) thay vì vội ăn nắp — ăn quân là mất một nước. Đừng đổi tốc độ lấy vật chất.'],
     ],
   },
   'co-up-phat-trien-quan-khai-cuoc-song-ma': {
@@ -76,17 +83,19 @@ module.exports = {
       ['e3e4', 'N', 'Nước 2 lại ra Mã — hai Mã đứng gần nhau, cùng khống chế ô d6.'],
       ['g3g4', 'P', 'Nước 3 lật Tốt. Hình hai Mã tương hỗ + một Tốt khoảng 7/10: Tốt Đen khó tiến lên đuổi Mã.'],
       ['i6i5', 'r', 'Đen lộ Xe ở tốt biên.'],
-      ['c4b6', null, 'Ưu tiên xử lý quân đã lộ: Mã tiến lên khống chế hàng trên Đen thay vì mở thêm nắp. Đừng vội tấn Sĩ — giữ nhiều lựa chọn về sau.'],
+      ['i3i4', 'P', 'ưu tiên xử lý bằng quân sẵn có: đấm tốt biên ngay trước Xe Đen (lật Tốt, có nắp Xe úp i0 bảo vệ) — đuổi Xe mà không phải đưa Mã đi lung tung.'],
+      ['i5h5', null, 'Xe Đen tránh sang lộ 8, đứng ngay trước Pháo giả h7 của mình.'],
+      ['h2h7', 'C', 'Pháo giả Đỏ mượn chính Xe Đen h5 làm ngòi, vật lên ăn Pháo giả h7 (lật Pháo). Hai Mã giữ hàng trên, Pháo ăn quân — hình song Mã phát huy khi các quân phối hợp.'],
     ],
   },
   'co-up-danh-gia-tinh-huong-song-ma-bien': {
     moves: [
-      ['a3a4', 'N', 'Đỏ lật Mã ở tốt biên.'],
-      ['c6c5', 'p', 'Đen mở tốt.'],
-      ['i3i4', 'N', 'Lại lật Mã biên — hình song Mã biên chỉ đáng khoảng 4 điểm: Mã biên ít đường, không cấm được quân.'],
-      ['a6a5', 'p', 'Tốt Đen dọa Mã biên.'],
-      ['h2e2', 'C', 'Đỏ lộ Pháo trung lộ.'],
-      ['b7b0', 'c', 'Bị đối phương lộ Pháo thì chọn đối công: Pháo 2 tiến 7 (lật Pháo) vật xuống ăn nắp Mã đáy qua ngòi b2 — thay vì Mã 2 tiến 1 bị động.'],
+      ['a3a4', 'N', 'Đỏ đấm tốt biên lật ra Mã — Mã biên: ít đường đi, không cấm được quân.'],
+      ['a6a5', 'p', 'Tốt Đen dọa ngay Mã biên (lật Tốt): Mã a4 gần như không có ô thoát (c5 bị Tốt c6 khống chế), chỉ trông vào nắp Xe úp a0 bảo vệ. Vì vậy hình song Mã biên chỉ đáng khoảng 4 điểm.'],
+      ['c3c4', 'C', 'Đỏ lật được Pháo ở tốt 7: quân thể hiện ý đồ tấn công ngay — một Pháo đáng giá hơn hẳn hai Mã biên.'],
+      ['c9a7', 'a', 'Đen đưa nắp Tượng ra a7 phòng thủ cánh trái (lật Sĩ).'],
+      ['c4e4', null, 'Pháo bình 5 chiếu Tướng qua ngòi tốt đầu — Pháo ở biên hay ở trung lộ đều làm hình đối phương lệch.'],
+      ['f9e8', 'p', 'Đen lên Sĩ chặn chiếu, lật ra Tốt — tốt nhân bịt cửa tướng. Một con Pháo đã đổi cả cục diện.'],
     ],
   },
   'co-up-khai-cuoc-hai-tren-mot-duoi': {
@@ -101,20 +110,21 @@ module.exports = {
   'co-up-ky-nang-danh-gia-tinh-huong-trung-cuoc': {
     moves: [
       ['c3c4', 'C', 'Đỏ lật Pháo ở tốt 7.'],
-      ['a6a5', 'r', 'Đen có Xe sớm.'],
-      ['g0e2', 'B', 'Đỏ không cố tìm Xe bằng mọi giá mà tối ưu quân đang có: lên Tượng.'],
-      ['b9c7', 'n', 'Đen ra Mã.'],
-      ['c4e4', null, 'Đóng Pháo đầu, chiếu Tướng qua ngòi e6. Nhiều quân phối hợp (Pháo, Tượng…) thì con Xe đơn độc của Đen trở nên xấu.'],
-      ['d9e8', 'a', 'Đen lên Sĩ chặn chiếu. Trước mỗi nước trung cuộc, hỏi ba câu: tình huống ra sao, nguy cơ thật là gì, triển khai tiếp thế nào.'],
+      ['c9e7', 'b', 'Đen đánh giá đúng nguy cơ thật: Pháo c4 sắp vật xuống ăn nắp Tượng c9. Lên Tượng ngay (lật Tượng) — vừa tránh đòn, vừa giữ trung lộ.'],
+      ['a3a4', 'P', 'Đỏ mở tốt biên (lật Tốt).'],
+      ['c6c5', 'r', 'Đen lật được Xe sớm, Xe c5 dọa ngay Pháo c4.'],
+      ['c4c2', null, 'ba câu hỏi: tình huống — Đen có Xe; nguy cơ — Pháo bị bắt; triển khai — đừng cố đi tìm Xe đối chọi bằng mọi giá. Đỏ lui Pháo về hàng 2, có nắp Mã b0 bảo vệ: giữ quân đang có, Pháo hàng dưới vẫn kìm cột 3.'],
+      ['i6i5', 'n', 'Đen tiếp tục mở quân (lật Mã). Con Xe đơn độc của Đen chưa có quân phối hợp; Đỏ tối ưu quân đang có rồi mới tính chuyện công.'],
     ],
   },
   'co-up-khai-cuoc-ba-duoi-suc-manh-con-phao': {
     moves: [
       ['b0c2', 'N', 'Kèo ba dưới: Đỏ đi liền ba nước ở hàng dưới, mở đồng loạt để đối phương khó đoán. Nước 1 lật Mã.'],
       ['h0g2', 'C', 'Nước 2 — ô Mã thứ hai lật ra Pháo: Pháo hàng dưới là quân đắc vị nhất, kìm quân đối diện và gián tiếp khống chế tốt đầu.'],
-      ['d0e1', 'A', 'Nước 3 lên Sĩ.'],
-      ['b9c7', 'n', 'Đen đi nước đầu.'],
-      ['e3e4', 'P', 'Tốt đầu đã có Pháo g2 hỗ trợ, mở lúc nào cũng được — mở quân khó trước, quân dễ sau. Đừng đánh gấp dù đối thủ yếu hơn.'],
+      ['g2g6', null, 'Nước 3 — Pháo hàng dưới vào việc ngay: vượt ngòi g3 ăn nắp g6. Không phải "nổ" ăn tốt đầu vô ích: nắp g6 nằm sẵn trên đường Pháo, ăn xong Pháo vẫn kìm quân Đen ở lộ này.'],
+      ['c6c5', 'n', 'Đen đi nước đầu (lật Mã).'],
+      ['c3c4', 'P', 'Đỏ mở tiếp quân (lật Tốt). Đã dẫn trước ba nhịp thì giữ chắc, tiến từ từ — đừng đánh gấp dù đối thủ yếu hơn.'],
+      ['i6i5', 'p', 'Đen mở tốt biên.'],
     ],
   },
   'co-up-ba-duoi-tiep-y-tuong-tan-cong': {
@@ -143,18 +153,21 @@ module.exports = {
       ['i3i4', 'P', 'Nước 2 — tốt biên còn lại.'],
       ['d0e1', 'A', 'Nước 3 (dưới) chọn Sĩ — ở nước dưới Sĩ tốt hơn Tượng.'],
       ['c6c5', 'r', 'Đen lật Xe.'],
-      ['e3e4', 'N', 'Đấm tốt đầu lật ra Mã. Mã sau này có thể phi lên 4/6 vừa cứu quân vừa cấm quân — phi 4 hơn 6 vì có Sĩ phối hợp giữ Mã lâu dài.'],
-      ['b9c7', 'n', 'Đen ra Mã. Chỉ cần tính trong hai nước: nước đi có mục đích rõ và lường được đáp trả — chọn theo dữ liệu quân đã lộ, không theo cảm giác.'],
+      ['e3e4', 'N', 'Đấm tốt đầu lật ra Mã — Mã e4 dọa ngay Xe c5. Mã sau này có thể phi lên 4/6 vừa cứu quân vừa cấm quân; phi 4 hơn 6 vì có Sĩ phối hợp giữ Mã lâu dài.'],
+      ['c5f5', null, 'Đen buộc đưa Xe tránh.'],
+      ['g3g4', 'P', 'Đỏ không phi Mã đuổi Xe (mất nhịp) mà mở thêm quân, giữ hình. Chỉ cần tính trong hai nước: nước đi có mục đích rõ và lường được đáp trả.'],
+      ['d9e8', 'a', 'Đen lên Sĩ củng cố. Chọn nước theo dữ liệu quân đã lộ, không theo cảm giác.'],
     ],
   },
   'co-up-trung-cuoc-phuc-tap-up-ngua': {
     moves: [
-      ['h2h9', 'C', 'Pháo giả vật ăn nắp h9 (lật Pháo). Chỉ Đỏ biết nắp vừa ăn là quân gì.'],
-      ['i9h9', 'r', 'Đen ăn lại, lật ra Xe.'],
-      ['b2b9', 'C', 'Pháo giả còn lại vật ăn nắp b9.'],
-      ['a9b9', 'a', 'Đen ăn lại, lật ra Sĩ.'],
-      ['c3c4', 'P', 'Đếm quân đã ăn để suy quân úp còn lại của Đen. Đang ưu thì chọn nước "kín cờ" như binh 7 tiến 1 — đừng ép đối phương mở đúng quân mạnh nhất.'],
-      ['e6e5', 'p', 'Đen kém quân thì làm hỗn loạn: đấm tốt đầu đánh gấp — trong loạn, kẻ yếu có nhiều cơ hội hơn.'],
+      ['a3a4', 'P', 'Đỏ đấm tốt biên (lật Tốt).'],
+      ['c6c5', 'p', 'Đen mở tốt.'],
+      ['i3i4', 'C', 'Đỏ lật Pháo biên, nhắm nắp Xe giả i9.'],
+      ['h9i7', 'n', 'Đen gác Mã 8 tiến 9 chặn cột biên (lật Mã).'],
+      ['i4e4', null, 'Pháo bình 5 chiếu Tướng qua ngòi tốt đầu.'],
+      ['d9e8', 'p', 'Đen lên Sĩ chặn chiếu, lật ra Tốt — tốt nhân.'],
+      ['i0i6', 'R', 'Xe úp ở góc tiến thẳng ăn nắp Tốt biên i6 (lật Xe thật). Đếm quân: Đen đã lộ Tốt c5, Mã i7, Tốt e8 và mất thêm một nắp — trong các nắp còn lại, tỉ lệ Xe/Pháo tăng lên, nên trước mỗi nước phải tính "nếu Đen ăn xuống là quân gì". Đang ưu thì chọn nước kín, đừng ép Đen mở đúng quân mạnh nhất.'],
     ],
   },
 };

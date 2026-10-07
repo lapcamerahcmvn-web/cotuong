@@ -23,3 +23,22 @@ Sau khi sửa: `php artisan db:seed --class=ContentSeeder --force` rồi `php ar
 - Nền tảng trung cuộc: Mã ngọa tào dựng lại 3 nước; Vương Bân – Hồ Vinh Hoa dừng ở nước 6 (`fix-nen-tang.mjs`).
 - Sau đó toàn bộ 36 bài cờ úp chưa có nước đi được thêm ví dụ (`tools/co-up-examples/`).
 - Nguồn gốc lỗi: giải mã sách (nhầm trước/sau, tiến/thoái, lệch 1 ô). Nguồn có bản quyền chỉ dùng nội bộ, không dùng để sửa.
+
+## Ví dụ cờ úp: hợp luật CHƯA ĐỦ — phải hợp lý (tools/co-up-examples/)
+Đúng luật mà vẫn có nước "tự sát" (Xe tiến lên trước Tốt úp bị ăn, treo quân…). Sau góp ý người học, mọi ví dụ
+được engine chấm từng nước (lấy mẫu cách xếp quân úp chưa lộ, luật cờ úp):
+
+```bash
+node tools/co-up-examples/build.cjs                      # kiểm luật (data-1..4.cjs)
+node tools/co-up-examples/review.mjs --data [slug,…]     # chấm dữ liệu nháp: ✗ ≥150 (≈1,5 Tốt), ✗✗ ≥300 so với nước tốt nhất
+node tools/co-up-examples/review.mjs [slug,…]            # chấm bản đang có trong content
+node tools/co-up-examples/probe.mjs "a3a4:R b9c7:n"      # thử 1 biến, in top nước cho bên tới lượt
+node tools/co-up-examples/autoline.mjs "i3i4:C h9i7:n" --plies 4 --rv "R,p"   # engine đi tiếp biến
+node tools/co-up-examples/build.cjs --write              # ghi vào database/seeders/data/content/{nhap-mon-co-up,co-up-*}.json
+```
+
+- Luôn truyền `coup: true` cho engine: thế tàn cuộc không còn quân úp, engine tự hiểu là cờ tướng (Sĩ không ra khỏi cung).
+- Engine dao động ±50–100 điểm giữa các lần chạy; chỉ coi là lỗi khi mất ≥150. Nước "theo lý thuyết bài" được giữ
+  nếu mất <100; hơn thế thì đổi nước, sửa lời giảng cho khớp.
+- Lý thuyết cờ úp chính: Đỏ lật Pháo biên (i4) → Đen Mã 8 tiến 9 (chặn thêm một quân trên cột, Mã có nắp i9 giữ);
+  Đỏ lật Xe → Đen Mã 8 tiến 7 / Mã 2 tiến 3. Đừng đặt Xe ngay trước Tốt úp đối phương (Tốt úp ăn thẳng được).
