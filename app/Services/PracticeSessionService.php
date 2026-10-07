@@ -35,7 +35,7 @@ class PracticeSessionService
     /** Thang độ khó: chia kho thành 10 bậc rating, mỗi bậc lấy ngẫu nhiên vài thế. */
     private function ladder(int $maxSolver, int $count): array
     {
-        $pool = Puzzle::published()->where('solver_moves', '<=', $maxSolver)->orderBy('rating')->pluck('id')->all();
+        $pool = Puzzle::published()->mating()->where('solver_moves', '<=', $maxSolver)->orderBy('rating')->pluck('id')->all();
         if (! $pool) {
             return [];
         }

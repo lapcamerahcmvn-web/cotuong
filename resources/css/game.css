@@ -441,3 +441,31 @@
     .mm-quiz__verse { margin: 12px 0 0; padding: 12px; border-radius: 12px; background: var(--surface-2); }
     @media print { .mm-head { position: static; } .mm-tools, .mm-progress, .mm-actions, .mm-check { display: none !important; } .mindmap details > *:not(summary) { display: block !important; } }
 }
+
+/* ---------- Luyện sát pháp theo bậc (/luyen-tap/sat-phap) + khẩu quyết trong thế luyện ---------- */
+@layer components {
+    .ladder { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; position: relative; }
+    .ladder::before { content: ""; position: absolute; left: 33px; top: 20px; bottom: 20px; width: 3px; border-radius: 3px; background: var(--line); }
+    .ladder__step { position: relative; }
+    .ladder__card { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 16px; color: var(--ink); }
+    a.ladder__card:hover { text-decoration: none; transform: translateY(-1px); }
+    .ladder__num { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 18px;
+        background: var(--surface-2); color: var(--ink-soft); box-shadow: 0 0 0 4px var(--surface); position: relative; z-index: 1; }
+    .ladder__num svg { width: 20px; height: 20px; }
+    .ladder__title { display: block; font-weight: 800; line-height: 1.3; }
+    .ladder__sub { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+    .ladder__stars { display: flex; gap: 2px; color: var(--line-strong); }
+    .ladder__stars svg { width: 18px; height: 18px; }
+    .ladder__stars svg.is-on { color: var(--gold, #d4a017); fill: currentColor; }
+    .ladder__step.is-done .ladder__num { background: var(--jade); color: #fff; }
+    .ladder__step.is-current .ladder__card { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent); }
+    .ladder__step.is-current .ladder__num { background: var(--primary); color: #fff; }
+    .ladder__step.is-locked .ladder__card { opacity: .55; cursor: not-allowed; }
+    .ladder__step.is-locked .ladder__card:hover { transform: none; }
+
+    .kq-box { border: 1px dashed var(--line-strong); border-radius: 12px; padding: 8px 12px; background: var(--surface-2); }
+    .kq-box summary { cursor: pointer; font-weight: 700; font-size: 13.5px; display: flex; align-items: center; gap: 6px; list-style: none; }
+    .kq-box summary::-webkit-details-marker { display: none; }
+    .kq-box summary small { font-weight: 600; color: var(--ink-faint); }
+    .kq-box ol { margin: 8px 0 2px; padding-left: 20px; font-size: 13.5px; line-height: 1.5; display: grid; gap: 4px; }
+}

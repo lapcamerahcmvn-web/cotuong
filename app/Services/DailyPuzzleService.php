@@ -17,10 +17,10 @@ class DailyPuzzleService
         $date ??= Vn::today();
 
         $id = Cache::remember('daily-puzzle:' . $date, 3600, function () use ($date) {
-            $pool = Puzzle::published()->where('rating', '<=', 1500)
+            $pool = Puzzle::published()->mating()->where('rating', '<=', 1500)
                 ->whereBetween('solver_moves', [1, 4])->orderBy('id')->pluck('id');
             if ($pool->isEmpty()) {
-                $pool = Puzzle::published()->orderBy('id')->pluck('id');
+                $pool = Puzzle::published()->mating()->orderBy('id')->pluck('id');
             }
 
             return $pool->isEmpty() ? null : $pool[crc32('daily:' . $date) % $pool->count()];

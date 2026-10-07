@@ -27,6 +27,20 @@ function initPlay(root) {
     let reported = false;
     let busy = false;
 
+    // Luyện sát pháp theo bậc: khách lưu thế đã giải trên máy (localStorage) để mở khoá bậc; đã đăng nhập thì server tính.
+    const ladder = parseInt(root.dataset.ladder || '0', 10);
+    const ladderPass = parseInt(root.dataset.ladderPass || '10', 10);
+    const ladderLevels = parseInt(root.dataset.ladderLevels || '10', 10);
+    let ladderNew = 0;
+    function ladderSolved(id) {
+        ladderNew++;
+        if (window.__xq?.auth) return;
+        const all = store('xq.ladder', {}) || {};
+        const list = all[ladder] || [];
+        if (!list.includes(id)) list.push(id);
+        all[ladder] = list.slice(-200);
+        save('xq.ladder', all);
+    }
     const result = $(root, '[data-result]');
     const dots = $(root, '[data-dots]');
     const boardEl = $(root, '[data-board]');
@@ -51,6 +65,13 @@ function initPlay(root) {
         if (r) r.textContent = puzzle.rating;
         const link = $(root, '[data-p-lesson]');
         if (link) { link.hidden = !puzzle.lessonUrl; if (puzzle.lessonUrl) link.href = puzzle.lessonUrl; }
+        const kq = $(root, '[data-p-verses]');
+        if (kq) {
+            const vs = puzzle.verses || [];
+            kq.hidden = !vs.length;
+            kq.open = false;
+            kq.querySelector('ol').innerHTML = vs.map((v) => `<li>${escapeHtml(v)}</li>`).join('');
+        }
         const side = $(root, '[data-p-side]');
         if (side) side.textContent = puzzle.side === 'do' ? 'Đỏ đi trước' : 'Đen đi trước';
     }
@@ -78,6 +99,7 @@ function initPlay(root) {
         if (res) handleGamification(res.gamification);
         if (mode === 'daily' && ok && !info.revealed) { track('daily_challenge_complete'); confetti($(root, '[data-board]')); }
         if (!window.__xq?.auth && mode === 'daily' && ok) save('xq.guest.daily', new Date().toDateString());
+        if (ladder && ok && !info.revealed) ladderSolved(puzzle.id);
         showResult(ok && !info.revealed, res);
     }
 
@@ -142,6 +164,13 @@ Bạn thử xem giải được không?`, location.origin + '/luyen-tap/hom-nay'
             const lvl = okN >= 4 ? ['trung-cuoc', 'Trung cuộc & sát pháp'] : (okN >= 2 ? ['khai-cuoc', 'Khai cuộc'] : ['nhap-mon', 'Nhập môn']);
             extra = `<p class="mt-2">Gợi ý điểm bắt đầu: <strong>${lvl[1]}</strong>.</p>
                 <div class="flex flex-wrap gap-2 mt-3"><a class="btn btn--primary" href="/${lvl[0]}">${icon('book')} Học ${lvl[1]}</a><a class="btn" href="/lo-trinh">${icon('map')} Xem lộ trình</a></div>`;
+        } else if (ladder) {
+            const passedRound = okN >= Math.ceil(results.length * 0.7);
+            const nextLv = ladder < ladderLevels ? ladder + 1 : null;
+            extra = `<p class="mt-2">${passedRound ? 'Tốt lắm! ' : ''}Bậc ${ladder}: giải đúng ${ladderPass} thế khác nhau để mở bậc tiếp theo.</p>
+                <div class="flex flex-wrap gap-2 mt-3 justify-center"><a class="btn btn--primary" href="${location.pathname}">${icon('repeat')} Luyện tiếp bậc ${ladder}</a>
+                ${nextLv ? `<a class="btn" href="/luyen-tap/sat-phap/${nextLv}">${icon('arrow-right')} Thử bậc ${nextLv}</a>` : ''}
+                <a class="btn btn--ghost" href="/luyen-tap/sat-phap">${icon('map')} Bản đồ chinh phục</a></div>`;
         } else {
             extra = `<div class="flex flex-wrap gap-2 mt-3"><a class="btn btn--primary" href="${location.pathname}">${icon('repeat')} Lượt mới</a><a class="btn" href="/luyen-tap">${icon('puzzle')} Chế độ khác</a></div>`;
         }

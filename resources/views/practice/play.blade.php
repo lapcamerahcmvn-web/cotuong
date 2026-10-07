@@ -11,6 +11,7 @@
 </nav>
 
 <div data-practice="play" data-mode="{{ $mode }}" data-skill="{{ $skill ?? '' }}" data-rounds="{{ $rounds ?? 0 }}"
+     @if(!empty($ladder)) data-ladder="{{ $ladder['level'] }}" data-ladder-pass="{{ $ladder['pass'] }}" data-ladder-levels="{{ $ladder['levels'] }}" @endif
      data-queue='@json($queue ?? [])'>
     @if($first)
         <script type="application/json" data-first>@json($first->toBoardPayload(), JSON_UNESCAPED_UNICODE)</script>
@@ -56,11 +57,25 @@
                         <span class="tag"><x-icon name="chart" /> Độ khó <b class="ml-1" data-p-rating>{{ $first->rating }}</b></span>
                         <a class="tag" data-p-lesson href="{{ $first->lesson ? route('lessons.show', $first->lesson->slug) : '#' }}" @unless($first->lesson) hidden @endunless><x-icon name="book" /> Bài gốc</a>
                     </div>
+                    @php $verses = $first->verses(); @endphp
+                    <details class="kq-box mt-3" data-p-verses @if(! $verses) hidden @endif>
+                        <summary><x-icon name="bulb" class="w-4 h-4" /> Khẩu quyết của thế này <small>(mở khi cần gợi ý)</small></summary>
+                        <ol>@foreach($verses as $v)<li>{{ $v }}</li>@endforeach</ol>
+                    </details>
                     <div class="flex flex-wrap gap-2 mt-4">
                         <button type="button" class="btn btn--ghost btn--sm" data-hint><x-icon name="bulb" /> Gợi ý</button>
                         <button type="button" class="btn btn--ghost btn--sm" data-reveal><x-icon name="eye" /> Xem lời giải</button>
                     </div>
                     <p class="text-[12.5px] text-ink-faint mt-2 mb-0">Dùng gợi ý hoặc xem lời giải thì thế này không tính XP.</p>
+                </div>
+            @endif
+
+            @if(!empty($ladder))
+                <div class="card card--pad text-[13.5px]" data-ladder-info>
+                    <div class="font-bold">Bậc {{ $ladder['level'] }} · chiếu hết trong {{ $ladder['level'] }} nước</div>
+                    <div class="text-ink-soft mt-1">Giải đúng {{ $ladder['pass'] }} thế khác nhau ở bậc này để mở bậc {{ $ladder['level'] + 1 <= $ladder['levels'] ? $ladder['level'] + 1 : 'cuối' }}.
+                        @if($ladder['solved'] !== null) Bạn đã đúng <b>{{ $ladder['solved'] }}</b> thế.@endif</div>
+                    <a href="{{ route('practice.ladder') }}" class="inline-flex items-center gap-1 font-bold mt-2"><x-icon name="map" class="w-4 h-4" /> Bản đồ chinh phục</a>
                 </div>
             @endif
 

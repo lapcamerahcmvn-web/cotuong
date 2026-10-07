@@ -3,8 +3,8 @@
     "file": "assets/engine-Bop88o4S.js",
     "name": "engine"
   },
-  "_notation-CYc8PJV_.js": {
-    "file": "assets/notation-CYc8PJV_.js",
+  "_notation-D5KbJDUc.js": {
+    "file": "assets/notation-D5KbJDUc.js",
     "name": "notation",
     "imports": [
       "resources/js/app.js"
@@ -18,7 +18,7 @@
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app-Bv53OWGg.css",
+    "file": "assets/app-CJSb2gmN.css",
     "name": "app",
     "names": [
       "app.css"
@@ -27,7 +27,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DV0J0Ngy.js",
+    "file": "assets/app-DWh-ge_S.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "resources/js/board-scan.js": {
-    "file": "assets/board-scan-B_HZ6Pos.js",
+    "file": "assets/board-scan-D0Iivjel.js",
     "name": "board-scan",
     "src": "resources/js/board-scan.js",
     "isDynamicEntry": true,
@@ -69,7 +69,7 @@
     "isDynamicEntry": true
   },
   "resources/js/display-settings.js": {
-    "file": "assets/display-settings-Dr4992kY.js",
+    "file": "assets/display-settings-CFKH_mDt.js",
     "name": "display-settings",
     "src": "resources/js/display-settings.js",
     "isDynamicEntry": true,
@@ -78,7 +78,7 @@
     ]
   },
   "resources/js/invites.js": {
-    "file": "assets/invites-BBhRQ-ao.js",
+    "file": "assets/invites-DSJHyX4k.js",
     "name": "invites",
     "src": "resources/js/invites.js",
     "isDynamicEntry": true,
@@ -87,7 +87,7 @@
     ]
   },
   "resources/js/lesson.js": {
-    "file": "assets/lesson-DRnsftSE.js",
+    "file": "assets/lesson-8Kf0UuoK.js",
     "name": "lesson",
     "src": "resources/js/lesson.js",
     "isDynamicEntry": true,
@@ -97,7 +97,7 @@
     ]
   },
   "resources/js/mindmap.js": {
-    "file": "assets/mindmap-Bl5L3OPB.js",
+    "file": "assets/mindmap-DfxkkwrS.js",
     "name": "mindmap",
     "src": "resources/js/mindmap.js",
     "isDynamicEntry": true,
@@ -106,7 +106,7 @@
     ]
   },
   "resources/js/mistakes.js": {
-    "file": "assets/mistakes-D2RlMsqd.js",
+    "file": "assets/mistakes-Byc3cAHG.js",
     "name": "mistakes",
     "src": "resources/js/mistakes.js",
     "isDynamicEntry": true,
@@ -115,14 +115,14 @@
     ]
   },
   "resources/js/play-bot.js": {
-    "file": "assets/play-bot-mbq-05hT.js",
+    "file": "assets/play-bot--eX6kn0U.js",
     "name": "play-bot",
     "src": "resources/js/play-bot.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_engine-Bop88o4S.js",
-      "_notation-CYc8PJV_.js"
+      "_notation-D5KbJDUc.js"
     ],
     "dynamicImports": [
       "resources/js/share.js"
@@ -132,17 +132,17 @@
     ]
   },
   "resources/js/play-pvp.js": {
-    "file": "assets/play-pvp-DlrWCkI_.js",
+    "file": "assets/play-pvp-6ZhPRIrq.js",
     "name": "play-pvp",
     "src": "resources/js/play-pvp.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_notation-CYc8PJV_.js"
+      "_notation-D5KbJDUc.js"
     ]
   },
   "resources/js/practice.js": {
-    "file": "assets/practice-CyuAUW3U.js",
+    "file": "assets/practice-BsS0YGIE.js",
     "name": "practice",
     "src": "resources/js/practice.js",
     "isDynamicEntry": true,
@@ -155,7 +155,7 @@
     ]
   },
   "resources/js/review.js": {
-    "file": "assets/review-CP-Fz83Z.js",
+    "file": "assets/review-DtO82fZX.js",
     "name": "review",
     "src": "resources/js/review.js",
     "isDynamicEntry": true,
@@ -174,7 +174,7 @@
     "isDynamicEntry": true
   },
   "resources/js/setup-board.js": {
-    "file": "assets/setup-board-B2WR0emg.js",
+    "file": "assets/setup-board-VO1rd6x2.js",
     "name": "setup-board",
     "src": "resources/js/setup-board.js",
     "isDynamicEntry": true,
@@ -183,7 +183,7 @@
     ]
   },
   "resources/js/share.js": {
-    "file": "assets/share-BUDgbbmg.js",
+    "file": "assets/share-BdMaQKFw.js",
     "name": "share",
     "src": "resources/js/share.js",
     "isDynamicEntry": true,
@@ -192,7 +192,7 @@
     ]
   },
   "resources/js/social.js": {
-    "file": "assets/social-fMB2-XXy.js",
+    "file": "assets/social-BHv65fzj.js",
     "name": "social",
     "src": "resources/js/social.js",
     "isDynamicEntry": true,
@@ -201,7 +201,7 @@
     ]
   },
   "resources/js/weekly.js": {
-    "file": "assets/weekly-DvXS7Ymm.js",
+    "file": "assets/weekly-DrGyHQ2_.js",
     "name": "weekly",
     "src": "resources/js/weekly.js",
     "isDynamicEntry": true,

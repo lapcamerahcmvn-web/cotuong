@@ -237,7 +237,7 @@ class PuzzleService
 
         foreach ([150, 300, 600, 3000] as $window) {
             $q = Puzzle::published()->whereBetween('rating', [$target - $window, $target + $window]);
-            if ($skill) $q->skill($skill);
+            if ($skill) $q->skill($skill); else $q->mating();
             if ($maxSolver) $q->where('solver_moves', '<=', $maxSolver);
             if ($exclude) $q->whereNotIn('id', $exclude);
             $fresh = (clone $q)->whereNotIn('id', $tried ?: [0])->inRandomOrder()->first();

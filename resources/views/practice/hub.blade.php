@@ -23,6 +23,16 @@
 </section>
 
 <div class="mode-grid">
+    <a href="{{ route('practice.ladder') }}" class="card mode-card card--hero">
+        <span class="mode-card__icon tone-primary"><x-icon name="trophy" /></span>
+        <span><h3>Luyện sát pháp 1 → 10 nước</h3><p>Chinh phục 10 bậc từ dễ đến khó: chiếu hết 1 nước, 2 nước… tới 10 nước. Đúng đủ thế mới mở bậc tiếp.</p>
+            <span class="mode-card__meta">{{ number_format($ladderCount, 0, ',', '.') }} thế chiếu hết</span></span>
+    </a>
+    <a href="{{ route('practice.topic', 'tan-cuoc') }}" class="card mode-card card--hero">
+        <span class="mode-card__icon tone-jade"><x-icon name="graduation" /></span>
+        <span><h3>Luyện tàn cuộc</h3><p>Tìm nước đúng theo khẩu quyết trong các thế tàn thực dụng: thắng, khéo thắng, giữ hòa.</p>
+            <span class="mode-card__meta">{{ number_format($tanCount, 0, ',', '.') }} thế · có khẩu quyết gợi ý</span></span>
+    </a>
     @if($daily)
     <a href="{{ route('practice.daily') }}" class="card mode-card card--hero">
         <span class="mode-card__icon tone-primary"><x-icon name="calendar" /></span>
@@ -86,19 +96,21 @@
 </section>
 @endif
 
-<section class="section">
-    <div class="section-head"><div><h2>Luyện theo chủ đề</h2><p>Mỗi lượt 10 thế, độ khó tự điều chỉnh theo điểm thế cờ của bạn.</p></div></div>
+@foreach($groups as $gkey => $g)
+<section class="section {{ $loop->first ? '' : 'pt-0' }}">
+    <div class="section-head"><div><h2>{{ $loop->first ? 'Luyện theo chủ đề · ' : '' }}{{ $g['name'] }}</h2><p>{{ $g['desc'] }}</p></div></div>
     <div class="grid gap-3 grid-cols-2 md:grid-cols-4">
-        @foreach($skills as $s)
+        @foreach($g['skills'] as $s)
             <a href="{{ route('practice.topic', $s['slug']) }}" class="card card--pad flex flex-col gap-1">
                 <span class="path-step__glyph !w-11 !h-11 !text-[22px]">{{ $s['glyph'] }}</span>
                 <span class="font-bold mt-2">{{ $s['name'] }}</span>
                 <span class="text-[13px] text-ink-soft leading-snug">{{ $s['desc'] }}</span>
-                <span class="text-[12.5px] font-bold text-jade-ink mt-auto pt-2">{{ $s['count'] }} thế</span>
+                <span class="text-[12.5px] font-bold text-jade-ink mt-auto pt-2">{{ number_format($s['count'], 0, ',', '.') }} thế</span>
             </a>
         @endforeach
     </div>
 </section>
+@endforeach
 
 <section class="section pt-0">
     <div class="prose">

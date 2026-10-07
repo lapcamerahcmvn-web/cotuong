@@ -30,6 +30,15 @@ class Puzzle extends Model
         return $q->where('status', 'published');
     }
 
+    /**
+     * Thế "tìm nước theo khẩu quyết" (đoạn giữa ván tàn cuộc, không kết thúc bằng chiếu hết) mang nhãn khau-quyet —
+     * chỉ dùng ở luyện theo chủ đề tàn cuộc; các chế độ phản xạ chiếu hết (60 giây, 3 mạng, thế hôm nay, kiểm tra) bỏ qua.
+     */
+    public function scopeMating(Builder $q): Builder
+    {
+        return $q->where(fn ($w) => $w->whereNull('skill_tags')->orWhere('skill_tags', 'not like', '%"khau-quyet"%'));
+    }
+
     public function scopeSkill(Builder $q, string $skill): Builder
     {
         return $q->where('skill_tags', 'like', '%"' . $skill . '"%');
@@ -48,7 +57,16 @@ class Puzzle extends Model
             'solverMoves' => $this->solver_moves,
             'title'       => $this->title,
             'lessonUrl'   => $this->lesson ? route('lessons.show', $this->lesson->slug) : null,
+            'verses'      => $this->verses(),
         ];
+    }
+
+    /** Khẩu quyết của bài gốc (chuyên đề Cờ Tàn Có Khẩu Quyết) — hiện kèm thế cờ khi luyện tàn cuộc. */
+    public function verses(): array
+    {
+        if (! $this->lesson || ! str_contains((string) $this->lesson->content, 'Khẩu quyết')) return [];
+
+        return array_slice(\App\Support\Mindmap::lessonInfo($this->lesson->content)['verses'] ?? [], 0, 6);
     }
 
     public function successRate(): ?int

@@ -26,17 +26,36 @@ class BuildPuzzles extends Command
     {
         $cfg = config('puzzle-skills');
         $dry = (bool) $this->option('dry-run');
-        $lessons = Lesson::published()->where('game_mode', 'co-tuong')->whereNotNull('puzzle_side')
+        $segSeries = array_keys($cfg['segment_series'] ?? []);
+        $lessons = Lesson::published()->where('game_mode', 'co-tuong')
+            ->where(fn ($q) => $q->whereNotNull('puzzle_side')->orWhereHas('series', fn ($s) => $s->whereIn('slug', $segSeries)))
             ->whereHas('series', fn ($q) => $q->whereIn('slug', $cfg['series_pool']))
             ->with(['series', 'steps' => fn ($q) => $q->orderBy('step_order')])->get();
 
-        $stats = ['lessons' => $lessons->count(), 'full' => 0, 'tail' => 0, 'invalid' => 0, 'skipped' => 0];
+        $stats = ['lessons' => $lessons->count(), 'full' => 0, 'tail' => 0, 'segment' => 0, 'invalid' => 0, 'skipped' => 0];
         $keep = [];
 
         foreach ($lessons as $lesson) {
             $plies = $lesson->steps->map(fn ($s) => [
-                'iccs' => $s->move_notation_iccs, 'side' => $s->move_side, 'fen' => $s->fen,
+                'iccs' => $s->move_notation_iccs, 'side' => $s->move_side, 'fen' => $s->fen, 'caption' => (string) $s->caption,
             ])->values()->all();
+            // Chuyên đề tàn cuộc "khẩu quyết": cắt đoạn tìm nước theo bài (xem segments()).
+            if (! $lesson->puzzle_side && isset($cfg['segment_series'][$lesson->series?->slug])) {
+                if (! $plies) { $stats['skipped']++; continue; }
+                if ($this->replay($lesson->initial_fen, $plies) === null) {
+                    $stats['invalid']++;
+                    continue;
+                }
+                foreach ($this->segments($lesson, $plies, $cfg['segment_series'][$lesson->series->slug]) as $seg) {
+                    $stats['segment']++;
+                    $keep[] = $lesson->id . ':' . $seg['start'];
+                    if ($dry) continue;
+                    $p = Puzzle::firstOrNew(['lesson_id' => $lesson->id, 'start_ply' => $seg['start']]);
+                    if (! $p->exists) $p->rating = $seg['rating'];
+                    $p->fill($seg['data'])->save();
+                }
+                continue;
+            }
             if (! $plies || ($plies[0]['side'] ?? null) !== $lesson->puzzle_side) {
                 $stats['skipped']++;
                 continue;
@@ -96,6 +115,8 @@ class BuildPuzzles extends Command
 
         $archived = 0;
         if (! $dry) {
+            // Mốc dựng kho: trang Luyện tập cache số thế theo chủ đề / bậc theo mốc này (lượt giải không làm mất cache).
+            \Illuminate\Support\Facades\Cache::forever('puzzles:stamp', time());
             Puzzle::where('source', 'lesson')->where('status', 'published')->get(['id', 'lesson_id', 'start_ply'])
                 ->each(function ($p) use ($keep, &$archived) {
                     if (! in_array($p->lesson_id . ':' . $p->start_ply, $keep, true)) {
@@ -105,11 +126,68 @@ class BuildPuzzles extends Command
                 });
         }
 
-        $this->table(['Bài nguồn', 'Thế đầy đủ', 'Thế đoạn kết', 'Lỗi luật', 'Bỏ qua', 'Lưu trữ'],
-            [[$stats['lessons'], $stats['full'], $stats['tail'], $stats['invalid'], $stats['skipped'], $archived]]);
-        $this->info(($dry ? '[dry-run] ' : '') . 'Tổng thế cờ: ' . ($stats['full'] + $stats['tail']));
+        $this->table(['Bài nguồn', 'Thế đầy đủ', 'Thế đoạn kết', 'Đoạn khẩu quyết', 'Lỗi luật', 'Bỏ qua', 'Lưu trữ'],
+            [[$stats['lessons'], $stats['full'], $stats['tail'], $stats['segment'], $stats['invalid'], $stats['skipped'], $archived]]);
+        $this->info(($dry ? '[dry-run] ' : '') . 'Tổng thế cờ: ' . ($stats['full'] + $stats['tail'] + $stats['segment']));
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Đoạn "tìm nước theo khẩu quyết" từ ván tàn cuộc (bài không đặt puzzle_side): bên giải = Đen nếu tiêu đề có "hòa"
+     * (bên giữ hòa), ngược lại Đỏ. Mỗi đoạn `solver` nước của bên giải (kèm nước đáp), chọn: đoạn mở đầu, đoạn kết,
+     * đoạn có nhiều lời giảng (nước then chốt trong bài); không chồng nhau, tối đa `per_lesson`.
+     * @return list<array{start:int, rating:int, data:array}>
+     */
+    private function segments(Lesson $lesson, array $plies, array $opt): array
+    {
+        $title = Str::of($lesson->title)->ascii()->lower()->toString();
+        $side = preg_match('/\bhoa\b/', $title) && ! preg_match('/thang/', $title) ? 'den' : 'do';
+        $n = max(1, (int) ($opt['solver'] ?? 2));
+        $len = 2 * $n - 1;                       // n nước bên giải + (n-1) nước đáp
+        $starts = [];
+        foreach ($plies as $i => $p) {
+            if ($p['side'] === $side && $i + $len <= count($plies)) $starts[] = $i;
+        }
+        if (! $starts) return [];
+        $score = function (int $i) use ($plies, $len) {
+            $c = 0;
+            for ($k = $i; $k < $i + $len; $k++) if (trim($plies[$k]['caption']) !== '') $c++;
+
+            return $c;
+        };
+        $mid = array_slice($starts, 1, -1);
+        usort($mid, fn ($a, $b) => ($score($b) <=> $score($a)) ?: ($a <=> $b));
+        $order = array_merge([$starts[0], end($starts)], $mid);
+        $chosen = [];
+        foreach ($order as $i) {
+            if (count($chosen) >= (int) ($opt['per_lesson'] ?? 3)) break;
+            foreach ($chosen as $c) if (abs($c - $i) < $len + 1) continue 2;
+            $chosen[] = $i;
+        }
+        sort($chosen);
+
+        $out = [];
+        $base = self::BASE_RATING[$lesson->level] ?? 1200;
+        foreach ($chosen as $k => $i) {
+            $sub = array_slice($plies, $i, $len);
+            $fen = $i === 0 ? $lesson->initial_fen : $plies[$i - 1]['fen'];
+            $last = $i + $len === count($plies);
+            $mate = $last && Rules::isMated(Rules::loadFen($sub[count($sub) - 1]['fen']), $side !== 'do');
+            $out[] = ['start' => $i, 'rating' => $base + 40 * $k, 'data' => [
+                'source' => 'lesson',
+                'title' => Str::limit($lesson->title . ' — ' . ($i === 0 ? 'Nước mở đầu' : ($last ? 'Đoạn kết' : 'Giữa ván')), 250, ''),
+                'fen' => explode(' ', trim((string) $fen))[0],
+                'side' => $side,
+                'solution' => array_column($sub, 'iccs'),
+                'solver_moves' => $n,
+                'skill_tags' => $this->skills($lesson, $n, $mate, ! $mate),
+                'phase' => $lesson->phase,
+                'status' => 'published',
+            ]];
+        }
+
+        return $out;
     }
 
     /** Đi lại toàn bộ nước theo luật; null nếu có nước sai luật. */
@@ -128,15 +206,26 @@ class BuildPuzzles extends Command
         return ['final' => $b];
     }
 
-    private function skills(Lesson $lesson, int $solver, bool $mate): array
+    private function skills(Lesson $lesson, int $solver, bool $mate, bool $segment = false): array
     {
         $title = Str::of($lesson->title)->ascii()->lower()->toString();
         $tags = [];
         foreach (config('puzzle-skills.skills') as $slug => $s) {
-            if (isset($s['match']) && preg_match($s['match'], $title)) $tags[] = $slug;
-            if (isset($s['series']) && in_array($lesson->series?->slug, $s['series'], true)) $tags[] = $slug;
+            // Đoạn khẩu quyết (không chiếu hết) chỉ thuộc chủ đề nhóm tàn cuộc.
+            if ($segment && ($s['group'] ?? null) !== 'tan-cuoc') continue;
+            $inSeries = isset($s['series']) && in_array($lesson->series?->slug, $s['series'], true);
+            $matches = isset($s['match']) && preg_match($s['match'], $title);
+            if (isset($s['series'], $s['match'])) {
+                if ($inSeries && $matches) $tags[] = $slug;   // khai báo cả hai → phải khớp cả hai
+            } elseif ($matches || $inSeries) {
+                $tags[] = $slug;
+            }
             if (isset($s['max_solver']) && $mate && $solver <= $s['max_solver']) $tags[] = $slug;
         }
+        // Luyện sát pháp theo bậc: thế chiếu hết gắn số nước của bên giải.
+        $maxLevel = (int) config('puzzle-skills.ladder.levels', 10);
+        if ($mate && $solver >= 1 && $solver <= $maxLevel) $tags[] = 'sat-' . $solver;
+        if ($segment) $tags[] = 'khau-quyet';
         if (in_array('song-xe', $tags, true)) {
             $tags = array_values(array_diff($tags, ['xe']));
         }

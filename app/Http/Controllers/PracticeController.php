@@ -24,14 +24,26 @@ class PracticeController extends Controller
     public function hub()
     {
         $u = Auth::user();
+        // Đếm thế theo chủ đề: ~25 truy vấn LIKE trên kho 6.000+ thế → cache theo mốc dựng kho.
+        $counts = \Illuminate\Support\Facades\Cache::remember('skill-counts:' . \Illuminate\Support\Facades\Cache::get('puzzles:stamp', 0), 3600, fn () => [
+            'skills' => collect(config('puzzle-skills.skills'))->map(fn ($s, $slug) => Puzzle::published()->skill($slug)->count())->all(),
+            'total' => Puzzle::published()->count(),
+            'ladder' => Puzzle::published()->where('skill_tags', 'like', '%"sat-%')->count(),
+        ]);
         $skills = collect(config('puzzle-skills.skills'))->map(fn ($s, $slug) => $s + [
-            'slug' => $slug, 'count' => Puzzle::published()->skill($slug)->count(),
+            'slug' => $slug, 'count' => $counts['skills'][$slug] ?? 0,
         ])->filter(fn ($s) => $s['count'] > 0);
+        $groups = collect(config('puzzle-skills.groups'))->map(fn ($g, $key) => $g + [
+            'skills' => $skills->filter(fn ($s) => ($s['group'] ?? 'quan') === $key)->values(),
+        ])->filter(fn ($g) => $g['skills']->isNotEmpty());
 
         return view('practice.hub', [
             'daily' => $this->daily->forDate(),
             'skills' => $skills,
-            'total' => Puzzle::published()->count(),
+            'groups' => $groups,
+            'ladderCount' => $counts['ladder'],
+            'tanCount' => $counts['skills']['tan-cuoc'] ?? 0,
+            'total' => $counts['total'],
             'dueCount' => $u ? $this->puzzles->dueCount($u) : 0,
             'mistakesDue' => $u ? app(\App\Services\MistakeService::class)->dueCount($u) : 0,
             'weak' => $u ? $this->puzzles->weakSkills($u) : [],
@@ -65,10 +77,84 @@ class PracticeController extends Controller
 
         return view('practice.play', [
             'mode' => 'topic', 'skill' => $skill,
-            'title' => 'Luyện chủ đề: ' . $def['name'],
-            'lede' => $def['desc'] . ' Mỗi lượt 10 thế, độ khó theo trình độ của bạn.',
+            'title' => str_starts_with($def['name'], 'Luyện') ? $def['name'] : 'Luyện chủ đề: ' . $def['name'],
+            'lede' => $def['desc'] . ' Mỗi lượt 10 thế, độ khó theo trình độ của bạn.'
+                . (($def['group'] ?? null) === 'tan-cuoc' ? ' Tìm nước theo bài; nước cùng mục đích cũng được tính. Bí thì mở "Khẩu quyết của thế này".' : ''),
             'first' => $first, 'rounds' => 10,
         ]);
+    }
+
+    /** Luyện sát pháp: bản đồ 10 bậc (chiếu hết 1 → 10 nước), đúng đủ thế ở bậc trước mới mở bậc sau. */
+    public function ladder()
+    {
+        $cfg = config('puzzle-skills.ladder');
+        $levels = $this->ladderLevels(Auth::user());
+
+        return view('practice.ladder', [
+            'levels' => $levels, 'pass' => $cfg['pass'], 'stars' => $cfg['stars'],
+            'total' => array_sum(array_column($levels, 'count')),
+            'solvedTotal' => Auth::check() ? array_sum(array_column($levels, 'solved')) : null,
+        ]);
+    }
+
+    public function ladderLevel(int $level)
+    {
+        $cfg = config('puzzle-skills.ladder');
+        abort_unless($level >= 1 && $level <= $cfg['levels'], 404);
+        $levels = $this->ladderLevels(Auth::user());
+        if (Auth::check() && ! $levels[$level]['open']) {
+            return redirect()->route('practice.ladder')
+                ->with('status', 'Bậc ' . $level . ' chưa mở — hãy giải đúng ' . $cfg['pass'] . ' thế ở bậc ' . ($level - 1) . ' trước.');
+        }
+        $first = $this->puzzles->pick(Auth::user(), 'sat-' . $level);
+        abort_unless($first, 404);
+
+        return view('practice.play', [
+            'mode' => 'topic', 'skill' => 'sat-' . $level,
+            'title' => 'Luyện sát pháp — Bậc ' . $level,
+            'lede' => 'Chiếu hết trong ' . $level . ' nước. Mỗi lượt 10 thế; máy đỡ dai nhất, mọi đường chiếu hết đúng hạn đều được tính.',
+            'first' => $first, 'rounds' => 10,
+            'ladder' => ['level' => $level, 'pass' => $cfg['pass'], 'levels' => $cfg['levels'],
+                'solved' => Auth::check() ? $levels[$level]['solved'] : null],
+        ]);
+    }
+
+    /** @return array<int, array{level:int, count:int, solved:?int, open:bool, stars:int}> */
+    private function ladderLevels($user): array
+    {
+        $cfg = config('puzzle-skills.ladder');
+        $counts = \Illuminate\Support\Facades\Cache::remember('ladder-counts:' . \Illuminate\Support\Facades\Cache::get('puzzles:stamp', 0), 3600, function () use ($cfg) {
+            $out = [];
+            for ($i = 1; $i <= $cfg['levels']; $i++) $out[$i] = Puzzle::published()->skill('sat-' . $i)->count();
+
+            return $out;
+        });
+        // Số thế KHÁC NHAU đã giải đúng ở từng bậc.
+        $solved = array_fill(1, $cfg['levels'], 0);
+        if ($user) {
+            $rows = \App\Models\PuzzleAttempt::query()->join('puzzles', 'puzzles.id', '=', 'puzzle_attempts.puzzle_id')
+                ->where('puzzle_attempts.user_id', $user->id)->where('puzzle_attempts.result', 'solved')
+                ->where('puzzles.skill_tags', 'like', '%"sat-%')
+                ->distinct()->get(['puzzles.id', 'puzzles.skill_tags']);
+            foreach ($rows as $r) {
+                foreach ((array) json_decode($r->skill_tags ?: '[]', true) as $t) {
+                    if (preg_match('/^sat-(\d+)$/', $t, $m) && isset($solved[(int) $m[1]])) $solved[(int) $m[1]]++;
+                }
+            }
+        }
+        $levels = [];
+        for ($i = 1; $i <= $cfg['levels']; $i++) {
+            $stars = 0;
+            foreach ($cfg['stars'] as $need) if ($solved[$i] >= min($need, $counts[$i])) $stars++;
+            $levels[$i] = [
+                'level' => $i, 'count' => $counts[$i], 'solved' => $user ? $solved[$i] : null,
+                // Khách: mở hết trên server, trang bản đồ tự khoá theo tiến độ lưu trên máy (localStorage).
+                'open' => ! $user || $i === 1 || $solved[$i - 1] >= min($cfg['pass'], $counts[$i - 1]),
+                'stars' => $user && $counts[$i] ? $stars : 0,
+            ];
+        }
+
+        return $levels;
     }
 
     public function review()

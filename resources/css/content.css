@@ -64,6 +64,18 @@
     .lesson-item .li-sub { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
     .lesson-item .li-meta { display: flex; gap: 6px; align-items: center; color: var(--ink-faint); flex-shrink: 0; }
     .lesson-item .li-meta svg { width: 18px; height: 18px; }
+    /* Bài ngoài màn hình không dựng bố cục/vẽ cho tới khi cuộn tới (danh sách dài trên điện thoại). */
+    .lesson-list > .lesson-item { content-visibility: auto; contain-intrinsic-size: auto 72px; }
+
+    /* ---------- Trang chuyên đề: mục lục chương + hiện thêm / phân trang ---------- */
+    .series-toc summary::-webkit-details-marker { display: none; }
+    .series-toc[open] summary svg:last-child { transform: rotate(180deg); }
+    .series-toc__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; max-height: 260px; overflow-y: auto; }
+    .series-toc__chips .chip small { font-weight: 600; opacity: .65; margin-left: 2px; }
+    .series-more { display: grid; justify-items: center; gap: 4px; margin-top: 18px; }
+    .series-more .pager { margin-top: 8px; }
+    .pager__jump { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--ink-soft); }
+    .pager__jump select { margin: 0 4px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font-weight: 700; }
     .li-thumb { position: relative; width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: var(--xq-wood); flex-shrink: 0; }
     .li-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: left center; display: block; }
     .li-thumb svg { display: block; }

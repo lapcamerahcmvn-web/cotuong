@@ -194,6 +194,7 @@ Route::middleware('auth')->group(function () {
 
 // ---- Lộ trình + Luyện tập + Xếp hạng ----
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
+Route::get('/lo-trinh/chuong-trinh/{slug}', [LearningPathController::class, 'series'])->name('path.series')->where('slug', '[a-z0-9-]+');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');
 Route::get('/nhan-dien-ban-co', [ScanController::class, 'show'])->name('scan');
@@ -219,6 +220,8 @@ Route::prefix('luyen-tap')->name('practice.')->group(function () {
     Route::get('/kiem-tra', [PracticeController::class, 'placement'])->name('placement');
     Route::view('/xep-co', 'practice.setup')->name('setup');   // Xếp cờ để thẩm (bàn xếp quân + máy giải)
     Route::get('/chu-de/{skill}', [PracticeController::class, 'topic'])->name('topic');
+    Route::get('/sat-phap', [PracticeController::class, 'ladder'])->name('ladder');
+    Route::get('/sat-phap/{level}', [PracticeController::class, 'ladderLevel'])->name('ladder.level')->where('level', '[0-9]+');
     Route::get('/loi-sai', [PracticeController::class, 'review'])->name('review')->middleware('auth');
     Route::get('/sai-lam-cua-toi', [MistakeController::class, 'index'])->name('mistakes')->middleware('auth');
     Route::post('/sai-lam-cua-toi/{mistake}', [MistakeController::class, 'answer'])->name('mistakes.answer')->middleware(['auth', 'throttle:60,1,mistake']);

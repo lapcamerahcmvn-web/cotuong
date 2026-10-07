@@ -441,3 +441,24 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Sửa lỗi cũ: `.prose ul/ol` mất dấu đầu dòng/số (Tailwind preflight) → bật lại list-style.
 - ⚠️ `published_at` bài học bị ContentSeeder đặt lại mỗi lần nạp → "mới" dùng `created_at`. Deploy: `migrate --force`
   + `db:seed --class=PostSeeder --force`.
+
+## Đợt 25 (08/10/2026) — Chuyên đề lớn nhẹ trên điện thoại + Luyện sát pháp 10 bậc + Luyện tàn cuộc khẩu quyết
+- **Trang chuyên đề** `/chuong-trinh/{slug}`: chỉ lấy cột cần cho danh sách (không lấy `content`), 40 bài/trang (`?page=N`,
+  canonical/prev/next theo quy ước layout), mục lục chương (tiêu đề "Chương · Bài", nhảy đúng trang + `#bai-N`), nút
+  "Hiện thêm" (`resources/js/series.js`: fetch trang kế, nối bài, `replaceState`), JSON-LD `hasPart` chỉ trang đang xem,
+  `content-visibility: auto` cho thẻ bài. Sát Cục Liên Hoàn: 1,1 MB → 77 KB.
+- **Lộ trình** `/lo-trinh`: chương trình đóng không in nút bài — nạp khi mở (`/lo-trinh/chuong-trinh/{slug}`, partial
+  `partials/path-series-body`); phần (unit) đóng để trong `<template>`, dựng khi bấm. 1,8 MB / ~4.000 nút → 95 KB / 69 nút.
+- **Luyện sát pháp** `/luyen-tap/sat-phap` (+ `/sat-phap/{1..10}`): thế chiếu hết gắn nhãn `sat-N` (N = số nước bên giải,
+  `cotuong:build-puzzles`), đúng `ladder.pass`=10 thế KHÁC NHAU ở bậc N mới mở bậc N+1 (đã đăng nhập: server chặn, khách:
+  localStorage `xq.ladder`). Sao 10/25/50. `max_plies` nâng 16 → 20 để có bậc 9–10.
+- **Luyện tàn cuộc** (chủ đề `tan-cuoc` + Tàn Chốt/Mã/Pháo/Xe, Khéo thắng, Giữ hòa): chuyên đề Cờ Tàn Có Khẩu Quyết không
+  có `puzzle_side` và ván ít khi kết thúc bằng chiếu hết → `segment_series`: cắt ≤ 3 đoạn/bài, mỗi đoạn 2 nước bên giải
+  (Đỏ; Đen nếu tiêu đề có "hòa"), ưu tiên mở đầu / đoạn kết / đoạn có lời giảng → 845 thế, nhãn `khau-quyet`. Máy chấp
+  nhận nước tương đương (đã có sẵn trong board.js). Thẻ thế hiện "Khẩu quyết của thế này" (`Puzzle::verses()`).
+- Nhãn `khau-quyet` bị loại khỏi 60 giây / 3 mạng / thế hôm nay / kiểm tra trình độ (`Puzzle::scopeMating`).
+- Chủ đề có CẢ `series` lẫn `match` → phải khớp cả hai; `groups` sắp lưới chủ đề (tàn cuộc khẩu quyết lên đầu); thêm
+  chủ đề đòn: ngọa tào, Pháo trùng, muộn sát, thiết môn thuyên, xuyên tâm, lưỡng chiếu, thí quân.
+- Đếm thế theo chủ đề/bậc cache theo mốc `puzzles:stamp` (ghi bởi build-puzzles; KHÔNG dùng `max(updated_at)` vì mỗi lượt
+  giải tăng bộ đếm làm đổi mốc). `/luyen-tap` 3,6 s → 0,5 s.
+- Deploy: `cotuong:build-puzzles` (bắt buộc — sinh nhãn mới) + `optimize:clear` + cache lại; không có migration.

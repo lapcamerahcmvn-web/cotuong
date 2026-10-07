@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class LessonController extends Controller
 {
+    /** Số bài mỗi trang ở trang chuyên đề (/chuong-trinh/{slug}?page=N). */
+    public const SERIES_PER_PAGE = 40;
+
     // Meta SEO riêng từng trang giai đoạn (title ≤ ~60, description có từ khoá chính + ngữ cảnh).
     public const PHASE_META = [
         'nhap-mon' => [
@@ -117,19 +120,46 @@ class LessonController extends Controller
     // Trang chuỗi bài (Course): /chuong-trinh/{series}
     public function series(LessonSeries $series)
     {
-        $lessons = $series->publishedLessons()->orderBy('order_in_series')->get();
-        abort_if($lessons->isEmpty(), 404);
+        // Chuyên đề lớn (1.000+ bài) từng làm treo điện thoại: chỉ lấy cột cần cho danh sách (KHÔNG lấy content),
+        // mỗi trang PER bài (?page=N), mục lục chương nhảy tới đúng trang, nút "Hiện thêm" nạp trang kế (series.js).
+        $all = $series->publishedLessons()->orderBy('order_in_series')->orderBy('id')
+            ->get(['id', 'slug', 'title', 'move_count', 'level', 'order_in_series']);
+        abort_if($all->isEmpty(), 404);
 
-        // Bài đã học của người dùng đang đăng nhập → hiện dấu tích ✓ trong danh sách.
+        $per = self::SERIES_PER_PAGE;
+        $pages = (int) ceil($all->count() / $per);
+        $page = max(1, min($pages, (int) request()->query('page', 1)));
+        $offset = ($page - 1) * $per;
+        $lessons = $all->slice($offset, $per)->values();
+
+        // Bài đã học của người dùng đang đăng nhập → dấu tích ✓ + nút "Học tiếp" (tính trên TOÀN chuyên đề).
         $completedIds = [];
         if (auth()->check()) {
             $completedIds = LessonProgress::where('user_id', auth()->id())
                 ->where('status', 'completed')
-                ->whereIn('lesson_id', $lessons->pluck('id'))
+                ->whereIn('lesson_id', $all->pluck('id'))
                 ->pluck('lesson_id')->all();
         }
+        $done = array_flip($completedIds);
+        $nextIndex = $all->search(fn ($l) => ! isset($done[$l->id]));
+        $nextUp = $nextIndex === false ? null : $all[$nextIndex];
 
-        return view('lessons.series', compact('series', 'lessons', 'completedIds'));
+        // Mục lục chương: tiêu đề dạng "Chương · Tên bài" → nhóm theo phần trước " · " (chỉ khi có ≥ 2 chương).
+        $chapters = [];
+        foreach ($all as $i => $l) {
+            if (! str_contains($l->title, ' · ')) continue;
+            $name = explode(' · ', $l->title, 2)[0];
+            if (! isset($chapters[$name])) $chapters[$name] = ['name' => $name, 'index' => $i, 'page' => intdiv($i, $per) + 1, 'count' => 0];
+            $chapters[$name]['count']++;
+        }
+        $chapters = count($chapters) >= 2 ? array_values($chapters) : [];
+
+        return view('lessons.series', [
+            'series' => $series, 'lessons' => $lessons, 'completedIds' => $completedIds,
+            'total' => $all->count(), 'doneCount' => count($completedIds), 'nextUp' => $nextUp,
+            'nextIndex' => $nextIndex === false ? null : $nextIndex, 'page' => $page, 'pages' => $pages,
+            'offset' => $offset, 'chapters' => $chapters,
+        ]);
     }
 
     // Trang bài học có bàn cờ tương tác: /bai-hoc/{slug}

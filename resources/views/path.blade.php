@@ -60,7 +60,7 @@
                 $openSeries = $seriesActive || (! $hasNext && $si === 0);
                 $sTotal = $allNodes->count();
             @endphp
-            <details class="unit" @if($openSeries) open @endif>
+            <details class="unit" @if($openSeries) open @endif @unless($openSeries) data-path-lazy="{{ route('path.series', $s['slug']) }}" @endunless>
                 <summary class="unit__head cursor-pointer list-none">
                     <span class="unit__name">{{ $s['name'] }}
                         <small>{{ $sTotal }} bài @if($u)· {{ $s['done'] }} đã học @endif @if(count($s['units']) > 1)· {{ count($s['units']) }} phần @endif</small>
@@ -70,41 +70,55 @@
                         <x-icon name="chev-down" class="w-5 h-5 text-ink-faint" />
                     </span>
                 </summary>
-                @foreach($s['units'] as $ui => $unit)
-                    @php $unitActive = collect($unit['nodes'])->contains('state', 'next') || (! $seriesActive && $ui === 0); @endphp
-                    @if(count($s['units']) > 1)
-                        <details class="mt-2" @if($unitActive) open @endif>
-                            <summary class="cursor-pointer text-[13.5px] font-bold text-ink-soft py-2 list-none flex items-center gap-2">
-                                <x-icon name="chev-right" class="w-4 h-4" /> Phần {{ $unit['index'] }} · bài {{ $unit['nodes'][0]['n'] }}–{{ end($unit['nodes'])['n'] }}
-                                @if($u)<span class="text-ink-faint font-semibold">({{ $unit['done'] }}/{{ count($unit['nodes']) }})</span>@endif
-                            </summary>
-                    @endif
-                    <div class="nodes pb-1">
-                        @foreach($unit['nodes'] as $n)
-                            <a href="{{ route('lessons.show', $n['slug']) }}" title="{{ $n['n'] }}. {{ $n['title'] }}" aria-label="Bài {{ $n['n'] }}: {{ $n['title'] }}"
-                               class="node is-{{ $n['state'] }}" data-lesson-node="{{ $n['id'] }}">
-                                @if($n['state'] === 'done')<x-icon name="check" />@else{{ $n['n'] }}@endif
-                            </a>
-                        @endforeach
-                    </div>
-                    @if(count($s['units']) > 1)</details>@endif
-                @endforeach
-                <a href="{{ route('series', $s['slug']) }}" class="inline-flex items-center gap-1 text-[13px] font-bold mt-3">Xem danh sách bài <x-icon name="arrow-right" class="w-4 h-4" /></a>
+                {{-- Chỉ in sẵn nút bài của chương trình đang mở; chương trình đóng nạp khi bấm (route path.series) —
+                     lộ trình 4.000+ bài từng làm treo điện thoại. --}}
+                @if($openSeries)
+                    @include('partials.path-series-body', ['s' => $s, 'u' => $u, 'seriesActive' => $seriesActive])
+                @else
+                    <div class="text-[13px] text-ink-faint py-3" data-path-loading>Đang tải danh sách bài…</div>
+                @endif
             </details>
         @endforeach
     </section>
 @endforeach
 </div>
 
-@guest
 @push('scripts')
 <script>
-// Khách: tô node đã xem từ localStorage (tiến độ khách, gộp vào tài khoản khi đăng nhập).
-(function () { try {
-    var ids = JSON.parse(localStorage.getItem('xq.guest.lessons') || '[]');
-    ids.forEach(function (id) { var n = document.querySelector('[data-lesson-node="' + id + '"]'); if (n) n.classList.add('is-reading'); });
-} catch (e) {} })();
+// Lộ trình nhẹ cho điện thoại: (1) chương trình đóng → nạp nút bài khi mở; (2) phần đóng → dựng từ <template> khi mở;
+// (3) khách: tô node đã xem từ localStorage (tiến độ khách, gộp vào tài khoản khi đăng nhập).
+(function () {
+    var guestIds = {};
+    @guest try { JSON.parse(localStorage.getItem('xq.guest.lessons') || '[]').forEach(function (id) { guestIds[id] = 1; }); } catch (e) {} @endguest
+    function paint(root) {
+        root.querySelectorAll('[data-lesson-node]').forEach(function (n) { if (guestIds[n.getAttribute('data-lesson-node')]) n.classList.add('is-reading'); });
+    }
+    function wireUnits(root) {
+        root.querySelectorAll('details[data-unit-tpl]').forEach(function (d) {
+            d.addEventListener('toggle', function () {
+                var t = d.querySelector('template');
+                if (!d.open || !t) return;
+                d.appendChild(t.content.cloneNode(true)); t.remove(); paint(d);
+            });
+        });
+    }
+    document.querySelectorAll('details[data-path-lazy]').forEach(function (d) {
+        d.addEventListener('toggle', function () {
+            if (!d.open || d.dataset.loaded) return;
+            d.dataset.loaded = '1';
+            fetch(d.getAttribute('data-path-lazy'), { credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+                .then(function (r) { if (!r.ok) throw r; return r.text(); })
+                .then(function (html) {
+                    var box = d.querySelector('[data-path-loading]');
+                    var tmp = document.createElement('div'); tmp.innerHTML = html;
+                    while (tmp.firstChild) d.insertBefore(tmp.firstChild, box);
+                    box.remove(); wireUnits(d); paint(d);
+                })
+                .catch(function () { d.dataset.loaded = ''; var box = d.querySelector('[data-path-loading]'); if (box) box.textContent = 'Không tải được — bấm đóng rồi mở lại.'; });
+        });
+    });
+    wireUnits(document); paint(document);
+})();
 </script>
 @endpush
-@endguest
 @endsection
