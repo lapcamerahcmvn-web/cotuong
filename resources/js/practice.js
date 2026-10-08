@@ -52,6 +52,40 @@ function initPlay(root) {
         onSolved: (info) => finish(true, info),
         onFail: (info) => finish(false, info),
     });
+    // Nước khác đáp án: trong lúc máy kiểm tra / khi máy kết luận "thắng nhưng chậm" bàn cờ không tự kết thúc thế → hiện
+    // khung nổi có lối thoát (xem lời giải / bỏ qua) để người học không bị kẹt, nhất là trên điện thoại.
+    let checkTimer = null;
+    const stuckBox = (title, body, withWait) => {
+        if (reported) return;
+        result.innerHTML = `<div class="alert ${withWait ? '' : 'alert--err'}">${icon(withWait ? 'clock' : 'bulb')}<span><b>${title}</b>
+              <span class="block text-[13px] font-semibold opacity-80">${body}</span></span></div>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button type="button" class="btn" data-stuck-reveal>${icon('eye')} Xem lời giải</button>
+              <button type="button" class="btn btn--primary" data-stuck-skip>${icon('arrow-right')} Bỏ qua · thế tiếp</button>
+            </div>`;
+        result.hidden = false;
+        result.classList.add('is-float');
+        result.querySelector('[data-stuck-reveal]').addEventListener('click', () => engine.reveal());
+        // Bỏ qua: ghi lượt là "xem lời giải" (không tính đúng) rồi sang thế tiếp ngay.
+        result.querySelector('[data-stuck-skip]').addEventListener('click', () => {
+            finish(false, { moves: [], line: null, ms: 0, revealed: true });
+            cancelAuto();
+            next();
+        });
+    };
+    boardEl.addEventListener('xq:puzzle-checking', () => {
+        clearTimeout(checkTimer);
+        // Máy kiểm tra quá 1,5 giây (điện thoại yếu, thế dài) → cho phép không chờ.
+        checkTimer = setTimeout(() => stuckBox('Máy đang kiểm tra nước của bạn…', 'Nước này khác lời giải trong sách. Chờ chút, hoặc:', true), 1500);
+    });
+    boardEl.addEventListener('xq:puzzle-checked', () => {
+        clearTimeout(checkTimer);
+        if (!reported) { result.hidden = true; result.classList.remove('is-float'); }
+    });
+    boardEl.addEventListener('xq:puzzle-slow', (e) => {
+        clearTimeout(checkTimer);
+        stuckBox('Vẫn chiếu hết được — nhưng chưa nhanh nhất', `Nước này cần ${e.detail.k} nước. Thử tìm đường ngắn hơn trên bàn cờ, hoặc:`, false);
+    });
     $(root, '[data-hint]')?.addEventListener('click', () => engine.hint());
     $(root, '[data-reveal]')?.addEventListener('click', () => engine.reveal());
     setMeta();
@@ -99,6 +133,7 @@ function initPlay(root) {
         if (!window.__xq?.auth && mode === 'daily' && ok) save('xq.guest.daily', new Date().toDateString());
         if (ladder && ok && !info.revealed) ladderSolved(puzzle.id);
         const shownFor = puzzle.id;
+        clearTimeout(checkTimer);
         showResult(ok && !info.revealed, null);
         const res = await req;
         lastRes = res;

@@ -492,3 +492,7 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - (08/10, sau phản hồi) Thanh "Đã học" dính đáy từng che danh sách nước trên điện thoại → đổi thành `position: fixed`, ẩn
   mặc định; chỉ trượt lên (`.is-shown`) khi tới nước cuối / tự giải đúng / vừa ghi nhận đã học, tự ẩn sau 3 giây nếu không
   bấm (chạm vào thanh thì giữ, có nút ×). Mỗi lần chạy lại tới nước cuối thì hiện lại.
+- (08/10) Luyện tập — đi nước khác đáp án có 2 trạng thái KHÔNG kết thúc thế (người học kẹt, không có nút): máy đang
+  kiểm tra (bàn khoá "Đang kiểm tra…", điện thoại yếu/thế dài có thể vài giây) và "thắng nhưng chậm" (chỉ báo trên bàn).
+  board.js phát `xq:puzzle-checking` / `xq:puzzle-checked` / `xq:puzzle-slow`; practice.js hiện khung nổi "Xem lời giải" +
+  "Bỏ qua · thế tiếp" (kiểm tra quá 1,5 giây, hoặc ngay khi "chậm"). Bỏ qua = ghi lượt "xem lời giải" rồi sang thế ngay.

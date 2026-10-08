@@ -7,6 +7,7 @@
    API: window.XiangqiBoard.render(fen, lastMove, arrows, selected, flip, opts)
         window.XiangqiBoard.mountPuzzle(el, cfg) → { reset, reveal, hint, load, destroy }
    Sự kiện (bubble lên document): xq:viewed-all-moves · xq:userstep · xq:puzzle-move {ok,ply,move,expected}
+        · xq:puzzle-checking / xq:puzzle-checked {status} (máy kiểm nước khác đáp án) · xq:puzzle-slow {k} (thắng nhưng chậm)
         · xq:puzzle-solved {moves,ms,mistakes,revealed} · xq:puzzle-failed {moves,ms,wrongPly,userMove,expected} */
 (function () {
   'use strict';
@@ -977,18 +978,21 @@
         state.locked = true;
         if (!state.dyn) setCaption('Đang kiểm tra…', 'Nước này khác lời giải trong sách — máy đang kiểm chứng xem có tương đương / còn thắng không.', null);
         draw({ noAnim: true });
+        emit(root, 'xq:puzzle-checking', { move: got, expected: exp });
         Promise.resolve(checker({ fen: before, red: solverRed(), move: got, expected: exp, n: remaining(), mateGoal: state.mateGoal, later: laterMoves() })).then(function (r) {
           if (state !== mine || state.solved) return;   // đã bị đặt lại / chuyển thế trong lúc chờ
           state.locked = false;
+          emit(root, 'xq:puzzle-checked', { status: r ? r.status : null });
           if (r && r.status === 'win') return acceptLine(got, exp, r);
           if (r && r.status === 'equiv' && !state.dyn) return acceptEquiv(got, exp);
           if (r && r.status === 'slow') {
             setCaption('Vẫn thắng — nhưng chưa nhanh nhất', 'Nước này vẫn dẫn tới chiếu hết nhưng cần ' + r.k + ' nước. Hãy tìm đường ngắn hơn.', null);
             draw({ noAnim: true });
+            emit(root, 'xq:puzzle-slow', { move: got, expected: exp, k: r.k });
             return;
           }
           wrong(got, exp);
-        }, function () { if (state !== mine) return; state.locked = false; wrong(got, exp); });
+        }, function () { if (state !== mine) return; state.locked = false; emit(root, 'xq:puzzle-checked', { status: null }); wrong(got, exp); });
         return;
       }
       if (!ok) return wrong(got, exp);
