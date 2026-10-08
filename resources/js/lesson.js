@@ -123,10 +123,10 @@ function trackProgress(page, d, lessonId) {
     };
 
     ui.btn?.addEventListener('click', async () => {
-        if (done) return ui.go();
+        if (done) return d.nextUrl ? ui.go() : ui.hide();   // bài cuối chương trình: đã học rồi → chỉ ẩn thanh
         ui.set('busy', 'Đang ghi nhận…');
         const ok = await send(true);
-        if (ok) setTimeout(ui.go, 700);   // thấy kịp "+XP" rồi sang bài
+        if (ok) setTimeout(() => (d.nextUrl ? ui.go() : ui.hide()), d.nextUrl ? 700 : 2500);   // thấy kịp "+XP" rồi sang bài
         else { refresh(); ui.flash(); }
     });
 
@@ -161,7 +161,7 @@ function trackGuest(d, lessonId) {
     if (d.isText === '1') setTimeout(mark, 15000);
     document.addEventListener('xq:viewed-all-moves', mark);
     document.addEventListener('xq:lesson-solved', mark);
-    ui.btn?.addEventListener('click', () => { mark(); ui.go(); });
+    ui.btn?.addEventListener('click', () => { mark(); d.nextUrl ? ui.go() : ui.hide(); });
 }
 
 function initLessonPuzzle(d) {

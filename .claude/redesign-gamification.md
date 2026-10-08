@@ -496,3 +496,7 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   kiểm tra (bàn khoá "Đang kiểm tra…", điện thoại yếu/thế dài có thể vài giây) và "thắng nhưng chậm" (chỉ báo trên bàn).
   board.js phát `xq:puzzle-checking` / `xq:puzzle-checked` / `xq:puzzle-slow`; practice.js hiện khung nổi "Xem lời giải" +
   "Bỏ qua · thế tiếp" (kiểm tra quá 1,5 giây, hoặc ngay khi "chậm"). Bỏ qua = ghi lượt "xem lời giải" rồi sang thế ngay.
+- (08/10, rà soát) 60 giây / 3 mạng: "thắng nhưng chậm" tính như đi sai rồi sang thế (3 mạng không đồng hồ từng kẹt mãi).
+  Thế cờ hôm nay: khung kẹt chỉ có "Xem lời giải" (không "Bỏ qua" sang thế ngẫu nhiên). Bài cuối chương trình (không có
+  bài tiếp): nút trên thanh "Đã học" chỉ ẩn thanh. Luyện từng thế: nút Gợi ý / Xem lời giải nhỏ trên thanh đầu bàn cờ
+  (`.board-bar__btn`, chèn bằng practice.js — không có ở 60 giây / 3 mạng).

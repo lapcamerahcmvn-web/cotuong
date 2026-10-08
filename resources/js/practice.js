@@ -61,13 +61,13 @@ function initPlay(root) {
               <span class="block text-[13px] font-semibold opacity-80">${body}</span></span></div>
             <div class="flex flex-wrap gap-2 mt-3">
               <button type="button" class="btn" data-stuck-reveal>${icon('eye')} Xem lời giải</button>
-              <button type="button" class="btn btn--primary" data-stuck-skip>${icon('arrow-right')} Bỏ qua · thế tiếp</button>
+              ${mode === 'daily' ? '' : `<button type="button" class="btn btn--primary" data-stuck-skip>${icon('arrow-right')} Bỏ qua · thế tiếp</button>`}
             </div>`;
         result.hidden = false;
         result.classList.add('is-float');
         result.querySelector('[data-stuck-reveal]').addEventListener('click', () => engine.reveal());
         // Bỏ qua: ghi lượt là "xem lời giải" (không tính đúng) rồi sang thế tiếp ngay.
-        result.querySelector('[data-stuck-skip]').addEventListener('click', () => {
+        result.querySelector('[data-stuck-skip]')?.addEventListener('click', () => {
             finish(false, { moves: [], line: null, ms: 0, revealed: true });
             cancelAuto();
             next();
@@ -86,6 +86,15 @@ function initPlay(root) {
         clearTimeout(checkTimer);
         stuckBox('Vẫn chiếu hết được — nhưng chưa nhanh nhất', `Nước này cần ${e.detail.k} nước. Thử tìm đường ngắn hơn trên bàn cờ, hoặc:`, false);
     });
+    // Gợi ý / Xem lời giải ngay trên thanh đầu bàn cờ (điện thoại không phải kéo xuống thẻ bên dưới).
+    const bbar = boardEl.querySelector('.board-bar');
+    if (bbar && !bbar.querySelector('[data-mini-hint]')) {
+        bbar.insertAdjacentHTML('beforeend', `<span class="board-bar__tools">
+            <button type="button" class="board-bar__btn" data-mini-hint title="Gợi ý" aria-label="Gợi ý">${icon('bulb')}</button>
+            <button type="button" class="board-bar__btn" data-mini-reveal title="Xem lời giải" aria-label="Xem lời giải">${icon('eye')}</button></span>`);
+        bbar.querySelector('[data-mini-hint]').addEventListener('click', () => engine.hint());
+        bbar.querySelector('[data-mini-reveal]').addEventListener('click', () => engine.reveal());
+    }
     $(root, '[data-hint]')?.addEventListener('click', () => engine.hint());
     $(root, '[data-reveal]')?.addEventListener('click', () => engine.reveal());
     setMeta();
@@ -310,8 +319,11 @@ function initSession(root) {
         root.__puzzle = puzzle;
         if (!puzzle) return end(st);
         const cfg = { fen: puzzle.fen, solution: puzzle.solution, side: puzzle.side, failOnWrong: true, onSolved: (i) => answer(i), onFail: (i) => answer(i, true) };
-        if (!engine) engine = window.XiangqiBoard.mountPuzzle(boardEl, cfg);
-        else engine.load(cfg);
+        if (!engine) {
+            engine = window.XiangqiBoard.mountPuzzle(boardEl, cfg);
+            // "Vẫn thắng nhưng chậm" không kết thúc thế → 3 mạng (không đồng hồ) sẽ kẹt mãi: tính như đi sai, sang thế sau.
+            boardEl.addEventListener('xq:puzzle-slow', () => { pop('Chưa nhanh nhất', 'var(--danger)'); answer({ moves: [], line: null, ms: 0 }, true); });
+        } else engine.load(cfg);
         const t = $(root, '[data-p-side]');
         if (t) t.textContent = puzzle.side === 'do' ? 'Đỏ đi' : 'Đen đi';
     }
