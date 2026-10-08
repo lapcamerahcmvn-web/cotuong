@@ -157,7 +157,9 @@ class PuzzleService
         $gami = null;
         // Giải quá nhanh so với số nước (bấm theo đáp án lộ trong JSON) → không cộng XP.
         $tooFast = $ms < 700 * max(1, (int) $p->solver_moves);
-        if ($ok && ! $tooFast && ! in_array($mode, ['rush', 'survival'], true)) {
+        // Bài học: giải đúng SAU khi đã sai chỉ để ghi nhận "đã học bài" (ProgressController) — không cộng XP thế cờ.
+        $lessonRetry = $mode === 'lesson' && ! $firstAttempt;
+        if ($ok && ! $tooFast && ! $lessonRetry && ! in_array($mode, ['rush', 'survival'], true)) {
             $today = Vn::today();
             if ($mode === 'daily' && app(DailyPuzzleService::class)->forDate($today)?->id === $p->id) {
                 $gami = $this->gami->record($user, 'daily_puzzle', ['key' => 'daily:' . $today, 'subject' => $p, 'puzzles' => 1]);

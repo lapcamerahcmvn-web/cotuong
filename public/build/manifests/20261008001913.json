@@ -3,8 +3,8 @@
     "file": "assets/engine-Bop88o4S.js",
     "name": "engine"
   },
-  "_notation-CTM43SYi.js": {
-    "file": "assets/notation-CTM43SYi.js",
+  "_notation-CMKThdj3.js": {
+    "file": "assets/notation-CMKThdj3.js",
     "name": "notation",
     "imports": [
       "resources/js/app.js"
@@ -27,7 +27,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-4mB9_035.js",
+    "file": "assets/app-BK80Nk3-.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "resources/js/board-scan.js": {
-    "file": "assets/board-scan-BIalgHZU.js",
+    "file": "assets/board-scan-C8OLonLX.js",
     "name": "board-scan",
     "src": "resources/js/board-scan.js",
     "isDynamicEntry": true,
@@ -69,7 +69,7 @@
     "isDynamicEntry": true
   },
   "resources/js/display-settings.js": {
-    "file": "assets/display-settings-cbFZ7pAj.js",
+    "file": "assets/display-settings-BI8aE_A2.js",
     "name": "display-settings",
     "src": "resources/js/display-settings.js",
     "isDynamicEntry": true,
@@ -78,7 +78,7 @@
     ]
   },
   "resources/js/invites.js": {
-    "file": "assets/invites-B5HGoPWR.js",
+    "file": "assets/invites-9cvPtrOA.js",
     "name": "invites",
     "src": "resources/js/invites.js",
     "isDynamicEntry": true,
@@ -87,7 +87,7 @@
     ]
   },
   "resources/js/lesson.js": {
-    "file": "assets/lesson-1wwXKEhU.js",
+    "file": "assets/lesson-Cvs_8BV9.js",
     "name": "lesson",
     "src": "resources/js/lesson.js",
     "isDynamicEntry": true,
@@ -97,7 +97,7 @@
     ]
   },
   "resources/js/mindmap.js": {
-    "file": "assets/mindmap-BYgKzgie.js",
+    "file": "assets/mindmap-CBM9PaQ-.js",
     "name": "mindmap",
     "src": "resources/js/mindmap.js",
     "isDynamicEntry": true,
@@ -106,7 +106,7 @@
     ]
   },
   "resources/js/mistakes.js": {
-    "file": "assets/mistakes-bbCmj1P8.js",
+    "file": "assets/mistakes-D2x8qVTL.js",
     "name": "mistakes",
     "src": "resources/js/mistakes.js",
     "isDynamicEntry": true,
@@ -115,14 +115,14 @@
     ]
   },
   "resources/js/play-bot.js": {
-    "file": "assets/play-bot-B84hzLIP.js",
+    "file": "assets/play-bot-zHU4oHZj.js",
     "name": "play-bot",
     "src": "resources/js/play-bot.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "_engine-Bop88o4S.js",
-      "_notation-CTM43SYi.js"
+      "_notation-CMKThdj3.js"
     ],
     "dynamicImports": [
       "resources/js/share.js"
@@ -132,17 +132,17 @@
     ]
   },
   "resources/js/play-pvp.js": {
-    "file": "assets/play-pvp-DAclnnkW.js",
+    "file": "assets/play-pvp--5tFfONh.js",
     "name": "play-pvp",
     "src": "resources/js/play-pvp.js",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_notation-CTM43SYi.js"
+      "_notation-CMKThdj3.js"
     ]
   },
   "resources/js/practice.js": {
-    "file": "assets/practice-Btu2QsEs.js",
+    "file": "assets/practice-Tiva-QOY.js",
     "name": "practice",
     "src": "resources/js/practice.js",
     "isDynamicEntry": true,
@@ -155,7 +155,7 @@
     ]
   },
   "resources/js/review.js": {
-    "file": "assets/review-BOCC1B2e.js",
+    "file": "assets/review-_S-9MN3x.js",
     "name": "review",
     "src": "resources/js/review.js",
     "isDynamicEntry": true,
@@ -174,7 +174,7 @@
     "isDynamicEntry": true
   },
   "resources/js/setup-board.js": {
-    "file": "assets/setup-board-CfxWGrog.js",
+    "file": "assets/setup-board-EHcQHPwK.js",
     "name": "setup-board",
     "src": "resources/js/setup-board.js",
     "isDynamicEntry": true,
@@ -183,7 +183,7 @@
     ]
   },
   "resources/js/share.js": {
-    "file": "assets/share-hRhOI37X.js",
+    "file": "assets/share-BRnSRvtv.js",
     "name": "share",
     "src": "resources/js/share.js",
     "isDynamicEntry": true,
@@ -192,7 +192,7 @@
     ]
   },
   "resources/js/social.js": {
-    "file": "assets/social-CQbCr2F_.js",
+    "file": "assets/social-CZZtt7XH.js",
     "name": "social",
     "src": "resources/js/social.js",
     "isDynamicEntry": true,
@@ -201,7 +201,7 @@
     ]
   },
   "resources/js/weekly.js": {
-    "file": "assets/weekly-DTe6PgVO.js",
+    "file": "assets/weekly-DcRovGLU.js",
     "name": "weekly",
     "src": "resources/js/weekly.js",
     "isDynamicEntry": true,

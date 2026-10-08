@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Lesson;
 use App\Models\LessonProgress;
+use App\Models\Puzzle;
+use App\Models\PuzzleAttempt;
 use App\Services\Gamification\GamificationService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +20,7 @@ class ProgressController extends Controller
             'read_seconds'     => ['nullable', 'integer', 'min:0', 'max:100000'],
             'viewed_all_moves' => ['nullable', 'boolean'],
             'finished_reading' => ['nullable', 'boolean'],
+            'solved_puzzle'    => ['nullable', 'boolean'],
         ]);
 
         $p = LessonProgress::firstOrNew([
@@ -35,10 +38,14 @@ class ProgressController extends Controller
         }
 
         // Điều kiện "đã học" — đơn giản, thân thiện:
-        // - Bài CÓ nước đi: đã xem hết các nước (dù tua nhanh) + ở lại ≥ 20 giây.
+        // - Bài CÓ nước đi: đã xem hết các nước (dù tua nhanh) + ở lại ≥ minSeconds() (bài 1 nước 5 giây … tối đa 20 giây),
+        //   HOẶC đã tự giải đúng thế cờ của bài ("Thử tự giải") — kiểm bằng lượt giải đã được server thẩm định.
         // - Bài KHÔNG có nước đi (lý thuyết): đã cuộn hết bài + ở lại ≥ 15 giây, HOẶC đọc ≥ 90 giây.
+        $solved = $request->boolean('solved_puzzle') && PuzzleAttempt::where('user_id', Auth::id())->where('result', 'solved')
+            ->where('created_at', '>=', now()->subHours(6))
+            ->whereIn('puzzle_id', Puzzle::where('lesson_id', $lesson->id)->select('id'))->exists();
         $completed = $lesson->move_count > 0
-            ? ($p->viewed_all_moves && $p->read_seconds >= 20)
+            ? (($p->viewed_all_moves && $p->read_seconds >= self::minSeconds($lesson)) || $solved)
             : (($request->boolean('finished_reading') && $p->read_seconds >= 15) || $p->read_seconds >= 90);
 
         $justCompleted = false;
@@ -56,6 +63,12 @@ class ProgressController extends Controller
             'completed'    => $p->status === 'completed',
             'gamification' => $justCompleted ? $gami->lessonCompleted(Auth::user(), $lesson) : null,
         ]);
+    }
+
+    /** Thời gian tối thiểu (giây) ở lại bài có nước đi: 3 + 2 giây/nước, tối đa 20 — bài 1 nước chỉ cần 5 giây. */
+    public static function minSeconds(\App\Models\Lesson $lesson): int
+    {
+        return (int) min(20, 3 + 2 * max(1, (int) $lesson->move_count));
     }
 
     /**

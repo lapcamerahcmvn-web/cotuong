@@ -48,7 +48,7 @@
         <div class="grid gap-3 content-start">
             <div class="card card--pad" data-mk-info></div>
             <div class="card card--pad" data-mk-feedback hidden></div>
-            <div class="flex gap-2 flex-wrap">
+            <div class="flex gap-2 flex-wrap mk-actions" data-mk-actions>
                 <button type="button" class="btn" data-mk-show><x-icon name="eye" /> Xem đáp án</button>
                 <button type="button" class="btn btn--primary" data-mk-next hidden>Thế tiếp theo <x-icon name="chev-right" /></button>
             </div>

@@ -92,26 +92,39 @@ function initPlay(root) {
         results.push(ok && !info.revealed);
         renderDots();
         track(ok && !info.revealed ? 'puzzle_correct' : 'puzzle_wrong', { mode, puzzle_id: puzzle.id });
-        let res = null;
-        try {
-            res = await postJson(`/luyen-tap/the-co/${puzzle.id}/thu`, { moves: info.moves, line: info.line, ms: info.ms, mode, revealed: !!info.revealed });
-        } catch (e) { /* mất mạng: vẫn cho đi tiếp */ }
-        if (res) handleGamification(res.gamification);
+        // Hiện kết quả + bắt đầu đếm ngay; server ghi nhận chạy song song (không bắt người học chờ mạng).
+        const req = postJson(`/luyen-tap/the-co/${puzzle.id}/thu`, { moves: info.moves, line: info.line, ms: info.ms, mode, revealed: !!info.revealed })
+            .catch(() => null);   // mất mạng: vẫn cho đi tiếp
         if (mode === 'daily' && ok && !info.revealed) { track('daily_challenge_complete'); confetti($(root, '[data-board]')); }
         if (!window.__xq?.auth && mode === 'daily' && ok) save('xq.guest.daily', new Date().toDateString());
         if (ladder && ok && !info.revealed) ladderSolved(puzzle.id);
-        showResult(ok && !info.revealed, res);
+        const shownFor = puzzle.id;
+        showResult(ok && !info.revealed, null);
+        const res = await req;
+        lastRes = res;
+        if (res) handleGamification(res.gamification);
+        if (res && shownFor === puzzle.id) fillResultStats(res);
     }
+
+    // Điểm thế cờ (+/−) và % người giải đúng — điền vào khung kết quả khi server trả về.
+    function fillResultStats(res) {
+        const box = result.querySelector('[data-res-stats]');
+        if (!box) return;
+        const delta = res?.rating?.delta;
+        const rate = res?.stats?.rate;
+        box.innerHTML = `${delta ? ` <span class="font-bold">${delta > 0 ? '+' : ''}${delta} điểm thế cờ</span>` : ''}
+            ${rate !== null && rate !== undefined ? `<span class="block text-[13px] font-semibold opacity-80">${rate}% người giải đúng thế này</span>` : ''}`;
+    }
+
+    let autoNext = null, lastRes = null;
+    const AUTO_MS = 2000;   // giải đúng → tự sang thế tiếp sau 2 giây
+    function cancelAuto() { clearTimeout(autoNext); autoNext = null; result.querySelector('[data-auto]')?.remove(); }
 
     function showResult(ok, res) {
         const more = rounds ? results.length < rounds : mode !== 'daily';
-        const delta = res?.rating?.delta;
-        const rate = res?.stats?.rate;
         result.innerHTML = `
             <div class="alert ${ok ? 'alert--ok' : 'alert--err'}">${icon(ok ? 'check-circle' : 'x-circle')}
-              <span>${ok ? 'Chính xác!' : 'Chưa đúng — xem nước đúng trên bàn cờ.'}
-              ${delta ? ` <span class="font-bold">${delta > 0 ? '+' : ''}${delta} điểm thế cờ</span>` : ''}
-              ${rate !== null && rate !== undefined ? `<span class="block text-[13px] font-semibold opacity-80">${rate}% người giải đúng thế này</span>` : ''}</span></div>
+              <span>${ok ? 'Chính xác!' : 'Chưa đúng — xem nước đúng trên bàn cờ.'}<span data-res-stats></span></span></div>
             <div class="flex flex-wrap gap-2 mt-3">
               ${more ? `<button type="button" class="btn btn--primary" data-next>${icon('arrow-right')} Thế tiếp theo</button>` : ''}
               ${mode === 'daily' ? `<a href="/luyen-tap/60-giay" class="btn btn--primary">${icon('zap')} Thử thách 60 giây</a>` : ''}
@@ -120,11 +133,23 @@ function initPlay(root) {
               ${mode === 'daily' ? `<button type="button" class="btn btn--ghost" data-share-daily>${icon('share')} Chia sẻ</button>` : ''}
             </div>`;
         result.hidden = false;
-        result.querySelector('[data-retry]')?.addEventListener('click', () => { result.hidden = true; engine.reset(); });
-        result.querySelector('[data-next]')?.addEventListener('click', next);
+        // Điện thoại: khung kết quả nổi ngay trên thanh điều hướng (không phải kéo xuống tìm nút).
+        result.classList.toggle('is-float', more);
+        result.querySelector('[data-retry]')?.addEventListener('click', () => { cancelAuto(); result.hidden = true; result.classList.remove('is-float'); engine.reset(); });
+        result.querySelector('[data-next]')?.addEventListener('click', () => { cancelAuto(); next(); });
+        if (ok && more) {
+            const bar = document.createElement('div');
+            bar.dataset.auto = '';
+            bar.className = 'auto-next';
+            bar.innerHTML = `<span class="auto-next__bar" style="animation-duration:${AUTO_MS}ms"></span><span>Sang thế tiếp theo…</span><button type="button" class="auto-next__stay">Ở lại xem</button>`;
+            result.prepend(bar);
+            bar.querySelector('button').addEventListener('click', cancelAuto);
+            prefetch = fetchNextPuzzle();   // tải sẵn thế tiếp trong lúc đếm
+            autoNext = setTimeout(() => { autoNext = null; next(); }, AUTO_MS);
+        }
         result.querySelector('[data-share-daily]')?.addEventListener('click', () => {
             const d = new Date().toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit' });
-            const streak = res?.gamification?.streak;
+            const streak = lastRes?.gamification?.streak;
             import('./share').then((m) => m.share(`♟ Thế cờ hôm nay ${d}: ${ok ? '✅ giải đúng ngay lần đầu' : '❌ chưa giải được'}${streak > 1 ? ` · 🔥 ${streak} ngày liên tiếp` : ''}
 Bạn thử xem giải được không?`, location.origin + '/luyen-tap/hom-nay'));
         });
@@ -139,17 +164,31 @@ Bạn thử xem giải được không?`, location.origin + '/luyen-tap/hom-nay'
         // Kiểm tra trình độ / lỗi sai: hàng đợi chọn sẵn, payload nhúng trong trang.
         queue = queue.filter((id) => !seen.includes(id));
         if (queue.length) p = fetchById(queue[0]);
-        if (!p && !['placement', 'review'].includes(mode)) {
-            p = (await getJson('/luyen-tap/the-co/tiep', { mode: 'topic', skill, exclude: seen }).catch(() => null))?.puzzle || null;
+        if (!p) {
+            const pre = prefetch; prefetch = null;
+            p = pre ? await pre : await fetchNextPuzzle();
+            if (p && seen.includes(p.id)) p = await fetchNextPuzzle();
         }
         busy = false;
         if (!p) { summary(); return; }
         puzzle = p;
         reported = false;
         result.hidden = true;
+        result.classList.remove('is-float');
         engine.load({ fen: p.fen, solution: p.solution, side: p.side });
+        // Bàn cờ bị cuộn khuất (điện thoại) → đưa lên lại để giải thế mới ngay.
+        const r = boardEl.getBoundingClientRect();
+        if (r.top < 0 || r.top > innerHeight * 0.5) boardEl.scrollIntoView({ block: 'start', behavior: 'smooth' });
         setMeta();
         track('puzzle_start', { mode, puzzle_id: p.id, rating: p.rating });
+    }
+
+    let prefetch = null;
+    function fetchNextPuzzle() {
+        if (['placement', 'review'].includes(mode)) return Promise.resolve(null);
+        const q = queue.filter((id) => !seen.includes(id) && id !== puzzle.id);
+        if (q.length) return Promise.resolve(fetchById(q[0]));
+        return getJson('/luyen-tap/the-co/tiep', { mode: 'topic', skill, exclude: [...seen, puzzle.id] }).then((r) => r?.puzzle || null).catch(() => null);
     }
 
     function fetchById(id) {
@@ -158,6 +197,8 @@ Bạn thử xem giải được không?`, location.origin + '/luyen-tap/hom-nay'
     }
 
     function summary() {
+        cancelAuto();
+        result.classList.remove('is-float');
         const okN = results.filter(Boolean).length;
         let extra = '';
         if (mode === 'placement') {

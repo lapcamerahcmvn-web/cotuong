@@ -81,6 +81,7 @@
      data-progress-url="{{ route('progress.store', $lesson->id) }}"
      data-puzzle-id="{{ $lessonPuzzleId }}"
      data-next-url="{{ $suggestNext ? route('lessons.show', $suggestNext->slug) : '' }}"
+     data-min-seconds="{{ $lesson->steps->isEmpty() ? 15 : \App\Http\Controllers\ProgressController::minSeconds($lesson) }}"
      data-practice-url="{{ $practiceUrl }}">
 
     <nav class="crumbs" aria-label="breadcrumb">
@@ -250,6 +251,20 @@
             </div>
             @endguest
         </aside>
+    </div>
+
+    {{-- Thanh "Đã học · Bài tiếp theo" dính đáy màn hình (lesson.js): mở khi đã xem hết nước / tự giải đúng / đọc hết bài —
+         không phải chờ đủ thời gian rồi mới kéo xuống tìm nút. --}}
+    <div class="lesson-nextbar" data-lesson-nextbar data-state="{{ $completed ? 'done' : 'locked' }}">
+        <span class="lesson-nextbar__hint" data-nextbar-hint>
+            @if($completed) <x-icon name="check" /> Đã học bài này
+            @elseif($lesson->steps->isEmpty()) Đọc hết bài để đánh dấu đã học
+            @else Xem hết các nước{{ $canPuzzle ? ' hoặc tự giải đúng' : '' }} để đánh dấu đã học
+            @endif
+        </span>
+        <button type="button" class="btn btn--primary" data-nextbar-btn @unless($completed) disabled @endunless>
+            <x-icon name="check" /> {{ $suggestNext ? 'Đã học · Bài tiếp theo' : 'Đánh dấu đã học' }} @if($suggestNext)<x-icon name="arrow-right" />@endif
+        </button>
     </div>
 </div>
 @endsection

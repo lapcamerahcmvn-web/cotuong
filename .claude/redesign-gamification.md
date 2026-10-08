@@ -476,3 +476,16 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Màu bàn đã đổi: chọn ở Cài đặt giao diện (mục "Màu cao cấp", chưa có thì khoá + dẫn sang /doi-thuong) hoặc nút "Dùng màu
   này" — lưu localStorage như màu thường. Lối vào: menu tài khoản (kèm số xu), trang Hồ sơ, chân trang.
 - Deploy: `php artisan migrate --force` + cache lại; không cần build-puzzles.
+
+## Đợt 27 (08/10/2026) — Học nhanh không phải chờ: tự sang thế, thanh "Đã học · Bài tiếp theo"
+- **Luyện tập** (`practice.js`, mọi chế độ từng thế): giải đúng → hiện kết quả + đếm 2 giây rồi tự sang thế tiếp (nút "Ở lại
+  xem"), thế tiếp được tải sẵn trong lúc đếm; kết quả hiện ngay, server ghi nhận chạy song song (điểm thế cờ / % người giải
+  điền sau). Sai → không tự chuyển. Điện thoại: khung kết quả nổi ngay trên thanh điều hướng (`[data-result].is-float`),
+  thế mới tự cuộn bàn cờ lên. "Sai lầm của tôi": nút nổi + đúng thì tự sang sau 2 giây (chạm màn hình để ở lại).
+- **Bài học**: thanh dính đáy `[data-lesson-nextbar]` (locked → ready → done). Điều kiện "đã học" bài có nước: xem hết nước +
+  ở lại `ProgressController::minSeconds()` = min(20, 3 + 2×số nước) giây (bài 1 nước: 5 giây; trước đây 20 giây + nhịp báo
+  10 giây ⇒ thực tế 20–30 giây), HOẶC tự giải đúng ở "Thử tự giải" (server kiểm PuzzleAttempt solved của thế thuộc bài,
+  6 giờ gần nhất). Trình duyệt tính giây thật khi tab hiện, báo ngay khi xem hết nước; bấm nút → ghi nhận rồi sang bài tiếp.
+  Bỏ bảng chúc mừng chặn màn hình — thay bằng thông báo nhẹ (handleGamification). Khách: thanh mở khi xem hết nước.
+- Thử tự giải trong bài: sai rồi giải lại đúng vẫn gửi lượt đúng (để ghi nhận đã học) nhưng KHÔNG cộng XP thế cờ
+  (`PuzzleService::submit`, `$lessonRetry`).

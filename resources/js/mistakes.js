@@ -33,6 +33,7 @@ function setup(root) {
             <p class="text-[13px] text-ink-soft mt-2 mb-0">Hộp ôn: ${'●'.repeat(m.box)}${'○'.repeat(4 - m.box)} ${m.game?.url ? `· <a href="${escapeHtml(m.game.url)}">xem lại cả ván</a>` : ''}</p>`;
         $('[data-mk-feedback]').hidden = true;
         $('[data-mk-next]').hidden = true;
+        clearTimeout(auto); $('[data-mk-actions]').classList.remove('is-float');
         $('[data-mk-show]').hidden = false;
     }
 
@@ -62,11 +63,20 @@ function setup(root) {
         $('[data-mk-show]').hidden = true;
         $('[data-mk-next]').hidden = false;
         $('[data-mk-next]').textContent = i + 1 < items.length ? 'Thế tiếp theo' : 'Xong lượt ôn';
+        // Điện thoại: nút "Thế tiếp theo" nổi trên thanh điều hướng; đúng → tự sang thế sau 2 giây (bấm đâu đó để ở lại).
+        $('[data-mk-actions]').classList.add('is-float');
+        if (move && res.correct && i + 1 < items.length) {
+            auto = setTimeout(() => { i++; show(); }, 2000);
+            const stay = () => { clearTimeout(auto); document.removeEventListener('pointerdown', stay, true); };
+            setTimeout(() => document.addEventListener('pointerdown', stay, true), 50);
+        }
     }
 
+    let auto = null;
     function onMove(iccs) { if (!done) check(iccs); }
     $('[data-mk-show]').addEventListener('click', () => { if (!done) check(''); });
     $('[data-mk-next]').addEventListener('click', () => {
+        clearTimeout(auto);
         if (i + 1 < items.length) { i++; show(); return; }
         const dlg = openSheet(`<div class="celebrate"><div class="celebrate__burst">${icon('repeat')}</div>
             <h2>Xong lượt ôn hôm nay</h2><p class="muted">Đúng ${solved}/${items.length} thế${xp ? ` · +${xp} XP` : ''}.</p>
