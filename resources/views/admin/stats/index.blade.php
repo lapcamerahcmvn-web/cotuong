@@ -4,7 +4,7 @@
 
 @section('content')
 @php
-    $lm = ['password' => 'Mật khẩu', 'google' => 'Google', 'register' => 'Đăng ký'];
+    $lm = ['password' => 'Mật khẩu', 'google' => 'Google', 'register' => 'Đăng ký', 'remember' => 'Tự đăng nhập lại'];
     $pm = ['daily' => 'Thế hôm nay', 'rush' => '60 giây', 'survival' => '3 mạng', 'topic' => 'Chủ đề', 'review' => 'Ôn lỗi', 'lesson' => 'Trong bài học', 'placement' => 'Kiểm tra trình độ'];
     $lv = [1 => 'Tập sự', 2 => 'Dễ', 3 => 'Vừa', 4 => 'Khó'];
     $max = fn ($k) => max(1, collect($learn14)->max($k));

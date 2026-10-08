@@ -23,6 +23,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Lịch sử đăng nhập: form đăng nhập / đăng ký / Google tự ghi (AuthController). Lượt "tự đăng nhập lại" bằng cookie
+        // Ghi nhớ (quay lại web sau khi phiên hết hạn) không qua form nào → ghi ở đây, kèm cập nhật lần đăng nhập cuối.
+        \Illuminate\Support\Facades\Event::listen(\Illuminate\Auth\Events\Login::class, function ($e) {
+            $req = request();
+            if (! $e->remember || ! $e->user || $req->is('dang-nhap', 'dang-ky', 'dang-nhap/google/callback')) return;
+            \App\Models\LoginEvent::record($req, $e->user, 'remember');
+            $e->user->forceFill(['last_login_at' => now()])->saveQuietly();
+        });
+
         // Cài đặt web & SEO sửa trong Admin ghi đè giá trị .env / config/site.php (rỗng = giữ mặc định).
         \App\Models\SiteSetting::applyToConfig();
 

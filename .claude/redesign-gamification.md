@@ -500,3 +500,18 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   Thế cờ hôm nay: khung kẹt chỉ có "Xem lời giải" (không "Bỏ qua" sang thế ngẫu nhiên). Bài cuối chương trình (không có
   bài tiếp): nút trên thanh "Đã học" chỉ ẩn thanh. Luyện từng thế: nút Gợi ý / Xem lời giải nhỏ trên thanh đầu bàn cờ
   (`.board-bar__btn`, chèn bằng practice.js — không có ở 60 giây / 3 mạng).
+
+## Đợt 28 (08/10/2026) — Admin: Lịch sử đăng nhập + Ván đấu (thắng máy, tư liệu)
+- **Lịch sử đăng nhập thiếu**: Google / Đăng ký dùng `Auth::login($user, true)` (ghi nhớ) còn phiên chỉ 120 phút → người
+  dùng quay lại được tự đăng nhập bằng cookie, không qua form nào nên không có dòng lịch sử. Thêm listener
+  `Illuminate\Auth\Events\Login` (AppServiceProvider): `remember` + không phải route form → ghi `LoginEvent` method `remember`
+  ("Tự đăng nhập lại (ghi nhớ)") + cập nhật `last_login_at`. (`Admin\AuthController` không còn route — đăng nhập Admin đi qua
+  `/dang-nhap` chung, vẫn ghi lịch sử như cũ.)
+- **Admin › Lịch sử đăng nhập** `/admin/dang-nhap` (LoginHistoryController): mọi người dùng, lọc tên/email/IP, cách đăng
+  nhập, thành công/thất bại, chỉ Admin/Biên tập, khoảng ngày; thống kê 7 ngày; cảnh báo IP sai mật khẩu ≥ 5 lần; thiết bị đọc
+  gọn từ user agent.
+- **Admin › Ván đấu** `/admin/van-dau` (GameArchiveController): bảng ván với máy theo biến thể × cấp (thắng/thua/hoà, tỉ lệ,
+  30 ngày, số nước TB khi thắng), biểu đồ thắng máy 30 ngày, top người thắng cấp Vừa/Khó; danh sách lọc (mặc định: với máy,
+  người chơi THẮNG), sắp ít/nhiều nước. **Xem lại** dùng lại `account.history-show` (biến `$admin`: breadcrumb + khối công cụ):
+  tải ván `.txt` (thông tin, FEN, từng nước Việt + ICCS), **tạo bài học nháp** (LessonComposer, chọn chương trình, "bắt đầu từ
+  nửa nước N" để cắt đoạn hay) → mở trình sửa bài.

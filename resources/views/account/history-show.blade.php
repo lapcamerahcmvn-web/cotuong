@@ -33,7 +33,9 @@
 @section('content')
 <nav class="crumbs" aria-label="breadcrumb">
     <a href="{{ route('home') }}">Trang chủ</a><x-icon name="chev-right" />
-    @if($public)
+    @if(!empty($admin))
+        <a href="{{ $admin['back'] }}">Admin · Ván đấu</a><x-icon name="chev-right" />
+    @elseif($public)
         <a href="{{ route('play.bot') }}">Chơi cờ</a><x-icon name="chev-right" />
     @else
         <a href="{{ route('history.index') }}">Lịch sử ván đấu</a><x-icon name="chev-right" />
@@ -65,6 +67,28 @@
         </div>
     @endunless
 </div>
+
+@if(!empty($admin))
+    {{-- Công cụ Admin (Admin › Ván đấu): xem người chơi, tải ván, tạo bài học nháp từ ván (cả ván hoặc từ 1 nước). --}}
+    <div class="card card--pad mt-4">
+        <div class="font-extrabold mb-2"><x-icon name="shield" class="w-4 h-4 inline" /> Công cụ Admin
+            <span class="text-ink-soft font-semibold text-[13px]">· ván #{{ $record->id }}{{ $admin['level'] ? ' · máy cấp ' . $admin['level'] : '' }} · người chơi <a href="{{ $admin['user'] }}">{{ $record->user->name ?? '?' }}</a></span></div>
+        <div class="flex flex-wrap gap-2 items-end">
+            <a href="{{ $admin['export'] }}" class="btn btn--sm"><x-icon name="copy" /> Tải ván (.txt)</a>
+            <form method="POST" action="{{ $admin['toLesson'] }}" class="flex flex-wrap gap-2 items-end">@csrf
+                <label class="text-[12.5px] font-semibold">Tiêu đề bài học
+                    <input class="input" name="title" required maxlength="200" value="Ván thắng máy cấp {{ $admin['level'] ?? '' }} — {{ $record->user->name ?? '' }} ({{ $record->created_at->format('d/m/Y') }})" style="min-width:300px;"></label>
+                <label class="text-[12.5px] font-semibold">Chương trình
+                    <select class="input" name="series_id"><option value="">— Không xếp —</option>
+                        @foreach($admin['series'] as $s)<option value="{{ $s->id }}">{{ $s->name }}</option>@endforeach</select></label>
+                <label class="text-[12.5px] font-semibold">Bắt đầu từ nước
+                    <input class="input" type="number" name="from_ply" min="0" max="{{ max(0, $record->plies - 1) }}" value="0" style="width:90px;" title="0 = cả ván; N = bắt đầu từ thế sau N nửa nước"></label>
+                <button class="btn btn--sm btn--primary"><x-icon name="edit" /> Tạo bài học nháp</button>
+            </form>
+        </div>
+        <p class="text-[12.5px] text-ink-soft mt-2 mb-0">Bài học tạo ở trạng thái nháp, mở ngay trình sửa để thêm lời giảng từng nước. "Bắt đầu từ nước" tính theo nửa nước (0 = cả ván) — dùng để cắt đoạn trung/tàn cuộc hay.</p>
+    </div>
+@endif
 
 @if(! $public && $record->share_token)
     @php $shareUrl = route('history.public', $record->share_token); @endphp

@@ -150,6 +150,11 @@ Route::middleware(['auth', 'staff'])->prefix('admin')->name('admin.')->group(fun
 
         Route::get('thong-ke', [AdminStatsController::class, 'index'])->name('stats.index');
 
+        Route::get('dang-nhap', [\App\Http\Controllers\Admin\LoginHistoryController::class, 'index'])->name('logins.index');
+        Route::get('van-dau', [\App\Http\Controllers\Admin\GameArchiveController::class, 'index'])->name('games.index');
+        Route::get('van-dau/{record}', [\App\Http\Controllers\Admin\GameArchiveController::class, 'show'])->name('games.show');
+        Route::get('van-dau/{record}/tai', [\App\Http\Controllers\Admin\GameArchiveController::class, 'export'])->name('games.export');
+        Route::post('van-dau/{record}/bai-hoc', [\App\Http\Controllers\Admin\GameArchiveController::class, 'toLesson'])->name('games.lesson');
         Route::get('users', [AdminUserController::class, 'index'])->name('users.index');
         Route::get('users/{user}', [AdminUserController::class, 'show'])->name('users.show');
         Route::put('users/{user}/vai-tro', [AdminUserController::class, 'updateRole'])->name('users.role');

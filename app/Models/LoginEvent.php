@@ -14,7 +14,7 @@ class LoginEvent extends Model
 
     protected $casts = ['success' => 'boolean'];
 
-    public const METHODS = ['password' => 'Email + mật khẩu', 'google' => 'Google', 'register' => 'Đăng ký mới'];
+    public const METHODS = ['password' => 'Email + mật khẩu', 'google' => 'Google', 'register' => 'Đăng ký mới', 'remember' => 'Tự đăng nhập lại (ghi nhớ)'];
 
     public static function record(Request $request, ?User $user, string $method, bool $success = true, ?string $email = null): void
     {

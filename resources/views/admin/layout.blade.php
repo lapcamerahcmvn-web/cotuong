@@ -44,6 +44,8 @@
                 </a>
                 <a href="{{ route('admin.stats.index') }}" class="{{ request()->routeIs('admin.stats.*') ? 'active' : '' }}">Thống kê</a>
                 <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">Người dùng</a>
+                <a href="{{ route('admin.logins.index') }}" class="{{ request()->routeIs('admin.logins.*') ? 'active' : '' }}">Lịch sử đăng nhập</a>
+                <a href="{{ route('admin.games.index') }}" class="{{ request()->routeIs('admin.games.*') ? 'active' : '' }}">Ván đấu</a>
                 <a href="{{ route('admin.source-assets.index') }}" class="{{ request()->routeIs('admin.source-assets.*') ? 'active' : '' }}">Nguồn tài liệu</a>
                 <a href="{{ route('admin.settings.index') }}" class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">Cài đặt web &amp; SEO</a>
             @endif
