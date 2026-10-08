@@ -19,7 +19,7 @@ class LeaderboardService
     public function top(string $board, string $period): array
     {
         $size = (int) config('gamification.leaderboard_size', 50);
-        $key = "lb:{$board}:{$period}:" . ($period === 'week' ? Vn::weekStart() : ($period === 'month' ? Vn::monthStart() : 'all'));
+        $key = "lb2:{$board}:{$period}:" . ($period === 'week' ? Vn::weekStart() : ($period === 'month' ? Vn::monthStart() : 'all'));
 
         return Cache::remember($key, (int) config('gamification.leaderboard_cache', 600), function () use ($board, $period, $size) {
             if ($board === 'xp' && $period !== 'all') {
@@ -27,8 +27,8 @@ class LeaderboardService
                     ->join('users', 'users.id', '=', 'user_daily_activity.user_id')
                     ->where('users.leaderboard_opt_out', false)
                     ->where('user_daily_activity.date', '>=', $this->since($period))
-                    ->groupBy('user_daily_activity.user_id', 'users.name', 'users.avatar', 'users.level')
-                    ->selectRaw('user_daily_activity.user_id as user_id, users.name, users.avatar, users.level, SUM(user_daily_activity.xp) as score')
+                    ->groupBy('user_daily_activity.user_id', 'users.name', 'users.avatar', 'users.avatar_frame', 'users.shop_title', 'users.level')
+                    ->selectRaw('user_daily_activity.user_id as user_id, users.name, users.avatar, users.avatar_frame, users.shop_title, users.level, SUM(user_daily_activity.xp) as score')
                     ->havingRaw('SUM(user_daily_activity.xp) > 0')
                     ->orderByDesc('score')->limit($size)->get();
             } else {
@@ -38,11 +38,12 @@ class LeaderboardService
                     $q->where('streak_last_date', '>=', Vn::daysAgo(1));
                 }
                 $rows = $q->orderByDesc($col)->orderBy('id')->limit($size)
-                    ->get(['id as user_id', 'name', 'avatar', 'level', $col . ' as score']);
+                    ->get(['id as user_id', 'name', 'avatar', 'avatar_frame', 'shop_title', 'level', $col . ' as score']);
             }
 
             return $rows->map(fn ($r) => [
                 'user_id' => (int) $r->user_id, 'name' => $r->name, 'avatar' => $r->avatar,
+                'frame' => $r->avatar_frame, 'title' => \App\Services\ShopService::titleText($r->shop_title),
                 'level' => (int) $r->level, 'score' => (int) $r->score,
             ])->all();
         });

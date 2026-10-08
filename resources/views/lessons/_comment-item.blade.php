@@ -1,15 +1,11 @@
 @php $liked = in_array($c->id, $likedCommentIds ?? []); @endphp
 <div class="comment-item{{ $isReply ? ' is-reply' : '' }}" id="c{{ $c->id }}">
-    <div class="comment-ava">
-        @if($c->user && $c->user->avatar)
-            <img src="{{ $c->user->avatar }}" alt="" referrerpolicy="no-referrer">
-        @else
-            <span>{{ mb_strtoupper(mb_substr($c->user->name ?? '?', 0, 1)) }}</span>
-        @endif
+    <div class="comment-ava {{ \App\Services\ShopService::frameClass($c->user?->avatar_frame) ? 'has-frame-wrap' : '' }}">
+        <x-avatar :name="$c->user->name ?? '?'" :src="$c->user?->avatar" :frame="$c->user?->avatar_frame" class="comment-ava__img" lazy />
     </div>
     <div class="comment-main">
         <div class="comment-head">
-            <span class="comment-name">{{ $c->user->name ?? 'Ẩn danh' }}</span>
+            <span class="comment-name">{{ $c->user->name ?? 'Ẩn danh' }}@if($_t = \App\Services\ShopService::titleText($c->user?->shop_title))<span class="user-title">✦ {{ $_t }}</span>@endif</span>
             <span class="comment-time">{{ $c->created_at->locale('vi')->diffForHumans() }}</span>
         </div>
         <div class="comment-text">{{ $c->body }}</div>

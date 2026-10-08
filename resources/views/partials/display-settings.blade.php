@@ -19,6 +19,25 @@
                         </button>
                     @endforeach
                 </div>
+                @php
+                    $_owned = app(\App\Services\ShopService::class)->ownedBoardThemes(auth()->user());
+                    $_premium = collect(config('shop.items'))->where('type', 'board');
+                @endphp
+                <div class="label mt-3 mb-2 flex items-center justify-between">Màu cao cấp <a href="{{ route('shop') }}#board" class="text-[12.5px] font-bold">Đổi bằng xu →</a></div>
+                <div class="ds-swatches">
+                    @foreach($_premium as $_it)
+                        @if(in_array($_it['theme'], $_owned, true))
+                            <button type="button" class="ds-swatch" data-board-theme-opt="{{ $_it['theme'] }}" data-board-theme="{{ $_it['theme'] }}">
+                                <span class="ds-swatch__wood"><span class="ds-swatch__pc"></span></span><span class="ds-swatch__name">{{ $_it['name'] }}</span>
+                            </button>
+                        @else
+                            <a href="{{ route('shop') }}#board" class="ds-swatch is-locked" data-board-theme="{{ $_it['theme'] }}" title="Đổi {{ number_format($_it['price'], 0, ',', '.') }} xu để dùng">
+                                <span class="ds-swatch__wood"><span class="ds-swatch__pc"></span></span><span class="ds-swatch__name">{{ $_it['name'] }}</span>
+                                <span class="ds-swatch__lock"><x-icon name="lock" /></span>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
             </div>
             <div>
                 <div class="label mb-2">Chữ trên quân</div>

@@ -28,7 +28,7 @@
                 @foreach($board as $i => $r)
                     <a href="{{ $r['url'] }}" class="lb-row {{ $r['me'] ? 'is-me' : '' }} text-ink hover:no-underline">
                         <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
-                        <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
+                        <x-avatar :name="$r['name']" :src="$r['avatar']" :frame="$r['frame'] ?? null" lazy />
                         <span class="lb-name">{{ $r['me'] ? 'Bạn' : $r['name'] }}<small>Cấp {{ $r['level'] }}</small></span>
                         <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }} <span class="text-[12px] text-ink-faint font-semibold">XP</span></span>
                     </a>
@@ -40,7 +40,7 @@
             <h2 class="text-lg font-extrabold mb-3">Hoạt động gần đây</h2>
             @forelse($feed as $e)
                 <div class="feed-item">
-                    <a href="{{ $e['user']->profileUrl() }}" class="avatar avatar--sm shrink-0">{!! $avatar($e['user']) !!}</a>
+                    <a href="{{ $e['user']->profileUrl() }}" class="shrink-0"><x-avatar :name="$e['user']->name" :src="$e['user']->avatar" :frame="$e['user']->avatar_frame" size="sm" lazy /></a>
                     <span class="flex-1 min-w-0 text-[14px]"><a href="{{ $e['user']->profileUrl() }}" class="font-bold text-ink">{{ $e['user']->name }}</a> {{ $e['text'] }}
                         <small class="block text-ink-faint">{{ $e['at']->locale('vi')->diffForHumans() }}</small></span>
                     @if($e['url'])<a href="{{ $e['url'] }}" class="btn btn--sm btn--ghost shrink-0"><x-icon :name="$e['icon']" /> Xem</a>@else<span class="feed-item__icon"><x-icon :name="$e['icon']" /></span>@endif
@@ -57,7 +57,7 @@
                 <div class="side-head"><span>{{ $title }}</span><span class="text-[12px] text-ink-faint">{{ $list->count() }}</span></div>
                 @forelse($list as $u)
                     <div class="flex items-center gap-3 px-4 py-2.5 border-b border-line">
-                        <a href="{{ $u->profileUrl() }}" class="avatar avatar--sm">{!! $avatar($u) !!}</a>
+                        <a href="{{ $u->profileUrl() }}"><x-avatar :name="$u->name" :src="$u->avatar" :frame="$u->avatar_frame" size="sm" lazy /></a>
                         <a href="{{ $u->profileUrl() }}" class="flex-1 min-w-0 font-bold text-ink truncate">{{ $u->name }}<small class="block text-[12px] text-ink-faint font-semibold">Cấp {{ $u->level }}</small></a>
                         @unless(in_array($u->id, $followingIds, true))
                             <button type="button" class="btn btn--sm btn--primary" data-follow="{{ route('profile.follow', $u->id) }}" data-following="0"><x-icon name="user" /> <span>Theo dõi lại</span></button>

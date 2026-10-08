@@ -309,7 +309,7 @@
             @forelse($topWeek as $i => $r)
                 <div class="lb-row">
                     <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
-                    <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
+                    <x-avatar :name="$r['name']" :src="$r['avatar']" :frame="$r['frame'] ?? null" lazy />
                     <span class="lb-name">{{ $r['name'] }}<small>Cấp {{ $r['level'] }}</small></span>
                     <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }} XP</span>
                 </div>

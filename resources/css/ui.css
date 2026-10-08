@@ -183,6 +183,9 @@
     .comment-input:focus { outline: none; border-color: var(--primary); box-shadow: var(--focus); }
     .comment-ava { width: 40px; height: 40px; border-radius: 999px; flex-shrink: 0; overflow: hidden; display: grid; place-items: center; background: var(--primary); color: #fff; font-weight: 800; font-size: 16px; }
     .comment-ava img { width: 100%; height: 100%; object-fit: cover; }
+    /* Ảnh trong bình luận là <x-avatar> (có thể có khung) — vỏ ngoài không cắt viền khung. */
+    .comment-ava:has(.avatar) { overflow: visible; background: none; }
+    .comment-ava .comment-ava__img { width: 100%; height: 100%; font-size: inherit; }
     .comment-list { display: flex; flex-direction: column; gap: 22px; }
     .comment-item { display: flex; gap: 12px; }
     .comment-item.is-reply .comment-ava { width: 30px; height: 30px; font-size: 13px; }
@@ -200,4 +203,46 @@
     .comment-replies { margin: 16px 0 0 24px; padding-left: 14px; border-left: 2px solid var(--line); display: flex; flex-direction: column; gap: 16px; }
     .reply-form { margin: 14px 0 0 52px; }
     @media (max-width: 640px) { .reply-form { margin-left: 0; } .comment-replies { margin-left: 12px; } }
+}
+
+/* ---------- Khung ảnh đại diện (đổi bằng xu — config/shop.php, component x-avatar) ---------- */
+@layer components {
+    .avatar.has-frame { overflow: visible; position: relative; }
+    .avatar.has-frame img { border-radius: 999px; }
+    /* Vòng viền bên ngoài ảnh: mask chỉ chừa phần padding (không phủ lên ảnh / chữ cái). */
+    .avatar.has-frame::before { content: ""; position: absolute; inset: -3px; padding: 3px; border-radius: 999px; pointer-events: none;
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+        mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+    .avatar--lg.has-frame::before { inset: -5px; padding: 5px; }
+    .avatar.frame-bronze::before { background: linear-gradient(135deg, #e3a56b, #8a4f1f, #d38c4c); }
+    .avatar.frame-silver::before { background: linear-gradient(135deg, #ffffff, #9aa3ad, #e9edf1, #7d8691); }
+    .avatar.frame-gold::before { background: conic-gradient(from 30deg, #fff2b0, #d99a1e, #ffe27a, #a86b06, #fff2b0); box-shadow: 0 0 8px rgba(217,154,30,.55); }
+    .avatar.frame-jade::before { background: conic-gradient(from 0deg, #b8f0dc, #2f6b5e, #8fd3c1, #1d4a40, #b8f0dc); box-shadow: 0 0 8px rgba(47,107,94,.5); }
+    .avatar.frame-dragon::before { inset: -4px; padding: 4px; background: conic-gradient(#c8451f, #ffd85c, #c8451f, #7a1f15, #ffd85c, #c8451f); box-shadow: 0 0 10px rgba(200,69,31,.6); animation: frame-spin 6s linear infinite; }
+    .avatar--lg.frame-dragon::before { inset: -6px; padding: 6px; }
+    @keyframes frame-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .avatar.frame-dragon::before { animation: none; } }
+    .reduce-fx .avatar.frame-dragon::before { animation: none; }
+    .user-title { display: inline-block; font-size: 11.5px; font-weight: 800; color: var(--gold-ink); background: var(--gold-soft); border-radius: 999px; padding: 1px 8px; margin-left: 6px; vertical-align: middle; white-space: nowrap; }
+    [data-theme="dark"] .user-title { color: #ffd98a; background: rgba(217,154,30,.18); }
+
+    /* ---------- Trang Đổi thưởng ---------- */
+    .shop-balance { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 18px; background: var(--gold-soft); }
+    [data-theme="dark"] .shop-balance { background: rgba(217,154,30,.15); }
+    .shop-balance__coin { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 22px; color: #7a4d00;
+        background: radial-gradient(circle at 35% 30%, #fff2b0, #d99a1e 70%); box-shadow: inset 0 -3px 0 rgba(0,0,0,.15); }
+    .shop-balance__n { font-family: var(--font-display); font-weight: 900; font-size: 28px; line-height: 1; }
+    .shop-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+    .shop-item { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; padding: 14px; }
+    .shop-item.is-equipped { border-color: var(--jade); box-shadow: 0 0 0 3px color-mix(in srgb, var(--jade) 18%, transparent); }
+    .shop-item__preview { height: 92px; display: grid; place-items: center; border-radius: 12px; background: var(--surface-2); }
+    .shop-item__action { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .shop-board { width: 120px; height: 70px; }
+    .shop-freeze { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #2f78b7; background: #dcecfa; }
+    .shop-freeze svg { width: 30px; height: 30px; }
+    .shop-title-tag { font-weight: 900; color: var(--gold-ink); background: var(--gold-soft); border-radius: 999px; padding: 6px 14px; font-size: 15px; }
+    .shop-price { font-weight: 800; color: var(--gold-ink); }
+    .ds-swatch.is-locked { opacity: .55; position: relative; }
+    .ds-swatch__lock { position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); color: var(--ink-soft); }
+    .ds-swatch__lock svg { width: 12px; height: 12px; }
 }

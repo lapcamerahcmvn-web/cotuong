@@ -47,8 +47,8 @@ class SocialService
         $xp = UserDailyActivity::whereIn('user_id', $ids)->where('date', '>=', Vn::weekStart())
             ->groupBy('user_id')->select('user_id', DB::raw('SUM(xp) as score'))->pluck('score', 'user_id');
 
-        return User::whereIn('id', $ids)->get(['id', 'name', 'avatar', 'level', 'streak_current'])
-            ->map(fn ($u) => ['user_id' => $u->id, 'name' => $u->name, 'avatar' => $u->avatar, 'level' => (int) $u->level,
+        return User::whereIn('id', $ids)->get(['id', 'name', 'avatar', 'avatar_frame', 'level', 'streak_current'])
+            ->map(fn ($u) => ['user_id' => $u->id, 'name' => $u->name, 'avatar' => $u->avatar, 'frame' => $u->avatar_frame, 'level' => (int) $u->level,
                 'score' => (int) ($xp[$u->id] ?? 0), 'url' => $u->profileUrl(), 'me' => $u->id === $me->id])
             ->sortBy([['score', 'desc'], ['name', 'asc']])->values()->all();
     }
@@ -64,7 +64,7 @@ class SocialService
             return [];
         }
         $since = now()->subDays(14);
-        $users = User::whereIn('id', $ids)->get(['id', 'name', 'avatar', 'level'])->keyBy('id');
+        $users = User::whereIn('id', $ids)->get(['id', 'name', 'avatar', 'avatar_frame', 'level'])->keyBy('id');
         $defs = config('achievements', []);
         $events = [];
 

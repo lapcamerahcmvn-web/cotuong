@@ -462,3 +462,17 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
 - Đếm thế theo chủ đề/bậc cache theo mốc `puzzles:stamp` (ghi bởi build-puzzles; KHÔNG dùng `max(updated_at)` vì mỗi lượt
   giải tăng bộ đếm làm đổi mốc). `/luyen-tap` 3,6 s → 0,5 s.
 - Deploy: `cotuong:build-puzzles` (bắt buộc — sinh nhãn mới) + `optimize:clear` + cache lại; không có migration.
+
+## Đợt 26 (08/10/2026) — Đổi thưởng bằng xu (/doi-thuong)
+- **Xu = `xp_total − users.xu_spent`**: 1 XP kiếm được = 1 xu, đổi thưởng chỉ tăng `xu_spent` → XP, cấp độ, bảng xếp hạng,
+  huy hiệu KHÔNG đổi. Người dùng cũ có ngay xu bằng tổng XP. Migration `2026_10_11_100001_create_shop_tables`
+  (users.xu_spent / avatar_frame / shop_title + bảng `user_items`, mỗi lần đổi 1 dòng).
+- Danh mục `config/shop.php` (+ `min_level`): thẻ giữ chuỗi 300 xu (tối đa `freeze_max`), 6 màu bàn cờ cao cấp
+  (CSS `[data-board-theme=…]` trong board.css — màu miễn phí cũ giữ nguyên), 5 khung ảnh (`.avatar.frame-*` trong ui.css,
+  vòng mask không phủ chữ cái, khung rồng xoay — tắt khi giảm hiệu ứng), 8 danh hiệu (`.user-title` cạnh tên).
+- `App\Services\ShopService` (khoá dòng user khi đổi), `ShopController`, component `<x-avatar :frame>` thay ảnh đại diện ở
+  header, xếp hạng, trang chủ, thử thách tuần, bạn bè, hồ sơ, tài khoản, bình luận. Leaderboard/podium cache đổi key
+  (`lb2:`, `weekly-podium3:`) vì thêm cột frame/title.
+- Màu bàn đã đổi: chọn ở Cài đặt giao diện (mục "Màu cao cấp", chưa có thì khoá + dẫn sang /doi-thuong) hoặc nút "Dùng màu
+  này" — lưu localStorage như màu thường. Lối vào: menu tài khoản (kèm số xu), trang Hồ sơ, chân trang.
+- Deploy: `php artisan migrate --force` + cache lại; không cần build-puzzles.

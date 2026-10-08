@@ -17,9 +17,9 @@
 @if(session('ok'))<div class="alert alert--ok mb-4"><x-icon name="check-circle" />{{ session('ok') }}</div>@endif
 
 <section class="card profile-head">
-    <span class="avatar avatar--lg">@if($user->avatar)<img src="{{ $user->avatar }}" alt="" referrerpolicy="no-referrer">@else{{ mb_strtoupper(mb_substr($user->name, 0, 1)) }}@endif</span>
+    <x-avatar :name="$user->name" :src="$user->avatar" :frame="$user->avatar_frame" size="lg" />
     <div class="min-w-0">
-        <h1 class="profile-head__name">{{ $user->name }}</h1>
+        <h1 class="profile-head__name">{{ $user->name }}@if($_t = \App\Services\ShopService::titleText($user->shop_title))<span class="user-title">✦ {{ $_t }}</span>@endif</h1>
         <div class="flex flex-wrap items-center gap-2 mt-1">
             <span class="level-badge !min-w-0 !h-8 !text-[14px] !rounded-[10px]"><small>Lv</small>{{ $lv['level'] }}</span>
             <span class="font-bold">{{ $lv['title'] }}</span>
@@ -29,6 +29,7 @@
         <div class="text-[12.5px] text-ink-soft mt-1">{{ $lv['into'] }}/{{ $lv['need'] }} XP tới cấp {{ $lv['level'] + 1 }} · Cấp độ chỉ để tạo động lực, không phải đẳng cấp cờ chính thức.</div>
     </div>
     <div class="flex gap-2 flex-wrap">
+        <a href="{{ route('shop') }}" class="btn btn--sm btn--primary"><x-icon name="gift" /> Đổi thưởng · {{ number_format(max(0, (int) $user->xp_total - (int) $user->xu_spent), 0, ',', '.') }} xu</a>
         <a href="{{ route('account.settings') }}" class="btn btn--sm"><x-icon name="settings" /> Cài đặt</a>
         <form method="POST" action="{{ route('logout') }}">@csrf<button class="btn btn--ghost btn--sm"><x-icon name="logout" /> Đăng xuất</button></form>
     </div>

@@ -189,11 +189,12 @@
                 @if($u)
                     <div class="dropdown" data-dropdown>
                         <button type="button" class="avatar-btn" aria-expanded="false" aria-haspopup="true" data-dropdown-trigger aria-label="Tài khoản">
-                            <span class="avatar avatar--sm">@if($u->avatar)<img src="{{ $u->avatar }}" alt="" referrerpolicy="no-referrer">@else{{ mb_strtoupper(mb_substr($u->name, 0, 1)) }}@endif</span>
+                            <x-avatar :name="$u->name" :src="$u->avatar" :frame="$u->avatar_frame" size="sm" />
                             <span class="avatar-btn__name">{{ $u->name }}</span>
                         </button>
                         <div class="dropdown__panel dropdown__panel--right" data-dropdown-panel>
                             <a href="{{ route('account.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Hồ sơ của tôi<small>Cấp {{ $hud['level']['level'] ?? 1 }} · {{ $hud['level']['title'] ?? '' }}</small></span></a>
+                            <a href="{{ route('shop') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="gift" /></span><span>Đổi thưởng<small>{{ number_format(max(0, (int) $u->xp_total - (int) $u->xu_spent), 0, ',', '.') }} xu · khung ảnh, màu bàn, danh hiệu</small></span></a>
                             <a href="{{ route('account.library') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="bookmark" /></span><span>Thư viện thế cờ</span></a>
                             <a href="{{ route('friends') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="user" /></span><span>Bạn bè<small>Thi đua XP tuần với bạn bè</small></span></a>
                             <a href="{{ route('history.index') }}" class="dropdown__item"><span class="dropdown__glyph"><x-icon name="clock" /></span><span>Lịch sử ván đấu</span></a>
@@ -274,6 +275,7 @@
                         <li><a href="{{ route('search') }}">Tìm kiếm</a></li>
                         <li><a href="{{ route('sitemap.page') }}">Sơ đồ trang</a></li>
                         <li><a href="{{ route('display') }}">Giao diện &amp; âm thanh</a></li>
+                        <li><a href="{{ route('shop') }}">Đổi thưởng bằng xu</a></li>
                         <li><a href="{{ route('legal.terms') }}">Điều khoản sử dụng</a></li>
                         <li><a href="{{ route('legal.privacy') }}">Chính sách bảo mật</a></li>
                     </ul>

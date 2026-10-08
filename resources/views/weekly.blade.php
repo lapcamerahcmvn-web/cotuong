@@ -45,7 +45,7 @@
                         @php $p = collect($podium)->firstWhere('rank', $rank); @endphp
                         <div class="wk-podium__col wk-podium__col--{{ $rank }}">
                             @if($p)
-                                <span class="avatar avatar--lg">@if($p['avatar'])<img src="{{ $p['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($p['name'] ?? '?', 0, 1)) }}@endif</span>
+                                <x-avatar :name="$p['name'] ?? '?'" :src="$p['avatar']" :frame="$p['frame'] ?? null" size="lg" lazy />
                                 <a href="{{ \App\Models\User::profileUrlFor($p['user_id'] ?? 0, $p['name']) }}" class="wk-podium__name font-bold text-ink">{{ $p['name'] }}</a>
                                 <small>{{ number_format($p['score'], 0, ',', '.') }} XP</small>
                             @endif
@@ -100,7 +100,7 @@
             @forelse($top as $i => $r)
                 <div class="lb-row {{ $me && $r['user_id'] === $me->id ? 'is-me' : '' }}">
                     <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
-                    <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
+                    <x-avatar :name="$r['name']" :src="$r['avatar']" :frame="$r['frame'] ?? null" lazy />
                     <a href="{{ \App\Models\User::profileUrlFor($r['user_id'], $r['name']) }}" class="lb-name text-ink">{{ $r['name'] }}<small>{{ $i < 3 ? $prizes[$i + 1]['name'] : 'Top 10' }} nếu giữ hạng</small></a>
                     <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }}</span>
                 </div>
@@ -108,7 +108,7 @@
                 <div class="empty"><div class="empty__glyph">帥</div><h3>Tuần mới chưa ai ghi điểm</h3><p>Học một bài hoặc giải một thế cờ để lên bảng đầu tiên.</p></div>
             @endforelse
             @if($me && $mine && $mine['rank'] > 10)
-                <div class="lb-row is-me border-t-2 border-line"><span class="lb-rank">{{ $mine['rank'] }}</span><span class="avatar">{{ mb_strtoupper(mb_substr($me->name, 0, 1)) }}</span>
+                <div class="lb-row is-me border-t-2 border-line"><span class="lb-rank">{{ $mine['rank'] }}</span><x-avatar :name="$me->name" :src="$me->avatar" :frame="$me->avatar_frame" />
                     <span class="lb-name">Bạn<small>Còn cách Top 10 — cố lên!</small></span><span class="lb-score">{{ number_format($mine['score'], 0, ',', '.') }}</span></div>
             @endif
         </section>

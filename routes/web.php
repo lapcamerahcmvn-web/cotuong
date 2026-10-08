@@ -194,6 +194,11 @@ Route::middleware('auth')->group(function () {
 
 // ---- Lộ trình + Luyện tập + Xếp hạng ----
 Route::get('/lo-trinh', [LearningPathController::class, 'index'])->name('path');
+Route::get('/doi-thuong', [\App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+Route::middleware('auth')->group(function () {
+    Route::post('/doi-thuong/mua/{item}', [\App\Http\Controllers\ShopController::class, 'buy'])->name('shop.buy')->where('item', '[a-z0-9-]+')->middleware('throttle:20,1,shop');
+    Route::post('/doi-thuong/dung', [\App\Http\Controllers\ShopController::class, 'equip'])->name('shop.equip')->middleware('throttle:30,1,shop-eq');
+});
 Route::get('/lo-trinh/chuong-trinh/{slug}', [LearningPathController::class, 'series'])->name('path.series')->where('slug', '[a-z0-9-]+');
 Route::get('/xep-hang', [LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/thu-thach-tuan', [WeeklyController::class, 'index'])->name('weekly');

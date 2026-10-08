@@ -40,8 +40,8 @@
         @forelse($rows as $i => $r)
             <div class="lb-row {{ $me && $r['user_id'] === $me->id ? 'is-me' : '' }}">
                 <span class="lb-rank lb-rank--{{ $i + 1 }}">{{ $i + 1 }}</span>
-                <span class="avatar">@if($r['avatar'])<img src="{{ $r['avatar'] }}" alt="" referrerpolicy="no-referrer" loading="lazy">@else{{ mb_strtoupper(mb_substr($r['name'], 0, 1)) }}@endif</span>
-                <a href="{{ \App\Models\User::profileUrlFor($r['user_id'], $r['name']) }}" class="lb-name text-ink hover:text-primary">{{ $r['name'] }}<small>Cấp {{ $r['level'] }} · {{ \App\Services\Gamification\LevelService::title($r['level']) }}</small></a>
+                <x-avatar :name="$r['name']" :src="$r['avatar']" :frame="$r['frame'] ?? null" lazy />
+                <a href="{{ \App\Models\User::profileUrlFor($r['user_id'], $r['name']) }}" class="lb-name text-ink hover:text-primary">{{ $r['name'] }}@if(!empty($r['title']))<span class="user-title">✦ {{ $r['title'] }}</span>@endif<small>Cấp {{ $r['level'] }} · {{ \App\Services\Gamification\LevelService::title($r['level']) }}</small></a>
                 <span class="lb-score">{{ number_format($r['score'], 0, ',', '.') }} <span class="text-[12px] text-ink-faint font-semibold">{{ $unit }}</span></span>
             </div>
         @empty
@@ -52,7 +52,7 @@
         @if($me && $mine && !$meInTop)
             <div class="lb-row is-me border-t-2 border-line">
                 <span class="lb-rank">{{ $mine['rank'] }}</span>
-                <span class="avatar">@if($me->avatar)<img src="{{ $me->avatar }}" alt="" referrerpolicy="no-referrer">@else{{ mb_strtoupper(mb_substr($me->name, 0, 1)) }}@endif</span>
+                <x-avatar :name="$me->name" :src="$me->avatar" :frame="$me->avatar_frame" />
                 <span class="lb-name">Bạn<small>Cấp {{ $me->level }}</small></span>
                 <span class="lb-score">{{ number_format($mine['score'], 0, ',', '.') }} <span class="text-[12px] text-ink-faint font-semibold">{{ $unit }}</span></span>
             </div>
