@@ -253,9 +253,9 @@
         </aside>
     </div>
 
-    {{-- Thanh "Đã học · Bài tiếp theo" dính đáy màn hình (lesson.js): mở khi đã xem hết nước / tự giải đúng / đọc hết bài —
-         không phải chờ đủ thời gian rồi mới kéo xuống tìm nút. --}}
-    <div class="lesson-nextbar" data-lesson-nextbar data-state="{{ $completed ? 'done' : 'locked' }}">
+    {{-- Thanh "Đã học · Bài tiếp theo" (lesson.js): ẩn bình thường để không che diễn biến nước đi; trượt lên ở đáy màn hình khi
+         chạy tới nước cuối / tự giải đúng / đọc hết bài, tự ẩn sau 3 giây nếu không bấm. --}}
+    <div class="lesson-nextbar" data-lesson-nextbar data-state="{{ $completed ? 'done' : 'locked' }}" role="status" aria-live="polite" hidden>
         <span class="lesson-nextbar__hint" data-nextbar-hint>
             @if($completed) <x-icon name="check" /> Đã học bài này
             @elseif($lesson->steps->isEmpty()) Đọc hết bài để đánh dấu đã học
@@ -265,6 +265,7 @@
         <button type="button" class="btn btn--primary" data-nextbar-btn @unless($completed) disabled @endunless>
             <x-icon name="check" /> {{ $suggestNext ? 'Đã học · Bài tiếp theo' : 'Đánh dấu đã học' }} @if($suggestNext)<x-icon name="arrow-right" />@endif
         </button>
+        <button type="button" class="lesson-nextbar__close" data-nextbar-close aria-label="Ẩn"><x-icon name="x" /></button>
     </div>
 </div>
 @endsection

@@ -489,3 +489,6 @@ quân úp đi theo binh chủng **ô xuất phát**, lật ngay nước đầu; 
   Bỏ bảng chúc mừng chặn màn hình — thay bằng thông báo nhẹ (handleGamification). Khách: thanh mở khi xem hết nước.
 - Thử tự giải trong bài: sai rồi giải lại đúng vẫn gửi lượt đúng (để ghi nhận đã học) nhưng KHÔNG cộng XP thế cờ
   (`PuzzleService::submit`, `$lessonRetry`).
+- (08/10, sau phản hồi) Thanh "Đã học" dính đáy từng che danh sách nước trên điện thoại → đổi thành `position: fixed`, ẩn
+  mặc định; chỉ trượt lên (`.is-shown`) khi tới nước cuối / tự giải đúng / vừa ghi nhận đã học, tự ẩn sau 3 giây nếu không
+  bấm (chạm vào thanh thì giữ, có nút ×). Mỗi lần chạy lại tới nước cuối thì hiện lại.

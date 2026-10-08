@@ -222,12 +222,19 @@
 
 /* ---------- Thanh "Đã học · Bài tiếp theo" dính đáy màn hình (lesson.js) ---------- */
 @layer components {
-    .lesson-nextbar { position: sticky; z-index: 50; bottom: 14px; margin: 18px auto 0; max-width: 740px;
+    /* Nổi ở đáy màn hình, chỉ hiện (.is-shown) khi tới nước cuối — trượt lên rồi tự ẩn sau 3 giây. */
+    .lesson-nextbar { position: fixed; z-index: 56; left: 50%; bottom: 16px; width: min(740px, calc(100% - 20px));
+        transform: translate(-50%, calc(100% + 40px)); opacity: 0; pointer-events: none; transition: transform .28s ease, opacity .28s ease;
         display: flex; align-items: center; gap: 10px 14px; flex-wrap: wrap; justify-content: space-between;
         padding: 10px 12px 10px 16px; border-radius: 16px; border: 1px solid var(--line);
         background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
         box-shadow: 0 8px 24px rgba(0,0,0,.14); }
+    .lesson-nextbar.is-shown { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
     @media (max-width: 1023px) { .lesson-nextbar { bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom) + 8px); } }
+    .lesson-nextbar__close { flex: 0 0 auto; width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 50%;
+        background: var(--surface-2); color: var(--ink-faint); cursor: pointer; }
+    .lesson-nextbar__close svg { width: 15px; height: 15px; }
+    @media (prefers-reduced-motion: reduce) { .lesson-nextbar { transition: none; } }
     .lesson-nextbar__hint { font-size: 13.5px; font-weight: 600; color: var(--ink-soft); flex: 1 1 180px; display: flex; align-items: center; gap: 6px; }
     .lesson-nextbar__hint svg { width: 16px; height: 16px; color: var(--jade); }
     .lesson-nextbar .btn { flex: 0 0 auto; }

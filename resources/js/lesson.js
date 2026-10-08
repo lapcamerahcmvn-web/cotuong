@@ -38,19 +38,33 @@ function initModeToggle() {
 }
 
 // Thanh "Đã học · Bài tiếp theo" (dính đáy màn hình). Trạng thái: locked → ready (đủ điều kiện, chờ server ghi) → done.
+// Thanh "Đã học · Bài tiếp theo": ẨN bình thường (không che diễn biến nước đi trên điện thoại); trượt lên ở đáy màn hình
+// khi chạy tới nước cuối / tự giải đúng / vừa ghi nhận đã học, rồi tự ẩn sau 3 giây nếu không bấm (chạm vào thanh thì giữ lại).
 function nextBar(d) {
     const bar = document.querySelector('[data-lesson-nextbar]');
     const btn = bar?.querySelector('[data-nextbar-btn]');
     const hint = bar?.querySelector('[data-nextbar-hint]');
+    let timer = null;
+    const hide = () => { clearTimeout(timer); bar?.classList.remove('is-shown'); };
+    const flash = (ms = 3000) => {
+        if (!bar) return;
+        bar.hidden = false;
+        requestAnimationFrame(() => bar.classList.add('is-shown'));
+        clearTimeout(timer);
+        timer = setTimeout(hide, ms);
+    };
+    bar?.addEventListener('pointerdown', () => clearTimeout(timer));   // đang định bấm → không tự ẩn
+    bar?.querySelector('[data-nextbar-close]')?.addEventListener('click', hide);
     const set = (state, text) => {
         if (!bar) return;
         bar.dataset.state = state;
         btn.disabled = state === 'locked' || state === 'busy';
         if (text) hint.innerHTML = text;
+        if (state === 'busy') clearTimeout(timer);
     };
     const go = () => { if (d.nextUrl) location.href = d.nextUrl; };
 
-    return { bar, btn, set, go };
+    return { bar, btn, set, go, flash, hide };
 }
 
 // Giây ở lại trang (chỉ tính lúc tab đang hiện).
@@ -75,7 +89,10 @@ function trackProgress(page, d, lessonId) {
     const ready = () => solved || (isText ? ((finishedReading && secs() >= minSec) || secs() >= 90) : (viewedAll && secs() >= minSec));
     const refresh = () => {
         if (done) return;
-        if (ready()) ui.set('ready', 'Xong bài này — bấm để ghi nhận' + (d.nextUrl ? ' và sang bài tiếp' : ''));
+        if (ready()) {
+            if (ui.bar?.dataset.state !== 'ready') ui.flash();   // vừa đủ điều kiện → hiện lên 3 giây
+            ui.set('ready', 'Xong bài này — bấm để ghi nhận' + (d.nextUrl ? ' và sang bài tiếp' : ''));
+        }
         else if (viewedAll || finishedReading) {
             const left = Math.max(1, minSec - secs());
             ui.set('locked', `Xem lại lời giảng thêm chút — còn ${left} giây`);
@@ -94,6 +111,7 @@ function trackProgress(page, d, lessonId) {
                     done = true;
                     document.getElementById('lesson-done-badge')?.removeAttribute('hidden');
                     ui.set('done', `${icon('check')} Đã học${res.gamification?.xp ? ` · +${res.gamification.xp} XP` : ''}`);
+                    ui.flash();
                     if (res.gamification) {
                         handleGamification(res.gamification);   // XP, mục tiêu ngày, huy hiệu, lên cấp — thông báo nhẹ, không chặn màn hình
                         track('lesson_complete', { lesson_id: lessonId, phase: d.phase || '' });
@@ -109,16 +127,17 @@ function trackProgress(page, d, lessonId) {
         ui.set('busy', 'Đang ghi nhận…');
         const ok = await send(true);
         if (ok) setTimeout(ui.go, 700);   // thấy kịp "+XP" rồi sang bài
-        else refresh();
+        else { refresh(); ui.flash(); }
     });
 
-    document.addEventListener('xq:viewed-all-moves', () => { viewedAll = true; refresh(); send(); });
+    // Mỗi lần chạy tới nước cuối: hiện thanh 3 giây (đã học rồi thì hiện nút sang bài tiếp; chưa đủ giây thì báo còn bao lâu).
+    document.addEventListener('xq:viewed-all-moves', () => { viewedAll = true; refresh(); send(); ui.flash(); });
     document.addEventListener('xq:lesson-solved', () => { solved = true; refresh(); send(true); });
     if (isText) {
         const checkEnd = () => {
             if (finishedReading) return;
             const docH = document.documentElement.scrollHeight, winH = innerHeight;
-            if (docH <= winH + 160 || scrollY + winH >= docH - 400) { finishedReading = true; refresh(); send(); }
+            if (docH <= winH + 160 || scrollY + winH >= docH - 400) { finishedReading = true; refresh(); send(); if (ready()) ui.flash(); }
         };
         addEventListener('scroll', checkEnd, { passive: true });
         addEventListener('load', checkEnd);
@@ -137,6 +156,7 @@ function trackGuest(d, lessonId) {
         const ids = store('xq.guest.lessons', []);
         if (!ids.includes(lessonId)) { ids.push(lessonId); save('xq.guest.lessons', ids.slice(-200)); }
         ui.set('ready', d.nextUrl ? 'Xong bài này — sang bài tiếp theo' : 'Đã xem xong bài này');
+        ui.flash();
     };
     if (d.isText === '1') setTimeout(mark, 15000);
     document.addEventListener('xq:viewed-all-moves', mark);
