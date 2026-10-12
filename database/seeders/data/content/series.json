@@ -153,6 +153,15 @@
             "sort_order": 5,
             "planned_total": 667,
             "description": "27 đòn sát chiêu thực dụng có khẩu quyết tấn công và phòng thủ, xếp theo 13 đội hình bộ ba (Xe Pháo Mã, Song Xe Chốt…), kèm hàng trăm bài tập giải trên bàn cờ — lời giải đã được máy kiểm chứng."
+        },
+        {
+            "name": "Trung Cuộc Sơ Đồ Tư Duy — Đòn Đánh, Tư Duy Và Chiến Thuật",
+            "slug": "trung-cuoc-so-do-tu-duy",
+            "game_mode": "co-tuong",
+            "phase": "trung-cuoc",
+            "sort_order": 6,
+            "planned_total": 349,
+            "description": "Trung cuộc học bằng sơ đồ tư duy: phương pháp tính sát, 5 hướng khi bị đuổi bắt quân, khống chế, ngăn cản, phế quân, khai thác nhược điểm, phối hợp binh chủng, đánh giá cục diện — kèm ví dụ và gần 300 bài tập giải trên bàn cờ."
         }
     ]
 }

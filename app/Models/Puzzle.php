@@ -31,12 +31,14 @@ class Puzzle extends Model
     }
 
     /**
-     * Thế "tìm nước theo khẩu quyết" (đoạn giữa ván tàn cuộc, không kết thúc bằng chiếu hết) mang nhãn khau-quyet —
-     * chỉ dùng ở luyện theo chủ đề tàn cuộc; các chế độ phản xạ chiếu hết (60 giây, 3 mạng, thế hôm nay, kiểm tra) bỏ qua.
+     * Thế "tìm nước theo khẩu quyết" (đoạn giữa ván tàn cuộc, không kết thúc bằng chiếu hết) mang nhãn khau-quyet, thế
+     * "tìm nước" trung cuộc (bắt quân, tranh tiên…) mang nhãn tim-nuoc — chỉ dùng ở luyện theo chủ đề; các chế độ phản xạ
+     * chiếu hết (60 giây, 3 mạng, thế hôm nay, kiểm tra) bỏ qua.
      */
     public function scopeMating(Builder $q): Builder
     {
-        return $q->where(fn ($w) => $w->whereNull('skill_tags')->orWhere('skill_tags', 'not like', '%"khau-quyet"%'));
+        return $q->where(fn ($w) => $w->whereNull('skill_tags')
+            ->orWhere(fn ($x) => $x->where('skill_tags', 'not like', '%"khau-quyet"%')->where('skill_tags', 'not like', '%"tim-nuoc"%')));
     }
 
     public function scopeSkill(Builder $q, string $skill): Builder

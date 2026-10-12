@@ -8,7 +8,7 @@
 // Một thế có thể thuộc nhiều chủ đề. Nhãn tự động khác (không hiện ở lưới): `sat-1`…`sat-10` (thế chiếu hết theo số
 // nước — dùng cho "Luyện sát pháp"), `khau-quyet` (đoạn giữa ván tàn cuộc, không chiếu hết — loại khỏi 60 giây/3 mạng…).
 return [
-    'series_pool' => ['co-tan-co-khau-quyet', '48-bai-nguyen-ly-tan-cuoc', 'sat-phap-13-doi-hinh', 'sat-phap-dai-toan', 'sat-cuc-lien-hoan', 'sat-chieu-thuc-dung'],
+    'series_pool' => ['co-tan-co-khau-quyet', '48-bai-nguyen-ly-tan-cuoc', 'sat-phap-13-doi-hinh', 'sat-phap-dai-toan', 'sat-cuc-lien-hoan', 'sat-chieu-thuc-dung', 'trung-cuoc-so-do-tu-duy'],
     'max_plies'   => 20,   // thế dài hơn (quá 10 nước bên giải) → chỉ cắt thế con ở đoạn cuối
     'tail_solver_moves' => [2, 3],  // cắt thêm thế con gồm N nước cuối của người giải
 
@@ -19,10 +19,17 @@ return [
         'co-tan-co-khau-quyet' => ['solver' => 2, 'per_lesson' => 3],
     ],
 
+    // Thế "tìm nước" (bài không kết thúc bằng chiếu hết: bắt quân, tranh tiên, khống chế…) của chuyên đề → chỉ gắn chủ đề
+    // trong nhóm này + nhãn `tim-nuoc` (loại khỏi 60 giây/3 mạng/thế hằng ngày như `khau-quyet`). Thế chiếu hết gắn bình thường.
+    'findmove_group' => [
+        'trung-cuoc-so-do-tu-duy' => 'trung-cuoc',
+    ],
+
     'ladder' => ['levels' => 10, 'pass' => 10, 'stars' => [10, 25, 50]],   // Luyện sát pháp: đúng `pass` thế để mở bậc kế
 
     'groups' => [
         'tan-cuoc' => ['name' => 'Tàn cuộc có khẩu quyết', 'desc' => 'Tìm nước đúng theo khẩu quyết trong các thế tàn thực dụng — máy nhận cả nước tương đương.'],
+        'trung-cuoc' => ['name' => 'Trung cuộc', 'desc' => 'Thế trung cuộc nhiều quân: bắt quân, tranh tiên, khống chế, khai thác điểm yếu — máy nhận cả nước tương đương.'],
         'don-sat'  => ['name' => 'Đòn sát theo hình', 'desc' => 'Luyện nhận ra từng hình sát kinh điển.'],
         'quan'     => ['name' => 'Theo quân & tốc độ', 'desc' => 'Mỗi lượt 10 thế, độ khó tự điều chỉnh theo điểm thế cờ của bạn.'],
     ],
@@ -36,6 +43,13 @@ return [
         'tan-xe'     => ['group' => 'tan-cuoc', 'name' => 'Tàn Xe', 'glyph' => '車', 'desc' => 'Đơn Xe, Xe Chốt, Xe Mã, Xe Pháo, Song Xe — khống chế trung lộ, bắt đôi.', 'series' => ['co-tan-co-khau-quyet'], 'match' => '/^co tan xe/'],
         'kheo-thang' => ['group' => 'tan-cuoc', 'name' => 'Khéo thắng', 'glyph' => '將', 'desc' => 'Thế phải đi thật chính xác mới thắng — sai một nước là hòa.', 'series' => ['co-tan-co-khau-quyet'], 'match' => '/kheo thang/'],
         'giu-hoa'    => ['group' => 'tan-cuoc', 'name' => 'Giữ hòa', 'glyph' => '士', 'desc' => 'Bạn cầm bên kém quân: đứng đúng hình hòa, chiếm mặt, giữ liên kết.', 'series' => ['co-tan-co-khau-quyet'], 'match' => '/\bhoa\b/'],
+
+        // ---- Trung cuộc (chuyên đề Trung Cuộc Sơ Đồ Tư Duy) ----
+        'trung-cuoc'   => ['group' => 'trung-cuoc', 'name' => 'Luyện trung cuộc', 'glyph' => '陣', 'desc' => 'Tất cả thế trung cuộc: đòn sát, bắt quân, tranh tiên, khống chế, khai thác điểm yếu.', 'series' => ['trung-cuoc-so-do-tu-duy']],
+        'bat-quan'     => ['group' => 'trung-cuoc', 'name' => 'Bắt quân & tranh tiên', 'glyph' => '捉', 'desc' => 'Chạy, giữ, bắt lại, cản hay phế — chọn đúng hướng khi quân bị đuổi.', 'series' => ['trung-cuoc-so-do-tu-duy'], 'match' => '/^bat quan/'],
+        'chien-thuat'  => ['group' => 'trung-cuoc', 'name' => 'Khống chế, ngăn cản, phế quân', 'glyph' => '制', 'desc' => 'Ghim quân, cắt liên kết, bỏ quân lấy thế.', 'series' => ['trung-cuoc-so-do-tu-duy'], 'match' => '/^(khong che|ngan can|phe quan)/'],
+        'nhuoc-diem'   => ['group' => 'trung-cuoc', 'name' => 'Điểm yếu & phối hợp', 'glyph' => '弱', 'desc' => 'Khai thác nhược điểm, liên hệ hữu cơ, 5 hướng tư duy, bài tổng hợp.', 'series' => ['trung-cuoc-so-do-tu-duy'], 'match' => '/^(khai thac nhuoc diem|lien he huu co|5 huong tu duy|tong hop trung cuoc)/'],
+        'sat-trung-cuoc' => ['group' => 'trung-cuoc', 'name' => 'Sát chiêu trung cuộc', 'glyph' => '殺', 'desc' => 'Đòn sát khi bàn cờ còn nhiều quân — có khi phải đỡ trước rồi mới phản công.', 'series' => ['trung-cuoc-so-do-tu-duy'], 'match' => '/^trung cuoc sat chieu/'],
 
         // ---- Đòn sát theo hình ----
         'ngoa-tao'    => ['group' => 'don-sat', 'name' => 'Mã ngọa tào', 'glyph' => '馬', 'desc' => 'Mã sát góc cung chiếu chéo, khóa Tướng ở lộ giữa.', 'match' => '/ngoa tao/'],

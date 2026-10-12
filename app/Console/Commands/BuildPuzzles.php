@@ -34,12 +34,15 @@ class BuildPuzzles extends Command
         $lessons = Lesson::published()->where('game_mode', 'co-tuong')
             ->where(fn ($q) => $q->whereNotNull('puzzle_side')->orWhereHas('series', fn ($s) => $s->whereIn('slug', $segSeries)))
             ->whereHas('series', fn ($q) => $q->whereIn('slug', $cfg['series_pool']))
-            ->with(['series', 'steps' => fn ($q) => $q->orderBy('step_order')])->get();
+            ->with(['series', 'steps' => fn ($q) => $q->orderBy('step_order')])
+            // Nạp từng đợt 50 bài (kèm nước đi): >4.000 bài cùng lúc vượt memory_limit 128M (13/10/2026).
+            ->lazyById(50);
 
-        $stats = ['lessons' => $lessons->count(), 'full' => 0, 'tail' => 0, 'segment' => 0, 'invalid' => 0, 'skipped' => 0];
+        $stats = ['lessons' => 0, 'full' => 0, 'tail' => 0, 'segment' => 0, 'invalid' => 0, 'skipped' => 0];
         $keep = [];
 
         foreach ($lessons as $lesson) {
+            $stats['lessons']++;
             $plies = $lesson->steps->map(fn ($s) => [
                 'iccs' => $s->move_notation_iccs, 'side' => $s->move_side, 'fen' => $s->fen, 'caption' => (string) $s->caption,
             ])->values()->all();
@@ -214,9 +217,12 @@ class BuildPuzzles extends Command
     {
         $title = Str::of($lesson->title)->ascii()->lower()->toString();
         $tags = [];
+        // Thế "tìm nước" (không chiếu hết) của chuyên đề trong `findmove_group` chỉ thuộc chủ đề nhóm đó — không lẫn vào
+        // các chủ đề đòn sát (VD "Đòn Xe" khớp tên bài nhưng là thế chiếu hết).
+        $onlyGroup = $segment ? 'tan-cuoc' : (! $mate ? ($this->cfg['findmove_group'][$lesson->series?->slug] ?? null) : null);
         foreach ($this->cfg['skills'] as $slug => $s) {
             // Đoạn khẩu quyết (không chiếu hết) chỉ thuộc chủ đề nhóm tàn cuộc.
-            if ($segment && ($s['group'] ?? null) !== 'tan-cuoc') continue;
+            if ($onlyGroup && ($s['group'] ?? null) !== $onlyGroup) continue;
             $inSeries = isset($s['series']) && in_array($lesson->series?->slug, $s['series'], true);
             $matches = isset($s['match']) && preg_match($s['match'], $title);
             if (isset($s['series'], $s['match'])) {
@@ -230,6 +236,7 @@ class BuildPuzzles extends Command
         $maxLevel = (int) ($this->cfg['ladder']['levels'] ?? 10);
         if ($mate && $solver >= 1 && $solver <= $maxLevel) $tags[] = 'sat-' . $solver;
         if ($segment) $tags[] = 'khau-quyet';
+        elseif ($onlyGroup) $tags[] = 'tim-nuoc';
         if (in_array('song-xe', $tags, true)) {
             $tags = array_values(array_diff($tags, ['xe']));
         }
