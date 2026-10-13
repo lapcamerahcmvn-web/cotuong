@@ -26,7 +26,7 @@
 | **A – Nhập môn** (ưu tiên #1) | Nhập Môn Cờ Tướng | 8 | ✅ Luật chơi + 7 quân (có bàn cờ demo động) |
 | **B – Khai cuộc** | 48 Bài Nguyên Lý Khai Cuộc | 29 | ✅ Đã xuất bản hết ván mẫu XQF có nước đi (14→29); phần còn lại là bài "nói" 0 nước |
 | **C – Trung cuộc** (kế hoạch ghi "chưa có") | Sát Pháp Thực Dụng 13 Đội Hình | 65 | ✅ Lấp xong bằng sát pháp (5 bài/đội hình) |
-| **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 48 | ✅ Đạt đủ 48 (10→48) từ thế tàn cuộc XQF |
+| **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 211 | ✅ **Dựng lại 13/10/2026** theo đúng 48 bài giảng: 214 bài (211 public + 3 nháp do file nguồn trùng lặp), 139 bàn cờ đủ nhánh biến, lời giảng có dấu viết lại; giữ 48 slug cũ; giải đố chỉ còn 4 thế chiếu bí ≤ 15 nước (bộ cũ bật giải đố cả ván hòa/ván dài → báo sai oan). Quy trình: `tools/nguyen-ly-tan-cuoc/README.md` |
 | **E – Cờ Úp** (ưu tiên #2) | Nhập Môn + Sơ Cấp 1/2 + Nâng Cao Đặc Biệt + Đặc Biệt 2 | 41 | ✅ Xong cả 4 khóa của thầy (soạn từ phụ đề) + Nhập môn |
 | **F – So sánh/công cụ** | — | 0 | ⬜ Chưa làm (web/app học cờ, bàn cờ tương tác online) |
 | **G – Sát pháp mở rộng** | Tượng Kỳ Kinh Điển Sát Pháp Đại Toàn | 435 | ✅ Series lớn nhất site (`LessonSeries` id=10) |

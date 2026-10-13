@@ -150,6 +150,7 @@ phải chỉ có ĐÚNG 1 listener; kill hết PID lạ rồi chạy lại. Dùn
 - **Luyện tập nhận mọi đường chiếu hết** — nước khác sách được bộ giải chứng minh thắng thì tính đúng, máy đỡ dai nhất — Đợt 14.
 - **Chuyên đề Sát Cục Liên Hoàn 1-10 Nước** (07/10/2026, phase tàn cuộc, 1.176 bài) + bài viết sơ đồ tư duy "Phương pháp tư duy giải bài tập sát cục" — FEN trích từ font cờ trong PDF, lời giải máy chứng minh. Quy trình: `tools/sat-cuc-lien-hoan/README.md`. Deploy cần thêm `db:seed --class=MindmapSeeder --force`.
 - **Chuyên đề Sát Chiêu Thực Dụng — 13 Đội Hình** (07/10/2026, tàn cuộc, 667 bài: 27 đòn có khẩu quyết + 623 bài tập) + bài viết sơ đồ tư duy 27 đòn. Quy trình: `tools/sat-chieu-thuc-dung/README.md`.
+- **Dựng lại chuyên đề 48 Bài Nguyên Lý Tàn Cuộc** (13/10/2026): 48 → 214 bài theo đúng 48 bài giảng nguồn (3 nháp — file trùng), lời giảng có dấu viết lại, đủ nhánh biến, giữ slug cũ; giải đố chỉ bật cho mạch ≤ 15 nước kết thúc chiếu bí. Quy trình: `tools/nguyen-ly-tan-cuoc/README.md`.
 - **Chuyên đề Trung Cuộc Sơ Đồ Tư Duy** (13/10/2026, trung cuộc, 349 bài: 17 lý thuyết + 37 ví dụ + 294 bài tập — 67 chiếu hết, 89 tìm nước, 138 phân tích) + bài viết sơ đồ tư duy; nhóm Luyện tập "Trung cuộc". Quy trình: `tools/trung-cuoc-so-do-tu-duy/README.md`.
 - **Kiểm định thế cờ (Admin) + bộ giải nước êm + book khai cuộc 72 dòng/20 nước** — Đợt 15 (`.claude/puzzle-audit.md`, `.claude/opening-book.md`).
 - **Giao diện bàn cờ & âm thanh** `/giao-dien-ban-co` — 8 màu bàn, chữ Hán/Việt, quân phẳng/3D, số cột, âm lượng/bộ âm/báo chiếu/tích tắc/giọng đọc — Đợt 19.
