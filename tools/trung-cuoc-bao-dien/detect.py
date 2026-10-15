@@ -18,7 +18,7 @@ import numpy as np
 import cv2
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TPL_DIR = os.path.join(HERE, 'templates')
+TPL_DIR = os.environ.get('XQ_TPL_DIR') or os.path.join(HERE, 'templates')   # XQ_TPL_DIR: kho mẫu riêng theo font sách
 DARK = 128
 N = 28
 
@@ -68,6 +68,33 @@ def fit_grid(g):
     px = vl.sum(0); py = hl.sum(1)
     x0, sx = _fit_axis(px, 9, W / 11.0, W / 8.2)
     y0, sy = _fit_axis(py, 10, sx * 0.75, sx * 1.2)
+    if os.environ.get('XQ_REFINE') == '1':
+        x0, sx, y0, sy = refine_grid(g, x0, sx, y0, sy)
+    return x0, sx, y0, sy
+
+
+def refine_grid(g, x0, sx, y0, sy):
+    """Tinh chỉnh lưới theo tâm quân (HoughCircles): quân nằm đúng giao điểm → khớp bình phương tối thiểu
+    x = x0 + sx·cột, y = y0 + sy·hàng. Dùng cho sơ đồ scan mà dò theo nét kẻ bị lệch vài pixel/bước."""
+    s = (sx + sy) / 2
+    b = cv2.medianBlur(g, 5)
+    cs = cv2.HoughCircles(b, cv2.HOUGH_GRADIENT, dp=1, minDist=s * 0.7, param1=100, param2=18,
+                          minRadius=int(s * 0.32), maxRadius=int(s * 0.56))
+    if cs is None or len(cs[0]) < 6:
+        return x0, sx, y0, sy
+    pts = cs[0][:, :2]
+    for tol in (0.35, 0.25, 0.18, 0.15, 0.15):     # siết dần ngưỡng → loại vòng tròn nhiễu (chữ số, dấu chấm…)
+        for ax, n in ((0, 9), (1, 10)):
+            o, st = (x0, sx) if ax == 0 else (y0, sy)
+            idx = np.round((pts[:, ax] - o) / st)
+            ok = (idx >= 0) & (idx < n) & (np.abs(pts[:, ax] - (o + idx * st)) < st * tol)
+            if ok.sum() < 4 or len(set(idx[ok])) < 3:
+                continue
+            A = np.vstack([np.ones(ok.sum()), idx[ok]]).T
+            o2, st2 = np.linalg.lstsq(A, pts[ok, ax], rcond=None)[0]
+            if 0.85 * st < st2 < 1.15 * st:
+                if ax == 0: x0, sx = o2, st2
+                else: y0, sy = o2, st2
     return x0, sx, y0, sy
 
 
