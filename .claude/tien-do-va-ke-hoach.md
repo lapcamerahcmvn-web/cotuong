@@ -28,6 +28,7 @@
 | **B – Khai cuộc** | Cạm Bẫy Khai Cuộc Và Đối Sách + Nghi Hình Khai Cuộc Và Công Kích | 103 + 106 | ✅ **14/10/2026** — chép từ 2 sách scan: mọi nước (mạch + biến) đi lại theo luật, mọi sơ đồ "Hình N" đối chiếu với thế cờ tính được; lời giảng có dấu viết lại; ván thực chiến chỉ giữ tên kỳ thủ + năm. Quy trình: `tools/khai-cuoc-bo-cuc/README.md` |
 | **C – Trung cuộc** (kế hoạch ghi "chưa có") | Sát Pháp Thực Dụng 13 Đội Hình | 65 | ✅ Lấp xong bằng sát pháp (5 bài/đội hình) |
 | **D – Tàn cuộc** | 48 Bài Nguyên Lý Tàn Cuộc | 211 | ✅ **Dựng lại 13/10/2026** theo đúng 48 bài giảng: 214 bài (211 public + 3 nháp do file nguồn trùng lặp), 139 bàn cờ đủ nhánh biến, lời giảng có dấu viết lại; giữ 48 slug cũ; giải đố chỉ còn 4 thế chiếu bí ≤ 15 nước (bộ cũ bật giải đố cả ván hòa/ván dài → báo sai oan). Quy trình: `tools/nguyen-ly-tan-cuoc/README.md` |
+| **D – Tàn cuộc** | Xe Mã Thực Chiến | 97 | ✅ **15/10/2026** — chép từ sách scan (15 bài học: đòn phối hợp, Xe Mã đấu Xe Tốt/Sĩ/Tượng/hai quân mạnh, thế hòa, thực chiến); mọi nước + nhánh đi lại theo luật, sơ đồ đối chiếu; kết quả kiểm bằng engine (196/196 nhánh thắng khớp). Quy trình: `tools/xe-ma-thuc-chien/README.md` |
 | **E – Cờ Úp** (ưu tiên #2) | Nhập Môn + Sơ Cấp 1/2 + Nâng Cao Đặc Biệt + Đặc Biệt 2 | 41 | ✅ Xong cả 4 khóa của thầy (soạn từ phụ đề) + Nhập môn |
 | **F – So sánh/công cụ** | — | 0 | ⬜ Chưa làm (web/app học cờ, bàn cờ tương tác online) |
 | **G – Sát pháp mở rộng** | Tượng Kỳ Kinh Điển Sát Pháp Đại Toàn | 435 | ✅ Series lớn nhất site (`LessonSeries` id=10) |

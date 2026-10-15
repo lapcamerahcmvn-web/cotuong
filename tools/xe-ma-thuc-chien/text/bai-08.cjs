@@ -1,0 +1,121 @@
+// Xe Mã Thực Chiến — Chương 1 · Bài 8: Thế cờ sáng tác Xe Mã. Thế cờ + nước đi theo sách; lời giảng viết lại.
+module.exports = {
+  bai: 8, ch: 1, ten: 'Thế Sáng Tác Xe Mã', level: 'nang-cao',
+  y: 'Đây là các thế cờ được dàn dựng (sáng tác) để rèn kỹ thuật Xe Mã: bên Đen thường đông quân hơn, Tốt đã áp sát Tướng Đỏ, nên Đỏ phải chiếu liên tục hoặc có đòn ép buộc ngay — chỉ một nước chậm là thua. Nhiều thế có nhiều nhánh phòng thủ của Đen, nên đọc kỹ từng nhánh.',
+  cuoc: [
+    {
+      n: 1, h: 'p069_0', fen: '5r3/9/3k5/5R3/3Np4/9/9/4p4/4p3p/p2K4c',
+      s: 'Xe bình chiếu, tiến xuống đáy, Mã nhảy chiếu; Xe lui về rồi tiến ăn Xe Đen — Xe chạy ra biên, Mã quấn quanh cung chiếu liên tục, Xe bình trung chiếu bí.',
+      c: '<p>Bên Đen có tới năm Tốt cùng Xe Pháo — Đỏ không có thời gian phòng thủ. <strong>Xe bình 6 chiếu</strong>, Tướng về giữa; <strong>Xe tiến xuống đáy chiếu</strong>, Tướng lui; Mã nhảy sang lộ 7. Xe lui 3 chờ, Mã lui về giữa, Xe tiến chiếu — Mã tiến chiếu, Đen phải dùng Xe chặn chân Mã, Đỏ <strong>Xe bình ăn Xe</strong>.</p><p>Đen tiến Tốt dọa, Xe chạy ra lộ 9; Mã lui – tiến – tiến – lui liên tục chiếu dồn Tướng, cuối cùng <strong>Xe bình trung chiếu bí</strong>.</p><p>Nếu ở nước 3 Đen lên Tướng: Xe lui chiếu, Xe bình 4 đuổi — Xe bình trung chiếu bí.</p>',
+      m: 'X4-6 Tg4-5 X6.3 Tg5/1 M6.7 Tg5-6 X6/3 Tg6.1 M7/5 Tg6-5 X6.1 Tg5/1 M5.3 X6.2 X6-4 B1-2 X4-9 Tg5-6 M3/5 Tg6-5 M5.7 Tg5-6 M7.6 Tg6/1 M6/5 Tg6.1 M5/3 Tg6-5 X9-5',
+      k: { 15: 'Xe ăn Xe.', 29: 'Xe bình trung chiếu bí.' },
+      v: [
+        { from: 'main', after: 5, m: 'Tg5.1 X6/2 Tg5/1 X6-4 Tg5/1 X4-5', k: { 1: 'Nếu Tướng lên…', 6: '…Xe bình trung chiếu bí.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 2, h: 'p070_0', fen: 'N1bakab2/R8/9/9/9/9/5pp2/4B4/3pp4/5K3',
+      s: 'Mã lui ba bước liền đều chiếu, đẩy Tướng Đen lên cao; Xe lui bình về lộ 6, Mã tiến chiếu — Xe Mã chiếu liên hoàn tới bí.',
+      c: '<p>Đen đủ Sĩ Tượng nhưng Tướng đứng giữa hai Sĩ. Đỏ <strong>Mã lui chiếu</strong> ba lần — Tướng Đen bị kéo lên tầng 3 rồi sang lộ 4. Xe lui về giữa sông, <strong>bình 6 chiếu</strong>, Tướng về giữa; Mã tiến chiếu, Xe bình trung chiếu. Đen chống Sĩ che, Xe bình 6, Mã tiến chiếu, Xe bình 4, Mã lui chiếu — <strong>Xe bình 6 chiếu bí</strong>.</p><p>Nếu ở nước 6 Đen bình Tướng sang lộ 4: Mã tiến chiếu, Xe tiến xuống chiếu, Mã lui về trung — Mã tiến chiếu, Xe lui chiếu, Đỏ thắng.</p>',
+      m: 'M9/7 Tg5.1 M7/6 Tg5.1 M6/4 Tg5-4 X9/4 Tg4/1 X9-6 Tg4-5 M4.6 Tg5.1 X6-5 Tg5-4 M6.4 S4.5 X5-6 Tg4-5 M4.5 Tg5-6 X6-4 Tg6-5 M5/7 Tg5-4 X4-6',
+      k: { 25: 'Xe bình chiếu bí.' },
+      v: [
+        { from: 'main', after: 11, m: 'Tg5-4 M6.4 Tg4-5 X6.4 Tg5.1 M4/5 S4.5 M5.3 Tg5-6 X6/4', k: { 1: 'Nếu Tướng bình 4…', 10: '…Đỏ thắng.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 3, h: 'p071_0', fen: '4k4/9/N8/9/9/9/5pp2/9/3pp4/5K1R1',
+      s: 'Mã tiến 7 — nước then chốt khóa ô thoát; Đen bình Tướng sang trái hay phải, Xe tiến lên, Mã nhảy chiếu liên hoàn — Đỏ đều chiếu bí.',
+      c: '<p>Bốn Tốt Đen đã áp sát Tướng Đỏ, Đỏ chỉ có vài nước. <strong>Mã tiến 7!</strong> — Mã khống chế cả hai ô bên cạnh Tướng Đen. Đen có hai cách:</p><ul><li><strong>Tướng bình 6</strong> (mạch chính): Xe tiến 4, Tướng lên; <strong>Mã tiến về trung!</strong> Tướng về giữa, Xe bình trung chiếu, Mã lui chiếu, Xe tiến — Mã lui chiếu bí. (Nếu Đen tiến Tốt thay vì bình Tướng: Mã lui, Mã tiến chiếu, Xe tiến chiếu bí.)</li><li><strong>Tướng bình 4</strong>: Xe tiến 4, Mã lui – tiến chiếu, Xe bình trung chiếu, Mã lui chiếu — Xe bình 4 chiếu bí.</li></ul>',
+      m: 'M9.7 Tg5-6 X2.4 Tg6.1 M7.5 Tg6-5 X2-5 Tg5-6 M5/6 Tg6.1 X5.4 B6.1 M6/5',
+      k: { 1: 'Mã tiến 7! — Đen có hai cách.', 5: 'Mã tiến về trung!', 13: 'Mã lui chiếu bí.' },
+      v: [
+        { from: 'main', after: 5, m: 'B6.1 M5/6 Tg6-5 M6.7 Tg5.1 X2.3', k: { 1: 'Nếu tiến Tốt…', 6: '…Xe tiến chiếu bí.' } },
+        { from: 'main', after: 1, m: 'Tg5-4 X2.4 Tg4.1 M7/6 Tg4.1 M6.8 Tg4-5 X2-5 Tg5-6 M8/6 Tg6/1 X5-4', k: { 1: 'Tướng bình 4.', 12: 'Xe bình chiếu bí.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 4, h: 'p073_0', fen: '2ba1a3/9/5k1N1/9/9/9/9/4Bp3/3ppn3/2R2K3',
+      s: 'Xe tiến dài chiếu, Đen lên Tượng che; Mã chiếu, Xe ăn Tượng rồi ra biên — Mã lui – tiến chiếu, Xe tiến chiếu bí.',
+      c: '<p>Đỏ <strong>Xe tiến 7 chiếu ngang</strong>, Đen lên Tượng che. Mã tiến chiếu, Tướng lui; <strong>Xe bình ăn Tượng</strong>, Đen chống Sĩ. Xe chạy ra lộ 1, tiến chiếu; Mã lui về lộ 2, Xe lui về. Đen dùng Mã nhảy quấy, Đỏ Mã lui ra biên rồi tiến chiếu — <strong>Xe tiến chiếu bí</strong>.</p>',
+      m: 'X7.7 T3.5 M2.3 Tg6/1 X7-5 S6.5 X5-1 Tg6/1 X1.2 Tg6.1 M3/2 Tg6.1 X1/2 M6.8 M2/1 Tg6/1 M1.3 Tg6/1 X1.2',
+      k: { 5: 'Xe ăn Tượng.', 19: 'Xe tiến chiếu bí.' },
+      kq: 'do',
+    },
+    {
+      n: 5, h: 'p074_0', fen: '5ab2/9/3Nk4/9/2b6/7R1/9/4pppp1/5n3/5Kc2',
+      s: 'Mã tiến 7 khóa Tướng; Đen bình Pháo, bình Tướng hay chống Sĩ — Đỏ đều dùng Xe bình ngang chiếu, Mã lui chiếu liên hoàn tới bí.',
+      c: '<p>Đỏ <strong>Mã tiến lên đáy</strong> khống chế ô trên đầu Tướng Đen. Đen có ba cách:</p><ul><li><strong>Pháo bình 8</strong> (mạch chính): Xe bình 8, Mã lui chiếu, Xe bình trung chiếu, Mã tiến chiếu — Xe bình 6 chiếu bí.</li><li><strong>Tướng bình 6</strong>: Mã lui chiếu, Xe bình 4, Xe bình trung chiếu, Mã lui chiếu — Xe bình 4 chiếu bí.</li><li><strong>Chống Sĩ</strong>: cuộc dài nhất — Xe tiến rồi lui, ăn Sĩ, Xe bình qua lại theo Tướng Đen; Mã lui – tiến nhiều lần, cuối cùng Mã tiến chiếu, Xe lui chiếu bí.</li></ul>',
+      m: 'M6.7 P7-8 X2-8 Tg5-6 M7/8 Tg6-5 X8-5 Tg5-4 M8.7 Tg4/1 X5-6',
+      k: { 1: 'Mã lên đáy — Đen có ba cách.', 11: 'Xe bình chiếu bí.' },
+      v: [
+        { from: 'main', after: 1, m: 'Tg5-6 M7/8 P7-8 X2-4 Tg6-5 X4-5 Tg5-6 M8/6 Tg6/1 X5-4', k: { 1: 'Tướng bình 6.', 10: 'Xe bình chiếu bí.' } },
+        { from: 'main', after: 1, m: 'S6.5 X2.3 S5.6 X2/2 S6/5 X2-5 Tg5-6 M7/5 Tg6/1 M5.7 Tg6.1 X5-4 Tg6-5 X4-7 Tg5-6 X7-4 Tg6-5 X4-9 Tg5-6 M7/8 Tg6/1 X9.3 Tg6/1 M8.6 Tg6-5 M6/4 Tg5-6 X9-5 P7-8 X5.1 Tg6.1 M4/5 P8-7 M5.6 Tg6.1 X5/1', k: { 1: 'Chống Sĩ.', 36: 'Xe lui chiếu bí.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 6, h: 'p076_0', fen: '5c3/9/5k3/5r3/4R2N1/6n2/9/9/9/4K4',
+      s: 'Xe tiến chiếu hai lần, Mã đổi Xe; Đen ăn lại Mã hay tiến Pháo — Đỏ chỉ cần đi Tướng chiếm lộ, Xe chiếu khóa — Đỏ thắng.',
+      c: '<p>Đỏ <strong>Xe tiến 2 chiếu</strong>, Tướng lui; <strong>Xe tiến 1 chiếu</strong>, Tướng lên. <strong>Mã tiến ăn Xe!</strong> Đen có hai cách:</p><ul><li><strong>Mã ăn lại Mã</strong> (mạch chính): còn Xe Đỏ đấu Mã Pháo. Đỏ bình Tướng sang lộ 4 khống chế, Xe tiến chiếu, bình 4 — Đen chỉ còn bình Pháo qua lại, Tướng Đỏ lên — Đỏ thắng.</li><li><strong>Pháo tiến 3</strong>: Đỏ lên Tướng, Xe lui đuổi Mã Đen; Mã chạy, Xe bình 3 rồi bình 4 chiếu — Xe lui 1, Đỏ thắng.</li></ul>',
+      m: 'X5.2 Tg6/1 X5.1 Tg6.1 M2.4 M7/6 Tg5-4 P6.1 X5.1 P6-7 X5-4 P7-6 Tg4.1',
+      k: { 5: 'Mã ăn Xe! — Đen có hai cách.' },
+      v: [
+        { from: 'main', after: 5, m: 'P6.3 Tg5.1 M7.9 X5/2 M9/8 X5/1 M8.7 X5-3 M7/5 X3-4 Tg6/1 X4/1', k: { 1: 'Pháo tiến 3.', 12: 'Xe lui — Đỏ thắng.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 7, h: 'p077_0', fen: 'P8/R1r1k4/2P6/2P1p3N/9/9/9/4p4/3p1p3/4K4',
+      s: 'Xe ăn Xe, Tốt bình chiếu; Mã nhảy chiếu, Xe tiến chiếu ép Tướng; Tốt hy sinh mở đường, Xe lui ăn Tốt cứu Tướng nhà — Mã quấn quanh trung lộ, Đỏ thắng.',
+      c: '<p>Đỏ <strong>Xe bình ăn Xe</strong>, Tướng Đen lên; <strong>Tốt bình 6</strong> chiếu, Tướng Đen ăn Tốt; Tốt thứ hai bình theo, Tướng về giữa. Xe lui, Mã tiến chiếu hai lần, Xe tiến chiếu dồn Tướng; Mã lui chiếu, <strong>Tốt tiến hy sinh</strong> kéo Tướng Đen lên.</p><p>Xe bình chiếu rồi <strong>lui về giữ nhà</strong>: Xe ăn Tốt trung lộ, rồi lui tiếp ăn Tốt đang chiếu Tướng Đỏ. Mã lui, tiến, lui, tiến quanh trung lộ chặn Tốt Đen — Đỏ thắng.</p>',
+      m: 'X9-7 Tg5.1 Bt-6 Tg5-4 B7-6 Tg4-5 X7/1 Tg5/1 M1.3 Tg5-6 M3.2 Tg6-5 X7.1 Tg5/1 X7.1 Tg5.1 M2/3 Tg5-4 B6.1 Tg4.1 X7-6 Tg4-5 X6/7 Bs.1 X6-5 B6-5 X5/1 B5.1 M3/2 Tg5-6 M2.4 Tg6-5 M4/3 B5.1 M3.4 B5.1 M4/6',
+      k: { 1: 'Xe ăn Xe.', 19: 'Tốt hy sinh.', 27: 'Xe lui ăn Tốt đang chiếu.' },
+      kq: 'do',
+    },
+    {
+      n: 8, h: 'p079_0', fen: '4k4/3Na4/9/R8/9/9/9/4B4/1p2rpp2/2BK5',
+      s: 'Xe tiến chiếu, Mã lui – tiến chiếu đuổi Tướng sang lộ 6; Đỏ có hai cách thắng: Xe lui bình về khóa, hoặc Mã lui hai bước rồi Xe lui chiếu.',
+      c: '<p>Đỏ <strong>Xe tiến 3 chiếu</strong>, Đen lui Sĩ; Mã lui chiếu, Mã tiến chiếu — Tướng Đen chạy sang lộ 6. Tới đây Đỏ có hai cách:</p><ul><li><strong>Xe lui 3</strong> (mạch chính): Xe bình 4, bình 6, Đen chống – lui Sĩ; Xe bình 8 tiến chiếu, bình 6 chiếu, lui 1 — Mã lui ra biên rồi lui về, Đỏ thắng.</li><li><strong>Mã lui 2</strong>: Mã lui tiếp về lộ 4, Xe lui 1 — Mã tiến chiếu, Mã tiến chiếu bí.</li></ul>',
+      m: 'X9.3 S5/4 M6/4 Tg5.1 M4.3 Tg5-6 X9/3 Tg6/1 X9-4 Tg6-5 X4-6 S4.5 X6-8 S5/4 X8.3 Tg5-6 X8-6 Tg6.1 X6/1 Tg6/1 M3/1 B6.1 M1/3',
+      k: { 6: 'Đỏ có hai cách thắng.' },
+      v: [
+        { from: 'main', after: 6, m: 'M3/2 Tg6-5 M2/4 Tg5-6 X9/1 Tg6.1 M4.2 Tg6-5 M2.3', k: { 1: 'Cách thứ hai: Mã lui 2.', 9: 'Mã tiến chiếu.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 9, h: 'p080_0', fen: '9/4a2P1/bc2k2N1/9/9/2R6/5c3/6p2/r3rp3/3K5',
+      s: 'Thế sáng tác lớn nhất bài: Xe tiến chiếu, Mã lui, Tốt áp sát; Xe ăn Sĩ, Xe Mã chiếu dồn Tướng. Đen có bốn cách phòng thủ, mỗi cách là một trận đấu trí dài — Đỏ đều thắng.',
+      c: '<p>Đỏ <strong>Xe tiến 3 chiếu</strong>, Đen chống Sĩ; Xe bình 6 chiếu, Mã lui về lộ 4, Tốt bình áp sát. Xe tiến chiếu, Đen lui Xe xuống đáy dọa; Tốt tiến, Xe bình trung chiếu, Xe Mã đổi vị liên tục đẩy Tướng Đen sang lộ 6. Đỏ lui Xe về giữ rồi tiến lại từng bước — tới nước 14 Đen có bốn cách:</p><ul><li><strong>Xe bình trung</strong> (mạch chính): Xe bình 4, Mã tiến chiếu, Xe tiến chiếu — Tốt bình chiếu bí.</li><li><strong>Pháo tiến 1</strong>: Xe bình 4, Mã tiến chiếu — Xe bình trung chiếu bí.</li><li><strong>Pháo lui 1</strong>: thế cờ vẫn rất phức tạp — Xe Đen xuống quấy, Tướng Đỏ lên xuống né, Đỏ đổi Xe ra cánh. Sau đó Đen còn năm cách (Tướng lui, Tướng bình, Xe lui, Tượng lui, Tượng tiến) — Đỏ đều thắng bằng Xe chiếu ngang và Mã quấn quanh cung.</li><li><strong>Pháo lui 1 (Pháo cánh)</strong>: cuộc dài nhất — Xe Mã chiếu đuổi, Mã đi vòng qua lộ 4, lộ 3, lộ 5, lộ 7, lộ 8; Tướng Đỏ tự lên đánh; cuối cùng Xe lui chiếu, Đỏ thắng.</li></ul><p>Nếu ở nước 7 Đen bình Pháo về lộ 6 che: Mã tiến 6, Pháo bình trung, Xe lui 2 — Xe Mã đứng thẳng hàng trên trung lộ ("Lập Mã Xe"), Đỏ thắng.</p>',
+      m: 'X7.3 S5.4 X7-6 Tg5/1 M2/4 Tg5-6 B2-3 Tg6/1 X6.2 X5/8 B3.1 Tg6.1 X6-5 Tg6.1 X5-4 Tg6-5 M4/6 Tg5/1 M6.7 Tg5.1 X4-5 Tg5-6 X5/6 P6/1 X5.1 P6/1 X5.1 X1-5 X5-4 Tg6-5 M7.6 Tg5/1 X4.3 Tg5/1 B3-4',
+      k: { 27: 'Tới đây Đen có bốn cách.', 35: 'Tốt bình chiếu bí.' },
+      v: [
+        { from: 'main', after: 13, m: 'P2-6 M4.6 P6-5 X5/2', k: { 1: 'Nếu Pháo bình 6 che…', 4: '…Lập Mã Xe — Đỏ thắng.' } },
+        { from: 'main', after: 27, m: 'P6.1 X5-4 Tg6-5 M7.6 Tg5/1 X4-5', k: { 1: 'Pháo tiến 1.', 6: 'Xe bình trung chiếu bí.' } },
+        { from: 'main', after: 27, m: 'P6/1 X5.1 X1.1 Tg6.1 B6-5 Tg6-5 X1-6 X5-8 X6/5 X8.1 X6-5 Tg5-4 Tg6/1 X8.1 Tg6.1 M7.6 X5/4 X8/2', k: { 1: 'Pháo lui 1.', 12: 'Thế phức tạp — Đen có năm cách. (A) Tướng lui 1.', 18: 'Xe lui 2 — Đỏ thắng.' } },
+        { from: 2, after: 39, m: 'Tg6-5 M7/6 Tg5/1 X8.1 Tg5/1 X8.1 Tg5.1 M6.7 Tg5.1 X8-5', k: { 1: '(B) Tướng bình 5.', 10: 'Xe bình trung chiếu.' } },
+        { from: 2, after: 39, m: 'X5/2 X8/1 X5-3 X8-4 Tg6-5 X4.1 Tg5/1 X4-7', k: { 1: '(C) Xe lui 2.', 8: 'Xe bình 7 — Đỏ thắng.' } },
+        { from: 2, after: 39, m: 'T1/3 M7/8 Tg6/1 X8.1 X5/3 X8/2 X5.6 X8-4 Tg6-5 M8.7', k: { 1: '(D) Tượng lui 3.', 10: 'Mã tiến chiếu — Đỏ thắng.' } },
+        { from: 2, after: 39, m: 'T1.3 X8/1 X5-6 Tg4-5 T3/5 X8-5 T5/3 M7/6 P6-9 M6/5 X6.2 X5.3 P9/3 X5/4 P9.8 M5.4 B7.1 Tg5/1 X6-8 M4.2 X8/3 X5-4', k: { 1: '(E) Tượng tiến 3.', 22: 'Xe bình 4 — Đỏ thắng.' } },
+        { from: 'main', after: 27, m: 'P2/1 X5-4 Tg6-5 X4-5 Tg5-6 X5-2 P2-4 X2.2 Tg6/1 X2-5 P4-3 X5/1 Tg6.1 X5-4 Tg6-5 M7/6 Tg5/1 X4-5 Tg5-6 M6/4 P3.1 M4.3 P3-7 M3.5 Tg6-5 M5/7 Tg5-6 M7.8 X1.1 Tg6.1 B6-5 Tg6-5 X1-4 X5.3 P7-5 X5/2 B7-6 M8.6 X4/9 X5.1 Tg6.1 X5/2', k: { 1: 'Pháo cánh lui 1.', 42: 'Xe lui 2 — Đỏ thắng.' } },
+      ],
+      kq: 'do',
+    },
+    {
+      n: 10, h: 'p086_0', fen: '3ck1b2/3P5/3ab1N2/2r6/9/9/6p2/5A3/9/1R3K3',
+      s: 'Xe tiến xuống đáy chiếu rồi lui về; Đen bình Pháo về che hoặc tiến Pháo — Đỏ dùng Tướng né Xe chiếu, Tốt ăn Pháo mở đường, hoặc Mã lui – tiến chiếu — Đỏ thắng.',
+      c: '<p>Đỏ <strong>Xe tiến 9 xuống đáy</strong>, Đen bình Pháo che; Xe lui 2. Đen có hai cách:</p><ul><li><strong>Pháo bình 4</strong> (mạch chính): Đen dùng Xe chiếu quấy liên tục, Đỏ <strong>đi Tướng</strong> lên xuống né; khi Pháo Đen quay về, <strong>Tốt tiến ăn Pháo</strong> — Tướng Đen ăn lại Tốt nhưng Xe Đỏ lui 1, Đỏ thắng.</li><li><strong>Pháo tiến 2</strong>: Mã lui về trung, Mã tiến 7, Xe tiến chiếu, Mã tiến chiếu — Xe lui rồi bình 2, Đỏ thắng.</li></ul>',
+      m: 'X8.9 P4-3 X8/2 P3-4 Tg4-5 X3.6 Tg5.1 X3/9 X8.1 X3.8 Tg5/1 X3.1 Tg5.1 P4-3 Tg5-6 P3-4 B6.1 Tg5-4 X8/1',
+      k: { 3: 'Đen có hai cách.', 17: 'Tốt ăn Pháo.' },
+      v: [
+        { from: 'main', after: 3, m: 'P3.2 M3/5 Tg5-6 M5.7 B7.1 X8.2 Tg6.1 M7.6 Tg6.1 X8/6 X3-6 X8-2', k: { 1: 'Pháo tiến 2.', 12: 'Xe bình 2 — Đỏ thắng.' } },
+      ],
+      kq: 'do',
+    },
+    // @@END — mốc nối thêm cuộc
+  ],
+};

@@ -180,6 +180,15 @@
             "sort_order": 4,
             "planned_total": 106,
             "description": "Nghi hình là kết cấu cờ ẩn điểm yếu do đi theo quán tính trong khai cuộc. Chuyên đề chỉ ra từng nghi hình thường gặp ở các thế trận lớn, cách tránh và cách công kích để giành ưu thế — mỗi cuộc có bàn cờ đi từng nước và nhánh biến."
+        },
+        {
+            "name": "Xe Mã Thực Chiến",
+            "slug": "xe-ma-thuc-chien",
+            "game_mode": "co-tuong",
+            "phase": "tan-cuoc",
+            "sort_order": 6,
+            "planned_total": 97,
+            "description": "Tàn cuộc Xe Mã thực chiến: các đòn phối hợp Xe – Mã (cao điếu Mã, hoa tâm Xe, chiếu rút…), Xe Mã đấu Xe Tốt, Xe Sĩ Tượng, hai quân mạnh, các thế hòa và thế lấy từ ván thật — mỗi thế đi lại từng nước có nhánh biến, kết quả đã kiểm chứng bằng engine."
         }
     ]
 }
